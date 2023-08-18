@@ -15,7 +15,7 @@ interface FlashSaleModel {
 function FlashSale({ data, settings, loading }: FlashSaleModel) {
   return (
     <div className="col l-12 mo-12 c-12">
-      {/* <div className="category-main">
+      <div className="category-main">
         <div className="bg-white">
           <div className="px-[20px] flex justify-between pb-[10px] pt-[20px]">
             <div className="w-full h-full">
@@ -65,7 +65,7 @@ function FlashSale({ data, settings, loading }: FlashSaleModel) {
             </div>
           )}
         </div>
-      </div> */}
+      </div>
     </div>
   );
 }
