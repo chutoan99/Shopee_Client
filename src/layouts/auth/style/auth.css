@@ -1,0 +1,133 @@
+.modals {
+  @apply bg-[color:var(--primary--color)] flex animate-[growth_linear_0.1s] mt-2.5 justify-end;
+}
+.black {
+  @apply bg-[white];
+}
+.modal__body {
+  @apply flex justify-items-center relative justify-center items-center z-[1] animate-[growth_linear_0.1s] m-auto;
+  --growth-from: 0.7;
+  --growth-to: 1;
+}
+.modals-img {
+  @apply bg-[url("https://cf.shopee.vn/file/5569eb9dc7e09e2dbed5315b8f2ea8ba")] bg-cover bg-no-repeat bg-[center_center];
+}
+.auth-form {
+  @apply w-[500px] content-[""] absolute overflow-hidden bg-[color:var(--white-color)] py-5 rounded-[5px] right-[1vw];
+}
+.Header_notify-list:hover.auth-form {
+  @apply block;
+}
+.auth-form__container {
+  @apply px-8 py-0;
+}
+.auth-form__header {
+  @apply flex items-center justify-between mt-2.5 px-3 py-0;
+}
+.auth-form__heading {
+  @apply text-[1.37rem] font-normal text-[color:var(--text-color)];
+}
+.auth-form__switch-btn {
+  @apply text-base font-normal text-[color:var(--primary--color)] cursor-pointer;
+}
+.auth-form__input {
+  @apply leading-10 w-full text-sm border-[color:var(--border-color)] border-[1px] mt-4 px-3 py-0 rounded-sm border-[solid] focus:border-[#888];
+  outline: none;
+}
+.auth-form_aside {
+  @apply mt-[18px];
+}
+.auth-for__policy-text {
+  @apply text-[1.2rem] leading-[1.125rem] text-center px-3 py-0;
+}
+.auth-form_policy-text-link {
+  @apply no-underline text-[color:var(--primary--color)];
+}
+.auth-form__controls {
+  @apply flex justify-end mt-20;
+}
+.btn {
+  @apply h-[34px] min-w-[124px] no-underline text-[0.9rem] cursor-pointer leading-[1.6rem] px-3 py-0 rounded-sm border-[none];
+  outline: none;
+}
+.btn.btn--normal:hover {
+  @apply bg-[rgba(0,0,0,0.2)];
+}
+.auth-form__controls-back {
+  @apply mr-2;
+}
+.btn.btn--prinary {
+  @apply bg-[color:var(--primary--color)] text-[color:var(--white-color)];
+}
+.btn.btn--disable {
+  @apply cursor-default opacity-90 text-[#949494];
+}
+.auth-form__socials {
+  @apply bg-neutral-100 flex gap-[0_20px] justify-center mt-[22px] px-0 py-4;
+}
+.btn.btn--size-s {
+  @apply h-[30px] px-2 py-0;
+}
+.auth-form__socials-icon {
+  @apply text-lg;
+}
+.auth-form__socials--facebook,
+.auth-form__socials--google {
+  @apply text-[color:var(--white-color)] overflow-hidden text-ellipsis flex-col text-sm box-border shadow-[0_1px_1px_0_rgba(0,0,0,0.09)] items-center justify-center capitalize h-[34px] no-underline leading-[1.6rem] px-1.5 py-0 rounded-sm border-0;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  outline: 0;
+}
+.auth-form__socials--facebook:hover,
+.auth-form__socials--google:hover {
+  @apply opacity-50 transition-[0.3s];
+}
+.auth-form__socials--facebook {
+  @apply bg-[#3a5a98] text-[white] flex justify-center items-center flex-row;
+}
+.auth-form__socials-title {
+  @apply text-[0.9rem] px-[15px];
+}
+.auth-form__socials--google {
+  @apply bg-[white] text-[#666] flex justify-center flex-row items-center;
+}
+.auth-form__help-link {
+  @apply no-underline text-sm text-[#939393];
+}
+.auth-form-help {
+  @apply flex justify-end mt-5;
+}
+.auth-form__help-separate {
+  @apply h-[22px] block -mt-0.5 mb-0 mx-4 border-l-[#EAEAEA] border-l border-solid;
+}
+.auth-form__help-forgot {
+  @apply text-[color:var(--primary--color)];
+}
+.header_login-logo {
+  @apply flex items-center;
+}
+.header_login {
+  @apply flex justify-between items-center;
+  background: white;
+}
+.header_login-logo img {
+  @apply object-contain w-1/5;
+}
+.header_login-logo span {
+  @apply text-[1.8rem] pt-[22px];
+}
+.header_login-logo-helps {
+  @apply w-[23vw] pt-[30px];
+}
+.header_login-logo-helps a {
+  @apply text-[0.9rem] text-[color:var(--primary--color)];
+}
+.modals-logo-shoppe {
+  @apply w-full h-full;
+}
+.modals-logo-shoppe img {
+  @apply w-full h-full;
+}
+.erro {
+  @apply text-[color:var(--primary--color)] text-xs ml-[15px];
+}

@@ -1,0 +1,33 @@
+#topProduct .slick-slider {
+  display: flex;
+  gap: 10px;
+}
+#topProduct .slick-slide {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#topProduct .slick-next {
+  z-index: 9;
+  right: -15px !important;
+  box-shadow: 0 1px 12px 0 rgba(0, 0, 0, 0.12);
+  transition: all 0.1s cubic-bezier(0.4, 0, 0.6, 1);
+}
+#topProduct .slick-prev {
+  z-index: 9;
+  left: -15px !important;
+  box-shadow: 0 1px 12px 0 rgba(0, 0, 0, 0.12);
+  transition: all 0.1s cubic-bezier(0.4, 0, 0.6, 1);
+}
+#topProduct .slick-prev:before {
+  font-size: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#topProduct .slick-next:before {
+  font-size: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
