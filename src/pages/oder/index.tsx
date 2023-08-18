@@ -119,37 +119,22 @@ function Oder() {
   return (
     <>
       {loading && <Loading2 />}
+
       <div className="p-[1.25rem] mt-[120px]" style={{ backgroundColor: '#f5f5f5' }}>
-        <div className="order-border"></div>
-        <div className="order-info">
-          <h1>{ICON.LOCATION}Địa Chỉ Nhận Hàng</h1>
-          <div>
-            <div className="order-name">
-              {dataUser.name} {dataUser.phone ? `SĐT: (+84) ${dataUser.phone}` : ''}
-            </div>
+        <div className="grid wide">
+          <div className="order-border"></div>
+          <div className="order-info">
+            <h1>{ICON.LOCATION}Địa Chỉ Nhận Hàng</h1>
+            <div>
+              <div className="order-name">
+                {dataUser.name} {dataUser.phone ? `SĐT: (+84) ${dataUser.phone}` : ''}
+              </div>
 
-            <div className="order-name">{dataUser.phone ? `Mặc Định: ${dataUser.address} ` : ''}</div>
-            <NavLink to="/user/purchase">Thay Đổi</NavLink>
-          </div>
-        </div>
-        <div className="tile-content-container-oder Hide-on-mobile">
-          <div className="title-content">
-            <div className="text-center items-center">
-              <p>Sản Phẩm</p>
+              <div className="order-name">{dataUser.phone ? `Mặc Định: ${dataUser.address} ` : ''}</div>
+              <NavLink to="/user/purchase">Thay Đổi</NavLink>
             </div>
           </div>
-          <div className="title-content">
-            <p className="text-center">Đơn Giá</p>
-          </div>
-          <div className="title-content">
-            <p className="text-center">Số Lượng</p>
-          </div>
-          <div className="title-content">
-            <p className="text-center">Thành Tiền</p>
-          </div>
-        </div>
 
-        <>
           {data?.map((ele: Cart[], index: number) => (
             <div key={index}>
               <div className="table-body-list">
@@ -208,155 +193,155 @@ function Oder() {
               </div>
             </div>
           ))}
-        </>
 
-        <div className="order-shopee-xu">
-          <div style={{ borderBottom: '1px solid rgba(0,0,0,.05)' }}>
-            <div className="order-shopee-xu-heading">
-              <div className="order-shoppe-heading-inner">
-                {ICON.TAGS}
-                <label>Shopee Voucher</label>
+          <div className="order-shopee-xu">
+            <div style={{ borderBottom: '1px solid rgba(0,0,0,.05)' }}>
+              <div className="order-shopee-xu-heading">
+                <div className="order-shoppe-heading-inner">
+                  {ICON.TAGS}
+                  <label>Shopee Voucher</label>
+                </div>
+                <span>Chọn Voucher</span>
               </div>
-              <span>Chọn Voucher</span>
-            </div>
-          </div>
-          <div>
-            <div className="order-shopee-xu-footer">
-              <div className="order-shopee-xu-footer-inner">
-                {SVG.SHOPEEXU}
-                <label>Shopee Xu</label>
-                <span> Không thể sử dụng Xu</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="checkout-payment-method-view__current checkout-payment-setting">
-          <div className="checkout-payment-method-view__current-title">Phương thức thanh toán</div>
-          <div className="checkout-payment-setting__payment-methods-tab">
-            {['Ví ShopeePay', 'Thẻ Tín dụng/Ghi nợ', 'Số dư TK Shopee(₫0)', 'Thanh toán khi nhận hàng'].map((item, index) => (
-              <button
-                className={`product-variation ${variation === item ? 'product-variation--selected' : ''}`}
-                onClick={() => {
-                  handleChangeVariation(item, index);
-                }}
-                key={index}
-              >
-                {item}
-                {variation === item ? <div className="product-variation__tick">{ICON.HEART}</div> : null}
-              </button>
-            ))}
-          </div>
-        </div>
-        {banners && (
-          <div className="checkout-payment-setting__banners">
-            <div className="channel-banner channel-banner__single" style={{ backgroundColor: 'rgb(238, 77, 45)' }}>
-              <div className="channel-banner__icon">
-                <img src={IMG.SALES_XU} alt="" />
-              </div>
-              <div className="channel-banner__logo">
-                <img src={IMG.PAY} alt="" />
-              </div>
-              <div className="channel-banner__main-desc">
-                <div>Giảm đến 90K</div>
-              </div>
-              <div className="channel-banner__sub-desc">Ưu đãi Ví ShopeePay</div>
             </div>
             <div>
-              <div className="bank-transfer-category mt-[20px]" style={{ borderTop: '0.0625rem dashed rgba(0, 0, 0, 0.09)' }}>
-                <div className="bank-transfer-category__body">
-                  <div className="checkout-bank-transfer-item checkout-bank-transfer-item--disabled">
-                    <div
-                      className="stardust-radio"
-                      // tabindex="0"
-                      role="radio"
-                      aria-checked="false"
-                      aria-disabled="false"
-                    >
-                      <div className="stardust-radio-button">
-                        <div className="stardust-radio-button__outer-circle">
-                          <div className="stardust-radio-button__inner-circle"></div>
-                        </div>
-                      </div>
-                      <div className="stardust-radio__content">
-                        <div className="stardust-radio__label">
-                          <div className="checkout-bank-transfer-item__card">
-                            <div className="checkout-bank-transfer-item__icon-container">
-                              <img
-                                src="https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg//assets/37110bc844b571f80e7dd14beb5415e9.png"
-                                className="checkout-bank-transfer-item__icon"
-                                alt=""
-                              />
-                            </div>
-                            <div className="checkout-bank-transfer-item__main">
-                              <div className="checkout-bank-transfer-item__title">Ví ShopeePay Số dư</div>
-                              <div className="checkout-bank-transfer-item__subtitle">₫0</div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="bank-transfer-category">
-                <div className="bank-transfer-category__body">
-                  <div className="checkout-bank-transfer-item">
-                    <div
-                      className="stardust-radio stardust-radio--checked"
-                      // tabIndex="0"
-                      role="radio"
-                      aria-checked="true"
-                    >
-                      <div className="stardust-radio-button stardust-radio-button--checked">
-                        <div className="stardust-radio-button__outer-circle">
-                          <div className="stardust-radio-button__inner-circle"></div>
-                        </div>
-                      </div>
-                      <div className="stardust-radio__content">
-                        <div className="stardust-radio__label">
-                          <div className="checkout-bank-transfer-item__card">
-                            <div className="checkout-bank-transfer-item__icon-container">
-                              <img
-                                src="https://static.v2.airpay.vn/admin/channelIcon/images_v101/c134/icon_c13403_t1610003677268.png"
-                                className="checkout-bank-transfer-item__icon"
-                                alt=""
-                              />
-                            </div>
-                            <div className="checkout-bank-transfer-item__main">
-                              <div className="checkout-bank-transfer-item__title">VietinBank</div>
-                              <div className="checkout-bank-transfer-item__subtitle checkout-bank-account-item__number">*7553</div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+              <div className="order-shopee-xu-footer">
+                <div className="order-shopee-xu-footer-inner">
+                  {SVG.SHOPEEXU}
+                  <label>Shopee Xu</label>
+                  <span> Không thể sử dụng Xu</span>
                 </div>
               </div>
             </div>
           </div>
-        )}
-        <div className="order-pay">
-          <div>
-            <div className="order-pay-inner">
-              <div></div>
-              <div className="order-pay-content">
-                <h3>Tổng tiền hàng</h3>
-                <h3>Phí vận chuyển</h3>
-                <h3>Tổng thanh toán:</h3>
+          <div className="checkout-payment-method-view__current checkout-payment-setting">
+            <div className="checkout-payment-method-view__current-title">Phương thức thanh toán</div>
+            <div className="checkout-payment-setting__payment-methods-tab">
+              {['Ví ShopeePay', 'Thẻ Tín dụng/Ghi nợ', 'Số dư TK Shopee(₫0)', 'Thanh toán khi nhận hàng'].map((item, index) => (
+                <button
+                  className={`product-variation ${variation === item ? 'product-variation--selected' : ''}`}
+                  onClick={() => {
+                    handleChangeVariation(item, index);
+                  }}
+                  key={index}
+                >
+                  {item}
+                  {variation === item ? <div className="product-variation__tick">{ICON.HEART}</div> : null}
+                </button>
+              ))}
+            </div>
+          </div>
+          {banners && (
+            <div className="checkout-payment-setting__banners">
+              <div className="channel-banner channel-banner__single" style={{ backgroundColor: 'rgb(238, 77, 45)' }}>
+                <div className="channel-banner__icon">
+                  <img src={IMG.SALES_XU} alt="" />
+                </div>
+                <div className="channel-banner__logo">
+                  <img src={IMG.PAY} alt="" />
+                </div>
+                <div className="channel-banner__main-desc">
+                  <div>Giảm đến 90K</div>
+                </div>
+                <div className="channel-banner__sub-desc">Ưu đãi Ví ShopeePay</div>
               </div>
-              <div className="order-pay-content">
-                <h3>đ{formatPrice(total)}</h3>
-                <h3>đ{formatPrice(totalShip)}</h3>
-                <h1>₫{formatPrice(total, 0, totalShip)}</h1>
+              <div>
+                <div className="bank-transfer-category mt-[20px]" style={{ borderTop: '0.0625rem dashed rgba(0, 0, 0, 0.09)' }}>
+                  <div className="bank-transfer-category__body">
+                    <div className="checkout-bank-transfer-item checkout-bank-transfer-item--disabled">
+                      <div
+                        className="stardust-radio"
+                        // tabindex="0"
+                        role="radio"
+                        aria-checked="false"
+                        aria-disabled="false"
+                      >
+                        <div className="stardust-radio-button">
+                          <div className="stardust-radio-button__outer-circle">
+                            <div className="stardust-radio-button__inner-circle"></div>
+                          </div>
+                        </div>
+                        <div className="stardust-radio__content">
+                          <div className="stardust-radio__label">
+                            <div className="checkout-bank-transfer-item__card">
+                              <div className="checkout-bank-transfer-item__icon-container">
+                                <img
+                                  src="https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg//assets/37110bc844b571f80e7dd14beb5415e9.png"
+                                  className="checkout-bank-transfer-item__icon"
+                                  alt=""
+                                />
+                              </div>
+                              <div className="checkout-bank-transfer-item__main">
+                                <div className="checkout-bank-transfer-item__title">Ví ShopeePay Số dư</div>
+                                <div className="checkout-bank-transfer-item__subtitle">₫0</div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="bank-transfer-category">
+                  <div className="bank-transfer-category__body">
+                    <div className="checkout-bank-transfer-item">
+                      <div
+                        className="stardust-radio stardust-radio--checked"
+                        // tabIndex="0"
+                        role="radio"
+                        aria-checked="true"
+                      >
+                        <div className="stardust-radio-button stardust-radio-button--checked">
+                          <div className="stardust-radio-button__outer-circle">
+                            <div className="stardust-radio-button__inner-circle"></div>
+                          </div>
+                        </div>
+                        <div className="stardust-radio__content">
+                          <div className="stardust-radio__label">
+                            <div className="checkout-bank-transfer-item__card">
+                              <div className="checkout-bank-transfer-item__icon-container">
+                                <img
+                                  src="https://static.v2.airpay.vn/admin/channelIcon/images_v101/c134/icon_c13403_t1610003677268.png"
+                                  className="checkout-bank-transfer-item__icon"
+                                  alt=""
+                                />
+                              </div>
+                              <div className="checkout-bank-transfer-item__main">
+                                <div className="checkout-bank-transfer-item__title">VietinBank</div>
+                                <div className="checkout-bank-transfer-item__subtitle checkout-bank-account-item__number">*7553</div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
-            <div className="order-pay-footer">
-              <div className="order-pay-footer-des">
-                Nhấn "Đặt hàng" đồng nghĩa với việc bạn đồng ý tuân theo
-                <NavLink to="https://shopee.vn/legaldoc/policies">Điều khoản Shopee</NavLink>
+          )}
+          <div className="order-pay">
+            <div>
+              <div className="order-pay-inner">
+                <div></div>
+                <div className="order-pay-content">
+                  <h3>Tổng tiền hàng</h3>
+                  <h3>Phí vận chuyển</h3>
+                  <h3>Tổng thanh toán:</h3>
+                </div>
+                <div className="order-pay-content">
+                  <h3>đ{formatPrice(total)}</h3>
+                  <h3>đ{formatPrice(totalShip)}</h3>
+                  <h1>₫{formatPrice(total, 0, totalShip)}</h1>
+                </div>
               </div>
-              <button onClick={handelSubmit}>Đặt hàng</button>
+              <div className="order-pay-footer">
+                <div className="order-pay-footer-des">
+                  Nhấn "Đặt hàng" đồng nghĩa với việc bạn đồng ý tuân theo
+                  <NavLink to="https://shopee.vn/legaldoc/policies">Điều khoản Shopee</NavLink>
+                </div>
+                <button onClick={handelSubmit}>Đặt hàng</button>
+              </div>
             </div>
           </div>
         </div>

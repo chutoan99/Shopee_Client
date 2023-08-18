@@ -31,7 +31,7 @@ function Categories() {
           {data?.response?.rows?.length === 0 ? (
             <SearchEmpty />
           ) : (
-            <div className="row sm-gutter py-[30px]">
+            <div className="row sm-gutter pt-[30px]">
               <div className="col l-2 col-sm-3 c-3 Hide-on-mobile">
                 <SearchFilter />
               </div>
