@@ -3,6 +3,7 @@ import config from '../../configs/configAxios';
 
 export const ApiRegister = async (payload: any) => {
   try {
+    console.log(import.meta.env.VITE_REACT_APP_API_HOST, 'VITE_REACT_APP_API_HOST');
     const response = await config({
       method: 'post',
       url: `/auth/register`,
