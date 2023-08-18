@@ -3,7 +3,7 @@ import { CommentsResponse } from './index.response';
 
 export const CommentApi = createApi({
   reducerPath: 'Comment',
-  baseQuery: fetchBaseQuery({ baseUrl: `${process.env.REACT_APP_API_HOST}/` }),
+  baseQuery: fetchBaseQuery({ baseUrl: `${import.meta.env.VITE_REACT_APP_API_HOST}/` }),
   endpoints: (build) => ({
     getComments: build.query<CommentsResponse, any>({
       query: (params: any) => `comment?shopid=${params.shopid}&itemid=${params.itemid}`,

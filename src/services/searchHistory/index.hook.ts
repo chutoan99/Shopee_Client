@@ -4,7 +4,7 @@ import { CreateSearchHistoryResponse, SearchHistoryResponse } from './index.resp
 export const SearchHistoryApi = createApi({
   reducerPath: 'SearchHistory',
   baseQuery: fetchBaseQuery({
-    baseUrl: `${process.env.REACT_APP_API_HOST}/`,
+    baseUrl: `${import.meta.env.VITE_REACT_APP_API_HOST}/`,
     prepareHeaders: (headers) => {
       headers.set('Content-Type', 'application/json');
       headers.set('Authorization', `Bearer ${localStorage.getItem('token-shopee')}`);

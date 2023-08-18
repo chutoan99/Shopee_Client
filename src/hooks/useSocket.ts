@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState } from 'react';
 import socketIOClient from 'socket.io-client';
 
 const useSocketIo = () => {
-  const host = process.env.REACT_APP_API_HOST_CHAT as string;
+  const host = import.meta.env.VITE_REACT_APP_API_HOST_CHAT as string;
   const socketio = useMemo(() => socketIOClient(host), [host]);
   const [listMess, setListMess] = useState<any[]>([]);
   const [isLoadingRoom, setIsLoadingRoom] = useState(false);

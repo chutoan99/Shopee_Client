@@ -3,7 +3,7 @@ import { CategoryTreeResponse, CategoryTreeResponseParent } from './index.respon
 
 export const CategoryTreeApi = createApi({
   reducerPath: 'CategoryTree',
-  baseQuery: fetchBaseQuery({ baseUrl: `${process.env.REACT_APP_API_HOST}/` }),
+  baseQuery: fetchBaseQuery({ baseUrl: `${import.meta.env.VITE_REACT_APP_API_HOST}/` }),
   endpoints: (build) => ({
     getCategoryTree: build.query<CategoryTreeResponse, void>({
       query: () => 'categoryTree/1',

@@ -3,7 +3,7 @@ import { ShopMallResponse } from './index.response';
 
 export const ShopMallApi = createApi({
   reducerPath: 'ShopMall',
-  baseQuery: fetchBaseQuery({ baseUrl: `${process.env.REACT_APP_API_HOST}/` }),
+  baseQuery: fetchBaseQuery({ baseUrl: `${import.meta.env.VITE_REACT_APP_API_HOST}/` }),
   endpoints: (build) => ({
     getShopMall: build.query<ShopMallResponse, void>({
       query: () => 'shopMall',

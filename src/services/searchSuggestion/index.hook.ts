@@ -3,7 +3,7 @@ import { SearchSuggestionResponse } from './index.response';
 
 export const SearchSuggestionApi = createApi({
   reducerPath: 'SearchSuggestion',
-  baseQuery: fetchBaseQuery({ baseUrl: `${process.env.REACT_APP_API_HOST}/` }),
+  baseQuery: fetchBaseQuery({ baseUrl: `${import.meta.env.VITE_REACT_APP_API_HOST}/` }),
   endpoints: (build) => ({
     getSearchSuggestion: build.query<SearchSuggestionResponse, void>({
       query: () => 'searchSuggestion',

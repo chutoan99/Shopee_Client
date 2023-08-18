@@ -3,7 +3,7 @@ import { PostSimpleResponse } from './index.response';
 
 export const ProductApi = createApi({
   reducerPath: 'Products',
-  baseQuery: fetchBaseQuery({ baseUrl: `${process.env.REACT_APP_API_HOST}/` }),
+  baseQuery: fetchBaseQuery({ baseUrl: `${import.meta.env.VITE_REACT_APP_API_HOST}/` }),
   endpoints: (build) => ({
     getProducts: build.query<PostSimpleResponse, { limit: number; page: number }>({
       query: ({ limit, page }) => `post?limit=${limit}&page=${page}`,

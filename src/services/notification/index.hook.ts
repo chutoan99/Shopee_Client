@@ -3,7 +3,7 @@ import { NotificationResponse } from './index.response';
 
 export const NotificationApi = createApi({
   reducerPath: 'Notification',
-  baseQuery: fetchBaseQuery({ baseUrl: `${process.env.REACT_APP_API_HOST}/` }),
+  baseQuery: fetchBaseQuery({ baseUrl: `${import.meta.env.VITE_REACT_APP_API_HOST}/` }),
   endpoints: (build) => ({
     getNotification: build.query<NotificationResponse, void>({
       query: () => 'notification',

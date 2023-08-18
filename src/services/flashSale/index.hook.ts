@@ -3,7 +3,7 @@ import { FlashSaleResponse } from './index.response';
 
 export const FlashSaleApi = createApi({
   reducerPath: 'FlashSale',
-  baseQuery: fetchBaseQuery({ baseUrl: `${process.env.REACT_APP_API_HOST}/` }),
+  baseQuery: fetchBaseQuery({ baseUrl: `${import.meta.env.VITE_REACT_APP_API_HOST}/` }),
   endpoints: (build) => ({
     getFlashSale: build.query<FlashSaleResponse, void>({
       query: () => 'flashSale',

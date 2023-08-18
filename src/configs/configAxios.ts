@@ -2,7 +2,7 @@ import axios from 'axios';
 import toast from 'react-hot-toast';
 
 const instance = axios.create({
-  baseURL: process.env.REACT_APP_API_HOST,
+  baseURL: import.meta.env.VITE_REACT_APP_API_HOST,
 });
 
 instance.interceptors.response.use(

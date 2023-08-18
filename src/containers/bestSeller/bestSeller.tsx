@@ -1,9 +1,9 @@
 //? LIBRARY
 import ICON from '../../../public/assets/icons';
-import Slider from 'react-slick';
 import './style/index.css';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import Slider from 'react-slick';
 import { NavLink } from 'react-router-dom';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 //? APP

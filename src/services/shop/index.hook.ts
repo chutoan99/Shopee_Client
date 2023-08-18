@@ -6,7 +6,7 @@ import { ItemsShopResponse, ShopIdResponse } from './index.response';
 
 export const ShopApi = createApi({
   reducerPath: 'Shop',
-  baseQuery: fetchBaseQuery({ baseUrl: `${process.env.REACT_APP_API_HOST}/` }),
+  baseQuery: fetchBaseQuery({ baseUrl: `${import.meta.env.VITE_REACT_APP_API_HOST}/` }),
   endpoints: (build) => ({
     getShopId: build.query<ShopIdResponse, any>({
       query: (params: any) => `/shop/${params.shopid}`,

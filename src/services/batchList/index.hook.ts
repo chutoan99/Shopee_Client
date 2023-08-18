@@ -3,7 +3,7 @@ import { BatchListResponse } from './index.response';
 
 export const BatchListApi = createApi({
   reducerPath: 'BatchList',
-  baseQuery: fetchBaseQuery({ baseUrl: `${process.env.REACT_APP_API_HOST}/` }),
+  baseQuery: fetchBaseQuery({ baseUrl: `${import.meta.env.VITE_REACT_APP_API_HOST}/` }),
   endpoints: (build) => ({
     getBatchList: build.query<BatchListResponse, void>({
       query: () => 'batchList',
