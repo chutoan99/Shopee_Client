@@ -40,7 +40,6 @@ export const CartApi = createApi({
 
     deleteCart: build.mutation<DeleteCartResponse, any>({
       query: (cartid: string) => {
-        console.log(cartid, 'cartid');
         return {
           url: `cart/${cartid}`,
           method: 'DELETE',

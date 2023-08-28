@@ -3,8 +3,6 @@ import './styles/shopping.css';
 import './styles/item_cart.css';
 import './styles/cart.css';
 import IMG from '../../../public/assets/imgs';
-import ICON from '../../../public/assets/icons';
-import SVG from '../../../public/assets/svgs';
 import { useState, memo, useEffect } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 //? APPS

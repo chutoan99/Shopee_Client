@@ -134,7 +134,7 @@ function Chat() {
                         )}
                         {!isLoadingRoom && (
                           <div className="flex flex-col h-full">
-                            {listMess && listMess?.length > 0 ? (
+                            {listMess && `listMess`?.length > 0 ? (
                               <div className="grid grid-cols-12 gap-y-2">
                                 {listMess?.map((item: any) => (
                                   <div key={item?.id}>

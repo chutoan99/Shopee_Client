@@ -22,10 +22,3 @@
   padding-right: 5px;
   width: 83.3333333%;
 }
-.slick-prev,
-.slick-next {
-  z-index: 1;
-}
-.app {
-  overflow: hidden;
-}

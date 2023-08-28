@@ -1,10 +1,11 @@
 import toast from 'react-hot-toast';
-import config from '../../configs/configAxios';
 import FormData from 'form-data';
+import instance from '../../configs/configAxios';
+
 export const GetCurrentUser = async () => {
   try {
     const token = localStorage.getItem('token-shopee');
-    const response = await config({
+    const response = await instance({
       method: 'get',
       url: 'user/current',
       headers: {
@@ -24,7 +25,6 @@ export const UpdateUser = async (payload: any) => {
   try {
     const token = localStorage.getItem('token-shopee');
     let data = new FormData();
-    console.log(payload, 'payload');
     data.append('sex', +payload.sex);
     data.append('email', payload.email);
     data.append('name', payload.name);
@@ -32,11 +32,10 @@ export const UpdateUser = async (payload: any) => {
     data.append('birthday', payload.birthday);
     data.append('phone', +payload.phone);
     data.append('avatar', payload.avatar);
-    const response = await config({
+    const response = await instance({
       method: 'put',
       url: 'user',
       headers: {
-        'Content-Type': 'application/json',
         Authorization: `Bearer ${token}`,
       },
       data: data,

@@ -1,3 +1,22 @@
+.star-checked {
+  color: #ffe400;
+  font-weight: 900;
+}
+
+.star-uncheck {
+  color: #ffe400;
+  font-weight: unset;
+}
+.App {
+  margin-top: 120px;
+}
+.slick-prev,
+.slick-next {
+  z-index: 1;
+}
+.app {
+  overflow: hidden;
+}
 .grid__full--width {
   width: 100%;
 }
@@ -21,13 +40,4 @@
   padding-left: 5px;
   padding-right: 5px;
   width: 83.3333333%;
-}
-.slick-prev {
-  z-index: 1;
-}
-.slick-next {
-  z-index: 1;
-}
-.app {
-  overflow: hidden;
 }

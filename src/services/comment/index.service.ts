@@ -1,9 +1,11 @@
-import { toast } from 'react-hot-toast';
-import config from '../../configs/configAxios';
+import toast from 'react-hot-toast';
+import FormData from 'form-data';
+import instance from '../../configs/configAxios';
 
 export const CreateComment = async (payload: any) => {
   try {
     const token = localStorage.getItem('token-shopee');
+    console.log(payload, 'payload');
     let data = new FormData();
     data.append('orderid', payload?.orderid);
     data.append('itemid', payload?.itemid);
@@ -15,8 +17,7 @@ export const CreateComment = async (payload: any) => {
     }
     data.append('model_name', payload?.model_name);
     data.append('options', payload?.options);
-    console.log(data, 'data');
-    const response = await config({
+    const response = await instance({
       method: 'post',
       url: 'comment',
       headers: {

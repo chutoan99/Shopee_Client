@@ -1,9 +1,10 @@
 import ReactDOM from 'react-dom';
-import './index.css';
-import './style/MAIN.css';
+import './style/main.css';
 import './style/index.css';
 import './style/animation.css';
-import './style/responsive.css';
+import './style/grid.css';
+import './style/config.css';
+
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import App from './routes/Routes';

@@ -6,5 +6,3 @@ export default defineConfig({
     "process.env": {},
   },
 });
-// http://localhost:3000/
-// truongvanchutoan1999@gmail.com

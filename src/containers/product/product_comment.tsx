@@ -21,7 +21,6 @@ function ProductComment() {
     setNumber(number + 1);
   };
   useEffect(() => {
-    console.log(dataComments, 'dataComments');
     dataComments?.response && setData(dataComments?.response || []);
   }, [dataComments]);
 

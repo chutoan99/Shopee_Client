@@ -21,6 +21,7 @@ import { ShopApi } from '../services/shop/index.hook';
 import { OrderApi } from '../services/order/index.hook';
 import { CommentApi } from '../services/comment/index.hook';
 import { RoomApi } from '../services/room/index.hook';
+import { UserApi } from '../services/user/index.hook';
 const RootReducer = {
   others: otherReducer,
   cart: cartReducer,
@@ -43,6 +44,7 @@ const RootReducer = {
   [OrderApi.reducerPath]: OrderApi.reducer,
   [CommentApi.reducerPath]: CommentApi.reducer,
   [RoomApi.reducerPath]: RoomApi.reducer,
+  [UserApi.reducerPath]: UserApi.reducer,
 };
 export const store = configureStore({
   reducer: RootReducer,
@@ -63,7 +65,8 @@ export const store = configureStore({
       ShopApi.middleware,
       OrderApi.middleware,
       CommentApi.middleware,
-      RoomApi.middleware
+      RoomApi.middleware,
+      UserApi.middleware
     ),
 });
 
