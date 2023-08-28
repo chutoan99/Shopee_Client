@@ -1,8 +1,6 @@
 //? LIBRARY
 
 import Slider from 'react-slick';
-
-import ICON from '../../../public/assets/icons';
 import { NavLink } from 'react-router-dom';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 //? APPS
@@ -20,30 +18,32 @@ function ShopMall({ data, loading, settings, settings2 }: ShopMallModel) {
   return (
     <div className="col l-12 mo-12 c-12">
       {!loading && (
-        <div className="category-main">
+        <div className="pt-[20px]">
           <div className="bg-white">
-            <div className="px-[20px] flex justify-between pb-[10px] pt-[20px]" style={{ borderBottom: '1px solid rgba(0,0,0,.05)' }}>
-              <div className="homepage-mall-section">SHOPEE MALL</div>
-              <div className="_5Ru4Na">
-                <div className="LetK2C">
+            <div className="px-[20px] flex justify-between pb-[10px] pt-[20px] border-b-[rgba(0,0,0,0.05)] border-b border-solid">
+              <div className="block no-underline text-[#d0011b] uppercase font-medium text-[1.0625rem] leading-[1.0625rem] self-center">
+                SHOPEE MALL
+              </div>
+              <div className="flex-1 font-normal capitalize flex ml-[15px] pl-[15px] border-l-[#d8d8d8] border-l border-solid">
+                <div className="flex items-center text-[#333] whitespace-nowrap h-5 mr-[15px]">
                   <img
-                    className="a8XyX2"
+                    className="h-[1.0625rem] w-[1.0625rem] block align-middle max-w-full mr-1.5 border-none"
                     src="https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg/homepage/6c502a2641457578b0d5f5153b53dd5d.png"
                     alt=" "
                   />
                   7 ngày miễn phí trả hàng
                 </div>
-                <div className="LetK2C">
+                <div className="flex items-center text-[#333] whitespace-nowrap h-5 mr-[15px]">
                   <img
-                    className="a8XyX2"
+                    className="h-[1.0625rem] w-[1.0625rem] block align-middle max-w-full mr-1.5 border-none"
                     src="https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg/homepage/511aca04cc3ba9234ab0e4fcf20768a2.png"
                     alt=" "
                   />
                   Hàng chính hãng 100%
                 </div>
-                <div className="LetK2C">
+                <div className="flex items-center text-[#333] whitespace-nowrap h-5 mr-[15px]">
                   <img
-                    className="a8XyX2"
+                    className="h-[1.0625rem] w-[1.0625rem] block align-middle max-w-full mr-1.5 border-none"
                     src="https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg/homepage/16ead7e0a68c3cff9f32910e4be08122.png"
                     alt=" "
                   />
@@ -51,11 +51,11 @@ function ShopMall({ data, loading, settings, settings2 }: ShopMallModel) {
                 </div>
               </div>
               <NavLink to="/mall" className="w-[115px] capitalize text-[#ee4d2d]">
-                Xem tất cả&nbsp;{ICON.ANGEL_RIGHT}
+                Xem tất cả&nbsp;<i className="fa-solid fa-angle-right"></i>
               </NavLink>
             </div>
-            <div className="Home-product flex ">
-              <div className="l-4 mo-8 c-8">
+            <div className="mb-[10px] flex">
+              <div className="l-4 mo-8 c-8" id="shopmall">
                 <Slider {...settings}>
                   {shopMallData?.map((listItem: any, index: number) => {
                     return <img src={listItem?.src} alt="Slider" className="w-full h-full" />;
@@ -70,11 +70,26 @@ function ShopMall({ data, loading, settings, settings2 }: ShopMallModel) {
                         {ele?.map((item: shopMallInterFace, index: number) => (
                           <div className="w-full px-[10px]" key={index}>
                             <div className="relative" style={{ boxShadow: 'unset' }}>
-                              <LazyLoadImage effect="blur" src={item.image} alt="itemProduct" className="Home-product-item_img" />
+                              <LazyLoadImage
+                                effect="blur"
+                                src={item.image}
+                                alt="itemProduct"
+                                className="w-full cursor-pointer bg-[top_center] bg-contain bg-no-repeat rounded-br-[2px] rounded-bl-[2px]"
+                              />
                             </div>
-                            <div className="uVbGLf od+H03 li78LN"></div>
+                            <div className="absolute z-[1] w-8 h-10 bg-[2rem_2.5rem] bg-no-repeat left-0 top-0"></div>
                             <div>
-                              <div className="ofs-carousel__item__text">{item.promo_text}</div>
+                              <div
+                                className=" w-[172px] h-[27px] leading-[27px] text-center text-lg text-ellipsis overflow-hidden text-[#d0011b] left-3.5 bottom-[18px]"
+                                style={{
+                                  display: '-webkit-box',
+                                  WebkitBoxOrient: 'vertical',
+                                  WebkitLineClamp: 1,
+                                  wordWrap: 'break-word',
+                                }}
+                              >
+                                {item.promo_text}
+                              </div>
                             </div>
                           </div>
                         ))}

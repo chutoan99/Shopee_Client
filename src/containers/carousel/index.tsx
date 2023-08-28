@@ -1,7 +1,5 @@
 //? LIBRARY
-import './carousel_pc.css';
 import Slider from 'react-slick';
-
 import { memo } from 'react';
 import { Banner } from '../../types/banner';
 //? APP
@@ -17,7 +15,7 @@ function Carousel({ data, settings, loading }: CarouselModel) {
     <>
       {!loading && (
         <>
-          <div className="col l-8 mo-8 c-8  pt-[150px]">
+          <div className="col l-8 mo-8 c-8" id="carousel">
             <Slider {...settings}>
               {data?.map((listItem: Banner, index: number) => {
                 return (
@@ -28,7 +26,7 @@ function Carousel({ data, settings, loading }: CarouselModel) {
               })}
             </Slider>
           </div>
-          <div className="col l-4 m-0-4 c-4  pt-[150px]">
+          <div className="col l-4 m-0-4 c-4">
             <div>
               {data?.map((item: Banner, index: number) => {
                 return (

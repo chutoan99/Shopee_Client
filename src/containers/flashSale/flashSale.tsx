@@ -1,5 +1,4 @@
 //? LIBRARY
-import ICON from '../../../public/assets/icons';
 import IMG from '../../../public/assets/imgs';
 import Slider from 'react-slick';
 import { NavLink } from 'react-router-dom';
@@ -15,7 +14,7 @@ interface FlashSaleModel {
 function FlashSale({ data, settings, loading }: FlashSaleModel) {
   return (
     <div className="col l-12 mo-12 c-12">
-      <div className="category-main">
+      <div className="pt-[20px]">
         <div className="bg-white">
           <div className="px-[20px] flex justify-between pb-[10px] pt-[20px]">
             <div className="w-full h-full">
@@ -24,38 +23,46 @@ function FlashSale({ data, settings, loading }: FlashSaleModel) {
               </div>
             </div>
             <NavLink to="/flash_sale" className="w-[115px] capitalize text-[#ee4d2d]">
-              Xem tất cả&nbsp;{ICON.ANGEL_RIGHT}
+              Xem tất cả&nbsp;<i className="fa-solid fa-angle-right"></i>
             </NavLink>
           </div>
           {!loading && (
-            <div className="row gap-[10px]">
+            <div className="row gap-[10px]" id="flashSale">
               <Slider {...settings}>
                 {data?.map((item: FlashSaleType, index: number) => (
-                  <NavLink to="/flash_sale" className="" style={{ boxShadow: 'unset' }} key={index}>
-                    <LazyLoadImage effect="blur" src={item.image} alt="itemProduct" className="Home-product-item_img" />
-                    <div className="ML8D8p">
-                      <div className="yCebL1 QpXvtd WNgAbL">
-                        <div className="LYc+Cb QpXvtd WNgAbL">
-                          <div className="S82jCy jNH2Rc BnrHAR">
-                            <div className="hSM8kk">
-                              <span className="_3DNk+W jNH2Rc BnrHAR">₫</span>
+                  <NavLink to="/flash_sale" className="shadow-[unset]" key={index}>
+                    <LazyLoadImage
+                      effect="blur"
+                      src={item.image}
+                      alt="itemProduct"
+                      className="w-full cursor-pointer bg-[top_center] bg-contain bg-no-repeat rounded-br-[2px] rounded-bl-[2px]"
+                    />
+                    <div>
+                      <div className="flex flex-col items-stretch h-[inherit] px-0 py-[0.9375rem]">
+                        <div className="flex flex-col items-center mb-[0.3125rem]">
+                          <div className="text-lg font-medium h-[1.6875rem] text-[#ee4d2d] flex justify-center items-center w-full">
+                            <div className="flex items-baseline overflow-hidden text-ellipsis">
+                              <span className="text-lg font-medium mr-0.5">₫</span>
                               {item.price}
                             </div>
                           </div>
                         </div>
-                        <div className="Nq-pih QpXvtd" style={{ padding: '10px 10px 10px 6px' }}>
-                          <div className="rZzxlM" style={{ height: '16px' }}>
-                            <div className="eNmE7o RJ6Vpu">ĐANG BÁN CHẠY</div>
+                        <div className=" px-2.5 py-0 pl-[6px] pr-2.5 pt-[10px] pb-2.5">
+                          <div className="relative w-full h-[16px]">
                             <div
-                              className="bg-[#ef3313] z-9  w-[7%] h-[16px] absolute"
+                              className="flex items-center justify-center absolute h-[inherit] w-[inherit] text-white text-[0.625rem] font-bold uppercase z-[3] left-0 top-0"
+                              style={{
+                                textShadow: '0 0 8px rgb(0 0 0 / 12%)',
+                              }}
+                            >
+                              ĐANG BÁN CHẠY
+                            </div>
+                            <div
+                              className="bg-[#ef3313] z-9 w-[7%] h-[16px] absolute"
                               style={{ borderRadius: '8px 0px 0px 8px', color: 'red', zIndex: 9 }}
                             ></div>
-                            <div className="SqDxib" style={{ borderRadius: '8px' }}></div>
+                            <div className=" absolute h-[inherit] left-0 top-0 rounded-[8px] w-[inherit] z-[1] bg-[#ffbda6]"></div>
                           </div>
-                        </div>
-                        <div className="Home-product-item_sale-off">
-                          <span className="Home-product-item_sale-off-percent">{item.discount}</span>
-                          <br></br>s<span className="Home-product-item_sale-off-label">Giảm</span>
                         </div>
                       </div>
                     </div>

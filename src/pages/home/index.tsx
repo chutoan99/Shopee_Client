@@ -101,7 +101,7 @@ function Home() {
   return (
     <>
       <Popup />
-      <div className="bg-[#f5f5f5] overflow-hidden">
+      <div className="bg-[#f5f5f5] overflow-hidden mt-[120px] pt-[30px]">
         <div className="grid wide">
           <div className="row sm-gutter">
             <Carousel data={dataBanner?.response || []} loading={isLoadingBanner} settings={settingsBanner} />
@@ -129,7 +129,7 @@ function Home() {
               <ProductList items={dataProduct?.response?.rows || []} col={'col l-2 mo-4 c-6'} loading={isLoadingDataProduct} />
               <div className="w-full text-center my-[1.25rem]">
                 <NavLink
-                  className="btn btn-light btn--m btn--inline btn-light--link _23OYGN hover:bg-[rgba(0,0,0,.02)] leading-[34px]"
+                  className="btn btn-light btn--m btn--inline btn-light--link hover:bg-[rgba(0,0,0,.01)] leading-[34px]"
                   style={{ minWidth: '396px', boxShadow: '0 1px 1px 0 rgb(0 0 0 / 9%)' }}
                   to="/daily_discover"
                 >

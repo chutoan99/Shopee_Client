@@ -580,17 +580,18 @@ sup {
   text-align: center;
 }
 .cXODCZ {
-  overflow: hidden;
   display: -webkit-box;
-  text-overflow: ellipsis;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
+  word-break: break-word;
+
+  text-overflow: ellipsis;
+  overflow: hidden;
   margin-top: 1.25rem;
   color: #555;
   font-size: 1.125rem;
   text-align: left;
   text-transform: capitalize;
-  word-break: break-word;
 }
 .od\+H03 {
   position: absolute;
