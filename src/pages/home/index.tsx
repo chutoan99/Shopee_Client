@@ -125,8 +125,8 @@ function Home() {
 
             <div className="col l-12 mo-12 c-12">
               <HomeFilter filterDay={filterDay} filterMonth={filterMonth} onBack={handleBack} onNext={handleNext} />
-              <SkeletonProduct isLoading={isLoadingDataProduct} />
-              <ProductList items={dataProduct?.response?.rows || []} col={'col l-2 mo-4 c-6'} loading={isLoadingDataProduct} />
+              <SkeletonProduct isLoading={!isLoadingDataProduct} />
+              <ProductList items={dataProduct?.response?.rows || []} col={'col l-2 mo-4 c-6'} loading={!isLoadingDataProduct} />
               <div className="w-full text-center my-[1.25rem]">
                 <NavLink
                   className="btn btn-light btn--m btn--inline btn-light--link hover:bg-[rgba(0,0,0,.01)] leading-[34px]"

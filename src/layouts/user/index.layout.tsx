@@ -1,6 +1,5 @@
 //? LIBRARY
 import './style/date.css';
-import ICON from '../../assets/icons';
 import { Toaster } from 'react-hot-toast';
 import { NavLink } from 'react-router-dom';
 //? APPS
@@ -20,59 +19,57 @@ export default function UserLayout({ children }: any) {
         <div className="grid wide">
           <div className="row pt-[150px] pb-[30px] ">
             <div className="col-lg-2">
-              <div className="kul4+s">
-                <div className="AmWkJQ">
-                  <NavLink className="_1O4r+C" to="/user/profile">
-                    <div className="shopee-avatar">
-                      <div className="shopee-avatar__placeholder">
-                        <svg enableBackground="new 0 0 15 15" viewBox="0 0 15 15" x={0} y={0} className="shopee-svg-icon icon-headshot">
-                          <g>
-                            <circle cx="7.5" cy="4.5" fill="none" r="3.8" strokeMiterlimit={10} />
-                            <path d="m1.5 14.2c0-3.3 2.7-6 6-6s6 2.7 6 6" fill="none" strokeLinecap="round" strokeMiterlimit={10} />
-                          </g>
-                        </svg>
-                      </div>
-                      <img src={dataUser.avatar} alt="userImg" className="shopee-avatar__img" />
+              <div>
+                <div className=" max-w-sm mx-auto flex items-center space-x-4">
+                  <div className="shrink-0">
+                    <img className="h-12 w-12 rounded-full" src={dataUser.avatar} alt="userImg" />
+                  </div>
+                  <div>
+                    <div className="overflow-hidden text-ellipsis whitespace-nowrap min-h-[1rem] font-semibold text-[#333] mb-[5px]">
+                      {dataUser.name}
                     </div>
-                  </NavLink>
-                  <div className="miwGmI">
-                    <div className="mC1Llc">{dataUser.name}</div>
-                    <div>
-                      <div className="_78QHr1">
-                        <svg width={12} height={12} viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg" style={{ marginRight: 4 }}>
-                          <path
-                            d="M8.54 0L6.987 1.56l3.46 3.48L12 3.48M0 8.52l.073 3.428L3.46 12l6.21-6.18-3.46-3.48"
-                            fill="#9B9B9B"
-                            fillRule="evenodd"
-                          />
-                        </svg>
-                        Sửa hồ sơ
-                      </div>
+                    <div className="text-[#888] capitalize no-underline flex">
+                      <svg width={12} height={12} viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg" style={{ marginRight: 4 }}>
+                        <path
+                          d="M8.54 0L6.987 1.56l3.46 3.48L12 3.48M0 8.52l.073 3.428L3.46 12l6.21-6.18-3.46-3.48"
+                          fill="#9B9B9B"
+                          fillRule="evenodd"
+                        />
+                      </svg>
+                      Sửa hồ sơ
                     </div>
                   </div>
                 </div>
               </div>
               <div className="flex gap-[15px]  flex-col mt-[30px]">
-                <NavLink to="/user/profile" className="stardust-dropdown">
-                  <div className="stardust-dropdown__item-header">
+                <NavLink to="/user/profile" className="relative">
+                  <div className="text-right">
                     <div className="flex gap-[10px]">
-                      <div className="bfikuD">
-                        <img src="https://down-vn.img.susercontent.com/file/ba61750a46794d8847c3f463c5e71cc4" alt="profile" />
+                      <div className="flex items-center justify-center w-5 h-5 leading-5 text-center text-white shrink-0 mr-2.5 rounded-[50%]">
+                        <img
+                          className="w-full h-full"
+                          src="https://down-vn.img.susercontent.com/file/ba61750a46794d8847c3f463c5e71cc4"
+                          alt="profile"
+                        />
                       </div>
-                      <div className="DlL0zX">
-                        <span className="adF7Xs">Tài khoản của tôi</span>
+                      <div className="leading-4">
+                        <span>Tài khoản của tôi</span>
                       </div>
                     </div>
                   </div>
                 </NavLink>
-                <NavLink to="/user/purchase" className="stardust-dropdown stardust-dropdown--open">
-                  <div className="stardust-dropdown__item-header">
-                    <div className="+1U02e wkLUkx flex  gap-[10px]">
-                      <div className="bfikuD">
-                        <img src="https://down-vn.img.susercontent.com/file/f0049e9df4e536bc3e7f140d071e9078" alt="purchase" />
+                <NavLink to="/user/purchase" className="relative">
+                  <div className="text-right">
+                    <div className=" flex gap-[10px]">
+                      <div className="flex items-center justify-center w-5 h-5 leading-5 text-center text-white shrink-0 mr-2.5 rounded-[50%]">
+                        <img
+                          className="w-full h-full"
+                          src="https://down-vn.img.susercontent.com/file/f0049e9df4e536bc3e7f140d071e9078"
+                          alt="purchase"
+                        />
                       </div>
-                      <div className="DlL0zX">
-                        <span className="adF7Xs">Đơn Mua</span>
+                      <div className="leading-4">
+                        <span>Đơn Mua</span>
                       </div>
                     </div>
                   </div>
@@ -80,31 +77,36 @@ export default function UserLayout({ children }: any) {
                     <div className="Yu7gVR" />
                   </div>
                 </NavLink>
-                <NavLink to="/user/notification" className="stardust-dropdown">
-                  <div className="stardust-dropdown__item-header">
-                    <div className="+1U02e flex gap-[10px]">
-                      <div className="bfikuD">
-                        <img src="https://down-vn.img.susercontent.com/file/e10a43b53ec8605f4829da5618e0717c" alt="notification" />
+                <NavLink to="/user/notification" className="relative">
+                  <div className="text-right">
+                    <div className=" flex gap-[10px]">
+                      <div className="flex items-center justify-center w-5 h-5 leading-5 text-center text-white shrink-0 mr-2.5 rounded-[50%]">
+                        <img
+                          className="w-full h-full"
+                          src="https://down-vn.img.susercontent.com/file/e10a43b53ec8605f4829da5618e0717c"
+                          alt="notification"
+                        />
                       </div>
-                      <div className="DlL0zX">
-                        <span className="adF7Xs">Thông báo</span>
+                      <div className="leading-4">
+                        <span>Thông báo</span>
                       </div>
                     </div>
                   </div>
                 </NavLink>
-                <NavLink to="/user/voucher" className="stardust-dropdown">
-                  <div className="stardust-dropdown__item-header">
-                    <div className="+1U02e flex gap-[10px]">
-                      <div className="bfikuD">
-                        <img src="https://down-vn.img.susercontent.com/file/84feaa363ce325071c0a66d3c9a88748" alt="voucher" />
+                <NavLink to="/user/voucher" className="relative">
+                  <div className="text-right">
+                    <div className=" flex gap-[10px]">
+                      <div className="flex items-center justify-center w-5 h-5 leading-5 text-center text-white shrink-0 mr-2.5 rounded-[50%]">
+                        <img
+                          className="w-full h-full"
+                          src="https://down-vn.img.susercontent.com/file/84feaa363ce325071c0a66d3c9a88748"
+                          alt="voucher"
+                        />
                       </div>
-                      <div className="DlL0zX">
-                        <span className="adF7Xs">Kho Voucher</span>
+                      <div className="leading-4">
+                        <span>Kho Voucher</span>
                       </div>
                     </div>
-                  </div>
-                  <div className="stardust-dropdown__item-body">
-                    <div className="Yu7gVR" />
                   </div>
                 </NavLink>
               </div>

@@ -4,7 +4,7 @@ import IMG from '../../../public/assets/imgs';
 function SearchEmpty() {
   return (
     <div>
-      <div className=" flex justify-center items-center">
+      <div className="flex justify-center items-center">
         <img src={IMG.SEARCH_IMG} alt="Search" className="w-[20%]" />
       </div>
       <h2 className="flex justify-center text-[1.125rem]" style={{ color: 'rgba(0, 0, 0, 0.87)' }}>

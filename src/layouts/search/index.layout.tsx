@@ -7,7 +7,7 @@ export default function SearchLayout({ children }: any) {
   return (
     <>
       <Header />
-      <div className="App">
+      <div className="mt-[120px]">
         <div className="bg-[#f5f5f5] overflow-hidden py-[24px]">
           <div className="grid wide">{children}</div>
         </div>

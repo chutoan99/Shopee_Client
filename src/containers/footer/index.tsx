@@ -1,5 +1,4 @@
 //? LIBRARY
-import './style/footer.css';
 import IMG from '../../../public/assets/imgs';
 import ICON from '../../../public/assets/icons';
 
@@ -11,35 +10,50 @@ import { data_footer, data_footer1, data_footer2, data_footer3 } from '../../uti
 function Footer() {
   const [show, setShow] = useState(false);
   return (
-    <footer className="footer">
-      <div className="grid wide footer__content">
+    <footer className="pt-4 border-t-4 border-t-[#ee4d2d] border-solid">
+      <div className="grid wide ">
         <div className="grid wide">
-          <div className="row boder-b pb-[50px]">
+          <div className="row border-b-[#ccc] border-b border-solid pb-[50px]">
             <div className="l-12 mo-12 mo-12 c-12">
               {data_footer?.map((item, index: number) => (
                 <div key={index}>
-                  <h2 className="Footer_content-heading">{item?.heading}</h2>
-                  <p className="Footer_des">{item?.des}</p>
+                  <h2 className="text-sm text-[#333] font-semibold mt-2.5">{item?.heading}</h2>
+                  <p className=" no-underline text-xs text-neutral-500 flex text-justify items-center leading-5 mt-2.5 px-0 py-0.5">
+                    {item?.des}
+                  </p>
                 </div>
               ))}
               {show ? (
                 <>
-                  <h2 className="Footer_content-heading">{data_footer3?.heading1}</h2>
-                  <p className="Footer_des">{data_footer3?.des}</p>
+                  <h2 className="text-sm text-[#333] font-semibold mt-2.5">{data_footer3?.heading1}</h2>
+                  <p className=" no-underline text-xs text-neutral-500 flex text-justify items-center leading-5 mt-2.5 px-0 py-0.5">
+                    {data_footer3?.des}
+                  </p>
                   {data_footer3?.list?.map((item, index) => (
-                    <li className="Footer_des-list" key={index}>
+                    <li className="text-xs text-neutral-500 flex text-justify items-center mt-[5px] pl-2.5 px-0 py-0.5" key={index}>
                       {item}
                     </li>
                   ))}
-                  <p className="Footer_des">{data_footer3?.des2}</p>
-                  <h2 className="Footer_content-heading">{data_footer3?.heading2}</h2>
-                  <p className="Footer_des">{data_footer3?.des3}</p>
-                  <h2 className="Footer_content-heading">{data_footer3?.heading3}</h2>
-                  <p className="Footer_des">{data_footer3?.des4}</p>
-                  <p className="Footer_des">{data_footer3?.des5}</p>
+                  <p className=" no-underline text-xs text-neutral-500 flex text-justify items-center leading-5 mt-2.5 px-0 py-0.5">
+                    {data_footer3?.des2}
+                  </p>
+                  <h2 className="text-sm text-[#333] font-semibold mt-2.5">{data_footer3?.heading2}</h2>
+                  <p className=" no-underline text-xs text-neutral-500 flex text-justify items-center leading-5 mt-2.5 px-0 py-0.5">
+                    {data_footer3?.des3}
+                  </p>
+                  <h2 className="text-sm text-[#333] font-semibold mt-2.5">{data_footer3?.heading3}</h2>
+                  <p className=" no-underline text-xs text-neutral-500 flex text-justify items-center leading-5 mt-2.5 px-0 py-0.5">
+                    {data_footer3?.des4}
+                  </p>
+                  <p className=" no-underline text-xs text-neutral-500 flex text-justify items-center leading-5 mt-2.5 px-0 py-0.5;">
+                    {data_footer3?.des5}
+                  </p>
                 </>
               ) : (
-                <h2 className="Footer_content-heading click" onClick={() => setShow(true)}>
+                <h2
+                  className="text-sm  font-semibold mt-2.5 text-[#ee4d2d] cursor-pointer flex gap-[5px] items-center"
+                  onClick={() => setShow(true)}
+                >
                   Xem Thêm{ICON.ANGEL_RIGHT}
                 </h2>
               )}
@@ -48,11 +62,11 @@ function Footer() {
         </div>
         <div className="row pt-[50px]">
           <div className="col l-2-4 mo-3 c-6">
-            <h3 className="Footer_heading">CHĂM SÓC KHÁCH HÀNG</h3>
-            <ul className="Footer_list">
+            <h3 className="text-sm text-[#333] mb-[5px]">CHĂM SÓC KHÁCH HÀNG</h3>
+            <ul className="pl-0" style={{ listStyle: 'none' }}>
               {data_footer2?.map((item, index) => (
-                <li className="Footer_list-item" key={index}>
-                  <NavLink to={item?.link} className="Footer_item-link">
+                <li key={index}>
+                  <NavLink to={item?.link} className="text-left no-underline text-xs text-neutral-500 flex items-center px-0 py-0.5">
                     {item?.value}
                   </NavLink>
                 </li>
@@ -60,80 +74,86 @@ function Footer() {
             </ul>
           </div>
           <div className="col l-2-4 mo-3 c-6">
-            <h3 className="Footer_heading">VỀ SHOPEE</h3>
-            <ul className="Footer_list">
+            <h3 className="text-sm text-[#333] mb-[5px]">VỀ SHOPEE</h3>
+            <ul className="pl-0" style={{ listStyle: 'none' }}>
               {data_footer1?.map((item, index) => (
-                <li className="Footer_list-item" key={index}>
-                  <NavLink to={item?.link} className="Footer_item-link">
+                <li key={index}>
+                  <NavLink to={item?.link} className="text-left no-underline text-xs text-neutral-500 flex items-center px-0 py-0.5">
                     {item?.value}
                   </NavLink>
                 </li>
               ))}
             </ul>
           </div>
-          <div className="col l-2-4 mo-3 c-6 pay-and-ship">
+          <div className="col l-2-4 mo-3 c-6 ">
             <div>
-              <h3 className="Footer_heading">THANH TOÁN</h3>
-              <div className="footer-sale-ship">
-                <img src={IMG.PAY1} className="footer-item-sale-ship" alt="pay" />
-                <img src={IMG.PAY2} className="footer-item-sale-ship" alt="pay" />
-                <img src={IMG.PAY3} className="footer-item-sale-ship" alt="pay" />
-                <img src={IMG.PAY4} className="footer-item-sale-ship" alt="pay" />
-                <img src={IMG.PAY5} className="footer-item-sale-ship" alt="pay" />
+              <h3 className="text-sm text-[#333] mb-[5px]">THANH TOÁN</h3>
+              <div className="flex flex-wrap w-[190px]">
+                <img src={IMG.PAY1} className="w-[55px] h-[29px] m-1" alt="pay" />
+                <img src={IMG.PAY2} className="w-[55px] h-[29px] m-1" alt="pay" />
+                <img src={IMG.PAY3} className="w-[55px] h-[29px] m-1" alt="pay" />
+                <img src={IMG.PAY4} className="w-[55px] h-[29px] m-1" alt="pay" />
+                <img src={IMG.PAY5} className="w-[55px] h-[29px] m-1" alt="pay" />
               </div>
             </div>
             <div>
-              <h3 className="Footer_heading py-[15px]">ĐƠN VỊ VẬN CHUYỂN</h3>
-              <div className="footer-sale-ship">
-                <img src={IMG.SHIP1} className="footer-item-sale-ship" alt="ship" />
-                <img src={IMG.SHIP2} className="footer-item-sale-ship" alt="ship" />
-                <img src={IMG.SHIP3} className="footer-item-sale-ship" alt="ship" />
-                <img src={IMG.SHIP4} className="footer-item-sale-ship" alt="ship" />
-                <img src={IMG.SHIP5} className="footer-item-sale-ship" alt="ship" />
-                <img src={IMG.SHIP6} className="footer-item-sale-ship" alt="ship" />
-                <img src={IMG.SHIP7} className="footer-item-sale-ship" alt="ship" />
-                <img src={IMG.SHIP8} className="footer-item-sale-ship" alt="ship" />
-                <img src={IMG.SHIP9} className="footer-item-sale-ship" alt="ship" />
+              <h3 className="text-sm text-[#333] mb-[5px] py-[15px]">ĐƠN VỊ VẬN CHUYỂN</h3>
+              <div className="flex flex-wrap w-[190px]">
+                <img src={IMG.SHIP1} className="w-[55px] h-[29px] m-1" alt="ship" />
+                <img src={IMG.SHIP2} className="w-[55px] h-[29px] m-1" alt="ship" />
+                <img src={IMG.SHIP3} className="w-[55px] h-[29px] m-1" alt="ship" />
+                <img src={IMG.SHIP4} className="w-[55px] h-[29px] m-1" alt="ship" />
+                <img src={IMG.SHIP5} className="w-[55px] h-[29px] m-1" alt="ship" />
+                <img src={IMG.SHIP6} className="w-[55px] h-[29px] m-1" alt="ship" />
+                <img src={IMG.SHIP7} className="w-[55px] h-[29px] m-1" alt="ship" />
+                <img src={IMG.SHIP8} className="w-[55px] h-[29px] m-1" alt="ship" />
+                <img src={IMG.SHIP9} className="w-[55px] h-[29px] m-1" alt="ship" />
               </div>
             </div>
           </div>
           <div className="col l-2-4 mo-3 c-6">
-            <h3 className="Footer_heading">THEO DÕI CHÚNG TÔI TRÊN</h3>
-            <ul className="Footer_list">
-              <li className="Footer_list-item">
-                <NavLink to="https://www.facebook.com/ShopeeVN" className="Footer_item-link">
-                  <span className="Footer_item-link-icon">{ICON.FACE}</span>
+            <h3 className="text-sm text-[#333] mb-[5px]">THEO DÕI CHÚNG TÔI TRÊN</h3>
+            <ul className="pl-0" style={{ listStyle: 'none' }}>
+              <li>
+                <NavLink to="https://www.facebook.com/ShopeeVN" className=" no-underline text-xs text-neutral-500 flex items-center px-0 ">
+                  <span className="text-base ml-0 mr-2  mb-0">{ICON.FACE}</span>
                   Facebook
                 </NavLink>
               </li>
-              <li className="Footer_list-item">
-                <NavLink to="https://www.instagram.com/Shopee_VN/" className="Footer_item-link">
-                  <span className="Footer_item-link-icon">{ICON.INSTAGRAM}</span>
+              <li>
+                <NavLink
+                  to="https://www.instagram.com/Shopee_VN/"
+                  className=" no-underline text-xs text-neutral-500 flex items-center px-0"
+                >
+                  <span className="text-base ml-0 mr-2 mb-0">{ICON.INSTAGRAM}</span>
                   Instagram
                 </NavLink>
               </li>
-              <li className="Footer_list-item">
-                <NavLink to="https://www.linkedin.com/company/shopee" className="Footer_item-link">
-                  <span className="Footer_item-link-icon">{ICON.LINKEDIN}</span>
+              <li>
+                <NavLink
+                  to="https://www.linkedin.com/company/shopee"
+                  className=" no-underline text-xs text-neutral-500 flex items-center px-0"
+                >
+                  <span className="text-base ml-0 mr-2 mb-0">{ICON.LINKEDIN}</span>
                   Linkedin
                 </NavLink>
               </li>
             </ul>
           </div>
           <div className="col l-2-4 mo-3 c-6">
-            <h3 className="Footer_heading">TẢI ỨNG DỤNG SHOPEE NGAY THÔI</h3>
-            <div className="footer-download">
-              <NavLink to="# " className="footer-download-link">
-                <img src={IMG.QRCODE} className="footer-download-qr" alt="" />
+            <h3 className="text-sm text-[#333] mb-[5px]">TẢI ỨNG DỤNG SHOPEE NGAY THÔI</h3>
+            <div className="flex">
+              <NavLink to="# " className="no-underline text-transparent bg-[initial]">
+                <img src={IMG.QRCODE} className=" w-20 h-20 border rounded-[3px] border-solid border-[#ccc]" alt="" />
               </NavLink>
               <div className="flex ml-[16px] flex-col justify-around">
-                <NavLink to="# " className="footer-download-link">
+                <NavLink to="# " className="no-underline text-transparent">
                   <img src={IMG.GOOGLE} className="h-[16px]" alt="" />
                 </NavLink>
-                <NavLink to="# " className="footer-download-link">
+                <NavLink to="# " className="no-underline text-transparent">
                   <img src={IMG.APPSTORE} className="h-[16px]" alt="" />
                 </NavLink>
-                <NavLink to="# " className="footer-download-link">
+                <NavLink to="# " className="no-underline text-transparent">
                   <img src={IMG.GALLERY} className="h-[16px]" alt="" />
                 </NavLink>
               </div>
@@ -141,9 +161,9 @@ function Footer() {
           </div>
         </div>
       </div>
-      <div className="Footer__bottom">
+      <div className="bg-neutral-100 mt-8 px-0 py-2">
         <div className="grid wide">
-          <p className="Footer__text">@2022 - Bản quyền thuộc về công ty CHU TOAN</p>
+          <p className="text-base text-[#939393] text-center">@2022 - Bản quyền thuộc về công ty CHU TOAN</p>
         </div>
       </div>
     </footer>

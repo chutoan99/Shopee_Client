@@ -1,5 +1,4 @@
 //? LIBRARY
-import './style/home_Filter.css';
 import ICON from '../../../public/assets/icons';
 import { NavLink } from 'react-router-dom';
 
@@ -11,39 +10,54 @@ interface HomeFilterModel {
 }
 function HomeFilter({ filterDay, filterMonth, onBack, onNext }: HomeFilterModel) {
   return (
-    <div className="mt-[20px] mb-[10px] flex items-center Hide-on-table Hide-on-mobile gap-[10px]">
-      <div className="flex  items-center gap-[10px]">
+    <div className="mt-[20px] mb-[10px] flex items-center gap-[10px]">
+      <div className="flex items-center gap-[10px]">
         <span className="text-[0.875rem] text-[#555] font-normal mr-[12px]">Sắp xếp theo</span>
-        <button className="btn btn--prinary min-w-[90px]">Phổ biến</button>
-        <button className="btn bg-white min-w-[90px]">Mới nhất</button>
-        <button className="btn bg-white min-w-[90px]">Bán chạy</button>
+        <button className="h-[34px] min-w-[124px] text-[0.9rem] leading-[1.6rem] no-underline cursor-pointer overflow-hidden text-ellipsis flex-col text-sm box-border shadow-[0_1px_1px_0_rgba(0,0,0,0.09)] flex items-center justify-center capitalize bg-[#ee4d2d] text-white px-3 py-0 rounded-sm border-[none] border-0">
+          Phổ biến
+        </button>
+        <button className="h-[34px] min-w-[124px] text-[0.9rem] leading-[1.6rem] no-underline cursor-pointer overflow-hidden text-ellipsis flex-col text-sm box-border shadow-[0_1px_1px_0_rgba(0,0,0,0.09)] flex items-center justify-center capitalize px-3 py-0 rounded-sm border-[none] border-0 bg-[#fff]">
+          Mới nhất
+        </button>
+        <button className="h-[34px] min-w-[124px] text-[0.9rem] leading-[1.6rem] no-underline cursor-pointer overflow-hidden text-ellipsis flex-col text-sm box-border shadow-[0_1px_1px_0_rgba(0,0,0,0.09)] flex items-center justify-center capitalize px-3 py-0 rounded-sm border-[none] border-0 bg-[#fff]">
+          Bán chạy
+        </button>
       </div>
-      <div className="Select-input">
-        <span className="Select-input-label">Giá</span>
-        <span className="Select-input-icon">{ICON.ANGEL_DOWN}</span>
-        <ul className="Select-input-list">
-          <li className="Select-input-item">
-            <NavLink to="# " className="Select-input-link">
+      <div className="group flex justify-between items-center min-w-[200px] h-[34px] leading-[2.125rem] bg-white relative cursor-pointer z-[1] px-3 py-0">
+        <span className="flex items-center text-sm">Giá</span>
+        <span className="text-sm text-[#838383] relative top-px">
+          <i className="fa-solid fa-angle-down"></i>
+        </span>
+        <ul
+          className="group-hover:block cursor-pointer absolute bg-[color:var(--white-color)] hidden shadow-[0_1px_2px_rgba(0,0,0,0.1)] px-4 py-2 rounded-sm top-[25px] inset-x-0"
+          style={{ listStyle: 'none' }}
+        >
+          <li>
+            <NavLink to="# " className="flex justify-start no-underline text-sm text-[#333] px-0 py-2">
               Giá thấp đến cao
             </NavLink>
           </li>
-          <li className="Select-input-item">
-            <NavLink to="# " className="Select-input-link">
+          <li>
+            <NavLink to="# " className="flex justify-start no-underline text-sm text-[#333] px-0 py-2">
               Giá cao đến thấp
             </NavLink>
           </li>
         </ul>
       </div>
-      <div className="Home-filter__page">
-        <span className="Home-filter__page-num">
-          <span className="Home-filter__page-num-current">Ngày {filterDay}</span> / Tháng {filterMonth}
+      <div className="flex items-center ml-auto">
+        <span className="text-sm text-[#333] mr-[22px]">
+          <span className="text-[#ee4d2d] text-[0.938rem]">Ngày {filterDay}</span> / Tháng {filterMonth}
         </span>
       </div>
-      <div className="Home-filter-page-control">
-        <span onClick={onBack} className="Home-filter__page-icon Home-filter__page-btn Home-filter__page-disabled">
+
+      <div className="overflow-hidden flex w-[72px] h-9 rounded-sm">
+        <span
+          onClick={onBack}
+          className="bg-[#f9f9f9] text-sm text-[#555] flex-1 flex w-9 h-9 no-underline items-center justify-center m-auto border-r-[#eee] border-r border-solid"
+        >
           {ICON.ANGEL_LEFT}
         </span>
-        <span onClick={onNext} className="Home-filter__page-icon Home-filter__page-btn">
+        <span onClick={onNext} className="text-sm text-[#555] flex-1 flex w-9 h-9 bg-white no-underline items-center justify-center m-auto">
           {ICON.ANGEL_RIGHT}
         </span>
       </div>

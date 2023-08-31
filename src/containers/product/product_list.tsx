@@ -79,10 +79,13 @@ function ProductList({ items, col, loading }: HomeProducts) {
                   <span>Yêu thích</span>
                 </div>
               )}
-              <div className="Home-product-item_sale-off">
-                <span className="Home-product-item_sale-off-percent">{item.discount}</span>
-                <br></br>s<span className="Home-product-item_sale-off-label">Giảm</span>
-              </div>
+              {item.discount && (
+                <div className="Home-product-item_sale-off">
+                  <span className="Home-product-item_sale-off-percent">{item.discount}</span>
+                  <br></br>s<span className="Home-product-item_sale-off-label">Giảm</span>
+                </div>
+              )}
+
               <div className="home-product-item-footer">Tìm sản phẩm tương tự</div>
             </div>
           </div>
