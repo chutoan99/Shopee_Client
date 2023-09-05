@@ -6,7 +6,7 @@ import { useGetBatchListQuery } from '../../services/batchList/index.hook';
 function Discount() {
   const { data, isLoading } = useGetBatchListQuery();
   return (
-    <div className="col l-12 mo-12 c-12 Hide-on-mobile">
+    <div className="col l-12 mo-12 c-12">
       {!isLoading && (
         <div className="bg-white px-[0.625rem] py-[1.25rem] min-h-[100px] h-[130px]">
           <div className="flex justify-around gap-[10px]">

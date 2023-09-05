@@ -82,7 +82,7 @@ function DetailProduct() {
         <Loading2 />
       ) : (
         <>
-          <div className=" Hide-on-mobile mt-[120px]"></div>
+          <div className="mt-[120px]"></div>
           <div className="bg-[#f5f5f5] overflow-hidden App__Container_padding-Button py-[20px]">
             <ProductBreadcrumb data={data?.response} />
             <div className="grid wide">
@@ -92,7 +92,7 @@ function DetailProduct() {
                     <img className="product_cart-img-re" src={data?.response?.image} alt="" onClick={() => setShowImg(true)} />
                     <img className={animationAddCart} src={data?.response?.image} alt="animationAddCart" onClick={() => setShowImg(true)} />
                   </div>
-                  <div className="container-fluid Hide-on-mobile">
+                  <div className="container-fluid">
                     <div className="row sm-gutter">
                       <div className="col s-12 c-12  l-12 disp">
                         {data?.response?.images.map((image: string, index: number) => {
@@ -237,7 +237,7 @@ function DetailProduct() {
               </div>
             </div>
             {showImg && (
-              <div className="image Hide-on-mobile">
+              <div className="image">
                 <div className="image-overPlay">
                   <div className="image-slice">
                     <div>

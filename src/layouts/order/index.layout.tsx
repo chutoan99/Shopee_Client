@@ -1,5 +1,4 @@
 //? LIBRARY
-import './styles/index.css';
 import { Toaster } from 'react-hot-toast';
 //? APPS
 import { Footer, HeaderNavbar } from '../../containers';

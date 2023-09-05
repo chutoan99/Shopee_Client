@@ -74,7 +74,7 @@ function HeaderWithSearch() {
                     )}
                   </div>
                 </div>
-                <div className="Header__search-select Hide-on-mobile">
+                <div className="Header__search-select">
                   <span className="Header__search-select-label">Trong shop</span>
                   <span className="Header__search-select-icon">{ICON.ANGEL_DOWN}</span>
                   <ul className="Header__search-option">

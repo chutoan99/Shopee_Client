@@ -1,8 +1,7 @@
 //? LIBRARY
 import { toast } from 'react-hot-toast';
 import { Order } from '../../types/order';
-import { Link, NavLink } from 'react-router-dom';
-import './styles/index.css';
+import { NavLink } from 'react-router-dom';
 import { memo, useState } from 'react';
 import { Rating } from 'react-rainbow-components';
 import { CreateComment } from '../../services/comment/index.service';
@@ -90,18 +89,18 @@ function ModelRatting({ isShow, onCloseModel, data }: RatingModel) {
       {isShow && (
         <div id="modal">
           <div>
-            <div className="shopee-popup shopee-modal__transition-enter-done">
-              <div className="shopee-popup__overlay" onClick={onCloseModel} />
-              <div className="shopee-popup__container">
+            <div className="fixed z-[600] inset-0">
+              <div className="w-full h-full bg-[rgba(0,0,0,0.4)]" onClick={onCloseModel} />
+              <div className="absolute -translate-x-2/4 -translate-y-2/4 overflow-visible max-h-full max-w-full left-2/4 top-2/4">
                 <div style={{ display: 'contents' }}>
                   <div>
                     <div className="max-h-[calc(100vh_-_120px)] w-[45.625rem] shadow-[0_1px_1px_0_rgba(0,0,0,0.05)] max-w-full box-border flex flex-col overflow-hidden pt-[30px] pb-0 px-[30px]  bg-[#fff]">
                       <div className="h-[unset] flex items-center mb-[1.875rem]">
                         <div className="font-normal text-xl text-[#222] capitalize flex items-center">Đánh giá sản phẩm</div>
                       </div>
-                      <div className="shopee-popup-form__main">
-                        <div className="shopee-popup-form__main-container">
-                          <div className="rating-modal-handler__container rating-modal-handler__container--last">
+                      <div className="flex-1 overflow-y-auto mr-[-50px] ml-[-50px] relative pb-[100px] px-[50px]">
+                        <div>
+                          <div>
                             {data?.posts?.map((post: any, index: number) => (
                               <NavLink to="#" key={post?.itemid} className="mb-[10px]">
                                 <div>
@@ -148,8 +147,8 @@ function ModelRatting({ isShow, onCloseModel, data }: RatingModel) {
                               </NavLink>
                             ))}
                             <div style={{ margin: '20px 0px' }}>
-                              <div className="dmvG7c">
-                                <div className="jcQ0KT">
+                              <div className="flex items-center">
+                                <div className="min-w-[180px]">
                                   <span>Chất lượng sản phẩm</span>
                                 </div>
                                 <div className="rainbow-m-around_big">
@@ -165,29 +164,45 @@ function ModelRatting({ isShow, onCloseModel, data }: RatingModel) {
                                     }
                                   />
                                 </div>
-                                <span className="_6m3yfK" style={{ color: 'rgb(237, 165, 0)' }}>
+                                <span className="min-w-[100px] ml-2.5" style={{ color: 'rgb(237, 165, 0)' }}>
                                   {['Tệ', 'Không hài lòng', 'Bình thường', 'Hài lòng', 'Tuyệt vời'][payLoad?.rating_star - 1]}
                                 </span>
                               </div>
                             </div>
-                            <div className="jz-Ezz">
-                              <div className="X3Qjvs">
-                                <div className="UzvaFO">
-                                  <div className="ej4ckG" style={{ fontWeight: 'normal' }}>
+                            <div className="relative bg-neutral-100 pt-5 pb-[0.9375rem] px-[1.5625rem]">
+                              <div className="relative bg-white box-border shadow-[inset_0_-0.5px_0_rgba(0,0,0,0.09)] border mt-0 mb-3 mx-0 p-3 rounded-sm border-solid border-[rgba(0,0,0,0.26)]">
+                                <div className="relative mt-0 mb-3 mx-0 p-0">
+                                  <div
+                                    className="bg-white leading-5 text-base relative text-[rgba(0,0,0,0.87)] mb-1 left-0 top-0"
+                                    style={{ fontWeight: 'normal' }}
+                                  >
                                     Chất lượng sản phẩm:
                                   </div>
-                                  <textarea className="_2LhMgE" rows={1} placeholder="để lại đánh giá." defaultValue={''} />
+                                  <textarea
+                                    className="overflow-hidden resize-none leading-5 text-base w-full h-5 text-[rgba(0,0,0,0.87)] m-0 p-0 border-0 focus:border-0 focus:outline-0"
+                                    rows={1}
+                                    placeholder="để lại đánh giá."
+                                    defaultValue={''}
+                                  />
                                 </div>
-                                <div className="UzvaFO">
-                                  <div className="ej4ckG" style={{ fontWeight: 'normal' }}>
+                                <div className="relative mt-0 mb-3 mx-0 p-0">
+                                  <div
+                                    className="bg-white leading-5 text-base relative text-[rgba(0,0,0,0.87)] mb-1 left-0 top-0"
+                                    style={{ fontWeight: 'normal' }}
+                                  >
                                     Đúng với mô tả:
                                   </div>
-                                  <textarea className="_2LhMgE" rows={1} placeholder="" defaultValue={''} />
+                                  <textarea
+                                    className="overflow-hidden resize-none leading-5 text-base w-full h-5 text-[rgba(0,0,0,0.87)] m-0 p-0 border-0 focus:border-0 focus:outline-0"
+                                    rows={1}
+                                    placeholder=""
+                                    defaultValue={''}
+                                  />
                                 </div>
-                                <div className="CLFTQP" />
+                                <div className="h-px w-full bg-[rgba(0,0,0,0.09)] mt-0 mb-3 mx-0 p-0" />
                                 <div style={{ position: 'relative' }}>
                                   <textarea
-                                    className="_2LhMgE"
+                                    className="overflow-hidden resize-none leading-5 text-base w-full h-5 text-[rgba(0,0,0,0.87)]  p-0 border-0 focus:border-0 focus:outline-0"
                                     rows={3}
                                     placeholder="Hãy chia sẻ những điều bạn thích về sản phẩm này với những người mua khác nhé."
                                     style={{
@@ -207,8 +222,8 @@ function ModelRatting({ isShow, onCloseModel, data }: RatingModel) {
                                 </div>
                               </div>
                               {imageUrls.length === 0 && (
-                                <div className="_46Yt1i">
-                                  <label className="Vad+7d">
+                                <div className="flex justify-start items-center">
+                                  <label className="border box-border h-[30px] items-center flex text-[#ee4d2d]  cursor-pointer mr-2 px-3 py-0 border-solid !border-[#ee4d2d] bg-[#fef6f5]">
                                     <svg width={20} height={18} viewBox="0 0 20 18" fill="none">
                                       <path
                                         fillRule="evenodd"
@@ -217,8 +232,8 @@ function ModelRatting({ isShow, onCloseModel, data }: RatingModel) {
                                         fill="#EE4D2D"
                                       />
                                     </svg>
-                                    <span className="C7VJzu">Thêm Hình ảnh</span>
-                                    <input className="JiUFY3" type="file" accept="image/*" multiple onChange={onFileChange} />
+                                    <span className="text-sm leading-[14px] font-normal ml-1.5">Thêm Hình ảnh</span>
+                                    <input className="hidden" type="file" accept="image/*" multiple onChange={onFileChange} />
                                   </label>
                                 </div>
                               )}
@@ -287,18 +302,6 @@ function ModelRatting({ isShow, onCloseModel, data }: RatingModel) {
                                 )}
                               </div>
                             </div>
-                            <div className="rating-modal-handler__rating-anonymous-wrapper">
-                              <label className="stardust-checkbox stardust-checkbox--checked">
-                                <input className="stardust-checkbox__input" type="checkbox" />
-                                <div className="stardust-checkbox__box" />
-                              </label>
-                              <div style={{ marginLeft: 4 }}>
-                                <div className="rating-modal-handler__rating-anonymous-hint">Hiển thị tên đăng nhập trên đánh giá này</div>
-                                <div className="rating-modal-handler__rating-anonymous-username">
-                                  Tên tài khoản sẽ được hiển thị như chutoan2306
-                                </div>
-                              </div>
-                            </div>
                           </div>
                         </div>
                       </div>
@@ -309,12 +312,12 @@ function ModelRatting({ isShow, onCloseModel, data }: RatingModel) {
                         }}
                       >
                         <div className="flex justify-end  gap-[10px]">
-                          <NavLink
-                            to="/"
+                          <button
                             className="overflow-hidden text-ellipsis flex-col text-sm box-border shadow-[0_1px_1px_0_rgba(0,0,0,0.09)] border flex items-center justify-center capitalize h-[34px] min-w-[124px] text-[0.9rem] leading-[1.6rem] no-underline px-3 py-0 rounded-sm border-solid border-[#ccc]"
+                            onClick={onCloseModel}
                           >
                             TRỞ LẠI
-                          </NavLink>
+                          </button>
                           <button
                             className="overflow-hidden text-ellipsis flex-col text-sm box-border text-white  h-[34px] min-w-[105px] text-[0.9rem] leading-[1.6rem] no-underline flex items-center justify-center shadow-[0_1px_1px_rgba(0,0,0,0.09)] px-2.5 py-0 rounded-sm border-0 bg-[#ee4d2d]"
                             onClick={onSubmit}

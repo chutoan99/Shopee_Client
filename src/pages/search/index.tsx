@@ -34,7 +34,7 @@ function Search() {
                 <SearchEmpty />
               ) : (
                 <div className="row sm-gutter py-[30px]">
-                  <div className="col l-2 col-sm-3 c-3 Hide-on-mobile">
+                  <div className="col l-2 col-sm-3 c-3">
                     <SearchFilter />
                   </div>
                   <div className="col l-10">

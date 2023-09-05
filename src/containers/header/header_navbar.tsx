@@ -47,26 +47,29 @@ function HeaderNavbar() {
       dispatch(UserActions.updateUser({ data: null, isLogin: false }));
     }
   };
-
+  let line = `before:content-[""] before:h-[0.9375rem] before:w-0 before:absolute before:top-[calc(50%_-_7px)] before:border-x-[hsla(0,0%,100%,0.22)] before:border-l before:border-solid before:border-r before:-left-1.5`;
   return (
     <>
       {loading && <Loading />}
-      <nav className="Header__navbar Hide-on-mobile">
+      <nav className="Header__navbar">
         <ul className="Heder__navbar--list">
-          <li className="Header__nav--item Header__nav-item--has--QR Header__nav--separater hide-on-table-middle">
-            <span onClick={handleOpenNewTab}>Kênh người bán</span>
-            <div className="Header__qr">
-              <img className="Header__qr--img" src={IMG.QRCODE} alt="qR" />
-              <div className="Heder__qr--app">
-                <NavLink to="https://shopee.vn/web" className="Header__qr-link">
-                  <img className="Header__qr--dowload--img" src={IMG.GOOGLE} alt="Google" />
+          <li className="group relative min-h-[26px] no-underline text-sm text-[#fff] font-light items-center flex cursor-pointer mx-2 my-0">
+            <span className="group-hover:text-[rgba(255,255,255,0.7)]" onClick={handleOpenNewTab}>
+              Kênh người bán
+            </span>
+            <div className="group-hover:block hidden w-[186px] bg-[white] absolute  animate-[fadeIn_ease-in_0.3s] z-[2] shadow-[0_1px_2px_rgb(0,0,0,0.1)] p-2 rounded-sm left-0 top-[120%] before:content-[''] before:absolute before:w-full before:h-5 before:block before:z-[2] before:left-0 before:-top-4">
+              <img className="w-full h-full" src={IMG.QRCODE} alt="qR" />
+              <div className="flex justify-between">
+                <NavLink to="#" className="ml-[15px]">
+                  <img className="h-[15px]" src={IMG.GOOGLE} alt="Google" />
                 </NavLink>
-                <NavLink to="https://shopee.vn/web" className="Header__qr-link">
-                  <img className="Header__qr--dowload--img" src={IMG.APPSTORE} alt="App store" />
+                <NavLink to="#" className="mr-[11px]">
+                  <img className="h-[15px]" src={IMG.APPSTORE} alt="App store" />
                 </NavLink>
               </div>
             </div>
           </li>
+
           <li className=" relative min-h-[26px] no-underline text-sm font-light text-[white] items-center flex mx-2 my-0">
             <span className="cursor-text"> Kết nối</span>
             <NavLink to="https://www.facebook.com/ShopeeVN" className="items-center flex text-[white] no-underline">
@@ -94,6 +97,7 @@ function HeaderNavbar() {
             </NavLink>
             {!isLoadingNotification && <HeaderNotify data={dataNotification?.response || []} />}
           </li>
+
           <li className="Header__nav--item">
             <NavLink to="https://help.shopee.vn/portal" className="Header__nav--item--link">
               <NavLink to="https://help.shopee.vn/portal" className="text-[white] no-underline items-center flex">

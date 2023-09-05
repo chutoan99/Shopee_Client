@@ -1,7 +1,4 @@
 //? LIBRARY
-import './styles/shopping.css';
-import './styles/item_cart.css';
-import './styles/cart.css';
 import IMG from '../../../public/assets/imgs';
 import { useState, memo, useEffect } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
@@ -145,34 +142,40 @@ function CartPage() {
       ) : (
         <>
           {dataCart?.total_cart === 0 ? (
-            <div className="emptyCart-img">
+            <div className="flex justify-center items-center pt-[120px]">
               <img src={IMG.EMPTY_CART} alt="emptyCart" />
             </div>
           ) : (
             <>
-              <div className="bg-[#f5f5f5] overflow-hidden mob:mt-[120px] min-h-[380px] mt-[120px]">
+              <div className="bg-[#f5f5f5] overflow-hidden mt-[120px] min-h-[380px]  mb-[100px]">
                 <div className="grid wide pt-[16px]">
                   <div className="sm-gutter">
-                    <div className="grid backR">
-                      <div className="BjIo5w">
-                        <div className="mcsiKT">
+                    <div className="w-full items-center pt-2.5 pb-[130px] ">
+                      <div className="flex items-center shadow-[0_1px_1px_0_rgba(0,0,0,0.05)] overflow-hidden h-[55px] text-sm text-[#888] mb-3 px-4 py-0 rounded-[3px] bg-[#fff]">
+                        <div className="flex flex-row-reverse min-w-[58px] box-border pl-5 pr-3 py-0">
                           <label className="shopping_cart-checkBox">
                             <input type="checkbox" checked={allChecked} onChange={onAllCheck} />
                             <span className="checkmark"></span>
                           </label>
                         </div>
-                        <div className="yl931K">Sản Phẩm</div>
-                        <div className="pZMZa7">Đơn Giá</div>
-                        <div className="lKFOxX">Số Lượng</div>
-                        <div className="_5f317z">Số Tiền</div>
-                        <div className="+4E7yJ text-center flex-1">Thao Tác</div>
+                        <div className="text-[rgba(0,0,0,0.8)] w-[46.27949%]">Sản Phẩm</div>
+                        <div className="w-[15.88022%] text-center">Đơn Giá</div>
+                        <div className="w-[15.4265%] text-center">Số Lượng</div>
+                        <div className="w-[10.43557%] text-center">Số Tiền</div>
+                        <div className="w-[12.70417%] text-center">Thao Tác</div>
                       </div>
                       {data?.map((item: Cart[], indexItem: any) => (
-                        <section className="_48e0yS" key={indexItem}>
-                          <div className="SFF7z2">
-                            <div className="xP1eaK">
-                              <NavLink className="wJCpl6" to={`/shop/${item[0]?.shopid}`}>
-                                <div className="_0RxYUS">
+                        <section
+                          className="shadow-[0_1px_1px_0_rgba(0,0,0,0.05)] overflow-visible mb-[0.9375rem] rounded-sm bg-[#fff]"
+                          key={indexItem}
+                        >
+                          <div className="flex items-center h-[3.75rem] box-border px-4 py-0 border-b-[rgba(0,0,0,0.09)] border-b border-solid">
+                            <div className="flex items-center flex-1">
+                              <NavLink
+                                className="no-underline text-[rgba(0,0,0,0.87)] font-medium min-w-[50px] flex items-center"
+                                to={`/shop/${item[0]?.shopid}`}
+                              >
+                                <div className="flex items-center">
                                   <svg xmlns="http://www.w3.org/2000/svg" width={62} height={16} fill="none">
                                     <path
                                       fill="#EE4D2D"
@@ -193,24 +196,27 @@ function CartPage() {
                                     </defs>
                                   </svg>
                                 </div>
-                                <span style={{ marginLeft: 10 }}>{item[0]?.overview?.shop_name}</span>
+                                <span className="ml-[10px]">{item[0]?.overview?.shop_name}</span>
                               </NavLink>
-                              <button className="p2B+nr">
-                                <svg viewBox="0 0 16 16" className="shopee-svg-icon bTa6Yo">
+                              <button className="flex ml-[5px] p-0 border-0">
+                                <svg
+                                  viewBox="0 0 16 16"
+                                  className="text-[#ee4d2d] w-[1.375rem] h-4 cursor-pointer select-none inline-block fill-current relative"
+                                >
                                   <g fillRule="evenodd">
                                     <path d="M15 4a1 1 0 01.993.883L16 5v9.932a.5.5 0 01-.82.385l-2.061-1.718-8.199.001a1 1 0 01-.98-.8l-.016-.117-.108-1.284 8.058.001a2 2 0 001.976-1.692l.018-.155L14.293 4H15zm-2.48-4a1 1 0 011 1l-.003.077-.646 8.4a1 1 0 01-.997.923l-8.994-.001-2.06 1.718a.5.5 0 01-.233.108l-.087.007a.5.5 0 01-.492-.41L0 11.732V1a1 1 0 011-1h11.52zM3.646 4.246a.5.5 0 000 .708c.305.304.694.526 1.146.682A4.936 4.936 0 006.4 5.9c.464 0 1.02-.062 1.608-.264.452-.156.841-.378 1.146-.682a.5.5 0 10-.708-.708c-.185.186-.445.335-.764.444a4.004 4.004 0 01-2.564 0c-.319-.11-.579-.258-.764-.444a.5.5 0 00-.708 0z" />
                                   </g>
                                 </svg>
                               </button>
-                              <div className="O-c69N" />
+                              <div className="flex-1" />
                             </div>
                           </div>
                           {item.map((ele: Cart, index: number) => (
                             <>
-                              <section className="Eb+POp" role="list">
-                                <div className="VPZ9zs" role="listitem">
-                                  <div className="zoXdNN">
-                                    <div className="lgcEHJ">
+                              <section className="relative pb-px" role="list">
+                                <div className="no-underline text-[rgba(0,0,0,0.87)] block mt-[15px] pt-0 pb-[15px] px-4" role="listitem">
+                                  <div className="flex items-center">
+                                    <div className="flex flex-row-reverse min-w-[58px] box-border pl-5 pr-3 py-0">
                                       <label className="shopping_cart-checkBox">
                                         <input
                                           type="checkbox"
@@ -220,32 +226,44 @@ function CartPage() {
                                         <span className="checkmark"></span>
                                       </label>
                                     </div>
-                                    <div className="eUrDQm">
-                                      <div className="LAQKxn">
+                                    <div className="w-[29.03811%] box-border relative flex-col flex">
+                                      <div className="flex">
                                         <NavLink to={`/detailProduct/${ele.itemid}/${ele.shopid}`}>
-                                          <img className="WanNdG" src={ele?.overview?.image} alt={ele?.overview?.name} />
+                                          <img className="w-20 h-20 object-cover" src={ele?.overview?.image} alt={ele?.overview?.name} />
                                         </NavLink>
-                                        <div className="TyNN8t">
-                                          <NavLink className="JB57cn" to={`/detailProduct/${ele.itemid}/${ele.shopid}`}>
+                                        <div className="flex flex-1 flex-col text-sm pl-2.5 pr-5 pt-[5px] pb-0">
+                                          <NavLink
+                                            className="no-underline text-[rgba(0,0,0,0.87)] block max-h-8 text-ellipsis break-all leading-4 overflow-hidden mb-[5px]"
+                                            style={{
+                                              display: '-webkit-box',
+                                              WebkitBoxOrient: 'vertical',
+                                              WebkitLineClamp: 2,
+                                            }}
+                                            to={`/detailProduct/${ele.itemid}/${ele.shopid}`}
+                                          >
                                             {ele?.overview?.name}
                                           </NavLink>
                                           <img
-                                            className="eQNnTs"
+                                            className="h-[18px] object-contain object-left max-w-[100%]"
                                             src="https://down-vn.img.susercontent.com/file/vn-50009109-7cf61bd7bea21aa5d2d1717a196f35e0"
                                             alt=""
                                           />
-                                          <div className="QRuJU-">
+                                          <div className="flex text-[#ee4d2d]">
                                             <span />
                                           </div>
                                         </div>
                                       </div>
                                     </div>
 
-                                    <div className="o7pJBk">
+                                    <div className="flex items-center justify-center w-[17.24138%]">
                                       {ele?.option !== '' && (
-                                        <div className="MBOFLv">
+                                        <div
+                                          className="flex items-center justify-between cursor-pointer relative flex-1"
+                                          style={{ background: 'none' }}
+                                        >
                                           <button
-                                            className="S-Rdfh"
+                                            className="flex-1 text-[rgba(0,0,0,0.54)] flex flex-col text-sm mr-2.5 p-0 border-0"
+                                            style={{ background: 'none' }}
                                             onClick={() =>
                                               selectedOption &&
                                               selectedOption.itemIndex === indexItem &&
@@ -254,28 +272,43 @@ function CartPage() {
                                                 : onShowOption(indexItem, index)
                                             }
                                           >
-                                            <div className="rcEQuz">
+                                            <div className="flex items-center capitalize text-left">
                                               Phân loại hàng:
-                                              <div className="_75YZdf" />
+                                              <div
+                                                className="transition-transform duration-[0.1s] ease-[cubic-bezier(0.4,0,0.6,1)] rotate-[0] ml-2.5 mr-0 my-0 p-0 border-t-[5px] border-t-[rgba(0,0,0,0.54)] border-b-0 border-x-4 border-x-transparent border-solid"
+                                                style={{ background: 'none' }}
+                                              />
                                             </div>
-
-                                            <div className="dcPz7Y">{ele?.option}</div>
+                                            <div
+                                              className="text-ellipsis overflow-hidden text-left"
+                                              style={{
+                                                wordBreak: 'break-word',
+                                                display: '-webkit-box',
+                                                WebkitBoxOrient: 'vertical',
+                                                WebkitLineClamp: 2,
+                                              }}
+                                            >
+                                              {ele?.option}
+                                            </div>
                                           </button>
                                           {selectedOption &&
                                             selectedOption.itemIndex === indexItem &&
                                             selectedOption.variationIndex === index && (
-                                              <div className="k6euw5 shopee-modal__transition-enter-done" role="dialog">
-                                                <div className="shopee-arrow-box__container">
-                                                  <div className="shopee-arrow-box__arrow shopee-arrow-box__arrow--center">
-                                                    <div className="shopee-arrow-box__arrow-outer">
-                                                      <div className="shopee-arrow-box__arrow-inner" />
+                                              <div className="absolute right-[-1.25rem] z-[100] top-[65%]" role="dialog">
+                                                <div>
+                                                  <div className="flex h-2.5 justify-center">
+                                                    <div className="relative w-0 h-0 border-b-[10px] border-b-[rgba(0,0,0,0.09)] border-x-[10px] border-x-transparent border-solid -bottom-px">
+                                                      <div className="absolute w-0 h-0 border-b-8 border-b-white border-x-8 border-x-transparent border-solid -left-2 -bottom-2.5" />
                                                     </div>
                                                   </div>
-                                                  <div className="shopee-arrow-box__content">
-                                                    <div className="CGxlYZ">
-                                                      <div className="_5Nnpso">
-                                                        <div className="o0HTfE" role="radiogroup" aria-labelledby="variation_label-Size">
-                                                          <label className="_08kYJL" id="variation_label-Size">
+                                                  <div className="overflow-hidden whitespace-pre-wrap shadow-[0_5px_10px_0_rgba(0,0,0,0.09)] rounded-sm border-[rgba(0,0,0,0.09)] bg-[#fff]">
+                                                    <div className="flex flex-col w-[19.6875rem] max-h-[28.125rem] overflow-y-auto px-[25px] py-[27px] bg-[#fff]">
+                                                      <div className="flex flex-wrap">
+                                                        <div className="mb-[15px]" role="radiogroup" aria-labelledby="variation_label-Size">
+                                                          <label
+                                                            className="inline-block capitalize text-[rgba(0,0,0,0.54)] text-base mb-2.5"
+                                                            id="variation_label-Size"
+                                                          >
                                                             {ele.cart_tier_variations.name}:
                                                           </label>
                                                           <div>
@@ -283,22 +316,26 @@ function CartPage() {
                                                               (option: any, index_variations: number) => (
                                                                 <button
                                                                   key={index_variations}
-                                                                  className={`product-variation ${
+                                                                  style={{
+                                                                    outline: 0,
+                                                                    wordBreak: 'break-word',
+                                                                  }}
+                                                                  className={`overflow-visible bg-[#fff] cursor-pointer min-w-[5rem] min-h-[2.125rem] box-border text-[rgba(0,0,0,0.8)] text-left border relative inline-flex items-center justify-center ml-0 mr-2 mt-0 mb-2 px-3 py-1 rounded-sm border-solid border-[rgba(0,0,0,0.09)] ${
                                                                     option === agrsUpdate?.payload?.option
-                                                                      ? 'product-variation--selected'
+                                                                      ? '!text-[#ee4d2d] !border-[#ee4d2d]'
                                                                       : ''
                                                                   }`}
                                                                   onClick={() => onChangeOption(ele, option)}
                                                                 >
                                                                   {option}
                                                                   {option === agrsUpdate?.payload?.option && (
-                                                                    <div className="product-variation__tick">
+                                                                    <div className="w-[0.9375rem] h-[0.9375rem] absolute overflow-hidden right-0 bottom-0 before:content-[''] before:absolute before:right-[-0.9375rem] before:border-b-[#ee4d2d] before:border-[0.9375rem] before:border-solid before:border-transparent before:bottom-0">
                                                                       <svg
                                                                         enableBackground="new 0 0 12 12"
                                                                         viewBox="0 0 12 12"
                                                                         x={0}
                                                                         y={0}
-                                                                        className="shopee-svg-icon icon-tick-bold"
+                                                                        className="absolute text-white text-[8px] inline-block w-[1em] h-[1em] fill-current right-0 bottom-0"
                                                                       >
                                                                         <g>
                                                                           <path d="m5.2 10.9c-.2 0-.5-.1-.7-.2l-4.2-3.7c-.4-.4-.5-1-.1-1.4s1-.5 1.4-.1l3.4 3 5.1-7c .3-.4 1-.5 1.4-.2s.5 1 .2 1.4l-5.7 7.9c-.2.2-.4.4-.7.4 0-.1 0-.1-.1-.1z" />
@@ -311,11 +348,13 @@ function CartPage() {
                                                             )}
                                                           </div>
                                                         </div>
-                                                        <div className="u2ASRs">
-                                                          <button className="cancel-btn">Trở Lại</button>
+                                                        <div className="flex gap-[10px] items-center justify-end">
+                                                          <button className="overflow-hidden text-ellipsis flex-col text-sm box-border shadow-[0_1px_1px_0_rgba(0,0,0,0.09)] border flex items-center justify-center capitalize min-h-[40px]  h-[25px] min-w-[120px] text-[0.9rem] leading-[1.6rem] no-underline px-3 py-0 rounded-sm border-solid border-[#ccc]">
+                                                            TRỞ LẠI
+                                                          </button>
                                                           <button
-                                                            className="shopee-button-solid shopee-button-solid--primary"
                                                             onClick={onSubmitChangeOption}
+                                                            className="min-h-[40px]  h-[25px] min-w-[120px] overflow-hidden text-ellipsis border capitalize  font-normal text-sm  py-2 rounded-sm border-solid border-transparent bg-[#ee4d2d] text-white hover:bg-[#d73211] hover:border-[#ba2b0f]"
                                                           >
                                                             Xác nhận
                                                           </button>
@@ -326,34 +365,58 @@ function CartPage() {
                                                 </div>
                                               </div>
                                             )}
-                                          <div />
                                         </div>
                                       )}
                                     </div>
 
-                                    <div className="G7E4B7">
-                                      <div>
-                                        <span className="M-AAFK vWt6ZL">đ{formatPrice(ele?.overview?.price_before_discount)}</span>
-                                        <span className="M-AAFK">₫{formatPrice(ele?.overview?.price)}</span>
+                                    <div className="flex-col w-[15.88022%] flex items-center justify-center">
+                                      <div className="flex gap-[10px] items-center">
+                                        {ele?.overview?.price_before_discount !== 0 && (
+                                          <span className="text-[rgba(0,0,0,0.54)] line-through">
+                                            đ{formatPrice(ele?.overview?.price_before_discount)}
+                                          </span>
+                                        )}
+
+                                        <span className="text-[rgba(0,0,0,0.87)]">₫{formatPrice(ele?.overview?.price)}</span>
                                       </div>
                                     </div>
-                                    <div className="MRh9G6">
-                                      <div className="_8Xhu5+ shopee-input-quantity">
+                                    <div className="flex items-center justify-center flex-col w-[15.4265%]">
+                                      <div className="flex items-center">
                                         <button
-                                          className="EOdsa-"
+                                          className="text-sm font-light leading-none tracking-[0] flex items-center justify-center transition-[background-color] duration-[0.1s] ease-[cubic-bezier(0.4,0,0.6,1)] border text-[rgba(0,0,0,0.8)] w-8 h-8 rounded-tr-none rounded-br-none rounded-sm border-solid border-[rgba(0,0,0,0.09)]-"
+                                          style={{
+                                            background: 'transparent',
+                                          }}
                                           aria-label="cart_accessibility_quantity_decrease_button"
                                           onClick={() => onReduced(ele)}
                                         >
-                                          <svg enableBackground="new 0 0 10 10" viewBox="0 0 10 10" x={0} y={0} className="shopee-svg-icon">
+                                          <svg
+                                            enableBackground="new 0 0 10 10"
+                                            viewBox="0 0 10 10"
+                                            x={0}
+                                            y={0}
+                                            className="text-[10px] w-2.5 h-2.5 shrink-0 fill-current relative inline-block"
+                                          >
                                             <polygon points="4.5 4.5 3.5 4.5 0 4.5 0 5.5 3.5 5.5 4.5 5.5 10 5.5 10 4.5" />
                                           </svg>
                                         </button>
 
-                                        <button className="EOdsa-" aria-label="cart_accessibility_quantity_increase_button" disabled>
+                                        <button
+                                          className="cursor-pointer text-sm font-light leading-none tracking-[0] flex items-center justify-center transition-[background-color] duration-[0.1s] ease-[cubic-bezier(0.4,0,0.6,1)] border text-[rgba(0,0,0,0.8)] w-8 h-8 text-[#ccc] rounded-sm  border-solid border-[rgba(0,0,0,0.09)]"
+                                          style={{
+                                            background: 'transparent',
+                                          }}
+                                          aria-label="cart_accessibility_quantity_increase_button"
+                                          disabled
+                                        >
                                           {+ele.amount}
                                         </button>
+
                                         <button
-                                          className="EOdsa-"
+                                          className="text-sm font-light leading-none tracking-[0] flex items-center justify-center transition-[background-color] duration-[0.1s] ease-[cubic-bezier(0.4,0,0.6,1)] border text-[rgba(0,0,0,0.8)] w-8 h-8 rounded-tl-none rounded-bl-none rounded-sm border-solid border-[rgba(0,0,0,0.09)]"
+                                          style={{
+                                            background: 'transparent',
+                                          }}
                                           aria-label="cart_accessibility_quantity_increase_button"
                                           onClick={() => onIncrease(ele)}
                                         >
@@ -362,29 +425,27 @@ function CartPage() {
                                             viewBox="0 0 10 10"
                                             x={0}
                                             y={0}
-                                            className="shopee-svg-icon icon-plus-sign"
+                                            className="text-[10px] w-2.5 h-2.5 shrink-0 fill-current relative inline-block"
                                           >
                                             <polygon points="10 4.5 5.5 4.5 5.5 0 4.5 0 4.5 4.5 0 4.5 0 5.5 4.5 5.5 4.5 10 5.5 10 5.5 5.5 10 5.5" />
                                           </svg>
                                         </button>
                                       </div>
                                     </div>
-                                    <div className="ofQLuG">
+                                    <div className="flex items-center justify-center w-[10.43557%] text-[#ee4d2d]">
                                       <span>₫{formatPrice(ele?.overview?.price, ele?.amount)}</span>
                                     </div>
-                                    <div className="mhcjog _0p-F-m">
-                                      <button className="fX1Y2g" onClick={() => onDeleteCart(ele?.cartid)}>
-                                        Xóa
-                                      </button>
-                                      <div className="tkUy0S">
-                                        <button className="shopee-button-no-outline y36pik">
-                                          <span className="i01b-H">Tìm sản phẩm tương tự</span>
+                                    <div className="flex items-center justify-center w-[12.70417%] capitalize flex-col">
+                                      <button onClick={() => onDeleteCart(ele?.cartid)}>Xóa</button>
+                                      <div className="z-[2] max-w-full">
+                                        <button className="text-sm  leading-none tracking-[0] flex items-center justify-center transition-[background-color] duration-[0.1s] ease-[cubic-bezier(0.4,0,0.6,1)] relative overflow-visible text-[rgba(0,0,0,0.8)] bg-[initial] px-[0.4375rem] py-[0.3125rem] border-0 text-[#ee4d2d] font-normal  h-[1.875rem] max-w-full border-solid border-transparent">
+                                          <span className="text-[#ee4d2d] font-normal">Tìm sản phẩm tương tự</span>
                                           <svg
                                             enableBackground="new 0 0 15 15"
                                             viewBox="0 0 15 15"
                                             x={0}
                                             y={0}
-                                            className="shopee-svg-icon XHOHXQ icon-down-arrow-filled"
+                                            className="h-[1em] fill-[#ee4d2d] relative w-2.5 inline-block align-middle ml-1"
                                           >
                                             <path d="m6.5 12.9-6-7.9s-1.4-1.5.5-1.5h13s1.8 0 .6 1.5l-6 7.9c-.1 0-.9 1.3-2.1 0z" />
                                           </svg>
@@ -403,132 +464,103 @@ function CartPage() {
                 </div>
               </div>
 
-              <div className="bg-[#f5f5f5] overflow-hidden fixed z-10 ">
+              <div className="bg-[#f5f5f5] overflow-hidden fixed bottom-0 inset-x-0 z-10 ">
                 <div className="grid wide">
-                  <section className="rnocow uEhFYV">
-                    <h2 className="a11y-hidden">cart_accessibility_footer</h2>
-                    <div className="exGqmz WjgNv5">
-                      <h3 className="a11y-hidden">cart_accessibility_footer_voucher_row</h3>
-                      <svg fill="none" viewBox="0 -2 23 22" className="shopee-svg-icon icon-voucher-line">
-                        <g filter="url(#voucher-filter0_d)">
-                          <mask id="a" fill="#fff">
+                  <section className="grid grid-cols-[1fr_20.3125rem_11.875rem] items-center box-border w-full flex-1 text-base relative mt-3 bg-[#fff] transition-[background] duration-[0.1s] ease-[cubic-bezier(0.4,0,0.6,1)] rounded-none before:content-[''] before:absolute before:top-[-1.25rem] before:h-5 before:w-full before:left-0">
+                    <h2></h2>
+                    <div className="flex !justify-end min-w-[58px] box-border col-start-1 col-end-2 flex-[0_0_auto] pl-5 pr-3 py-3">
+                      <div className="flex items-center gap-[10px]">
+                        <svg
+                          fill="none"
+                          viewBox="0 -2 23 22"
+                          className="text-[#ee4d2d] fill-current w-[1.3125rem] h-5 inline-block relative"
+                        >
+                          <g filter="url(#voucher-filter0_d)">
+                            <mask id="a" fill="#fff">
+                              <path
+                                fillRule="evenodd"
+                                clipRule="evenodd"
+                                d="M1 2h18v2.32a1.5 1.5 0 000 2.75v.65a1.5 1.5 0 000 2.75v.65a1.5 1.5 0 000 2.75V16H1v-2.12a1.5 1.5 0 000-2.75v-.65a1.5 1.5 0 000-2.75v-.65a1.5 1.5 0 000-2.75V2z"
+                              />
+                            </mask>
                             <path
-                              fillRule="evenodd"
-                              clipRule="evenodd"
-                              d="M1 2h18v2.32a1.5 1.5 0 000 2.75v.65a1.5 1.5 0 000 2.75v.65a1.5 1.5 0 000 2.75V16H1v-2.12a1.5 1.5 0 000-2.75v-.65a1.5 1.5 0 000-2.75v-.65a1.5 1.5 0 000-2.75V2z"
+                              d="M19 2h1V1h-1v1zM1 2V1H0v1h1zm18 2.32l.4.92.6-.26v-.66h-1zm0 2.75h1v-.65l-.6-.26-.4.91zm0 .65l.4.92.6-.26v-.66h-1zm0 2.75h1v-.65l-.6-.26-.4.91zm0 .65l.4.92.6-.26v-.66h-1zm0 2.75h1v-.65l-.6-.26-.4.91zM19 16v1h1v-1h-1zM1 16H0v1h1v-1zm0-2.12l-.4-.92-.6.26v.66h1zm0-2.75H0v.65l.6.26.4-.91zm0-.65l-.4-.92-.6.26v.66h1zm0-2.75H0v.65l.6.26.4-.91zm0-.65l-.4-.92-.6.26v.66h1zm0-2.75H0v.65l.6.26.4-.91zM19 1H1v2h18V1zm1 3.32V2h-2v2.32h2zm-.9 1.38c0-.2.12-.38.3-.46l-.8-1.83a2.5 2.5 0 00-1.5 2.29h2zm.3.46a.5.5 0 01-.3-.46h-2c0 1.03.62 1.9 1.5 2.3l.8-1.84zm.6 1.56v-.65h-2v.65h2zm-.9 1.38c0-.2.12-.38.3-.46l-.8-1.83a2.5 2.5 0 00-1.5 2.29h2zm.3.46a.5.5 0 01-.3-.46h-2c0 1.03.62 1.9 1.5 2.3l.8-1.84zm.6 1.56v-.65h-2v.65h2zm-.9 1.38c0-.2.12-.38.3-.46l-.8-1.83a2.5 2.5 0 00-1.5 2.29h2zm.3.46a.5.5 0 01-.3-.46h-2c0 1.03.62 1.9 1.5 2.3l.8-1.84zM20 16v-2.13h-2V16h2zM1 17h18v-2H1v2zm-1-3.12V16h2v-2.12H0zm1.4.91a2.5 2.5 0 001.5-2.29h-2a.5.5 0 01-.3.46l.8 1.83zm1.5-2.29a2.5 2.5 0 00-1.5-2.3l-.8 1.84c.18.08.3.26.3.46h2zM0 10.48v.65h2v-.65H0zM.9 9.1a.5.5 0 01-.3.46l.8 1.83A2.5 2.5 0 002.9 9.1h-2zm-.3-.46c.18.08.3.26.3.46h2a2.5 2.5 0 00-1.5-2.3L.6 8.65zM0 7.08v.65h2v-.65H0zM.9 5.7a.5.5 0 01-.3.46l.8 1.83A2.5 2.5 0 002.9 5.7h-2zm-.3-.46c.18.08.3.26.3.46h2a2.5 2.5 0 00-1.5-2.3L.6 5.25zM0 2v2.33h2V2H0z"
+                              mask="url(#a)"
                             />
-                          </mask>
+                          </g>
                           <path
-                            d="M19 2h1V1h-1v1zM1 2V1H0v1h1zm18 2.32l.4.92.6-.26v-.66h-1zm0 2.75h1v-.65l-.6-.26-.4.91zm0 .65l.4.92.6-.26v-.66h-1zm0 2.75h1v-.65l-.6-.26-.4.91zm0 .65l.4.92.6-.26v-.66h-1zm0 2.75h1v-.65l-.6-.26-.4.91zM19 16v1h1v-1h-1zM1 16H0v1h1v-1zm0-2.12l-.4-.92-.6.26v.66h1zm0-2.75H0v.65l.6.26.4-.91zm0-.65l-.4-.92-.6.26v.66h1zm0-2.75H0v.65l.6.26.4-.91zm0-.65l-.4-.92-.6.26v.66h1zm0-2.75H0v.65l.6.26.4-.91zM19 1H1v2h18V1zm1 3.32V2h-2v2.32h2zm-.9 1.38c0-.2.12-.38.3-.46l-.8-1.83a2.5 2.5 0 00-1.5 2.29h2zm.3.46a.5.5 0 01-.3-.46h-2c0 1.03.62 1.9 1.5 2.3l.8-1.84zm.6 1.56v-.65h-2v.65h2zm-.9 1.38c0-.2.12-.38.3-.46l-.8-1.83a2.5 2.5 0 00-1.5 2.29h2zm.3.46a.5.5 0 01-.3-.46h-2c0 1.03.62 1.9 1.5 2.3l.8-1.84zm.6 1.56v-.65h-2v.65h2zm-.9 1.38c0-.2.12-.38.3-.46l-.8-1.83a2.5 2.5 0 00-1.5 2.29h2zm.3.46a.5.5 0 01-.3-.46h-2c0 1.03.62 1.9 1.5 2.3l.8-1.84zM20 16v-2.13h-2V16h2zM1 17h18v-2H1v2zm-1-3.12V16h2v-2.12H0zm1.4.91a2.5 2.5 0 001.5-2.29h-2a.5.5 0 01-.3.46l.8 1.83zm1.5-2.29a2.5 2.5 0 00-1.5-2.3l-.8 1.84c.18.08.3.26.3.46h2zM0 10.48v.65h2v-.65H0zM.9 9.1a.5.5 0 01-.3.46l.8 1.83A2.5 2.5 0 002.9 9.1h-2zm-.3-.46c.18.08.3.26.3.46h2a2.5 2.5 0 00-1.5-2.3L.6 8.65zM0 7.08v.65h2v-.65H0zM.9 5.7a.5.5 0 01-.3.46l.8 1.83A2.5 2.5 0 002.9 5.7h-2zm-.3-.46c.18.08.3.26.3.46h2a2.5 2.5 0 00-1.5-2.3L.6 5.25zM0 2v2.33h2V2H0z"
-                            mask="url(#a)"
+                            clipRule="evenodd"
+                            d="M6.49 14.18h.86v-1.6h-.86v1.6zM6.49 11.18h.86v-1.6h-.86v1.6zM6.49 8.18h.86v-1.6h-.86v1.6zM6.49 5.18h.86v-1.6h-.86v1.6z"
                           />
-                        </g>
-                        <path
-                          clipRule="evenodd"
-                          d="M6.49 14.18h.86v-1.6h-.86v1.6zM6.49 11.18h.86v-1.6h-.86v1.6zM6.49 8.18h.86v-1.6h-.86v1.6zM6.49 5.18h.86v-1.6h-.86v1.6z"
-                        />
-                        <defs>
-                          <filter
-                            id="voucher-filter0_d"
-                            x={0}
-                            y={1}
-                            width={20}
-                            height={16}
-                            filterUnits="userSpaceOnUse"
-                            colorInterpolationFilters="sRGB"
-                          >
-                            <feFlood floodOpacity={0} result="BackgroundImageFix" />
-                            <feColorMatrix in="SourceAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
-                            <feOffset />
-                            <feGaussianBlur stdDeviation=".5" />
-                            <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.09 0" />
-                            <feBlend in2="BackgroundImageFix" result="effect1_dropShadow" />
-                            <feBlend in="SourceGraphic" in2="effect1_dropShadow" result="shape" />
-                          </filter>
-                        </defs>
-                      </svg>
-                      <div className="C9vN6U">Shopee Voucher</div>
-                      <div className="GdUwdD" />
-                      <button className="ORcGEd">Chọn hoặc nhập mã</button>
-                    </div>
-                    <div className="h-Ivjs _1Xi-wS" />
-                    <h3 className="a11y-hidden">cart_accessibility_footer_coin_row</h3>
-                    <div className="nPjHJw ceZa-G">
-                      <label className="stardust-checkbox stardust-checkbox--disabled">
-                        <input
-                          className="stardust-checkbox__input"
-                          type="checkbox"
-                          aria-checked="false"
-                          aria-disabled="true"
-                          tabIndex={0}
-                          role="checkbox"
-                          aria-label="Coins Balance 0"
-                        />
-                        <div className="stardust-checkbox__box" />
-                      </label>
-                    </div>
-                    <div className="nPjHJw K98a1N _1dLWkp r71pqT">
-                      <svg fill="none" viewBox="0 0 18 18" className="shopee-svg-icon hpZGIt icon-coin-line">
-                        <path stroke="#FFA600" strokeWidth="1.3" d="M17.35 9A8.35 8.35 0 11.65 9a8.35 8.35 0 0116.7 0z" />
-                        <path
-                          fill="#FFA600"
-                          fillRule="evenodd"
-                          stroke="#FFA600"
-                          strokeWidth=".2"
-                          d="M6.86 4.723c-.683.576-.998 1.627-.75 2.464.215.725.85 1.258 1.522 1.608.37.193.77.355 1.177.463.1.027.2.051.3.08.098.03.196.062.294.096.06.021.121.044.182.067.017.006.107.041.04.014-.07-.028.071.03.087.037.286.124.56.27.82.44.114.076.045.024.151.111a2.942 2.942 0 01.322.303c.087.093.046.042.114.146.18.275.245.478.235.8-.01.328-.14.659-.325.867-.47.53-1.232.73-1.934.696a4.727 4.727 0 01-1.487-.307c-.45-.182-.852-.462-1.242-.737-.25-.176-.643-.04-.788.197-.17.279-.044.574.207.75.753.532 1.539.946 2.474 1.098.885.144 1.731.124 2.563-.224.78-.326 1.416-.966 1.607-1.772.198-.838-.023-1.644-.61-2.29-.683-.753-1.722-1.17-2.706-1.43a4.563 4.563 0 01-.543-.183c.122.048-.044-.02-.078-.035a4.77 4.77 0 01-.422-.212c-.594-.338-.955-.722-.872-1.369.105-.816.757-1.221 1.555-1.28.808-.06 1.648.135 2.297.554.614.398 1.19-.553.58-.947-1.33-.86-3.504-1.074-4.77-.005z"
-                          clipRule="evenodd"
-                        />
-                      </svg>
-                      <div className="korYGr">Shopee Xu</div>
-                      <div className="WpXi0X">Bạn chưa chọn sản phẩm</div>
-                      <div className="stardust-popover _2Z2rR4" id="stardust-popover0" tabIndex={0}>
-                        <div role="button" className="stardust-popover__target">
-                          <div>
-                            <svg
-                              enableBackground="new 0 0 15 15"
-                              viewBox="0 0 15 15"
+                          <defs>
+                            <filter
+                              id="voucher-filter0_d"
                               x={0}
-                              y={0}
-                              className="shopee-svg-icon OzpV75 icon-help"
+                              y={1}
+                              width={20}
+                              height={16}
+                              filterUnits="userSpaceOnUse"
+                              colorInterpolationFilters="sRGB"
                             >
-                              <g>
-                                <circle cx="7.5" cy="7.5" fill="none" r="6.5" strokeMiterlimit={10} />
-                                <path
-                                  d="m5.3 5.3c.1-.3.3-.6.5-.8s.4-.4.7-.5.6-.2 1-.2c.3 0 .6 0 .9.1s.5.2.7.4.4.4.5.7.2.6.2.9c0 .2 0 .4-.1.6s-.1.3-.2.5c-.1.1-.2.2-.3.3-.1.2-.2.3-.4.4-.1.1-.2.2-.3.3s-.2.2-.3.4c-.1.1-.1.2-.2.4s-.1.3-.1.5v.4h-.9v-.5c0-.3.1-.6.2-.8s.2-.4.3-.5c.2-.2.3-.3.5-.5.1-.1.3-.3.4-.4.1-.2.2-.3.3-.5s.1-.4.1-.7c0-.4-.2-.7-.4-.9s-.5-.3-.9-.3c-.3 0-.5 0-.7.1-.1.1-.3.2-.4.4-.1.1-.2.3-.3.5 0 .2-.1.5-.1.7h-.9c0-.3.1-.7.2-1zm2.8 5.1v1.2h-1.2v-1.2z"
-                                  stroke="none"
-                                />
-                              </g>
-                            </svg>
-                          </div>
-                        </div>
+                              <feFlood floodOpacity={0} result="BackgroundImageFix" />
+                              <feColorMatrix in="SourceAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
+                              <feOffset />
+                              <feGaussianBlur stdDeviation=".5" />
+                              <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.09 0" />
+                              <feBlend in2="BackgroundImageFix" result="effect1_dropShadow" />
+                              <feBlend in="SourceGraphic" in2="effect1_dropShadow" result="shape" />
+                            </filter>
+                          </defs>
+                        </svg>
+                        <div className="font-medium shrink-0 mx-2  my-0">Shopee Voucher</div>
+                      </div>
+                      <button className="capitalize text-[#05a] text-sm whitespace-nowrap cursor-pointer  p-0 border-0 bg-none">
+                        Chọn hoặc nhập mã
+                      </button>
+                    </div>
+                    <div className="col-start-1 col-end-4 border-t-[rgba(0,0,0,0.09)] border-t border-dashed _1Xi-wS" />
+                    <h3></h3>
+                    <div className="flex !justify-end min-w-[58px] box-border col-start-1 col-end-2 flex-[0_0_auto] pl-5 pr-3 py-3">
+                      <label className="shopping_cart-checkBox">
+                        <input type="checkbox" disabled />
+                        <span className="checkmark"></span>
+                      </label>
+                      <div className="flex items-center justify-start col-start-2 col-end-3 text-sm box-border">
+                        <div className="font-medium shrink-0 ml-2">Shopee Xu</div>
+                        <div className="font-medium flex-initial text-[#929292] mx-[17px]">Bạn chưa chọn sản phẩm</div>
+                        <div className="col-start-3 col-end-4 justify-end flex items-center font-medium text-[#d0d0d0]">-₫0</div>
                       </div>
                     </div>
-                    <div className="nPjHJw _4kUN8t _9d15-k">-₫0</div>
-                    <div className="h-Ivjs ivEpTY" />
-                    <div className="s1Gxkq c2pfrq">
-                      <h3 className="a11y-hidden">cart_accessibility_footer_checkout_row</h3>
-                      <div className="wqjloc">
+                    <div className="col-start-1 col-end-4 border-t-[rgba(0,0,0,0.09)] border-t border-dashed " />
+                    <div className="col-start-1 col-end-4 flex items-center flex-1 w-full pl-5 pr-3 py-3">
+                      <h3></h3>
+                      <div className="flex flex-row-reverse min-w-[58px] box-border pl-5 pr-3 py-0 ">
                         <label className="shopping_cart-checkBox">
                           <input type="checkbox" checked={allChecked} onChange={onAllCheck} />
                           <span className="checkmark"></span>
                         </label>
                       </div>
-                      <button className="iGlIrs clear-btn-style">Chọn Tất Cả ({dataCart?.total_cart})</button>
-                      <button className="clear-btn-style ukPYq9">Xóa</button>
-                      <div className="" />
-                      <button className="clear-btn-style KbDVuv">Lưu vào mục Đã thích</button>
-                      <div className="UlxAss" />
-                      <div className="UQv8V6" role="region">
-                        <div className="fyYBP1">
-                          <div className="aiyQAr">
-                            <div className="A-CcKC">Tổng thanh toán ({checked?.length} Sản Phẩm):</div>
-                            <div className="WC0us+">₫ {total.toLocaleString('it-IT')}</div>
+                      <button className=" cursor-pointer">Chọn Tất Cả ({dataCart?.total_cart})</button>
+                      <button className=" mx-2 my-0">Xóa</button>
+                      <div />
+                      <button className=" text-[#ee4d2d] max-w-[168px] whitespace-nowrap overflow-hidden text-ellipsis mx-2 my-0">
+                        Lưu vào mục Đã thích
+                      </button>
+                      <div className="flex-1" />
+                      <div className="flex flex-col" role="region">
+                        <div className="items-center flex justify-end">
+                          <div className="flex items-center ml-5">
+                            <div className="text-base text-[#222] leading-[19px]">Tổng thanh toán ({checked?.length} Sản Phẩm):</div>
+                            <div className="text-2xl leading-7 text-[#ee4d2d] ml-[5px]">₫ {total.toLocaleString('it-IT')}</div>
                           </div>
                         </div>
-                        <div className="onR5FG" />
+                        <div className="flex justify-end text-sm mt-px" />
                       </div>
-                      <button onClick={onBuyCart} className="shopee-button-solid shopee-button-solid--primary">
-                        <span className="TTXpRG">Mua hàng</span>
+                      <button
+                        onClick={onBuyCart}
+                        className="min-h-[40px]  h-[30px] min-w-[210px] overflow-hidden text-ellipsis border capitalize  font-normal text-sm  py-2 rounded-sm border-solid border-transparent bg-[#ee4d2d] text-white hover:bg-[#d73211] hover:border-[#ba2b0f]"
+                      >
+                        Mua hàng
                       </button>
                     </div>
                   </section>

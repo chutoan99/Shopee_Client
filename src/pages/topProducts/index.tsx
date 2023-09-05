@@ -1,11 +1,10 @@
 //? LIBRARY
-import './styles/topProduct.css';
+import { NavLink } from 'react-router-dom';
 import { memo, useState } from 'react';
 //? APPS
+import { Loading } from '../../components';
 import { ProductList, Pagination } from '../../containers';
 import { useGetProductsQuery } from '../../services/post/index.hook';
-import Loading from '../../components/loading';
-import { NavLink } from 'react-router-dom';
 
 function TopProducts() {
   const [payload, setPayload] = useState({
@@ -19,30 +18,33 @@ function TopProducts() {
       <div className="grid wide">
         <div className="row sm-gutter">
           <div className="col l-12 mo-12 c-12">
-            <h1 className="+W7HAM">Tìm kiếm hàng đầu</h1>
-            <div className="navbar-with-more-menu mt-[20px]">
-              <div className="container navbar-with-more-menu__wrapper" style={{ backgroundColor: 'rgb(255, 255, 255)' }}>
-                <div className="navbar-with-more-menu__items">
-                  <NavLink className="navbar-with-more-menu__item" to="/flash_sale?categoryId=0&amp;promotionId=137335624892417">
+            <h1 className="text-[#555] text-[1.75rem] font-medium text-center mx-0 my-[2.5625rem]">Tìm kiếm hàng đầu</h1>
+            <div className="m-h-[50px] mt-[20px]">
+              <div
+                className="h-[68px] leading-[68px] flex shadow-[0_1px_1px_0_rgb(0_0_0_/_5%)]"
+                style={{ backgroundColor: 'rgb(255, 255, 255)' }}
+              >
+                <div className="flex justify-around w-full">
+                  <NavLink to="/flash_sale?categoryId=0&amp;promotionId=137335624892417">
                     <span>Top Picks</span>
                   </NavLink>
-                  <NavLink className="navbar-with-more-menu__item" to="/flash_sale?categoryId=34&amp;promotionId=137335624892417">
+                  <NavLink to="/flash_sale?categoryId=34&amp;promotionId=137335624892417">
                     <span>HÀNG HIỆU GIÁ TỐT</span>
                   </NavLink>
-                  <NavLink className="navbar-with-more-menu__item" to="/flash_sale?categoryId=11&amp;promotionId=137335624892417">
+                  <NavLink to="/flash_sale?categoryId=11&amp;promotionId=137335624892417">
                     <span>SHOP NỔI BẬT</span>
                   </NavLink>
-                  <NavLink className="navbar-with-more-menu__item" to="/flash_sale?categoryId=63&amp;promotionId=137335624892417">
+                  <NavLink to="/flash_sale?categoryId=63&amp;promotionId=137335624892417">
                     <span>SHOP YÊU THÍCH</span>
                   </NavLink>
-                  <NavLink className="navbar-with-more-menu__item" to="/flash_sale?categoryId=13&amp;promotionId=137335624892417">
+                  <NavLink to="/flash_sale?categoryId=13&amp;promotionId=137335624892417">
                     <span>E-VOUCHER VÀ NẠP THẺ</span>
                   </NavLink>
-                  <NavLink className="navbar-with-more-menu__item navbar-with-more-menu__item--active" to="/">
+                  <NavLink to="/">
                     <span>BẮT TREND GIÁ SỐC</span>
                   </NavLink>
-                  <div className="navbar-with-more-menu__item navbar-with-more-menu__more">
-                    <div className="navbar-with-more-menu__more-label">Thêm</div>
+                  <div>
+                    <div>Thêm</div>
                   </div>
                 </div>
               </div>

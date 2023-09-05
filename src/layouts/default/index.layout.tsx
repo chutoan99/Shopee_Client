@@ -1,5 +1,4 @@
 //? LIBRARY
-import './style/heart.css';
 import SVG from '../../../public/assets/svgs';
 import { Toaster } from 'react-hot-toast';
 //? APPS
@@ -14,8 +13,12 @@ export default function DefaultLayout({ children }: any) {
   return (
     <div className="app">
       <Toaster position="top-right" reverseOrder={false} />
+      {heart && (
+        <div className="fixed z-[100000] flex items-center justify-center animate-[heart_2s_ease_0s_1_normal_forwards] inset-0">
+          {SVG.HEART}
+        </div>
+      )}
       <Header />
-      {heart && <div className="heart-animation2">{SVG.HEART}</div>}
       {children}
       <Chat />
       <Footer />
