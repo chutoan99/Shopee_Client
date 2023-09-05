@@ -4,7 +4,6 @@ function LogoShopee() {
   return (
     <NavLink className="w-[180px] cursor-pointer" to="/">
       <div className="w-full">
-        {' '}
         <svg viewBox="0 0 192 65">
           <g fillRule="evenodd">
             <path

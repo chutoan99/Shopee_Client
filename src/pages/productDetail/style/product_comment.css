@@ -211,35 +211,7 @@
   border: 2px solid #ee4d2d;
   padding: 5px;
 }
-@media (max-width: 1023px) {
-  @media (min-width: 740px) and (max-width: 1023px) {
-  }
-  @media (min-width: 481px) and (max-width: 739px) {
-  }
-  @media only screen and (max-width: 880px) {
-  }
-  @media (max-width: 480px) {
-    .comment-rating-img {
-      width: 36px;
-      height: 36px;
-    }
-    .comment-video {
-      width: 36px;
-      height: 36px;
-    }
 
-    .comment-rating-img-video video {
-      max-width: 100%;
-    }
-    .comment-rating-show-img {
-      max-width: 100%;
-      width: unset;
-    }
-    .product-comment-content {
-      padding: unset;
-    }
-  }
-}
 .hzOJBo {
   display: flex !important;
 }

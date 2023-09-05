@@ -1,5 +1,4 @@
 //? LIBRARY
-import ICON from '../../../public/assets/icons';
 import IMG from '../../../public/assets/imgs';
 import { NavLink } from 'react-router-dom';
 //? APPS
@@ -14,27 +13,53 @@ interface HeaderCartModel {
 
 function HeaderCart({ data, totalCart, loading }: HeaderCartModel) {
   return (
-    <NavLink to="/cart" className="Header-cart">
-      <div className="Header-cart-wrap">
-        <span className="Header-cart-icon">{ICON.SHOPPING_CART}</span>
-        {totalCart === 0 || totalCart === undefined ? <span></span> : <span className="Header-cart-notice">{totalCart}</span>}
-        <div className="Header-cart-list">
+    <NavLink to="/cart" className="justify-center flex cursor-pointer items-center flex-1 group">
+      <div className="relative inline-block px-2 py-0">
+        <span className="text-white text-2xl mt-1.5">
+          <i className="fa-solid fa-cart-shopping"></i>
+        </span>
+        {totalCart === 0 || totalCart === undefined ? (
+          <span></span>
+        ) : (
+          <span className="text-sm absolute leading-[0.875rem] text-[#ee4d2d] bg-[#fff] px-[7px] py-px rounded-[10px] border-2 border-solid border-[#ee4d2d] -right-1 -top-1">
+            {totalCart}
+          </span>
+        )}
+        <div
+          style={{ border: 'solid 1px rgb(0, 0, 0, 0.1)' }}
+          className="group-hover:block w-[380px] absolute bg-[white] hidden cursor-default will-change-[opacity_transform] origin-[(100%-32px)_top] animate-[HeaderNOtifyGrowth_ease-in_0.25s] z-10 rounded-sm  right-[-15px] top-[150%] before:content-[''] before:z-10 before:absolute before:top-[-30px] before:border-solid before:!border-x-[25px] before:!border-y-[15px] before:border-[transparent_transparent_#fff_transparent] before:right-[8px] after:content-[''] after:z-10 after:block after:absolute after:w-[118px] after:h-[31px] after:right-0 after:-top-4"
+        >
           {totalCart > 0 ? (
             <>
-              <h4 className="Header_cart-heading">Sản phẩm đã thêm</h4>
+              <header className="h-[40px] bg-[#fff]">
+                <h3 className="text-[#999] font-normal text-sm leading-10 ml-3 mr-0 my-0"> Sản phẩm đã thêm </h3>
+              </header>
               {!loading && (
-                <ul className="Header_cart-list-item">
+                <ul className="pl-0">
                   {data?.map((item: Cart[], index: number) => {
                     return (
                       <div key={index}>
                         {item.map((ele: Cart, index: number) => (
-                          <li className="Header_cart-item" key={index}>
-                            <img className="Header_cart-item-img" src={ele?.overview?.image} alt="dataCart" />
-                            <div className="Header_cart-item-info">
-                              <div className="Header_cart-item-head">
-                                <h5 className="Header_cart-item-name">{ele?.overview?.name}</h5>
+                          <li className="flex" key={index}>
+                            <img
+                              className="w-[42px] h-[42px] border m-3 border-solid border-[#e8e8e8]"
+                              src={ele?.overview?.image}
+                              alt="dataCart"
+                            />
+                            <div className="w-full mr-3 mt-3">
+                              <div className="flex items-center justify-between gap-[20px]">
+                                <h5
+                                  className="text-[0.813rem] font-normal text-[#333] overflow-hidden text-ellipsis mr-2.5 m-0"
+                                  style={{
+                                    display: '-webkit-box',
+                                    WebkitLineClamp: 2,
+                                    WebkitBoxOrient: 'vertical',
+                                  }}
+                                >
+                                  {ele?.overview?.name}
+                                </h5>
                                 <div>
-                                  <span className="Header_cart-item-price">đ{formatPrice(ele?.overview?.price)}</span>
+                                  <span className="text-sm text-[#ee4d2d] font-normal">đ{formatPrice(ele?.overview?.price)}</span>
                                 </div>
                               </div>
                             </div>
@@ -45,18 +70,29 @@ function HeaderCart({ data, totalCart, loading }: HeaderCartModel) {
                   })}
                 </ul>
               )}
-
-              <div className="Header_cart-footer">
-                <NavLink to="/cart">Xem Thêm</NavLink>
-              </div>
-              <button className="btn Header_cart-view-cart btn--prinary">
-                <NavLink to="/cart"> Xem giỏ hàng</NavLink>
-              </button>
+              <footer className="text-[black] text-[0.938rem] text-center w-full px-2 py-2 flex items-center justify-between">
+                <h5
+                  className="text-[0.9rem] font-normal text-[#333] overflow-hidden text-ellipsis mr-2.5 m-0"
+                  style={{
+                    display: '-webkit-box',
+                    WebkitLineClamp: 1,
+                    WebkitBoxOrient: 'vertical',
+                  }}
+                >
+                  Xem thêm sản {totalCart} phẩm khác
+                </h5>
+                <NavLink
+                  to="/cart"
+                  className="min-h-[40px]  h-[30px] min-w-[120px] overflow-hidden text-ellipsis border capitalize  font-normal text-sm  py-2 rounded-sm border-solid border-transparent bg-[#ee4d2d] text-white hover:bg-[#d73211] hover:border-[#ba2b0f]"
+                >
+                  Xem giỏ hàng
+                </NavLink>
+              </footer>
             </>
           ) : (
-            <div className="Header-cart--no-cart">
-              <img src={IMG.NO_CART} alt="noCart" className="Header-cart--no-cart-img" />
-              <p className="Header-cart-list-no-cart-msg">Chưa có sản phẩm</p>
+            <div className="py-[20px] px-[10px]">
+              <img src={IMG.NO_CART} alt="noCart" className="flex justify-center max-w-full h-auto w-[54%] mx-auto border-none" />
+              <p className="flex justify-center text-xl text-[#333] my-3.5 mx-auto">Chưa có sản phẩm</p>
             </div>
           )}
         </div>

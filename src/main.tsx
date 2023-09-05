@@ -1,5 +1,4 @@
 import ReactDOM from 'react-dom';
-import './style/main.css';
 import './style/index.css';
 import './style/animation.css';
 import './style/grid.css';

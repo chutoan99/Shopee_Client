@@ -21,20 +21,3 @@
   height: 100px;
   font-size: 0.938rem;
 }
-@media only screen and (max-width: 880px) {
-  .response_shop-content {
-    flex-direction: column;
-  }
-  .product_rating {
-    margin: unset;
-  }
-}
-@media (max-width: 480px) {
-  .product_rating-content span {
-    margin-right: 5px !important;
-  }
-  .product_rating {
-    line-height: 25px;
-    grid-template-areas: 'dd ee';
-  }
-}

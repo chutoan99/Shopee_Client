@@ -33,18 +33,6 @@
     top: var(--header-height);
   }
 }
-
-.loader {
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-  background-color: var(--white-color);
-  margin: 10px auto 0;
-  box-shadow: 32px 0 var(--white-color), -32px 0 var(--white-color);
-  position: relative;
-  animation: flash 0.5s ease-out infinite alternate;
-}
-
 @keyframes flash {
   0% {
     background-color: #fff2;
@@ -71,7 +59,6 @@
     transform: translate(4500px, -1700px);
   }
 }
-
 @keyframes mobileSearchSideIn {
   from {
     opacity: 0;
@@ -161,7 +148,6 @@
     transform: translate(-50%, -50%) rotate(360deg);
   }
 }
-
 @keyframes heart {
   0% {
     transform: scale3d(1, 1, 1);

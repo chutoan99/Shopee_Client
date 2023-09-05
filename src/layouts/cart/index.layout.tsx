@@ -28,14 +28,17 @@ export default function CartLayout({ children }: any) {
     <>
       {isLoading && <Loading />}
       <Toaster position="top-right" reverseOrder={false} />
-      <header className="Header">
+      <header className="h-[120px] bg-[linear-gradient(0,#fe6433,#f53e2d)] fixed z-10 top-0 inset-x-0">
         <div className="grid wide">
           <HeaderNavbar></HeaderNavbar>
-          <div className="Header-with-search sm-gutter">
+          <div className="h-[82px] flex gap-[5px] items-center px-2  sm-gutter">
             <LogoShopee />
-            <div className="Header__search">
-              <div className="Header__search-input-wrap">
+            <div className="bg-white h-10 flex items-center mt-[15px] rounded-sm w-full">
+              <div className="flex-1 h-full relative group" id="header_search">
                 <input
+                  type="text"
+                  placeholder="Nhập để tìm kiếm sản phẩm"
+                  className="header_input w-full h-full text-sm text-[#333] px-3 py-0 rounded-[3px] border-[none] focus:border-none focus:outline-none"
                   value={payload.text}
                   onChange={(e) =>
                     setPayload((prev: any) => {
@@ -44,13 +47,12 @@ export default function CartLayout({ children }: any) {
                       };
                     })
                   }
-                  type="text"
-                  placeholder="Nhập để tìm kiếm sản phẩm"
-                  className="Header_search-input"
                 />
               </div>
-              <button className="Header__search-btn" onClick={onSearch}>
-                <span className="Header__search-btn-icon">{ICON.MAGNIFYING}</span>
+              <button className="h-[34px] w-[60px] bg-[#ee4d2d] mr-[3px] rounded-[3px] border-[none]" onClick={onSearch}>
+                <span className="text-[0.875rem] text-[#fff]">
+                  <i className="fa-solid fa-magnifying-glass"></i>
+                </span>
               </button>
             </div>
           </div>

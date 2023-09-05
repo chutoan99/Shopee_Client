@@ -1,4 +1,5 @@
 import IMG from '../../../public/assets/imgs';
+import toast from 'react-hot-toast';
 import { memo, useEffect, useState } from 'react';
 import { Link, useNavigate, NavLink } from 'react-router-dom';
 import { HeaderNotify } from '../../components';
@@ -6,7 +7,6 @@ import { useGetNotificationQuery } from '../../services/notification/index.hook'
 import { useAppDispatch, useAppSelector } from '../../hooks/hooks';
 import { AppDispatch, RootState } from '../../app/store';
 import { ApiLogout } from '../../services/auth/index.service';
-import toast from 'react-hot-toast';
 import { ALERT_LOGOUT_SUCCESS } from '../../constants/msg';
 import Loading from '../../components/loading';
 import { UserActions } from '../../redux/userSlice';
@@ -51,8 +51,8 @@ function HeaderNavbar() {
   return (
     <>
       {loading && <Loading />}
-      <nav className="Header__navbar">
-        <ul className="Heder__navbar--list">
+      <nav className="flex justify-between">
+        <ul className="flex justify-items-center mt-1 mb-0 mx-0 pl-0">
           <li className="group relative min-h-[26px] no-underline text-sm text-[#fff] font-light items-center flex cursor-pointer mx-2 my-0">
             <span className="group-hover:text-[rgba(255,255,255,0.7)]" onClick={handleOpenNewTab}>
               Kênh người bán
@@ -69,38 +69,39 @@ function HeaderNavbar() {
               </div>
             </div>
           </li>
-
-          <li className=" relative min-h-[26px] no-underline text-sm font-light text-[white] items-center flex mx-2 my-0">
+          <li className="relative min-h-[26px] no-underline text-sm font-light text-[white] items-center flex mx-2 my-0">
             <span className="cursor-text"> Kết nối</span>
-            <NavLink to="https://www.facebook.com/ShopeeVN" className="items-center flex text-[white] no-underline">
+            <NavLink to="#" className="items-center flex text-[white] no-underline">
               <span className="text-lg mx-1 my-0">
                 <i className="fa-brands fa-facebook-square"></i>
               </span>
             </NavLink>
-            <NavLink to="https://www.instagram.com/Shopee_VN/" className="items-center flex text-[white] no-underline">
+            <NavLink to="#" className="items-center flex text-[white] no-underline">
               <span className="text-lg mx-1 my-0">
                 <i className="fa-brands fa-instagram-square"></i>
               </span>
             </NavLink>
           </li>
         </ul>
-        <ul className="Heder__navbar--list">
-          <li className="Header__nav--item Header__nav--item-has-notify">
-            <NavLink to="# " className="Header__nav--item--link hover:text-white">
+        <ul className="flex justify-items-center mt-1 mb-0 mx-0 pl-0">
+          <li className="group relative min-h-[26px] mx-2 my-0">
+            <NavLink to="# " className="no-underline text-sm font-light text-[white] items-center flex hover:text-white">
               <div className="text-[white] no-underline items-center flex ">
                 <span className="text-lg mx-1 my-0">
                   <i className="far fa-bell"></i>
                 </span>
               </div>
-              <span className="Header-cart-notify-icon">{totalNotify}</span>
+              <span className="text-[0.625rem] absolute leading-[0.875rem] text-[#ee4d2d] bg-white px-[7px] py-px rounded-[10px] border-2 border-solid border-[#ee4d2d] right-[58px] -top-px">
+                {totalNotify}
+              </span>
               Thông báo
             </NavLink>
             {!isLoadingNotification && <HeaderNotify data={dataNotification?.response || []} />}
           </li>
 
-          <li className="Header__nav--item">
-            <NavLink to="https://help.shopee.vn/portal" className="Header__nav--item--link">
-              <NavLink to="https://help.shopee.vn/portal" className="text-[white] no-underline items-center flex">
+          <li className="relative min-h-[26px] no-underline text-sm font-light text-[white] items-center flex mx-2 my-0">
+            <NavLink to="#" className="no-underline text-sm font-light text-[white] items-center flex">
+              <NavLink to="#" className="text-[white] no-underline items-center flex">
                 <span className="text-lg mx-1 my-0">
                   <i className="fa-solid fa-circle-question"></i>
                 </span>
@@ -109,36 +110,42 @@ function HeaderNavbar() {
             </NavLink>
           </li>
           {isLogin ? (
-            <li className="Header__nav--item Header__nav-user">
-              <img className="Header__nav-item Header__nav-user-img" src={dataUser?.avatar} alt="UserImg" />
-              <span className="Header__nav-name">{dataUser?.name}</span>
-              <ul className="Header__nav-user-menu py-[10px]">
-                <li className="Header__nav-user-item mb-[5px]">
+            <li className="group no-underline text-sm font-light text-[white] min-h-[26px] justify-items-center relative items-center flex mx-2 my-0">
+              <img
+                className="text-sm font-light text-[white] w-[22px] h-[22px] border rounded-[50%] border-solid border-[rgb(0,0,0,0.2)]"
+                src={dataUser?.avatar}
+                alt="UserImg"
+              />
+              <span className="text-sm font-normal text-white ml-1 group-hover:text-[rgba(255,255,255,0.7)]">{dataUser?.name}</span>
+              <ul className="group-hover:block hidden py-[10px] absolute z-[2] bg-white w-40 shadow-[0_1px_5px_rgba(189,189,189)]  pl-0 rounded-sm right-0 top-[calc(100%_+_6px)] after:content-[''] after:top-[-29px] after:absolute after:z-[-1] after:border-solid after:!border-x-[30px] after:!border-y-[20px]  after:border-[transparent_transparent_#fff_transparent] after:right-1 before:content-[''] before:block before:absolute before:w-[68%] before:h-2 before:right-0 before:-top-2">
+                <li>
                   <NavLink to="/user/profile">
-                    <span>Tài khoản của tôi</span>
+                    <span className="no-underline text-[#333] text-[0.875rem] block !pl-4 py-2">Tài khoản của tôi</span>
                   </NavLink>
                 </li>
-                <li className="Header__nav-user-item mb-[5px]">
+                <li style={{ borderTop: 'solid 1px rgb(0, 0, 0, 0.05)' }}>
                   <NavLink to="/user/purchase">
-                    <span>Đơn mua</span>
+                    <span className="no-underline text-[#333] text-[0.875rem] block !pl-4 py-2">Đơn mua</span>
                   </NavLink>
                 </li>
-                <li className="Header__nav-user-item Header__nav-user-item--separate">
-                  <span onClick={onLogout}>Đăng xuất</span>
+                <li style={{ borderTop: 'solid 1px rgb(0, 0, 0, 0.05)' }}>
+                  <span className="no-underline text-[#333] text-[0.875rem] block !pl-4 py-2" onClick={onLogout}>
+                    Đăng xuất
+                  </span>
                 </li>
               </ul>
             </li>
           ) : (
             <>
               <div>
-                <li className="no-underline text-sm font-light text-[white] relative min-h-[26px] items-center flex mx-2 my-0  after:content-[''] after:absolute after:h-3 after:-translate-y-2/4 after:border-l-[#fb9086] after:border-l after:border-solid after:-right-2.5 after:top-2/4">
+                <li className="hover:text-[rgba(255,255,255,0.7)] no-underline text-sm font-light text-[white] relative min-h-[26px] items-center flex mx-2 my-0  after:content-[''] after:absolute after:h-3 after:-translate-y-2/4 after:border-l-[#fb9086] after:border-l after:border-solid after:-right-2.5 after:top-2/4">
                   <Link to="/register" className=" no-underline text-sm text-white items-center flex font-normal leading-[2.125rem]">
                     Đăng ký
                   </Link>
                 </li>
               </div>
               <div>
-                <li className="no-underline text-sm font-light text-[white] relative min-h-[26px] items-center flex mx-2 my-0">
+                <li className="hover:text-[rgba(255,255,255,0.7)] no-underline text-sm font-light text-[white] relative min-h-[26px] items-center flex mx-2 my-0">
                   <Link to="/login" className=" no-underline text-sm text-white items-center flex font-normal leading-[2.125rem]">
                     Đăng nhập
                   </Link>

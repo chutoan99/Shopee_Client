@@ -1,5 +1,4 @@
 //? LIBRARY
-import ICON from '../../../public/assets/icons';
 import { useState, memo } from 'react';
 import { NavLink, useNavigate, useParams } from 'react-router-dom';
 //? APPS
@@ -39,57 +38,61 @@ function HeaderWithSearch() {
   return (
     <>
       <div className="grid wide sm-gutter">
-        <div className="Header-with-search sm-gutter">
+        <div className="h-[82px] flex gap-[5px] items-center px-2 sm-gutter">
           <LogoShopee />
-          <input type="checkbox" hidden id="Mobile-search-checkbox" className="Header__search-checkbox" />
           <div className="w-full flex justify-center">
             <div className="w-[90%]">
-              <div className="Header__search">
-                <div className="Header__search-input-wrap">
+              <div className="bg-white h-10 flex items-center mt-[15px] rounded-sm">
+                <div className="flex-1 h-full relative group" id="header_search">
                   <input
+                    type="text"
+                    placeholder="Nhập để tìm kiếm sản phẩm"
+                    className="header_input w-full h-full text-sm text-[#333] px-3 py-0 rounded-[3px] border-[none] focus:border-none focus:outline-none"
+                    onKeyDown={handleKeyDown}
                     value={payload.text}
                     onChange={(e) =>
-                      setPayload((prev: any) => {
+                      setPayload(() => {
                         return {
                           text: e.target.value,
                         };
                       })
                     }
-                    type="text"
-                    placeholder="Nhập để tìm kiếm sản phẩm"
-                    className="Header_search-input"
-                    onKeyDown={handleKeyDown}
                   />
-                  <div className="Header__search-history">
-                    <h3 className="Header__search-history-heading"> Lịch sử tìm kiếm </h3>
-
+                  <div className="header_list_search  absolute top-[calc(100%_-_-2px)] w-full bg-white shadow-[0_1px_5px_rgba(189,189,189)] overflow-hidden z-[3] rounded-[3px] left-0">
+                    <h3 className="text-sm text-[#999] font-normal mx-3 my-1.5"> Lịch sử tìm kiếm </h3>
                     {!isLoadingHistorySearch && (
-                      <ul className="Header__search-history-list">
+                      <ul className="mt-1.5">
                         {dataHistorySearch?.response?.map((item: SearchHistory, index: number) => (
-                          <li className="Header__search-history-item" key={index}>
-                            <NavLink to={`search/${item.text}`}>{item.text}</NavLink>
+                          <li className="h-[38px] px-3 py-0" key={index}>
+                            <NavLink to={`search/${item.text}`} className="no-underline text-sm leading-[2.375rem] text-[#333] block">
+                              {item.text}
+                            </NavLink>
                           </li>
                         ))}
                       </ul>
                     )}
                   </div>
                 </div>
-                <div className="Header__search-select">
-                  <span className="Header__search-select-label">Trong shop</span>
-                  <span className="Header__search-select-icon">{ICON.ANGEL_DOWN}</span>
-                  <ul className="Header__search-option">
-                    <li className="Header_search-option-item Header_search-option-item-active">
-                      <span>Trong Shop</span>
-                      {ICON.HEART}
+                <div className="group relative cursor-pointer pl-4 border-l-[#ccc] border-l border-solid">
+                  <span className="text-sm contents text-[#333]">Trong shop</span>
+                  <span className="text-[rgb(131,131,131)] text-sm relative ml-2 mr-4 my-0 top-px">
+                    <i className="fa-solid fa-angle-down"></i>
+                  </span>
+                  <ul className="group-hover:block hidden absolute w-[120px] shadow-[0_1px_2px_#ccc] text-left animate-[fadeIn_ease-in_0.2s] z-[1] pl-0 rounded-[3px] right-0 top-[147%]">
+                    <li className="bg-white p-2 rounded-t-[3px]">
+                      <span className="text-[#333] text-sm ml-2">Trong Shop</span>
+                      <i className="fa-solid fa-check text-sm text-[#ee4d2d]  ml-3 inline-block"></i>
                     </li>
                     <li className="Header_search-option-item">
-                      <span>Ngoài Shop</span>
-                      {ICON.HEART}
+                      <span className="text-[#333] text-sm ml-2">Ngoài Shop</span>
+                      <i className="fa-solid fa-check text-sm text-[#ee4d2d] hidden ml-3"></i>
                     </li>
                   </ul>
                 </div>
-                <button className="Header__search-btn" onClick={onSearch}>
-                  <span className="Header__search-btn-icon">{ICON.MAGNIFYING}</span>
+                <button className="h-[34px] w-[60px] bg-[#ee4d2d] mr-[3px] rounded-[3px] border-[none]" onClick={onSearch}>
+                  <span className="text-[0.875rem] text-[#fff]">
+                    <i className="fa-solid fa-magnifying-glass"></i>
+                  </span>
                 </button>
               </div>
               {!isLoadingSearchSuggestion && <SuggestList data={dataSearchSuggestion?.response || []} />}

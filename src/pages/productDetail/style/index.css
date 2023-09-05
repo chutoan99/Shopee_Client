@@ -144,21 +144,7 @@
   text-overflow: ellipsis;
   line-height: 1.7rem;
 }
-@media (min-width: 740px) and (max-width: 1023px) {
-}
-@media (min-width: 481px) and (max-width: 739px) {
-}
-@media only screen and (max-width: 880px) {
-}
 
-@media (max-width: 480px) {
-  .wrapper {
-    width: 100vw;
-  }
-  html {
-    font-size: 70%;
-  }
-}
 .modal {
   width: 800px;
   height: 500px;

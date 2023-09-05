@@ -19,10 +19,24 @@ export const generateStart = (start: number) => {
 export const generateStartFilter = (start: number) => {
   let starts = [];
   for (let i = 1; i <= +start; i++) {
-    starts.push(<i className="star-checked far fa-star"></i>);
+    starts.push(
+      <i
+        className="text-[#ffe400] far fa-star"
+        style={{
+          fontWeight: 900,
+        }}
+      ></i>
+    );
   }
   for (let j = 1; j <= 5 - start; j++) {
-    starts.push(<i className="star-uncheck far fa-star"></i>);
+    starts.push(
+      <i
+        className="text-[#ffe400] far fa-star"
+        style={{
+          fontWeight: 'unset',
+        }}
+      ></i>
+    );
   }
   return starts;
 };

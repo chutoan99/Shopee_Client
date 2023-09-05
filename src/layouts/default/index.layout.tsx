@@ -11,7 +11,7 @@ export default function DefaultLayout({ children }: any) {
   useAuth();
   const { heart } = useAppSelector((state: RootState) => state.others);
   return (
-    <div className="app">
+    <div className="overflow-hidden">
       <Toaster position="top-right" reverseOrder={false} />
       {heart && (
         <div className="fixed z-[100000] flex items-center justify-center animate-[heart_2s_ease_0s_1_normal_forwards] inset-0">
