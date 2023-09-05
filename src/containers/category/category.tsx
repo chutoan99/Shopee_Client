@@ -2,22 +2,25 @@
 import Slider from 'react-slick';
 import { memo } from 'react';
 import { NavLink } from 'react-router-dom';
+import { useGetCategoryTreeQuery } from '../../services/category/index.hook';
 
-interface CategoryModel {
-  data: any;
-  loading: boolean;
-  settings: any;
-}
-
-function Category({ data, loading, settings }: CategoryModel) {
+function Category() {
+  const { data, isLoading } = useGetCategoryTreeQuery();
+  const settings = {
+    infinite: true,
+    arrows: true,
+    speed: 500,
+    slidesToShow: 10,
+    slidesToScroll: 1,
+  };
   return (
     <div className="col l-12 mo-12 c-12">
       <div className="pt-[20px]">
-        {!loading && (
+        {!isLoading && (
           <div className="bg-white">
             <div className="p-[20px] text-left text-[1rem] text-[rgba(0, 0, 0, 0.54] font-medium">DANH MỤC</div>
             <Slider {...settings}>
-              {data?.map((category: any, index: number) => (
+              {data?.response?.map((category: any, index: number) => (
                 <div key={index}>
                   {category?.map((ele: any, index: number) => (
                     <NavLink

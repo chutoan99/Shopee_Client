@@ -1,5 +1,4 @@
 //? LIBRARY
-import './style/date.css';
 import { Toaster } from 'react-hot-toast';
 import { NavLink } from 'react-router-dom';
 //? APPS

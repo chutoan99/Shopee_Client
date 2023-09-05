@@ -1,5 +1,4 @@
 import IMG from '../../../public/assets/imgs';
-import ICON from '../../../public/assets/icons';
 import { memo, useEffect, useState } from 'react';
 import { Link, useNavigate, NavLink } from 'react-router-dom';
 import { HeaderNotify } from '../../components';
@@ -68,21 +67,27 @@ function HeaderNavbar() {
               </div>
             </div>
           </li>
-          <li className="Header__nav--item">
-            <span className="Header_nav-title--no-poiter"> Kết nối</span>
-            <NavLink to="https://www.facebook.com/ShopeeVN" className="Header__navbar--icon-link">
-              <span className="Header__nav--icon">{ICON.FACE}</span>
+          <li className=" relative min-h-[26px] no-underline text-sm font-light text-[white] items-center flex mx-2 my-0">
+            <span className="cursor-text"> Kết nối</span>
+            <NavLink to="https://www.facebook.com/ShopeeVN" className="items-center flex text-[white] no-underline">
+              <span className="text-lg mx-1 my-0">
+                <i className="fa-brands fa-facebook-square"></i>
+              </span>
             </NavLink>
-            <NavLink to="https://www.instagram.com/Shopee_VN/" className="Header__navbar--icon-link">
-              <span className="Header__nav--icon">{ICON.INSTAGRAM}</span>
+            <NavLink to="https://www.instagram.com/Shopee_VN/" className="items-center flex text-[white] no-underline">
+              <span className="text-lg mx-1 my-0">
+                <i className="fa-brands fa-instagram-square"></i>
+              </span>
             </NavLink>
           </li>
         </ul>
         <ul className="Heder__navbar--list">
           <li className="Header__nav--item Header__nav--item-has-notify">
             <NavLink to="# " className="Header__nav--item--link hover:text-white">
-              <div className="Header__navbar--icon-link ">
-                <span className="Header__nav--icon">{ICON.BELL}</span>
+              <div className="text-[white] no-underline items-center flex ">
+                <span className="text-lg mx-1 my-0">
+                  <i className="far fa-bell"></i>
+                </span>
               </div>
               <span className="Header-cart-notify-icon">{totalNotify}</span>
               Thông báo
@@ -91,8 +96,10 @@ function HeaderNavbar() {
           </li>
           <li className="Header__nav--item">
             <NavLink to="https://help.shopee.vn/portal" className="Header__nav--item--link">
-              <NavLink to="https://help.shopee.vn/portal" className="Header__navbar--icon-link">
-                <span className="Header__nav--icon">{ICON.CIRCLE_QUESTION}</span>
+              <NavLink to="https://help.shopee.vn/portal" className="text-[white] no-underline items-center flex">
+                <span className="text-lg mx-1 my-0">
+                  <i className="fa-solid fa-circle-question"></i>
+                </span>
               </NavLink>
               Trợ giúp
             </NavLink>
@@ -120,15 +127,15 @@ function HeaderNavbar() {
           ) : (
             <>
               <div>
-                <li className="Header__nav--item Header__nav--separater">
-                  <Link to="/register" className="Header__nav--item--link Header__nav--item--strong">
+                <li className="no-underline text-sm font-light text-[white] relative min-h-[26px] items-center flex mx-2 my-0  after:content-[''] after:absolute after:h-3 after:-translate-y-2/4 after:border-l-[#fb9086] after:border-l after:border-solid after:-right-2.5 after:top-2/4">
+                  <Link to="/register" className=" no-underline text-sm text-white items-center flex font-normal leading-[2.125rem]">
                     Đăng ký
                   </Link>
                 </li>
               </div>
               <div>
-                <li className="Header__nav--item">
-                  <Link to="/login" className="Header__nav--item--link Header__nav--item--strong">
+                <li className="no-underline text-sm font-light text-[white] relative min-h-[26px] items-center flex mx-2 my-0">
+                  <Link to="/login" className=" no-underline text-sm text-white items-center flex font-normal leading-[2.125rem]">
                     Đăng nhập
                   </Link>
                 </li>

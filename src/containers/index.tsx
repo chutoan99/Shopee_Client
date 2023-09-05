@@ -8,7 +8,7 @@ export { default as BestSeller } from './bestSeller/bestSeller';
 export { default as Footer } from './footer/index';
 export { default as Pagination } from './pagination/index';
 export { default as Chat } from './chat/chat';
-
+export { default as HomeFilter } from './homeFilter/index';
 //? HEADER
 export { default as Header } from './header/header';
 export { default as HeaderWithSearch } from './header/header_with_search';

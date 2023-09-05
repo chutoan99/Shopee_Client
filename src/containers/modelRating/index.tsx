@@ -1,6 +1,7 @@
 //? LIBRARY
 import { toast } from 'react-hot-toast';
 import { Order } from '../../types/order';
+import { Link, NavLink } from 'react-router-dom';
 import './styles/index.css';
 import { memo, useState } from 'react';
 import { Rating } from 'react-rainbow-components';
@@ -94,137 +95,58 @@ function ModelRatting({ isShow, onCloseModel, data }: RatingModel) {
               <div className="shopee-popup__container">
                 <div style={{ display: 'contents' }}>
                   <div>
-                    <div className="shopee-popup-form OU2Nj+">
-                      <div className="shopee-popup-form__header">
-                        <div className="shopee-popup-form__title">Đánh giá sản phẩm</div>
+                    <div className="max-h-[calc(100vh_-_120px)] w-[45.625rem] shadow-[0_1px_1px_0_rgba(0,0,0,0.05)] max-w-full box-border flex flex-col overflow-hidden pt-[30px] pb-0 px-[30px]  bg-[#fff]">
+                      <div className="h-[unset] flex items-center mb-[1.875rem]">
+                        <div className="font-normal text-xl text-[#222] capitalize flex items-center">Đánh giá sản phẩm</div>
                       </div>
                       <div className="shopee-popup-form__main">
                         <div className="shopee-popup-form__main-container">
-                          {/* <div className="vTGJzu">
-                            <svg enableBackground="new 0 0 15 15" viewBox="0 0 15 15" x={0} y={0} className="shopee-svg-icon izk1hM">
-                              <linearGradient
-                                id="coingold-a"
-                                gradientTransform="matrix(1 0 0 -1 0 -810.11)"
-                                gradientUnits="userSpaceOnUse"
-                                x1="2.9694"
-                                x2="12.0447"
-                                y1="-811.8111"
-                                y2="-823.427"
-                              >
-                                <stop offset={0} stopColor="#f6c430" />
-                                <stop offset=".5281" stopColor="#ffecaa" />
-                                <stop offset=".6639" stopColor="#fdde82" />
-                                <stop offset=".9673" stopColor="#f7bc1e" />
-                                <stop offset={1} stopColor="#f6b813" />
-                              </linearGradient>
-                              <linearGradient
-                                id="coingold-b"
-                                gradientTransform="matrix(1 0 0 -1 0 -810.11)"
-                                gradientUnits="userSpaceOnUse"
-                                x1="7.5"
-                                x2="7.5"
-                                y1="-810.2517"
-                                y2="-824.9919"
-                              >
-                                <stop offset={0} stopColor="#e49b00" />
-                                <stop offset=".9416" stopColor="#d67b00" />
-                                <stop offset={1} stopColor="#d57900" />
-                              </linearGradient>
-                              <linearGradient
-                                id="coingold-c"
-                                gradientTransform="matrix(1 0 0 -1 0 -810.11)"
-                                gradientUnits="userSpaceOnUse"
-                                x1="4.0932"
-                                x2="10.9068"
-                                y1="-813.5499"
-                                y2="-821.6702"
-                              >
-                                <stop offset={0} stopColor="#f99d00" />
-                                <stop offset=".1752" stopColor="#eea10b" />
-                                <stop offset=".5066" stopColor="#fcd21f" />
-                                <stop offset=".6657" stopColor="#f2ba10" />
-                                <stop offset={1} stopColor="#d57900" />
-                              </linearGradient>
-                              <linearGradient
-                                id="coingold-d"
-                                gradientUnits="userSpaceOnUse"
-                                x1="5.4204"
-                                x2="9.7379"
-                                y1="5.0428"
-                                y2="10.188"
-                              >
-                                <stop offset={0} stopColor="#ffec88" />
-                                <stop offset=".5003" stopColor="#fdf4cb" />
-                                <stop offset=".7556" stopColor="#fceba4" />
-                                <stop offset={1} stopColor="#fae17a" />
-                              </linearGradient>
-                              <g>
-                                <circle cx="7.5" cy="7.5" fill="url(#coingold-a)" r="7.4" />
-                                <path
-                                  d="m7.5.4c3.9 0 7.1 3.2 7.1 7.1s-3.2 7.1-7.1 7.1-7.1-3.2-7.1-7.1 3.2-7.1 7.1-7.1m0-.3c-4.1 0-7.4 3.3-7.4 7.4s3.3 7.4 7.4 7.4 7.4-3.3 7.4-7.4-3.3-7.4-7.4-7.4z"
-                                  fill="url(#coingold-b)"
-                                />
-                                <path
-                                  d="m14.4 7.7c0-.1 0-.1 0-.2 0-3.8-3.1-6.9-6.9-6.9s-6.9 3.1-6.9 6.9v.2c.1-3.7 3.1-6.7 6.9-6.7s6.8 3 6.9 6.7z"
-                                  fill="#fff5c9"
-                                />
-                                <circle cx="7.5" cy="7.5" fill="url(#coingold-c)" r="5.3" />
-                                <path
-                                  d="m11.4 4c1.1 1 1.8 2.4 1.8 3.9 0 2.9-2.4 5.3-5.3 5.3-1.6 0-3-.7-3.9-1.8.9.8 2.2 1.4 3.5 1.4 2.9 0 5.3-2.4 5.3-5.3 0-1.4-.5-2.6-1.4-3.5z"
-                                  fill="#ffeead"
-                                />
-                                <path
-                                  d="m11.4 4c-1-1.1-2.4-1.8-3.9-1.8-2.9 0-5.3 2.4-5.3 5.3 0 1.6.7 3 1.8 3.9-.8-.9-1.4-2.2-1.4-3.5 0-2.9 2.4-5.3 5.3-5.3 1.4 0 2.6.5 3.5 1.4z"
-                                  fill="#c97201"
-                                />
-                                <path
-                                  d="m6.2 4.8c-.5.4-.6 1.1-.5 1.7.1.5.5 1 1.1 1.3.7.4 2.4.8 2.4 1.7 0 .2-.1.5-.2.6-.3.4-.8.5-1.3.5-.3 0-.7-.1-1-.2s-.6-.3-.9-.5c-.2-.1-.4 0-.5.1-.1.2 0 .4.1.5.5.4 1 .7 1.7.8.6.1 1.3.1 1.8-.2.5-.2.9-.6 1-1.2s-.1-1.2-.5-1.6c-.5-.5-2-1-2.4-1.3-.3-.2-.6-.5-.6-1 .1-.6.5-.9 1.1-.9.5 0 1.1.1 1.6.4.4.3.8-.4.4-.7-1-.6-2.5-.7-3.3 0z"
-                                  fill="#c67830"
-                                />
-                                <path
-                                  d="m6.1 4.5c-.5.4-.6 1.1-.5 1.7.1.5.5 1 1.1 1.3.7.4 2.4.8 2.4 1.7 0 .2-.1.5-.2.6-.3.4-.8.5-1.3.5-.3 0-.7-.1-1-.2s-.6-.3-.9-.5c-.2-.1-.4 0-.5.1-.1.2 0 .4.1.5.5.4 1 .7 1.7.8.6.1 1.3.1 1.8-.2.5-.2.9-.6 1-1.2s-.2-1.2-.6-1.6c-.5-.5-1.9-1-2.3-1.3-.3-.2-.6-.5-.6-1 .1-.6.5-.9 1.1-.9.5 0 1.1.1 1.6.4.4.3.8-.4.4-.7-1-.6-2.5-.7-3.3 0z"
-                                  fill="url(#coingold-d)"
-                                />
-                              </g>
-                            </svg>
-                            <span className="_1oVQkX">
-                              Xem Hướng dẫn đánh giá chuẩn để nhận đến <span className="_5c1DB5">200 xu</span>!
-                            </span>
-                            <div className="stardust-popover" id="stardust-popover1" tabIndex={0}>
-                              <div role="button" className="stardust-popover__target">
-                                <span>
-                                  <span className="V-sGOI">
-                                    <span className="ej1BZw" />
-                                  </span>
-                                </span>
-                              </div>
-                            </div>
-                          </div> */}
                           <div className="rating-modal-handler__container rating-modal-handler__container--last">
                             {data?.posts?.map((post: any, index: number) => (
-                              <div className="PinpOp UYED6+" key={post?.itemid}>
-                                <div className="rGP9Yd">
-                                  <div className="shopee-image__wrapper">
-                                    <div className="shopping_cart-img">
-                                      <img src={post?.image} alt={post?.name} />
-                                    </div>
-                                    <div
-                                      className="shopee-image__content"
-                                      style={{
-                                        backgroundImage: `${post?.image}`,
-                                      }}
-                                    >
-                                      <div className="shopee-image__content--blur"> </div>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div className="U2w1su">
-                                  <div className="D7LjRB">{post?.name}</div>
-                                  <div className="q7YFPv">Phân loại hàng: {data?.option[index]}</div>
-                                </div>
-                              </div>
-                            ))}
+                              <NavLink to="#" key={post?.itemid} className="mb-[10px]">
+                                <div>
+                                  <span className="items-center flex-nowrap text-[rgba(0,0,0,0.87)] flex pt-3 pb-0 px-0">
+                                    <div />
+                                    <div className="flex-1 items-start flex-nowrap flex pl-0 pr-3 py-0">
+                                      <div className=" w-[81px] h-[81px]">
+                                        <NavLink to={`/user/purchase/order/${post.orderid}`} className="relative">
+                                          <div className="w-20 h-20 mr-3">
+                                            <img className="w-full h-full" src={post?.image} alt={post?.name} />
+                                          </div>
+                                          <div
+                                            className="bg-[50%] bg-cover bg-no-repeat absolute w-full h-full left-0 top-0"
+                                            style={{
+                                              backgroundImage: `${post?.image}`,
+                                            }}
+                                          >
+                                            <div className="w-full h-full"></div>
+                                          </div>
+                                        </NavLink>
+                                      </div>
 
+                                      <div className="min-w-0 flex flex-1 flex-col items-start pl-3 pr-0 py-0">
+                                        <NavLink to={`/user/purchase/order/${post.orderid}`}>
+                                          <div
+                                            className="overflow-hidden text-ellipsis text-base leading-22 max-h-12 mt-0 mb-[5px] mx-0"
+                                            style={{
+                                              display: '-webkit-box',
+                                              WebkitBoxOrient: 'vertical',
+                                              WebkitLineClamp: 2,
+                                            }}
+                                          >
+                                            <span>{post?.name}</span>
+                                          </div>
+                                        </NavLink>
+                                        <div className="mt-0 mx-0">
+                                          <div className="text-[rgba(0,0,0,0.54)] mb-[5px]">Phân loại hàng: {data?.option[index]}</div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </span>
+                                  <div className="h-2.5 border-b-[rgba(0,0,0,0.09)] border-b border-solid" />
+                                </div>
+                              </NavLink>
+                            ))}
                             <div style={{ margin: '20px 0px' }}>
                               <div className="dmvG7c">
                                 <div className="jcQ0KT">
@@ -298,26 +220,13 @@ function ModelRatting({ isShow, onCloseModel, data }: RatingModel) {
                                     <span className="C7VJzu">Thêm Hình ảnh</span>
                                     <input className="JiUFY3" type="file" accept="image/*" multiple onChange={onFileChange} />
                                   </label>
-                                  {/* <label className="Vad+7d">
-                                    <svg width={20} height={15} viewBox="0 0 20 15" fill="none">
-                                      <path
-                                        fillRule="evenodd"
-                                        clipRule="evenodd"
-                                        d="M1 0.0769043C0.447715 0.0769043 0 0.524619 0 1.0769V13.1945C0 13.7468 0.447715 14.1945 1 14.1945H13.1176C13.6699 14.1945 14.1176 13.7468 14.1176 13.1945V1.0769C14.1176 0.52462 13.6699 0.0769043 13.1176 0.0769043H1ZM10.5883 7.1356C10.5883 9.08484 9.00811 10.665 7.05887 10.665C5.10963 10.665 3.52946 9.08484 3.52946 7.1356C3.52946 5.18636 5.10963 3.60619 7.05887 3.60619C9.00811 3.60619 10.5883 5.18636 10.5883 7.1356ZM7.05916 9.48862C8.35865 9.48862 9.4121 8.43517 9.4121 7.13568C9.4121 5.83619 8.35865 4.78274 7.05916 4.78274C5.75966 4.78274 4.70622 5.83619 4.70622 7.13568C4.70622 8.43517 5.75966 9.48862 7.05916 9.48862ZM20.0003 1.25341L15.2944 4.78244V9.4887L20.0003 13.0181V1.25341Z"
-                                        fill="#EE4D2D"
-                                      />
-                                    </svg>
-                                    <span className="C7VJzu">Thêm Video</span>
-                                    <input className="JiUFY3" type="file" accept="video/mp4" />
-                                  </label> */}
                                 </div>
                               )}
-
-                              <div className="_46Yt1i">
+                              <div className="flex justify-start items-center">
                                 {imageUrls?.map((url, index) => (
                                   <div
                                     key={index}
-                                    className="zcGDMl"
+                                    className="w-[54px] h-[54px] relative overflow-hidden bg-cover bg-[50%] bg-no-repeat mr-1.5"
                                     style={{
                                       backgroundImage: `url('${url}')`,
                                       border: 'none',
@@ -347,7 +256,11 @@ function ModelRatting({ isShow, onCloseModel, data }: RatingModel) {
                                     {Array.from({ length: 5 }).map((_, index: number) => (
                                       <>
                                         {index < 5 - imageUrls.length && (
-                                          <label className="--ENop" key={index}>
+                                          <label
+                                            className="w-[54px] h-[54px] box-border inline-flex flex-col items-center justify-center cursor-pointer mr-1.5 bg-[#fff]"
+                                            style={{ border: '1px dashed rgba(0, 0, 0, 0.26)' }}
+                                            key={index}
+                                          >
                                             <svg width={20} height={18} viewBox="0 0 20 18" fill="none">
                                               <svg width={20} height={18} viewBox="0 0 20 18" fill="none">
                                                 <path
@@ -359,8 +272,13 @@ function ModelRatting({ isShow, onCloseModel, data }: RatingModel) {
                                                 />
                                               </svg>
                                             </svg>
-                                            {/* <span className="C7VJzu">{5 - index}/5</span> */}
-                                            <input className="JiUFY3" type="file" accept="image/*" multiple onChange={onFileChange} />
+                                            <input
+                                              style={{ display: 'none' }}
+                                              type="file"
+                                              accept="image/*"
+                                              multiple
+                                              onChange={onFileChange}
+                                            />
                                           </label>
                                         )}
                                       </>
@@ -368,10 +286,6 @@ function ModelRatting({ isShow, onCloseModel, data }: RatingModel) {
                                   </>
                                 )}
                               </div>
-
-                              {/* <div className="p9mPpj">
-                                Thêm 50 ký tự và 1 hình ảnh và 1 video để nhận <span className="bMPOc7">200 xu</span>
-                              </div> */}
                             </div>
                             <div className="rating-modal-handler__rating-anonymous-wrapper">
                               <label className="stardust-checkbox stardust-checkbox--checked">
@@ -386,46 +300,28 @@ function ModelRatting({ isShow, onCloseModel, data }: RatingModel) {
                               </div>
                             </div>
                           </div>
-                          {/* <div id="wrapper">
-                            <div>
-                              <div className="wQt6l3">Về Dịch vụ</div>
-                              <div className="HiyfuD">
-                                <div className="u-INmW">
-                                  <div className="dmvG7c">
-                                    <div className="jcQ0KT">
-                                      <span>Dịch vụ của người bán</span>
-                                    </div>
-                                    <div className="rainbow-m-around_big">
-                                      <Rating value={payLoad[0].rating_star} onChange={(e) => onchangeStart(e)} />
-                                    </div>
-                                    <span className="_6m3yfK" style={{ color: 'rgb(237, 165, 0)' }}>
-                                      {['Tệ', 'Không hài lòng', 'Bình thường', 'Hài lòng', 'Tuyệt vời'][payLoad[0].rating_star - 1]}
-                                    </span>
-                                  </div>
-                                </div>
-                                <div className="u-INmW">
-                                  <div className="dmvG7c">
-                                    <div className="jcQ0KT">
-                                      <span>Dịch vụ vận chuyển</span>
-                                    </div>
-                                    <div className="rainbow-m-around_big">
-                                      <Rating value={payLoad[0].rating_star} onChange={(e) => onchangeStart(e)} />
-                                    </div>
-                                    <span className="_6m3yfK" style={{ color: 'rgb(237, 165, 0)' }}>
-                                      {['Tệ', 'Không hài lòng', 'Bình thường', 'Hài lòng', 'Tuyệt vời'][payLoad[0].rating_star - 1]}
-                                    </span>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div> */}
                         </div>
                       </div>
-                      <div className="shopee-popup-form__footer">
-                        <button className="cancel-btn">Trở Lại</button>
-                        <button type="button" className="btn btn-solid-primary btn--s btn--inline rL4kG2" onClick={onSubmit}>
-                          Hoàn thành
-                        </button>
+                      <div
+                        className="absolute flex justify-end h-[84px] uppercase items-center box-border px-[30px] py-[22px] rounded-br-[3px] rounded-bl-[3px] bottom-0 inset-x-0"
+                        style={{
+                          background: 'linear-gradient(hsla(0, 0%, 100%, 0.9), #fff)',
+                        }}
+                      >
+                        <div className="flex justify-end  gap-[10px]">
+                          <NavLink
+                            to="/"
+                            className="overflow-hidden text-ellipsis flex-col text-sm box-border shadow-[0_1px_1px_0_rgba(0,0,0,0.09)] border flex items-center justify-center capitalize h-[34px] min-w-[124px] text-[0.9rem] leading-[1.6rem] no-underline px-3 py-0 rounded-sm border-solid border-[#ccc]"
+                          >
+                            TRỞ LẠI
+                          </NavLink>
+                          <button
+                            className="overflow-hidden text-ellipsis flex-col text-sm box-border text-white  h-[34px] min-w-[105px] text-[0.9rem] leading-[1.6rem] no-underline flex items-center justify-center shadow-[0_1px_1px_rgba(0,0,0,0.09)] px-2.5 py-0 rounded-sm border-0 bg-[#ee4d2d]"
+                            onClick={onSubmit}
+                          >
+                            Hoàn thành
+                          </button>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -433,16 +329,6 @@ function ModelRatting({ isShow, onCloseModel, data }: RatingModel) {
               </div>
             </div>
           </div>
-          <style
-            id="modal-inset"
-            data-top={0}
-            data-right={0}
-            data-bottom={0}
-            data-left={0}
-            dangerouslySetInnerHTML={{
-              __html: '.modal-inset{top:0;right:0;bottom:0;left:0;position:fixed;pointer-events:none}.modal-inset>*{pointer-events:auto}',
-            }}
-          />
         </div>
       )}
     </>

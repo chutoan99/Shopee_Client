@@ -4,7 +4,7 @@ export { default as HeaderCart } from './cart';
 export { default as HeaderNotify } from './notify';
 export { default as LogoShopee } from './logo';
 export { default as SuggestList } from './suggestlist';
-export { default as HomeFilter } from './homeFilter/index';
+
 export { default as Loading } from './loading/index';
 export { default as Loading2 } from './loading2/index';
 export { default as LoadingSkeleton } from './loadingSkeleton/index';

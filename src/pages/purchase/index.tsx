@@ -1,5 +1,4 @@
 //? LIBRARY
-import './styles/status_order.css';
 import { Link, NavLink } from 'react-router-dom';
 import { memo, useEffect, useState } from 'react';
 //? APPS
@@ -96,224 +95,244 @@ function Purchase() {
             },
           ].map((tab: any, index: number) => (
             <span
-              className={`vAkdD0 ${borderBottom === tab.content ? 'r-S3nG' : ''}`}
+              className={`bg-[#fff] cursor-pointer select-none text-base leading-[1.188rem] text-center text-[rgba(0,0,0,0.8)] flex flex-1 overflow-hidden items-center justify-center transition-[color] duration-[0.2s] px-0 py-3 hover:text-[#ee4d2d] ${
+                borderBottom === tab.content ? 'text-[#ee4d2d] border-[#ee4d2d]  border-b-2  border-solid' : ''
+              }`}
+              style={{
+                WebkitUserSelect: 'none',
+                MozUserSelect: 'none',
+              }}
               key={index}
               onClick={() => onChangeStatus(tab.content, index, tab.type)}
             >
-              <span className="_0rjE9m">
+              <span>
                 {tab.content}
-                <>{tab.total === 0 ? <></> : <span className="fSW3m4">({tab.total})</span>}</>
+                <>{tab.total === 0 ? <></> : <span className="text-sm text-[#ee4d2d] ml-1 mr-0 my-0">({tab.total})</span>}</>
               </span>
             </span>
           ))}
         </div>
         {modal === 0 && (
-          <>
-            <div className="VrgkXA">
-              <svg width="19px" height="19px" viewBox="0 0 19 19" className="p-0">
-                <g id="Search-New" strokeWidth={1} fill="none" fillRule="evenodd">
-                  <g id="my-purchase-copy-27" transform="translate(-399.000000, -221.000000)" strokeWidth={2}>
-                    <g id="Group-32" transform="translate(400.000000, 222.000000)">
-                      <circle id="Oval-27" cx={7} cy={7} r={7} />
-                      <path d="M12,12 L16.9799555,16.919354" id="Path-184" strokeLinecap="round" strokeLinejoin="round" />
-                    </g>
+          <div className="bg-[#eaeaea] flex items-center shadow-[0_1px_1px_0_rgba(0,0,0,0.05)] text-[#212121] mx-0 my-3 px-0 py-[10px] rounded-sm">
+            <svg width="19px" height="19px" viewBox="0 0 19 19" className="p-0 stroke-[#bbb] mx-[15px] my-0">
+              <g id="Search-New" strokeWidth={1} fill="none" fillRule="evenodd">
+                <g id="my-purchase-copy-27" transform="translate(-399.000000, -221.000000)" strokeWidth={2}>
+                  <g id="Group-32" transform="translate(400.000000, 222.000000)">
+                    <circle id="Oval-27" cx={7} cy={7} r={7} />
+                    <path d="M12,12 L16.9799555,16.919354" id="Path-184" strokeLinecap="round" strokeLinejoin="round" />
                   </g>
                 </g>
-              </svg>
-              <input
-                value={shopName}
-                onChange={(e) => setShopName(e.target.value)}
-                autoComplete="off"
-                type="text"
-                placeholder="Bạn có thể tìm kiếm theo tên Shop để tìm kiếm sản phẩm"
-                defaultValue=""
-                className="Header_search-input"
-                onKeyDown={onKeyDown}
-              />
-            </div>
-          </>
+              </g>
+            </svg>
+            <input
+              value={shopName}
+              onChange={(e) => setShopName(e.target.value)}
+              autoComplete="off"
+              type="text"
+              placeholder="Bạn có thể tìm kiếm theo tên Shop để tìm kiếm sản phẩm"
+              defaultValue=""
+              className="flex-1 text-sm leading-4 bg-inherit border-0 outline-none"
+              onKeyDown={onKeyDown}
+            />
+          </div>
         )}
 
         <>
           {dataOrders?.length > 0 ? (
             <>
               {dataOrders?.map((cart: Order) => (
-                <div className="hiXKxx" key={cart.orderid}>
-                  <div>
-                    <div className="x0QT2k">
-                      <div className="KrPQEI">
-                        <div className="qCUYY8">
-                          <div className="_0RxYUS">
-                            <svg className="mr-[5px]" xmlns="http://www.w3.org/2000/svg" width={70} height={16} fill="none">
+                <div className="shadow-[0_1px_1px_0_rgba(0,0,0,0.05)] mx-0 my-3 rounded-sm" key={cart.orderid}>
+                  <div className="px-6 py-3 bg-[#fff]">
+                    <div className="flex items-center justify-between pt-0 pb-3 px-0">
+                      <div className="flex items-center whitespace-nowrap">
+                        <div className="flex items-center">
+                          <svg className="mr-[5px]" xmlns="http://www.w3.org/2000/svg" width={70} height={16} fill="none">
+                            <path
+                              fill="#EE4D2D"
+                              fillRule="evenodd"
+                              d="M0 2C0 .9.9 0 2 0h66a2 2 0 012 2v12a2 2 0 01-2 2H2a2 2 0 01-2-2V2z"
+                              clipRule="evenodd"
+                            />
+                            <g clipPath="url(#clip0)">
                               <path
-                                fill="#EE4D2D"
-                                fillRule="evenodd"
-                                d="M0 2C0 .9.9 0 2 0h66a2 2 0 012 2v12a2 2 0 01-2 2H2a2 2 0 01-2-2V2z"
-                                clipRule="evenodd"
+                                fill="#fff"
+                                d="M8.7 13H7V8.7L5.6 6.3A828.9 828.9 0 004 4h2l2 3.3a1197.3 1197.3 0 002-3.3h1.6L8.7 8.7V13zm7.9-1.7h1.7c0 .3-.2.6-.5 1-.2.3-.5.5-1 .7l-.6.2h-.8c-.5 0-1 0-1.5-.2l-1-.8a4 4 0 01-.9-2.4c0-1 .3-1.9 1-2.6a3 3 0 012.4-1l.8.1a2.8 2.8 0 011.3.7l.4.6.3.8V10h-4.6l.2 1 .4.7.6.5.7.1c.4 0 .7 0 .9-.2l.2-.6v-.1zm0-2.3l-.1-1-.3-.3c0-.2-.1-.2-.2-.3l-.8-.2c-.3 0-.6.2-.9.5l-.3.5a4 4 0 00-.3.8h3zm-1.4-4.2l-.7.7h-1.4l1.5-2h1.1l1.5 2h-1.4l-.6-.7zm8.1 1.6H25V13h-1.7v-.5.1H23l-.7.5-.9.1-1-.1-.7-.4c-.3-.2-.4-.5-.6-.8l-.2-1.3V6.4h1.7v3.7c0 1 0 1.6.3 1.7.2.2.5.3.7.3h.4l.4-.2.3-.3.3-.5.2-1.4V6.4zM34.7 13a11.2 11.2 0 01-1.5.2 3.4 3.4 0 01-1.3-.2 2 2 0 01-.5-.3l-.3-.5-.2-.6V7.4h-1.2v-1h1.1V5h1.7v1.5h1.9v1h-2v3l.2 1.2.1.3.2.2h.3l.2.1c.2 0 .6 0 1.3-.3v1zm2.4 0h-1.7V3.5h1.7v3.4a3.7 3.7 0 01.2-.1 2.8 2.8 0 013.4 0l.4.4.2.7V13h-1.6V9.3 8.1l-.4-.6-.6-.2a1 1 0 00-.4.1 2 2 0 00-.4.2l-.3.3a3 3 0 00-.3.5l-.1.5-.1.9V13zm5.4-6.6H44V13h-1.6V6.4zm-.8-.9l1.8-2h1.8l-2.1 2h-1.5zm7.7 5.8H51v.5l-.4.5a2 2 0 01-.4.4l-.6.3-1.4.2c-.5 0-1 0-1.4-.2l-1-.7c-.3-.3-.5-.7-.6-1.2-.2-.4-.3-.9-.3-1.4 0-.5.1-1 .3-1.4a2.6 2.6 0 011.6-1.8c.4-.2.9-.3 1.4-.3.6 0 1 .1 1.5.3.4.1.7.4 1 .6l.2.5.1.5h-1.6c0-.3-.1-.5-.3-.6-.2-.2-.4-.3-.8-.3s-.8.2-1.2.6c-.3.4-.4 1-.4 2 0 .9.1 1.5.4 1.8.4.4.8.6 1.2.6h.5l.3-.2.2-.3v-.4zm4 1.7h-1.6V3.5h1.7v3.4a3.7 3.7 0 01.2-.1 2.8 2.8 0 013.4 0l.3.4.3.7V13h-1.6V9.3L56 8.1c-.1-.3-.2-.5-.4-.6l-.6-.2a1 1 0 00-.3.1 2 2 0 00-.4.2l-.3.3a3 3 0 00-.3.5l-.2.5V13z"
                               />
-                              <g clipPath="url(#clip0)">
+                            </g>
+                            <g clipPath="url(#clip1)">
+                              <path fill="#fff" d="M63 8.2h2.2v1.6H63V12h-1.6V9.8h-2.2V8.2h2.2V6H63v2.3z" />
+                            </g>
+                            <defs>
+                              <clipPath id="clip0">
+                                <path fill="#fff" d="M0 0h55v16H0z" transform="translate(4)" />
+                              </clipPath>
+                              <clipPath id="clip1">
+                                <path fill="#fff" d="M0 0h7v16H0z" transform="translate(59)" />
+                              </clipPath>
+                            </defs>
+                          </svg>
+                        </div>
+                        <div className="max-w-[200px] text-sm font-semibold overflow-hidden text-ellipsis ml-2 mr-0 my-0">
+                          {cart?.shop_name}
+                        </div>
+                        <div className="ml-2 mr-0 my-0">
+                          <button className="text-xs capitalize border bg-[#ee4d2d] text-white px-2 py-1 rounded-sm border-solid border-transparent  flex items-center hover:bg-[#d73211] hover:border-[#ba2b0f]">
+                            <svg
+                              viewBox="0 0 17 17"
+                              className="mr-[5px] inline-block w-[1em] h-[1em] fill-current relative"
+                              style={{ fill: 'white' }}
+                            >
+                              <g fillRule="evenodd">
                                 <path
-                                  fill="#fff"
-                                  d="M8.7 13H7V8.7L5.6 6.3A828.9 828.9 0 004 4h2l2 3.3a1197.3 1197.3 0 002-3.3h1.6L8.7 8.7V13zm7.9-1.7h1.7c0 .3-.2.6-.5 1-.2.3-.5.5-1 .7l-.6.2h-.8c-.5 0-1 0-1.5-.2l-1-.8a4 4 0 01-.9-2.4c0-1 .3-1.9 1-2.6a3 3 0 012.4-1l.8.1a2.8 2.8 0 011.3.7l.4.6.3.8V10h-4.6l.2 1 .4.7.6.5.7.1c.4 0 .7 0 .9-.2l.2-.6v-.1zm0-2.3l-.1-1-.3-.3c0-.2-.1-.2-.2-.3l-.8-.2c-.3 0-.6.2-.9.5l-.3.5a4 4 0 00-.3.8h3zm-1.4-4.2l-.7.7h-1.4l1.5-2h1.1l1.5 2h-1.4l-.6-.7zm8.1 1.6H25V13h-1.7v-.5.1H23l-.7.5-.9.1-1-.1-.7-.4c-.3-.2-.4-.5-.6-.8l-.2-1.3V6.4h1.7v3.7c0 1 0 1.6.3 1.7.2.2.5.3.7.3h.4l.4-.2.3-.3.3-.5.2-1.4V6.4zM34.7 13a11.2 11.2 0 01-1.5.2 3.4 3.4 0 01-1.3-.2 2 2 0 01-.5-.3l-.3-.5-.2-.6V7.4h-1.2v-1h1.1V5h1.7v1.5h1.9v1h-2v3l.2 1.2.1.3.2.2h.3l.2.1c.2 0 .6 0 1.3-.3v1zm2.4 0h-1.7V3.5h1.7v3.4a3.7 3.7 0 01.2-.1 2.8 2.8 0 013.4 0l.4.4.2.7V13h-1.6V9.3 8.1l-.4-.6-.6-.2a1 1 0 00-.4.1 2 2 0 00-.4.2l-.3.3a3 3 0 00-.3.5l-.1.5-.1.9V13zm5.4-6.6H44V13h-1.6V6.4zm-.8-.9l1.8-2h1.8l-2.1 2h-1.5zm7.7 5.8H51v.5l-.4.5a2 2 0 01-.4.4l-.6.3-1.4.2c-.5 0-1 0-1.4-.2l-1-.7c-.3-.3-.5-.7-.6-1.2-.2-.4-.3-.9-.3-1.4 0-.5.1-1 .3-1.4a2.6 2.6 0 011.6-1.8c.4-.2.9-.3 1.4-.3.6 0 1 .1 1.5.3.4.1.7.4 1 .6l.2.5.1.5h-1.6c0-.3-.1-.5-.3-.6-.2-.2-.4-.3-.8-.3s-.8.2-1.2.6c-.3.4-.4 1-.4 2 0 .9.1 1.5.4 1.8.4.4.8.6 1.2.6h.5l.3-.2.2-.3v-.4zm4 1.7h-1.6V3.5h1.7v3.4a3.7 3.7 0 01.2-.1 2.8 2.8 0 013.4 0l.3.4.3.7V13h-1.6V9.3L56 8.1c-.1-.3-.2-.5-.4-.6l-.6-.2a1 1 0 00-.3.1 2 2 0 00-.4.2l-.3.3a3 3 0 00-.3.5l-.2.5V13z"
+                                  d="M13.89 0C14.504 0 15 .512 15 1.144l-.003.088-.159 2.117.162.001c.79 0 1.46.558 1.618 1.346l.024.15.008.154v9.932a1.15 1.15 0 01-1.779.963l-.107-.08-1.882-1.567-7.962.002a1.653 1.653 0 01-1.587-1.21l-.036-.148-.021-.155-.071-.836h-.01L.91 13.868a.547.547 0 01-.26.124L.556 14a.56.56 0 01-.546-.47L0 13.429V1.144C0 .512.497 0 1.11 0h12.78zM15 4.65l-.259-.001-.461 6.197c-.045.596-.527 1.057-1.106 1.057L4.509 11.9l.058.69.01.08a.35.35 0 00.273.272l.07.007 8.434-.001 1.995 1.662.002-9.574-.003-.079a.35.35 0 00-.274-.3L15 4.65zM13.688 1.3H1.3v10.516l1.413-1.214h10.281l.694-9.302zM4.234 5.234a.8.8 0 011.042-.077l.187.164c.141.111.327.208.552.286.382.131.795.193 1.185.193s.803-.062 1.185-.193c.225-.078.41-.175.552-.286l.187-.164a.8.8 0 011.042 1.209c-.33.33-.753.579-1.26.753A5.211 5.211 0 017.2 7.4a5.211 5.211 0 01-1.706-.28c-.507-.175-.93-.424-1.26-.754a.8.8 0 010-1.132z"
+                                  fillRule="nonzero"
                                 />
                               </g>
-                              <g clipPath="url(#clip1)">
-                                <path fill="#fff" d="M63 8.2h2.2v1.6H63V12h-1.6V9.8h-2.2V8.2h2.2V6H63v2.3z" />
-                              </g>
-                              <defs>
-                                <clipPath id="clip0">
-                                  <path fill="#fff" d="M0 0h55v16H0z" transform="translate(4)" />
-                                </clipPath>
-                                <clipPath id="clip1">
-                                  <path fill="#fff" d="M0 0h7v16H0z" transform="translate(59)" />
-                                </clipPath>
-                              </defs>
                             </svg>
-                          </div>
-                          <div className="_9Ro5mP">{cart?.shop_name}</div>
-                          <div className="yHlRfY">
-                            <button className="stardust-button stardust-button--primary flex items-center">
-                              <svg viewBox="0 0 17 17" className="mr-[5px] shopee-svg-icon icon-btn-chat" style={{ fill: 'white' }}>
-                                <g fillRule="evenodd">
-                                  <path
-                                    d="M13.89 0C14.504 0 15 .512 15 1.144l-.003.088-.159 2.117.162.001c.79 0 1.46.558 1.618 1.346l.024.15.008.154v9.932a1.15 1.15 0 01-1.779.963l-.107-.08-1.882-1.567-7.962.002a1.653 1.653 0 01-1.587-1.21l-.036-.148-.021-.155-.071-.836h-.01L.91 13.868a.547.547 0 01-.26.124L.556 14a.56.56 0 01-.546-.47L0 13.429V1.144C0 .512.497 0 1.11 0h12.78zM15 4.65l-.259-.001-.461 6.197c-.045.596-.527 1.057-1.106 1.057L4.509 11.9l.058.69.01.08a.35.35 0 00.273.272l.07.007 8.434-.001 1.995 1.662.002-9.574-.003-.079a.35.35 0 00-.274-.3L15 4.65zM13.688 1.3H1.3v10.516l1.413-1.214h10.281l.694-9.302zM4.234 5.234a.8.8 0 011.042-.077l.187.164c.141.111.327.208.552.286.382.131.795.193 1.185.193s.803-.062 1.185-.193c.225-.078.41-.175.552-.286l.187-.164a.8.8 0 011.042 1.209c-.33.33-.753.579-1.26.753A5.211 5.211 0 017.2 7.4a5.211 5.211 0 01-1.706-.28c-.507-.175-.93-.424-1.26-.754a.8.8 0 010-1.132z"
-                                    fillRule="nonzero"
-                                  />
-                                </g>
-                              </svg>
-                              <span>chat</span>
-                            </button>
-                          </div>
-                          <NavLink className="_7wKGws" to={`/shop/${cart.shopid}`}>
-                            <button className="stardust-button">
+                            <span className="align-middle ml-1 mr-0 my-0">chat</span>
+                          </button>
+                        </div>
+                        <NavLink className="ml-2 mr-0 my-0" to={`/shop/${cart.shopid}`}>
+                          <button className="text-xs flex items-center capitalize text-[#555] border px-2 py-1 rounded-sm border-solid border-[rgba(0,0,0,0.09)] hover:bg-[rgba(0,0,0,0.02)] hover:border hover:border-solid hover:border-[rgba(0,0,0,0.09)]">
+                            <svg
+                              enableBackground="new 0 0 15 15"
+                              viewBox="0 0 15 15"
+                              x={0}
+                              y={0}
+                              className="mr-[5px] inline-block w-[1em] h-[1em] fill-current relative"
+                            >
+                              <path d="m15 4.8c-.1-1-.8-2-1.6-2.9-.4-.3-.7-.5-1-.8-.1-.1-.7-.5-.7-.5h-8.5s-1.4 1.4-1.6 1.6c-.4.4-.8 1-1.1 1.4-.1.4-.4.8-.4 1.1-.3 1.4 0 2.3.6 3.3l.3.3v3.5c0 1.5 1.1 2.6 2.6 2.6h8c1.5 0 2.5-1.1 2.5-2.6v-3.7c.1-.1.1-.3.3-.3.4-.8.7-1.7.6-3zm-3 7c0 .4-.1.5-.4.5h-8c-.3 0-.5-.1-.5-.5v-3.1c.3 0 .5-.1.8-.4.1 0 .3-.1.3-.1.4.4 1 .7 1.5.7.7 0 1.2-.1 1.6-.5.5.3 1.1.4 1.6.4.7 0 1.2-.3 1.8-.7.1.1.3.3.5.4.3.1.5.3.8.3zm.5-5.2c0 .1-.4.7-.3.5l-.1.1c-.1 0-.3 0-.4-.1s-.3-.3-.5-.5l-.5-1.1-.5 1.1c-.4.4-.8.7-1.4.7-.5 0-.7 0-1-.5l-.6-1.1-.5 1.1c-.3.5-.6.6-1.1.6-.3 0-.6-.2-.9-.8l-.5-1-.7 1c-.1.3-.3.4-.4.6-.1 0-.3.1-.3.1s-.4-.4-.4-.5c-.4-.5-.5-.9-.4-1.5 0-.1.1-.4.3-.5.3-.5.4-.8.8-1.2.7-.8.8-1 1-1h7s .3.1.8.7c.5.5 1.1 1.2 1.1 1.8-.1.7-.2 1.2-.5 1.5z" />
+                            </svg>
+                            <span className="align-middle ml-1 mr-0 my-0">Xem Shop</span>
+                          </button>
+                        </NavLink>
+                      </div>
+                      <div className="flex items-center pl-2.5 pr-0 py-0">
+                        <div className="flex items-center text-right ml-0 mr-2.5 my-0 pl-0 pr-[5px] py-0 border-r-[rgba(0,0,0,0.12)] border-r border-solid">
+                          <NavLink className="inline-flex items-center align-middle" to="/user/purchase/order/143045877205897?type=6">
+                            <span className="no-underline text-[#26aa99] align-middle">
                               <svg
                                 enableBackground="new 0 0 15 15"
                                 viewBox="0 0 15 15"
                                 x={0}
                                 y={0}
-                                className="mr-[5px]  shopee-svg-icon icon-btn-shop"
+                                className="align-middle text-base text-[#00bfa5] stroke-[#26aa99] inline-block w-[1em] h-[1em] fill-current relative ml-0 mr-1 mt-0 mb-px"
                               >
-                                <path d="m15 4.8c-.1-1-.8-2-1.6-2.9-.4-.3-.7-.5-1-.8-.1-.1-.7-.5-.7-.5h-8.5s-1.4 1.4-1.6 1.6c-.4.4-.8 1-1.1 1.4-.1.4-.4.8-.4 1.1-.3 1.4 0 2.3.6 3.3l.3.3v3.5c0 1.5 1.1 2.6 2.6 2.6h8c1.5 0 2.5-1.1 2.5-2.6v-3.7c.1-.1.1-.3.3-.3.4-.8.7-1.7.6-3zm-3 7c0 .4-.1.5-.4.5h-8c-.3 0-.5-.1-.5-.5v-3.1c.3 0 .5-.1.8-.4.1 0 .3-.1.3-.1.4.4 1 .7 1.5.7.7 0 1.2-.1 1.6-.5.5.3 1.1.4 1.6.4.7 0 1.2-.3 1.8-.7.1.1.3.3.5.4.3.1.5.3.8.3zm.5-5.2c0 .1-.4.7-.3.5l-.1.1c-.1 0-.3 0-.4-.1s-.3-.3-.5-.5l-.5-1.1-.5 1.1c-.4.4-.8.7-1.4.7-.5 0-.7 0-1-.5l-.6-1.1-.5 1.1c-.3.5-.6.6-1.1.6-.3 0-.6-.2-.9-.8l-.5-1-.7 1c-.1.3-.3.4-.4.6-.1 0-.3.1-.3.1s-.4-.4-.4-.5c-.4-.5-.5-.9-.4-1.5 0-.1.1-.4.3-.5.3-.5.4-.8.8-1.2.7-.8.8-1 1-1h7s .3.1.8.7c.5.5 1.1 1.2 1.1 1.8-.1.7-.2 1.2-.5 1.5z" />
-                              </svg>
-                              <span>Xem Shop</span>
-                            </button>
-                          </NavLink>
-                        </div>
-                        <div className="EQko8g">
-                          <div className="qP6Mvo">
-                            <NavLink className="KmBIg2" to="/user/purchase/order/143045877205897?type=6">
-                              <span className="nkmfr2">
-                                <svg
-                                  enableBackground="new 0 0 15 15"
-                                  viewBox="0 0 15 15"
-                                  x={0}
-                                  y={0}
-                                  className="shopee-svg-icon icon-free-shipping-line"
-                                >
-                                  <g>
-                                    <line fill="none" strokeLinejoin="round" strokeMiterlimit={10} x1="8.6" x2="4.2" y1="9.8" y2="9.8" />
-                                    <circle cx={3} cy="11.2" fill="none" r={2} strokeMiterlimit={10} />
-                                    <circle cx={10} cy="11.2" fill="none" r={2} strokeMiterlimit={10} />
-                                    <line fill="none" strokeMiterlimit={10} x1="10.5" x2="14.4" y1="7.3" y2="7.3" />
-                                    <polyline
-                                      fill="none"
-                                      points="1.5 9.8 .5 9.8 .5 1.8 10 1.8 10 9.1"
-                                      strokeLinejoin="round"
-                                      strokeMiterlimit={10}
-                                    />
-                                    <polyline
-                                      fill="none"
-                                      points="9.9 3.8 14 3.8 14.5 10.2 11.9 10.2"
-                                      strokeLinejoin="round"
-                                      strokeMiterlimit={10}
-                                    />
-                                  </g>
-                                </svg>
-                                {/* Đơn hàng đã được giao thành công */}
-                              </span>
-                            </NavLink>
-                            <div className="shopee-drawer" id="pc-drawer-id-7" tabIndex={0}>
-                              <svg enableBackground="new 0 0 15 15" viewBox="0 0 15 15" x={0} y={0} className="shopee-svg-icon icon-help">
                                 <g>
-                                  <circle cx="7.5" cy="7.5" fill="none" r="6.5" strokeMiterlimit={10} />
-                                  <path
-                                    d="m5.3 5.3c.1-.3.3-.6.5-.8s.4-.4.7-.5.6-.2 1-.2c.3 0 .6 0 .9.1s.5.2.7.4.4.4.5.7.2.6.2.9c0 .2 0 .4-.1.6s-.1.3-.2.5c-.1.1-.2.2-.3.3-.1.2-.2.3-.4.4-.1.1-.2.2-.3.3s-.2.2-.3.4c-.1.1-.1.2-.2.4s-.1.3-.1.5v.4h-.9v-.5c0-.3.1-.6.2-.8s.2-.4.3-.5c.2-.2.3-.3.5-.5.1-.1.3-.3.4-.4.1-.2.2-.3.3-.5s.1-.4.1-.7c0-.4-.2-.7-.4-.9s-.5-.3-.9-.3c-.3 0-.5 0-.7.1-.1.1-.3.2-.4.4-.1.1-.2.3-.3.5 0 .2-.1.5-.1.7h-.9c0-.3.1-.7.2-1zm2.8 5.1v1.2h-1.2v-1.2z"
-                                    stroke="none"
+                                  <line fill="none" strokeLinejoin="round" strokeMiterlimit={10} x1="8.6" x2="4.2" y1="9.8" y2="9.8" />
+                                  <circle cx={3} cy="11.2" fill="none" r={2} strokeMiterlimit={10} />
+                                  <circle cx={10} cy="11.2" fill="none" r={2} strokeMiterlimit={10} />
+                                  <line fill="none" strokeMiterlimit={10} x1="10.5" x2="14.4" y1="7.3" y2="7.3" />
+                                  <polyline
+                                    fill="none"
+                                    points="1.5 9.8 .5 9.8 .5 1.8 10 1.8 10 9.1"
+                                    strokeLinejoin="round"
+                                    strokeMiterlimit={10}
+                                  />
+                                  <polyline
+                                    fill="none"
+                                    points="9.9 3.8 14 3.8 14.5 10.2 11.9 10.2"
+                                    strokeLinejoin="round"
+                                    strokeMiterlimit={10}
                                   />
                                 </g>
                               </svg>
-                            </div>
+                              {/* Đơn hàng đã được giao thành công */}
+                            </span>
+                          </NavLink>
+                          <div className="flex relative overflow-visible ml-1.5 mr-0 my-0" id="pc-drawer-id-7" tabIndex={0}>
+                            <svg
+                              enableBackground="new 0 0 15 15"
+                              viewBox="0 0 15 15"
+                              x={0}
+                              y={0}
+                              className=" stroke-current inline-block w-[1em] h-[1em] fill-current relative"
+                            >
+                              <g>
+                                <circle cx="7.5" cy="7.5" fill="none" r="6.5" strokeMiterlimit={10} />
+                                <path
+                                  d="m5.3 5.3c.1-.3.3-.6.5-.8s.4-.4.7-.5.6-.2 1-.2c.3 0 .6 0 .9.1s.5.2.7.4.4.4.5.7.2.6.2.9c0 .2 0 .4-.1.6s-.1.3-.2.5c-.1.1-.2.2-.3.3-.1.2-.2.3-.4.4-.1.1-.2.2-.3.3s-.2.2-.3.4c-.1.1-.1.2-.2.4s-.1.3-.1.5v.4h-.9v-.5c0-.3.1-.6.2-.8s.2-.4.3-.5c.2-.2.3-.3.5-.5.1-.1.3-.3.4-.4.1-.2.2-.3.3-.5s.1-.4.1-.7c0-.4-.2-.7-.4-.9s-.5-.3-.9-.3c-.3 0-.5 0-.7.1-.1.1-.3.2-.4.4-.1.1-.2.3-.3.5 0 .2-.1.5-.1.7h-.9c0-.3.1-.7.2-1zm2.8 5.1v1.2h-1.2v-1.2z"
+                                  stroke="none"
+                                />
+                              </g>
+                            </svg>
                           </div>
-                          <div className="V+w7Xs">{cart.state}</div>
                         </div>
+                        <div className="leading-6 text-[#ee4d2d] text-right uppercase whitespace-nowrap">{cart.state}</div>
                       </div>
-                      <div className="FycaKn" />
-
-                      {cart.posts.map((post: any, index: number) => (
-                        <Link to="#" key={post.itemid} className="mb-[10px]">
-                          <div className="_0OiaZ-">
-                            <div className="FbLutl">
-                              <div>
-                                <span className="x7nENX">
-                                  <div />
-                                  <div className="aybVBK">
-                                    <div className="rGP9Yd">
-                                      <NavLink to={`/user/purchase/order/${cart.orderid}`} className="shopee-image__wrapper">
-                                        <div className="shopping_cart-img">
-                                          <img src={post?.image} alt={post?.name} />
-                                        </div>
-                                        <div
-                                          className="shopee-image__content"
-                                          style={{
-                                            backgroundImage: `${post?.image}`,
-                                          }}
-                                        >
-                                          <div className="shopee-image__content--blur"> </div>
-                                        </div>
-                                      </NavLink>
-                                    </div>
-
-                                    <div className="_7uZf6Q">
-                                      <NavLink to={`/user/purchase/order/${cart.orderid}`}>
-                                        <div className="iJlxsT">
-                                          <span className="x5GTyN">{post?.name}</span>
-                                        </div>
-                                      </NavLink>
-                                      <div>
-                                        <div className="vb0b-P">Phân loại hàng: {cart?.option[index]}</div>
-                                        <div className="_3F1-5M">x{cart?.amount[index]}</div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                  <div className="_9UJGhr">
-                                    <div className="rjqzk1">
-                                      <span className="-x3Dqh">
-                                        <div className="shopping_cart-new-price" style={{ flexDirection: 'row', gap: '8px' }}>
-                                          <h1 className="">đ{formatPrice(post?.price_before_discount, post?.amount)}</h1>đ{' '}
-                                          {formatPrice(post?.price, post?.amount)}
-                                        </div>
-                                      </span>
-                                    </div>
-                                  </div>
-                                </span>
-                              </div>
-                              <div className="Cde7Oe" />
-                            </div>
-                          </div>
-                        </Link>
-                      ))}
-
-                      <div className="B8+ewx" />
                     </div>
+                    <hr className="border-b-[rgba(0,0,0,0.06)] border-b border-solid" />
+
+                    {cart.posts.map((post: any, index: number) => (
+                      <Link to="#" key={post.itemid} className="mb-[10px]">
+                        <div className="">
+                          <div>
+                            <span className="items-center flex-nowrap text-[rgba(0,0,0,0.87)] flex pt-3 pb-0 px-0">
+                              <div />
+                              <div className="flex-1 items-start flex-nowrap flex pl-0 pr-3 py-0">
+                                <div className=" w-[81px] h-[81px]">
+                                  <NavLink to={`/user/purchase/order/${cart.orderid}`} className="relative">
+                                    <div className="w-20 h-20 mr-3">
+                                      <img className="w-full h-full" src={post?.image} alt={post?.name} />
+                                    </div>
+                                    <div
+                                      className="bg-[50%] bg-cover bg-no-repeat absolute w-full h-full left-0 top-0"
+                                      style={{
+                                        backgroundImage: `${post?.image}`,
+                                      }}
+                                    >
+                                      <div className="w-full h-full"></div>
+                                    </div>
+                                  </NavLink>
+                                </div>
+
+                                <div className="min-w-0 flex flex-1 flex-col items-start pl-3 pr-0 py-0">
+                                  <NavLink to={`/user/purchase/order/${cart.orderid}`}>
+                                    <div
+                                      className="overflow-hidden text-ellipsis text-base leading-22 max-h-12 mt-0 mb-[5px] mx-0"
+                                      style={{
+                                        display: '-webkit-box',
+                                        WebkitBoxOrient: 'vertical',
+                                        WebkitLineClamp: 2,
+                                      }}
+                                    >
+                                      <span>{post?.name}</span>
+                                    </div>
+                                  </NavLink>
+                                  <div className="mt-0 mx-0">
+                                    <div className="text-[rgba(0,0,0,0.54)] mb-[5px]">Phân loại hàng: {cart?.option[index]}</div>
+                                    <div className="">x{cart?.amount[index]}</div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div>
+                                <div>
+                                  <span className="align-middle text-sm leading-4 text-[rgba(0,0,0,0.87)]">
+                                    <div
+                                      className="text-sm flex justify-center flex-col text-center text-[#ee4d2d] font-medium"
+                                      style={{ flexDirection: 'row', gap: '8px' }}
+                                    >
+                                      <h3 className="line-through text-[#ccc]">
+                                        đ{formatPrice(post?.price_before_discount, post?.amount)}
+                                      </h3>
+                                      <h3>đ {formatPrice(post?.price, post?.amount)}</h3>
+                                    </div>
+                                  </span>
+                                </div>
+                              </div>
+                            </span>
+                          </div>
+                          <div className="h-2.5 border-b-[rgba(0,0,0,0.09)] border-b border-solid" />
+                        </div>
+                      </Link>
+                    ))}
                   </div>
-                  <div className="O2KPzo">
-                    <div className="mn7INg xFSVYg"> </div>
-                    <div className="mn7INg EfbgJE"> </div>
-                  </div>
-                  <div className="kvXy0c">
-                    <div className="-78s2g">
-                      <span className="JMmT2C">
-                        <div className="IlORNJ">
+                  <div></div>
+                  <div className="w-full h-0 relative border-b-[rgba(0,0,0,0.09)] border-b border-dotted"></div>
+                  <div className="pt-6 pb-3 px-6 bg-[#fffefb]">
+                    <div className="flex justify-end items-center">
+                      <span className="cursor-pointer">
+                        <div className="cursor-pointer select-none leading-[0] ml-0 mr-[5px] my-0">
                           <svg width={16} height={17} viewBox="0 0 253 263" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
                               fillRule="evenodd"
@@ -330,25 +349,37 @@ function Purchase() {
                           </svg>
                         </div>
                       </span>
-                      <div className="_0NMXyN">Thành tiền:</div>
-                      <div className="DeWpya">₫{formatPrice(cart?.final_total)}</div>
+                      <div className="text-sm leading-5 text-[rgba(0,0,0,0.8)] ml-0 mr-2.5 my-0">Thành tiền:</div>
+                      <div className="text-[#ee4d2d] text-2xl leading-[30px]">₫{formatPrice(cart?.final_total)}</div>
                     </div>
                   </div>
-                  <div className="AM4Cxf">
-                    <div className="qtUncs">
-                      <span className="OwGaHA">
+                  <div className="flex flex-nowrap justify-between content-center pt-3 pb-6 px-6 bg-[#fffefb]">
+                    <div className="min-w-[300px] max-w-[400px] flex items-center gap-1 gap-1 grow text-left text-xs leading-4 text-[rgba(0,0,0,0.54)]">
+                      <span>
                         Vui lòng chỉ nhấn "Đã nhận được hàng" khi đơn hàng đã được giao đến bạn và sản phẩm nhận được không có vấn đề nào.
                       </span>
                     </div>
-                    <div className="flex ">
-                      <div className="PF0-AU min-w-[150px] ">
-                        <button className="stardust-button stardust-button--primary WgYvse">Đã nhận hàng</button>
+                    <div className="flex">
+                      <div className="flex items-center text-ellipsis ml-2.5 mr-0 my-0 min-w-[150px] ">
+                        <button className="min-h-[40px] min-w-[150px] overflow-hidden text-ellipsis border capitalize bg-[#ee4d2d] text-white font-normal text-sm  py-2 rounded-sm border-solid border-transparent hover:bg-[#d73211] hover:border-[#ba2b0f]">
+                          Đã nhận hàng
+                        </button>
                       </div>
-                      <div className="PgtIur min-w-[210px] ">
-                        <button className="stardust-button stardust-button--secondary WgYvse">Yêu cầu Trả hàng/Hoàn tiền</button>
+                      <div className="flex items-center text-ellipsis ml-2.5 mr-0 my-0 min-w-[210px] ">
+                        <button
+                          className="min-h-[40px] min-w-[150px] overflow-hidden text-ellipsis capitalize font-normal text-sm  py-2 rounded-sm px-3 border-solid border-[rgba(0,0,0,0.09)] hover:bg-[rgba(0,0,0,0.02)] hover:border hover:border-solid hover:border-[rgba(0,0,0,0.09)]"
+                          style={{ border: '1px solid rgba(0, 0, 0, 0.09)' }}
+                        >
+                          Yêu cầu Trả hàng/Hoàn tiền
+                        </button>
                       </div>
-                      <div className="PgtIur min-w-[150px] ">
-                        <button className="stardust-button stardust-button--secondary WgYvse">Liên hệ Người bán</button>
+                      <div className="flex items-center text-ellipsis ml-2.5 mr-0 my-0 min-w-[150px] ">
+                        <button
+                          className="min-h-[40px] min-w-[150px] overflow-hidden text-ellipsis capitalize font-normal text-sm   py-2 rounded-sm px-3 border-solid border-[rgba(0,0,0,0.09)] hover:bg-[rgba(0,0,0,0.02)] hover:border hover:border-solid hover:border-[rgba(0,0,0,0.09)]"
+                          style={{ border: '1px solid rgba(0, 0, 0, 0.09)' }}
+                        >
+                          Liên hệ Người bán
+                        </button>
                       </div>
                     </div>
                   </div>

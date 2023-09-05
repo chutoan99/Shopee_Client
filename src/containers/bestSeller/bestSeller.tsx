@@ -4,16 +4,25 @@ import { NavLink } from 'react-router-dom';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 //? APP
 import { TopProDucts } from '../../types/topProduct';
+import { useGetTopProductQuery } from '../../services/topProduct/index.hook';
 interface BestSellerModel {
   data: TopProDucts[];
   settings: any;
   loading: boolean;
 }
 
-function BestSeller({ data, settings, loading }: BestSellerModel) {
+function BestSeller() {
+  const { data, isLoading } = useGetTopProductQuery();
+  const settings = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 6,
+    slidesToScroll: 1,
+  };
   return (
     <div className="col l-12 mo-12 c-12">
-      {!loading && (
+      {!isLoading && (
         <div className="pt-[20px]">
           <div className="bg-white">
             <div className="px-[20px] flex justify-between pb-[10px] pt-[20px] border-b-['1px] border-b-[rgba(0,0,0,0.05)'] border-solid">
@@ -25,7 +34,7 @@ function BestSeller({ data, settings, loading }: BestSellerModel) {
             <div className="mb-[10px]" id="topProduct">
               <div className="row sm- px-[15px] py-[12px]">
                 <Slider {...settings}>
-                  {data?.map((item: TopProDucts, index: number) => (
+                  {data?.response?.map((item: TopProDucts, index: number) => (
                     <NavLink key={index} to="/top_products">
                       <div className="relative" style={{ boxShadow: 'unset' }}>
                         <LazyLoadImage

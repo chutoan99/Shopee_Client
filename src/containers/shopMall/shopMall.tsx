@@ -7,17 +7,29 @@ import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 import { ShopMall as shopMallInterFace } from '../../types/shopMall';
 import shopMallData from '../../utils/shopMall';
-interface ShopMallModel {
-  data: [shopMallInterFace[]];
-  loading: boolean;
-  settings: any;
-  settings2: any;
-}
+import { useGetShopMallQuery } from '../../services/shopMall/index.hook';
 
-function ShopMall({ data, loading, settings, settings2 }: ShopMallModel) {
+function ShopMall() {
+  const { data, isLoading } = useGetShopMallQuery();
+  const settings = {
+    dots: true,
+    autoplay: true,
+    autoplaySpeed: 5000,
+    infinite: true,
+    arrows: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+  };
+  const settings2 = {
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    speed: 1000,
+    autoplaySpeed: 1000,
+  };
   return (
     <div className="col l-12 mo-12 c-12">
-      {!loading && (
+      {!isLoading && (
         <div className="pt-[20px]">
           <div className="bg-white">
             <div className="px-[20px] flex justify-between pb-[10px] pt-[20px] border-b-[rgba(0,0,0,0.05)] border-b border-solid">
@@ -65,7 +77,7 @@ function ShopMall({ data, loading, settings, settings2 }: ShopMallModel) {
               <div className="l-8">
                 <div className="l-12">
                   <Slider {...settings2}>
-                    {data?.map((ele: any, index: number) => (
+                    {data?.response?.map((ele: any, index: number) => (
                       <div key={index} className="col col-3">
                         {ele?.map((item: shopMallInterFace, index: number) => (
                           <div className="w-full px-[10px]" key={index}>

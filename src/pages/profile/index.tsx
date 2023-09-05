@@ -378,8 +378,8 @@ function Profile() {
                     </div>
                     <div className="text-end" style={{ display: 'flex', justifyContent: 'flex-end' }}>
                       <button
-                        className="block w-[100px] h-[50px] rounded-[12px] cursor-pointer text-[1.25rem] btn btn--prinary"
                         onClick={onSubmit}
+                        className="min-h-[40px]  h-[30px] min-w-[120px] overflow-hidden text-ellipsis border capitalize  font-normal text-sm  py-2 rounded-sm border-solid border-transparent bg-[#ee4d2d] text-white hover:bg-[#d73211] hover:border-[#ba2b0f]"
                       >
                         Lưu
                       </button>

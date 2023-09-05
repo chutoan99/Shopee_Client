@@ -1,14 +1,31 @@
 //? LIBRARY
+import { useState } from 'react';
 import ICON from '../../../public/assets/icons';
 import { NavLink } from 'react-router-dom';
 
-interface HomeFilterModel {
-  filterDay: number;
-  filterMonth: number;
-  onBack: any;
-  onNext: any;
-}
-function HomeFilter({ filterDay, filterMonth, onBack, onNext }: HomeFilterModel) {
+function HomeFilter() {
+  const [filterDay, setFilterDay] = useState(1);
+  const [filterMonth, setFilterMonth] = useState(12);
+  const handleBack = () => {
+    setFilterDay(filterDay - 1);
+    if (filterDay === 0) {
+      setFilterMonth(filterMonth - 1);
+      setFilterDay(31);
+    }
+    if (filterMonth === 0) {
+      setFilterMonth(12);
+    }
+  };
+  const handleNext = () => {
+    setFilterDay(filterDay + 1);
+    if (filterDay > 30) {
+      setFilterDay(1);
+      setFilterMonth(filterMonth + 1);
+    }
+    if (filterMonth > 12) {
+      setFilterMonth(1);
+    }
+  };
   return (
     <div className="mt-[20px] mb-[10px] flex items-center gap-[10px]">
       <div className="flex items-center gap-[10px]">
@@ -52,12 +69,15 @@ function HomeFilter({ filterDay, filterMonth, onBack, onNext }: HomeFilterModel)
 
       <div className="overflow-hidden flex w-[72px] h-9 rounded-sm">
         <span
-          onClick={onBack}
+          onClick={handleBack}
           className="bg-[#f9f9f9] text-sm text-[#555] flex-1 flex w-9 h-9 no-underline items-center justify-center m-auto border-r-[#eee] border-r border-solid"
         >
           {ICON.ANGEL_LEFT}
         </span>
-        <span onClick={onNext} className="text-sm text-[#555] flex-1 flex w-9 h-9 bg-white no-underline items-center justify-center m-auto">
+        <span
+          onClick={handleNext}
+          className="text-sm text-[#555] flex-1 flex w-9 h-9 bg-white no-underline items-center justify-center m-auto"
+        >
           {ICON.ANGEL_RIGHT}
         </span>
       </div>

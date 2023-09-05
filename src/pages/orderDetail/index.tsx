@@ -1,5 +1,4 @@
 //? LIBRARY
-import './style/index.css';
 import { memo, useEffect, useState } from 'react';
 import { Loading } from '../../components';
 import { useGetOrderQuery } from '../../services/order/index.hook';
@@ -23,31 +22,52 @@ function OrderDetail() {
     <>
       {isLoading && <Loading />}
       <div className="col-lg-10 bg-white pl-0 pr-0">
-        <div className="AJo2nP">
-          <div className="cBtCqV">
-            <div className="yO9lYJ">
-              <svg enableBackground="new 0 0 11 11" viewBox="0 0 11 11" x={0} y={0} className="shopee-svg-icon icon-arrow-left">
+        <div className="bg-white shadow-[0_1px_1px_0_rgba(0,0,0,0.05)] rounded-sm">
+          <div className="text-sm leading-4 flex justify-between items-center px-6 py-3">
+            <div className="flex text-[rgba(0,0,0,0.54)] mr-4">
+              <svg
+                enableBackground="new 0 0 11 11"
+                viewBox="0 0 11 11"
+                x={0}
+                y={0}
+                className="inline-block w-[1em] h-[1em] fill-current relative icon-arrow-left"
+              >
                 <g>
                   <path d="m8.5 11c-.1 0-.2 0-.3-.1l-6-5c-.1-.1-.2-.3-.2-.4s.1-.3.2-.4l6-5c .2-.2.5-.1.7.1s.1.5-.1.7l-5.5 4.6 5.5 4.6c.2.2.2.5.1.7-.1.1-.3.2-.4.2z" />
                 </g>
               </svg>
               <NavLink to="/user/purchase">TRỞ LẠI</NavLink>
             </div>
-            <div className="w8MDQX">
+            <div className="flex text-right">
               <span>MÃ ĐƠN HÀNG. {dataOrder?.orderid}</span>
-              <span className="EkDKzu">|</span>
-              <span className="capx2D">{dataOrder?.state}</span>
+              <span className="mx-2 my-0">|</span>
+              <span className="text-[#ee4d2d] uppercase">{dataOrder?.state}</span>
             </div>
           </div>
-          <div className="O2KPzo">
-            <div className="mn7INg xFSVYg"> </div>
-            <div className="mn7INg EfbgJE"> </div>
-          </div>
-          <div className="bHBbO4">
-            <div className="stepper">
-              <div className="stepper__step stepper__step--finish ">
-                <div className="stepper__step-icon stepper__step-icon--pending">
-                  <svg enableBackground="new 0 0 32 32" viewBox="0 0 32 32" x={0} y={0} className="shopee-svg-icon icon-order-order">
+
+          <div className="px-6 py-10">
+            <div className="relative justify-between box-border flex-nowrap flex">
+              <div
+                className="w-[140px] text-center select-none cursor-default z-[1]"
+                style={{
+                  WebkitUserSelect: 'none',
+                  MozUserSelect: 'none',
+                }}
+              >
+                <div
+                  className="box-border flex flex-col justify-center items-center relative w-[60px] h-[60px] text-3xl m-auto rounded-[50%] border-4 border-solid border-[#e0e0e0] !bg-[#2dc258] !text-white !fill-[#2dc258] !border-[#2dc258]"
+                  style={{
+                    transition:
+                      'background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1) 0.7s, border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1) 0.7s, color 0.3s cubic-bezier(0.4, 0, 0.2, 1) 0.7s',
+                  }}
+                >
+                  <svg
+                    enableBackground="new 0 0 32 32"
+                    viewBox="0 0 32 32"
+                    x={0}
+                    y={0}
+                    className="inline-block w-[1em] h-[1em] fill-current relative stroke-current"
+                  >
                     <g>
                       <path
                         d="m5 3.4v23.7c0 .4.3.7.7.7.2 0 .3 0 .3-.2.5-.4 1-.5 1.7-.5.9 0 1.7.4 2.2 1.1.2.2.3.4.5.4s.3-.2.5-.4c.5-.7 1.4-1.1 2.2-1.1s1.7.4 2.2 1.1c.2.2.3.4.5.4s.3-.2.5-.4c.5-.7 1.4-1.1 2.2-1.1.9 0 1.7.4 2.2 1.1.2.2.3.4.5.4s.3-.2.5-.4c.5-.7 1.4-1.1 2.2-1.1.7 0 1.2.2 1.7.5.2.2.3.2.3.2.3 0 .7-.4.7-.7v-23.7z"
@@ -64,12 +84,32 @@ function OrderDetail() {
                     </g>
                   </svg>
                 </div>
-                <div className="stepper__step-text">Đơn hàng đã đặt</div>
-                {dataOrder?.createdAt && <div className="stepper__step-date"> {formatDate(dataOrder?.createdAt)}</div>}
+                <div className="capitalize text-sm text-[rgba(0,0,0,0.8)] leading-5 mt-[1.25rem] mb-[0.25rem] mx-0">Đơn hàng đã đặt</div>
+                {dataOrder?.createdAt && (
+                  <div className="text-[0.75rem] text-[rgba(0,0,0,0.26)] h-[0.875rem]"> {formatDate(dataOrder?.createdAt)}</div>
+                )}
               </div>
-              <div className="stepper__step stepper__step--finish">
-                <div className="stepper__step-icon stepper__step-icon--finish">
-                  <svg enableBackground="new 0 0 32 32" viewBox="0 0 32 32" x={0} y={0} className="shopee-svg-icon icon-order-paid">
+              <div
+                className="w-[140px] text-center select-none cursor-default z-[1]"
+                style={{
+                  WebkitUserSelect: 'none',
+                  MozUserSelect: 'none',
+                }}
+              >
+                <div
+                  className="bg-white box-border flex flex-col justify-center items-center relative w-[60px] h-[60px] text-3xl m-auto rounded-[50%] border-4 border-solid border-[#e0e0e0] !text-[#2dc258] !border-[#2dc258]"
+                  style={{
+                    transition:
+                      'background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1) 0.7s, border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1) 0.7s, color 0.3s cubic-bezier(0.4, 0, 0.2, 1) 0.7s',
+                  }}
+                >
+                  <svg
+                    enableBackground="new 0 0 32 32"
+                    viewBox="0 0 32 32"
+                    x={0}
+                    y={0}
+                    className="inline-block w-[1em] h-[1em] fill-current relative stroke-current"
+                  >
                     <g>
                       <path
                         clipRule="evenodd"
@@ -94,12 +134,31 @@ function OrderDetail() {
                     </g>
                   </svg>
                 </div>
-                <div className="stepper__step-text">Đơn hàng đã thanh toán</div>
-                {/* <div className="stepper__step-date">21:58 14-07-2023</div> */}
+                <div className="capitalize text-sm text-[rgba(0,0,0,0.8)] leading-5 mt-[1.25rem] mb-[0.25rem] mx-0">
+                  Đơn hàng đã thanh toán
+                </div>
               </div>
-              <div className="stepper__step stepper__step--finish">
-                <div className="stepper__step-icon stepper__step-icon--finish">
-                  <svg enableBackground="new 0 0 32 32" viewBox="0 0 32 32" x={0} y={0} className="shopee-svg-icon icon-order-shipping">
+              <div
+                className="w-[140px] text-center select-none cursor-default z-[1]"
+                style={{
+                  WebkitUserSelect: 'none',
+                  MozUserSelect: 'none',
+                }}
+              >
+                <div
+                  className="bg-white box-border flex flex-col justify-center items-center relative w-[60px] h-[60px] text-3xl m-auto rounded-[50%] border-4 border-solid border-[#e0e0e0] !text-[#2dc258] !border-[#2dc258]"
+                  style={{
+                    transition:
+                      'background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1) 0.7s, border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1) 0.7s, color 0.3s cubic-bezier(0.4, 0, 0.2, 1) 0.7s',
+                  }}
+                >
+                  <svg
+                    enableBackground="new 0 0 32 32"
+                    viewBox="0 0 32 32"
+                    x={0}
+                    y={0}
+                    className="inline-block w-[1em] h-[1em] fill-current relative stroke-current"
+                  >
                     <g>
                       <line
                         fill="none"
@@ -131,12 +190,30 @@ function OrderDetail() {
                     </g>
                   </svg>
                 </div>
-                <div className="stepper__step-text">Đã giao cho ĐVVC</div>
-                {/* <div className="stepper__step-date">15:27 15-07-2023</div> */}
+                <div className="capitalize text-sm text-[rgba(0,0,0,0.8)] leading-5 mt-[1.25rem] mb-[0.25rem] mx-0">Đã giao cho ĐVVC</div>
+                {/* <div className="text-[0.75rem] text-[rgba(0,0,0,0.26)] h-[0.875rem]">15:27 15-07-2023</div> */}
               </div>
-              <div className="stepper__step stepper__step--finish">
-                <div className="stepper__step-icon stepper__step-icon--finish">
-                  <svg enableBackground="new 0 0 32 32" viewBox="0 0 32 32" x={0} y={0} className="shopee-svg-icon icon-order-received">
+              <div
+                className="w-[140px] text-center select-none cursor-default z-[1]"
+                style={{
+                  WebkitUserSelect: 'none',
+                  MozUserSelect: 'none',
+                }}
+              >
+                <div
+                  className="bg-white box-border flex flex-col justify-center items-center relative w-[60px] h-[60px] text-3xl m-auto rounded-[50%] border-4 border-solid border-[#e0e0e0] !text-[#2dc258] !border-[#2dc258]"
+                  style={{
+                    transition:
+                      'background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1) 0.7s, border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1) 0.7s, color 0.3s cubic-bezier(0.4, 0, 0.2, 1) 0.7s',
+                  }}
+                >
+                  <svg
+                    enableBackground="new 0 0 32 32"
+                    viewBox="0 0 32 32"
+                    x={0}
+                    y={0}
+                    className="inline-block w-[1em] h-[1em] fill-current relative stroke-current"
+                  >
                     <g>
                       <polygon
                         fill="none"
@@ -176,12 +253,30 @@ function OrderDetail() {
                     </g>
                   </svg>
                 </div>
-                <div className="stepper__step-text">Đã nhận được hàng</div>
-                {/* <div className="stepper__step-date">07:36 20-07-2023</div> */}
+                <div className="capitalize text-sm text-[rgba(0,0,0,0.8)] leading-5 mt-[1.25rem] mb-[0.25rem] mx-0">Đã nhận được hàng</div>
+                {/* <div className="text-[0.75rem] text-[rgba(0,0,0,0.26)] h-[0.875rem]">07:36 20-07-2023</div> */}
               </div>
-              <div className="stepper__step stepper__step-icon--finish">
-                <div className="stepper__step-icon stepper__step-icon--finish">
-                  <svg enableBackground="new 0 0 32 32" viewBox="0 0 32 32" x={0} y={0} className="shopee-svg-icon icon-order-rating">
+              <div
+                className="w-[140px] text-center select-none cursor-default z-[1] text-[#2dc258] border-[#2dc258]"
+                style={{
+                  WebkitUserSelect: 'none',
+                  MozUserSelect: 'none',
+                }}
+              >
+                <div
+                  className="bg-white box-border flex flex-col justify-center items-center relative w-[60px] h-[60px] text-3xl m-auto rounded-[50%] border-4 border-solid border-[#e0e0e0] !text-[#2dc258] !border-[#2dc258]"
+                  style={{
+                    transition:
+                      'background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1) 0.7s, border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1) 0.7s, color 0.3s cubic-bezier(0.4, 0, 0.2, 1) 0.7s',
+                  }}
+                >
+                  <svg
+                    enableBackground="new 0 0 32 32"
+                    viewBox="0 0 32 32"
+                    x={0}
+                    y={0}
+                    className="inline-block w-[1em] h-[1em] fill-current relative stroke-current"
+                  >
                     <polygon
                       fill="none"
                       points="16 3.2 20.2 11.9 29.5 13 22.2 19 24.3 28.8 16 23.8 7.7 28.8 9.8 19 2.5 13 11.8 11.9"
@@ -192,13 +287,16 @@ function OrderDetail() {
                     />
                   </svg>
                 </div>
-                <div className="stepper__step-text">đánh giá</div>
-                <div className="stepper__step-date" />
+                <div className="capitalize text-sm text-[rgba(0,0,0,0.8)] leading-5 mt-[1.25rem] mb-[0.25rem] mx-0">đánh giá</div>
+                <div className="text-[0.75rem] text-[rgba(0,0,0,0.26)] h-[0.875rem]" />
               </div>
-              <div className="stepper__line">
-                <div className="stepper__line-background" style={{ background: 'rgb(224, 224, 224)' }} />
+              <div className="absolute h-1 w-full top-[29px]">
                 <div
-                  className="stepper__line-foreground"
+                  className="absolute w-[calc(100%_-_140px)] h-full box-border mx-[70px] my-0"
+                  style={{ background: 'rgb(224, 224, 224)' }}
+                />
+                <div
+                  className="transition-[width] duration-[1s] ease-in-out absolute h-full box-border mx-[70px] my-0"
                   style={{
                     width: 'calc((100% - 140px) * 1)',
                     background: 'rgb(45, 194, 88)',
@@ -207,179 +305,185 @@ function OrderDetail() {
               </div>
             </div>
           </div>
-          <div className="O2KPzo">
-            <div className="mn7INg xFSVYg"> </div>
-            <div className="mn7INg EfbgJE"> </div>
+          <div>
+            <div className="flex flex-nowrap items-center justify-between box-border bg-[#fffcf5] px-6 py-3 border-t-[rgba(0,0,0,0.09)] border-t border-dotted">
+              <div className="text-left text-[rgba(0,0,0,0.54)] text-xs leading-4 pl-0 pr-3 py-0;" style={{ wordWrap: 'break-word' }}>
+                Đánh giá sản phẩm để nhận 200 Shopee xu!
+              </div>
+              <div className="text-right shrink-0" onClick={onShowModel}>
+                <button className="font-normal text-sm border bg-[#ee4d2d] text-white hover:bg-[#d73211] hover:border-[#ba2b0f] min-w-[150px] min-h-[40px] capitalize px-5 py-2 rounded-[5px] w-[220px] overflow-hidden text-ellipsis">
+                  Đánh giá
+                </button>
+              </div>
+            </div>
           </div>
           <div>
-            <div className="ICo-FQ">
-              <div className="-evyOM">
-                Đánh giá sản phẩm
-                <div className="stardust-popover b6+tp4" id="stardust-popover0" tabIndex={0}></div>
-                để nhận 200 Shopee xu!
-              </div>
-              <div className="_5roFKV" onClick={onShowModel}>
-                <button className="stardust-button stardust-button--primary WgYvse">Đánh giá</button>
+            <div className="flex flex-nowrap items-center justify-between box-border bg-[#fffcf5] px-6 py-3 border-t-[rgba(0,0,0,0.09)] border-t border-dotted">
+              <div className="text-left text-[rgba(0,0,0,0.54)] text-xs leading-4 pl-0 pr-3 py-0;" style={{ wordWrap: 'break-word' }} />
+              <div className="text-right shrink-0">
+                <button className="font-normal  text-sm  border bg-white text-[rgba(0,0,0,0.87)] border-solid border-[rgba(0,0,0,0.26)] stardust-button--secondary min-w-[150px] min-h-[40px]  capitalize px-5 py-2 rounded-[5px] w-[220px] overflow-hidden text-ellipsis hover:!bg-[rgba(0,0,0,0.02)] hover:!border hover:!border-solid hover:!border-[rgba(0,0,0,0.09)]">
+                  Liên hệ Người bán
+                </button>
               </div>
             </div>
-          </div>
-          <div className="O2KPzo">
-            <div className="mn7INg xFSVYg"> </div>
-            <div className="mn7INg EfbgJE"> </div>
-          </div>
-          {/* <div>
-            <div className="ICo-FQ">
-              <div className="-evyOM" />
-              <div className="_5roFKV">
-                <button className="stardust-button stardust-button--secondary WgYvse">Liên hệ Người bán</button>
-              </div>
-            </div>
-            <div className="ICo-FQ">
-              <div className="-evyOM" />
-              <div className="_5roFKV">
-                <button className="stardust-button stardust-button--secondary WgYvse">
+            <div className="flex flex-nowrap items-center justify-between box-border bg-[#fffcf5] px-6 py-3 border-t-[rgba(0,0,0,0.09)] border-t border-dotted">
+              <div className="text-left text-[rgba(0,0,0,0.54)] text-xs leading-4 pl-0 pr-3 py-0;" style={{ wordWrap: 'break-word' }} />
+              <div className="text-right shrink-0">
+                <button className="font-normal text-sm  border bg-white text-[rgba(0,0,0,0.87)] border-solid border-[rgba(0,0,0,0.26)] stardust-button--secondary min-w-[150px] min-h-[40px] capitalize px-5 py-2 rounded-[5px] w-[220px] overflow-hidden text-ellipsis hover:!bg-[rgba(0,0,0,0.02)] hover:!border hover:!border-solid hover:!border-[rgba(0,0,0,0.09)]">
                   <NavLink to={`/shop/${dataOrder?.shopid}`}>Mua lại</NavLink>
                 </button>
               </div>
             </div>
-          </div> */}
+          </div>
           <div>
-            <div className="cmp831">
-              <div className="DM1xQK" />
-            </div>
-            <div className="mu8SJw">
-              <div className="_0Ihttg">
-                <div className="PW9gQm">Địa chỉ nhận hàng</div>
-                <div className="P9zS+I">
-                  {/* <div className="g5X7+k">
+            <div className="pt-5 pb-6 px-6">
+              <div className="flex justify-between items-end pt-0 pb-3 px-0">
+                <div className="capitalize text-[rgba(0,0,0,0.8)] text-xl leading-6">Địa chỉ nhận hàng</div>
+                <div className="flex items-start leading-[14px] max-w-[50%]">
+                  <div className="text-right text-xs text-[rgba(0,0,0,0.54)]" style={{ wordWrap: 'break-word' }}>
                     <div>
                       <div>Shopee Xpress</div>
                       <div>SPXVN039481973747</div>
                     </div>
-                  </div> */}
+                  </div>
                 </div>
               </div>
-              <div className="wMj1t2">
-                <div className="iWu+Gv">
-                  <div className="KZmoHt">{dataOrder?.user?.name}</div>
-                  <div className="AnJAa1">
+              <div className="flex">
+                <div className="max-w-full leading-[22px] flex-1 pl-0 pr-6 pt-2.5 pb-0">
+                  <div className="max-w-full overflow-hidden text-ellipsis text-[rgba(0,0,0,0.8)] mt-0 mb-[7px] mx-0">
+                    {dataOrder?.user?.name}
+                  </div>
+                  <div className="text-[rgba(0,0,0,0.54)] text-xs whitespace-pre-line">
                     <span>(+84) {dataOrder?.user?.phone}</span>
-
                     <br />
                     {dataOrder?.user?.address}
                   </div>
                 </div>
-                <div className="ifE+r-">
+                <div className="w-[620px] pl-3 pr-0 pt-1 pb-0 border-l-[rgba(0,0,0,0.09)] border-l border-solid">
                   <div>
-                    {/* <div className="rqUx-N cuJgPF">
-                      <div className="_4yfsbS" />
-                      <div className="JNurwA">
-                        <div className="rVemEI">
-                          <img className="AXDO-g" title="image" src="https://cf.shopee.vn/file/delivered_parcel_active_3x" />
+                    <div className="relative flex items-start gap-3 p-0 cuJgPF">
+                      <div className="w-px h-full absolute left-3 top-3 bg-[#d8d8d8]  last:hidden" />
+                      <div className="flex items-start justify-start flex-nowrap w-full text-[rgba(0,0,0,0.54)] text-sm">
+                        <div className="flex items-center justify-center h-6 w-6 min-w-[24px]">
+                          <img
+                            className="relative h-6 w-6 z-[2]"
+                            title="image"
+                            src="https://cf.shopee.vn/file/delivered_parcel_active_3x"
+                          />
                         </div>
-                        <div className="B3MLEe">10:39 16-07-2023</div>
-                        <div className="u4VSsO">
-                          <p className="_0P1byN">Đã giao</p>
-                          <p>
+
+                        <div className="m-w-0">
+                          <div className="w-[155px] shrink-0 text-[rgba(0,0,0,0.8)] mt-[3px] px-3 py-0">10:39 16-07-2023</div>
+                        </div>
+                        <div className="leading-5 mt-px mb-2 mx-0">
+                          <p className="font-bold leading-5 -mb-0.5 text-[#26aa99]">Đã giao</p>
+                          <p className="text-[#26aa99]">
                             Đơn hàng đã được giao thành công
                             <span>. Người nhận hàng: Truong Van Chu Toan--</span>.{' '}
-                            <span className="_5jk8NB" tabIndex={0}>
+                            <span className="whitespace-nowrap text-[#05a] cursor-pointer" tabIndex={0}>
                               Xem hình ảnh giao hàng
                             </span>
                           </p>
                         </div>
                       </div>
                     </div>
-                    <div className="rqUx-N">
-                      <div className="_4yfsbS" />
-                      <div className="JNurwA">
-                        <div className="rVemEI">
-                          <img className="AXDO-g" title="image" src="https://cf.shopee.vn/file/domestic_transit_3x" />
+                    <div className="relative flex items-start gap-3 p-0">
+                      <div className="w-px h-full absolute left-3 top-3 bg-[#d8d8d8]  last:hidden" />
+                      <div className="flex items-start justify-start flex-nowrap w-full text-[rgba(0,0,0,0.54)] text-sm">
+                        <div className="flex items-center justify-center h-6 w-6 min-w-[24px]">
+                          <img className="relative h-6 w-6 z-[2]" title="image" src="https://cf.shopee.vn/file/domestic_transit_3x" />
                         </div>
-                        <div className="B3MLEe">09:42 16-07-2023</div>
-                        <div className="u4VSsO">
-                          <p className="_0P1byN">Đang vận chuyển</p>
-                          <p>Đơn hàng đang trên đường giao đến bạn</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="rqUx-N">
-                      <div className="_4yfsbS" />
-                      <div className="JNurwA">
-                        <div className="rVemEI">
-                          <div className="qrqTFX" />
-                        </div>
-                        <div className="B3MLEe">05:46 16-07-2023</div>
-                        <div className="u4VSsO">
-                          <p className="_0P1byN" />
-                          <p>Đơn hàng đã đến bưu cục 50-HCM Binh Chanh/Phong Phu LM Hub</p>
+                        <div className="w-[155px] shrink-0 text-[rgba(0,0,0,0.8)] mt-[3px] px-3 py-0">09:42 16-07-2023</div>
+                        <div className="min-w-0">
+                          <p className="font-bold leading-5 -mb-0.5">Đang vận chuyển</p>
+                          <p className='className="leading-5 mt-px mb-2 mx-0"'>Đơn hàng đang trên đường giao đến bạn</p>
                         </div>
                       </div>
                     </div>
-                    <div className="rqUx-N">
-                      <div className="_4yfsbS" />
-                      <div className="JNurwA">
-                        <div className="rVemEI">
-                          <div className="qrqTFX" />
+                    <div className="relative flex items-start gap-3 p-0">
+                      <div className="w-px h-full absolute left-3 top-3 bg-[#d8d8d8]  last:hidden" />
+                      <div className="flex items-start justify-start flex-nowrap w-full text-[rgba(0,0,0,0.54)] text-sm">
+                        <div className="flex items-center justify-center h-6 w-6 min-w-[24px]">
+                          <div className="w-[11px] h-[11px] shrink-0 z-[1] ml-0.5 rounded-[50%] bg-[#d8d8d8]" />
                         </div>
-                        <div className="B3MLEe">03:26 16-07-2023</div>
-                        <div className="u4VSsO">
-                          <p className="_0P1byN" />
-                          <p>Đơn hàng đang được trung chuyển tới 50-HCM Binh Chanh/Phong Phu LM Hub</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="rqUx-N">
-                      <div className="_4yfsbS" />
-                      <div className="JNurwA">
-                        <div className="rVemEI">
-                          <div className="qrqTFX" />
-                        </div>
-                        <div className="B3MLEe">00:56 16-07-2023</div>
-                        <div className="u4VSsO">
-                          <p className="_0P1byN" />
-                          <p>Đơn hàng đã đến kho phân loại BW SOC</p>
+                        <div className="w-[155px] shrink-0 text-[rgba(0,0,0,0.8)] mt-[3px] px-3 py-0">05:46 16-07-2023</div>
+                        <div className="m-w-0">
+                          <p className="font-bold leading-5 -mb-0.5" />
+                          <p className='className="leading-5 mt-px mb-2 mx-0"'>
+                            Đơn hàng đã đến bưu cục 50-HCM Binh Chanh/Phong Phu LM Hub
+                          </p>
                         </div>
                       </div>
                     </div>
-                    <div className="rqUx-N">
-                      <div className="_4yfsbS" />
-                      <div className="JNurwA">
-                        <div className="rVemEI">
-                          <div className="qrqTFX" />
+                    <div className="relative flex items-start gap-3 p-0">
+                      <div className="w-px h-full absolute left-3 top-3 bg-[#d8d8d8]  last:hidden" />
+                      <div className="flex items-start justify-start flex-nowrap w-full text-[rgba(0,0,0,0.54)] text-sm">
+                        <div className="flex items-center justify-center h-6 w-6 min-w-[24px]">
+                          <div className="w-[11px] h-[11px] shrink-0 z-[1] ml-0.5 rounded-[50%] bg-[#d8d8d8]" />
                         </div>
-                        <div className="B3MLEe">21:00 15-07-2023</div>
-                        <div className="u4VSsO">
-                          <p className="_0P1byN" />
-                          <p>Đơn hàng đang được trung chuyển tới BW SOC</p>
-                        </div>
-                      </div>
-                    </div> */}
-                    {/* <div className="rqUx-N cuJgPF">
-                      <div className="_4yfsbS" />
-                      <div className="JNurwA">
-                        <div className="rVemEI">
-                          <img className="AXDO-g" title="image" src="https://cf.shopee.vn/file/preparing_to_ship_3x" />
-                        </div>
-                        <div className="B3MLEe">08:43 07-07-2023</div>
-                        <div className="u4VSsO">
-                          <p className="_0P1byN">Đang chuẩn bị</p>
-                          <p>Người bán đang chuẩn bị hàng</p>
+                        <div className="w-[155px] shrink-0 text-[rgba(0,0,0,0.8)] mt-[3px] px-3 py-0">03:26 16-07-2023</div>
+                        <div className="m-w-0">
+                          <p className="font-bold leading-5 -mb-0.5" />
+                          <p className='className="leading-5 mt-px mb-2 mx-0"'>
+                            Đơn hàng đang được trung chuyển tới 50-HCM Binh Chanh/Phong Phu LM Hub
+                          </p>
                         </div>
                       </div>
-                    </div> */}
+                    </div>
+                    <div className="relative flex items-start gap-3 p-0">
+                      <div className="w-px h-full absolute left-3 top-3 bg-[#d8d8d8]  last:hidden" />
+                      <div className="flex items-start justify-start flex-nowrap w-full text-[rgba(0,0,0,0.54)] text-sm">
+                        <div className="flex items-center justify-center h-6 w-6 min-w-[24px]">
+                          <div className="w-[11px] h-[11px] shrink-0 z-[1] ml-0.5 rounded-[50%] bg-[#d8d8d8]" />
+                        </div>
+                        <div className="w-[155px] shrink-0 text-[rgba(0,0,0,0.8)] mt-[3px] px-3 py-0">00:56 16-07-2023</div>
+                        <div className="m-w-0">
+                          <p className="font-bold leading-5 -mb-0.5" />
+                          <p className="leading-5 mt-px mb-2 mx-0">Đơn hàng đã đến kho phân loại BW SOC</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="relative flex items-start gap-3 p-0">
+                      <div className="w-px h-full absolute left-3 top-3 bg-[#d8d8d8]  last:hidden" />
+                      <div className="flex items-start justify-start flex-nowrap w-full text-[rgba(0,0,0,0.54)] text-sm">
+                        <div className="flex items-center justify-center h-6 w-6 min-w-[24px]">
+                          <div className="w-[11px] h-[11px] shrink-0 z-[1] ml-0.5 rounded-[50%] bg-[#d8d8d8]" />
+                        </div>
+                        <div className="w-[155px] shrink-0 text-[rgba(0,0,0,0.8)] mt-[3px] px-3 py-0">21:00 15-07-2023</div>
+                        <div className="m-w-0">
+                          <p className="font-bold leading-5 -mb-0.5" />
+                          <p className="leading-5 mt-px mb-2 mx-0">Đơn hàng đang được trung chuyển tới BW SOC</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="relative flex items-start gap-3 p-0 cuJgPF">
+                      <div className="w-px h-full absolute left-3 top-3 bg-[#d8d8d8]  last:hidden" />
+                      <div className="flex items-start justify-start flex-nowrap w-full text-[rgba(0,0,0,0.54)] text-sm">
+                        <div className="flex items-center justify-center h-6 w-6 min-w-[24px]">
+                          <img className="relative h-6 w-6 z-[2]" title="image" src="https://cf.shopee.vn/file/preparing_to_ship_3x" />
+                        </div>
+                        <div className="w-[155px] shrink-0 text-[rgba(0,0,0,0.8)] mt-[3px] px-3 py-0">08:43 07-07-2023</div>
+                        <div className="m-w-0">
+                          <p className="font-bold leading-5 -mb-0.5 text-[#26aa99]">Đang chuẩn bị</p>
+                          <p className="leading-5 mt-px mb-2 mx-0 text-[#26aa99]">Người bán đang chuẩn bị hàng</p>
+                        </div>
+                      </div>
+                    </div>
 
-                    <div className="rqUx-N">
-                      <div className="_4yfsbS" />
-                      <div className="JNurwA">
-                        <div className="rVemEI">
-                          <img className="AXDO-g" title="image" src="https://cf.shopee.vn/file/order_placed_3x" alt="" />
+                    <div className="relative flex items-start gap-3 p-0">
+                      <div className="w-px h-full absolute left-3 top-3 bg-[#d8d8d8] hidden" />
+                      <div className="flex items-start justify-start flex-nowrap w-full text-[rgba(0,0,0,0.54)] text-sm">
+                        <div className="flex items-center justify-center h-6 w-6 min-w-[24px]">
+                          <img className="relative h-6 w-6 z-[2]" title="image" src="https://cf.shopee.vn/file/order_placed_3x" alt="" />
                         </div>
-                        {dataOrder?.createdAt && <div className="B3MLEe"> {formatDate(dataOrder?.createdAt)}</div>}
-
-                        <div className="u4VSsO">
-                          <p className="_0P1byN">Đơn đã đặt</p>
-                          <p>Đơn hàng đã được đặt</p>
+                        {dataOrder?.createdAt && (
+                          <div className="w-[155px] shrink-0 text-[rgba(0,0,0,0.8)] mt-[3px] px-3 py-0">
+                            {formatDate(dataOrder?.createdAt)}
+                          </div>
+                        )}
+                        <div className="m-w-0">
+                          <p className="font-bold leading-5 -mb-0.5">Đơn đã đặt</p>
+                          <p className="leading-5 mt-px mb-2 mx-0">Đơn hàng đã được đặt</p>
                         </div>
                       </div>
                     </div>
@@ -389,215 +493,215 @@ function OrderDetail() {
             </div>
           </div>
           {!isLoading && (
-            <div>
-              <div>
-                <div className="mbaGbp">
-                  <div className="KrPQEI">
-                    <div className="qCUYY8">
-                      <div className="_0RxYUS">
-                        <svg xmlns="http://www.w3.org/2000/svg" width={70} height={16} fill="none">
+            <>
+              <div className="bg-neutral-50 px-6 py-3">
+                <div className="flex items-center justify-between pt-0 pb-3 px-0">
+                  <div className="flex items-center whitespace-nowrap">
+                    <div className="flex items-center">
+                      <svg className="mr-[5px]" xmlns="http://www.w3.org/2000/svg" width={70} height={16} fill="none">
+                        <path
+                          fill="#EE4D2D"
+                          fillRule="evenodd"
+                          d="M0 2C0 .9.9 0 2 0h66a2 2 0 012 2v12a2 2 0 01-2 2H2a2 2 0 01-2-2V2z"
+                          clipRule="evenodd"
+                        />
+                        <g clipPath="url(#clip0)">
                           <path
-                            fill="#EE4D2D"
-                            fillRule="evenodd"
-                            d="M0 2C0 .9.9 0 2 0h66a2 2 0 012 2v12a2 2 0 01-2 2H2a2 2 0 01-2-2V2z"
-                            clipRule="evenodd"
+                            fill="#fff"
+                            d="M8.7 13H7V8.7L5.6 6.3A828.9 828.9 0 004 4h2l2 3.3a1197.3 1197.3 0 002-3.3h1.6L8.7 8.7V13zm7.9-1.7h1.7c0 .3-.2.6-.5 1-.2.3-.5.5-1 .7l-.6.2h-.8c-.5 0-1 0-1.5-.2l-1-.8a4 4 0 01-.9-2.4c0-1 .3-1.9 1-2.6a3 3 0 012.4-1l.8.1a2.8 2.8 0 011.3.7l.4.6.3.8V10h-4.6l.2 1 .4.7.6.5.7.1c.4 0 .7 0 .9-.2l.2-.6v-.1zm0-2.3l-.1-1-.3-.3c0-.2-.1-.2-.2-.3l-.8-.2c-.3 0-.6.2-.9.5l-.3.5a4 4 0 00-.3.8h3zm-1.4-4.2l-.7.7h-1.4l1.5-2h1.1l1.5 2h-1.4l-.6-.7zm8.1 1.6H25V13h-1.7v-.5.1H23l-.7.5-.9.1-1-.1-.7-.4c-.3-.2-.4-.5-.6-.8l-.2-1.3V6.4h1.7v3.7c0 1 0 1.6.3 1.7.2.2.5.3.7.3h.4l.4-.2.3-.3.3-.5.2-1.4V6.4zM34.7 13a11.2 11.2 0 01-1.5.2 3.4 3.4 0 01-1.3-.2 2 2 0 01-.5-.3l-.3-.5-.2-.6V7.4h-1.2v-1h1.1V5h1.7v1.5h1.9v1h-2v3l.2 1.2.1.3.2.2h.3l.2.1c.2 0 .6 0 1.3-.3v1zm2.4 0h-1.7V3.5h1.7v3.4a3.7 3.7 0 01.2-.1 2.8 2.8 0 013.4 0l.4.4.2.7V13h-1.6V9.3 8.1l-.4-.6-.6-.2a1 1 0 00-.4.1 2 2 0 00-.4.2l-.3.3a3 3 0 00-.3.5l-.1.5-.1.9V13zm5.4-6.6H44V13h-1.6V6.4zm-.8-.9l1.8-2h1.8l-2.1 2h-1.5zm7.7 5.8H51v.5l-.4.5a2 2 0 01-.4.4l-.6.3-1.4.2c-.5 0-1 0-1.4-.2l-1-.7c-.3-.3-.5-.7-.6-1.2-.2-.4-.3-.9-.3-1.4 0-.5.1-1 .3-1.4a2.6 2.6 0 011.6-1.8c.4-.2.9-.3 1.4-.3.6 0 1 .1 1.5.3.4.1.7.4 1 .6l.2.5.1.5h-1.6c0-.3-.1-.5-.3-.6-.2-.2-.4-.3-.8-.3s-.8.2-1.2.6c-.3.4-.4 1-.4 2 0 .9.1 1.5.4 1.8.4.4.8.6 1.2.6h.5l.3-.2.2-.3v-.4zm4 1.7h-1.6V3.5h1.7v3.4a3.7 3.7 0 01.2-.1 2.8 2.8 0 013.4 0l.3.4.3.7V13h-1.6V9.3L56 8.1c-.1-.3-.2-.5-.4-.6l-.6-.2a1 1 0 00-.3.1 2 2 0 00-.4.2l-.3.3a3 3 0 00-.3.5l-.2.5V13z"
                           />
-                          <g clipPath="url(#clip0)">
+                        </g>
+                        <g clipPath="url(#clip1)">
+                          <path fill="#fff" d="M63 8.2h2.2v1.6H63V12h-1.6V9.8h-2.2V8.2h2.2V6H63v2.3z" />
+                        </g>
+                        <defs>
+                          <clipPath id="clip0">
+                            <path fill="#fff" d="M0 0h55v16H0z" transform="translate(4)" />
+                          </clipPath>
+                          <clipPath id="clip1">
+                            <path fill="#fff" d="M0 0h7v16H0z" transform="translate(59)" />
+                          </clipPath>
+                        </defs>
+                      </svg>
+                    </div>
+                    <div className="max-w-[200px] text-sm font-semibold overflow-hidden text-ellipsis ml-2 mr-0 my-0">
+                      {dataOrder?.shop_name}
+                    </div>
+                    <div className="ml-2 mr-0 my-0">
+                      <button className="text-xs capitalize border bg-[#ee4d2d] text-white px-2 py-1 rounded-sm border-solid border-transparent  flex items-center hover:bg-[#d73211] hover:border-[#ba2b0f]">
+                        <svg
+                          viewBox="0 0 17 17"
+                          className="mr-[5px] inline-block w-[1em] h-[1em] fill-current relative"
+                          style={{ fill: 'white' }}
+                        >
+                          <g fillRule="evenodd">
                             <path
-                              fill="#fff"
-                              d="M8.7 13H7V8.7L5.6 6.3A828.9 828.9 0 004 4h2l2 3.3a1197.3 1197.3 0 002-3.3h1.6L8.7 8.7V13zm7.9-1.7h1.7c0 .3-.2.6-.5 1-.2.3-.5.5-1 .7l-.6.2h-.8c-.5 0-1 0-1.5-.2l-1-.8a4 4 0 01-.9-2.4c0-1 .3-1.9 1-2.6a3 3 0 012.4-1l.8.1a2.8 2.8 0 011.3.7l.4.6.3.8V10h-4.6l.2 1 .4.7.6.5.7.1c.4 0 .7 0 .9-.2l.2-.6v-.1zm0-2.3l-.1-1-.3-.3c0-.2-.1-.2-.2-.3l-.8-.2c-.3 0-.6.2-.9.5l-.3.5a4 4 0 00-.3.8h3zm-1.4-4.2l-.7.7h-1.4l1.5-2h1.1l1.5 2h-1.4l-.6-.7zm8.1 1.6H25V13h-1.7v-.5.1H23l-.7.5-.9.1-1-.1-.7-.4c-.3-.2-.4-.5-.6-.8l-.2-1.3V6.4h1.7v3.7c0 1 0 1.6.3 1.7.2.2.5.3.7.3h.4l.4-.2.3-.3.3-.5.2-1.4V6.4zM34.7 13a11.2 11.2 0 01-1.5.2 3.4 3.4 0 01-1.3-.2 2 2 0 01-.5-.3l-.3-.5-.2-.6V7.4h-1.2v-1h1.1V5h1.7v1.5h1.9v1h-2v3l.2 1.2.1.3.2.2h.3l.2.1c.2 0 .6 0 1.3-.3v1zm2.4 0h-1.7V3.5h1.7v3.4a3.7 3.7 0 01.2-.1 2.8 2.8 0 013.4 0l.4.4.2.7V13h-1.6V9.3 8.1l-.4-.6-.6-.2a1 1 0 00-.4.1 2 2 0 00-.4.2l-.3.3a3 3 0 00-.3.5l-.1.5-.1.9V13zm5.4-6.6H44V13h-1.6V6.4zm-.8-.9l1.8-2h1.8l-2.1 2h-1.5zm7.7 5.8H51v.5l-.4.5a2 2 0 01-.4.4l-.6.3-1.4.2c-.5 0-1 0-1.4-.2l-1-.7c-.3-.3-.5-.7-.6-1.2-.2-.4-.3-.9-.3-1.4 0-.5.1-1 .3-1.4a2.6 2.6 0 011.6-1.8c.4-.2.9-.3 1.4-.3.6 0 1 .1 1.5.3.4.1.7.4 1 .6l.2.5.1.5h-1.6c0-.3-.1-.5-.3-.6-.2-.2-.4-.3-.8-.3s-.8.2-1.2.6c-.3.4-.4 1-.4 2 0 .9.1 1.5.4 1.8.4.4.8.6 1.2.6h.5l.3-.2.2-.3v-.4zm4 1.7h-1.6V3.5h1.7v3.4a3.7 3.7 0 01.2-.1 2.8 2.8 0 013.4 0l.3.4.3.7V13h-1.6V9.3L56 8.1c-.1-.3-.2-.5-.4-.6l-.6-.2a1 1 0 00-.3.1 2 2 0 00-.4.2l-.3.3a3 3 0 00-.3.5l-.2.5V13z"
+                              d="M13.89 0C14.504 0 15 .512 15 1.144l-.003.088-.159 2.117.162.001c.79 0 1.46.558 1.618 1.346l.024.15.008.154v9.932a1.15 1.15 0 01-1.779.963l-.107-.08-1.882-1.567-7.962.002a1.653 1.653 0 01-1.587-1.21l-.036-.148-.021-.155-.071-.836h-.01L.91 13.868a.547.547 0 01-.26.124L.556 14a.56.56 0 01-.546-.47L0 13.429V1.144C0 .512.497 0 1.11 0h12.78zM15 4.65l-.259-.001-.461 6.197c-.045.596-.527 1.057-1.106 1.057L4.509 11.9l.058.69.01.08a.35.35 0 00.273.272l.07.007 8.434-.001 1.995 1.662.002-9.574-.003-.079a.35.35 0 00-.274-.3L15 4.65zM13.688 1.3H1.3v10.516l1.413-1.214h10.281l.694-9.302zM4.234 5.234a.8.8 0 011.042-.077l.187.164c.141.111.327.208.552.286.382.131.795.193 1.185.193s.803-.062 1.185-.193c.225-.078.41-.175.552-.286l.187-.164a.8.8 0 011.042 1.209c-.33.33-.753.579-1.26.753A5.211 5.211 0 017.2 7.4a5.211 5.211 0 01-1.706-.28c-.507-.175-.93-.424-1.26-.754a.8.8 0 010-1.132z"
+                              fillRule="nonzero"
                             />
                           </g>
-                          <g clipPath="url(#clip1)">
-                            <path fill="#fff" d="M63 8.2h2.2v1.6H63V12h-1.6V9.8h-2.2V8.2h2.2V6H63v2.3z" />
-                          </g>
-                          <defs>
-                            <clipPath id="clip0">
-                              <path fill="#fff" d="M0 0h55v16H0z" transform="translate(4)" />
-                            </clipPath>
-                            <clipPath id="clip1">
-                              <path fill="#fff" d="M0 0h7v16H0z" transform="translate(59)" />
-                            </clipPath>
-                          </defs>
                         </svg>
-                      </div>
-                      <div className="_9Ro5mP"> {dataOrder?.shop_name}</div>
-                      <div className="yHlRfY">
-                        <button className="stardust-button stardust-button--primary">
-                          <svg viewBox="0 0 17 17" className="shopee-svg-icon icon-btn-chat" style={{ fill: 'white' }}>
-                            <g fillRule="evenodd">
-                              <path
-                                d="M13.89 0C14.504 0 15 .512 15 1.144l-.003.088-.159 2.117.162.001c.79 0 1.46.558 1.618 1.346l.024.15.008.154v9.932a1.15 1.15 0 01-1.779.963l-.107-.08-1.882-1.567-7.962.002a1.653 1.653 0 01-1.587-1.21l-.036-.148-.021-.155-.071-.836h-.01L.91 13.868a.547.547 0 01-.26.124L.556 14a.56.56 0 01-.546-.47L0 13.429V1.144C0 .512.497 0 1.11 0h12.78zM15 4.65l-.259-.001-.461 6.197c-.045.596-.527 1.057-1.106 1.057L4.509 11.9l.058.69.01.08a.35.35 0 00.273.272l.07.007 8.434-.001 1.995 1.662.002-9.574-.003-.079a.35.35 0 00-.274-.3L15 4.65zM13.688 1.3H1.3v10.516l1.413-1.214h10.281l.694-9.302zM4.234 5.234a.8.8 0 011.042-.077l.187.164c.141.111.327.208.552.286.382.131.795.193 1.185.193s.803-.062 1.185-.193c.225-.078.41-.175.552-.286l.187-.164a.8.8 0 011.042 1.209c-.33.33-.753.579-1.26.753A5.211 5.211 0 017.2 7.4a5.211 5.211 0 01-1.706-.28c-.507-.175-.93-.424-1.26-.754a.8.8 0 010-1.132z"
-                                fillRule="nonzero"
-                              />
-                            </g>
-                          </svg>
-                          <span>chat</span>
-                        </button>
-                      </div>
-                      {dataOrder?.shopid && (
-                        <NavLink className="_7wKGws" to={`/shop/${dataOrder?.shopid}`}>
-                          <button className="stardust-button">
-                            <svg enableBackground="new 0 0 15 15" viewBox="0 0 15 15" x={0} y={0} className="shopee-svg-icon icon-btn-shop">
-                              <path d="m15 4.8c-.1-1-.8-2-1.6-2.9-.4-.3-.7-.5-1-.8-.1-.1-.7-.5-.7-.5h-8.5s-1.4 1.4-1.6 1.6c-.4.4-.8 1-1.1 1.4-.1.4-.4.8-.4 1.1-.3 1.4 0 2.3.6 3.3l.3.3v3.5c0 1.5 1.1 2.6 2.6 2.6h8c1.5 0 2.5-1.1 2.5-2.6v-3.7c.1-.1.1-.3.3-.3.4-.8.7-1.7.6-3zm-3 7c0 .4-.1.5-.4.5h-8c-.3 0-.5-.1-.5-.5v-3.1c.3 0 .5-.1.8-.4.1 0 .3-.1.3-.1.4.4 1 .7 1.5.7.7 0 1.2-.1 1.6-.5.5.3 1.1.4 1.6.4.7 0 1.2-.3 1.8-.7.1.1.3.3.5.4.3.1.5.3.8.3zm.5-5.2c0 .1-.4.7-.3.5l-.1.1c-.1 0-.3 0-.4-.1s-.3-.3-.5-.5l-.5-1.1-.5 1.1c-.4.4-.8.7-1.4.7-.5 0-.7 0-1-.5l-.6-1.1-.5 1.1c-.3.5-.6.6-1.1.6-.3 0-.6-.2-.9-.8l-.5-1-.7 1c-.1.3-.3.4-.4.6-.1 0-.3.1-.3.1s-.4-.4-.4-.5c-.4-.5-.5-.9-.4-1.5 0-.1.1-.4.3-.5.3-.5.4-.8.8-1.2.7-.8.8-1 1-1h7s .3.1.8.7c.5.5 1.1 1.2 1.1 1.8-.1.7-.2 1.2-.5 1.5z" />
-                            </svg>
-                            <span>Xem Shop</span>
-                          </button>
-                        </NavLink>
-                      )}
+                        <span className="align-middle ml-1 mr-0 my-0">chat</span>
+                      </button>
                     </div>
-                    <div className="EQko8g">
-                      <div className="stardust-popover Zf2v9w" id="stardust-popover1" tabIndex={0}>
-                        <div role="button" className="stardust-popover__target">
-                          <div>
-                            <svg width={16} height={16} fill="none" xmlns="http://www.w3.org/2000/svg">
-                              <path clipRule="evenodd" d="M8 15A7 7 0 108 1a7 7 0 000 14z" stroke="#000" strokeOpacity=".54" />
-                              <path
-                                fillRule="evenodd"
-                                clipRule="evenodd"
-                                d="M8 6a1 1 0 100-2 1 1 0 000 2zM7.25 7.932v3.636c0 .377.336.682.75.682s.75-.305.75-.682V7.932c0-.377-.336-.682-.75-.682s-.75.305-.75.682z"
-                                fill="#000"
-                                fillOpacity=".54"
-                              />
-                            </svg>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+                    <NavLink className="ml-2 mr-0 my-0" to={`/shop/${dataOrder?.shopid}`}>
+                      <button className="text-xs flex items-center capitalize text-[#555] border px-2 py-1 rounded-sm border-solid border-[rgba(0,0,0,0.09)] hover:bg-[rgba(0,0,0,0.02)] hover:border hover:border-solid hover:border-[rgba(0,0,0,0.09)]">
+                        <svg
+                          enableBackground="new 0 0 15 15"
+                          viewBox="0 0 15 15"
+                          x={0}
+                          y={0}
+                          className="mr-[5px] inline-block w-[1em] h-[1em] fill-current relative"
+                        >
+                          <path d="m15 4.8c-.1-1-.8-2-1.6-2.9-.4-.3-.7-.5-1-.8-.1-.1-.7-.5-.7-.5h-8.5s-1.4 1.4-1.6 1.6c-.4.4-.8 1-1.1 1.4-.1.4-.4.8-.4 1.1-.3 1.4 0 2.3.6 3.3l.3.3v3.5c0 1.5 1.1 2.6 2.6 2.6h8c1.5 0 2.5-1.1 2.5-2.6v-3.7c.1-.1.1-.3.3-.3.4-.8.7-1.7.6-3zm-3 7c0 .4-.1.5-.4.5h-8c-.3 0-.5-.1-.5-.5v-3.1c.3 0 .5-.1.8-.4.1 0 .3-.1.3-.1.4.4 1 .7 1.5.7.7 0 1.2-.1 1.6-.5.5.3 1.1.4 1.6.4.7 0 1.2-.3 1.8-.7.1.1.3.3.5.4.3.1.5.3.8.3zm.5-5.2c0 .1-.4.7-.3.5l-.1.1c-.1 0-.3 0-.4-.1s-.3-.3-.5-.5l-.5-1.1-.5 1.1c-.4.4-.8.7-1.4.7-.5 0-.7 0-1-.5l-.6-1.1-.5 1.1c-.3.5-.6.6-1.1.6-.3 0-.6-.2-.9-.8l-.5-1-.7 1c-.1.3-.3.4-.4.6-.1 0-.3.1-.3.1s-.4-.4-.4-.5c-.4-.5-.5-.9-.4-1.5 0-.1.1-.4.3-.5.3-.5.4-.8.8-1.2.7-.8.8-1 1-1h7s .3.1.8.7c.5.5 1.1 1.2 1.1 1.8-.1.7-.2 1.2-.5 1.5z" />
+                        </svg>
+                        <span className="align-middle ml-1 mr-0 my-0">Xem Shop</span>
+                      </button>
+                    </NavLink>
                   </div>
-                  <div className="NuQDJM" />
-                  <div className="FbLutl">
-                    {dataOrder?.posts.map((post: any, index: number) => (
-                      <div key={post.itemid}>
-                        <NavLink className="x7nENX" to={`/detailProduct/${post?.itemid}/${post?.shopid}`}>
+                  <div className="flex items-center pl-2.5 pr-0 py-0">
+                    <svg width={16} height={16} fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path clipRule="evenodd" d="M8 15A7 7 0 108 1a7 7 0 000 14z" stroke="#000" strokeOpacity=".54" />
+                      <path
+                        fillRule="evenodd"
+                        clipRule="evenodd"
+                        d="M8 6a1 1 0 100-2 1 1 0 000 2zM7.25 7.932v3.636c0 .377.336.682.75.682s.75-.305.75-.682V7.932c0-.377-.336-.682-.75-.682s-.75.305-.75.682z"
+                        fill="#000"
+                        fillOpacity=".54"
+                      />
+                    </svg>
+                  </div>
+                </div>
+                <hr className="border-b-[rgba(0,0,0,0.06)] border-b border-solid" />
+                {dataOrder?.posts.map((post: any, index: number) => (
+                  <NavLink key={post.itemid} className="mb-[10px]" to={`/detailProduct/${post?.itemid}/${post?.shopid}`}>
+                    <div className="">
+                      <div>
+                        <span className="items-center flex-nowrap text-[rgba(0,0,0,0.87)] flex pt-3 pb-0 px-0">
                           <div />
-                          <div className="aybVBK">
-                            <div className="rGP9Yd">
-                              <div className="shopee-image__wrapper">
-                                <div className="shopping_cart-img">
-                                  <img src={post?.image} alt={post?.name} />
+                          <div className="flex-1 items-start flex-nowrap flex pl-0 pr-3 py-0">
+                            <div className=" w-[81px] h-[81px]">
+                              <div className="relative">
+                                <div className="w-20 h-20 mr-3">
+                                  <img className="w-full h-full" src={post?.image} alt={post?.name} />
                                 </div>
                                 <div
-                                  className="shopee-image__content"
+                                  className="bg-[50%] bg-cover bg-no-repeat absolute w-full h-full left-0 top-0"
                                   style={{
                                     backgroundImage: `${post?.image}`,
                                   }}
                                 >
-                                  <div className="shopee-image__content--blur"> </div>
+                                  <div className="w-full h-full"></div>
                                 </div>
                               </div>
                             </div>
 
-                            <div className="_7uZf6Q">
+                            <div className="min-w-0 flex flex-1 flex-col items-start pl-3 pr-0 py-0">
                               <div>
-                                <div className="iJlxsT">
-                                  <span className="x5GTyN">{post?.name}</span>
+                                <div
+                                  className="overflow-hidden text-ellipsis text-base leading-22 max-h-12 mt-0 mb-[5px] mx-0"
+                                  style={{
+                                    display: '-webkit-box',
+                                    WebkitBoxOrient: 'vertical',
+                                    WebkitLineClamp: 2,
+                                  }}
+                                >
+                                  <span>{post?.name}</span>
                                 </div>
                               </div>
-                              <div>
-                                <div className="vb0b-P">Phân loại hàng: {dataOrder?.option[index]}</div>
-                                <div className="_3F1-5M">x{dataOrder?.amount[index]}</div>
+                              <div className="mt-0 mx-0">
+                                <div className="text-[rgba(0,0,0,0.54)] mb-[5px]">Phân loại hàng: {dataOrder?.option[index]}</div>
+                                <div className="">x{dataOrder?.amount[index]}</div>
                               </div>
                             </div>
                           </div>
-                          <div className="_9UJGhr">
-                            <div className="rjqzk1">
-                              <span className="-x3Dqh">₫ {formatPrice(post?.price, post?.amount)}</span>
-                            </div>
-                          </div>
-                        </NavLink>
-                      </div>
-                    ))}
-
-                    <div className="Cde7Oe" />
-                  </div>
-                </div>
-                <div className="RZJjTX">
-                  <div className="TokOv1">
-                    <div className="_8kMYJ3">
-                      <span>Tổng tiền hàng</span>
-                    </div>
-                    <div className="CxyZBG">{dataOrder?.final_total && <div> đ{formatPrice(dataOrder?.final_total - 30000, 1)}</div>}</div>
-                  </div>
-                  <div className="TokOv1">
-                    <div className="_8kMYJ3">
-                      <span>Phí vận chuyển</span>
-                    </div>
-                    <div className="CxyZBG">
-                      <div>₫{formatPrice(30000, 1)}</div>
-                    </div>
-                  </div>
-                  {/* <div className="TokOv1">
-                    <div className="_8kMYJ3">
-                      <span>Giảm giá phí vận chuyển</span>
-                      <div className="stardust-popover W97Kqg" id="stardust-popover2" tabIndex={0}>
-                        <div role="button" className="stardust-popover__target">
                           <div>
-                            <svg width={16} height={16} fill="none" xmlns="http://www.w3.org/2000/svg">
-                              <path clipRule="evenodd" d="M8 15A7 7 0 108 1a7 7 0 000 14z" stroke="#000" strokeOpacity=".54" />
-                              <path
-                                fillRule="evenodd"
-                                clipRule="evenodd"
-                                d="M8 6a1 1 0 100-2 1 1 0 000 2zM7.25 7.932v3.636c0 .377.336.682.75.682s.75-.305.75-.682V7.932c0-.377-.336-.682-.75-.682s-.75.305-.75.682z"
-                                fill="#000"
-                                fillOpacity=".54"
-                              />
-                            </svg>
+                            <div>
+                              <span className="align-middle text-sm leading-4 text-[rgba(0,0,0,0.87)]">
+                                <div
+                                  className="text-sm flex justify-center flex-col text-center text-[rgba(0, 0, 0, 0.87)] font-medium"
+                                  style={{ flexDirection: 'row', gap: '8px' }}
+                                >
+                                  <h3>₫ {formatPrice(post?.price, post?.amount)}</h3>
+                                </div>
+                              </span>
+                            </div>
                           </div>
-                        </div>
+                        </span>
                       </div>
+                      <div className="h-2.5 border-b-[rgba(0,0,0,0.09)] border-b border-solid" />
                     </div>
-                    <div className="CxyZBG">
-                      <div>-₫19.600</div>
-                    </div>
-                  </div> */}
-                  <div className="TokOv1 a59vwO">
-                    <div className="_8kMYJ3 B6pCRN">
-                      <span>Thành tiền</span>
-                    </div>
-                    <div className="CxyZBG">
-                      {dataOrder?.final_total && <div className="_8ZGgbl">₫{formatPrice(dataOrder.final_total)}</div>}
-                    </div>
+                  </NavLink>
+                ))}
+              </div>
+              <div className="bg-neutral-50 border-t-[rgba(0,0,0,0.09)] border-t border-solid">
+                <div className="flex justify-end items-center text-right px-6 py-0 border-b-[rgba(0,0,0,0.09)] border-b border-dotted">
+                  <div className="text-[rgba(0,0,0,0.54)] text-xs px-2.5 py-[13px]">
+                    <span>Tổng tiền hàng</span>
+                  </div>
+                  <div className="w-60 text-[rgba(0,0,0,0.8)] pl-2.5 pr-0 py-[13px] border-l-[rgba(0,0,0,0.09)] border-l border-dotted">
+                    {dataOrder?.final_total && <div> đ{formatPrice(dataOrder?.final_total - 30000, 1)}</div>}
                   </div>
                 </div>
-                {dataOrder?.final_total && (
-                  <div className="ga0VXk">
-                    <svg height={16} width={16} viewBox="0 0 16 16" className="shopee-svg-icon _5Fq+5W text-[#ffbf00]">
-                      <g fillRule="evenodd">
-                        <path
-                          d="m8 15c-3.8596721 0-7-3.1397891-7-6.9994612 0-3.8602109 3.1403279-7.0005388 7-7.0005388 3.8602109 0 7 3.1403279 7 7.0005388 0 3.8596721-3.1397891 6.9994612-7 6.9994612z"
-                          fill="none"
-                          strokeWidth={1}
-                          stroke="currentColor"
-                        />
-                        <path
-                          d="m10.4132188 9.3999583h-5.050999c-.204396 0-.3841766-.1081321-.4918691-.297583-.0404396-.0712089-.1556047-.3239567.0413188-.6303309.0694507-.1248354.1643959-.2835171.2738467-.4593416.1050552-.1701102.1969235-.3371435.2791214-.5112098.086154-.1789015.1617586-.3705502.2259345-.5709901.0553847-.1771432.0839562-.3674733.0839562-.5652758 0-.2738467.0404396-.5287923.1204398-.7556059.075165-.2197807.1797806-.4193415.3098907-.5934078.125275-.1674729.2747258-.3151655.4457152-.4382426.1397805-.0989013.2826379-.1775828.4276932-.2369235.6247463-.29029 1.6628604-.0523078 1.6487945.0083517.1424179.0589012.2707698.1279123.3890118.2096707.1767036.1217585.333627.2747258.4646163.4540668.1283519.1784619.2312092.3810997.3050556.6013199.0760441.2232971.1147255.4738471.1147255.7437377 0 .1912092.0281319.3802205.0848353.5626385.0637364.2052751.1397805.3995612.2268136.5780231.0887914.1850553.1832971.3542864.2821984.5050559.1046156.1604399.1982421.297583.2826379.4123085.0874727.1160442.1296706.2505499.122198.3876931-.0061539.1107695-.0404396.2162642-.0989013.3041764-.0562639.0870331-.1305497.1591212-.2101103.2026378-.0685716.0404396-.1665937.0892309-.2769236.0892309zm-3.9906114.7572683h3.0423323c-.1878895.8170573-.6949449 1.2255859-1.5211662 1.2255859s-1.3332766-.4085286-1.5211662-1.2255859z"
-                          stroke="none"
-                          fill="currentColor"
-                        />
-                      </g>
-                    </svg>
-                    <div className="_4aGAAO">
-                      <span>
-                        Vui lòng thanh toán <span className="WAB0Vg">₫{formatPrice(dataOrder?.final_total + 30000)}</span> khi nhận hàng.
-                      </span>
-                    </div>
+                <div className="flex justify-end items-center text-right px-6 py-0 border-b-[rgba(0,0,0,0.09)] border-b border-dotted">
+                  <div className="text-[rgba(0,0,0,0.54)] text-xs px-2.5 py-[13px]">
+                    <span>Phí vận chuyển</span>
                   </div>
-                )}
+                  <div className="w-60 text-[rgba(0,0,0,0.8)] pl-2.5 pr-0 py-[13px] border-l-[rgba(0,0,0,0.09)] border-l border-dotted">
+                    <div>₫{formatPrice(30000, 1)}</div>
+                  </div>
+                </div>
+                <div className="text-right flex justify-end items-start px-6 py-0 border-0">
+                  <div className="text-[rgba(0,0,0,0.54)] text-xs px-2.5 py-[13px]">
+                    <span>Thành tiền</span>
+                  </div>
+                  <div className="w-60 text-[rgba(0,0,0,0.8)] pl-2.5 pr-0 py-[13px] border-l-[rgba(0,0,0,0.09)] border-l border-dotted">
+                    {dataOrder?.final_total && <div className="text-[#ee4d2d] text-2xl">₫{formatPrice(dataOrder.final_total)}</div>}
+                  </div>
+                </div>
               </div>
-            </div>
+              {dataOrder?.final_total && (
+                <div className="flex items-center border shadow-[0_1px_1px_rgba(0,0,0,0.05)] mt-0 mb-1.5 mx-0 px-[23px] py-3 rounded-sm border-solid border-[rgba(224,168,0,0.4)] bg-[#fffefb]">
+                  <svg
+                    height={16}
+                    width={16}
+                    viewBox="0 0 16 16"
+                    className="inline-block w-[1em] h-[1em] fill-current relative _5Fq+5W text-[#ffbf00]"
+                  >
+                    <g fillRule="evenodd">
+                      <path
+                        d="m8 15c-3.8596721 0-7-3.1397891-7-6.9994612 0-3.8602109 3.1403279-7.0005388 7-7.0005388 3.8602109 0 7 3.1403279 7 7.0005388 0 3.8596721-3.1397891 6.9994612-7 6.9994612z"
+                        fill="none"
+                        strokeWidth={1}
+                        stroke="currentColor"
+                      />
+                      <path
+                        d="m10.4132188 9.3999583h-5.050999c-.204396 0-.3841766-.1081321-.4918691-.297583-.0404396-.0712089-.1556047-.3239567.0413188-.6303309.0694507-.1248354.1643959-.2835171.2738467-.4593416.1050552-.1701102.1969235-.3371435.2791214-.5112098.086154-.1789015.1617586-.3705502.2259345-.5709901.0553847-.1771432.0839562-.3674733.0839562-.5652758 0-.2738467.0404396-.5287923.1204398-.7556059.075165-.2197807.1797806-.4193415.3098907-.5934078.125275-.1674729.2747258-.3151655.4457152-.4382426.1397805-.0989013.2826379-.1775828.4276932-.2369235.6247463-.29029 1.6628604-.0523078 1.6487945.0083517.1424179.0589012.2707698.1279123.3890118.2096707.1767036.1217585.333627.2747258.4646163.4540668.1283519.1784619.2312092.3810997.3050556.6013199.0760441.2232971.1147255.4738471.1147255.7437377 0 .1912092.0281319.3802205.0848353.5626385.0637364.2052751.1397805.3995612.2268136.5780231.0887914.1850553.1832971.3542864.2821984.5050559.1046156.1604399.1982421.297583.2826379.4123085.0874727.1160442.1296706.2505499.122198.3876931-.0061539.1107695-.0404396.2162642-.0989013.3041764-.0562639.0870331-.1305497.1591212-.2101103.2026378-.0685716.0404396-.1665937.0892309-.2769236.0892309zm-3.9906114.7572683h3.0423323c-.1878895.8170573-.6949449 1.2255859-1.5211662 1.2255859s-1.3332766-.4085286-1.5211662-1.2255859z"
+                        stroke="none"
+                        fill="currentColor"
+                      />
+                    </g>
+                  </svg>
+                  <div className="flex-1 text-xs leading-[14px] text-[rgba(0,0,0,0.54)] pl-2 pr-0 py-0">
+                    <span>
+                      Vui lòng thanh toán <span className="font-medium text-[#ee4d2d]">₫{formatPrice(dataOrder?.final_total + 30000)}</span>{' '}
+                      khi nhận hàng.
+                    </span>
+                  </div>
+                </div>
+              )}
+            </>
           )}
-
-          <div className="TX9IwS">
-            <div className="O2KPzo">
-              <div className="mn7INg xFSVYg"> </div>
-              <div className="mn7INg EfbgJE"> </div>
+          <div className="bg-[#fafafa]">
+            <div>
+              <div> </div>
+              <div> </div>
             </div>
-            <div className="TokOv1">
-              <div className="_8kMYJ3">
+            <div className="flex justify-end items-center text-right px-6 py-0">
+              <div className="text-[rgba(0,0,0,0.54)] text-xs px-2.5 py-[13px]">
                 <span className="flex gap-[5px] items-center">
-                  <span className="JMmT2C flex items-center">
-                    <span className="qyvpC4">
+                  <span className="cursor-pointer flex items-center">
+                    <span className="align-middle">
                       <svg width={16} height={17} viewBox="0 0 253 263" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
                           fillRule="evenodd"
@@ -614,10 +718,10 @@ function OrderDetail() {
                       </svg>
                     </span>
                   </span>
-                  <span className="_3Nh1BH">Phương thức Thanh toán</span>
+                  <span className="align-middle">Phương thức Thanh toán</span>
                 </span>
               </div>
-              <div className="CxyZBG">
+              <div className="w-60 text-[rgba(0,0,0,0.8)] pl-2.5 pr-0 py-[13px] border-l-[rgba(0,0,0,0.09)] border-l border-dotted">
                 <div>Thanh toán khi nhận hàng</div>
               </div>
             </div>
