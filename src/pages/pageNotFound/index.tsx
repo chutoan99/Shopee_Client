@@ -1,9 +1,8 @@
 //? LIBRARY
-import IMG from '../../../public/assets/imgs';
 function PageNotFound() {
   return (
     <div className="flex justify-center items-center">
-      <img src={IMG.PAGE_NOT_FOUND_IMG} alt="PageNotFoundImg" className="w-full" />
+      <img src="/assets/Img/Pagenotfound.jpg" alt="PageNotFoundImg" className="w-full" />
     </div>
   );
 }

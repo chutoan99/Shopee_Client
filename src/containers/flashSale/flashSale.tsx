@@ -26,7 +26,7 @@ function FlashSale() {
               <div className="px-[20px] flex justify-between pb-[10px] pt-[20px]">
                 <div className="w-full h-full">
                   <div className="w-[114px] h-full ">
-                    <img src={IMG.ICON_FLASH_SALE} className="w-full h-full" alt="" />
+                    <img src="/assets/Img/icon_flash_sale.png" className="w-full h-full" alt="" />
                   </div>
                 </div>
                 <NavLink to="/flash_sale" className="w-[115px] capitalize text-[#ee4d2d]">

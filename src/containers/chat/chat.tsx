@@ -1,5 +1,4 @@
 //? LIBRARY
-import IMGS from '../../../public/assets/imgs';
 import { memo, useCallback, useEffect, useState } from 'react';
 //? APPS
 import { ItemChat } from '../../components';
@@ -184,7 +183,7 @@ function Chat() {
                             ) : (
                               <div className="flex justify-center items-center h-full">
                                 <div className="w-[161px]">
-                                  <img src={IMGS.CHAT_EMPTY} className="h-full w-full" />
+                                  <img src="/assets/Img/chat_emty.png" className="h-full w-full" />
                                 </div>
                               </div>
                             )}
@@ -281,7 +280,7 @@ function Chat() {
                     <div className="h-[451px]  pb-[20px]">
                       <div className="flex justify-center items-center w-full h-full">
                         <div className="h-full w-full flex justify-center items-center">
-                          <img src={IMGS.CHAT_EMPTY} className=" h-[144px]" />
+                          <img src="/assets/Img/chat_emty.png" className=" h-[144px]" />
                         </div>
                       </div>
                     </div>

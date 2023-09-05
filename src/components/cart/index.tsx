@@ -91,7 +91,11 @@ function HeaderCart({ data, totalCart, loading }: HeaderCartModel) {
             </>
           ) : (
             <div className="py-[20px] px-[10px]">
-              <img src={IMG.NO_CART} alt="noCart" className="flex justify-center max-w-full h-auto w-[54%] mx-auto border-none" />
+              <img
+                src="/assets/Img/no-cart.png"
+                alt="noCart"
+                className="flex justify-center max-w-full h-auto w-[54%] mx-auto border-none"
+              />
               <p className="flex justify-center text-xl text-[#333] my-3.5 mx-auto">Chưa có sản phẩm</p>
             </div>
           )}

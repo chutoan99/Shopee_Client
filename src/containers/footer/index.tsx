@@ -1,7 +1,4 @@
 //? LIBRARY
-import IMG from '../../../public/assets/imgs';
-import ICON from '../../../public/assets/icons';
-
 import { useState, memo } from 'react';
 import { NavLink } from 'react-router-dom';
 //? APPS
@@ -54,7 +51,7 @@ function Footer() {
                   className="text-sm  font-semibold mt-2.5 text-[#ee4d2d] cursor-pointer flex gap-[5px] items-center"
                   onClick={() => setShow(true)}
                 >
-                  Xem Thêm{ICON.ANGEL_RIGHT}
+                  Xem Thêm<i className="fa-solid fa-angle-right"></i>
                 </h2>
               )}
             </div>
@@ -89,25 +86,25 @@ function Footer() {
             <div>
               <h3 className="text-sm text-[#333] mb-[5px]">THANH TOÁN</h3>
               <div className="flex flex-wrap w-[190px]">
-                <img src={IMG.PAY1} className="w-[55px] h-[29px] m-1" alt="pay" />
-                <img src={IMG.PAY2} className="w-[55px] h-[29px] m-1" alt="pay" />
-                <img src={IMG.PAY3} className="w-[55px] h-[29px] m-1" alt="pay" />
-                <img src={IMG.PAY4} className="w-[55px] h-[29px] m-1" alt="pay" />
-                <img src={IMG.PAY5} className="w-[55px] h-[29px] m-1" alt="pay" />
+                <img src="/assets/Img/pay1.PNG" className="w-[55px] h-[29px] m-1" alt="pay" />
+                <img src="/assets/Img/pay2.PNG" className="w-[55px] h-[29px] m-1" alt="pay" />
+                <img src="/assets/Img/pay3.PNG" className="w-[55px] h-[29px] m-1" alt="pay" />
+                <img src="/assets/Img/pay4.PNG" className="w-[55px] h-[29px] m-1" alt="pay" />
+                <img src="/assets/Img/pay5.PNG" className="w-[55px] h-[29px] m-1" alt="pay" />
               </div>
             </div>
             <div>
               <h3 className="text-sm text-[#333] mb-[5px] py-[15px]">ĐƠN VỊ VẬN CHUYỂN</h3>
               <div className="flex flex-wrap w-[190px]">
-                <img src={IMG.SHIP1} className="w-[55px] h-[29px] m-1" alt="ship" />
-                <img src={IMG.SHIP2} className="w-[55px] h-[29px] m-1" alt="ship" />
-                <img src={IMG.SHIP3} className="w-[55px] h-[29px] m-1" alt="ship" />
-                <img src={IMG.SHIP4} className="w-[55px] h-[29px] m-1" alt="ship" />
-                <img src={IMG.SHIP5} className="w-[55px] h-[29px] m-1" alt="ship" />
-                <img src={IMG.SHIP6} className="w-[55px] h-[29px] m-1" alt="ship" />
-                <img src={IMG.SHIP7} className="w-[55px] h-[29px] m-1" alt="ship" />
-                <img src={IMG.SHIP8} className="w-[55px] h-[29px] m-1" alt="ship" />
-                <img src={IMG.SHIP9} className="w-[55px] h-[29px] m-1" alt="ship" />
+                <img src="/assets/Img/ship1.PNG" className="w-[55px] h-[29px] m-1" alt="ship" />
+                <img src="/assets/Img/ship2.PNG" className="w-[55px] h-[29px] m-1" alt="ship" />
+                <img src="/assets/Img/ship3.PNG" className="w-[55px] h-[29px] m-1" alt="ship" />
+                <img src="/assets/Img/ship4.PNG" className="w-[55px] h-[29px] m-1" alt="ship" />
+                <img src="/assets/Img/ship5.PNG" className="w-[55px] h-[29px] m-1" alt="ship" />
+                <img src="/assets/Img/ship6.PNG" className="w-[55px] h-[29px] m-1" alt="ship" />
+                <img src="/assets/Img/ship7.PNG" className="w-[55px] h-[29px] m-1" alt="ship" />
+                <img src="/assets/Img/ship8.PNG" className="w-[55px] h-[29px] m-1" alt="ship" />
+                <img src="/assets/Img/ship9.PNG" className="w-[55px] h-[29px] m-1" alt="ship" />
               </div>
             </div>
           </div>
@@ -116,7 +113,9 @@ function Footer() {
             <ul className="pl-0" style={{ listStyle: 'none' }}>
               <li>
                 <NavLink to="https://www.facebook.com/ShopeeVN" className=" no-underline text-xs text-neutral-500 flex items-center px-0 ">
-                  <span className="text-base ml-0 mr-2  mb-0">{ICON.FACE}</span>
+                  <span className="text-base ml-0 mr-2  mb-0">
+                    <i className="fa-brands fa-facebook-square"></i>
+                  </span>
                   Facebook
                 </NavLink>
               </li>
@@ -125,7 +124,9 @@ function Footer() {
                   to="https://www.instagram.com/Shopee_VN/"
                   className=" no-underline text-xs text-neutral-500 flex items-center px-0"
                 >
-                  <span className="text-base ml-0 mr-2 mb-0">{ICON.INSTAGRAM}</span>
+                  <span className="text-base ml-0 mr-2 mb-0">
+                    <i className="fa-brands fa-instagram-square"></i>
+                  </span>
                   Instagram
                 </NavLink>
               </li>
@@ -134,7 +135,9 @@ function Footer() {
                   to="https://www.linkedin.com/company/shopee"
                   className=" no-underline text-xs text-neutral-500 flex items-center px-0"
                 >
-                  <span className="text-base ml-0 mr-2 mb-0">{ICON.LINKEDIN}</span>
+                  <span className="text-base ml-0 mr-2 mb-0">
+                    <i className="fa-brands fa-linkedin"></i>
+                  </span>
                   Linkedin
                 </NavLink>
               </li>
@@ -144,17 +147,17 @@ function Footer() {
             <h3 className="text-sm text-[#333] mb-[5px]">TẢI ỨNG DỤNG SHOPEE NGAY THÔI</h3>
             <div className="flex">
               <NavLink to="# " className="no-underline text-transparent bg-[initial]">
-                <img src={IMG.QRCODE} className=" w-20 h-20 border rounded-[3px] border-solid border-[#ccc]" alt="" />
+                <img src="/assets/Img/qr-code.png" className=" w-20 h-20 border rounded-[3px] border-solid border-[#ccc]" alt="" />
               </NavLink>
               <div className="flex ml-[16px] flex-col justify-around">
                 <NavLink to="# " className="no-underline text-transparent">
-                  <img src={IMG.GOOGLE} className="h-[16px]" alt="" />
+                  <img src="/assets/Img/gg-play.png" className="h-[16px]" alt="" />
                 </NavLink>
                 <NavLink to="# " className="no-underline text-transparent">
-                  <img src={IMG.APPSTORE} className="h-[16px]" alt="" />
+                  <img src="/assets/Img/app-store.png" className="h-[16px]" alt="" />
                 </NavLink>
                 <NavLink to="# " className="no-underline text-transparent">
-                  <img src={IMG.GALLERY} className="h-[16px]" alt="" />
+                  <img src="/assets/Img/app-gallery.png" className="h-[16px]" alt="" />
                 </NavLink>
               </div>
             </div>

@@ -15,7 +15,7 @@ function FlashSales() {
       <div className="mt-[120px] pt-[30px] z-[3] opacity-95 flex shadow-[0_1px_1px_rgb(0_0_0_/_5%)] px-0 py-[15px] top-0 bg-[#fff]">
         <div className="justify-center items-center h-[30px] leading-[1.875rem] relative inline-flex mx-auto my-0">
           <div className="w-full h-full ">
-            <img src={IMG.ICON_FLASH_SALE} className="w-full h-full" alt="" />
+            <img src="/assets/Img/icon_flash_sale.png" className="w-full h-full" alt="" />
           </div>
           <div className="w-auto bg-[16px] whitespace-nowrap h-[30px] leading-[30px] uppercase mx-2.5 my-0 pl-5">Kết thúc trong</div>
         </div>
@@ -129,7 +129,7 @@ function FlashSales() {
                         onClick={() => navigate(`/detailProduct/${item?.itemid}/${item?.shopid}`)}
                       >
                         {item?.show_free_shipping === 1 ? (
-                          <img src={IMG.SALE_STICKER} className="absolute" style={{ zIndex: '9' }} alt=" " />
+                          <img src="/assets/Img/sale_sticker.png" className="absolute" style={{ zIndex: '9' }} alt=" " />
                         ) : null}
                         <LazyLoadImage
                           effect="blur"

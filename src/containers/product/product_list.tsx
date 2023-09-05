@@ -1,6 +1,4 @@
 //? LIBRARY
-import ICON from '../../../public/assets/icons';
-import IMG from '../../../public/assets/imgs';
 import { memo, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
@@ -45,7 +43,9 @@ function ProductList({ items, col, loading }: HomeProducts) {
         {items?.map((item: PostSimple, index: number) => (
           <div className={col} key={index}>
             <div className="Home-product-item" key={item.itemid}>
-              {item?.show_free_shipping === 1 ? <img src={IMG.SALE_STICKER} className="absolute" style={{ zIndex: '9' }} alt=" " /> : null}
+              {item?.show_free_shipping === 1 ? (
+                <img src="/assets/Img/sale_sticker.png" className="absolute" style={{ zIndex: '9' }} alt=" " />
+              ) : null}
               <LazyLoadImage effect="blur" src={item.image} alt="itemProduct" className="Home-product-item_img" />
               <NavLink to={`/detailProduct/${item?.itemid}/${item?.shopid}`} className="Home-product-item-name">
                 {item?.name}
@@ -75,7 +75,7 @@ function ProductList({ items, col, loading }: HomeProducts) {
                 </div>
               ) : (
                 <div className="Home-product-item_favourite">
-                  {ICON.HEART}
+                  <i className="fa-solid fa-check "></i>
                   <span>Yêu thích</span>
                 </div>
               )}

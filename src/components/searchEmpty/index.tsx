@@ -5,7 +5,7 @@ function SearchEmpty() {
   return (
     <div>
       <div className="flex justify-center items-center">
-        <img src={IMG.SEARCH_IMG} alt="Search" className="w-[20%]" />
+        <img src="/assets/Img/Search.png" alt="Search" className="w-[20%]" />
       </div>
       <h2 className="flex justify-center text-[1.125rem]" style={{ color: 'rgba(0, 0, 0, 0.87)' }}>
         Không tìm thấy kết quả nào

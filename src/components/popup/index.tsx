@@ -1,5 +1,4 @@
 //? LIBRARY
-import IMG from '../../../public/assets/imgs';
 import { useEffect, useState } from 'react';
 //? APPS
 import { OverPlay } from '../index';
@@ -22,7 +21,7 @@ const Popup = () => {
       {popup ? (
         <OverPlay handelClose={handelClose}>
           <img
-            src={IMG.BANNER_IMG}
+            src="/assets/Img/banner.png"
             alt="popup"
             className="h-[100%] relative animate-[myAnim_0.8s_cubic-bezier(0.7,0,0.84,0)_0s_1_normal_forwards]"
           />

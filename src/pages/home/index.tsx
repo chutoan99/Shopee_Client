@@ -1,6 +1,5 @@
 //? LIBRARY
 import './style/xxx.css';
-import IMG from '../../../public/assets/imgs';
 
 import { memo } from 'react';
 import { NavLink } from 'react-router-dom';
@@ -28,7 +27,7 @@ function Home() {
             <FlashSale />
             <div className="col l-12 mo-12 c-12">
               <div className="w-full h-full pt-[20px] pb-[15px]">
-                <img src={IMG.SIMPLE_BANNER} className="w-full h-full" alt=" " />
+                <img src="/assets/Img/simple_banner.png" className="w-full h-full" alt=" " />
               </div>
             </div>
             <ShopMall />

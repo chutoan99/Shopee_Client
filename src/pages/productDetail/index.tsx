@@ -7,7 +7,6 @@ import './style/product_Des.css';
 import './style/product_shop.css';
 import './style/produc-img.css';
 import './style/product_img-mobile.css';
-import ICON from '../../../public/assets/icons';
 import { memo, useEffect, useState } from 'react';
 import { NavLink, useNavigate, useParams } from 'react-router-dom';
 
@@ -222,18 +221,24 @@ function DetailProduct() {
                         </div>
                         <div className="product_cart-amount">
                           <div className="product_cart-amount-button">
-                            <button onClick={onReduced}>{ICON.MINUS}</button>
+                            <button onClick={onReduced}>
+                              <i className="fa-solid fa-minus"></i>
+                            </button>
                             <button>{amount}</button>
-                            <button onClick={onIncrease}>{ICON.PLUS}</button>
+                            <button onClick={onIncrease}>
+                              <i className="fa-solid fa-plus"></i>
+                            </button>
                           </div>
                           <h2>{data?.response?.stock} sản phẩm có sẵn</h2>
                         </div>
                       </>
                     </div>
                     <div className="product_cart ">
-                      <button className="product_cart-button mob:hidden">{ICON.CART}Chat ngay</button>
                       <button className="product_cart-button" onClick={onAddToCart}>
-                        <span className="cart-plus-animation">{ICON.CART}</span>Thêm Vào Giỏ Hàng
+                        <span className="cart-plus-animation">
+                          <i className="fa-solid fa-cart-plus"></i>
+                        </span>
+                        Thêm Vào Giỏ Hàng
                       </button>
                       <button className="product_cart-button2" onClick={() => navigate('/cart')}>
                         Mua Ngay
@@ -254,7 +259,7 @@ function DetailProduct() {
                   <div className="image-slices">
                     <div className="l-12 mo-12 c-12">
                       <div className="image-slices-icon flex-end" onClick={() => setShowImg(false)}>
-                        {ICON.CIRCLE_XMARK}
+                        <i className="fa-regular fa-circle-xmark"></i>
                       </div>
                       <div className="image-slices-heading">
                         <h2>{data?.response?.name}</h2>

@@ -1,6 +1,5 @@
 //? LIBRARY
 import { useState } from 'react';
-import ICON from '../../../public/assets/icons';
 import { NavLink } from 'react-router-dom';
 
 function HomeFilter() {
@@ -72,13 +71,13 @@ function HomeFilter() {
           onClick={handleBack}
           className="bg-[#f9f9f9] text-sm text-[#555] flex-1 flex w-9 h-9 no-underline items-center justify-center m-auto border-r-[#eee] border-r border-solid"
         >
-          {ICON.ANGEL_LEFT}
+          <i className="fa-solid fa-angle-left"></i>
         </span>
         <span
           onClick={handleNext}
           className="text-sm text-[#555] flex-1 flex w-9 h-9 bg-white no-underline items-center justify-center m-auto"
         >
-          {ICON.ANGEL_RIGHT}
+          <i className="fa-solid fa-angle-right"></i>
         </span>
       </div>
     </div>

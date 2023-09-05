@@ -143,7 +143,7 @@ function CartPage() {
         <>
           {dataCart?.total_cart === 0 ? (
             <div className="flex justify-center items-center pt-[120px]">
-              <img src={IMG.EMPTY_CART} alt="emptyCart" />
+              <img src="/assets/Img/empty-cart.png" alt="emptyCart" />
             </div>
           ) : (
             <>

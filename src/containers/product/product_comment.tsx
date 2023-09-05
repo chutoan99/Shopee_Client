@@ -1,6 +1,4 @@
 //? LIBRARY
-import IMG from '../../../public/assets/imgs';
-import ICON from '../../../public/assets/icons';
 import { useEffect, useState } from 'react';
 //? APPS
 import { Comment } from '../../types/comment';
@@ -107,7 +105,7 @@ function ProductComment() {
                 ) : (
                   <div className="flex flex-col items-center px-0 py-[100px]">
                     <div className="w-full h-full flex justify-center">
-                      <img src={IMG.EMPTY_COMMENT} alt="emptyComment"></img>
+                      <img src="/assets/Img/rating.png" alt="emptyComment"></img>
                     </div>
                     <p className="text-base text-[rgba(0,0,0,0.8)] mt-3">Chưa Có Bình Luận Nào</p>
                   </div>

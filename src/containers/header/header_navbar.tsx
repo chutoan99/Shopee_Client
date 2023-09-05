@@ -58,13 +58,13 @@ function HeaderNavbar() {
               Kênh người bán
             </span>
             <div className="group-hover:block hidden w-[186px] bg-[white] absolute  animate-[fadeIn_ease-in_0.3s] z-[2] shadow-[0_1px_2px_rgb(0,0,0,0.1)] p-2 rounded-sm left-0 top-[120%] before:content-[''] before:absolute before:w-full before:h-5 before:block before:z-[2] before:left-0 before:-top-4">
-              <img className="w-full h-full" src={IMG.QRCODE} alt="qR" />
+              <img className="w-full h-full" src="assets/Img/qr-code.png" alt="qR" />
               <div className="flex justify-between">
                 <NavLink to="#" className="ml-[15px]">
-                  <img className="h-[15px]" src={IMG.GOOGLE} alt="Google" />
+                  <img className="h-[15px]" src="/assets/Img/gg-play.png" alt="Google" />
                 </NavLink>
                 <NavLink to="#" className="mr-[11px]">
-                  <img className="h-[15px]" src={IMG.APPSTORE} alt="App store" />
+                  <img className="h-[15px]" src="/assets/Img/app-store.png" alt="App store" />
                 </NavLink>
               </div>
             </div>
