@@ -30,16 +30,16 @@
   }
   to {
     opacity: 1;
-    top: var(--header-height);
+    top: 120px;
   }
 }
 @keyframes flash {
   0% {
     background-color: #fff2;
-    box-shadow: 32px 0 #fff2, -32px 0 var(--white-color);
+    box-shadow: 32px 0 #fff2, -32px 0 #fff;
   }
   50% {
-    background-color: var(--white-color);
+    background-color: #fff;
     box-shadow: 32px 0 #fff2, -32px 0 #fff2;
   }
   100% {
@@ -65,7 +65,7 @@
   }
   to {
     opacity: 1;
-    top: var(--header-height);
+    top: 120px;
   }
 }
 @keyframes myAnim {

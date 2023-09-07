@@ -189,7 +189,7 @@ function Profile() {
   return (
     <>
       {isLoading && <Loading />}
-      <div className="col-lg-10 bg-white">
+      <div className="col-lg-10 bg-[#fff]">
         <div className="p-[30px]">
           <section className="flex flex-col items-start gap-[15px] pb-[20px]" style={{ borderBottom: '.0625rem solid #efefef' }}>
             <span style={{ textTransform: 'capitalize', fontSize: '25px' }}>Hồ sơ của tôi</span>
@@ -379,7 +379,7 @@ function Profile() {
                     <div className="text-end" style={{ display: 'flex', justifyContent: 'flex-end' }}>
                       <button
                         onClick={onSubmit}
-                        className="min-h-[40px]  h-[30px] min-w-[120px] overflow-hidden text-ellipsis border capitalize  font-normal text-sm  py-2 rounded-sm border-solid border-transparent bg-[#ee4d2d] text-white hover:bg-[#d73211] hover:border-[#ba2b0f]"
+                        className="min-h-[40px]  h-[30px] min-w-[120px] overflow-hidden text-ellipsis border capitalize  font-normal text-sm  py-2 rounded-sm border-solid border-transparent bg-[#ee4d2d] text-[#fff] hover:bg-[#d73211] hover:border-[#ba2b0f]"
                       >
                         Lưu
                       </button>
@@ -396,7 +396,7 @@ function Profile() {
                       )}
                     </div>
                     <button
-                      className="bg-white rounded-[2px] text-[14px]"
+                      className="bg-[#fff] rounded-[2px] text-[14px]"
                       style={{ border: '1px solid rgba(0,0,0,.09)', boxShadow: '0 1px 1px 0 rgb(0 0 0 / 3%)' }}
                       onClick={changeUploadImg}
                     >

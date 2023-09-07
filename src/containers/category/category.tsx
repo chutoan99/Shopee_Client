@@ -17,7 +17,7 @@ function Category() {
     <div className="col l-12 mo-12 c-12">
       <div className="pt-[20px]">
         {!isLoading && (
-          <div className="bg-white">
+          <div className="bg-[#fff]">
             <div className="p-[20px] text-left text-[1rem] text-[rgba(0, 0, 0, 0.54] font-medium">DANH MỤC</div>
             <Slider {...settings}>
               {data?.response?.map((category: any, index: number) => (

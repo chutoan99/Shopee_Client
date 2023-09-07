@@ -31,7 +31,7 @@ function ShopMall() {
     <div className="col l-12 mo-12 c-12">
       {!isLoading && (
         <div className="pt-[20px]">
-          <div className="bg-white">
+          <div className="bg-[#fff]">
             <div className="px-[20px] flex justify-between pb-[10px] pt-[20px] border-b-[rgba(0,0,0,0.05)] border-b border-solid">
               <div className="block no-underline text-[#d0011b] uppercase font-medium text-[1.0625rem] leading-[1.0625rem] self-center">
                 SHOPEE MALL

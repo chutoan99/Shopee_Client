@@ -42,7 +42,7 @@ function ResetForm() {
   return (
     <>
       {loading && <Loading />}
-      <div className="w-[500px] py-[1.25rem] bg-white box-border shadow-[0_3px_10px_0_rgba(0,0,0,0.14)] rounded overflow-hidden">
+      <div className="w-[500px] py-[1.25rem] bg-[#fff] box-border shadow-[0_3px_10px_0_rgba(0,0,0,0.14)] rounded overflow-hidden">
         <div className="px-[2rem] py-0">
           <div className="flex items-center justify-between mt-2.5 px-3 py-0">
             <h3 className="text-[1.37rem] font-normal text-[#333]">Đăng Nhập</h3>
@@ -80,7 +80,7 @@ function ResetForm() {
               TRỞ LẠI
             </NavLink>
             <button
-              className="overflow-hidden text-ellipsis flex-col text-sm box-border text-white  h-[34px] min-w-[124px] text-[0.9rem] leading-[1.6rem] no-underline flex items-center justify-center shadow-[0_1px_1px_rgba(0,0,0,0.09)] px-2.5 py-0 rounded-sm border-0 bg-[#ee4d2d]"
+              className="overflow-hidden text-ellipsis flex-col text-sm box-border text-[#fff]  h-[34px] min-w-[124px] text-[0.9rem] leading-[1.6rem] no-underline flex items-center justify-center shadow-[0_1px_1px_rgba(0,0,0,0.09)] px-2.5 py-0 rounded-sm border-0 bg-[#ee4d2d]"
               onClick={onResetPassWord}
             >
               CẬP NHẬT

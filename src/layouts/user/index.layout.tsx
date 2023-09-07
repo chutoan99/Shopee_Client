@@ -44,7 +44,7 @@ export default function UserLayout({ children }: any) {
                 <NavLink to="/user/profile" className="relative">
                   <div className="text-right">
                     <div className="flex gap-[10px]">
-                      <div className="flex items-center justify-center w-5 h-5 leading-5 text-center text-white shrink-0 mr-2.5 rounded-[50%]">
+                      <div className="flex items-center justify-center w-5 h-5 leading-5 text-center text-[#fff] shrink-0 mr-2.5 rounded-[50%]">
                         <img
                           className="w-full h-full"
                           src="https://down-vn.img.susercontent.com/file/ba61750a46794d8847c3f463c5e71cc4"
@@ -60,7 +60,7 @@ export default function UserLayout({ children }: any) {
                 <NavLink to="/user/purchase" className="relative">
                   <div className="text-right">
                     <div className=" flex gap-[10px]">
-                      <div className="flex items-center justify-center w-5 h-5 leading-5 text-center text-white shrink-0 mr-2.5 rounded-[50%]">
+                      <div className="flex items-center justify-center w-5 h-5 leading-5 text-center text-[#fff] shrink-0 mr-2.5 rounded-[50%]">
                         <img
                           className="w-full h-full"
                           src="https://down-vn.img.susercontent.com/file/f0049e9df4e536bc3e7f140d071e9078"
@@ -79,7 +79,7 @@ export default function UserLayout({ children }: any) {
                 <NavLink to="/user/notification" className="relative">
                   <div className="text-right">
                     <div className=" flex gap-[10px]">
-                      <div className="flex items-center justify-center w-5 h-5 leading-5 text-center text-white shrink-0 mr-2.5 rounded-[50%]">
+                      <div className="flex items-center justify-center w-5 h-5 leading-5 text-center text-[#fff] shrink-0 mr-2.5 rounded-[50%]">
                         <img
                           className="w-full h-full"
                           src="https://down-vn.img.susercontent.com/file/e10a43b53ec8605f4829da5618e0717c"
@@ -95,7 +95,7 @@ export default function UserLayout({ children }: any) {
                 <NavLink to="/user/voucher" className="relative">
                   <div className="text-right">
                     <div className=" flex gap-[10px]">
-                      <div className="flex items-center justify-center w-5 h-5 leading-5 text-center text-white shrink-0 mr-2.5 rounded-[50%]">
+                      <div className="flex items-center justify-center w-5 h-5 leading-5 text-center text-[#fff] shrink-0 mr-2.5 rounded-[50%]">
                         <img
                           className="w-full h-full"
                           src="https://down-vn.img.susercontent.com/file/84feaa363ce325071c0a66d3c9a88748"

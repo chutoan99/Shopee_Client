@@ -176,7 +176,7 @@ function Purchase() {
                           {cart?.shop_name}
                         </div>
                         <div className="ml-2 mr-0 my-0">
-                          <button className="text-xs capitalize border bg-[#ee4d2d] text-white px-2 py-1 rounded-sm border-solid border-transparent  flex items-center hover:bg-[#d73211] hover:border-[#ba2b0f]">
+                          <button className="text-xs capitalize border bg-[#ee4d2d] text-[#fff] px-2 py-1 rounded-sm border-solid border-transparent  flex items-center hover:bg-[#d73211] hover:border-[#ba2b0f]">
                             <svg
                               viewBox="0 0 17 17"
                               className="mr-[5px] inline-block w-[1em] h-[1em] fill-current relative"
@@ -361,7 +361,7 @@ function Purchase() {
                     </div>
                     <div className="flex">
                       <div className="flex items-center text-ellipsis ml-2.5 mr-0 my-0 min-w-[150px] ">
-                        <button className="min-h-[40px] min-w-[150px] overflow-hidden text-ellipsis border capitalize bg-[#ee4d2d] text-white font-normal text-sm  py-2 rounded-sm border-solid border-transparent hover:bg-[#d73211] hover:border-[#ba2b0f]">
+                        <button className="min-h-[40px] min-w-[150px] overflow-hidden text-ellipsis border capitalize bg-[#ee4d2d] text-[#fff] font-normal text-sm  py-2 rounded-sm border-solid border-transparent hover:bg-[#d73211] hover:border-[#ba2b0f]">
                           Đã nhận hàng
                         </button>
                       </div>
@@ -389,7 +389,7 @@ function Purchase() {
           ) : (
             <div className="w-full h-[600px] text-center">
               <div
-                className="flex rounded-[0.125rem] overflow-hidden flex-col justify-center w-full h-full bg-white items-center"
+                className="flex rounded-[0.125rem] overflow-hidden flex-col justify-center w-full h-full bg-[#fff] items-center"
                 style={{ boxShadow: '0 1px 1px 0 rgb(0 0 0 / 5%)' }}
               >
                 <div className="A849D8">

@@ -21,8 +21,8 @@ function OrderDetail() {
   return (
     <>
       {isLoading && <Loading />}
-      <div className="col-lg-10 bg-white pl-0 pr-0">
-        <div className="bg-white shadow-[0_1px_1px_0_rgba(0,0,0,0.05)] rounded-sm">
+      <div className="col-lg-10 bg-[#fff] pl-0 pr-0">
+        <div className="bg-[#fff] shadow-[0_1px_1px_0_rgba(0,0,0,0.05)] rounded-sm">
           <div className="text-sm leading-4 flex justify-between items-center px-6 py-3">
             <div className="flex text-[rgba(0,0,0,0.54)] mr-4">
               <svg
@@ -55,7 +55,7 @@ function OrderDetail() {
                 }}
               >
                 <div
-                  className="box-border flex flex-col justify-center items-center relative w-[60px] h-[60px] text-3xl m-auto rounded-[50%] border-4 border-solid border-[#e0e0e0] !bg-[#2dc258] !text-white !fill-[#2dc258] !border-[#2dc258]"
+                  className="box-border flex flex-col justify-center items-center relative w-[60px] h-[60px] text-3xl m-auto rounded-[50%] border-4 border-solid border-[#e0e0e0] !bg-[#2dc258] !text-[#fff] !fill-[#2dc258] !border-[#2dc258]"
                   style={{
                     transition:
                       'background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1) 0.7s, border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1) 0.7s, color 0.3s cubic-bezier(0.4, 0, 0.2, 1) 0.7s',
@@ -97,7 +97,7 @@ function OrderDetail() {
                 }}
               >
                 <div
-                  className="bg-white box-border flex flex-col justify-center items-center relative w-[60px] h-[60px] text-3xl m-auto rounded-[50%] border-4 border-solid border-[#e0e0e0] !text-[#2dc258] !border-[#2dc258]"
+                  className="bg-[#fff] box-border flex flex-col justify-center items-center relative w-[60px] h-[60px] text-3xl m-auto rounded-[50%] border-4 border-solid border-[#e0e0e0] !text-[#2dc258] !border-[#2dc258]"
                   style={{
                     transition:
                       'background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1) 0.7s, border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1) 0.7s, color 0.3s cubic-bezier(0.4, 0, 0.2, 1) 0.7s',
@@ -146,7 +146,7 @@ function OrderDetail() {
                 }}
               >
                 <div
-                  className="bg-white box-border flex flex-col justify-center items-center relative w-[60px] h-[60px] text-3xl m-auto rounded-[50%] border-4 border-solid border-[#e0e0e0] !text-[#2dc258] !border-[#2dc258]"
+                  className="bg-[#fff] box-border flex flex-col justify-center items-center relative w-[60px] h-[60px] text-3xl m-auto rounded-[50%] border-4 border-solid border-[#e0e0e0] !text-[#2dc258] !border-[#2dc258]"
                   style={{
                     transition:
                       'background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1) 0.7s, border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1) 0.7s, color 0.3s cubic-bezier(0.4, 0, 0.2, 1) 0.7s',
@@ -201,7 +201,7 @@ function OrderDetail() {
                 }}
               >
                 <div
-                  className="bg-white box-border flex flex-col justify-center items-center relative w-[60px] h-[60px] text-3xl m-auto rounded-[50%] border-4 border-solid border-[#e0e0e0] !text-[#2dc258] !border-[#2dc258]"
+                  className="bg-[#fff] box-border flex flex-col justify-center items-center relative w-[60px] h-[60px] text-3xl m-auto rounded-[50%] border-4 border-solid border-[#e0e0e0] !text-[#2dc258] !border-[#2dc258]"
                   style={{
                     transition:
                       'background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1) 0.7s, border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1) 0.7s, color 0.3s cubic-bezier(0.4, 0, 0.2, 1) 0.7s',
@@ -264,7 +264,7 @@ function OrderDetail() {
                 }}
               >
                 <div
-                  className="bg-white box-border flex flex-col justify-center items-center relative w-[60px] h-[60px] text-3xl m-auto rounded-[50%] border-4 border-solid border-[#e0e0e0] !text-[#2dc258] !border-[#2dc258]"
+                  className="bg-[#fff] box-border flex flex-col justify-center items-center relative w-[60px] h-[60px] text-3xl m-auto rounded-[50%] border-4 border-solid border-[#e0e0e0] !text-[#2dc258] !border-[#2dc258]"
                   style={{
                     transition:
                       'background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1) 0.7s, border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1) 0.7s, color 0.3s cubic-bezier(0.4, 0, 0.2, 1) 0.7s',
@@ -311,7 +311,7 @@ function OrderDetail() {
                 Đánh giá sản phẩm để nhận 200 Shopee xu!
               </div>
               <div className="text-right shrink-0" onClick={onShowModel}>
-                <button className="font-normal text-sm border bg-[#ee4d2d] text-white hover:bg-[#d73211] hover:border-[#ba2b0f] min-w-[150px] min-h-[40px] capitalize px-5 py-2 rounded-[5px] w-[220px] overflow-hidden text-ellipsis">
+                <button className="font-normal text-sm border bg-[#ee4d2d] text-[#fff] hover:bg-[#d73211] hover:border-[#ba2b0f] min-w-[150px] min-h-[40px] capitalize px-5 py-2 rounded-[5px] w-[220px] overflow-hidden text-ellipsis">
                   Đánh giá
                 </button>
               </div>
@@ -321,7 +321,7 @@ function OrderDetail() {
             <div className="flex flex-nowrap items-center justify-between box-border bg-[#fffcf5] px-6 py-3 border-t-[rgba(0,0,0,0.09)] border-t border-dotted">
               <div className="text-left text-[rgba(0,0,0,0.54)] text-xs leading-4 pl-0 pr-3 py-0;" style={{ wordWrap: 'break-word' }} />
               <div className="text-right shrink-0">
-                <button className="font-normal  text-sm  border bg-white text-[rgba(0,0,0,0.87)] border-solid border-[rgba(0,0,0,0.26)] stardust-button--secondary min-w-[150px] min-h-[40px]  capitalize px-5 py-2 rounded-[5px] w-[220px] overflow-hidden text-ellipsis hover:!bg-[rgba(0,0,0,0.02)] hover:!border hover:!border-solid hover:!border-[rgba(0,0,0,0.09)]">
+                <button className="font-normal  text-sm  border bg-[#fff] text-[rgba(0,0,0,0.87)] border-solid border-[rgba(0,0,0,0.26)] stardust-button--secondary min-w-[150px] min-h-[40px]  capitalize px-5 py-2 rounded-[5px] w-[220px] overflow-hidden text-ellipsis hover:!bg-[rgba(0,0,0,0.02)] hover:!border hover:!border-solid hover:!border-[rgba(0,0,0,0.09)]">
                   Liên hệ Người bán
                 </button>
               </div>
@@ -329,7 +329,7 @@ function OrderDetail() {
             <div className="flex flex-nowrap items-center justify-between box-border bg-[#fffcf5] px-6 py-3 border-t-[rgba(0,0,0,0.09)] border-t border-dotted">
               <div className="text-left text-[rgba(0,0,0,0.54)] text-xs leading-4 pl-0 pr-3 py-0;" style={{ wordWrap: 'break-word' }} />
               <div className="text-right shrink-0">
-                <button className="font-normal text-sm  border bg-white text-[rgba(0,0,0,0.87)] border-solid border-[rgba(0,0,0,0.26)] stardust-button--secondary min-w-[150px] min-h-[40px] capitalize px-5 py-2 rounded-[5px] w-[220px] overflow-hidden text-ellipsis hover:!bg-[rgba(0,0,0,0.02)] hover:!border hover:!border-solid hover:!border-[rgba(0,0,0,0.09)]">
+                <button className="font-normal text-sm  border bg-[#fff] text-[rgba(0,0,0,0.87)] border-solid border-[rgba(0,0,0,0.26)] stardust-button--secondary min-w-[150px] min-h-[40px] capitalize px-5 py-2 rounded-[5px] w-[220px] overflow-hidden text-ellipsis hover:!bg-[rgba(0,0,0,0.02)] hover:!border hover:!border-solid hover:!border-[rgba(0,0,0,0.09)]">
                   <NavLink to={`/shop/${dataOrder?.shopid}`}>Mua lại</NavLink>
                 </button>
               </div>
@@ -528,7 +528,7 @@ function OrderDetail() {
                       {dataOrder?.shop_name}
                     </div>
                     <div className="ml-2 mr-0 my-0">
-                      <button className="text-xs capitalize border bg-[#ee4d2d] text-white px-2 py-1 rounded-sm border-solid border-transparent  flex items-center hover:bg-[#d73211] hover:border-[#ba2b0f]">
+                      <button className="text-xs capitalize border bg-[#ee4d2d] text-[#fff] px-2 py-1 rounded-sm border-solid border-transparent  flex items-center hover:bg-[#d73211] hover:border-[#ba2b0f]">
                         <svg
                           viewBox="0 0 17 17"
                           className="mr-[5px] inline-block w-[1em] h-[1em] fill-current relative"

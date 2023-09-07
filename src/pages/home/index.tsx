@@ -1,6 +1,4 @@
 //? LIBRARY
-import './style/xxx.css';
-
 import { memo } from 'react';
 import { NavLink } from 'react-router-dom';
 //? APPS
@@ -38,8 +36,13 @@ function Home() {
               <ProductList items={dataProduct?.response?.rows || []} col={'col l-2 mo-4 c-6'} loading={isLoadingDataProduct} />
               <div className="w-full text-center my-[1.25rem]">
                 <NavLink
-                  className="btn btn-light btn--m btn--inline btn-light--link hover:bg-[rgba(0,0,0,.01)] leading-[34px]"
-                  style={{ minWidth: '396px', boxShadow: '0 1px 1px 0 rgb(0 0 0 / 9%)' }}
+                  className="min-w-[24.375rem] bg-[#fff] h-10 text-[#555] border shadow-[0_1px_1px_0_rgba(0,0,0,0.03)] relative overflow-visible inline-flex max-w-[220px] text-ellipsis flex-col text-sm box-border items-center justify-center capitalize cursor-pointer px-5 py-0 rounded-sm border-solid border-[rgba(0,0,0,0.09)] hover:bg-[rgba(0,0,0,.01)] leading-[34px]"
+                  style={{
+                    minWidth: '396px',
+                    boxShadow: '0 1px 1px 0 rgba(0, 0, 0, 0.09)',
+                    outline: '0',
+                    WebkitLineClamp: 1,
+                  }}
                   to="/daily_discover"
                 >
                   Xem thêm

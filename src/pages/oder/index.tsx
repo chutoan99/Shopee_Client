@@ -115,7 +115,7 @@ function Oder() {
             className="h-[3px] w-full bg-[116px_3px] bg-[repeating-linear-gradient(45deg,#6fa6d6,#6fa6d6_33px,transparent_0,transparent_41px,#f18d9b_0,#f18d9b_74px,transparent_0,transparent_82px)]"
             style={{ backgroundPositionX: '-30px' }}
           ></div>
-          <div className="bg-[white] mb-2.5 pt-7 pb-6 px-[30px]">
+          <div className="bg-[#fff] mb-2.5 pt-7 pb-6 px-[30px]">
             <h1 className=" flex items-center text-lg text-[#ee4d2d] uppercase mb-[20px]">
               <i className="fa-solid fa-location-dot pr-2.5"></i>Địa Chỉ Nhận Hàng
             </h1>
@@ -165,7 +165,7 @@ function Oder() {
                           {ele[0]?.overview?.shop_name}
                         </div>
                         <div className="ml-2 mr-0 my-0">
-                          <button className="text-xs capitalize border bg-[#ee4d2d] text-white px-2 py-1 rounded-sm border-solid border-transparent  flex items-center hover:bg-[#d73211] hover:border-[#ba2b0f]">
+                          <button className="text-xs capitalize border bg-[#ee4d2d] text-[#fff] px-2 py-1 rounded-sm border-solid border-transparent  flex items-center hover:bg-[#d73211] hover:border-[#ba2b0f]">
                             <svg
                               viewBox="0 0 17 17"
                               className="mr-[5px] inline-block w-[1em] h-[1em] fill-current relative"
@@ -202,7 +202,7 @@ function Oder() {
                   {ele?.map((item: Cart) => (
                     <div
                       style={{ padding: '10px 30px' }}
-                      className="bg-[white] grid items-center  border-b-[rgba(0,0,0,0.09)] border-b border-dashed"
+                      className="bg-[#fff] grid items-center  border-b-[rgba(0,0,0,0.09)] border-b border-dashed"
                       key={item.cartid}
                     >
                       <div className="flex items-center">
@@ -263,7 +263,7 @@ function Oder() {
               <div className="flex bg-[#fafdff] min-w-0 min-h-0 border-b-[rgba(0,0,0,0.09)] border-b border-dashed">
                 <div className="flex items-center min-w-0 min-h-0 text-sm flex-[4] pr-5">
                   <span className="flex min-w-0 min-h-0 px-[30px] py-4 border-t-0">Lời nhắn:</span>
-                  <div className="flex items-center shadow-[inset_0_2px_0_0_rgb(0_0_0_/_2%)] h-10 bg-[white] box-border border flex-1 text-xs font-light ml-[15px] mb-0 rounded-sm border-solid border-[rgba(0,0,0,0.14)]">
+                  <div className="flex items-center shadow-[inset_0_2px_0_0_rgb(0_0_0_/_2%)] h-10 bg-[#fff] box-border border flex-1 text-xs font-light ml-[15px] mb-0 rounded-sm border-solid border-[rgba(0,0,0,0.14)]">
                     <input
                       className="w-full h-10 box-border bg-transparent flex-1 text-sm min-w-0 text-[#222] p-2.5 border-0"
                       placeholder="Lưu Ý Cho Người Bán..."
@@ -326,7 +326,7 @@ function Oder() {
                 </div>
                 <button
                   onClick={handelSubmit}
-                  className="min-h-[40px]  h-[30px] min-w-[210px] overflow-hidden text-ellipsis border capitalize bg-[#ee4d2d] text-white font-normal text-sm  py-2 rounded-sm border-solid border-transparent hover:bg-[#d73211] hover:border-[#ba2b0f]"
+                  className="min-h-[40px]  h-[30px] min-w-[210px] overflow-hidden text-ellipsis border capitalize bg-[#ee4d2d] text-[#fff] font-normal text-sm  py-2 rounded-sm border-solid border-transparent hover:bg-[#d73211] hover:border-[#ba2b0f]"
                 >
                   Đặt hàng
                 </button>

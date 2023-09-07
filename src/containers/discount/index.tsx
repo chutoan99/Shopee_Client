@@ -8,7 +8,7 @@ function Discount() {
   return (
     <div className="col l-12 mo-12 c-12">
       {!isLoading && (
-        <div className="bg-white px-[0.625rem] py-[1.25rem] min-h-[100px] h-[130px]">
+        <div className="bg-[#fff] px-[0.625rem] py-[1.25rem] min-h-[100px] h-[130px]">
           <div className="flex justify-around gap-[10px]">
             {data?.response?.map((item: BatchList, index: number) => {
               return (

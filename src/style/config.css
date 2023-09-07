@@ -114,10 +114,10 @@
 }
 
 .shopping_cart-checkBox input:checked ~ .checkmark {
-  background-color: var(--primary--color);
+  background-color: #ee4d2d;
 }
 .shopping_cart-checkBox input:checked ~ .checkmark {
-  background-color: var(--primary--color);
+  background-color: #ee4d2d;
 }
 .checkmark:after {
   content: '';

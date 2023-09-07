@@ -45,20 +45,6 @@ html {
   scrollbar-width: thin;
   box-sizing: inherit;
 }
-
-:root {
-  --white-color: #fff;
-  --back-color: #000;
-  --text-color: #333;
-  --primary--color: #ee4d2d;
-  --border-color: #dbdbdb;
-  --star-gold-color: #ffce3e;
-  --header-height: 120px;
-  --navbar-height: 34px;
-  --Header-with-search-height: calc(var(--header-height) - var(--navbar-height));
-  --Header-sort-bar-height: 46px;
-  --brand-primary-light-color: rgba(255, 87, 34, 0.1);
-}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }

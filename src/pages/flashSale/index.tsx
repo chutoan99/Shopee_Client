@@ -1,5 +1,4 @@
 //? LIBRARY
-import IMG from '../../../public/assets/imgs';
 import { memo } from 'react';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 //? APPS
@@ -34,7 +33,7 @@ function FlashSales() {
                     <div>
                       <NavLink
                         to="/"
-                        className="gap-[5px] no-underline text-[rgba(0,0,0,0.87)]  flex flex-col h-16 justify-center relative text-center  text-white bg-[#ee4d2d]"
+                        className="gap-[5px] no-underline text-[rgba(0,0,0,0.87)]  flex flex-col h-16 justify-center relative text-center  text-[#fff] bg-[#ee4d2d]"
                       >
                         <div className="text-[1.5rem]">21:00</div>
                         <div className="capitalize">Đang diễn ra</div>
@@ -124,7 +123,7 @@ function FlashSales() {
                   {data?.response?.map((item: any, index: number) => (
                     <div className="col l-2 mo-4 c-6" key={item.id}>
                       <div
-                        className="bg-white relative shadow-[0_1px_2px_rgba(0,0,0,0.1)] transition-transform duration-[linear] delay-[0.1s] no-underline block cursor-pointer mt-[5px] pb-[5px] rounded-sm"
+                        className="bg-[#fff] relative shadow-[0_1px_2px_rgba(0,0,0,0.1)] transition-transform duration-[linear] delay-[0.1s] no-underline block cursor-pointer mt-[5px] pb-[5px] rounded-sm"
                         key={item.itemid}
                         onClick={() => navigate(`/detailProduct/${item?.itemid}/${item?.shopid}`)}
                       >
@@ -150,7 +149,7 @@ function FlashSales() {
                         <div style={{ padding: '10px' }}>
                           <div className="relative w-full" style={{ height: '16px' }}>
                             <div
-                              className="flex items-center justify-center absolute h-[inherit] w-[inherit] text-white text-[0.625rem] font-bold uppercase z-[3] left-0 top-0"
+                              className="flex items-center justify-center absolute h-[inherit] w-[inherit] text-[#fff] text-[0.625rem] font-bold uppercase z-[3] left-0 top-0"
                               style={{ textShadow: '0 0 8px rgb(0 0 0 / 12%)' }}
                             >
                               ĐANG BÁN CHẠY

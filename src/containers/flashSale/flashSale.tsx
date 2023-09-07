@@ -1,5 +1,4 @@
 //? LIBRARY
-import IMG from '../../../public/assets/imgs';
 import Slider from 'react-slick';
 import { NavLink } from 'react-router-dom';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
@@ -22,7 +21,7 @@ function FlashSale() {
       {!isLoading && (
         <div className="col l-12 mo-12 c-12">
           <div className="pt-[20px]">
-            <div className="bg-white">
+            <div className="bg-[#fff]">
               <div className="px-[20px] flex justify-between pb-[10px] pt-[20px]">
                 <div className="w-full h-full">
                   <div className="w-[114px] h-full ">
@@ -57,7 +56,7 @@ function FlashSale() {
                           <div className=" px-2.5 py-0 pl-[6px] pr-2.5 pt-[10px] pb-2.5">
                             <div className="relative w-full h-[16px]">
                               <div
-                                className="flex items-center justify-center absolute h-[inherit] w-[inherit] text-white text-[0.625rem] font-bold uppercase z-[3] left-0 top-0"
+                                className="flex items-center justify-center absolute h-[inherit] w-[inherit] text-[#fff] text-[0.625rem] font-bold uppercase z-[3] left-0 top-0"
                                 style={{
                                   textShadow: '0 0 8px rgb(0 0 0 / 12%)',
                                 }}

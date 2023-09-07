@@ -1,5 +1,4 @@
 //? LIBRARY
-import IMG from '../../../public/assets/imgs';
 //? APPS
 function SearchEmpty() {
   return (

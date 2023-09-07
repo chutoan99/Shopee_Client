@@ -40,28 +40,28 @@ function ProductComment() {
                     <div className="flex !text-[#ee4d2d] !text-3xl">{generateStart(5)}</div>
                   </div>
                   <div>
-                    <span className="select-none h-8 leading-8 min-w-[6.25rem] text-center text-[rgba(0,0,0,0.8)] bg-white border box-border inline-block no-underline text-[rgba(0,0,0,0.87)] capitalize mr-2 my-[0.3125rem] px-2.5 py-0 rounded-sm  border-[rgba(0,0,0,0.09)] !text-[#ee4d2d] border !border-solid !border-[#ee4d2d]">
+                    <span className="select-none h-8 leading-8 min-w-[6.25rem] text-center text-[rgba(0,0,0,0.8)] bg-[#fff] border box-border inline-block no-underline text-[rgba(0,0,0,0.87)] capitalize mr-2 my-[0.3125rem] px-2.5 py-0 rounded-sm  border-[rgba(0,0,0,0.09)] !text-[#ee4d2d] border !border-solid !border-[#ee4d2d]">
                       Tất Cả
                     </span>
-                    <span className="select-none h-8 leading-8 min-w-[6.25rem] text-center text-[rgba(0,0,0,0.8)] bg-white border box-border inline-block no-underline text-[rgba(0,0,0,0.87)] capitalize mr-2 my-[0.3125rem] px-2.5 py-0 rounded-sm border-solid border-[rgba(0,0,0,0.09)]">
+                    <span className="select-none h-8 leading-8 min-w-[6.25rem] text-center text-[rgba(0,0,0,0.8)] bg-[#fff] border box-border inline-block no-underline text-[rgba(0,0,0,0.87)] capitalize mr-2 my-[0.3125rem] px-2.5 py-0 rounded-sm border-solid border-[rgba(0,0,0,0.09)]">
                       5 Sao{' '}
                     </span>
-                    <span className="select-none h-8 leading-8 min-w-[6.25rem] text-center text-[rgba(0,0,0,0.8)] bg-white border box-border inline-block no-underline text-[rgba(0,0,0,0.87)] capitalize mr-2 my-[0.3125rem] px-2.5 py-0 rounded-sm border-solid border-[rgba(0,0,0,0.09)]">
+                    <span className="select-none h-8 leading-8 min-w-[6.25rem] text-center text-[rgba(0,0,0,0.8)] bg-[#fff] border box-border inline-block no-underline text-[rgba(0,0,0,0.87)] capitalize mr-2 my-[0.3125rem] px-2.5 py-0 rounded-sm border-solid border-[rgba(0,0,0,0.09)]">
                       4 Sao{' '}
                     </span>
-                    <span className="select-none h-8 leading-8 min-w-[6.25rem] text-center text-[rgba(0,0,0,0.8)] bg-white border box-border inline-block no-underline text-[rgba(0,0,0,0.87)] capitalize mr-2 my-[0.3125rem] px-2.5 py-0 rounded-sm border-solid border-[rgba(0,0,0,0.09)]">
+                    <span className="select-none h-8 leading-8 min-w-[6.25rem] text-center text-[rgba(0,0,0,0.8)] bg-[#fff] border box-border inline-block no-underline text-[rgba(0,0,0,0.87)] capitalize mr-2 my-[0.3125rem] px-2.5 py-0 rounded-sm border-solid border-[rgba(0,0,0,0.09)]">
                       3 Sao{' '}
                     </span>
-                    <span className="select-none h-8 leading-8 min-w-[6.25rem] text-center text-[rgba(0,0,0,0.8)] bg-white border box-border inline-block no-underline text-[rgba(0,0,0,0.87)] capitalize mr-2 my-[0.3125rem] px-2.5 py-0 rounded-sm border-solid border-[rgba(0,0,0,0.09)]">
+                    <span className="select-none h-8 leading-8 min-w-[6.25rem] text-center text-[rgba(0,0,0,0.8)] bg-[#fff] border box-border inline-block no-underline text-[rgba(0,0,0,0.87)] capitalize mr-2 my-[0.3125rem] px-2.5 py-0 rounded-sm border-solid border-[rgba(0,0,0,0.09)]">
                       2 Sao{' '}
                     </span>
-                    <span className="select-none h-8 leading-8 min-w-[6.25rem] text-center text-[rgba(0,0,0,0.8)] bg-white border box-border inline-block no-underline text-[rgba(0,0,0,0.87)] capitalize mr-2 my-[0.3125rem] px-2.5 py-0 rounded-sm border-solid border-[rgba(0,0,0,0.09)]">
+                    <span className="select-none h-8 leading-8 min-w-[6.25rem] text-center text-[rgba(0,0,0,0.8)] bg-[#fff] border box-border inline-block no-underline text-[rgba(0,0,0,0.87)] capitalize mr-2 my-[0.3125rem] px-2.5 py-0 rounded-sm border-solid border-[rgba(0,0,0,0.09)]">
                       1 Sao{' '}
                     </span>
-                    <span className="select-none h-8 leading-8 min-w-[6.25rem] text-center text-[rgba(0,0,0,0.8)] bg-white border box-border inline-block no-underline text-[rgba(0,0,0,0.87)] capitalize mr-2 my-[0.3125rem] px-2.5 py-0 rounded-sm border-solid border-[rgba(0,0,0,0.09)]">
+                    <span className="select-none h-8 leading-8 min-w-[6.25rem] text-center text-[rgba(0,0,0,0.8)] bg-[#fff] border box-border inline-block no-underline text-[rgba(0,0,0,0.87)] capitalize mr-2 my-[0.3125rem] px-2.5 py-0 rounded-sm border-solid border-[rgba(0,0,0,0.09)]">
                       Có Bình Luận
                     </span>
-                    <span className="select-none h-8 leading-8 min-w-[6.25rem] text-center text-[rgba(0,0,0,0.8)] bg-white border box-border inline-block no-underline text-[rgba(0,0,0,0.87)] capitalize mr-2 my-[0.3125rem] px-2.5 py-0 rounded-sm border-solid border-[rgba(0,0,0,0.09)]">
+                    <span className="select-none h-8 leading-8 min-w-[6.25rem] text-center text-[rgba(0,0,0,0.8)] bg-[#fff] border box-border inline-block no-underline text-[rgba(0,0,0,0.87)] capitalize mr-2 my-[0.3125rem] px-2.5 py-0 rounded-sm border-solid border-[rgba(0,0,0,0.09)]">
                       Có Hình Ảnh/ Video
                     </span>
                   </div>
@@ -139,7 +139,7 @@ function CommentItem({ item }: any) {
               }}
               onDoubleClick={() => setShowVideo(false)}
             >
-              <i className="fa-solid fa-video  absolute text-[white] text-[0.938rem] w-full h-[32%] flex items-center pl-2.5 bottom-0 inset-x-0 bg-[rgba(0, 0, 0, 0.54)]"></i>
+              <i className="fa-solid fa-video  absolute text-[#fff] text-[0.938rem] w-full h-[32%] flex items-center pl-2.5 bottom-0 inset-x-0 bg-[rgba(0, 0, 0, 0.54)]"></i>
               <img src={item?.cover} alt="" className="w-full h-full" />
             </div>
           )}

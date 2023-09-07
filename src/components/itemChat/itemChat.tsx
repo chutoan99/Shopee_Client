@@ -20,7 +20,7 @@ function ItemChat({ data, des, setIsChat, setRoom }: interfaceItemChat) {
         >
           <div className="h-8 min-w-[32px] w-8">
             <div
-              className="items-center text-white flex text-[0] font-medium h-full justify-center overflow-hidden w-full rounded-sm"
+              className="items-center text-[#fff] flex text-[0] font-medium h-full justify-center overflow-hidden w-full rounded-sm"
               style={{ backgroundColor: 'unset' }}
             >
               <div className="w-full h-full">

@@ -105,7 +105,7 @@ function SearchFilter() {
             <div className="block text-[rgba(0,0,0,0.8)]">
               <label className="items-start cursor-pointer flex select-none text-[0.875rem]">
                 <input type="checkbox" className="hidden" name="" defaultValue={100244} />
-                <div className="justify-center box-border bg-white text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]">
+                <div className="justify-center box-border bg-[#fff] text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]">
                   <i> </i>
                 </div>
                 <span
@@ -126,7 +126,7 @@ function SearchFilter() {
             <div className="block text-[rgba(0,0,0,0.8)]">
               <label className="items-start cursor-pointer flex select-none text-[0.875rem]">
                 <input type="checkbox" className="hidden" name="" defaultValue={100242} />
-                <div className="justify-center box-border bg-white text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]">
+                <div className="justify-center box-border bg-[#fff] text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]">
                   <i> </i>
                 </div>
                 <span
@@ -147,7 +147,7 @@ function SearchFilter() {
             <div className="block text-[rgba(0,0,0,0.8)]">
               <label className="items-start cursor-pointer flex select-none text-[0.875rem]">
                 <input type="checkbox" className="hidden" name="" defaultValue={100050} />
-                <div className="justify-center box-border bg-white text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]">
+                <div className="justify-center box-border bg-[#fff] text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]">
                   <i> </i>
                 </div>
                 <span
@@ -168,7 +168,7 @@ function SearchFilter() {
             <div className="block text-[rgba(0,0,0,0.8)]">
               <label className="items-start cursor-pointer flex select-none text-[0.875rem]">
                 <input type="checkbox" className="hidden" name="" defaultValue={100053} />
-                <div className="justify-center box-border bg-white text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]">
+                <div className="justify-center box-border bg-[#fff] text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]">
                   <i> </i>
                 </div>
                 <span
@@ -189,7 +189,7 @@ function SearchFilter() {
             <div className="block text-[rgba(0,0,0,0.8)]">
               <label className="items-start cursor-pointer flex select-none text-[0.875rem]">
                 <input type="checkbox" className="hidden" name="" defaultValue={100009} />
-                <div className="justify-center box-border bg-white text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]">
+                <div className="justify-center box-border bg-[#fff] text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]">
                   <i> </i>
                 </div>
                 <span
@@ -210,7 +210,7 @@ function SearchFilter() {
             <div className="block text-[rgba(0,0,0,0.8)]">
               <label className="items-start cursor-pointer flex select-none text-[0.875rem]">
                 <input type="checkbox" className="hidden" name="" defaultValue={100243} />
-                <div className="justify-center box-border bg-white text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]">
+                <div className="justify-center box-border bg-[#fff] text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]">
                   <i> </i>
                 </div>
                 <span
@@ -231,7 +231,7 @@ function SearchFilter() {
             <div className="block text-[rgba(0,0,0,0.8)]">
               <label className="items-start cursor-pointer flex select-none text-[0.875rem]">
                 <input type="checkbox" className="hidden" name="" defaultValue={100047} />
-                <div className="justify-center box-border bg-white text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]">
+                <div className="justify-center box-border bg-[#fff] text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]">
                   <i> </i>
                 </div>
                 <span
@@ -252,7 +252,7 @@ function SearchFilter() {
             <div className="block text-[rgba(0,0,0,0.8)]">
               <label className="items-start cursor-pointer flex select-none text-[0.875rem]">
                 <input type="checkbox" className="hidden" name="" defaultValue={100048} />
-                <div className="justify-center box-border bg-white text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]">
+                <div className="justify-center box-border bg-[#fff] text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]">
                   <i> </i>
                 </div>
                 <span
@@ -273,7 +273,7 @@ function SearchFilter() {
             <div className="block text-[rgba(0,0,0,0.8)]">
               <label className="items-start cursor-pointer flex select-none text-[0.875rem]">
                 <input type="checkbox" className="hidden" name="" defaultValue={100052} />
-                <div className="justify-center box-border bg-white text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]">
+                <div className="justify-center box-border bg-[#fff] text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]">
                   <i> </i>
                 </div>
                 <span
@@ -294,7 +294,7 @@ function SearchFilter() {
             <div className="block text-[rgba(0,0,0,0.8)]">
               <label className="items-start cursor-pointer flex select-none text-[0.875rem]">
                 <input type="checkbox" className="hidden" name="" defaultValue={100055} />
-                <div className="justify-center box-border bg-white text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]">
+                <div className="justify-center box-border bg-[#fff] text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]">
                   <i> </i>
                 </div>
                 <span
@@ -315,7 +315,7 @@ function SearchFilter() {
             <div className="block text-[rgba(0,0,0,0.8)]">
               <label className="items-start cursor-pointer flex select-none text-[0.875rem]">
                 <input type="checkbox" className="hidden" name="" defaultValue={100057} />
-                <div className="justify-center box-border bg-white text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]">
+                <div className="justify-center box-border bg-[#fff] text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]">
                   <i> </i>
                 </div>
                 <span
@@ -336,7 +336,7 @@ function SearchFilter() {
             <div className="block text-[rgba(0,0,0,0.8)]">
               <label className="items-start cursor-pointer flex select-none text-[0.875rem]">
                 <input type="checkbox" className="hidden" name="" defaultValue={100017} />
-                <div className="justify-center box-border bg-white text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]">
+                <div className="justify-center box-border bg-[#fff] text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]">
                   <i> </i>
                 </div>
                 <span
@@ -380,7 +380,7 @@ function SearchFilter() {
             <div className="block text-[rgba(0,0,0,0.8)]">
               <label className="items-start cursor-pointer flex select-none text-[0.875rem]">
                 <input type="checkbox" className="hidden" name="" defaultValue="TP. Hồ Chí Minh" />
-                <div className="justify-center box-border bg-white text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]">
+                <div className="justify-center box-border bg-[#fff] text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]">
                   <i> </i>
                 </div>
                 <span
@@ -401,7 +401,7 @@ function SearchFilter() {
             <div className="block text-[rgba(0,0,0,0.8)]">
               <label className="items-start cursor-pointer flex select-none text-[0.875rem]">
                 <input type="checkbox" className="hidden" name="" defaultValue="Hà Nội" />
-                <div className="justify-center box-border bg-white text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]">
+                <div className="justify-center box-border bg-[#fff] text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]">
                   <i> </i>
                 </div>
                 <span
@@ -422,7 +422,7 @@ function SearchFilter() {
             <div className="block text-[rgba(0,0,0,0.8)]">
               <label className="items-start cursor-pointer flex select-none text-[0.875rem]">
                 <input type="checkbox" className="hidden" name="" defaultValue="Quận 1" />
-                <div className="justify-center box-border bg-white text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]">
+                <div className="justify-center box-border bg-[#fff] text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]">
                   <i> </i>
                 </div>
                 <span
@@ -443,7 +443,7 @@ function SearchFilter() {
             <div className="block text-[rgba(0,0,0,0.8)]">
               <label className="items-start cursor-pointer flex select-none text-[0.875rem]">
                 <input type="checkbox" className="hidden" name="" defaultValue="Quận 3" />
-                <div className="justify-center box-border bg-white text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]">
+                <div className="justify-center box-border bg-[#fff] text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]">
                   <i> </i>
                 </div>
                 <span
@@ -464,7 +464,7 @@ function SearchFilter() {
             <div className="block text-[rgba(0,0,0,0.8)]">
               <label className="items-start cursor-pointer flex select-none text-[0.875rem]">
                 <input type="checkbox" className="hidden" name="" defaultValue="Quận 6" />
-                <div className="justify-center box-border bg-white text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]">
+                <div className="justify-center box-border bg-[#fff] text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]">
                   <i> </i>
                 </div>
                 <span
@@ -485,7 +485,7 @@ function SearchFilter() {
             <div className="block text-[rgba(0,0,0,0.8)]">
               <label className="items-start cursor-pointer flex select-none text-[0.875rem]">
                 <input type="checkbox" className="hidden" name="" defaultValue="Quận 7" />
-                <div className="justify-center box-border bg-white text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]">
+                <div className="justify-center box-border bg-[#fff] text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]">
                   <i> </i>
                 </div>
                 <span
@@ -506,7 +506,7 @@ function SearchFilter() {
             <div className="block text-[rgba(0,0,0,0.8)]">
               <label className="items-start cursor-pointer flex select-none text-[0.875rem]">
                 <input type="checkbox" className="hidden" name="" defaultValue="Quận 8" />
-                <div className="justify-center box-border bg-white text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]">
+                <div className="justify-center box-border bg-[#fff] text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]">
                   <i> </i>
                 </div>
                 <span
@@ -527,7 +527,7 @@ function SearchFilter() {
             <div className="block text-[rgba(0,0,0,0.8)]">
               <label className="items-start cursor-pointer flex select-none text-[0.875rem]">
                 <input type="checkbox" className="hidden" name="" defaultValue="Quận 10" />
-                <div className="justify-center box-border bg-white text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]">
+                <div className="justify-center box-border bg-[#fff] text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]">
                   <i> </i>
                 </div>
                 <span
@@ -548,7 +548,7 @@ function SearchFilter() {
             <div className="block text-[rgba(0,0,0,0.8)]">
               <label className="items-start cursor-pointer flex select-none text-[0.875rem]">
                 <input type="checkbox" className="hidden" name="" defaultValue="Quận 11" />
-                <div className="justify-center box-border bg-white text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]">
+                <div className="justify-center box-border bg-[#fff] text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]">
                   <i> </i>
                 </div>
                 <span
@@ -569,7 +569,7 @@ function SearchFilter() {
             <div className="block text-[rgba(0,0,0,0.8)]">
               <label className="items-start cursor-pointer flex select-none text-[0.875rem]">
                 <input type="checkbox" className="hidden" name="" defaultValue="Quận 12" />
-                <div className="justify-center box-border bg-white text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]">
+                <div className="justify-center box-border bg-[#fff] text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]">
                   <i> </i>
                 </div>
                 <span
@@ -590,7 +590,7 @@ function SearchFilter() {
             <div className="block text-[rgba(0,0,0,0.8)]">
               <label className="items-start cursor-pointer flex select-none text-[0.875rem]">
                 <input type="checkbox" className="hidden" name="" defaultValue="Quận Gò Vấp" />
-                <div className="justify-center box-border bg-white text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]">
+                <div className="justify-center box-border bg-[#fff] text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]">
                   <i> </i>
                 </div>
                 <span
@@ -611,7 +611,7 @@ function SearchFilter() {
             <div className="block text-[rgba(0,0,0,0.8)]">
               <label className="items-start cursor-pointer flex select-none text-[0.875rem]">
                 <input type="checkbox" className="hidden" name="" defaultValue="Quận Tân Phú" />
-                <div className="justify-center box-border bg-white text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]">
+                <div className="justify-center box-border bg-[#fff] text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]">
                   <i> </i>
                 </div>
                 <span
@@ -632,7 +632,7 @@ function SearchFilter() {
             <div className="block text-[rgba(0,0,0,0.8)]">
               <label className="items-start cursor-pointer flex select-none text-[0.875rem]">
                 <input type="checkbox" className="hidden" name="" defaultValue="Quận Bình Tân" />
-                <div className="justify-center box-border bg-white text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]">
+                <div className="justify-center box-border bg-[#fff] text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]">
                   <i> </i>
                 </div>
                 <span
@@ -653,7 +653,7 @@ function SearchFilter() {
             <div className="block text-[rgba(0,0,0,0.8)]">
               <label className="items-start cursor-pointer flex select-none text-[0.875rem]">
                 <input type="checkbox" className="hidden" name="" defaultValue="Quận Tân Bình" />
-                <div className="justify-center box-border bg-white text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]">
+                <div className="justify-center box-border bg-[#fff] text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]">
                   <i> </i>
                 </div>
                 <span
@@ -674,7 +674,7 @@ function SearchFilter() {
             <div className="block text-[rgba(0,0,0,0.8)]">
               <label className="items-start cursor-pointer flex select-none text-[0.875rem]">
                 <input type="checkbox" className="hidden" name="" defaultValue="Thành Phố Thủ Đức" />
-                <div className="justify-center box-border bg-white text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]">
+                <div className="justify-center box-border bg-[#fff] text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]">
                   <i> </i>
                 </div>
                 <span
@@ -695,7 +695,7 @@ function SearchFilter() {
             <div className="block text-[rgba(0,0,0,0.8)]">
               <label className="items-start cursor-pointer flex select-none text-[0.875rem]">
                 <input type="checkbox" className="hidden" name="" defaultValue="Quận Bình Thạnh" />
-                <div className="justify-center box-border bg-white text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]">
+                <div className="justify-center box-border bg-[#fff] text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]">
                   <i> </i>
                 </div>
                 <span
@@ -716,7 +716,7 @@ function SearchFilter() {
             <div className="block text-[rgba(0,0,0,0.8)]">
               <label className="items-start cursor-pointer flex select-none text-[0.875rem]">
                 <input type="checkbox" className="hidden" name="" defaultValue="Quận Phú Nhuận" />
-                <div className="justify-center box-border bg-white text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]">
+                <div className="justify-center box-border bg-[#fff] text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]">
                   <i> </i>
                 </div>
                 <span
@@ -737,7 +737,7 @@ function SearchFilter() {
             <div className="block text-[rgba(0,0,0,0.8)]">
               <label className="items-start cursor-pointer flex select-none text-[0.875rem]">
                 <input type="checkbox" className="hidden" name="" defaultValue="Huyện Bình Chánh" />
-                <div className="justify-center box-border bg-white text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]">
+                <div className="justify-center box-border bg-[#fff] text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]">
                   <i> </i>
                 </div>
                 <span
@@ -777,7 +777,7 @@ function SearchFilter() {
             <div className="block text-[rgba(0,0,0,0.8)]">
               <label className="items-start cursor-pointer flex select-none text-[0.875rem]">
                 <input type="checkbox" className="hidden" name="" defaultValue={1} />
-                <div className="justify-center box-border bg-white text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]">
+                <div className="justify-center box-border bg-[#fff] text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]">
                   <i> </i>
                 </div>
                 <span
@@ -798,7 +798,7 @@ function SearchFilter() {
             <div className="block text-[rgba(0,0,0,0.8)]">
               <label className="items-start cursor-pointer flex select-none text-[0.875rem]">
                 <input type="checkbox" className="hidden" name="" defaultValue={2} />
-                <div className="justify-center box-border bg-white text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]">
+                <div className="justify-center box-border bg-[#fff] text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]">
                   <i> </i>
                 </div>
                 <span
@@ -819,7 +819,7 @@ function SearchFilter() {
             <div className="block text-[rgba(0,0,0,0.8)]">
               <label className="items-start cursor-pointer flex select-none text-[0.875rem]">
                 <input type="checkbox" className="hidden" name="" defaultValue={3} />
-                <div className="justify-center box-border bg-white text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]">
+                <div className="justify-center box-border bg-[#fff] text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]">
                   <i> </i>
                 </div>
                 <span
@@ -845,7 +845,7 @@ function SearchFilter() {
             <div className="block text-[rgba(0,0,0,0.8)]">
               <label className="items-start cursor-pointer flex select-none text-[0.875rem]">
                 <input type="checkbox" className="hidden" name="" defaultValue={1277322} />
-                <div className="justify-center box-border bg-white text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]">
+                <div className="justify-center box-border bg-[#fff] text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]">
                   <i> </i>
                 </div>
                 <span
@@ -866,7 +866,7 @@ function SearchFilter() {
             <div className="block text-[rgba(0,0,0,0.8)]">
               <label className="items-start cursor-pointer flex select-none text-[0.875rem]">
                 <input type="checkbox" className="hidden" name="" defaultValue={3383086} />
-                <div className="justify-center box-border bg-white text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]">
+                <div className="justify-center box-border bg-[#fff] text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]">
                   <i> </i>
                 </div>
                 <span
@@ -887,7 +887,7 @@ function SearchFilter() {
             <div className="block text-[rgba(0,0,0,0.8)]">
               <label className="items-start cursor-pointer flex select-none text-[0.875rem]">
                 <input type="checkbox" className="hidden" name="" defaultValue={3213680} />
-                <div className="justify-center box-border bg-white text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]">
+                <div className="justify-center box-border bg-[#fff] text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]">
                   <i> </i>
                 </div>
                 <span
@@ -908,7 +908,7 @@ function SearchFilter() {
             <div className="block text-[rgba(0,0,0,0.8)]">
               <label className="items-start cursor-pointer flex select-none text-[0.875rem]">
                 <input type="checkbox" className="hidden" name="" defaultValue={2241936} />
-                <div className="justify-center box-border bg-white text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]">
+                <div className="justify-center box-border bg-[#fff] text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]">
                   <i> </i>
                 </div>
                 <span
@@ -929,7 +929,7 @@ function SearchFilter() {
             <div className="block text-[rgba(0,0,0,0.8)]">
               <label className="items-start cursor-pointer flex select-none text-[0.875rem]">
                 <input type="checkbox" className="hidden" name="" defaultValue={3020933} />
-                <div className="justify-center box-border bg-white text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]">
+                <div className="justify-center box-border bg-[#fff] text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]">
                   <i> </i>
                 </div>
                 <span
@@ -950,7 +950,7 @@ function SearchFilter() {
             <div className="block text-[rgba(0,0,0,0.8)]">
               <label className="items-start cursor-pointer flex select-none text-[0.875rem]">
                 <input type="checkbox" className="hidden" name="" defaultValue={2352745} />
-                <div className="justify-center box-border bg-white text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]">
+                <div className="justify-center box-border bg-[#fff] text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]">
                   <i> </i>
                 </div>
                 <span
@@ -971,7 +971,7 @@ function SearchFilter() {
             <div className="block text-[rgba(0,0,0,0.8)]">
               <label className="items-start cursor-pointer flex select-none text-[0.875rem]">
                 <input type="checkbox" className="hidden" name="" defaultValue={3487506} />
-                <div className="justify-center box-border bg-white text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]">
+                <div className="justify-center box-border bg-[#fff] text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]">
                   <i> </i>
                 </div>
                 <span
@@ -992,7 +992,7 @@ function SearchFilter() {
             <div className="block text-[rgba(0,0,0,0.8)]">
               <label className="items-start cursor-pointer flex select-none text-[0.875rem]">
                 <input type="checkbox" className="hidden" name="" defaultValue={1664281} />
-                <div className="justify-center box-border bg-white text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]">
+                <div className="justify-center box-border bg-[#fff] text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]">
                   <i> </i>
                 </div>
                 <span
@@ -1013,7 +1013,7 @@ function SearchFilter() {
             <div className="block text-[rgba(0,0,0,0.8)]">
               <label className="items-start cursor-pointer flex select-none text-[0.875rem]">
                 <input type="checkbox" className="hidden" name="" defaultValue={1063818} />
-                <div className="justify-center box-border bg-white text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]">
+                <div className="justify-center box-border bg-[#fff] text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]">
                   <i> </i>
                 </div>
                 <span
@@ -1034,7 +1034,7 @@ function SearchFilter() {
             <div className="block text-[rgba(0,0,0,0.8)]">
               <label className="items-start cursor-pointer flex select-none text-[0.875rem]">
                 <input type="checkbox" className="hidden" name="" defaultValue={1253300} />
-                <div className="justify-center box-border bg-white text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]">
+                <div className="justify-center box-border bg-[#fff] text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]">
                   <i> </i>
                 </div>
                 <span
@@ -1055,7 +1055,7 @@ function SearchFilter() {
             <div className="block text-[rgba(0,0,0,0.8)]">
               <label className="items-start cursor-pointer flex select-none text-[0.875rem]">
                 <input type="checkbox" className="hidden" name="" defaultValue={1255588} />
-                <div className="justify-center box-border bg-white text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]">
+                <div className="justify-center box-border bg-[#fff] text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]">
                   <i> </i>
                 </div>
                 <span
@@ -1076,7 +1076,7 @@ function SearchFilter() {
             <div className="block text-[rgba(0,0,0,0.8)]">
               <label className="items-start cursor-pointer flex select-none text-[0.875rem]">
                 <input type="checkbox" className="hidden" name="" defaultValue={1258193} />
-                <div className="justify-center box-border bg-white text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]">
+                <div className="justify-center box-border bg-[#fff] text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]">
                   <i> </i>
                 </div>
                 <span
@@ -1097,7 +1097,7 @@ function SearchFilter() {
             <div className="block text-[rgba(0,0,0,0.8)]">
               <label className="items-start cursor-pointer flex select-none text-[0.875rem]">
                 <input type="checkbox" className="hidden" name="" defaultValue={3682733} />
-                <div className="justify-center box-border bg-white text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]">
+                <div className="justify-center box-border bg-[#fff] text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]">
                   <i> </i>
                 </div>
                 <span
@@ -1118,7 +1118,7 @@ function SearchFilter() {
             <div className="block text-[rgba(0,0,0,0.8)]">
               <label className="items-start cursor-pointer flex select-none text-[0.875rem]">
                 <input type="checkbox" className="hidden" name="" defaultValue={1077247} />
-                <div className="justify-center box-border bg-white text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]">
+                <div className="justify-center box-border bg-[#fff] text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]">
                   <i> </i>
                 </div>
                 <span
@@ -1139,7 +1139,7 @@ function SearchFilter() {
             <div className="block text-[rgba(0,0,0,0.8)]">
               <label className="items-start cursor-pointer flex select-none text-[0.875rem]">
                 <input type="checkbox" className="hidden" name="" defaultValue={1237600} />
-                <div className="justify-center box-border bg-white text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]">
+                <div className="justify-center box-border bg-[#fff] text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]">
                   <i> </i>
                 </div>
                 <span
@@ -1160,7 +1160,7 @@ function SearchFilter() {
             <div className="block text-[rgba(0,0,0,0.8)]">
               <label className="items-start cursor-pointer flex select-none text-[0.875rem]">
                 <input type="checkbox" className="hidden" name="" defaultValue={1250589} />
-                <div className="justify-center box-border bg-white text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]">
+                <div className="justify-center box-border bg-[#fff] text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]">
                   <i> </i>
                 </div>
                 <span
@@ -1181,7 +1181,7 @@ function SearchFilter() {
             <div className="block text-[rgba(0,0,0,0.8)]">
               <label className="items-start cursor-pointer flex select-none text-[0.875rem]">
                 <input type="checkbox" className="hidden" name="" defaultValue={1544544} />
-                <div className="justify-center box-border bg-white text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]">
+                <div className="justify-center box-border bg-[#fff] text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]">
                   <i> </i>
                 </div>
                 <span
@@ -1202,7 +1202,7 @@ function SearchFilter() {
             <div className="block text-[rgba(0,0,0,0.8)]">
               <label className="items-start cursor-pointer flex select-none text-[0.875rem]">
                 <input type="checkbox" className="hidden" name="" defaultValue={2006352} />
-                <div className="justify-center box-border bg-white text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]">
+                <div className="justify-center box-border bg-[#fff] text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]">
                   <i> </i>
                 </div>
                 <span
@@ -1223,7 +1223,7 @@ function SearchFilter() {
             <div className="block text-[rgba(0,0,0,0.8)]">
               <label className="items-start cursor-pointer flex select-none text-[0.875rem]">
                 <input type="checkbox" className="hidden" name="" defaultValue={2871730} />
-                <div className="justify-center box-border bg-white text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]">
+                <div className="justify-center box-border bg-[#fff] text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]">
                   <i> </i>
                 </div>
                 <span
@@ -1244,7 +1244,7 @@ function SearchFilter() {
             <div className="block text-[rgba(0,0,0,0.8)]">
               <label className="items-start cursor-pointer flex select-none text-[0.875rem]">
                 <input type="checkbox" className="hidden" name="" defaultValue={3364901} />
-                <div className="justify-center box-border bg-white text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]">
+                <div className="justify-center box-border bg-[#fff] text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]">
                   <i> </i>
                 </div>
                 <span
@@ -1284,7 +1284,7 @@ function SearchFilter() {
             <input
               type="text"
               maxLength={13}
-              className="w-20 text-xs h-[1.875rem] bg-white border box-border shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] pl-[0.3125rem] rounded-sm border-solid border-[rgba(0,0,0,0.26)] pr-[5px]"
+              className="w-20 text-xs h-[1.875rem] bg-[#fff] border box-border shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] pl-[0.3125rem] rounded-sm border-solid border-[rgba(0,0,0,0.26)] pr-[5px]"
               placeholder="₫ TỪ"
               defaultValue=""
             />
@@ -1292,14 +1292,14 @@ function SearchFilter() {
             <input
               type="text"
               maxLength={13}
-              className="w-20 text-xs h-[1.875rem] bg-white border box-border shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] pl-[0.3125rem] rounded-sm border-solid border-[rgba(0,0,0,0.26)]  pr-[5px]"
+              className="w-20 text-xs h-[1.875rem] bg-[#fff] border box-border shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] pl-[0.3125rem] rounded-sm border-solid border-[rgba(0,0,0,0.26)]  pr-[5px]"
               placeholder="₫ ĐẾN"
               defaultValue=""
             />
           </div>
         </div>
 
-        <button className="mt-[1.25rem] min-h-[30px]  h-[30px] w-full flex items-center justify-center overflow-hidden text-ellipsis border capitalize  font-normal  py-2 rounded-sm border-solid border-transparent bg-[#ee4d2d] text-white hover:bg-[#d73211] hover:border-[#ba2b0f]">
+        <button className="mt-[1.25rem] min-h-[30px]  h-[30px] w-full flex items-center justify-center overflow-hidden text-ellipsis border capitalize  font-normal  py-2 rounded-sm border-solid border-transparent bg-[#ee4d2d] text-[#fff] hover:bg-[#d73211] hover:border-[#ba2b0f]">
           Áp dụng
         </button>
       </div>
@@ -1310,7 +1310,7 @@ function SearchFilter() {
             <div className="block text-[rgba(0,0,0,0.8)]">
               <label className="items-start cursor-pointer flex select-none text-[0.875rem]">
                 <input type="checkbox" className="hidden" name="" defaultValue={5} />
-                <div className="justify-center box-border bg-white text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]">
+                <div className="justify-center box-border bg-[#fff] text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]">
                   <i> </i>
                 </div>
                 <span
@@ -1331,7 +1331,7 @@ function SearchFilter() {
             <div className="block text-[rgba(0,0,0,0.8)]">
               <label className="items-start cursor-pointer flex select-none text-[0.875rem]">
                 <input type="checkbox" className="hidden" name="" defaultValue={7} />
-                <div className="justify-center box-border bg-white text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]">
+                <div className="justify-center box-border bg-[#fff] text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]">
                   <i> </i>
                 </div>
                 <span
@@ -1352,7 +1352,7 @@ function SearchFilter() {
             <div className="block text-[rgba(0,0,0,0.8)]">
               <label className="items-start cursor-pointer flex select-none text-[0.875rem]">
                 <input type="checkbox" className="hidden" name="" defaultValue={6} />
-                <div className="justify-center box-border bg-white text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]">
+                <div className="justify-center box-border bg-[#fff] text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]">
                   <i> </i>
                 </div>
                 <span
@@ -1378,7 +1378,7 @@ function SearchFilter() {
             <div className="block text-[rgba(0,0,0,0.8)]">
               <label className="items-start cursor-pointer flex select-none text-[0.875rem]">
                 <input type="checkbox" className="hidden" name="" defaultValue={9} />
-                <div className="justify-center box-border bg-white text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]">
+                <div className="justify-center box-border bg-[#fff] text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]">
                   <i> </i>
                 </div>
                 <span
@@ -1399,7 +1399,7 @@ function SearchFilter() {
             <div className="block text-[rgba(0,0,0,0.8)]">
               <label className="items-start cursor-pointer flex select-none text-[0.875rem]">
                 <input type="checkbox" className="hidden" name="" defaultValue={8} />
-                <div className="justify-center box-border bg-white text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]">
+                <div className="justify-center box-border bg-[#fff] text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]">
                   <i> </i>
                 </div>
                 <span
@@ -2132,7 +2132,7 @@ function SearchFilter() {
             <div className="block text-[rgba(0,0,0,0.8)]">
               <label className="items-start cursor-pointer flex select-none text-[0.875rem]">
                 <input type="checkbox" className="hidden" name="" defaultValue={10} />
-                <div className="justify-center box-border bg-white text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]">
+                <div className="justify-center box-border bg-[#fff] text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]">
                   <i> </i>
                 </div>
                 <span
@@ -2156,7 +2156,7 @@ function SearchFilter() {
             <div className="block text-[rgba(0,0,0,0.8)]">
               <label className="items-start cursor-pointer flex select-none text-[0.875rem]">
                 <input type="checkbox" className="hidden" name="" defaultValue={15} />
-                <div className="justify-center box-border bg-white text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]">
+                <div className="justify-center box-border bg-[#fff] text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]">
                   <i> </i>
                 </div>
                 <span
@@ -2177,7 +2177,7 @@ function SearchFilter() {
             <div className="block text-[rgba(0,0,0,0.8)]">
               <label className="items-start cursor-pointer flex select-none text-[0.875rem]">
                 <input type="checkbox" className="hidden" name="" defaultValue={12} />
-                <div className="justify-center box-border bg-white text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]">
+                <div className="justify-center box-border bg-[#fff] text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]">
                   <i> </i>
                 </div>
                 <span
@@ -2198,7 +2198,7 @@ function SearchFilter() {
             <div className="block text-[rgba(0,0,0,0.8)]">
               <label className="items-start cursor-pointer flex select-none text-[0.875rem]">
                 <input type="checkbox" className="hidden" name="" defaultValue={14} />
-                <div className="justify-center box-border bg-white text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]">
+                <div className="justify-center box-border bg-[#fff] text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]">
                   <i> </i>
                 </div>
                 <span
@@ -2231,7 +2231,7 @@ function SearchFilter() {
           </div>
         </div>
       </div>
-      <button className="mt-[1.25rem] min-h-[35px]  h-[35px] w-full flex items-center justify-center overflow-hidden text-ellipsis border capitalize  font-normal  py-2 rounded-sm border-solid border-transparent bg-[#ee4d2d] text-white hover:bg-[#d73211] hover:border-[#ba2b0f]">
+      <button className="mt-[1.25rem] min-h-[35px]  h-[35px] w-full flex items-center justify-center overflow-hidden text-ellipsis border capitalize  font-normal  py-2 rounded-sm border-solid border-transparent bg-[#ee4d2d] text-[#fff] hover:bg-[#d73211] hover:border-[#ba2b0f]">
         Xóa tất cả
       </button>
     </div>

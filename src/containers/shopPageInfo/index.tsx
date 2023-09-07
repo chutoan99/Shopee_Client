@@ -14,7 +14,7 @@ function ShopPageInfo({ data }: ProductShop) {
         <div className="flex overflow-hidden">
           <div className="relative w-[24.375rem] overflow-hidden rounded h-[8.4375rem]">
             <div
-              className="absolute bg-[50%_center] bg-cover bg-no-repeat blur-[2px] -m-1 inset-0"
+              className="absolute bg-[50%_center] bg-cover bg-no-repeat blur-[2px] -mo-1 inset-0"
               style={{
                 backgroundImage: `url(${data?.cover})`,
               }}
@@ -41,7 +41,7 @@ function ShopPageInfo({ data }: ProductShop) {
                     <img className="absolute w-full h-full block rounded-[50%] left-0 top-0" src={data?.portrait} alt="" />
                   </div>
                 </NavLink>
-                <div className="text-[white] relative overflow-hidden ml-2.5 mt-2.5">
+                <div className="text-[#fff] relative overflow-hidden ml-2.5 mt-2.5">
                   <h1
                     className="text-xl leading-6 max-h-12 font-medium break-words overflow-hidden text-ellipsis mt-0 mb-[0.3125rem]"
                     style={{
@@ -63,7 +63,7 @@ function ShopPageInfo({ data }: ProductShop) {
               </div>
               <div className="relative flex mt-[0.625rem]">
                 <NavLink to="/" className="flex-1 pr-2.5">
-                  <button className="w-full flex items-center justify-center h-[1.5625rem] border text-[white] uppercase text-xs font-medium box-border transition-[background-color] duration-[0.1s] ease-[cubic-bezier(0.4,0,0.6,1)] tracking-[0] px-0 py-[0.3125rem] rounded-sm border-[solid];">
+                  <button className="w-full flex items-center justify-center h-[1.5625rem] border text-[#fff] uppercase text-xs font-medium box-border transition-[background-color] duration-[0.1s] ease-[cubic-bezier(0.4,0,0.6,1)] tracking-[0] px-0 py-[0.3125rem] rounded-sm border-[solid];">
                     <span className="flex items-center justify-center text-[0.9375rem] pr-[0.625rem]">
                       <svg
                         enableBackground="new 0 0 10 10"
@@ -79,7 +79,7 @@ function ShopPageInfo({ data }: ProductShop) {
                   </button>
                 </NavLink>
                 <NavLink to="/" className="flex-1 pr-2.5">
-                  <button className="w-full flex items-center justify-center h-[1.5625rem] border text-[white] uppercase text-xs font-medium box-border transition-[background-color] duration-[0.1s] ease-[cubic-bezier(0.4,0,0.6,1)] tracking-[0] px-0 py-[0.3125rem] rounded-sm border-[solid];">
+                  <button className="w-full flex items-center justify-center h-[1.5625rem] border text-[#fff] uppercase text-xs font-medium box-border transition-[background-color] duration-[0.1s] ease-[cubic-bezier(0.4,0,0.6,1)] tracking-[0] px-0 py-[0.3125rem] rounded-sm border-[solid];">
                     <span className="flex items-center justify-center text-[0.9375rem] pr-[0.625rem]">
                       <svg viewBox="0 0 16 16" className="inline-block w-[1em] h-[1em] fill-current relative">
                         <g fillRule="evenodd">
@@ -93,7 +93,7 @@ function ShopPageInfo({ data }: ProductShop) {
               </div>
             </div>
           </div>
-          <div className="flex-1 flex flex-wrap bg-[white] items-start pl-[1.875rem]">
+          <div className="flex-1 flex flex-wrap bg-[#fff] items-start pl-[1.875rem]">
             <div className="flex-[0_0_50%] overflow-hidden items-center flex px-0 py-[0.625rem]">
               <div className="inline-block box-border text-[0.9375rem] mx-2.5">
                 <svg
@@ -105,7 +105,7 @@ function ShopPageInfo({ data }: ProductShop) {
                   strokeWidth={0}
                   className="inline-block w-[1em] h-[1em] fill-current relative"
                 >
-                  <path d="m13 1.9c-.2-.5-.8-1-1.4-1h-8.4c-.6.1-1.2.5-1.4 1l-1.4 4.3c0 .8.3 1.6.9 2.1v4.8c0 .6.5 1 1.1 1h10.2c.6 0 1.1-.5 1.1-1v-4.6c.6-.4.9-1.2.9-2.3zm-11.4 3.4 1-3c .1-.2.4-.4.6-.4h8.3c.3 0 .5.2.6.4l1 3zm .6 3.5h.4c.7 0 1.4-.3 1.8-.8.4.5.9.8 1.5.8.7 0 1.3-.5 1.5-.8.2.3.8.8 1.5.8.6 0 1.1-.3 1.5-.8.4.5 1.1.8 1.7.8h.4v3.9c0 .1 0 .2-.1.3s-.2.1-.3.1h-9.5c-.1 0-.2 0-.3-.1s-.1-.2-.1-.3zm8.8-1.7h-1v .1s0 .3-.2.6c-.2.1-.5.2-.9.2-.3 0-.6-.1-.8-.3-.2-.3-.2-.6-.2-.6v-.1h-1v .1s0 .3-.2.5c-.2.3-.5.4-.8.4-1 0-1-.8-1-.8h-1c0 .8-.7.8-1.3.8s-1.1-1-1.2-1.7h12.1c0 .2-.1.9-.5 1.4-.2.2-.5.3-.8.3-1.2 0-1.2-.8-1.2-.9z" />
+                  <path d="m13 1.9c-.2-.5-.8-1-1.4-1h-8.4c-.6.1-1.2.5-1.4 1l-1.4 4.3c0 .8.3 1.6.9 2.1v4.8c0 .6.5 1 1.1 1h10.2c.6 0 1.1-.5 1.1-1v-4.6c.6-.4.9-1.2.9-2.3zmo-11.4 3.4 1-3c .1-.2.4-.4.6-.4h8.3c.3 0 .5.2.6.4l1 3zm .6 3.5h.4c.7 0 1.4-.3 1.8-.8.4.5.9.8 1.5.8.7 0 1.3-.5 1.5-.8.2.3.8.8 1.5.8.6 0 1.1-.3 1.5-.8.4.5 1.1.8 1.7.8h.4v3.9c0 .1 0 .2-.1.3s-.2.1-.3.1h-9.5c-.1 0-.2 0-.3-.1s-.1-.2-.1-.3zm8.8-1.7h-1v .1s0 .3-.2.6c-.2.1-.5.2-.9.2-.3 0-.6-.1-.8-.3-.2-.3-.2-.6-.2-.6v-.1h-1v .1s0 .3-.2.5c-.2.3-.5.4-.8.4-1 0-1-.8-1-.8h-1c0 .8-.7.8-1.3.8s-1.1-1-1.2-1.7h12.1c0 .2-.1.9-.5 1.4-.2.2-.5.3-.8.3-1.2 0-1.2-.8-1.2-.9z" />
                 </svg>
               </div>
               <div className="inline-block capitalize">

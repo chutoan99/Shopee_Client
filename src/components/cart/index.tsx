@@ -1,5 +1,4 @@
 //? LIBRARY
-import IMG from '../../../public/assets/imgs';
 import { NavLink } from 'react-router-dom';
 //? APPS
 import { Cart } from '../../types/cart';
@@ -15,7 +14,7 @@ function HeaderCart({ data, totalCart, loading }: HeaderCartModel) {
   return (
     <NavLink to="/cart" className="justify-center flex cursor-pointer items-center flex-1 group">
       <div className="relative inline-block px-2 py-0">
-        <span className="text-white text-2xl mt-1.5">
+        <span className="text-[#fff] text-2xl mt-1.5">
           <i className="fa-solid fa-cart-shopping"></i>
         </span>
         {totalCart === 0 || totalCart === undefined ? (
@@ -27,7 +26,7 @@ function HeaderCart({ data, totalCart, loading }: HeaderCartModel) {
         )}
         <div
           style={{ border: 'solid 1px rgb(0, 0, 0, 0.1)' }}
-          className="group-hover:block w-[380px] absolute bg-[white] hidden cursor-default will-change-[opacity_transform] origin-[(100%-32px)_top] animate-[HeaderNOtifyGrowth_ease-in_0.25s] z-10 rounded-sm  right-[-15px] top-[150%] before:content-[''] before:z-10 before:absolute before:top-[-30px] before:border-solid before:!border-x-[25px] before:!border-y-[15px] before:border-[transparent_transparent_#fff_transparent] before:right-[8px] after:content-[''] after:z-10 after:block after:absolute after:w-[118px] after:h-[31px] after:right-0 after:-top-4"
+          className="group-hover:block w-[380px] absolute bg-[#fff] hidden cursor-default will-change-[opacity_transform] origin-[(100%-32px)_top] animate-[HeaderNOtifyGrowth_ease-in_0.25s] z-10 rounded-sm  right-[-15px] top-[150%] before:content-[''] before:z-10 before:absolute before:top-[-30px] before:border-solid before:!border-x-[25px] before:!border-y-[15px] before:border-[transparent_transparent_#fff_transparent] before:right-[8px] after:content-[''] after:z-10 after:block after:absolute after:w-[118px] after:h-[31px] after:right-0 after:-top-4"
         >
           {totalCart > 0 ? (
             <>
@@ -83,7 +82,7 @@ function HeaderCart({ data, totalCart, loading }: HeaderCartModel) {
                 </h5>
                 <NavLink
                   to="/cart"
-                  className="min-h-[40px]  h-[30px] min-w-[120px] overflow-hidden text-ellipsis border capitalize  font-normal text-sm  py-2 rounded-sm border-solid border-transparent bg-[#ee4d2d] text-white hover:bg-[#d73211] hover:border-[#ba2b0f]"
+                  className="min-h-[40px]  h-[30px] min-w-[120px] overflow-hidden text-ellipsis border capitalize  font-normal text-sm  py-2 rounded-sm border-solid border-transparent bg-[#ee4d2d] text-[#fff] hover:bg-[#d73211] hover:border-[#ba2b0f]"
                 >
                   Xem giỏ hàng
                 </NavLink>

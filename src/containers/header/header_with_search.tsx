@@ -42,7 +42,7 @@ function HeaderWithSearch() {
           <LogoShopee />
           <div className="w-full flex justify-center">
             <div className="w-[90%]">
-              <div className="bg-white h-10 flex items-center mt-[15px] rounded-sm">
+              <div className="bg-[#fff] h-10 flex items-center mt-[15px] rounded-sm">
                 <div className="flex-1 h-full relative group" id="header_search">
                   <input
                     type="text"
@@ -58,7 +58,7 @@ function HeaderWithSearch() {
                       })
                     }
                   />
-                  <div className="header_list_search  absolute top-[calc(100%_-_-2px)] w-full bg-white shadow-[0_1px_5px_rgba(189,189,189)] overflow-hidden z-[3] rounded-[3px] left-0">
+                  <div className="header_list_search  absolute top-[calc(100%_-_-2px)] w-full bg-[#fff] shadow-[0_1px_5px_rgba(189,189,189)] overflow-hidden z-[3] rounded-[3px] left-0">
                     <h3 className="text-sm text-[#999] font-normal mx-3 my-1.5"> Lịch sử tìm kiếm </h3>
                     {!isLoadingHistorySearch && (
                       <ul className="mt-1.5">
@@ -79,11 +79,11 @@ function HeaderWithSearch() {
                     <i className="fa-solid fa-angle-down"></i>
                   </span>
                   <ul className="group-hover:block hidden absolute w-[120px] shadow-[0_1px_2px_#ccc] text-left animate-[fadeIn_ease-in_0.2s] z-[1] pl-0 rounded-[3px] right-0 top-[147%]">
-                    <li className="bg-white p-2 rounded-t-[3px]">
+                    <li className="bg-[#fff] p-2 rounded-t-[3px]">
                       <span className="text-[#333] text-sm ml-2">Trong Shop</span>
                       <i className="fa-solid fa-check text-sm text-[#ee4d2d]  ml-3 inline-block"></i>
                     </li>
-                    <li className="Header_search-option-item">
+                    <li className="bg-[#fff] p-2 rounded-t-[3px]">
                       <span className="text-[#333] text-sm ml-2">Ngoài Shop</span>
                       <i className="fa-solid fa-check text-sm text-[#ee4d2d] hidden ml-3"></i>
                     </li>

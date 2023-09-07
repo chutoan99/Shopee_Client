@@ -24,7 +24,7 @@ function BestSeller() {
     <div className="col l-12 mo-12 c-12">
       {!isLoading && (
         <div className="pt-[20px]">
-          <div className="bg-white">
+          <div className="bg-[#fff]">
             <div className="px-[20px] flex justify-between pb-[10px] pt-[20px] border-b-['1px] border-b-[rgba(0,0,0,0.05)'] border-solid">
               <div className=" text-[#ee4d2d]">TÌM KIẾM HÀNG ĐẦU</div>
               <NavLink className="w-[115px] capitalize text-[#ee4d2d]" to="/top_products">
@@ -43,7 +43,7 @@ function BestSeller() {
                           alt="itemProduct"
                           className=" w-full cursor-pointer bg-[top_center] bg-contain bg-no-repeat rounded-br-[2px] rounded-bl-[2px]"
                         />
-                        <div className="h-[1.5625rem] bg-[rgba(0,0,0,0.26)] text-white text-center left-0 bottom-0 absolute w-full">
+                        <div className="h-[1.5625rem] bg-[rgba(0,0,0,0.26)] text-[#fff] text-center left-0 bottom-0 absolute w-full">
                           Bán {item.count} / tháng
                         </div>
                       </div>

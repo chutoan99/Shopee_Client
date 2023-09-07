@@ -33,7 +33,7 @@ export default function CartLayout({ children }: any) {
           <HeaderNavbar></HeaderNavbar>
           <div className="h-[82px] flex gap-[5px] items-center px-2  sm-gutter">
             <LogoShopee />
-            <div className="bg-white h-10 flex items-center mt-[15px] rounded-sm w-full">
+            <div className="bg-[#fff] h-10 flex items-center mt-[15px] rounded-sm w-full">
               <div className="flex-1 h-full relative group" id="header_search">
                 <input
                   type="text"

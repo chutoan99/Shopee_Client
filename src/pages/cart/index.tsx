@@ -1,5 +1,4 @@
 //? LIBRARY
-import IMG from '../../../public/assets/imgs';
 import { useState, memo, useEffect } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 //? APPS
@@ -298,7 +297,7 @@ function CartPage() {
                                                 <div>
                                                   <div className="flex h-2.5 justify-center">
                                                     <div className="relative w-0 h-0 border-b-[10px] border-b-[rgba(0,0,0,0.09)] border-x-[10px] border-x-transparent border-solid -bottom-px">
-                                                      <div className="absolute w-0 h-0 border-b-8 border-b-white border-x-8 border-x-transparent border-solid -left-2 -bottom-2.5" />
+                                                      <div className="absolute w-0 h-0 border-b-8 border-b-[#fff] border-x-8 border-x-transparent border-solid -left-2 -bottom-2.5" />
                                                     </div>
                                                   </div>
                                                   <div className="overflow-hidden whitespace-pre-wrap shadow-[0_5px_10px_0_rgba(0,0,0,0.09)] rounded-sm border-[rgba(0,0,0,0.09)] bg-[#fff]">
@@ -335,7 +334,7 @@ function CartPage() {
                                                                         viewBox="0 0 12 12"
                                                                         x={0}
                                                                         y={0}
-                                                                        className="absolute text-white text-[8px] inline-block w-[1em] h-[1em] fill-current right-0 bottom-0"
+                                                                        className="absolute text-[#fff] text-[8px] inline-block w-[1em] h-[1em] fill-current right-0 bottom-0"
                                                                       >
                                                                         <g>
                                                                           <path d="m5.2 10.9c-.2 0-.5-.1-.7-.2l-4.2-3.7c-.4-.4-.5-1-.1-1.4s1-.5 1.4-.1l3.4 3 5.1-7c .3-.4 1-.5 1.4-.2s.5 1 .2 1.4l-5.7 7.9c-.2.2-.4.4-.7.4 0-.1 0-.1-.1-.1z" />
@@ -354,7 +353,7 @@ function CartPage() {
                                                           </button>
                                                           <button
                                                             onClick={onSubmitChangeOption}
-                                                            className="min-h-[40px]  h-[25px] min-w-[120px] overflow-hidden text-ellipsis border capitalize  font-normal text-sm  py-2 rounded-sm border-solid border-transparent bg-[#ee4d2d] text-white hover:bg-[#d73211] hover:border-[#ba2b0f]"
+                                                            className="min-h-[40px]  h-[25px] min-w-[120px] overflow-hidden text-ellipsis border capitalize  font-normal text-sm  py-2 rounded-sm border-solid border-transparent bg-[#ee4d2d] text-[#fff] hover:bg-[#d73211] hover:border-[#ba2b0f]"
                                                           >
                                                             Xác nhận
                                                           </button>
@@ -558,7 +557,7 @@ function CartPage() {
                       </div>
                       <button
                         onClick={onBuyCart}
-                        className="min-h-[40px]  h-[30px] min-w-[210px] overflow-hidden text-ellipsis border capitalize  font-normal text-sm  py-2 rounded-sm border-solid border-transparent bg-[#ee4d2d] text-white hover:bg-[#d73211] hover:border-[#ba2b0f]"
+                        className="min-h-[40px]  h-[30px] min-w-[210px] overflow-hidden text-ellipsis border capitalize  font-normal text-sm  py-2 rounded-sm border-solid border-transparent bg-[#ee4d2d] text-[#fff] hover:bg-[#d73211] hover:border-[#ba2b0f]"
                       >
                         Mua hàng
                       </button>

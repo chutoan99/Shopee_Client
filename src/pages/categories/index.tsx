@@ -31,7 +31,7 @@ function Categories() {
             <SearchEmpty />
           ) : (
             <div className="row sm-gutter pt-[30px]">
-              <div className="col l-2 col-sm-3 c-3">
+              <div className="col l-2 col-smo-3 c-3">
                 <SearchFilter />
               </div>
               <div className="col l-10">

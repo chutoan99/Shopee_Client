@@ -14,7 +14,7 @@ function SuggestList({ data }: SuggestListModel) {
           return (
             <NavLink
               to={`/search/${item.text}`}
-              className="text-[white] no-underline h-[18px] text-[0.813rem] font-light overflow-y-visible relative mr-2.5 mt-[1.875px] hover:opacity-70"
+              className="text-[#fff] no-underline h-[18px] text-[0.813rem] font-light overflow-y-visible relative mr-2.5 mt-[1.875px] hover:opacity-70"
               key={item.id}
             >
               {item?.text}

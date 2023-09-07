@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 //? APPS
 function SortBars() {
   return (
-    <ul className="h-[46px] bg-white flex border border-neutral-200 m-0 pl-0 border-solid mb-[1rem]" style={{ display: 'flex' }}>
+    <ul className="h-[46px] bg-[#fff] flex border border-neutral-200 m-0 pl-0 border-solid mb-[1rem]" style={{ display: 'flex' }}>
       <li className="flex-1">
         <NavLink to="# " className="no-underline text-sm text-[#333] block h-full leading-[46px] text-center relative ">
           Liên quan

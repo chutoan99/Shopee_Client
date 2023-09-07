@@ -170,10 +170,10 @@ function ModelRatting({ isShow, onCloseModel, data }: RatingModel) {
                               </div>
                             </div>
                             <div className="relative bg-neutral-100 pt-5 pb-[0.9375rem] px-[1.5625rem]">
-                              <div className="relative bg-white box-border shadow-[inset_0_-0.5px_0_rgba(0,0,0,0.09)] border mt-0 mb-3 mx-0 p-3 rounded-sm border-solid border-[rgba(0,0,0,0.26)]">
+                              <div className="relative bg-[#fff] box-border shadow-[inset_0_-0.5px_0_rgba(0,0,0,0.09)] border mt-0 mb-3 mx-0 p-3 rounded-sm border-solid border-[rgba(0,0,0,0.26)]">
                                 <div className="relative mt-0 mb-3 mx-0 p-0">
                                   <div
-                                    className="bg-white leading-5 text-base relative text-[rgba(0,0,0,0.87)] mb-1 left-0 top-0"
+                                    className="bg-[#fff] leading-5 text-base relative text-[rgba(0,0,0,0.87)] mb-1 left-0 top-0"
                                     style={{ fontWeight: 'normal' }}
                                   >
                                     Chất lượng sản phẩm:
@@ -187,7 +187,7 @@ function ModelRatting({ isShow, onCloseModel, data }: RatingModel) {
                                 </div>
                                 <div className="relative mt-0 mb-3 mx-0 p-0">
                                   <div
-                                    className="bg-white leading-5 text-base relative text-[rgba(0,0,0,0.87)] mb-1 left-0 top-0"
+                                    className="bg-[#fff] leading-5 text-base relative text-[rgba(0,0,0,0.87)] mb-1 left-0 top-0"
                                     style={{ fontWeight: 'normal' }}
                                   >
                                     Đúng với mô tả:
@@ -319,7 +319,7 @@ function ModelRatting({ isShow, onCloseModel, data }: RatingModel) {
                             TRỞ LẠI
                           </button>
                           <button
-                            className="overflow-hidden text-ellipsis flex-col text-sm box-border text-white  h-[34px] min-w-[105px] text-[0.9rem] leading-[1.6rem] no-underline flex items-center justify-center shadow-[0_1px_1px_rgba(0,0,0,0.09)] px-2.5 py-0 rounded-sm border-0 bg-[#ee4d2d]"
+                            className="overflow-hidden text-ellipsis flex-col text-sm box-border text-[#fff]  h-[34px] min-w-[105px] text-[0.9rem] leading-[1.6rem] no-underline flex items-center justify-center shadow-[0_1px_1px_rgba(0,0,0,0.09)] px-2.5 py-0 rounded-sm border-0 bg-[#ee4d2d]"
                             onClick={onSubmit}
                           >
                             Hoàn thành
