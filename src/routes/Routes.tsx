@@ -1,4 +1,4 @@
-import { Fragment, useEffect } from 'react';
+import { Fragment, Suspense, useEffect } from 'react';
 import routes from './path';
 import { Route, Routes } from 'react-router-dom';
 import { useGetCartsQuery } from '../services/cart/index.hook';
@@ -28,14 +28,9 @@ const App = () => {
             path={route.path}
             element={
               <Layout>
-                {/* {route.path !== '/' ? (
-                  <Suspense fallback={<div>Loading ...</div>}>
-                    <Page />
-                  </Suspense>
-                ) : (
+                <Suspense fallback={<div>Loading ...</div>}>
                   <Page />
-                )} */}
-                <Page />
+                </Suspense>
               </Layout>
             }
           />
