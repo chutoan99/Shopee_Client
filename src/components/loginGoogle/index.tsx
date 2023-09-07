@@ -1,5 +1,4 @@
-//? LIBRARY
-function loginGoogle() {
+export default function loginGoogle() {
   return (
     <button
       className="flex flex-row items-center justify-center bg-[rgb(255_255_255_/_1)] text-[rgb(102_102_102_/_1)] overflow-hidden text-ellipsis text-sm capitalize leading-[1.6rem] box-border h-[34px] px-1.5 py-0 rounded-sm border-0 hover:bg-[rgb(255_255_255_/_0.8)]"
@@ -12,4 +11,3 @@ function loginGoogle() {
     </button>
   );
 }
-export default loginGoogle;

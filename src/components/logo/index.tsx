@@ -1,6 +1,7 @@
 //? LIBRARY
 import { NavLink } from 'react-router-dom';
-function LogoShopee() {
+
+export default function LogoShopee() {
   return (
     <NavLink className="w-[180px] cursor-pointer" to="/">
       <div className="w-full">
@@ -16,4 +17,3 @@ function LogoShopee() {
     </NavLink>
   );
 }
-export default LogoShopee;

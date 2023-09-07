@@ -1,17 +1,16 @@
 //? LIBRARY
+import { toast } from 'react-hot-toast';
 import { memo, useEffect, useState } from 'react';
 import { NavLink, useParams } from 'react-router-dom';
-
-//? SERVICES
-import { ProductShop, ProductComment, ProductBreadcrumb } from '../../containers';
+//? APPS
 import { Loading2 } from '../../components';
 import { AppDispatch } from '../../app/store';
-import { useAppDispatch } from '../../hooks/hooks';
-import { toast } from 'react-hot-toast';
 import { CartActions } from '../../redux/cart.slice';
+import { useAppDispatch } from '../../hooks/hooks';
 import { formatPrice } from '../../utils/fomarPrice';
 import { generateStart } from '../../utils/generateStart';
 import { useGetProductQuery } from '../../services/post/index.hook';
+import { ProductShop, ProductComment, ProductBreadcrumb } from '../../containers';
 import { useCreateCartMutation, useGetCartsQuery } from '../../services/cart/index.hook';
 
 function DetailProduct() {

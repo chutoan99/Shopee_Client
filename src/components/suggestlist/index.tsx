@@ -6,7 +6,7 @@ interface SuggestListModel {
   data: SearchSuggestion[];
 }
 
-function SuggestList({ data }: SuggestListModel) {
+export default function SuggestList({ data }: SuggestListModel) {
   return (
     <div className="w-full overflow-hidden flex">
       <div className="h-[18px] text-[0.813rem] font-light overflow-y-visible flex-wrap relative mr-[55px] mt-[1.875px]">
@@ -25,4 +25,3 @@ function SuggestList({ data }: SuggestListModel) {
     </div>
   );
 }
-export default SuggestList;

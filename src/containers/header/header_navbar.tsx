@@ -1,14 +1,15 @@
+//? LIBRARY
 import toast from 'react-hot-toast';
 import { memo, useEffect, useState } from 'react';
 import { Link, useNavigate, NavLink } from 'react-router-dom';
-import { HeaderNotify } from '../../components';
-import { useGetNotificationQuery } from '../../services/notification/index.hook';
-import { useAppDispatch, useAppSelector } from '../../hooks/hooks';
-import { AppDispatch, RootState } from '../../app/store';
-import { ApiLogout } from '../../services/auth/index.service';
-import { ALERT_LOGOUT_SUCCESS } from '../../constants/msg';
-import Loading from '../../components/loading';
+//? APPS
 import { UserActions } from '../../redux/userSlice';
+import { HeaderNotify, Loading } from '../../components';
+import { AppDispatch, RootState } from '../../app/store';
+import { ALERT_LOGOUT_SUCCESS } from '../../constants/msg';
+import { ApiLogout } from '../../services/auth/index.service';
+import { useAppDispatch, useAppSelector } from '../../hooks/hooks';
+import { useGetNotificationQuery } from '../../services/notification/index.hook';
 
 function HeaderNavbar() {
   const dispatch: AppDispatch = useAppDispatch();

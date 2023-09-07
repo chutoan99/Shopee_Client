@@ -7,6 +7,7 @@ import { AppDispatch } from '../../app/store';
 import { useAppDispatch } from '../../hooks/hooks';
 import { OtherActions } from '../../redux/otherSlice';
 import { useCreateRoomMutation } from '../../services/room/index.hook';
+
 interface ProductShopModel {
   data: ShopInterface;
 }

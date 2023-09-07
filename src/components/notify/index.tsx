@@ -6,7 +6,7 @@ interface HeaderNotifyModel {
   data: Notification[];
 }
 
-function HeaderNotify({ data }: HeaderNotifyModel) {
+export default function HeaderNotify({ data }: HeaderNotifyModel) {
   return (
     <div
       style={{ border: 'solid 1px rgb(0, 0, 0, 0.1)' }}
@@ -40,4 +40,3 @@ function HeaderNotify({ data }: HeaderNotifyModel) {
     </div>
   );
 }
-export default HeaderNotify;

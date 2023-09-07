@@ -7,28 +7,6 @@ import SearchLayout from '../layouts/search/index.layout';
 import CartLayout from '../layouts/cart/index.layout';
 import OrderLayout from '../layouts/order/index.layout';
 //? pages
-// import Categories from '../pages/categories';
-// import Oder from '../pages/oder';
-// import OrderDetail from '../pages/orderDetail';
-// import DetailProduct from '../pages/productDetail';
-// import Home from '../pages/home';
-// import Cart from '../pages/cart';
-// import Search from '../pages/search';
-// import Shop from '../pages/shop';
-// import Daily from '../pages/daily';
-// import TopProducts from '../pages/topProducts';
-// import Mall from '../pages/mall';
-// import FlashSales from '../pages/flashSale';
-// import Purchase from '../pages/purchase';
-// import Profile from '../pages/profile';
-// import Notification from '../pages/notification';
-// import Voucher from '../pages/voucher';
-// import PageNotFound from '../pages/pageNotFound';
-// import ForgotPasswordPage from '../pages/forgotPassword';
-// import ResetPage from '../pages/resetPassword/index';
-// import RegisterPage from '../pages/register';
-// import LoginPage from '../pages/login';
-
 const Home = lazy(() => import('../pages/home'));
 const Daily = lazy(() => import('../pages/daily'));
 const FlashSales = lazy(() => import('../pages/flashSale'));

@@ -1,6 +1,6 @@
 import { LoadingSkeleton } from '../index';
 
-function SkeletonProduct({ isLoading }: { isLoading: boolean }) {
+export default function SkeletonProduct({ isLoading }: { isLoading: boolean }) {
   return (
     <>
       {isLoading && (
@@ -32,4 +32,3 @@ function SkeletonProduct({ isLoading }: { isLoading: boolean }) {
     </>
   );
 }
-export default SkeletonProduct;

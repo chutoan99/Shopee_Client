@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 //? APPS
 import { OverPlay } from '../index';
 
-const Popup = () => {
+export default function Popup() {
   const [popup, setPopup] = useState(false);
   useEffect(() => {
     setTimeout(() => {
@@ -36,5 +36,5 @@ const Popup = () => {
       ) : null}
     </>
   );
-};
-export default Popup;
+}
+Popup;

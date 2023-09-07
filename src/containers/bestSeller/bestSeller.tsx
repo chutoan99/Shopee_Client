@@ -5,11 +5,6 @@ import { LazyLoadImage } from 'react-lazy-load-image-component';
 //? APP
 import { TopProDucts } from '../../types/topProduct';
 import { useGetTopProductQuery } from '../../services/topProduct/index.hook';
-interface BestSellerModel {
-  data: TopProDucts[];
-  settings: any;
-  loading: boolean;
-}
 
 function BestSeller() {
   const { data, isLoading } = useGetTopProductQuery();

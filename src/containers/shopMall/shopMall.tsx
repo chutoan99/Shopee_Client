@@ -1,12 +1,10 @@
 //? LIBRARY
-
 import Slider from 'react-slick';
 import { NavLink } from 'react-router-dom';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 //? APPS
-
-import { ShopMall as shopMallInterFace } from '../../types/shopMall';
 import shopMallData from '../../utils/shopMall';
+import { ShopMall as shopMallInterFace } from '../../types/shopMall';
 import { useGetShopMallQuery } from '../../services/shopMall/index.hook';
 
 function ShopMall() {

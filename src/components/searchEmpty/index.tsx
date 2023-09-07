@@ -1,6 +1,4 @@
-//? LIBRARY
-//? APPS
-function SearchEmpty() {
+export default function SearchEmpty() {
   return (
     <div>
       <div className="flex justify-center items-center">
@@ -16,4 +14,3 @@ function SearchEmpty() {
     </div>
   );
 }
-export default SearchEmpty;

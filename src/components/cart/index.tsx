@@ -10,7 +10,7 @@ interface HeaderCartModel {
   loading: boolean;
 }
 
-function HeaderCart({ data, totalCart, loading }: HeaderCartModel) {
+export default function HeaderCart({ data, totalCart, loading }: HeaderCartModel) {
   return (
     <NavLink to="/cart" className="justify-center flex cursor-pointer items-center flex-1 group">
       <div className="relative inline-block px-2 py-0">
@@ -103,4 +103,3 @@ function HeaderCart({ data, totalCart, loading }: HeaderCartModel) {
     </NavLink>
   );
 }
-export default HeaderCart;

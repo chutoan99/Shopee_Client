@@ -1,15 +1,15 @@
 //? LIBRARY
+import { toast } from 'react-hot-toast';
 import { useState, memo, useEffect } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 //? APPS
-import { Loading } from '../../components';
 import { Cart } from '../../types/cart';
+import { Loading } from '../../components';
 import { AppDispatch } from '../../app/store';
+import { useAppDispatch } from '../../hooks/hooks';
 import { formatPrice } from '../../utils/fomarPrice';
 import { buyCartActions } from '../../redux/buyCart.slice';
-import { useAppDispatch } from '../../hooks/hooks';
 import { useDeleteCartMutation, useGetCartsQuery, useUpdateCartMutation } from '../../services/cart/index.hook';
-import { toast } from 'react-hot-toast';
 
 function CartPage() {
   const navigate = useNavigate();

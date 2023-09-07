@@ -1,8 +1,7 @@
 //? LIBRARY
 import { memo } from 'react';
-
-//? APPS
 import { useParams } from 'react-router-dom';
+//? APPS
 import { Loading2 } from '../../components';
 import { ProductList, ShopPageInfo } from '../../containers';
 import { useGetItemsShopQuery, useGetShopIdQuery } from '../../services/shop/index.hook';

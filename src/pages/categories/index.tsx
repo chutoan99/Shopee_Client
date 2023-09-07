@@ -2,9 +2,8 @@
 import { useEffect, memo, useState } from 'react';
 import { useParams } from 'react-router-dom';
 //? APPS
-import { Loading } from '../../components';
+import { SearchEmpty, SortBars, Loading } from '../../components';
 import { Pagination, ProductList, SearchFilter } from '../../containers';
-import { SearchEmpty, SortBars } from '../../components';
 import { useSearchCategoriesQuery } from '../../services/post/index.hook';
 
 function Categories() {

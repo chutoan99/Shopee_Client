@@ -1,14 +1,12 @@
 //? LIBRARY
-import ICON from '../../../public/assets/icons';
 import { useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
 //? APPS
-import { LogoShopee } from '../../components';
 import { HeaderNavbar } from '../../containers';
-import Loading from '../../components/loading';
-import { useCreateHistorySearchMutation } from '../../services/searchHistory/index.hook';
+import { LogoShopee, Loading } from '../../components';
 import { useGetCartsQuery } from '../../services/cart/index.hook';
+import { useCreateHistorySearchMutation } from '../../services/searchHistory/index.hook';
 
 export default function CartLayout({ children }: any) {
   const params = useParams();

@@ -1,12 +1,12 @@
 //? LIBRARY
 import { toast } from 'react-hot-toast';
-import { Order } from '../../types/order';
 import { NavLink } from 'react-router-dom';
 import { memo, useState } from 'react';
 import { Rating } from 'react-rainbow-components';
-import { CreateComment } from '../../services/comment/index.service';
-import { Loading } from '../../components';
 //? APPS
+import { Order } from '../../types/order';
+import { Loading } from '../../components';
+import { CreateComment } from '../../services/comment/index.service';
 
 interface RatingModel {
   isShow: boolean;

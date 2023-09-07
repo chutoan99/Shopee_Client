@@ -8,9 +8,9 @@ import { Loading2 } from '../../components';
 import { RootState } from '../../app/store';
 import { useAppSelector } from '../../hooks/hooks';
 import { formatPrice } from '../../utils/fomarPrice';
-import { ALERT_INVALID_ADDRESS_ORDER, ALERT_INVALID_PHONE_ORDER } from '../../constants/msg';
 import { useDeleteCartMutation } from '../../services/cart/index.hook';
 import { useCreateOrderMutation } from '../../services/order/index.hook';
+import { ALERT_INVALID_ADDRESS_ORDER, ALERT_INVALID_PHONE_ORDER } from '../../constants/msg';
 
 interface payload {
   item_groups_id: string;

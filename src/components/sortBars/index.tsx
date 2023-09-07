@@ -1,7 +1,7 @@
 //? LIBRARY
 import { NavLink } from 'react-router-dom';
-//? APPS
-function SortBars() {
+
+export default function SortBars() {
   return (
     <ul className="h-[46px] bg-[#fff] flex border border-neutral-200 m-0 pl-0 border-solid mb-[1rem]" style={{ display: 'flex' }}>
       <li className="flex-1">
@@ -36,4 +36,3 @@ function SortBars() {
     </ul>
   );
 }
-export default SortBars;

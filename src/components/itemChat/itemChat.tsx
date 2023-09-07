@@ -5,7 +5,7 @@ interface interfaceItemChat {
   setIsChat: any;
   setRoom: any;
 }
-function ItemChat({ data, des, setIsChat, setRoom }: interfaceItemChat) {
+export default function ItemChat({ data, des, setIsChat, setRoom }: interfaceItemChat) {
   const OnChangeShop = (room: Rooms) => {
     setIsChat(true);
     setRoom(room);
@@ -50,4 +50,3 @@ function ItemChat({ data, des, setIsChat, setRoom }: interfaceItemChat) {
     </>
   );
 }
-export default ItemChat;

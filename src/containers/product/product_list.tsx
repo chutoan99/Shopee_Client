@@ -5,12 +5,13 @@ import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
 
 //? APPS
+import { AppDispatch } from '../../app/store';
 import { PostSimple } from '../../types/post';
 import { formatPrice } from '../../utils/fomarPrice';
 import { generateStart } from '../../utils/generateStart';
 import { useAppDispatch } from '../../hooks/hooks';
 import { OtherActions } from '../../redux/otherSlice';
-import { AppDispatch } from '../../app/store';
+
 interface HomeProducts {
   items: PostSimple[];
   col: string;

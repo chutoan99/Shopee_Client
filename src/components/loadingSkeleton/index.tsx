@@ -1,4 +1,4 @@
-const LoadingSkeleton = ({ className = '' }) => {
+export default function LoadingSkeleton({ className = '' }) {
   return (
     <div
       className={`bg-[#e2e5e7] bg-gradient-to-r from-transparent via-[rgba(255,255,255,0.5)] to-transparent bg-[40px 100%] bg-no-repeat bg-left[-40px] top-0 animate-skeleton-1s-ease-infinite ${className}`}
@@ -8,6 +8,4 @@ const LoadingSkeleton = ({ className = '' }) => {
       }}
     ></div>
   );
-};
-
-export default LoadingSkeleton;
+}

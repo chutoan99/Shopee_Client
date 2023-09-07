@@ -5,7 +5,7 @@ import { memo, useState } from 'react';
 
 import { ProductList, Pagination } from '../../containers';
 import { useGetProductsQuery } from '../../services/post/index.hook';
-import Loading from '../../components/loading';
+import { Loading } from '../../components';
 
 function Daily() {
   const [payload, setPayload] = useState({

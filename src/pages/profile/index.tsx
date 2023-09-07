@@ -9,6 +9,7 @@ import { UpdateUser } from '../../services/user/index.services';
 import { GetALLProvince, GetAllDistrictWithProvinceCode, GetAllWardWithDistrictCode } from '../../services/province/index.service';
 import { ALERT_INVALID_ADDRESS, ALERT_INVALID_AVATAR, ALERT_INVALID_PHONE, ALERT_UPDATE_USER_SUCCESS } from '../../constants/msg';
 import { useGetUserCurrentQuery } from '../../services/user/index.hook';
+
 type Province = {
   code: string;
   name_with_type: string;

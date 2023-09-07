@@ -2,13 +2,13 @@
 import { useState, memo } from 'react';
 import { NavLink, useNavigate, useParams } from 'react-router-dom';
 //? APPS
+import { RootState } from '../../app/store';
+import { useAppSelector } from '../../hooks/hooks';
 import { SearchHistory } from '../../types/searchHistory';
+import { useGetCartsQuery } from '../../services/cart/index.hook';
 import { LogoShopee, HeaderCart, SuggestList } from '../../components';
 import { useGetSearchSuggestionQuery } from '../../services/searchSuggestion/index.hook';
 import { useCreateHistorySearchMutation, useGetHistorySearchQuery } from '../../services/searchHistory/index.hook';
-import { RootState } from '../../app/store';
-import { useAppSelector } from '../../hooks/hooks';
-import { useGetCartsQuery } from '../../services/cart/index.hook';
 
 function HeaderWithSearch() {
   const params = useParams();
