@@ -49,7 +49,7 @@ function TopProducts() {
                 </div>
               </div>
             </div>
-            <ProductList items={data?.response?.rows || []} col={'col l-2-4 mo-4 c-6'} loading={isLoading} />
+            <ProductList items={data?.response || []} col={'col l-2-4 mo-4 c-6'} loading={isLoading} />
             {isLoading ? <Loading /> : <Pagination setPayload={setPayload} totalPage={data?.totalPage} />}
           </div>
         </div>

@@ -26,7 +26,7 @@ function Categories() {
         <Loading />
       ) : (
         <>
-          {data?.response?.rows?.length === 0 ? (
+          {data?.response?.length === 0 ? (
             <SearchEmpty />
           ) : (
             <div className="row sm-gutter pt-[30px]">
@@ -36,7 +36,7 @@ function Categories() {
               <div className="col l-10">
                 <div className="padding-search mob:pt-[50px] mob:hidden block"></div>
                 <SortBars />
-                <ProductList items={data?.response.rows || []} col={'col l-2-4 mo-4 c-6'} loading={isLoading} />
+                <ProductList items={data?.response || []} col={'col l-2-4 mo-4 c-6'} loading={isLoading} />
                 <Pagination setPayload={setPayload} totalPage={totalPage} />
               </div>
             </div>

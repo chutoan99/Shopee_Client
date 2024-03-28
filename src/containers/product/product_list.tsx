@@ -45,7 +45,7 @@ function ProductList({ items, col, loading }: HomeProducts) {
           <div className={col} key={index}>
             <div
               className="box-border bg-[#fff] relative shadow-[0_1px_2px_rgba(0,0,0,0.1)] transition-transform duration-[linear] delay-[0.1s] no-underline block cursor-pointer mt-[5px] pb-[5px] rounded-sm group hover:shadow-[0_1px_20px_rgba(0,0,0,0.05)] hover:-translate-y-px hover:border hover:z-[2] hover:border-solid hover:border-[#ee4d2d]"
-              key={item.itemid}
+              key={item.id}
             >
               {item?.show_free_shipping === 1 ? (
                 <img src="/assets/Img/sale_sticker.png" className="absolute" style={{ zIndex: '9' }} alt=" " />
@@ -57,7 +57,7 @@ function ProductList({ items, col, loading }: HomeProducts) {
                 className="w-full h-[190px] cursor-pointer bg-[top_center] bg-contain bg-no-repeat rounded-br-sm rounded-bl-sm"
               />
               <NavLink
-                to={`/detailProduct/${item?.itemid}/${item?.shopid}`}
+                to={`/detailProduct/${item?.id}/${item?.shopid}`}
                 className="text-[0.875rem] font-normal text-[#333] leading-[1.125rem] h-9 overflow-hidden ml-1.5 mr-2.5 my-2.5"
                 style={{
                   display: '-webkit-box',

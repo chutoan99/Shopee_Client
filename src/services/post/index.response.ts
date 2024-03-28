@@ -1,15 +1,14 @@
 import { PostSimple, ProductDetail } from '../../types/post';
 
 export interface PostSimpleResponse {
-  err: number;
-  msg: string;
-  page: number;
-  limit: number;
-  totalPage: number;
-  response: {
-    rows: PostSimple[];
-    count: number;
-  };
+  err:         number;
+  msg:         string;
+  offset:      number;
+  limit:       number;
+  total:       number;
+  totalPage:   number;
+  currentPage: number;
+  response:    PostSimple[];
 }
 
 export interface PostIdResponse {

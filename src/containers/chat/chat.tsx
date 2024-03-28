@@ -31,14 +31,14 @@ function Chat() {
   }, [dataRooms]);
 
   useEffect(() => {
-    if (room?.roomid) {
+    if (room?.id) {
       setIsListChat(true);
-      onRoom(room.roomid);
+      onRoom(room.id);
     }
   }, [room]);
 
   const onAddMess = () => {
-    socketio.emit('message', { user: data, shop: room?.shop_info, roomid: room?.roomid, message });
+    socketio.emit('message', { user: data, shop: room?.shop_info, roomid: room?.id, message });
     setMessage('');
   };
 

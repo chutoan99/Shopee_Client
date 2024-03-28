@@ -42,7 +42,7 @@ export default function HeaderCart({ data, totalCart, loading }: HeaderCartModel
                           <li className="flex" key={index}>
                             <img
                               className="w-[42px] h-[42px] border m-3 border-solid border-[#e8e8e8]"
-                              src={ele?.overview?.image}
+                              src={ele?.item?.image}
                               alt="dataCart"
                             />
                             <div className="w-full mr-3 mt-3">
@@ -55,10 +55,10 @@ export default function HeaderCart({ data, totalCart, loading }: HeaderCartModel
                                     WebkitBoxOrient: 'vertical',
                                   }}
                                 >
-                                  {ele?.overview?.name}
+                                  {ele?.item?.name}
                                 </h5>
                                 <div>
-                                  <span className="text-sm text-[#ee4d2d] font-normal">đ{formatPrice(ele?.overview?.price)}</span>
+                                  <span className="text-sm text-[#ee4d2d] font-normal">đ{formatPrice(ele?.item?.price)}</span>
                                 </div>
                               </div>
                             </div>

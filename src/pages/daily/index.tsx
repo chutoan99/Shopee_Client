@@ -28,7 +28,7 @@ function Daily() {
                 className="absolute w-full m-0 border-t-[rgba(0,0,0,0.5)] border-t border-dotted left-0 top-2/4"
               />
             </div>
-            <ProductList items={data?.response?.rows || []} col={'col l-2 mo-4 c-6'} loading={isLoading} />
+            <ProductList items={data?.response || []} col={'col l-2 mo-4 c-6'} loading={isLoading} />
             {isLoading ? <Loading /> : <Pagination setPayload={setPayload} totalPage={data?.totalPage} />}
           </div>
         </div>

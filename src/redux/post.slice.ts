@@ -25,7 +25,7 @@ const postSlice = createSlice({
       state.success = true;
       state.isSuccess = true;
       state.isLoading = false;
-      state.data = action.payload?.response?.rows;
+      state.data = action.payload?.response;
       state.TOTAl_PAGE = action.payload?.totalPage;
     },
   },

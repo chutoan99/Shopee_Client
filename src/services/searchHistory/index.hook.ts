@@ -13,12 +13,12 @@ export const SearchHistoryApi = createApi({
   }),
   endpoints: (build) => ({
     getHistorySearch: build.query<SearchHistoryResponse, void>({
-      query: () => 'search',
+      query: () => 'searchHistory',
     }),
     createHistorySearch: build.mutation<CreateSearchHistoryResponse, any>({
       query: (body) => {
         return {
-          url: 'search',
+          url: 'searchHistory',
           method: 'POST',
           body,
         };

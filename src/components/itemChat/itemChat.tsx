@@ -16,7 +16,7 @@ export default function ItemChat({ data, des, setIsChat, setRoom }: interfaceIte
         <div
           onClick={() => OnChangeShop(room)}
           className="items-center box-border flex justify-center overflow-hidden relative p-3 h-[56px] w-full cursor-pointer "
-          key={room.roomid}
+          key={room.id}
         >
           <div className="h-8 min-w-[32px] w-8">
             <div

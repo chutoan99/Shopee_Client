@@ -42,7 +42,7 @@ function Oder() {
       });
     });
     setTotalShip((data?.length ?? 1) * ship);
-    setTotal(dataTempt.reduce((acc, curr) => acc + curr.overview.price * curr.amount, 0));
+    setTotal(dataTempt.reduce((acc, curr) => acc + curr.item.price * curr.amount, 0));
 
     if (dataTempt.length === 0) {
       navigate('/cart');
@@ -51,10 +51,10 @@ function Oder() {
       return {
         item_groups_id: JSON.stringify(item.map((ele) => ele.itemid)),
         amount: JSON.stringify(item.map((ele) => ele.amount)),
-        option: JSON.stringify(item.map((ele) => ele.option)),
-        final_total: item.reduce((acc, curr) => acc + curr.overview.price * curr.amount, 0) + ship,
+        option: JSON.stringify(item.map((ele) => ele.item_option)),
+        final_total: item.reduce((acc, curr) => acc + curr.item.price * curr.amount, 0) + ship,
         shopid: item[0]?.shopid,
-        shop_name: item[0]?.overview?.shop_name,
+        shop_name: item[0]?.item?.shop_name,
         total_num_items: item.length,
         note: '',
       };
@@ -91,7 +91,7 @@ function Oder() {
         toast.success(response.msg);
         for (const item of data) {
           for (const ele of item) {
-            deleteCart(ele.cartid).unwrap();
+            deleteCart(ele.id).unwrap();
             setTimeout(() => {
               navigate('/user/purchase');
             }, 3000);
@@ -162,7 +162,7 @@ function Oder() {
                           </svg>
                         </div>
                         <div className="max-w-[200px] text-sm font-semibold overflow-hidden text-ellipsis ml-2 mr-0 my-0">
-                          {ele[0]?.overview?.shop_name}
+                          {ele[0]?.item?.shop_name}
                         </div>
                         <div className="ml-2 mr-0 my-0">
                           <button className="text-xs capitalize border bg-[#ee4d2d] text-[#fff] px-2 py-1 rounded-sm border-solid border-transparent  flex items-center hover:bg-[#d73211] hover:border-[#ba2b0f]">
@@ -181,7 +181,7 @@ function Oder() {
                             <span className="align-middle ml-1 mr-0 my-0">chat</span>
                           </button>
                         </div>
-                        <NavLink className="ml-2 mr-0 my-0" to={`/shop/${ele[0]?.overview?.shopid}`}>
+                        <NavLink className="ml-2 mr-0 my-0" to={`/shop/${ele[0]?.item?.shopid}`}>
                           <button className="text-xs flex items-center capitalize text-[#555] border px-2 py-1 rounded-sm border-solid border-[rgba(0,0,0,0.09)] hover:bg-[rgba(0,0,0,0.02)] hover:border hover:border-solid hover:border-[rgba(0,0,0,0.09)]">
                             <svg
                               enableBackground="new 0 0 15 15"
@@ -203,19 +203,19 @@ function Oder() {
                     <div
                       style={{ padding: '10px 30px' }}
                       className="bg-[#fff] grid items-center  border-b-[rgba(0,0,0,0.09)] border-b border-dashed"
-                      key={item.cartid}
+                      key={item.id}
                     >
                       <div className="flex items-center">
                         <div className="flex-1 items-start flex-nowrap flex pl-0 pr-3 py-0">
                           <div className=" w-[81px] h-[81px]">
                             <a className="relative">
                               <div className="w-20 h-20 mr-3">
-                                <img className="w-full h-full" src={item?.overview?.image} alt={item?.overview?.name} />
+                                <img className="w-full h-full" src={item?.item?.image} alt={item?.item?.name} />
                               </div>
                               <div
                                 className="bg-[50%] bg-cover bg-no-repeat absolute w-full h-full left-0 top-0"
                                 style={{
-                                  backgroundImage: `${item?.overview?.image}`,
+                                  backgroundImage: `${item?.item?.image}`,
                                 }}
                               >
                                 <div className="w-full h-full"></div>
@@ -233,11 +233,11 @@ function Oder() {
                                   WebkitLineClamp: 2,
                                 }}
                               >
-                                <span>{item?.overview?.name}</span>
+                                <span>{item?.item?.name}</span>
                               </div>
                             </a>
                             <div className="mt-0 mx-0">
-                              <div className="text-[rgba(0,0,0,0.54)] mb-[5px]">Phân loại hàng: {item?.option[index]}</div>
+                              <div className="text-[rgba(0,0,0,0.54)] mb-[5px]">Phân loại hàng: {item?.item_option[index]}</div>
                             </div>
                           </div>
                         </div>
@@ -248,9 +248,9 @@ function Oder() {
                                 className="text-sm flex justify-center flex-col text-center  font-medium"
                                 style={{ flexDirection: 'row', gap: '8px' }}
                               >
-                                <h3 className="line-through text-[#ccc]">đ {formatPrice(item?.overview?.price_max)}</h3>
+                                <h3 className="line-through text-[#ccc]">đ {formatPrice(item?.item?.price_max)}</h3>
                                 <h3 className="px-[5px] text-center text-[rgba(0,0,0,0.54)]">x{item.amount}</h3>
-                                <h3 className="text-[#ee4d2d]">đ đ {formatPrice(item?.overview?.price, item?.amount)}</h3>
+                                <h3 className="text-[#ee4d2d]">đ đ {formatPrice(item?.item?.price, item?.amount)}</h3>
                               </div>
                             </span>
                           </div>
@@ -294,7 +294,7 @@ function Oder() {
                   Tổng số tiền ({ele?.reduce((acc: any, curr: any) => acc + curr.amount, 0)} sản phẩm):
                 </span>
                 <label className="text-xl text-[#ee4d2d] ml-5">
-                  đ{(ele?.reduce((acc, curr) => acc + curr.overview.price * curr.amount, 0) + ship).toLocaleString('it-IT')}
+                  đ{(ele?.reduce((acc, curr) => acc + curr.item.price * curr.amount, 0) + ship).toLocaleString('it-IT')}
                 </label>
               </div>
             </div>
