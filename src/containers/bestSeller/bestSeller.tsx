@@ -3,8 +3,8 @@ import Slider from 'react-slick';
 import { NavLink } from 'react-router-dom';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 //? APP
-import { TopProDucts } from '../../types/topProduct';
-import { useGetTopProductQuery } from '../../services/topProduct/index.hook';
+import { TopProDucts } from '../../modules/topProduct/interface';
+import { useGetTopProductQuery } from '../../modules/topProduct/hook';
 
 function BestSeller() {
   const { data, isLoading } = useGetTopProductQuery();
@@ -34,7 +34,7 @@ function BestSeller() {
                       <div className="relative" style={{ boxShadow: 'unset' }}>
                         <LazyLoadImage
                           effect="blur"
-                          src={JSON.parse(item?.images)}
+                          src={(item?.images).split(", ")[0]}
                           alt="itemProduct"
                           className=" w-full cursor-pointer bg-[top_center] bg-contain bg-no-repeat rounded-br-[2px] rounded-bl-[2px]"
                         />

@@ -1,8 +1,8 @@
 //? LIBRARY
 import Slider from 'react-slick';
 import { memo } from 'react';
-import { Banner } from '../../types/banner';
-import { useGetBannerQuery } from '../../services/banner/index.hook';
+import { Banner } from '../../modules/banner/interface';
+import { useGetBannerQuery } from '../../modules/banner/hook';
 //? APP
 
 function Carousel() {

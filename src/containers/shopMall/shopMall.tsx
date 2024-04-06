@@ -4,8 +4,8 @@ import { NavLink } from 'react-router-dom';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 //? APPS
 import shopMallData from '../../utils/shopMall';
-import { ShopMall as shopMallInterFace } from '../../types/shopMall';
-import { useGetShopMallQuery } from '../../services/shopMall/index.hook';
+import { ShopMall as shopMallInterFace } from '../../modules/shopMall/shopMall';
+import { useGetShopMallQuery } from '../../modules/shopMall/hook';
 
 function ShopMall() {
   const { data, isLoading } = useGetShopMallQuery();

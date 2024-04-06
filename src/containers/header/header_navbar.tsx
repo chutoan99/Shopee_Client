@@ -7,21 +7,21 @@ import { UserActions } from '../../redux/userSlice';
 import { HeaderNotify, Loading } from '../../components';
 import { AppDispatch, RootState } from '../../app/store';
 import { ALERT_LOGOUT_SUCCESS } from '../../constants/msg';
-import { ApiLogout } from '../../services/auth/index.service';
+import { ApiLogout } from '../../modules/auth/service';
 import { useAppDispatch, useAppSelector } from '../../hooks/hooks';
-import { useGetNotificationQuery } from '../../services/notification/index.hook';
+import { useGetNotifyQuery } from '../../modules/notify/hook';
 
 function HeaderNavbar() {
   const dispatch: AppDispatch = useAppDispatch();
   const navigate = useNavigate();
   const [totalNotify, setTotalNotify] = useState(0);
   const { data: dataUser, isLogin } = useAppSelector((state: RootState) => state.user);
-  const { data: dataNotification, isLoading: isLoadingNotification } = useGetNotificationQuery();
+  const { data: dataNotify, isLoading: isLoadingNotification } = useGetNotifyQuery();
 
   const [loading, setLoading] = useState(false);
   useEffect(() => {
-    setTotalNotify(dataNotification?.response?.length || 0);
-  }, [dataNotification]);
+    setTotalNotify(dataNotify?.response?.length || 0);
+  }, [dataNotify]);
 
   const handleOpenNewTab = () => {
     window.open('https://shopee-admin.vercel.app', '_blank');
@@ -96,7 +96,7 @@ function HeaderNavbar() {
               </span>
               Thông báo
             </NavLink>
-            {!isLoadingNotification && <HeaderNotify data={dataNotification?.response || []} />}
+            {!isLoadingNotification && <HeaderNotify data={dataNotify?.response || []} />}
           </li>
 
           <li className="relative min-h-[26px] no-underline text-sm font-light text-[#fff] items-center flex mx-2 my-0">

@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom';
 //? APPS
 import { Loading2 } from '../../components';
 import { ProductList, ShopPageInfo } from '../../containers';
-import { useGetItemsShopQuery, useGetShopIdQuery } from '../../services/shop/index.hook';
+import { useGetItemsShopQuery, useGetShopIdQuery } from '../../modules/shop/hook';
 function Shop() {
   const params = useParams();
   const { data: dataInfoShop } = useGetShopIdQuery(params);

@@ -2,12 +2,12 @@
 import { memo, useEffect, useState } from 'react';
 import { NavLink, useParams } from 'react-router-dom';
 //? APPS
-import { Order } from '../../types/order';
+import { Order } from '../../modules/order/interface';
 import { ModelRating } from '../../containers';
 import { Loading } from '../../components';
 import { formatPrice } from '../../utils/fomarPrice';
 import { formatDate } from '../../utils/formatTimestamp';
-import { useGetOrderQuery } from '../../services/order/index.hook';
+import { useGetOrderQuery } from '../../modules/order/hook';
 
 function OrderDetail() {
   const params = useParams();

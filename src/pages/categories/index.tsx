@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom';
 //? APPS
 import { SearchEmpty, SortBars, Loading } from '../../components';
 import { Pagination, ProductList, SearchFilter } from '../../containers';
-import { useSearchCategoriesQuery } from '../../services/post/index.hook';
+import { useSearchCategoriesQuery } from '../../modules/post/hook';
 
 function Categories() {
   const params = useParams();

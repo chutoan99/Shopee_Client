@@ -2,11 +2,11 @@
 import { memo } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 //? APPS
-import { ShopInterface } from '../../types/shop';
+import { ShopInterface } from '../../modules/shop/interface';
 import { AppDispatch } from '../../app/store';
 import { useAppDispatch } from '../../hooks/hooks';
 import { OtherActions } from '../../redux/otherSlice';
-import { useCreateRoomMutation } from '../../services/room/index.hook';
+import { useCreateRoomMutation } from '../../modules/room/hook';
 
 interface ProductShopModel {
   data: ShopInterface;

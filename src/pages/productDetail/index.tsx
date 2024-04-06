@@ -9,9 +9,9 @@ import { CartActions } from '../../redux/cart.slice';
 import { useAppDispatch } from '../../hooks/hooks';
 import { formatPrice } from '../../utils/fomarPrice';
 import { generateStart } from '../../utils/generateStart';
-import { useGetProductQuery } from '../../services/post/index.hook';
+import { useGetProductQuery } from '../../modules/post/hook';
 import { ProductShop, ProductComment, ProductBreadcrumb } from '../../containers';
-import { useCreateCartMutation, useGetCartsQuery } from '../../services/cart/index.hook';
+import { useCreateCartMutation, useGetCartsQuery } from '../../modules/cart';
 
 function DetailProduct() {
   const params = useParams();

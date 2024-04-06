@@ -2,13 +2,13 @@
 import { useState, memo, useEffect } from 'react';
 import { DatePicker } from 'react-rainbow-components';
 //? APPS
-import { User } from '../../types/user';
+import { User } from '../../modules/user/interface';
 import { toast } from 'react-hot-toast';
 import { Loading, Loading2 } from '../../components';
-import { UpdateUser } from '../../services/user/index.services';
-import { GetALLProvince, GetAllDistrictWithProvinceCode, GetAllWardWithDistrictCode } from '../../services/province/index.service';
+import { UpdateUser } from '../../modules/user/service';
+import { GetALLProvince, GetAllDistrictWithProvinceCode, GetAllWardWithDistrictCode } from '../../modules/province/service';
 import { ALERT_INVALID_ADDRESS, ALERT_INVALID_AVATAR, ALERT_INVALID_PHONE, ALERT_UPDATE_USER_SUCCESS } from '../../constants/msg';
-import { useGetUserCurrentQuery } from '../../services/user/index.hook';
+import { useGetUserCurrentQuery } from '../../modules/user/hook';
 
 type Province = {
   code: string;
@@ -47,9 +47,9 @@ function Profile() {
   useEffect(() => {
     if (dataUserCurrent)
       setPayload({
+        id: dataUserCurrent?.response?.id,
         sex: dataUserCurrent?.response?.sex,
         role: dataUserCurrent?.response?.role,
-        userid: dataUserCurrent?.response?.userid,
         email: dataUserCurrent?.response?.email,
         name: dataUserCurrent?.response?.name,
         address: dataUserCurrent?.response?.address,
@@ -158,7 +158,7 @@ function Profile() {
     setPayload({
       sex: payload.sex,
       role: payload.role,
-      userid: payload.userid,
+      id: payload.id,
       email: payload.email,
       name: payload.name,
       address: payload.address,

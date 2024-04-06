@@ -1,9 +1,9 @@
 //? LIBRARY
 import { NavLink } from 'react-router-dom';
+import { Notify } from '../../modules/notify/interface';
 //? APPS
-import { Notification } from '../../types/notifycation';
 interface HeaderNotifyModel {
-  data: Notification[];
+  data: Notify[];
 }
 
 export default function HeaderNotify({ data }: HeaderNotifyModel) {
@@ -16,7 +16,7 @@ export default function HeaderNotify({ data }: HeaderNotifyModel) {
         <h3 className="text-[#999] font-normal text-sm leading-10 ml-3 mr-0 my-0"> Thông báo mới nhận </h3>
       </header>
       <ul className="pl-0">
-        {data?.map((item: Notification) => {
+        {data?.map((item: Notify) => {
           return (
             <li className={item.seen ? `flex bg-[#fff]` : `flex bg-[#f7f7f7]`} key={item.id}>
               <NavLink to="# " className="flex no-underline w-full p-2">

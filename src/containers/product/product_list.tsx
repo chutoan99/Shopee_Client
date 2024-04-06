@@ -6,7 +6,7 @@ import 'react-lazy-load-image-component/src/effects/blur.css';
 
 //? APPS
 import { AppDispatch } from '../../app/store';
-import { PostSimple } from '../../types/post';
+import { PostSimple } from '../../modules/post/interface';
 import { formatPrice } from '../../utils/fomarPrice';
 import { generateStart } from '../../utils/generateStart';
 import { useAppDispatch } from '../../hooks/hooks';

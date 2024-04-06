@@ -3,9 +3,9 @@ import { Link, NavLink } from 'react-router-dom';
 import { memo, useEffect, useState } from 'react';
 //? APPS
 import { Loading } from '../../components';
-import { Order } from '../../types/order';
+import { Order } from '../../modules/order/interface';
 import { formatPrice } from '../../utils/fomarPrice';
-import { useGetOrdersQuery, useSearchOrdersQuery, useSearchTypeOrdersQuery } from '../../services/order/index.hook';
+import { useGetOrdersQuery, useSearchOrdersQuery, useSearchTypeOrdersQuery } from '../../modules/order/hook';
 interface Tabs {
   is_all: number;
   is_cancelled: number;

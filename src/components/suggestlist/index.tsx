@@ -1,6 +1,6 @@
 //? LIBRARY
 import { NavLink } from 'react-router-dom';
-import { SearchSuggestion } from '../../types/searchSuggestion';
+import { SearchSuggestion } from '../../modules/searchSuggestion/interface';
 //? APPS
 interface SuggestListModel {
   data: SearchSuggestion[];

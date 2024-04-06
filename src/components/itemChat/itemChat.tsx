@@ -1,4 +1,4 @@
-import { Rooms } from '../../types/room';
+import { Rooms } from '../../modules/room/interface';
 interface interfaceItemChat {
   data: Rooms[] | [];
   des: string;

@@ -3,7 +3,7 @@ import { useState, memo, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 //? APPS
 import { validateLogin } from '../../utils/validate';
-import { useMutationLogin } from '../../services/auth/index.hook';
+import { useMutationLogin } from '../../modules/auth/hook';
 import { Loading, LoginFaceBook, LoginGoogle } from '../../components';
 
 function LoginForm() {

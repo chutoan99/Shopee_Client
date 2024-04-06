@@ -2,7 +2,7 @@
 import { memo } from 'react';
 import { NavLink } from 'react-router-dom';
 //? APPS
-import { ShopInterface } from '../../types/shop';
+import { ShopInterface } from '../../modules/shop/interface';
 interface ProductShop {
   data: ShopInterface;
 }

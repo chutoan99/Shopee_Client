@@ -5,8 +5,8 @@ import { Toaster } from 'react-hot-toast';
 //? APPS
 import { HeaderNavbar } from '../../containers';
 import { LogoShopee, Loading } from '../../components';
-import { useGetCartsQuery } from '../../services/cart/index.hook';
-import { useCreateHistorySearchMutation } from '../../services/searchHistory/index.hook';
+import { useGetCartsQuery } from '../../modules/cart/hook';
+import { useCreateHistorySearchMutation } from '../../modules/searchHistory/hook';
 
 export default function CartLayout({ children }: any) {
   const params = useParams();

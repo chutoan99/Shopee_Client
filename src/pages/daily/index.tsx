@@ -4,7 +4,7 @@ import { memo, useState } from 'react';
 //? APPS
 
 import { ProductList, Pagination } from '../../containers';
-import { useGetProductsQuery } from '../../services/post/index.hook';
+import { useGetProductsQuery } from '../../modules/post/hook';
 import { Loading } from '../../components';
 
 function Daily() {

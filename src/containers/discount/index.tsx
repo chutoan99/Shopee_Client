@@ -1,8 +1,8 @@
 //? LIBRARY
 import { memo } from 'react';
 //? APPS
-import { BatchList } from '../../types/batchList';
-import { useGetBatchListQuery } from '../../services/batchList/index.hook';
+import { BatchList } from '../../modules/batchList/interface';
+import { useGetBatchListQuery } from '../../modules/batchList/hook';
 function Discount() {
   const { data, isLoading } = useGetBatchListQuery();
   return (

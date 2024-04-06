@@ -2,11 +2,11 @@
 import { useEffect, useState } from 'react';
 import { Rating } from 'react-rainbow-components';
 //? APPS
-import { Comment } from '../../types/comment';
+import { Comment } from '../../modules/comment/interface';
 import { formatTime } from '../../utils/generateTime';
 import { generateStart } from '../../utils/generateStart';
 import { useParams } from 'react-router-dom';
-import { useGetCommentsQuery } from '../../services/comment/index.hook';
+import { useGetCommentsQuery } from '../../modules/comment/hook';
 
 function ProductComment() {
   const params = useParams();

@@ -4,9 +4,9 @@ import { NavLink } from 'react-router-dom';
 import { memo, useState } from 'react';
 import { Rating } from 'react-rainbow-components';
 //? APPS
-import { Order } from '../../types/order';
+import { Order } from '../../modules/order/interface';
 import { Loading } from '../../components';
-import { CreateComment } from '../../services/comment/index.service';
+import { CreateComment } from '../../modules/comment/service';
 
 interface RatingModel {
   isShow: boolean;

@@ -3,8 +3,8 @@ import Slider from 'react-slick';
 import { NavLink } from 'react-router-dom';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 //? APPS
-import { FlashSale as FlashSaleType } from '../../types/flashSale';
-import { useGetFlashSaleQuery } from '../../services/flashSale/index.hook';
+import { FlashSale as FlashSaleType } from '../../modules/flashSale/interface';
+import { useGetFlashSaleQuery } from '../../modules/flashSale/hook';
 
 function FlashSale() {
   const { data, isLoading } = useGetFlashSaleQuery();

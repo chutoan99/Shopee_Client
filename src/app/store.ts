@@ -6,22 +6,22 @@ import userReducer from '../redux/userSlice';
 import postReducer from '../redux/post.slice';
 import buyCartReducer from '../redux/buyCart.slice';
 //? REDUX TOOLKIT RTK
-import { BannerApi } from '../services/banner/index.hook';
-import { BatchListApi } from '../services/batchList/index.hook';
-import { NotificationApi } from '../services/notification/index.hook';
-import { SearchSuggestionApi } from '../services/searchSuggestion/index.hook';
-import { CategoryTreeApi } from '../services/category/index.hook';
-import { FlashSaleApi } from '../services/flashSale/index.hook';
-import { ShopMallApi } from '../services/shopMall/index.hook';
-import { TopProductApi } from '../services/topProduct/index.hook';
-import { ProductApi } from '../services/post/index.hook';
-import { SearchHistoryApi } from '../services/searchHistory/index.hook';
-import { CartApi } from '../services/cart/index.hook';
-import { ShopApi } from '../services/shop/index.hook';
-import { OrderApi } from '../services/order/index.hook';
-import { CommentApi } from '../services/comment/index.hook';
-import { RoomApi } from '../services/room/index.hook';
-import { UserApi } from '../services/user/index.hook';
+import { CartApi } from '../modules/cart/hook';
+import { ShopApi } from '../modules/shop/hook';
+import { RoomApi } from '../modules/room/hook';
+import { UserApi } from '../modules/user/hook';
+import { OrderApi } from '../modules/order/hook';
+import { ProductApi } from '../modules/post/hook';
+import { BannerApi } from '../modules/banner/hook';
+import { NotifyApi } from '../modules/notify/hook';
+import { CommentApi } from '../modules/comment/hook';
+import { ShopMallApi } from '../modules/shopMall/hook';
+import { FlashSaleApi } from '../modules/flashSale/hook';
+import { BatchListApi } from '../modules/batchList/hook';
+import { CategoryTreeApi } from '../modules/category/hook';
+import { TopProductApi } from '../modules/topProduct/hook';
+import { SearchHistoryApi } from '../modules/searchHistory/hook';
+import { SearchSuggestionApi } from '../modules/searchSuggestion/hook';
 const RootReducer = {
   others: otherReducer,
   cart: cartReducer,
@@ -30,10 +30,9 @@ const RootReducer = {
   buyCart: buyCartReducer,
   [BannerApi.reducerPath]: BannerApi.reducer,
   [BatchListApi.reducerPath]: BatchListApi.reducer,
-  [NotificationApi.reducerPath]: NotificationApi.reducer,
+  [NotifyApi.reducerPath]: NotifyApi.reducer,
   [SearchSuggestionApi.reducerPath]: SearchSuggestionApi.reducer,
   [SearchHistoryApi.reducerPath]: SearchHistoryApi.reducer,
-  [BatchListApi.reducerPath]: BatchListApi.reducer,
   [CategoryTreeApi.reducerPath]: CategoryTreeApi.reducer,
   [FlashSaleApi.reducerPath]: FlashSaleApi.reducer,
   [ShopMallApi.reducerPath]: ShopMallApi.reducer,
@@ -52,7 +51,7 @@ export const store = configureStore({
     getDefaultMiddleware().concat(
       BannerApi.middleware,
       BatchListApi.middleware,
-      NotificationApi.middleware,
+      NotifyApi.middleware,
       SearchSuggestionApi.middleware,
       BatchListApi.middleware,
       CategoryTreeApi.middleware,

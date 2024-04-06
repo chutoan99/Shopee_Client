@@ -5,8 +5,8 @@ import { ItemChat } from '../../components';
 import { useAppSelector } from '../../hooks/hooks';
 import { RootState } from '../../app/store';
 import useSocketIo from '../../hooks/useSocket';
-import { useGetRoomsQuery } from '../../services/room/index.hook';
-import { Rooms } from '../../types/room';
+import { useGetRoomsQuery } from '../../modules/room/hook';
+import { Rooms } from '../../modules/room/interface';
 
 function Chat() {
   const { listMess, socketio, isLoadingRoom } = useSocketIo();

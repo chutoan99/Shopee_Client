@@ -3,13 +3,13 @@ import { toast } from 'react-hot-toast';
 import { useState, memo, useEffect } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 //? APPS
-import { Cart } from '../../types/cart';
+import { Cart } from '../../modules/cart/interface';
 import { Loading2 } from '../../components';
 import { RootState } from '../../app/store';
 import { useAppSelector } from '../../hooks/hooks';
 import { formatPrice } from '../../utils/fomarPrice';
-import { useDeleteCartMutation } from '../../services/cart/index.hook';
-import { useCreateOrderMutation } from '../../services/order/index.hook';
+import { useDeleteCartMutation } from '../../modules/cart/hook';
+import { useCreateOrderMutation } from '../../modules/order/hook';
 import { ALERT_INVALID_ADDRESS_ORDER, ALERT_INVALID_PHONE_ORDER } from '../../constants/msg';
 
 interface payload {

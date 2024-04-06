@@ -5,7 +5,7 @@ import { Toaster } from 'react-hot-toast';
 //? APPS
 import { validateRegister } from '../../utils/validate';
 import { Loading, LoginFaceBook, LoginGoogle } from '../../components';
-import { useMutationRegister } from '../../services/auth/index.hook';
+import { useMutationRegister } from '../../modules/auth/hook';
 
 function RegisterForm() {
   const [validationMsg, setValidationMsg] = useState<any>({});

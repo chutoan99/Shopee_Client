@@ -2,7 +2,7 @@
 import { memo } from 'react';
 import { NavLink } from 'react-router-dom';
 //? APPS
-import { useGetProductsQuery } from '../../services/post/index.hook';
+import { useGetProductsQuery } from '../../modules/post/hook';
 import { Popup, SkeletonProduct } from '../../components';
 import { Carousel, Discount, FlashSale, ShopMall, Category, BestSeller, ProductList, HomeFilter } from '../../containers';
 

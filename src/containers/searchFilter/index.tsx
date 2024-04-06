@@ -2,7 +2,7 @@
 import { memo } from 'react';
 import { NavLink, useParams } from 'react-router-dom';
 //? APPS
-import { useGetCategoryTreeParentQuery } from '../../services/category/index.hook';
+import { useGetCategoryTreeParentQuery } from '../../modules/category/hook';
 
 function SearchFilter() {
   const params = useParams();

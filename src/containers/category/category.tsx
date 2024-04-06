@@ -2,10 +2,11 @@
 import Slider from 'react-slick';
 import { memo } from 'react';
 import { NavLink } from 'react-router-dom';
-import { useGetCategoryTreeQuery } from '../../services/category/index.hook';
+import { useGetCategoryTreeQuery } from '../../modules/category/hook';
 
 function Category() {
   const { data, isLoading } = useGetCategoryTreeQuery();
+  console.log(data,"cscs")
   const settings = {
     infinite: true,
     arrows: true,

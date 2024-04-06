@@ -4,7 +4,7 @@ import { NavLink, useParams } from 'react-router-dom';
 //? APPS
 import { validateResetPassword } from '../../utils/validate';
 import { Loading, LoginFaceBook, LoginGoogle } from '../../components';
-import { useMutationResetPassWord } from '../../services/auth/index.hook';
+import { useMutationResetPassWord } from '../../modules/auth/hook';
 
 function ResetForm() {
   const params = useParams();

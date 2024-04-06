@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-import { PostSimple } from '../types/post';
+import { PostSimple } from '../modules/post/interface';
 
 interface postState {
   isSuccess: boolean;
