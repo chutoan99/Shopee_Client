@@ -1,4 +1,4 @@
-export interface Like {
+export interface ILike {
   userid: number;
   itemid: number;
   shopid: number;

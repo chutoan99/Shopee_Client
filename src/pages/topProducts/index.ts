@@ -1,0 +1,1 @@
+export { default as TopProducts } from './top-product.page';

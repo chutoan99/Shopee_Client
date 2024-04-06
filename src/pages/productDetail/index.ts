@@ -1,0 +1,1 @@
+export { default as DetailProduct } from "./product-detail.page";

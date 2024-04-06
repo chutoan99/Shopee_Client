@@ -1,1 +1,1 @@
-export * from './flashSale.hook';
+export * from './flash-sale.hook';

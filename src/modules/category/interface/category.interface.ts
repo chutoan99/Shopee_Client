@@ -1,17 +1,17 @@
-export interface CategoryTreeResponse {
+export interface ICategoryTreeResponse {
   err: number;
   msg: string;
-  response: [CategoryTree[]];
+  response: [ICategoryTree[]];
 }
 
-export interface CategoryTreeResponseParent {
+export interface ICategoryTreeResponseParent {
   err: number;
   msg: string;
   total: number;
-  response: CategoryTree[];
+  response: ICategoryTree[];
 }
 
-export interface CategoryTree {
+export interface ICategoryTree {
   catid: number;
   parent_catid: number;
   name: string;

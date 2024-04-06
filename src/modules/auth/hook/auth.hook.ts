@@ -6,7 +6,7 @@ import { ApiForgotPassword, ApiLogin, ApiRegister, ApiResetPassword } from '../s
 
 //? TYPE & SERVICES
 import { ALERT_FORGOT_PASSWORD_SUCCESS, ALERT_LOGIN_SUCCESS, ALERT_RESET_PASSWORD_SUCCESS } from '../../../constants/msg';
-import { LoginREsponse, RegisterResponse } from '../interface';
+import { ILoginREsponse, IRegisterResponse } from '../interface';
 
 export const useMutationLogin = (payload: any) => {
   const navigate = useNavigate();
@@ -15,7 +15,7 @@ export const useMutationLogin = (payload: any) => {
   const onRefetch = async () => {
     try {
       setLoading(true);
-      const response: LoginREsponse = await ApiLogin(payload);
+      const response: ILoginREsponse = await ApiLogin(payload);
       if (response.err === 0) {
         toast.success(ALERT_LOGIN_SUCCESS);
         localStorage.setItem('token-shopee', response?.access_token ?? '');
@@ -46,7 +46,7 @@ export const useMutationRegister = (payload: any) => {
   const onRefetch = async () => {
     try {
       setLoading(true);
-      const reponse: RegisterResponse = await ApiRegister(payload);
+      const reponse: IRegisterResponse = await ApiRegister(payload);
       if (reponse.err === 0) {
         toast.success('Đăng ký thành công');
         setTimeout(() => {

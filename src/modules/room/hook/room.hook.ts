@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-import { RoomsResponse } from '../interface';
+import { IRoomsResponse } from '../interface';
 
 export const RoomApi = createApi({
   reducerPath: 'Room',
@@ -12,7 +12,7 @@ export const RoomApi = createApi({
     },
   }),
   endpoints: (build) => ({
-    getRooms: build.query<RoomsResponse, void>({
+    getRooms: build.query<IRoomsResponse, void>({
       query: () => 'room',
     }),
 

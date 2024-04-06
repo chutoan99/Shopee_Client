@@ -1,14 +1,14 @@
-export interface CommentsResponse {
+export interface ICommentsResponse {
   err: number;
   msg: string;
   page: number;
   limit: number;
   totalPage: number;
   totalItem: number;
-  response: Comment[];
+  response: IComment[];
 }
 
-export interface Comment {
+export interface IComment {
   cmtid: number;
   orderid: number;
   parent_cmtid: null | number;

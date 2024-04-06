@@ -1,4 +1,4 @@
-export interface PostSimpleResponse {
+export interface IPostSimpleResponse {
   err:         number;
   msg:         string;
   offset:      number;
@@ -6,16 +6,16 @@ export interface PostSimpleResponse {
   total:       number;
   totalPage:   number;
   currentPage: number;
-  response:    PostSimple[];
+  response:    IPostSimple[];
 }
 
-export interface PostIdResponse {
+export interface IPostIdResponse {
   err: number;
   msg: string;
-  response: ProductDetail;
+  response: IProductDetail;
 }
 
-export interface PostSimple {
+export interface IPostSimple {
   id:                        number;
   shopid:                    number;
   catid:                     number;
@@ -39,7 +39,7 @@ export interface PostSimple {
   price_max_before_discount: number;
   total:                     number;
 }
-export interface ProductDetail {
+export interface IProductDetail {
   id?: number;
   itemid?: number;
   shopid?: number;

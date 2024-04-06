@@ -1,0 +1,1 @@
+export { default as Mall } from './mall.page';

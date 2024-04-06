@@ -1,11 +1,11 @@
-export interface RoomsResponse {
+export interface IRoomsResponse {
   err: number;
   msg: string;
   total: number;
-  response: Rooms[];
+  response: IRooms[];
 }
 
-export interface Rooms {
+export interface IRooms {
   id:        number;
   userid:    number;
   shopid:    number;

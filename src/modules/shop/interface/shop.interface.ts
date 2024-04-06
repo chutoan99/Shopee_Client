@@ -1,20 +1,20 @@
-import { PostSimple } from "../../post/interface";
+import { IPostSimple } from "../../post/interface";
 
 
-export interface ItemsShopResponse {
+export interface IItemsShopResponse {
   err: number;
   msg: string;
-  response: PostSimple[];
+  response: IPostSimple[];
   total: number;
 }
 
-export interface ShopIdResponse {
+export interface IShopIdResponse {
   err: number;
   msg: string;
-  response: ShopInterface;
+  response: IShopInterface;
 }
 
-export interface ShopInterface {
+export interface IShopInterface {
   id: number;
   shopid: number;
   userid: number;

@@ -1,29 +1,29 @@
-export interface CartResponse {
+export interface ICartResponse {
   err: number;
   total_cart: number;
-  response: [Cart[]];
+  response: [ICart[]];
   msg: string;
 }
 
-export interface CreateCartResponse {
+export interface ICreateCartResponse {
   err: number;
   msg: string;
   response: any;
 }
 
-export interface UpdateCartResponse {
+export interface IUpdateCartResponse {
   err: number;
   msg: string;
   response: any;
 }
 
-export interface DeleteCartResponse {
+export interface IDeleteCartResponse {
   err: number;
   msg: string;
   response: any;
 }
 
-export interface Cart {
+export interface ICart {
   id:              number;
   userid:          number;
   itemid:          number;

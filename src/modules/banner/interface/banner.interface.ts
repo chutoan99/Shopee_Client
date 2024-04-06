@@ -1,11 +1,11 @@
-export interface BannerResponse {
+export interface IBannerResponse {
   err: number;
   total: string;
-  response: Banner[];
+  response: IBanner[];
   msg: string;
 }
 
-export interface Banner {
+export interface IBanner {
   id: number;
   image_url: string;
   is_active: number;

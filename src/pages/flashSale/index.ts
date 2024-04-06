@@ -1,0 +1,1 @@
+export { default as FlashSales } from './flash-sale.page';

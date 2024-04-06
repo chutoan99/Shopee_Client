@@ -1,0 +1,1 @@
+export { default as TopProduct } from "./top-product.component"

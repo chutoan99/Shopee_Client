@@ -1,7 +1,7 @@
-export interface OrdersResponse {
+export interface IOrdersResponse {
   err: number;
   msg: string;
-  response: Order[];
+  response: IOrder[];
   tabs: {
     is_all: number;
     is_wait_for_pay: number;
@@ -13,19 +13,19 @@ export interface OrdersResponse {
   };
 }
 
-export interface OrderResponse {
+export interface IOrderResponse {
   err: number;
   msg: string;
-  response: Order;
+  response: IOrder;
 }
 
-export interface CreateOrdersResponse {
+export interface ICreateOrdersResponse {
   err: number;
   msg: string;
   response: any;
 }
 
-export interface Order {
+export interface IOrder {
   id: null;
   orderid: string;
   userid: string;

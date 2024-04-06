@@ -1,1 +1,1 @@
-export * from './flashSale.interface';
+export * from './flash-sale..interface';

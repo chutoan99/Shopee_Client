@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-import { CartResponse, CreateCartResponse, DeleteCartResponse, UpdateCartResponse } from '../interface';
+import { ICartResponse, ICreateCartResponse, IDeleteCartResponse, IUpdateCartResponse } from '../interface';
 
 export const CartApi = createApi({
   reducerPath: 'CartApi',
@@ -13,11 +13,11 @@ export const CartApi = createApi({
     },
   }),
   endpoints: (build) => ({
-    getCarts: build.query<CartResponse, void>({
+    getCarts: build.query<ICartResponse, void>({
       query: () => 'cart',
     }),
 
-    createCart: build.mutation<CreateCartResponse, any>({
+    createCart: build.mutation<ICreateCartResponse, any>({
       query: (body) => {
         return {
           url: 'cart',
@@ -27,7 +27,7 @@ export const CartApi = createApi({
       },
     }),
 
-    updateCart: build.mutation<UpdateCartResponse, any>({
+    updateCart: build.mutation<IUpdateCartResponse, any>({
       query: (args) => {
         const { cartid, body } = args;
         return {
@@ -38,7 +38,7 @@ export const CartApi = createApi({
       },
     }),
 
-    deleteCart: build.mutation<DeleteCartResponse, any>({
+    deleteCart: build.mutation<IDeleteCartResponse, any>({
       query: (cartid: string) => {
         return {
           url: `cart/${cartid}`,

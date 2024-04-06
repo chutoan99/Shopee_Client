@@ -1,1 +1,1 @@
-export * from './batchList.interface';
+export * from './batch-list.interface';

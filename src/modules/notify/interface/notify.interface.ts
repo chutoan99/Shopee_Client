@@ -1,11 +1,11 @@
 
-export interface NotifyResponse {
+export interface INotifyResponse {
   err: number;
   msg: string;
-  response: Notify[];
+  response: INotify[];
 }
 
-export interface Notify {
+export interface INotify {
   id:        number;
   image:     string;
   title:     string;

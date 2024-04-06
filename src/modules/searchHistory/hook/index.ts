@@ -1,1 +1,1 @@
-export * from "./searchHistory.hook"
+export * from "./search-history.hook"

@@ -1,10 +1,10 @@
-export interface UserResponse {
+export interface IUserResponse {
   err: number;
   msg: string;
-  response: User;
+  response: IUser;
 }
 
-export interface User {
+export interface IUser {
   id:                   number;
   shopid:               number;
   username:             string;

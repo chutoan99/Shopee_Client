@@ -1,0 +1,1 @@
+export { default as Oder } from "./oder.page";

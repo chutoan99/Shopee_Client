@@ -1,0 +1,1 @@
+export { default as Purchase } from "./purchase.page";

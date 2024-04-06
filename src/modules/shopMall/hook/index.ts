@@ -1,1 +1,1 @@
-export * from "./shopMall.hook"
+export * from "./shop-mall.hook"
