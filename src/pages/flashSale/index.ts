@@ -1,1 +1,1 @@
-export { default as FlashSales } from './flash-sale.page';
+export { default as FlashSalePage } from './flash-sale.page';

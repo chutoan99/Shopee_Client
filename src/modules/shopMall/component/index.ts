@@ -1,2 +1,2 @@
-export { default as ShopMall } from "./shop-mall.component"
+export { default as ShopMallComponent } from "./shop-mall.component"
 

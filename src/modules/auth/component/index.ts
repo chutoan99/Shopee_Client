@@ -1,4 +1,4 @@
-export { default as LoginForm } from './form-login.component';
-export { default as RegisterForm } from './form-register.component';
-export { default as ResetForm } from './form-reset.component';
-export { default as ForgotForm } from './form-forgot.component';
+export { default as LoginFormComponent } from './form-login.component';
+export { default as RegisterFormComponent } from './form-register.component';
+export { default as ResetFormComponent } from './form-reset.component';
+export { default as ForgotFormComponent } from './form-forgot.component';

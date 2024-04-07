@@ -2,7 +2,7 @@
 import { memo } from 'react';
 //? APPS
 
-function Mall() {
+function MallPage() : JSX.Element {
   return (
     <div className="bg-[#f5f5f5] overflow-hidden mt-[120px]">
       <div className="grid wide">
@@ -15,4 +15,4 @@ function Mall() {
     </div>
   );
 }
-export default memo(Mall);
+export default memo(MallPage);

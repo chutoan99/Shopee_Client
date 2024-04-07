@@ -1,2 +1,2 @@
-export { default as Category } from './category.component';
-export { default as CategoryFilter } from './Category-filter.component';
+export { default as CategoryComponent } from './category.component'
+export { default as CategoryFilterComponent } from './category-filter.component'

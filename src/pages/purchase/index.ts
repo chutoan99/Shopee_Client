@@ -1,1 +1,1 @@
-export { default as Purchase } from "./purchase.page";
+export { default as PurchasePage } from "./purchase.page";

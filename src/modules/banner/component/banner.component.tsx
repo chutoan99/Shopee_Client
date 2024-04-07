@@ -5,7 +5,7 @@ import { IBanner } from '../interface';
 import { useGetBannerQuery } from '../hook';
 //? APP
 
-function Banner() {
+function BannerComponent(): JSX.Element {
   const { data, isLoading } = useGetBannerQuery();
   const settings = {
     dots: true,
@@ -51,4 +51,4 @@ function Banner() {
   );
 }
 
-export default memo(Banner);
+export default memo(BannerComponent);

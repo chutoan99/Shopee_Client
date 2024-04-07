@@ -5,7 +5,7 @@ import { LazyLoadImage } from 'react-lazy-load-image-component';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { useGetFlashSaleQuery } from '../../modules/flashSale/hook';
 
-function FlashSales() {
+function FlashSalePage(): JSX.Element {
   const { data } = useGetFlashSaleQuery();
   const navigate = useNavigate();
 
@@ -176,4 +176,4 @@ function FlashSales() {
     </>
   );
 }
-export default memo(FlashSales);
+export default memo(FlashSalePage);

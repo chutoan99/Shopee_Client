@@ -1,2 +1,2 @@
-export { default as BatchList } from './batch-list.component'
+export { default as BatchListComponent } from './batch-list.component'
 

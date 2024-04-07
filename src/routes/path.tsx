@@ -1,4 +1,5 @@
 import { lazy } from 'react';
+
 import { UserLayout } from '../layouts/user';
 import { CartLayout } from '../layouts/cart';
 import { AuthLayout } from '../layouts/auth';

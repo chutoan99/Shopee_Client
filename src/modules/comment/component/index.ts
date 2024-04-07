@@ -1,2 +1,2 @@
-export { default as ModelRatting } from "./comment.component"
+export { default as ModelRattingComponent } from "./comment.component"
 

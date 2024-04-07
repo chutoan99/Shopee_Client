@@ -1,2 +1,2 @@
-export { default as FlashSale } from './flash-sale.component'
+export { default as FlashSaleComponent } from './flash-sale.component'
 

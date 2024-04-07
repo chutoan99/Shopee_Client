@@ -1,8 +1,8 @@
 //? LIBRARY
-import { memo } from 'react';
-import { ResetForm } from '../../modules/auth/component';
+import { memo } from 'react'
+import { ResetFormComponent } from '../../modules/auth/component'
 
-function ResetPage() {
-  return <ResetForm />;
+function ResetPassWordPage(): JSX.Element {
+  return <ResetFormComponent />
 }
-export default memo(ResetPage);
+export default memo(ResetPassWordPage)

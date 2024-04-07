@@ -1,9 +1,8 @@
 //? LIBRARY
-import { memo } from 'react';
-import { LoginForm } from '../../modules/auth/component';
+import { memo } from 'react'
+import { LoginFormComponent } from '../../modules/auth/component'
 
-
-function LoginPage() {
-  return <LoginForm />;
+function LoginPage(): JSX.Element {
+  return <LoginFormComponent />
 }
-export default memo(LoginPage);
+export default memo(LoginPage)

@@ -1,1 +1,1 @@
-export { default as SuggestList } from './search-suggest.component';
+export { default as SuggestListComponent } from './search-suggest.component';

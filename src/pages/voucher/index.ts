@@ -1,1 +1,1 @@
-export { default as Voucher } from './voucher.page';
+export { default as VoucherPage } from './voucher.page';

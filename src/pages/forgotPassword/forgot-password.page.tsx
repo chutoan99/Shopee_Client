@@ -1,8 +1,8 @@
 //? LIBRARY
 import { memo } from 'react';
-import { ForgotForm } from '../../modules/auth/component';
+import { ForgotFormComponent } from '../../modules/auth/component';
 
-function ForgotPasswordPage() {
-  return <ForgotForm />;
+function ForgotPasswordPage() : JSX.Element {
+  return <ForgotFormComponent />;
 }
 export default memo(ForgotPasswordPage);

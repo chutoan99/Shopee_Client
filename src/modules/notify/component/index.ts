@@ -1,1 +1,1 @@
-export { default as HeaderNotify } from './notify.component';
+export { default as HeaderNotifyComponent } from './notify.component';

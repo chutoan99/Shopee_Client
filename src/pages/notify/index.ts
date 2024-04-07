@@ -1,1 +1,1 @@
-export { default as Notify } from './notify.page';
+export { default as NotifyPage } from './notify.page';

@@ -1,42 +1,46 @@
 //? LIBRARY
-import { useEffect, memo, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useEffect, memo, useState } from 'react'
+import { useParams } from 'react-router-dom'
 //? APPS
-import { SearchEmpty, SortBars, Loading } from '../../components';
-import { Pagination, ProductList, SearchFilter } from '../../containers';
-import { useSearchCategoriesQuery } from '../../modules/post/hook';
+import { useSearchCategoriesQuery } from '../../modules/post/hook'
+import CategoryFilterComponent from '../../modules/category/component/category-filter.component'
+import ProductListComponent from '../../modules/post/component/product-list.component'
+import { SortBarsComponent } from '../../components/sortBars'
+import { Pagination } from 'react-rainbow-components'
+import { SearchEmptyComponent } from '../../components/searchEmpty'
+import { LoadingComponent } from '../../components/loading'
 
-function Category() {
-  const params = useParams();
-  const [totalPage, setTotalPage] = useState(10);
+function CategoryPage(): JSX.Element {
+  const params = useParams()
+  const [totalPage, setTotalPage] = useState(10)
   const [payload, setPayload] = useState({
     params: params,
     limit: 50,
-    page: 1,
-  });
-  const { data, isLoading } = useSearchCategoriesQuery(payload);
+    page: 1
+  })
+  const { data, isLoading } = useSearchCategoriesQuery(payload)
 
   useEffect(() => {
-    data?.totalPage && setTotalPage(data?.totalPage);
-  }, [payload, data]);
+    data?.totalPage && setTotalPage(data?.totalPage)
+  }, [payload, data])
 
   return (
     <>
       {isLoading ? (
-        <Loading />
+        <LoadingComponent />
       ) : (
         <>
           {data?.response?.length === 0 ? (
-            <SearchEmpty />
+            <SearchEmptyComponent />
           ) : (
-            <div className="row sm-gutter pt-[30px]">
-              <div className="col l-2 col-smo-3 c-3">
-                <SearchFilter />
+            <div className='row sm-gutter pt-[30px]'>
+              <div className='col l-2 col-smo-3 c-3'>
+                <CategoryFilterComponent />
               </div>
-              <div className="col l-10">
-                <div className="padding-search mob:pt-[50px] mob:hidden block"></div>
-                <SortBars />
-                <ProductList items={data?.response || []} col={'col l-2-4 mo-4 c-6'} loading={isLoading} />
+              <div className='col l-10'>
+                <div className='padding-search mob:pt-[50px] mob:hidden block'></div>
+                <SortBarsComponent />
+                <ProductListComponent items={data?.response || []} col={'col l-2-4 mo-4 c-6'} loading={isLoading} />
                 <Pagination setPayload={setPayload} totalPage={totalPage} />
               </div>
             </div>
@@ -44,6 +48,6 @@ function Category() {
         </>
       )}
     </>
-  );
+  )
 }
-export default memo(Category);
+export default memo(CategoryPage)
