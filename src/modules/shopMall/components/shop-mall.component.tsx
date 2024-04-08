@@ -67,7 +67,7 @@ export default function ShopMallComponent(): JSX.Element {
             <div className='mb-[10px] flex'>
               <div className='l-4 mo-8 c-8' id='shopmall'>
                 <Slider {...settings}>
-                  {shopMallData?.map((listItem: any, index: number) => {
+                  {shopMallData?.map((listItem: any) => {
                     return <img src={listItem?.src} alt='Slider' className='w-full h-full' />
                   })}
                 </Slider>

@@ -11,8 +11,8 @@ import { ShopMallComponent } from '../../modules/shopMall/components'
 import { TopProductComponent } from '../../modules/topProduct/components'
 import ProductListComponent from '../../modules/post/components/product-list.component'
 import { HomeFilterComponent } from '../../components/homeFilter'
-import { SkeletonProductComponent } from '../../components/loadingSkeleton'
 import { PopupComponent } from '../../components/popup'
+import { SkeletonProductComponent } from '../../components/loading'
 
 function HomePage(): JSX.Element {
   const payload = {
