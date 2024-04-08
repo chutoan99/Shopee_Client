@@ -2,7 +2,7 @@
 import { NavLink } from 'react-router-dom'
 import { ISearchSuggest } from '../interfaces'
 //? APPS
-interface SuggestListModel {
+type SuggestListModel = {
   data: ISearchSuggest[]
 }
 

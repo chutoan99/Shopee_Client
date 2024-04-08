@@ -2,7 +2,7 @@
 import { NavLink } from 'react-router-dom'
 import { INotify } from '../interfaces'
 //? APPS
-interface HeaderNotifyModel {
+type HeaderNotifyModel = {
   data: INotify[]
 }
 

@@ -12,7 +12,7 @@ import { useCreateOrderMutation } from '../../modules/order/hooks'
 import { ALERT_INVALID_ADDRESS_ORDER, ALERT_INVALID_PHONE_ORDER } from '../../constants/msg'
 import { Loading2Component } from '../../components/loading'
 
-interface payload {
+type payload = {
   item_groups_id: string
   amount: string
   option: string

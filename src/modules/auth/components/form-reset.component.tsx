@@ -8,7 +8,7 @@ import { LoadingComponent } from '../../../components/loading'
 import { LoginFaceBookComponent } from '../../../components/loginFaceBook'
 import { LoginGoogleComponent } from '../../../components/loginGoogle'
 
-function ResetFormComponent(): JSX.Element {
+const ResetFormComponent = memo((): JSX.Element => {
   const params = useParams()
   const [passWord, SetPassWord] = useState('')
   const [validationMsg, setValidationMsg] = useState<any>({})
@@ -96,5 +96,5 @@ function ResetFormComponent(): JSX.Element {
       </div>
     </>
   )
-}
-export default memo(ResetFormComponent)
+})
+export default ResetFormComponent

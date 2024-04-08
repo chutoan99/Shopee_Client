@@ -8,7 +8,7 @@ import { IOrder } from '../../order/interfaces'
 import { CreateComment } from '../services'
 import { LoadingComponent } from '../../../components/loading'
 
-interface RatingModel {
+type RatingModel = {
   isShow: boolean
   onCloseModel: any
   data: IOrder

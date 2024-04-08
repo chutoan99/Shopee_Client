@@ -8,10 +8,10 @@ import { useAppDispatch } from '../../../hooks/hooks'
 import { OtherActions } from '../../../redux/otherSlice'
 import { useCreateRoomMutation } from '../../room/hooks'
 
-interface ProductShopModel {
+type ProductShopModel = {
   data: IShopInterface
 }
-interface PayloadRoom {
+type PayloadRoom = {
   shopid: number
 }
 function ProductShopComponent({ data }: ProductShopModel): JSX.Element {

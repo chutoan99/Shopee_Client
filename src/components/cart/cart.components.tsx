@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom'
 import { ICart } from '../../modules/cart/interfaces'
 import { formatPrice } from '../../utils/fomarPrice'
 
-interface HeaderCartModel {
+type HeaderCartModel = {
   totalCart: number
   data: [ICart[]]
   loading: boolean

@@ -6,7 +6,7 @@ import { IOrder } from '../../modules/order/interfaces'
 import { formatPrice } from '../../utils/fomarPrice'
 import { useGetOrdersQuery, useSearchOrdersQuery, useSearchTypeOrdersQuery } from '../../modules/order/hooks'
 import { LoadingComponent } from '../../components/loading'
-interface Tabs {
+type Tabs = {
   is_all: number
   is_cancelled: number
   is_delivering: number

@@ -9,7 +9,7 @@ import { LoadingComponent } from '../../../components/loading'
 import { LoginFaceBookComponent } from '../../../components/loginFaceBook'
 import { LoginGoogleComponent } from '../../../components/loginGoogle'
 
-function RegisterFormComponent(): JSX.Element {
+const RegisterFormComponent = memo((): JSX.Element => {
   const [validationMsg, setValidationMsg] = useState<any>({})
   const [nameRegister, setNameRegister] = useState('')
   const [emailRegister, setEmailRegister] = useState('')
@@ -123,5 +123,6 @@ function RegisterFormComponent(): JSX.Element {
       </div>
     </>
   )
-}
-export default memo(RegisterFormComponent)
+})
+
+export default RegisterFormComponent

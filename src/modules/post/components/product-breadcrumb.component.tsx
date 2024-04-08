@@ -2,7 +2,7 @@
 import { memo } from 'react'
 import { NavLink } from 'react-router-dom'
 
-interface ProductBreadcrumbModel {
+type ProductBreadcrumbModel = {
   data: any
 }
 

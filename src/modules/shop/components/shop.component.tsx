@@ -3,7 +3,7 @@ import { memo } from 'react'
 import { NavLink } from 'react-router-dom'
 //? APPS
 import { IShopInterface } from '../interfaces'
-interface ProductShop {
+type ProductShop = {
   data: IShopInterface
 }
 
