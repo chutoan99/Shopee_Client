@@ -2,9 +2,9 @@
 import { memo } from 'react'
 import { useParams } from 'react-router-dom'
 //? APPS
-import { useGetItemsShopQuery, useGetShopIdQuery } from '../../modules/shop/hook'
-import { ShopPageInfoComponent } from '../../modules/shop/component'
-import ProductListComponent from '../../modules/post/component/product-list.component'
+import { useGetItemsShopQuery, useGetShopIdQuery } from '../../modules/shop/hooks'
+import { ShopPageInfoComponent } from '../../modules/shop/components'
+import ProductListComponent from '../../modules/post/components/product-list.component'
 import { Loading2Component } from '../../components/loading'
 
 function ShopPage(): JSX.Element {

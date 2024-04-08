@@ -4,7 +4,7 @@ import { Toaster } from 'react-hot-toast'
 import { RootState } from '../../app/store'
 import { useAppSelector } from '../../hooks/hooks'
 import useAuth from '../../hooks/userAuth'
-import { ChatComponent } from '../../modules/room/component'
+import { ChatComponent } from '../../modules/room/components'
 import { HeaderComponent } from '../../components/header'
 import { FooterComponent } from '../../components/footer'
 

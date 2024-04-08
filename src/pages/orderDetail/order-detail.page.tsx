@@ -2,11 +2,11 @@
 import { memo, useEffect, useState } from 'react'
 import { NavLink, useParams } from 'react-router-dom'
 //? APPS
-import { IOrder } from '../../modules/order/interface'
+import { IOrder } from '../../modules/order/interfaces'
 import { formatPrice } from '../../utils/fomarPrice'
 import { formatDate } from '../../utils/formatTimestamp'
-import { useGetOrderQuery } from '../../modules/order/hook'
-import { ModelRattingComponent } from '../../modules/comment/component'
+import { useGetOrderQuery } from '../../modules/order/hooks'
+import { ModelRattingComponent } from '../../modules/comment/components'
 import { LoadingComponent } from '../../components/loading'
 
 function OrderDetailPage(): JSX.Element {

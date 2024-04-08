@@ -3,12 +3,12 @@ import { toast } from 'react-hot-toast'
 import { useState, memo, useEffect } from 'react'
 import { NavLink, useNavigate } from 'react-router-dom'
 //? APPS
-import { ICart } from '../../modules/cart/interface'
+import { ICart } from '../../modules/cart/interfaces'
 import { AppDispatch } from '../../app/store'
 import { useAppDispatch } from '../../hooks/hooks'
 import { formatPrice } from '../../utils/fomarPrice'
 import { buyCartActions } from '../../redux/buyCart.slice'
-import { useDeleteCartMutation, useGetCartsQuery, useUpdateCartMutation } from '../../modules/cart/hook'
+import { useDeleteCartMutation, useGetCartsQuery, useUpdateCartMutation } from '../../modules/cart/hooks'
 import { LoadingComponent } from '../../components/loading'
 
 function CartPage(): JSX.Element {

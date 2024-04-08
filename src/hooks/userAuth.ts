@@ -3,8 +3,8 @@ import { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { UserActions } from '../redux/userSlice';
 import { useNavigate } from 'react-router-dom';
-import { GetCurrentUser } from '../modules/user/service';
-import { User } from '../modules/user/interface';
+import { GetCurrentUser } from '../modules/user/services';
+import { User } from '../modules/user/interfaces';
 
 const useAuth = () => {
   const navigate = useNavigate();

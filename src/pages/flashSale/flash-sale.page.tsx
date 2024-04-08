@@ -3,7 +3,7 @@ import { memo } from 'react';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 //? APPS
 import { NavLink, useNavigate } from 'react-router-dom';
-import { useGetFlashSaleQuery } from '../../modules/flashSale/hook';
+import { useGetFlashSaleQuery } from '../../modules/flashSale/hooks';
 
 function FlashSalePage(): JSX.Element {
   const { data } = useGetFlashSaleQuery();

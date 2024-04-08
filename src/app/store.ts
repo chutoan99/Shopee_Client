@@ -6,22 +6,22 @@ import userReducer from '../redux/userSlice';
 import postReducer from '../redux/post.slice';
 import buyCartReducer from '../redux/buyCart.slice';
 //? REDUX TOOLKIT RTK
-import { CartApi } from '../modules/cart/hook';
-import { ShopApi } from '../modules/shop/hook';
-import { RoomApi } from '../modules/room/hook';
-import { UserApi } from '../modules/user/hook';
-import { OrderApi } from '../modules/order/hook';
-import { ProductApi } from '../modules/post/hook';
-import { BannerApi } from '../modules/banner/hook';
-import { NotifyApi } from '../modules/notify/hook';
-import { CommentApi } from '../modules/comment/hook';
-import { ShopMallApi } from '../modules/shopMall/hook';
-import { FlashSaleApi } from '../modules/flashSale/hook';
-import { BatchListApi } from '../modules/batchList/hook';
-import { CategoryTreeApi } from '../modules/category/hook';
-import { TopProductApi } from '../modules/topProduct/hook';
-import { SearchHistoryApi } from '../modules/searchHistory/hook';
-import { SearchSuggestApi } from '../modules/searchSuggest/hook';
+import { CartApi } from '../modules/cart/hooks';
+import { ShopApi } from '../modules/shop/hooks';
+import { RoomApi } from '../modules/room/hooks';
+import { UserApi } from '../modules/user/hooks';
+import { OrderApi } from '../modules/order/hooks';
+import { ProductApi } from '../modules/post/hooks';
+import { BannerApi } from '../modules/banner/hooks';
+import { NotifyApi } from '../modules/notify/hooks';
+import { CommentApi } from '../modules/comment/hooks';
+import { ShopMallApi } from '../modules/shopMall/hooks';
+import { FlashSaleApi } from '../modules/flashSale/hooks';
+import { BatchListApi } from '../modules/batchList/hooks';
+import { CategoryTreeApi } from '../modules/category/hooks';
+import { TopProductApi } from '../modules/topProduct/hooks';
+import { SearchHistoryApi } from '../modules/searchHistory/hooks';
+import { SearchSuggestApi } from '../modules/searchSuggest/hooks';
 const RootReducer = {
   others: otherReducer,
   cart: cartReducer,

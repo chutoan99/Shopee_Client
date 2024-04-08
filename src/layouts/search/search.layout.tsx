@@ -3,7 +3,7 @@ import { Toaster } from 'react-hot-toast'
 import { RootState } from '../../app/store'
 import useAuth from '../../hooks/userAuth'
 import { useAppSelector } from '../../hooks/hooks'
-import { ChatComponent } from '../../modules/room/component'
+import { ChatComponent } from '../../modules/room/components'
 import { HeaderComponent } from '../../components/header'
 import { FooterComponent } from '../../components/footer'
 

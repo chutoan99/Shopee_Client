@@ -2,9 +2,9 @@
 import { Link, NavLink } from 'react-router-dom'
 import { memo, useEffect, useState } from 'react'
 //? APPS
-import { IOrder } from '../../modules/order/interface'
+import { IOrder } from '../../modules/order/interfaces'
 import { formatPrice } from '../../utils/fomarPrice'
-import { useGetOrdersQuery, useSearchOrdersQuery, useSearchTypeOrdersQuery } from '../../modules/order/hook'
+import { useGetOrdersQuery, useSearchOrdersQuery, useSearchTypeOrdersQuery } from '../../modules/order/hooks'
 import { LoadingComponent } from '../../components/loading'
 interface Tabs {
   is_all: number

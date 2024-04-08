@@ -1,7 +1,7 @@
 //? LIBRARY
 import { NavLink } from 'react-router-dom'
 //? APPS
-import { ICart } from '../../modules/cart/interface'
+import { ICart } from '../../modules/cart/interfaces'
 import { formatPrice } from '../../utils/fomarPrice'
 
 interface HeaderCartModel {

@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { Cart } from '../modules/cart/interface';
+import { Cart } from '../modules/cart/interfaces';
 
 interface BuyCartState {
   success: boolean;

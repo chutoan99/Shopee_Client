@@ -1,4 +1,4 @@
-import { IRooms } from '../../modules/room/interface'
+import { IRooms } from '../../modules/room/interfaces'
 interface interfaceItemChat {
   data: IRooms[] | []
   des: string

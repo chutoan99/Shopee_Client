@@ -1,6 +1,6 @@
 //? LIBRARY
 import { memo } from 'react'
-import { ResetFormComponent } from '../../modules/auth/component'
+import { ResetFormComponent } from '../../modules/auth/components'
 
 function ResetPassWordPage(): JSX.Element {
   return <ResetFormComponent />

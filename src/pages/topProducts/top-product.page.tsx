@@ -2,8 +2,8 @@
 import { NavLink } from 'react-router-dom'
 import { memo, useState } from 'react'
 //? APPS
-import { useGetProductsQuery } from '../../modules/post/hook'
-import ProductListComponent from '../../modules/post/component/product-list.component'
+import { useGetProductsQuery } from '../../modules/post/hooks'
+import ProductListComponent from '../../modules/post/components/product-list.component'
 import { LoadingComponent } from '../../components/loading'
 import { PaginationComponent } from '../../components/pagination'
 

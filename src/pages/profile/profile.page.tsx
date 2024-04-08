@@ -2,12 +2,12 @@
 import { useState, memo, useEffect } from 'react'
 import { DatePicker } from 'react-rainbow-components'
 //? APPS
-import { IUser } from '../../modules/user/interface'
+import { IUser } from '../../modules/user/interfaces'
 import { toast } from 'react-hot-toast'
-import { UpdateUser } from '../../modules/user/service'
-import { GetALLProvince, GetAllDistrictWithProvinceCode, GetAllWardWithDistrictCode } from '../../modules/province/service'
+import { UpdateUser } from '../../modules/user/services'
+import { GetALLProvince, GetAllDistrictWithProvinceCode, GetAllWardWithDistrictCode } from '../../modules/province/services'
 import { ALERT_INVALID_ADDRESS, ALERT_INVALID_AVATAR, ALERT_INVALID_PHONE, ALERT_UPDATE_USER_SUCCESS } from '../../constants/msg'
-import { useGetUserCurrentQuery } from '../../modules/user/hook'
+import { useGetUserCurrentQuery } from '../../modules/user/hooks'
 import { Loading2Component, LoadingComponent } from '../../components/loading'
 
 type Province = {

@@ -2,9 +2,9 @@
 import { memo, useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 //? APPS
-import { useSearchProductQuery } from '../../modules/post/hook'
-import CategoryFilterComponent from '../../modules/category/component/category-filter.component'
-import ProductListComponent from '../../modules/post/component/product-list.component'
+import { useSearchProductQuery } from '../../modules/post/hooks'
+import CategoryFilterComponent from '../../modules/category/components/category-filter.component'
+import ProductListComponent from '../../modules/post/components/product-list.component'
 import { LoadingComponent } from '../../components/loading'
 import { SearchEmptyComponent } from '../../components/searchEmpty'
 import { Pagination } from 'react-rainbow-components'

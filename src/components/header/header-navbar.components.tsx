@@ -6,10 +6,10 @@ import { Link, useNavigate, NavLink } from 'react-router-dom'
 import { UserActions } from '../../redux/userSlice'
 import { AppDispatch, RootState } from '../../app/store'
 import { ALERT_LOGOUT_SUCCESS } from '../../constants/msg'
-import { ApiLogout } from '../../modules/auth/service'
+import { ApiLogout } from '../../modules/auth/services'
 import { useAppDispatch, useAppSelector } from '../../hooks/hooks'
-import { useGetNotifyQuery } from '../../modules/notify/hook'
-import { HeaderNotifyComponent } from '../../modules/notify/component'
+import { useGetNotifyQuery } from '../../modules/notify/hooks'
+import { HeaderNotifyComponent } from '../../modules/notify/components'
 import { LoadingComponent } from '../loading'
 
 function HeaderNavbarComponent(): JSX.Element {

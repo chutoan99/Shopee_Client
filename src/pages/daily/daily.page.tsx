@@ -3,8 +3,8 @@
 import { memo, useState } from 'react'
 //? APPS
 
-import { useGetProductsQuery } from '../../modules/post/hook'
-import ProductListComponent from '../../modules/post/component/product-list.component'
+import { useGetProductsQuery } from '../../modules/post/hooks'
+import ProductListComponent from '../../modules/post/components/product-list.component'
 import { PaginationComponent } from '../../components/pagination'
 import { LoadingComponent } from '../../components/loading'
 

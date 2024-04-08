@@ -1,7 +1,7 @@
 //? LIBRARY
 import { memo } from 'react'
-import SearchHistoryComponent from '../../modules/searchHistory/component/search-history.component'
 import { HeaderNavbarComponent } from '.'
+import SearchHistoryComponent from '../../modules/searchHistory/components/search-history.component'
 //? APPS
 
 function HeaderComponent(): JSX.Element {
