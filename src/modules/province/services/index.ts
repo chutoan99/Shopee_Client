@@ -1,1 +1,1 @@
-export * from "./province.service"
+export * from './province.service'

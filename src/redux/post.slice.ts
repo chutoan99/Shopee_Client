@@ -3,32 +3,32 @@ import { createSlice } from '@reduxjs/toolkit'
 import { IPostSimple } from '../modules/post/interfaces'
 
 type postState = {
-  isSuccess: boolean
-  isLoading: boolean
-  data: IPostSimple[]
-  error: boolean
-  TOTAl_PAGE: number
+	isSuccess: boolean
+	isLoading: boolean
+	data: IPostSimple[]
+	error: boolean
+	TOTAl_PAGE: number
 }
 const initialState: postState = {
-  isSuccess: false,
-  isLoading: false,
-  data: [],
-  error: false,
-  TOTAl_PAGE: 0
+	isSuccess: false,
+	isLoading: false,
+	data: [],
+	error: false,
+	TOTAl_PAGE: 0
 }
 
 const postSlice = createSlice({
-  name: 'posts',
-  initialState,
-  reducers: {
-    fetchPosts: (state: any, action: any) => {
-      state.success = true
-      state.isSuccess = true
-      state.isLoading = false
-      state.data = action.payload?.response
-      state.TOTAl_PAGE = action.payload?.totalPage
-    }
-  }
+	name: 'posts',
+	initialState,
+	reducers: {
+		fetchPosts: (state: any, action: any) => {
+			state.success = true
+			state.isSuccess = true
+			state.isLoading = false
+			state.data = action.payload?.response
+			state.TOTAl_PAGE = action.payload?.totalPage
+		}
+	}
 })
 export const postActions = postSlice.actions
 export default postSlice.reducer

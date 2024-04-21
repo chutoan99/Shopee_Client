@@ -1,1 +1,1 @@
-export * from './batch-list.hook';
+export * from './batch-list.hook'

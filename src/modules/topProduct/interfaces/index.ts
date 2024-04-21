@@ -1,1 +1,1 @@
-export * from "./top-product.interface"
+export * from './top-product.interface'

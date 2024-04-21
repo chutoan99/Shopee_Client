@@ -1,1 +1,1 @@
-export * from "./notify.interface"
+export * from './notify.interface'

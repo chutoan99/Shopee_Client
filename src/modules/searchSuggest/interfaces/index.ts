@@ -1,1 +1,1 @@
-export * from "./search-suggest.interface"
+export * from './search-suggest.interface'

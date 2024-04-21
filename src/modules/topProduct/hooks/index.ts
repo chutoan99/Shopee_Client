@@ -1,1 +1,1 @@
-export * from "./top-product.hook"
+export * from './top-product.hook'

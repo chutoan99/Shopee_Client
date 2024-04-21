@@ -1,1 +1,1 @@
-export * from "./notify.hook"
+export * from './notify.hook'

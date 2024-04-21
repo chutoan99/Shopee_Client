@@ -1,1 +1,1 @@
-export { default as HeaderSearchHistory } from './search-history.component';
+export { default as HeaderSearchHistory } from './search-history.component'

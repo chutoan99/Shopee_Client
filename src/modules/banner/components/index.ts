@@ -1,1 +1,1 @@
-export { default as BannerComponent } from "./banner.component"
+export { default as BannerComponent } from './banner.component'

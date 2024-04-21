@@ -1,1 +1,1 @@
-export * from './banner.hook';
+export * from './banner.hook'

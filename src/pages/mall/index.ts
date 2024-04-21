@@ -1,1 +1,1 @@
-export { default as MallPage } from './mall.page';
+export { default as MallPage } from './mall.page'

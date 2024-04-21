@@ -1,1 +1,1 @@
-export * from './banner.interface';
+export * from './banner.interface'

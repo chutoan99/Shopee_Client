@@ -1,1 +1,1 @@
-export * from './comment.hook';
+export * from './comment.hook'

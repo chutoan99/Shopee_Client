@@ -1,1 +1,1 @@
-export * from "./shop-mall.interface"
+export * from './shop-mall.interface'

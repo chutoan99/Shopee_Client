@@ -1,1 +1,1 @@
-export * from "./room.hook"
+export * from './room.hook'

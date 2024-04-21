@@ -1,1 +1,1 @@
-export * from './like.interface';
+export * from './like.interface'

@@ -1,1 +1,1 @@
-export * from "./search-history.interface"
+export * from './search-history.interface'
