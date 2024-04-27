@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
-import { IPostSimpleResponse } from '../interfaces'
+import { IPostIdResponse, IPostSimpleResponse, IProductDetail } from '../interfaces'
 
 export const ProductApi = createApi({
 	reducerPath: 'Products',
@@ -8,13 +8,17 @@ export const ProductApi = createApi({
 		getProducts: build.query<IPostSimpleResponse, { limit: number; page: number }>({
 			query: ({ limit, page }) => `post?limit=${limit}&page=${page}`
 		}),
-		getProduct: build.query<any, any>({
+
+		
+		getProduct: build.query<IPostIdResponse, any>({
 			query: (params) => `/post/${params.itemid}`
 		}),
+		
 		searchProduct: build.query<IPostSimpleResponse, any>({
 			query: (payload: any) =>
 				`post/search?limit=${payload.limit}&page=${payload.page}&name=${payload.params?.search}`
 		}),
+		
 		searchCategories: build.query<IPostSimpleResponse, any>({
 			query: (payload: any) => {
 				let encodedString = encodeURIComponent(payload.params.display_name)

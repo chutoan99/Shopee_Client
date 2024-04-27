@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom'
 //? APPS
 import { useGetItemsShopQuery, useGetShopIdQuery } from '../../modules/shop/hooks'
 import { ShopPageInfoComponent } from '../../modules/shop/components'
-import ProductListComponent from '../../modules/post/components/product-list.component'
+import { ProductListComponent } from '../../modules/post/components'
 import { Loading2Component } from '../../components/loading'
 
 function ShopPage(): JSX.Element {

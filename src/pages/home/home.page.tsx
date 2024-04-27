@@ -3,16 +3,16 @@ import { memo } from 'react'
 import { NavLink } from 'react-router-dom'
 //? APPS
 import { useGetProductsQuery } from '../../modules/post/hooks'
-import BannerComponent from '../../modules/banner/components/banner.component'
-import BatchListComponent from '../../modules/batchList/components/batch-list.component'
-import CategoryComponent from '../../modules/category/components/category.component'
-import { FlashSaleComponent } from '../../modules/flashSale/components'
-import { ShopMallComponent } from '../../modules/shopMall/components'
-import { TopProductComponent } from '../../modules/topProduct/components'
-import ProductListComponent from '../../modules/post/components/product-list.component'
 import { HomeFilterComponent } from '../../components/homeFilter'
 import { PopupComponent } from '../../components/popup'
 import { SkeletonProductComponent } from '../../components/loading'
+import { BannerComponent } from '../../modules/banner/components'
+import { BatchListComponent } from '../../modules/batchList/components'
+import { CategoryComponent } from '../../modules/category/components'
+import { FlashSaleComponent } from '../../modules/flashSale/components'
+import { ShopMallComponent } from '../../modules/shopMall/components'
+import { TopProductComponent } from '../../modules/topProduct/components'
+import { ProductListComponent } from '../../modules/post/components'
 
 function HomePage(): JSX.Element {
 	const payload = {

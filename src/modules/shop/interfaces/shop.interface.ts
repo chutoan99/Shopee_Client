@@ -10,10 +10,10 @@ export interface IItemsShopResponse {
 export interface IShopIdResponse {
 	err: number
 	msg: string
-	response: IShopInterface
+	response: IShop
 }
 
-export interface IShopInterface {
+export interface IShop {
 	id: number
 	shopid: number
 	userid: number
@@ -31,10 +31,9 @@ export interface IShopInterface {
 	username: string
 	portrait: string
 	response_time: number
+	last_active_time: number
 	description: string
 	followed: boolean
-	ctime: Date
-	mtime: Date
 	response_rate: number
 	country: string
 	createdAt: Date

@@ -1,15 +1,15 @@
 //? LIBRARY
 import { memo } from 'react'
-import { NavLink, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 //? APPS
-import { IShopInterface } from '../../shop/interfaces'
 import { AppDispatch } from '../../../app/store'
 import { useAppDispatch } from '../../../hooks/hooks'
 import { OtherActions } from '../../../redux/otherSlice'
 import { useCreateRoomMutation } from '../../room/hooks'
+import { IShop } from '../../shop/interfaces'
 
 type ProductShopModel = {
-	data: IShopInterface
+	data: IShop
 }
 type PayloadRoom = {
 	shopid: number
@@ -21,7 +21,7 @@ function ProductShopComponent({ data }: ProductShopModel): JSX.Element {
 
 	const onChatWithShop = async () => {
 		const payload: PayloadRoom = {
-			shopid: data.shopid
+			shopid: data?.id
 		}
 		dispatch(OtherActions.ToggleIsChat())
 		createRoom(payload).unwrap()
@@ -33,7 +33,7 @@ function ProductShopComponent({ data }: ProductShopModel): JSX.Element {
 				<div className='flex shadow-[rgba(0,0,0,0.05)_0px_1px_1px_0px] overflow-hidden justify-between items-center mt-[0.9375rem] p-[1.5625rem] rounded-sm bg-[#fff]'>
 					<div className='box-border flex max-w-[27.5rem] pr-[1.5625rem] border-r-[rgba(0,0,0,0.05)] border-r border-solid'>
 						<div
-							onClick={() => navigate(`/shop/${data?.shopid}`)}
+							onClick={() => navigate(`/shop/${data?.id}`)}
 							className='shrink-0 relative overflow-visible mr-5'>
 							<div className='inline-block relative border box-border w-[5rem] h-[5rem] rounded-[50%] border-solid border-[rgba(0,0,0,0.09)]'>
 								<div className=' w-full relative overflow-hidden pt-[100%] rounded-[50%]'></div>
@@ -72,7 +72,7 @@ function ProductShopComponent({ data }: ProductShopModel): JSX.Element {
 									</span>
 								</button>
 								<button
-									onClick={() => navigate(`/shop/${data?.shopid}`)}
+									onClick={() => navigate(`/shop/${data?.id}`)}
 									className='flex-row capitalize h-[34px] min-w-[60px] max-w-[190px] inline-flex text-[#555] shadow-[0_1px_1px_0_rgba(0,0,0,0.03)] relative overflow-visible text-ellipsis text-sm box-border items-center justify-center px-[15px] py-0 rounded-sm hover:!bg-[rgba(0,0,0,0.02)] hover:border hover:border-solid hover:border-[rgba(0,0,0,0.09)]'
 									style={{
 										border: '1px solid #ccc',
@@ -89,7 +89,7 @@ function ProductShopComponent({ data }: ProductShopModel): JSX.Element {
 										className='inline-block w-[1em] h-[1em] fill-current relative shrink-0 mr-[5px]'>
 										<path d='m13 1.9c-.2-.5-.8-1-1.4-1h-8.4c-.6.1-1.2.5-1.4 1l-1.4 4.3c0 .8.3 1.6.9 2.1v4.8c0 .6.5 1 1.1 1h10.2c.6 0 1.1-.5 1.1-1v-4.6c.6-.4.9-1.2.9-2.3zm-11.4 3.4 1-3c .1-.2.4-.4.6-.4h8.3c.3 0 .5.2.6.4l1 3zm .6 3.5h.4c.7 0 1.4-.3 1.8-.8.4.5.9.8 1.5.8.7 0 1.3-.5 1.5-.8.2.3.8.8 1.5.8.6 0 1.1-.3 1.5-.8.4.5 1.1.8 1.7.8h.4v3.9c0 .1 0 .2-.1.3s-.2.1-.3.1h-9.5c-.1 0-.2 0-.3-.1s-.1-.2-.1-.3zm8.8-1.7h-1v .1s0 .3-.2.6c-.2.1-.5.2-.9.2-.3 0-.6-.1-.8-.3-.2-.3-.2-.6-.2-.6v-.1h-1v .1s0 .3-.2.5c-.2.3-.5.4-.8.4-1 0-1-.8-1-.8h-1c0 .8-.7.8-1.3.8s-1.1-1-1.2-1.7h12.1c0 .2-.1.9-.5 1.4-.2.2-.5.3-.8.3-1.2 0-1.2-.8-1.2-.9z' />
 									</svg>
-									<span className='whitespace-nowrap overflow-hidden text-ellipsis'>xem shop</span>
+									<span className='whitespace-nowrap overflow-hidden text-ellipsis'>Xem shop</span>
 								</button>
 							</div>
 						</div>
@@ -102,19 +102,19 @@ function ProductShopComponent({ data }: ProductShopModel): JSX.Element {
 							</span>
 						</div>
 						<div className='cursor-default flex justify-between relative overflow-visible'>
-							<label className='text-[rgba(0,0,0,0.4)]'>tỉ lệ phản hồi</label>
+							<label className='text-[rgba(0,0,0,0.4)]'>Tỉ lệ phản hồi</label>
 							<span className='text-[#ee4d2d] whitespace-nowrap text-right'>{data?.response_rate}%</span>
 						</div>
 						<div className='cursor-default flex justify-between relative overflow-visible'>
-							<label className='text-[rgba(0,0,0,0.4)]'>tham gia</label>
+							<label className='text-[rgba(0,0,0,0.4)]'>Tham gia</label>
 							<span className='text-[#ee4d2d] whitespace-nowrap text-right'>6 năm trước</span>
 						</div>
-						<NavLink className='cursor-default flex justify-between relative overflow-visible' to='/'>
+						<div className='cursor-default flex justify-between relative overflow-visible'>
 							<label className='text-[rgba(0,0,0,0.4)]'>Sản phẩm</label>
 							<span className='text-[#ee4d2d] whitespace-nowrap text-right'>{data?.item_count}</span>
-						</NavLink>
+						</div>
 						<div className='cursor-default flex justify-between relative overflow-visible'>
-							<label className='text-[rgba(0,0,0,0.4)]'>thời gian phản hồi</label>
+							<label className='text-[rgba(0,0,0,0.4)]'>Thời gian phản hồi</label>
 							<span className='text-[#ee4d2d] whitespace-nowrap text-right'>{data?.response_time}</span>
 						</div>
 						<div className='cursor-default flex justify-between relative overflow-visible'>

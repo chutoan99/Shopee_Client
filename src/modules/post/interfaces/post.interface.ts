@@ -1,3 +1,5 @@
+import { IShop } from "../../shop/interfaces"
+
 export interface IPostSimpleResponse {
 	err: number
 	msg: string
@@ -66,19 +68,20 @@ export interface IProductDetail {
 	price_max_before_discount: number
 	shop_rating: number
 	liked: number
+	size_chart: string,
 	is_official_shop: number
 	is_service_by_shop: number
 	show_free_shipping: number
 	name_attributes?: null[] | null
 	value_attributes?: string[] | null
 	name_tierVariations: string
-	option_tierVariations?: string[] | null
-	images_tierVariations?: null[] | null
-	images?: string[] | null
+	option_tierVariations: string[]
+	images_tierVariations: string[]
+	images: string[]
 	is_active: number
 	createdAt?: null
 	updatedAt?: null
-	shop_info: ShopInfo | null
+	shop_info: IShop | null
 	voucher: Voucher | null
 	deep_discount_skin?: null
 	video?: null
@@ -97,30 +100,4 @@ interface Voucher {
 	id: number
 	label: string
 	voucher_code: string
-}
-
-interface ShopInfo {
-	id: number
-	name: string
-	cover: string
-	status: number
-	userid: number
-	country: string
-	deleteAt?: null
-	followed: number
-	portrait: string
-	username: string
-	createdAt: string
-	updatedAt: string
-	item_count: number
-	rating_bad: number
-	description: string
-	rating_good: number
-	rating_star: number
-	rating_normal: number
-	response_rate: number
-	shop_location: string
-	follower_count: number
-	is_official_shop: number
-	last_active_time: number
 }

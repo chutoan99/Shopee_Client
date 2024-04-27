@@ -12,12 +12,12 @@ import { generateStart } from '../../../utils/generateStart'
 import { useAppDispatch } from '../../../hooks/hooks'
 import { OtherActions } from '../../../redux/otherSlice'
 
-type HomeProducts = {
+type Props = {
 	items: IPostSimple[]
 	col: string
 	loading: boolean
 }
-function ProductListComponent({ items, col, loading }: HomeProducts): JSX.Element {
+function ProductListComponent({ items, col, loading }: Props): JSX.Element {
 	const dispatch: AppDispatch = useAppDispatch()
 	const [likes, setLikes] = useState<string[]>(items.map(() => 'fa-regular fa-heart'))
 	const changeLike = (index: number) => {

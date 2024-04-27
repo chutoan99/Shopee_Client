@@ -2,12 +2,12 @@
 import { memo } from 'react'
 import { NavLink } from 'react-router-dom'
 //? APPS
-import { IShopInterface } from '../interfaces'
-type ProductShop = {
-	data: IShopInterface
+import { IShop } from '../interfaces'
+type Props = {
+	data: IShop
 }
 
-function ShopPageInfoComponent({ data }: ProductShop): JSX.Element {
+function ShopPageInfoComponent({ data }: Props): JSX.Element {
 	return (
 		<div className='shadow-[rgba(0,0,0,0.05)_0px_1px_1px] mt-[120px] bg-[#fff] sm-gutter  pb-[30px]  p-[25px] flex justify-between response_shop-content'>
 			<div className='grid wide'>
@@ -121,7 +121,7 @@ function ShopPageInfoComponent({ data }: ProductShop): JSX.Element {
 								</svg>
 							</div>
 							<div className='inline-block capitalize'>
-								<div className='inline-block'>Sản phẩm:&nbsp;</div>
+								<div className='inline-block'>Sản phẩm:</div>
 								<div className='text-[#ee4d2d] inline-block'>{data?.item_count}</div>
 							</div>
 						</div>
@@ -202,7 +202,7 @@ function ShopPageInfoComponent({ data }: ProductShop): JSX.Element {
 								</svg>
 							</div>
 							<div className='inline-block capitalize'>
-								<div className='inline-block'>Đang Theo:&nbsp;</div>
+								<div className='inline-block'>Đang Theo:</div>
 								<div className='text-[#ee4d2d] inline-block'>{data?.follower_count}</div>
 							</div>
 						</div>
@@ -225,7 +225,7 @@ function ShopPageInfoComponent({ data }: ProductShop): JSX.Element {
 								</svg>
 							</div>
 							<div className='inline-block capitalize'>
-								<div className='inline-block'>đánh giá:&nbsp;</div>
+								<div className='inline-block'>Đánh giá:&nbsp;</div>
 								<div className='text-[#ee4d2d] inline-block'>
 									{data?.rating_bad + data?.rating_good + data?.rating_normal}
 								</div>
@@ -286,7 +286,7 @@ function ShopPageInfoComponent({ data }: ProductShop): JSX.Element {
 								</svg>
 							</div>
 							<div className='inline-block capitalize'>
-								<div className='inline-block'>tham gia:&nbsp;</div>
+								<div className='inline-block'>Tham gia:&nbsp;</div>
 								<div className='text-[#ee4d2d] inline-block'>6 năm trước</div>
 							</div>
 						</div>
