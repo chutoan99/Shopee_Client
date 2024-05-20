@@ -22,7 +22,9 @@ function ShopPageInfoComponent({ data }: Props): JSX.Element {
 						<div className='absolute bg-[rgba(0,0,0,0.6)] inset-0' />
 						<div className='absolute inset-[0.625rem_0.875rem_0.625rem_1.25rem]'>
 							<div className='flex'>
-								<NavLink className='relative block h-20 w-20 shrink-0' to=''>
+								<NavLink
+									className='relative block h-20 w-20 shrink-0'
+									to=''>
 									<div className='block cursor-pointer select-none h-20 w-20 box-border relative border rounded-[50%] border-solid border-[rgba(0,0,0,0.09)]'>
 										<div className='w-full relative bg-neutral-100 overflow-hidden pt-[100%] rounded-[50%]'>
 											<svg
@@ -122,7 +124,9 @@ function ShopPageInfoComponent({ data }: Props): JSX.Element {
 							</div>
 							<div className='inline-block capitalize'>
 								<div className='inline-block'>Sản phẩm:</div>
-								<div className='text-[#ee4d2d] inline-block'>{data?.item_count}</div>
+								<div className='text-[#ee4d2d] inline-block'>
+									{data?.item_count}
+								</div>
 							</div>
 						</div>
 						<div className='flex-[0_0_50%] overflow-hidden items-center flex px-0 py-[0.625rem]'>
@@ -135,7 +139,13 @@ function ShopPageInfoComponent({ data }: Props): JSX.Element {
 									y={0}
 									className='inline-block w-[1em] h-[1em] fill-current relative'>
 									<g>
-										<circle cx='5.5' cy={5} fill='none' r={4} strokeMiterlimit={10} />
+										<circle
+											cx='5.5'
+											cy={5}
+											fill='none'
+											r={4}
+											strokeMiterlimit={10}
+										/>
 										<path
 											d='m8.4 7.5c.7 0 1.1.7 1.1 1.6v4.9h-8v-4.9c0-.9.4-1.6 1.1-1.6'
 											fill='none'
@@ -159,8 +169,12 @@ function ShopPageInfoComponent({ data }: Props): JSX.Element {
 								</svg>
 							</div>
 							<div className='inline-block capitalize'>
-								<div className='inline-block'>Người theo dõi:&nbsp;</div>
-								<div className='text-[#ee4d2d] inline-block'>{data?.follower_count}</div>
+								<div className='inline-block'>
+									Người theo dõi:&nbsp;
+								</div>
+								<div className='text-[#ee4d2d] inline-block'>
+									{data?.follower_count}
+								</div>
 							</div>
 						</div>
 						<div className='flex-[0_0_50%] overflow-hidden items-center flex px-0 py-[0.625rem]'>
@@ -173,7 +187,13 @@ function ShopPageInfoComponent({ data }: Props): JSX.Element {
 									y={0}
 									className='inline-block w-[1em] h-[1em] fill-current relative'>
 									<g>
-										<circle cx={7} cy='4.5' fill='none' r='3.8' strokeMiterlimit={10} />
+										<circle
+											cx={7}
+											cy='4.5'
+											fill='none'
+											r='3.8'
+											strokeMiterlimit={10}
+										/>
 										<line
 											fill='none'
 											strokeLinecap='round'
@@ -203,7 +223,9 @@ function ShopPageInfoComponent({ data }: Props): JSX.Element {
 							</div>
 							<div className='inline-block capitalize'>
 								<div className='inline-block'>Đang Theo:</div>
-								<div className='text-[#ee4d2d] inline-block'>{data?.follower_count}</div>
+								<div className='text-[#ee4d2d] inline-block'>
+									{data?.follower_count}
+								</div>
 							</div>
 						</div>
 						<div className='flex-[0_0_50%] overflow-hidden items-center flex px-0 py-[0.625rem]'>
@@ -225,9 +247,13 @@ function ShopPageInfoComponent({ data }: Props): JSX.Element {
 								</svg>
 							</div>
 							<div className='inline-block capitalize'>
-								<div className='inline-block'>Đánh giá:&nbsp;</div>
+								<div className='inline-block'>
+									Đánh giá:&nbsp;
+								</div>
 								<div className='text-[#ee4d2d] inline-block'>
-									{data?.rating_bad + data?.rating_good + data?.rating_normal}
+									{data?.rating_bad +
+										data?.rating_good +
+										data?.rating_normal}
 								</div>
 							</div>
 						</div>
@@ -247,15 +273,34 @@ function ShopPageInfoComponent({ data }: Props): JSX.Element {
 											strokeLinejoin='round'
 											strokeMiterlimit={10}
 										/>
-										<circle cx={4} cy='5.8' r={1} stroke='none' />
-										<circle cx='7.5' cy='5.8' r={1} stroke='none' />
-										<circle cx={11} cy='5.8' r={1} stroke='none' />
+										<circle
+											cx={4}
+											cy='5.8'
+											r={1}
+											stroke='none'
+										/>
+										<circle
+											cx='7.5'
+											cy='5.8'
+											r={1}
+											stroke='none'
+										/>
+										<circle
+											cx={11}
+											cy='5.8'
+											r={1}
+											stroke='none'
+										/>
 									</g>
 								</svg>
 							</div>
 							<div className='inline-block capitalize'>
-								<div className='inline-block'>Tỉ lệ phản hồi Chat:&nbsp;</div>
-								<div className='text-[#ee4d2d] inline-block'>{data?.response_rate}%</div>
+								<div className='inline-block'>
+									Tỉ lệ phản hồi Chat:&nbsp;
+								</div>
+								<div className='text-[#ee4d2d] inline-block'>
+									{data?.response_rate}%
+								</div>
 							</div>
 						</div>
 						<div className='flex-[0_0_50%] overflow-hidden items-center flex px-0 py-[0.625rem]'>
@@ -268,7 +313,13 @@ function ShopPageInfoComponent({ data }: Props): JSX.Element {
 									y={0}
 									className='inline-block w-[1em] h-[1em] fill-current relative'>
 									<g>
-										<circle cx='6.8' cy='4.2' fill='none' r='3.8' strokeMiterlimit={10} />
+										<circle
+											cx='6.8'
+											cy='4.2'
+											fill='none'
+											r='3.8'
+											strokeMiterlimit={10}
+										/>
 										<polyline
 											fill='none'
 											points='9.2 12.5 11.2 14.5 14.2 11'
@@ -286,14 +337,21 @@ function ShopPageInfoComponent({ data }: Props): JSX.Element {
 								</svg>
 							</div>
 							<div className='inline-block capitalize'>
-								<div className='inline-block'>Tham gia:&nbsp;</div>
-								<div className='text-[#ee4d2d] inline-block'>6 năm trước</div>
+								<div className='inline-block'>
+									Tham gia:&nbsp;
+								</div>
+								<div className='text-[#ee4d2d] inline-block'>
+									6 năm trước
+								</div>
 							</div>
 						</div>
 						<div className='flex-[0_0_50%] overflow-hidden items-center flex px-0 py-[0.625rem]'>
 							<div className='inline-block box-border text-[0.9375rem] mx-2.5'>
 								<svg width={13} height={14}>
-									<g fill='currentColor' fillRule='nonzero' strokeWidth='0.4'>
+									<g
+										fill='currentColor'
+										fillRule='nonzero'
+										strokeWidth='0.4'>
 										<path d='M9.49.903h.453c.498 0 .903.404.903.903v4.993a.452.452 0 1 0 .904 0V1.806C11.75.808 10.94 0 9.944 0H9.49a.452.452 0 1 0 0 .903zM5.879 12.645H1.813a.903.903 0 0 1-.903-.902V1.806c0-.499.405-.903.903-.903h.452a.451.451 0 0 0 0-.903h-.452C.816 0 .007.808.007 1.806v9.936c0 .998.809 1.806 1.806 1.806h4.065a.452.452 0 0 0 0-.903z' />
 										<path d='M2.265 0H9.49a.451.451 0 1 1 0 .903H2.265a.452.452 0 0 1 0-.903zm.904 3.613H9.04a.452.452 0 1 1 0 .903H3.169a.452.452 0 1 1 0-.903zm0 2.71h3.613a.452.452 0 1 1 0 .904H3.169a.452.452 0 0 1 0-.904zm0 2.709h1.806a.452.452 0 1 1 0 .905H3.169a.452.452 0 0 1 0-.905zm6.322 4.065a2.258 2.258 0 1 0 0-4.515 2.258 2.258 0 0 0 0 4.515zm0 .903a3.161 3.161 0 1 1 0-6.323 3.161 3.161 0 0 1 0 6.323z' />
 										<path d='M7.575 12.117l3.193-3.194a.451.451 0 1 1 .638.639l-3.192 3.192a.451.451 0 0 1-.639-.637z' />
@@ -301,8 +359,12 @@ function ShopPageInfoComponent({ data }: Props): JSX.Element {
 								</svg>
 							</div>
 							<div className='inline-block capitalize'>
-								<div className='inline-block'>Tỉ lệ Shop hủy đơn:&nbsp;</div>
-								<div className='text-[#ee4d2d] inline-block'>12%</div>
+								<div className='inline-block'>
+									Tỉ lệ Shop hủy đơn:&nbsp;
+								</div>
+								<div className='text-[#ee4d2d] inline-block'>
+									12%
+								</div>
 							</div>
 						</div>
 					</div>

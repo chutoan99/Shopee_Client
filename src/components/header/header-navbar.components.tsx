@@ -16,8 +16,11 @@ function HeaderNavbarComponent(): JSX.Element {
 	const dispatch: AppDispatch = useAppDispatch()
 	const navigate = useNavigate()
 	const [totalNotify, setTotalNotify] = useState(0)
-	const { data: dataUser, isLogin } = useAppSelector((state: RootState) => state.user)
-	const { data: dataNotify, isLoading: isLoadingNotification } = useGetNotifyQuery()
+	const { data: dataUser, isLogin } = useAppSelector(
+		(state: RootState) => state.user
+	)
+	const { data: dataNotify, isLoading: isLoadingNotification } =
+		useGetNotifyQuery()
 
 	const [loading, setLoading] = useState(false)
 	useEffect(() => {
@@ -55,29 +58,47 @@ function HeaderNavbarComponent(): JSX.Element {
 			<nav className='flex justify-between'>
 				<ul className='flex justify-items-center mt-1 mb-0 mx-0 pl-0'>
 					<li className='group relative min-h-[26px] no-underline text-sm text-[#fff] font-light items-center flex cursor-pointer mx-2 my-0'>
-						<span className='group-hover:text-[rgba(255,255,255,0.7)]' onClick={handleOpenNewTab}>
+						<span
+							className='group-hover:text-[rgba(255,255,255,0.7)]'
+							onClick={handleOpenNewTab}>
 							Kênh người bán
 						</span>
 						<div className="group-hover:block hidden w-[186px] bg-[#fff] absolute  animate-[fadeIn_ease-in_0.3s] z-[2] shadow-[0_1px_2px_rgb(0,0,0,0.1)] p-2 rounded-sm left-0 top-[120%] before:content-[''] before:absolute before:w-full before:h-5 before:block before:z-[2] before:left-0 before:-top-4">
-							<img className='w-full h-full' src='assets/Img/qr-code.png' alt='qR' />
+							<img
+								className='w-full h-full'
+								src='assets/Img/qr-code.png'
+								alt='qR'
+							/>
 							<div className='flex justify-between'>
 								<NavLink to='#' className='ml-[15px]'>
-									<img className='h-[15px]' src='/assets/Img/gg-play.png' alt='Google' />
+									<img
+										className='h-[15px]'
+										src='/assets/Img/gg-play.png'
+										alt='Google'
+									/>
 								</NavLink>
 								<NavLink to='#' className='mr-[11px]'>
-									<img className='h-[15px]' src='/assets/Img/app-store.png' alt='App store' />
+									<img
+										className='h-[15px]'
+										src='/assets/Img/app-store.png'
+										alt='App store'
+									/>
 								</NavLink>
 							</div>
 						</div>
 					</li>
 					<li className='relative min-h-[26px] no-underline text-sm font-light text-[#fff] items-center flex mx-2 my-0'>
 						<span className='cursor-text'> Kết nối</span>
-						<NavLink to='#' className='items-center flex text-[#fff] no-underline'>
+						<NavLink
+							to='#'
+							className='items-center flex text-[#fff] no-underline'>
 							<span className='text-lg mx-1 my-0'>
 								<i className='fa-brands fa-facebook-square'></i>
 							</span>
 						</NavLink>
-						<NavLink to='#' className='items-center flex text-[#fff] no-underline'>
+						<NavLink
+							to='#'
+							className='items-center flex text-[#fff] no-underline'>
 							<span className='text-lg mx-1 my-0'>
 								<i className='fa-brands fa-instagram-square'></i>
 							</span>
@@ -99,12 +120,20 @@ function HeaderNavbarComponent(): JSX.Element {
 							</span>
 							Thông báo
 						</NavLink>
-						{!isLoadingNotification && <HeaderNotifyComponent data={dataNotify?.response || []} />}
+						{!isLoadingNotification && (
+							<HeaderNotifyComponent
+								data={dataNotify?.response || []}
+							/>
+						)}
 					</li>
 
 					<li className='relative min-h-[26px] no-underline text-sm font-light text-[#fff] items-center flex mx-2 my-0'>
-						<NavLink to='#' className='no-underline text-sm font-light text-[#fff] items-center flex'>
-							<NavLink to='#' className='text-[#fff] no-underline items-center flex'>
+						<NavLink
+							to='#'
+							className='no-underline text-sm font-light text-[#fff] items-center flex'>
+							<NavLink
+								to='#'
+								className='text-[#fff] no-underline items-center flex'>
 								<span className='text-lg mx-1 my-0'>
 									<i className='fa-solid fa-circle-question'></i>
 								</span>
@@ -130,14 +159,22 @@ function HeaderNavbarComponent(): JSX.Element {
 										</span>
 									</NavLink>
 								</li>
-								<li style={{ borderTop: 'solid 1px rgb(0, 0, 0, 0.05)' }}>
+								<li
+									style={{
+										borderTop:
+											'solid 1px rgb(0, 0, 0, 0.05)'
+									}}>
 									<NavLink to='/user/purchase'>
 										<span className='no-underline text-[#333] text-[0.875rem] block !pl-4 py-2'>
 											Đơn mua
 										</span>
 									</NavLink>
 								</li>
-								<li style={{ borderTop: 'solid 1px rgb(0, 0, 0, 0.05)' }}>
+								<li
+									style={{
+										borderTop:
+											'solid 1px rgb(0, 0, 0, 0.05)'
+									}}>
 									<span
 										className='no-underline text-[#333] text-[0.875rem] block !pl-4 py-2'
 										onClick={onLogout}>

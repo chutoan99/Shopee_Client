@@ -10,9 +10,15 @@ type HeaderCartModel = {
 	loading: boolean
 }
 
-export default function HeaderCartComponent({ data, totalCart, loading }: HeaderCartModel): JSX.Element {
+export default function HeaderCartComponent({
+	data,
+	totalCart,
+	loading
+}: HeaderCartModel): JSX.Element {
 	return (
-		<NavLink to='/cart' className='justify-center flex cursor-pointer items-center flex-1 group'>
+		<NavLink
+			to='/cart'
+			className='justify-center flex cursor-pointer items-center flex-1 group'>
 			<div className='relative inline-block px-2 py-0'>
 				<span className='text-[#fff] text-2xl mt-1.5'>
 					<i className='fa-solid fa-cart-shopping'></i>
@@ -37,39 +43,63 @@ export default function HeaderCartComponent({ data, totalCart, loading }: Header
 							</header>
 							{!loading && (
 								<ul className='pl-0'>
-									{data?.map((item: ICart[], index: number) => {
-										return (
-											<div key={index}>
-												{item.map((ele: ICart, index: number) => (
-													<li className='flex' key={index}>
-														<img
-															className='w-[42px] h-[42px] border m-3 border-solid border-[#e8e8e8]'
-															src={ele?.item?.image}
-															alt='dataCart'
-														/>
-														<div className='w-full mr-3 mt-3'>
-															<div className='flex items-center justify-between gap-[20px]'>
-																<h5
-																	className='text-[0.813rem] font-normal text-[#333] overflow-hidden text-ellipsis mr-2.5 m-0'
-																	style={{
-																		display: '-webkit-box',
-																		WebkitLineClamp: 2,
-																		WebkitBoxOrient: 'vertical'
-																	}}>
-																	{ele?.item?.name}
-																</h5>
-																<div>
-																	<span className='text-sm text-[#ee4d2d] font-normal'>
-																		đ{formatPrice(ele?.item?.price)}
-																	</span>
+									{data?.map(
+										(item: ICart[], index: number) => {
+											return (
+												<div key={index}>
+													{item.map(
+														(
+															ele: ICart,
+															index: number
+														) => (
+															<li
+																className='flex'
+																key={index}>
+																<img
+																	className='w-[42px] h-[42px] border m-3 border-solid border-[#e8e8e8]'
+																	src={
+																		ele
+																			?.item
+																			?.image
+																	}
+																	alt='dataCart'
+																/>
+																<div className='w-full mr-3 mt-3'>
+																	<div className='flex items-center justify-between gap-[20px]'>
+																		<h5
+																			className='text-[0.813rem] font-normal text-[#333] overflow-hidden text-ellipsis mr-2.5 m-0'
+																			style={{
+																				display:
+																					'-webkit-box',
+																				WebkitLineClamp: 2,
+																				WebkitBoxOrient:
+																					'vertical'
+																			}}>
+																			{
+																				ele
+																					?.item
+																					?.name
+																			}
+																		</h5>
+																		<div>
+																			<span className='text-sm text-[#ee4d2d] font-normal'>
+																				đ
+																				{formatPrice(
+																					ele
+																						?.item
+																						?.price
+																				)}
+																			</span>
+																		</div>
+																	</div>
 																</div>
-															</div>
-														</div>
-													</li>
-												))}
-											</div>
-										)
-									})}
+															</li>
+														)
+													)}
+												</div>
+											)
+										}
+									)}
 								</ul>
 							)}
 							<footer className='text-[black] text-[0.938rem] text-center w-full px-2 py-2 flex items-center justify-between'>
@@ -96,7 +126,9 @@ export default function HeaderCartComponent({ data, totalCart, loading }: Header
 								alt='noCart'
 								className='flex justify-center max-w-full h-auto w-[54%] mx-auto border-none'
 							/>
-							<p className='flex justify-center text-xl text-[#333] my-3.5 mx-auto'>Chưa có sản phẩm</p>
+							<p className='flex justify-center text-xl text-[#333] my-3.5 mx-auto'>
+								Chưa có sản phẩm
+							</p>
 						</div>
 					)}
 				</div>

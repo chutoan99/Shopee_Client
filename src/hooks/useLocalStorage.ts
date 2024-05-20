@@ -5,7 +5,9 @@ const useLocalStorage = (key: any, defaultValue: any) => {
 		let currentValue
 
 		try {
-			currentValue = JSON.parse(localStorage.getItem(key) || String(defaultValue))
+			currentValue = JSON.parse(
+				localStorage.getItem(key) || String(defaultValue)
+			)
 		} catch (error) {
 			currentValue = defaultValue
 		}

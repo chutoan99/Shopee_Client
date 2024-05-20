@@ -5,7 +5,11 @@ import { DatePicker } from 'react-rainbow-components'
 import { IUser } from '../../modules/user/interfaces'
 import { toast } from 'react-hot-toast'
 import { UpdateUser } from '../../modules/user/services'
-import { FetchProvince, FetchDistrict, FetchWard } from '../../modules/province/services'
+import {
+	FetchProvince,
+	FetchDistrict,
+	FetchWard
+} from '../../modules/province/services'
 import {
 	ALERT_INVALID_ADDRESS,
 	ALERT_INVALID_AVATAR,
@@ -14,10 +18,18 @@ import {
 } from '../../constants/msg'
 import { useGetUserCurrentQuery } from '../../modules/user/hooks'
 import { Loading2Component, LoadingComponent } from '../../components/loading'
-import { District, Province, Ward } from '../../modules/province/interfaces/province.interface'
+import {
+	District,
+	Province,
+	Ward
+} from '../../modules/province/interfaces/province.interface'
 
 function ProfilePage(): JSX.Element {
-	const { data: dataUserCurrent, refetch, isLoading: isLoadingUser } = useGetUserCurrentQuery()
+	const {
+		data: dataUserCurrent,
+		refetch,
+		isLoading: isLoadingUser
+	} = useGetUserCurrentQuery()
 	//? HANDLE ADDRESS
 	const [payload, setPayload] = useState<IUser>()
 	const [province, setProvince] = useState([])
@@ -33,7 +45,9 @@ function ProfilePage(): JSX.Element {
 	const [addressDetail, setAddressDetail] = useState<string>(' ')
 	const [isUpdateAddress, setIsUpdateAddress] = useState(false)
 
-	const [imagePreview, setImagePreview] = useState<string | undefined | File>()
+	const [imagePreview, setImagePreview] = useState<
+		string | undefined | File
+	>()
 	const [isLoading, setIsLoading] = useState(false)
 
 	useEffect(() => {
@@ -82,7 +96,12 @@ function ProfilePage(): JSX.Element {
 
 	useEffect(() => {
 		if (!isUpdateAddress) return
-		const newAddress = [numberHouse, wardItem?.name, districtItem?.name, provinceItem?.name]
+		const newAddress = [
+			numberHouse,
+			wardItem?.name,
+			districtItem?.name,
+			provinceItem?.name
+		]
 			.filter(Boolean)
 			.join(', ')
 		setAddressDetail(newAddress)
@@ -91,11 +110,15 @@ function ProfilePage(): JSX.Element {
 	useEffect(() => {
 		if (!isUpdateAddress) return
 		if (provinceCode) {
-			const data = province.find((item: any) => item.code === provinceCode)
+			const data = province.find(
+				(item: any) => item.code === provinceCode
+			)
 			if (data) setProvinceItem(data)
 		}
 		if (districtCode) {
-			const data = district.find((item: any) => item.code === districtCode)
+			const data = district.find(
+				(item: any) => item.code === districtCode
+			)
 			if (data) setDistrictItem(data)
 		}
 		if (wardCode) {
@@ -187,8 +210,16 @@ function ProfilePage(): JSX.Element {
 					<section
 						className='flex flex-col items-start gap-[15px] pb-[20px]'
 						style={{ borderBottom: '.0625rem solid #efefef' }}>
-						<span style={{ textTransform: 'capitalize', fontSize: '25px' }}>Hồ sơ của tôi</span>
-						<span>Quản lý thông tin hồ sơ để bảo mật tài khoản</span>
+						<span
+							style={{
+								textTransform: 'capitalize',
+								fontSize: '25px'
+							}}>
+							Hồ sơ của tôi
+						</span>
+						<span>
+							Quản lý thông tin hồ sơ để bảo mật tài khoản
+						</span>
 					</section>
 					<>
 						{isLoadingUser ? (
@@ -198,117 +229,181 @@ function ProfilePage(): JSX.Element {
 								<div className='flex-1 w-full h-full'>
 									<section className=''>
 										<div className='flex w-full justify-center items-center gap-[20px] pb-[30px]'>
-											<span className='w-[130px] text-[1.2rem] text-end'>Tên:</span>
-											<div className='flex items-center gap-[20px] w-full'>
-												<div className='flex items-center gap-[20px] h-full w-full'>
-													<input
-														placeholder={payload?.name}
-														onChange={(e) => {
-															setPayload((prev: any) => {
-																return {
-																	...prev,
-																	name: e.target.value
-																}
-															})
-														}}
-														disabled
-														className='w-full h-[2.5rem]  pl-[10px] rounded-[5px] outline-none'
-														type='text'
-														style={{ border: '1px solid #ccc' }}
-													/>
-												</div>
-											</div>
-										</div>
-
-										<div className='flex w-full justify-center items-center gap-[20px] pb-[30px]'>
-											<span className='w-[130px] text-[1.2rem] text-end'>Email:</span>
-											<div className='flex items-center gap-[20px] w-full'>
-												<div className='flex items-center gap-[20px] h-full w-full'>
-													<input
-														placeholder={payload?.email}
-														onChange={(e) => {
-															setPayload((prev: any) => {
-																return {
-																	...prev,
-																	email: e.target.value
-																}
-															})
-														}}
-														disabled
-														className='w-full h-[2.5rem] pl-[10px] rounded-[5px] outline-none'
-														type='text'
-														style={{ border: '1px solid #ccc' }}
-													/>
-												</div>
-											</div>
-										</div>
-
-										<div className='flex w-full justify-center items-center gap-[20px] pb-[30px]'>
-											<span className='w-[130px] text-[1.2rem] text-end'>Điện Thoại:</span>
+											<span className='w-[130px] text-[1.2rem] text-end'>
+												Tên:
+											</span>
 											<div className='flex items-center gap-[20px] w-full'>
 												<div className='flex items-center gap-[20px] h-full w-full'>
 													<input
 														placeholder={
-															payload?.phone !== undefined
-																? payload?.phone?.toString()
-																: undefined
+															payload?.name
 														}
 														onChange={(e) => {
-															setPayload((prev: any) => {
-																return {
-																	...prev,
-																	phone: e.target.value
+															setPayload(
+																(prev: any) => {
+																	return {
+																		...prev,
+																		name: e
+																			.target
+																			.value
+																	}
 																}
-															})
+															)
 														}}
-														className='w-full h-[2.5rem] pl-[10px] rounded-[5px] outline-none'
-														type='number'
-														style={{ border: '1px solid #ccc' }}
+														disabled
+														className='w-full h-[2.5rem]  pl-[10px] rounded-[5px] outline-none'
+														type='text'
+														style={{
+															border: '1px solid #ccc'
+														}}
 													/>
 												</div>
 											</div>
 										</div>
 
 										<div className='flex w-full justify-center items-center gap-[20px] pb-[30px]'>
-											<span className='w-[130px] text-[1.2rem] text-end'>Giới Tính:</span>
+											<span className='w-[130px] text-[1.2rem] text-end'>
+												Email:
+											</span>
 											<div className='flex items-center gap-[20px] w-full'>
-												<div className='flex items-center gap-[20px] h-full'>
-													{['Nam', 'Nữ', 'khác'].map((item: string, index: number) => (
-														<div className='flex items-center gap-[5px]' key={index}>
-															<input
-																className={`rounded-[50%] w-[18px] h-[18px] flex items-center justify-center ${
-																	payload?.sex === index
-																		? 'border-[#1ba8ff]'
-																		: 'border-[rgba(0, 0, 0, 0.26)]'
-																}`}
-																style={{ border: '2px solid rgba(0, 0, 0, 0.26)' }}
-																type='radio'
-																id={`gender-${index}`}
-																name='gender'
-																value={index}
-																checked={payload?.sex === index}
-																onChange={(event) => {
-																	setPayload((prev: any) => ({
+												<div className='flex items-center gap-[20px] h-full w-full'>
+													<input
+														placeholder={
+															payload?.email
+														}
+														onChange={(e) => {
+															setPayload(
+																(prev: any) => {
+																	return {
 																		...prev,
-																		sex: parseInt(event.target.value)
-																	}))
-																}}
-															/>
-															<div>
-																<div>{item}</div>
-															</div>
-														</div>
-													))}
+																		email: e
+																			.target
+																			.value
+																	}
+																}
+															)
+														}}
+														disabled
+														className='w-full h-[2.5rem] pl-[10px] rounded-[5px] outline-none'
+														type='text'
+														style={{
+															border: '1px solid #ccc'
+														}}
+													/>
 												</div>
 											</div>
 										</div>
 
 										<div className='flex w-full justify-center items-center gap-[20px] pb-[30px]'>
-											<span className='w-[130px] text-[1.2rem] text-end'>Địa chỉ:</span>
+											<span className='w-[130px] text-[1.2rem] text-end'>
+												Điện Thoại:
+											</span>
+											<div className='flex items-center gap-[20px] w-full'>
+												<div className='flex items-center gap-[20px] h-full w-full'>
+													<input
+														placeholder={
+															payload?.phone !==
+															undefined
+																? payload?.phone?.toString()
+																: undefined
+														}
+														onChange={(e) => {
+															setPayload(
+																(prev: any) => {
+																	return {
+																		...prev,
+																		phone: e
+																			.target
+																			.value
+																	}
+																}
+															)
+														}}
+														className='w-full h-[2.5rem] pl-[10px] rounded-[5px] outline-none'
+														type='number'
+														style={{
+															border: '1px solid #ccc'
+														}}
+													/>
+												</div>
+											</div>
+										</div>
+
+										<div className='flex w-full justify-center items-center gap-[20px] pb-[30px]'>
+											<span className='w-[130px] text-[1.2rem] text-end'>
+												Giới Tính:
+											</span>
+											<div className='flex items-center gap-[20px] w-full'>
+												<div className='flex items-center gap-[20px] h-full'>
+													{['Nam', 'Nữ', 'khác'].map(
+														(
+															item: string,
+															index: number
+														) => (
+															<div
+																className='flex items-center gap-[5px]'
+																key={index}>
+																<input
+																	className={`rounded-[50%] w-[18px] h-[18px] flex items-center justify-center ${
+																		payload?.sex ===
+																		index
+																			? 'border-[#1ba8ff]'
+																			: 'border-[rgba(0, 0, 0, 0.26)]'
+																	}`}
+																	style={{
+																		border: '2px solid rgba(0, 0, 0, 0.26)'
+																	}}
+																	type='radio'
+																	id={`gender-${index}`}
+																	name='gender'
+																	value={
+																		index
+																	}
+																	checked={
+																		payload?.sex ===
+																		index
+																	}
+																	onChange={(
+																		event
+																	) => {
+																		setPayload(
+																			(
+																				prev: any
+																			) => ({
+																				...prev,
+																				sex: parseInt(
+																					event
+																						.target
+																						.value
+																				)
+																			})
+																		)
+																	}}
+																/>
+																<div>
+																	<div>
+																		{item}
+																	</div>
+																</div>
+															</div>
+														)
+													)}
+												</div>
+											</div>
+										</div>
+
+										<div className='flex w-full justify-center items-center gap-[20px] pb-[30px]'>
+											<span className='w-[130px] text-[1.2rem] text-end'>
+												Địa chỉ:
+											</span>
 											<div className='flex flex-col gap-[15px] w-full'>
 												{!isUpdateAddress && (
 													<span
-														onClick={() => setIsUpdateAddress(true)}
+														onClick={() =>
+															setIsUpdateAddress(
+																true
+															)
+														}
 														className='underline text-[20px] text-[#1ba8ff] cursor-pointer'>
 														Cập nhật địa chỉ
 													</span>
@@ -317,77 +412,155 @@ function ProfilePage(): JSX.Element {
 													<div className='w-full flex gap-[5px]'>
 														<select
 															className='w-full h-[2rem] outline-none rounded-[5px]'
-															style={{ border: '1px solid #ccc' }}
+															style={{
+																border: '1px solid #ccc'
+															}}
 															value={provinceCode}
-															onChange={(e: any) => setProvinceCode(e.target.value)}>
-															<option className='text-center'>-- Chọn TP --</option>
-															{province?.map((item: any) => (
-																<option
-																	key={item._id}
-																	value={item?.code}
-																	className='text-center'>
-																	{item.name}
-																</option>
-															))}
+															onChange={(
+																e: any
+															) =>
+																setProvinceCode(
+																	e.target
+																		.value
+																)
+															}>
+															<option className='text-center'>
+																-- Chọn TP --
+															</option>
+															{province?.map(
+																(item: any) => (
+																	<option
+																		key={
+																			item._id
+																		}
+																		value={
+																			item?.code
+																		}
+																		className='text-center'>
+																		{
+																			item.name
+																		}
+																	</option>
+																)
+															)}
 														</select>
 														<select
 															className='w-full h-[2rem] outline-none  rounded-[5px]'
-															style={{ border: '1px solid #ccc' }}
+															style={{
+																border: '1px solid #ccc'
+															}}
 															value={districtCode}
-															onChange={(e: any) => setDistrictCode(e.target.value)}>
-															<option className='text-center'>-- Chọn Quận --</option>
-															{district?.map((item: any) => (
-																<option
-																	key={item._id}
-																	value={item?.code}
-																	className='text-center'>
-																	{item.name}
-																</option>
-															))}
+															onChange={(
+																e: any
+															) =>
+																setDistrictCode(
+																	e.target
+																		.value
+																)
+															}>
+															<option className='text-center'>
+																-- Chọn Quận --
+															</option>
+															{district?.map(
+																(item: any) => (
+																	<option
+																		key={
+																			item._id
+																		}
+																		value={
+																			item?.code
+																		}
+																		className='text-center'>
+																		{
+																			item.name
+																		}
+																	</option>
+																)
+															)}
 														</select>
 														<select
 															className='w-full h-[2rem] outline-none rounded-[5px]'
-															style={{ border: '1px solid #ccc' }}
+															style={{
+																border: '1px solid #ccc'
+															}}
 															value={wardCode}
-															onChange={(e: any) => setWardCode(e.target.value)}>
-															<option className='text-center'>-- Chọn Huyện --</option>
-															{ward?.map((item: any) => (
-																<option
-																	key={item._id}
-																	value={item?.code}
-																	className='text-center'>
-																	{item.name}
-																</option>
-															))}
+															onChange={(
+																e: any
+															) =>
+																setWardCode(
+																	e.target
+																		.value
+																)
+															}>
+															<option className='text-center'>
+																-- Chọn Huyện --
+															</option>
+															{ward?.map(
+																(item: any) => (
+																	<option
+																		key={
+																			item._id
+																		}
+																		value={
+																			item?.code
+																		}
+																		className='text-center'>
+																		{
+																			item.name
+																		}
+																	</option>
+																)
+															)}
 														</select>
 														<input
 															placeholder='Nhập Địa Chỉ'
 															value={numberHouse}
 															className='w-full h-[2rem] pl-[10px] rounded-[5px] outline-none'
-															onChange={(e: any) => setNumberHouse(e.target.value)}
+															onChange={(
+																e: any
+															) =>
+																setNumberHouse(
+																	e.target
+																		.value
+																)
+															}
 															type='text'
-															style={{ border: '1px solid #ccc' }}
+															style={{
+																border: '1px solid #ccc'
+															}}
 														/>
 													</div>
 												)}
 
 												<input
-													placeholder={payload?.address}
+													placeholder={
+														payload?.address
+													}
 													disabled={!isUpdateAddress}
 													className='w-full h-[2.5rem] pl-[10px] rounded-[5px] outline-none'
 													type='text'
-													style={{ border: '1px solid #ccc' }}
+													style={{
+														border: '1px solid #ccc'
+													}}
 												/>
 											</div>
 										</div>
 
 										<div className='flex w-full justify-center items-center gap-[20px] pb-[30px]'>
-											<span className='w-[130px] text-[1.2rem] text-end'>Ngày Sinh:</span>
-											<DatePicker value={payload?.birthday} onChange={handleDate} />
+											<span className='w-[130px] text-[1.2rem] text-end'>
+												Ngày Sinh:
+											</span>
+											<DatePicker
+												value={payload?.birthday}
+												onChange={handleDate}
+											/>
 										</div>
 										<div
 											className='text-end'
-											style={{ display: 'flex', justifyContent: 'flex-end' }}>
+											style={{
+												display: 'flex',
+												justifyContent: 'flex-end'
+											}}>
 											<button
 												onClick={onSubmit}
 												className='min-h-[40px]  h-[30px] min-w-[120px] overflow-hidden text-ellipsis border capitalize  font-normal text-sm  py-2 rounded-sm border-solid border-transparent bg-[#ee4d2d] text-[#fff] hover:bg-[#d73211] hover:border-[#ba2b0f]'>
@@ -399,19 +572,29 @@ function ProfilePage(): JSX.Element {
 								<section className='flex justify-center'>
 									<div
 										className='px-[30px] flex flex-col'
-										style={{ borderLeft: '.0625rem solid #efefef' }}>
+										style={{
+											borderLeft: '.0625rem solid #efefef'
+										}}>
 										<div className='rounded-[50%] bg-[#ccc] mb-[20px]  opacity-0.5 w-[150px] h-[150px] overflow-hidden inline-block'>
 											{imagePreview ? (
 												<img
 													className='w-full f-full'
-													src={typeof imagePreview === 'string' ? imagePreview : undefined}
+													src={
+														typeof imagePreview ===
+														'string'
+															? imagePreview
+															: undefined
+													}
 													alt='user'
 												/>
 											) : (
 												<img
 													className='w-full f-full'
 													src={
-														typeof payload?.avatar === 'string' ? payload.avatar : undefined
+														typeof payload?.avatar ===
+														'string'
+															? payload.avatar
+															: undefined
 													}
 													alt='user'
 												/>
@@ -421,7 +604,8 @@ function ProfilePage(): JSX.Element {
 											className='bg-[#fff] rounded-[2px] text-[14px]'
 											style={{
 												border: '1px solid rgba(0,0,0,.09)',
-												boxShadow: '0 1px 1px 0 rgb(0 0 0 / 3%)'
+												boxShadow:
+													'0 1px 1px 0 rgb(0 0 0 / 3%)'
 											}}
 											onClick={changeUploadImg}>
 											<label
@@ -429,7 +613,13 @@ function ProfilePage(): JSX.Element {
 												htmlFor='file'>
 												Chọn hình ảnh
 											</label>
-											<input id='file' type='file' hidden multiple onChange={changeUploadImg} />
+											<input
+												id='file'
+												type='file'
+												hidden
+												multiple
+												onChange={changeUploadImg}
+											/>
 										</button>
 									</div>
 								</section>

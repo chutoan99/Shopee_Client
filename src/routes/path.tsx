@@ -63,12 +63,16 @@ const routes = [
 	},
 	{
 		path: '/forgotPassword',
-		component: lazy(() => import('../pages/forgotPassword/forgot-password.page')),
+		component: lazy(
+			() => import('../pages/forgotPassword/forgot-password.page')
+		),
 		layout: AuthLayout
 	},
 	{
 		path: '/reset-password/:email/:token',
-		component: lazy(() => import('../pages/resetPassword/reset-password.page')),
+		component: lazy(
+			() => import('../pages/resetPassword/reset-password.page')
+		),
 		layout: AuthLayout
 	},
 	{
@@ -109,12 +113,16 @@ const routes = [
 
 	{
 		path: '/*',
-		component: lazy(() => import('../pages/pageNotFound/page-not-found.page')),
+		component: lazy(
+			() => import('../pages/pageNotFound/page-not-found.page')
+		),
 		layout: DefaultLayout
 	},
 	{
 		path: '/product/:itemid/:shopid',
-		component: lazy(() => import('../pages/productDetail/product-detail.page')),
+		component: lazy(
+			() => import('../pages/productDetail/product-detail.page')
+		),
 		layout: DefaultLayout
 	}
 ]

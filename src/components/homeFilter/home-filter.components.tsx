@@ -28,7 +28,9 @@ function HomeFilterComponent(): JSX.Element {
 	return (
 		<div className='mt-[20px] mb-[10px] flex items-center gap-[10px]'>
 			<div className='flex items-center gap-[10px]'>
-				<span className='text-[0.875rem] text-[#555] font-normal mr-[12px]'>Sắp xếp theo</span>
+				<span className='text-[0.875rem] text-[#555] font-normal mr-[12px]'>
+					Sắp xếp theo
+				</span>
 				<button className='h-[34px] min-w-[124px] text-[0.9rem] leading-[1.6rem] no-underline cursor-pointer overflow-hidden text-ellipsis flex-col text-sm box-border shadow-[0_1px_1px_0_rgba(0,0,0,0.09)] flex items-center justify-center capitalize bg-[#ee4d2d] text-[#fff] px-3 py-0 rounded-sm border-[none] border-0'>
 					Phổ biến
 				</button>
@@ -48,12 +50,16 @@ function HomeFilterComponent(): JSX.Element {
 					className='group-hover:block cursor-pointer absolute bg-[#fff] hidden shadow-[0_1px_2px_rgba(0,0,0,0.1)] px-4 py-2 rounded-sm top-[25px] inset-x-0'
 					style={{ listStyle: 'none' }}>
 					<li>
-						<NavLink to='# ' className='flex justify-start no-underline text-sm text-[#333] px-0 py-2'>
+						<NavLink
+							to='# '
+							className='flex justify-start no-underline text-sm text-[#333] px-0 py-2'>
 							Giá thấp đến cao
 						</NavLink>
 					</li>
 					<li>
-						<NavLink to='# ' className='flex justify-start no-underline text-sm text-[#333] px-0 py-2'>
+						<NavLink
+							to='# '
+							className='flex justify-start no-underline text-sm text-[#333] px-0 py-2'>
 							Giá cao đến thấp
 						</NavLink>
 					</li>
@@ -61,7 +67,10 @@ function HomeFilterComponent(): JSX.Element {
 			</div>
 			<div className='flex items-center ml-auto'>
 				<span className='text-sm text-[#333] mr-[22px]'>
-					<span className='text-[#ee4d2d] text-[0.938rem]'>Ngày {filterDay}</span> / Tháng {filterMonth}
+					<span className='text-[#ee4d2d] text-[0.938rem]'>
+						Ngày {filterDay}
+					</span>{' '}
+					/ Tháng {filterMonth}
 				</span>
 			</div>
 

@@ -1,6 +1,10 @@
 import LoadingSkeletonComponent from './loading-skeleton.components'
 
-export default function SkeletonProductComponent({ isLoading }: { isLoading: boolean }): JSX.Element {
+export default function SkeletonProductComponent({
+	isLoading
+}: {
+	isLoading: boolean
+}): JSX.Element {
 	return (
 		<>
 			{isLoading && (
@@ -16,12 +20,17 @@ export default function SkeletonProductComponent({ isLoading }: { isLoading: boo
 											style={{ height: '191px' }}>
 											<LoadingSkeletonComponent className='mb-[5px] w-full cursor-pointer bg-[top_center] bg-contain bg-no-repeat rounded-br-sm rounded-bl-sm h-full'></LoadingSkeletonComponent>
 										</div>
-										<div className='text-sm h-9 ml-1.5 mr-2.5 my-2.5' style={{ height: '36px' }}>
+										<div
+											className='text-sm h-9 ml-1.5 mr-2.5 my-2.5'
+											style={{ height: '36px' }}>
 											<LoadingSkeletonComponent className='w-full mb-1 h-9  ml-1.5 mr-2.5 my-2.5'></LoadingSkeletonComponent>
 										</div>
 										<div
 											className='text-sm h-9 ml-1.5 mr-2.5 my-2.5'
-											style={{ height: '36px', marginTop: 'unset' }}>
+											style={{
+												height: '36px',
+												marginTop: 'unset'
+											}}>
 											<LoadingSkeletonComponent className='w-full mb-1 h-9 ml-1.5 mr-2.5 my-2.5'></LoadingSkeletonComponent>
 										</div>
 									</div>

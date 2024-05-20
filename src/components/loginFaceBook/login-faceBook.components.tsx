@@ -7,7 +7,9 @@ export default function loginFacebookComponent(): JSX.Element {
 			<span className='text-lg leading-7'>
 				<i className='fa-brands fa-facebook-square'></i>
 			</span>
-			<span className='text-[0.9rem] px-[15px]'>Đăng nhập với Facebook</span>
+			<span className='text-[0.9rem] px-[15px]'>
+				Đăng nhập với Facebook
+			</span>
 		</button>
 	)
 }

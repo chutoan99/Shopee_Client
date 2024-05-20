@@ -58,7 +58,8 @@ function ProductDetailComponent({ data }: DetailProduct): JSX.Element {
 	}
 
 	useEffect(() => {
-		dataCart?.total_cart && dispatch(CartActions.updateTotalCart(dataCart?.total_cart))
+		dataCart?.total_cart &&
+			dispatch(CartActions.updateTotalCart(dataCart?.total_cart))
 	}, [dataCart])
 	return (
 		<>
@@ -79,15 +80,23 @@ function ProductDetailComponent({ data }: DetailProduct): JSX.Element {
 								style={{
 									display: 'flex'
 								}}>
-								{data?.images[0]?.split(',')?.map((image: string, index: number) => {
-									return (
-										<div
-											className='cursor-pointer flex h-[82px] shrink-0 w-[82px] mr-[19px]'
-											key={index}>
-											<img src={image} alt='MobileImgProduct' onClick={() => setShowImg(true)} />
-										</div>
-									)
-								})}
+								{data?.images[0]
+									?.split(',')
+									?.map((image: string, index: number) => {
+										return (
+											<div
+												className='cursor-pointer flex h-[82px] shrink-0 w-[82px] mr-[19px]'
+												key={index}>
+												<img
+													src={image}
+													alt='MobileImgProduct'
+													onClick={() =>
+														setShowImg(true)
+													}
+												/>
+											</div>
+										)
+									})}
 							</div>
 						</div>
 					</div>
@@ -95,26 +104,38 @@ function ProductDetailComponent({ data }: DetailProduct): JSX.Element {
 						<div className='p-[10px]'>
 							<div className='pb-[10px]'>
 								<h2 className='text-[#333] text-[1.375rem] font-medium leading-7 rounded-[5px]'>
-									<span className='bg-[#ee4d2d] text-[#fff] text-xs mr-2.5 p-[3.5px]'>Yêu Thích</span>
+									<span className='bg-[#ee4d2d] text-[#fff] text-xs mr-2.5 p-[3.5px]'>
+										Yêu Thích
+									</span>
 									{data?.name}
 								</h2>
 							</div>
 							<div className='flex text-[#222]'>
 								<div className='flex justify-center text-base items-center text-[#ee4d2d] pr-3 border-r-[rgba(0,0,0,0.14)] border-r border-solid'>
 									<h3 className='mr-[5px] pb-[3px] border-b-[#ee4d2d] border-b border-solid'>
-										{data?.shop_info?.rating_star?.toFixed(1)}
+										{data?.shop_info?.rating_star?.toFixed(
+											1
+										)}
 									</h3>
-									<div className='flex text-[#ee4d2d]'>{generateStart(5)}</div>
+									<div className='flex text-[#ee4d2d]'>
+										{generateStart(5)}
+									</div>
 								</div>
 								<div className='flex text-base relative pl-2.5 pr-3 border-r-[rgba(0,0,0,0.14)] border-r border-solid'>
 									<h3 className='text-[#222] pb-[3px] border-b-[#555] border-b border-solid mr-[5px]'>
 										47
 									</h3>
-									<h4 className='text-sm text-[#767676] capitalize'>Đánh Giá</h4>
+									<h4 className='text-sm text-[#767676] capitalize'>
+										Đánh Giá
+									</h4>
 								</div>
 								<div className='flex text-base relative text-[#222] justify-center items-center mb-[unset] pl-2.5'>
-									<h3 className='mr-[5px]'>{data?.historical_sold}</h3>
-									<h4 className='text-sm text-[#767676] capitalize'>Đã bán</h4>
+									<h3 className='mr-[5px]'>
+										{data?.historical_sold}
+									</h3>
+									<h4 className='text-sm text-[#767676] capitalize'>
+										Đã bán
+									</h4>
 								</div>
 							</div>
 							<div className='bg-neutral-100 flex items-center mt-[15px] mb-[30px] mx-0 px-2.5 py-[15px]'>
@@ -124,7 +145,9 @@ function ProductDetailComponent({ data }: DetailProduct): JSX.Element {
 											<sup className='text-[75%] leading-[0] relative align-baseline top-[-7px]'>
 												đ
 											</sup>
-											{formatPrice(data?.price_min_before_discount)}
+											{formatPrice(
+												data?.price_min_before_discount
+											)}
 										</h3>
 									)}
 								</div>
@@ -177,7 +200,9 @@ function ProductDetailComponent({ data }: DetailProduct): JSX.Element {
 								)}
 
 								<div className='gap-y-2.5 flex flex-wrap mb-[25px]'>
-									<h3 className='text-[#757575] w-[110px] capitalize shrink-0'>Deal Sốc</h3>
+									<h3 className='text-[#757575] w-[110px] capitalize shrink-0'>
+										Deal Sốc
+									</h3>
 								</div>
 								<div className='gap-y-2.5 flex flex-wrap mb-[25px]'>
 									<label className='h-[25px] text-sm text-[#ee4d2d] bg-[rgba(255,87,34,0.1)] leading-[1.05rem] rounded mr-2.5 p-2 flex items-center'>
@@ -194,36 +219,48 @@ function ProductDetailComponent({ data }: DetailProduct): JSX.Element {
 										<div className='flex-wrap flex max-w-[32.1875rem]'>
 											{data?.option_tierVariations[0]
 												?.split(',')
-												?.map((option: any, index: number) => (
-													<button
-														key={index}
-														style={{
-															outline: 0,
-															wordBreak: 'break-word'
-														}}
-														className={`overflow-visible bg-[#fff] cursor-pointer min-w-[5rem] min-h-[2.125rem] box-border text-[rgba(0,0,0,0.8)] text-left border relative inline-flex items-center justify-center ml-0 mr-2 mt-0 mb-2 px-3 py-1 rounded-sm border-solid border-[rgba(0,0,0,0.09)] ${
-															NewOption === option
-																? '!text-[#ee4d2d] !border-[#ee4d2d]'
-																: ''
-														}`}
-														onClick={() => setNewOption(option)}>
-														{option}
-														{NewOption === option && (
-															<div className="w-[0.9375rem] h-[0.9375rem] absolute overflow-hidden right-0 bottom-0 before:content-[''] before:absolute before:right-[-0.9375rem] before:border-b-[#ee4d2d] before:border-[0.9375rem] before:border-solid before:border-transparent before:bottom-0">
-																<svg
-																	enableBackground='new 0 0 12 12'
-																	viewBox='0 0 12 12'
-																	x={0}
-																	y={0}
-																	className='absolute text-[#fff] text-[8px] inline-block w-[1em] h-[1em] fill-current right-0 bottom-0'>
-																	<g>
-																		<path d='m5.2 10.9c-.2 0-.5-.1-.7-.2l-4.2-3.7c-.4-.4-.5-1-.1-1.4s1-.5 1.4-.1l3.4 3 5.1-7c .3-.4 1-.5 1.4-.2s.5 1 .2 1.4l-5.7 7.9c-.2.2-.4.4-.7.4 0-.1 0-.1-.1-.1z' />
-																	</g>
-																</svg>
-															</div>
-														)}
-													</button>
-												))}
+												?.map(
+													(
+														option: any,
+														index: number
+													) => (
+														<button
+															key={index}
+															style={{
+																outline: 0,
+																wordBreak:
+																	'break-word'
+															}}
+															className={`overflow-visible bg-[#fff] cursor-pointer min-w-[5rem] min-h-[2.125rem] box-border text-[rgba(0,0,0,0.8)] text-left border relative inline-flex items-center justify-center ml-0 mr-2 mt-0 mb-2 px-3 py-1 rounded-sm border-solid border-[rgba(0,0,0,0.09)] ${
+																NewOption ===
+																option
+																	? '!text-[#ee4d2d] !border-[#ee4d2d]'
+																	: ''
+															}`}
+															onClick={() =>
+																setNewOption(
+																	option
+																)
+															}>
+															{option}
+															{NewOption ===
+																option && (
+																<div className="w-[0.9375rem] h-[0.9375rem] absolute overflow-hidden right-0 bottom-0 before:content-[''] before:absolute before:right-[-0.9375rem] before:border-b-[#ee4d2d] before:border-[0.9375rem] before:border-solid before:border-transparent before:bottom-0">
+																	<svg
+																		enableBackground='new 0 0 12 12'
+																		viewBox='0 0 12 12'
+																		x={0}
+																		y={0}
+																		className='absolute text-[#fff] text-[8px] inline-block w-[1em] h-[1em] fill-current right-0 bottom-0'>
+																		<g>
+																			<path d='m5.2 10.9c-.2 0-.5-.1-.7-.2l-4.2-3.7c-.4-.4-.5-1-.1-1.4s1-.5 1.4-.1l3.4 3 5.1-7c .3-.4 1-.5 1.4-.2s.5 1 .2 1.4l-5.7 7.9c-.2.2-.4.4-.7.4 0-.1 0-.1-.1-.1z' />
+																		</g>
+																	</svg>
+																</div>
+															)}
+														</button>
+													)
+												)}
 										</div>
 									</>
 								)}
@@ -242,17 +279,23 @@ function ProductDetailComponent({ data }: DetailProduct): JSX.Element {
 										style={{
 											WebkitBoxAlign: 'center',
 											WebkitBoxPack: 'center',
-											backgroundColor: 'rgba(0, 0, 0, 0.4)'
+											backgroundColor:
+												'rgba(0, 0, 0, 0.4)'
 										}}
 										onClick={() => setShowTableSize(false)}>
 										<div className='flex-initial relative max-w-full max-h-full'>
-											<img src={data?.size_chart} alt='tableSize' />
+											<img
+												src={data?.size_chart}
+												alt='tableSize'
+											/>
 										</div>
 									</div>
 								)}
 								<>
 									<div className='items-center text-[#757575] text-sm leading-[1.05rem] capitalize flex mt-4'>
-										<h3 className='text-[#757575] w-[110px] capitalize shrink-0'>số lượng</h3>
+										<h3 className='text-[#757575] w-[110px] capitalize shrink-0'>
+											số lượng
+										</h3>
 									</div>
 									<div className='items-center text-[#757575] text-sm leading-[1.05rem] capitalize flex mt-4'>
 										<div>
@@ -341,21 +384,33 @@ function ProductDetailComponent({ data }: DetailProduct): JSX.Element {
 								</div>
 								<div className='flex flex-wrap'>
 									{data?.images &&
-										data?.images[0].split(',')?.map((image: string, index: number) => {
-											return (
-												<img
-													src={image}
-													onClick={() => setIndexImg(index)}
-													key={index}
-													alt=''
-													className={`w-[33%] p-2.5 hover:!border-2 hover:!border-solid hover:!border-[#ee4d2d] ${
-														indexImg === index
-															? '!border-2 !border-solid !border-[#ee4d2d]'
-															: ''
-													}`}
-												/>
-											)
-										})}
+										data?.images[0]
+											.split(',')
+											?.map(
+												(
+													image: string,
+													index: number
+												) => {
+													return (
+														<img
+															src={image}
+															onClick={() =>
+																setIndexImg(
+																	index
+																)
+															}
+															key={index}
+															alt=''
+															className={`w-[33%] p-2.5 hover:!border-2 hover:!border-solid hover:!border-[#ee4d2d] ${
+																indexImg ===
+																index
+																	? '!border-2 !border-solid !border-[#ee4d2d]'
+																	: ''
+															}`}
+														/>
+													)
+												}
+											)}
 								</div>
 							</div>
 						</div>

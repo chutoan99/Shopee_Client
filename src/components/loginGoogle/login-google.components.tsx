@@ -6,7 +6,9 @@ export default function loginGoogleComponent(): JSX.Element {
 			<span className='flex flex-row items-center justify-center bg-[#fff] text-[rgb(102_102_102_/_1)] overflow-hidden text-ellipsis text-sm capitalize leading-[1.6rem] box-border h-[34px] no-underline px-1.5 py-0 rounded-sm border-0'>
 				<i className='fa-brands fa-google'></i>
 			</span>
-			<span className='text-[0.9rem] px-[15px]'>Đăng Nhập với google</span>
+			<span className='text-[0.9rem] px-[15px]'>
+				Đăng Nhập với google
+			</span>
 		</button>
 	)
 }

@@ -1,4 +1,4 @@
-import { IShop } from "../../shop/interfaces"
+import { IShop } from '../../shop/interfaces'
 
 export interface IPostSimpleResponse {
 	err: number
@@ -68,7 +68,7 @@ export interface IProductDetail {
 	price_max_before_discount: number
 	shop_rating: number
 	liked: number
-	size_chart: string,
+	size_chart: string
 	is_official_shop: number
 	is_service_by_shop: number
 	show_free_shipping: number

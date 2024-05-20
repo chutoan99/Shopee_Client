@@ -5,7 +5,9 @@ import { ITopProDuctsResponse } from '../interfaces'
 
 export const TopProductApi = createApi({
 	reducerPath: 'TopProduct',
-	baseQuery: fetchBaseQuery({ baseUrl: `${(import.meta as any).env.VITE_REACT_APP_API_HOST}/` }),
+	baseQuery: fetchBaseQuery({
+		baseUrl: `${(import.meta as any).env.VITE_REACT_APP_API_HOST}/`
+	}),
 	endpoints: (build) => ({
 		getTopProduct: build.query<ITopProDuctsResponse, void>({
 			query: () => 'topProduct?page=1&limit=100'

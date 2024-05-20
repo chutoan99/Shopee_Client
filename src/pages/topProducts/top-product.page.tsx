@@ -25,7 +25,9 @@ function TopProductPage(): JSX.Element {
 						<div className='m-h-[50px] mt-[20px]'>
 							<div
 								className='h-[68px] leading-[68px] flex shadow-[0_1px_1px_0_rgb(0_0_0_/_5%)]'
-								style={{ backgroundColor: 'rgb(255, 255, 255)' }}>
+								style={{
+									backgroundColor: 'rgb(255, 255, 255)'
+								}}>
 								<div className='flex justify-around w-full'>
 									<NavLink to='/flash-sale?categoryId=0&amp;promotionId=137335624892417'>
 										<span>Top Picks</span>
@@ -59,7 +61,10 @@ function TopProductPage(): JSX.Element {
 						{isLoading ? (
 							<LoadingComponent />
 						) : (
-							<PaginationComponent setPayload={setPayload} totalPage={data?.totalPage} />
+							<PaginationComponent
+								setPayload={setPayload}
+								totalPage={data?.totalPage}
+							/>
 						)}
 					</div>
 				</div>

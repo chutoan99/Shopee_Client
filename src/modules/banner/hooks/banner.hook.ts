@@ -3,7 +3,9 @@ import { IBannerResponse } from '../interfaces'
 
 export const BannerApi = createApi({
 	reducerPath: 'Banner',
-	baseQuery: fetchBaseQuery({ baseUrl: `${(import.meta as any).env.VITE_REACT_APP_API_HOST}/` }),
+	baseQuery: fetchBaseQuery({
+		baseUrl: `${(import.meta as any).env.VITE_REACT_APP_API_HOST}/`
+	}),
 	endpoints: (build) => ({
 		getBanner: build.query<IBannerResponse, void>({
 			query: () => 'banner'

@@ -23,8 +23,7 @@ function DetailProductPage(): JSX.Element {
 	useEffect(() => {
 		data?.response && setDataPostDetail(data?.response)
 		data?.response?.shop_info && setDataShop(data.response.shop_info)
-	}, [data]
-)
+	}, [data])
 	return (
 		<>
 			{isLoading ? (
@@ -35,14 +34,18 @@ function DetailProductPage(): JSX.Element {
 					<div className='bg-[#f5f5f5] overflow-hidden py-[20px]'>
 						{dataPostDetail && (
 							<>
-								<ProductBreadcrumbComponent data={dataPostDetail} />
+								<ProductBreadcrumbComponent
+									data={dataPostDetail}
+								/>
 								<ProductDetailComponent data={dataPostDetail} />
 							</>
 						)}
 					</div>
 					{dataShop && <ProductShopComponent data={dataShop} />}
 
-					{dataPostDetail && <ProductOverviewComponent data={dataPostDetail} />}
+					{dataPostDetail && (
+						<ProductOverviewComponent data={dataPostDetail} />
+					)}
 
 					{/* <ProductCommentComponent /> */}
 				</>

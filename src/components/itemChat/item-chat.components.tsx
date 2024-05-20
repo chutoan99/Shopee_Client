@@ -7,7 +7,12 @@ type interfaceItemChat = {
 	setRoom: any
 }
 
-export default function ItemChatComponent({ data, des, setIsChat, setRoom }: interfaceItemChat): JSX.Element {
+export default function ItemChatComponent({
+	data,
+	des,
+	setIsChat,
+	setRoom
+}: interfaceItemChat): JSX.Element {
 	const OnChangeShop = (room: IRooms) => {
 		setIsChat(true)
 		setRoom(room)
@@ -25,7 +30,10 @@ export default function ItemChatComponent({ data, des, setIsChat, setRoom }: int
 							style={{ backgroundColor: 'unset' }}>
 							<div className='w-full h-full'>
 								<div className='flex items-center justify-center h-8 w-8 rounded-full flex-shrink-0'>
-									<img src={room?.shop_info?.portrait} className='w-8 h-8 rounded-full' />
+									<img
+										src={room?.shop_info?.portrait}
+										className='w-8 h-8 rounded-full'
+									/>
 								</div>
 							</div>
 						</div>
@@ -38,7 +46,9 @@ export default function ItemChatComponent({ data, des, setIsChat, setRoom }: int
 						</div>
 						<div className='items-center flex justify-between'>
 							<div className='text-[#888] text-xs leading-[14px] max-w-[80%] overflow-hidden text-ellipsis whitespace-nowrap mr-1'>
-								<span title='Honey ơi, sản phẩm bạn thích đang giảm mạnh đến 50'>{des}</span>
+								<span title='Honey ơi, sản phẩm bạn thích đang giảm mạnh đến 50'>
+									{des}
+								</span>
 							</div>
 							<div className='flex items-center'>
 								<div className='text-[#bbb] text-xs leading-[14px] translate-x-0.5 whitespace-nowrap scale-[0.91]'>

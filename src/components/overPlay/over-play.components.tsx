@@ -8,7 +8,9 @@ const OverPlayComponent = (props: any): JSX.Element => {
 				backgroundColor: 'rgba(0, 0, 0, 0.4)'
 			}}
 			onClick={props.handleClose}>
-			<div className='flex-initial relative max-w-[438px] max-h-full'>{props.children}</div>
+			<div className='flex-initial relative max-w-[438px] max-h-full'>
+				{props.children}
+			</div>
 		</div>
 	)
 }

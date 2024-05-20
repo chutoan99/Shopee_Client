@@ -9,7 +9,10 @@ export const UserApi = createApi({
 		baseUrl: `${(import.meta as any).env.VITE_REACT_APP_API_HOST}/`,
 		prepareHeaders: (headers) => {
 			headers.set('Content-Type', 'application/json')
-			headers.set('Authorization', `Bearer ${localStorage.getItem('token-shopee')}`)
+			headers.set(
+				'Authorization',
+				`Bearer ${localStorage.getItem('token-shopee')}`
+			)
 			return headers
 		}
 	}),

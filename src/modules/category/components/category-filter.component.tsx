@@ -42,7 +42,9 @@ function CategoryFilterComponent(): JSX.Element {
 									WebkitLineClamp: 3,
 									wordWrap: 'break-word'
 								}}>
-								<NavLink className='text-[#ee4d2d] font-bold no-underline text-sm' to='/'>
+								<NavLink
+									className='text-[#ee4d2d] font-bold no-underline text-sm'
+									to='/'>
 									<svg
 										viewBox='0 0 4 7'
 										className='opacity-100 fill-[#ee4d2d] text-xs stroke-current inline-block mr-2.5 top-[14px] h-[7px] w-[7px] absolute left-0'>
@@ -53,22 +55,25 @@ function CategoryFilterComponent(): JSX.Element {
 							</div>
 							{!isLoading && (
 								<>
-									{data?.response?.map((item: any, index: number) => {
-										return (
-											<NavLink
-												className='no-underline text-[rgba(0,0,0,0.87)] block text-ellipsis relative leading-4 max-h-12 overflow-hidden text-sm font-medium pl-3 pr-2.5 py-2'
-												style={{
-													WebkitBoxOrient: 'vertical',
-													WebkitLineClamp: 3,
+									{data?.response?.map(
+										(item: any, index: number) => {
+											return (
+												<NavLink
+													className='no-underline text-[rgba(0,0,0,0.87)] block text-ellipsis relative leading-4 max-h-12 overflow-hidden text-sm font-medium pl-3 pr-2.5 py-2'
+													style={{
+														WebkitBoxOrient:
+															'vertical',
+														WebkitLineClamp: 3,
 
-													wordWrap: 'break-word'
-												}}
-												to='/'
-												key={index}>
-												{item?.display_name}
-											</NavLink>
-										)
-									})}
+														wordWrap: 'break-word'
+													}}
+													to='/'
+													key={index}>
+													{item?.display_name}
+												</NavLink>
+											)
+										}
+									)}
 								</>
 							)}
 						</div>
@@ -101,7 +106,12 @@ function CategoryFilterComponent(): JSX.Element {
 					<div className='items-start justify-start flex-wrap flex px-0 py-2'>
 						<div className='block text-[rgba(0,0,0,0.8)]'>
 							<label className='items-start cursor-pointer flex select-none text-[0.875rem]'>
-								<input type='checkbox' className='hidden' name='' defaultValue={100244} />
+								<input
+									type='checkbox'
+									className='hidden'
+									name=''
+									defaultValue={100244}
+								/>
 								<div className='justify-center box-border bg-[#fff] text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]'>
 									<i> </i>
 								</div>
@@ -121,7 +131,12 @@ function CategoryFilterComponent(): JSX.Element {
 					<div className='items-start justify-start flex-wrap flex px-0 py-2'>
 						<div className='block text-[rgba(0,0,0,0.8)]'>
 							<label className='items-start cursor-pointer flex select-none text-[0.875rem]'>
-								<input type='checkbox' className='hidden' name='' defaultValue={100242} />
+								<input
+									type='checkbox'
+									className='hidden'
+									name=''
+									defaultValue={100242}
+								/>
 								<div className='justify-center box-border bg-[#fff] text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]'>
 									<i> </i>
 								</div>
@@ -141,7 +156,12 @@ function CategoryFilterComponent(): JSX.Element {
 					<div className='items-start justify-start flex-wrap flex px-0 py-2'>
 						<div className='block text-[rgba(0,0,0,0.8)]'>
 							<label className='items-start cursor-pointer flex select-none text-[0.875rem]'>
-								<input type='checkbox' className='hidden' name='' defaultValue={100050} />
+								<input
+									type='checkbox'
+									className='hidden'
+									name=''
+									defaultValue={100050}
+								/>
 								<div className='justify-center box-border bg-[#fff] text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]'>
 									<i> </i>
 								</div>
@@ -161,7 +181,12 @@ function CategoryFilterComponent(): JSX.Element {
 					<div className='items-start justify-start flex-wrap flex px-0 py-2'>
 						<div className='block text-[rgba(0,0,0,0.8)]'>
 							<label className='items-start cursor-pointer flex select-none text-[0.875rem]'>
-								<input type='checkbox' className='hidden' name='' defaultValue={100053} />
+								<input
+									type='checkbox'
+									className='hidden'
+									name=''
+									defaultValue={100053}
+								/>
 								<div className='justify-center box-border bg-[#fff] text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]'>
 									<i> </i>
 								</div>
@@ -181,7 +206,12 @@ function CategoryFilterComponent(): JSX.Element {
 					<div className='items-start justify-start flex-wrap flex px-0 py-2'>
 						<div className='block text-[rgba(0,0,0,0.8)]'>
 							<label className='items-start cursor-pointer flex select-none text-[0.875rem]'>
-								<input type='checkbox' className='hidden' name='' defaultValue={100009} />
+								<input
+									type='checkbox'
+									className='hidden'
+									name=''
+									defaultValue={100009}
+								/>
 								<div className='justify-center box-border bg-[#fff] text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]'>
 									<i> </i>
 								</div>
@@ -201,7 +231,12 @@ function CategoryFilterComponent(): JSX.Element {
 					<div className='items-start justify-start flex-wrap flex px-0 py-2'>
 						<div className='block text-[rgba(0,0,0,0.8)]'>
 							<label className='items-start cursor-pointer flex select-none text-[0.875rem]'>
-								<input type='checkbox' className='hidden' name='' defaultValue={100243} />
+								<input
+									type='checkbox'
+									className='hidden'
+									name=''
+									defaultValue={100243}
+								/>
 								<div className='justify-center box-border bg-[#fff] text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]'>
 									<i> </i>
 								</div>
@@ -221,7 +256,12 @@ function CategoryFilterComponent(): JSX.Element {
 					<div className='items-start justify-start flex-wrap flex px-0 py-2'>
 						<div className='block text-[rgba(0,0,0,0.8)]'>
 							<label className='items-start cursor-pointer flex select-none text-[0.875rem]'>
-								<input type='checkbox' className='hidden' name='' defaultValue={100047} />
+								<input
+									type='checkbox'
+									className='hidden'
+									name=''
+									defaultValue={100047}
+								/>
 								<div className='justify-center box-border bg-[#fff] text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]'>
 									<i> </i>
 								</div>
@@ -241,7 +281,12 @@ function CategoryFilterComponent(): JSX.Element {
 					<div className='items-start justify-start flex-wrap flex px-0 py-2'>
 						<div className='block text-[rgba(0,0,0,0.8)]'>
 							<label className='items-start cursor-pointer flex select-none text-[0.875rem]'>
-								<input type='checkbox' className='hidden' name='' defaultValue={100048} />
+								<input
+									type='checkbox'
+									className='hidden'
+									name=''
+									defaultValue={100048}
+								/>
 								<div className='justify-center box-border bg-[#fff] text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]'>
 									<i> </i>
 								</div>
@@ -261,7 +306,12 @@ function CategoryFilterComponent(): JSX.Element {
 					<div className='items-start justify-start flex-wrap flex px-0 py-2'>
 						<div className='block text-[rgba(0,0,0,0.8)]'>
 							<label className='items-start cursor-pointer flex select-none text-[0.875rem]'>
-								<input type='checkbox' className='hidden' name='' defaultValue={100052} />
+								<input
+									type='checkbox'
+									className='hidden'
+									name=''
+									defaultValue={100052}
+								/>
 								<div className='justify-center box-border bg-[#fff] text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]'>
 									<i> </i>
 								</div>
@@ -281,7 +331,12 @@ function CategoryFilterComponent(): JSX.Element {
 					<div className='items-start justify-start flex-wrap flex px-0 py-2'>
 						<div className='block text-[rgba(0,0,0,0.8)]'>
 							<label className='items-start cursor-pointer flex select-none text-[0.875rem]'>
-								<input type='checkbox' className='hidden' name='' defaultValue={100055} />
+								<input
+									type='checkbox'
+									className='hidden'
+									name=''
+									defaultValue={100055}
+								/>
 								<div className='justify-center box-border bg-[#fff] text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]'>
 									<i> </i>
 								</div>
@@ -301,7 +356,12 @@ function CategoryFilterComponent(): JSX.Element {
 					<div className='items-start justify-start flex-wrap flex px-0 py-2'>
 						<div className='block text-[rgba(0,0,0,0.8)]'>
 							<label className='items-start cursor-pointer flex select-none text-[0.875rem]'>
-								<input type='checkbox' className='hidden' name='' defaultValue={100057} />
+								<input
+									type='checkbox'
+									className='hidden'
+									name=''
+									defaultValue={100057}
+								/>
 								<div className='justify-center box-border bg-[#fff] text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]'>
 									<i> </i>
 								</div>
@@ -321,7 +381,12 @@ function CategoryFilterComponent(): JSX.Element {
 					<div className='items-start justify-start flex-wrap flex px-0 py-2'>
 						<div className='block text-[rgba(0,0,0,0.8)]'>
 							<label className='items-start cursor-pointer flex select-none text-[0.875rem]'>
-								<input type='checkbox' className='hidden' name='' defaultValue={100017} />
+								<input
+									type='checkbox'
+									className='hidden'
+									name=''
+									defaultValue={100017}
+								/>
 								<div className='justify-center box-border bg-[#fff] text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]'>
 									<i> </i>
 								</div>
@@ -363,7 +428,12 @@ function CategoryFilterComponent(): JSX.Element {
 					<div className='items-start justify-start flex-wrap flex px-0 py-2'>
 						<div className='block text-[rgba(0,0,0,0.8)]'>
 							<label className='items-start cursor-pointer flex select-none text-[0.875rem]'>
-								<input type='checkbox' className='hidden' name='' defaultValue='TP. Hồ Chí Minh' />
+								<input
+									type='checkbox'
+									className='hidden'
+									name=''
+									defaultValue='TP. Hồ Chí Minh'
+								/>
 								<div className='justify-center box-border bg-[#fff] text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]'>
 									<i> </i>
 								</div>
@@ -383,7 +453,12 @@ function CategoryFilterComponent(): JSX.Element {
 					<div className='items-start justify-start flex-wrap flex px-0 py-2'>
 						<div className='block text-[rgba(0,0,0,0.8)]'>
 							<label className='items-start cursor-pointer flex select-none text-[0.875rem]'>
-								<input type='checkbox' className='hidden' name='' defaultValue='Hà Nội' />
+								<input
+									type='checkbox'
+									className='hidden'
+									name=''
+									defaultValue='Hà Nội'
+								/>
 								<div className='justify-center box-border bg-[#fff] text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]'>
 									<i> </i>
 								</div>
@@ -403,7 +478,12 @@ function CategoryFilterComponent(): JSX.Element {
 					<div className='items-start justify-start flex-wrap flex px-0 py-2'>
 						<div className='block text-[rgba(0,0,0,0.8)]'>
 							<label className='items-start cursor-pointer flex select-none text-[0.875rem]'>
-								<input type='checkbox' className='hidden' name='' defaultValue='Quận 1' />
+								<input
+									type='checkbox'
+									className='hidden'
+									name=''
+									defaultValue='Quận 1'
+								/>
 								<div className='justify-center box-border bg-[#fff] text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]'>
 									<i> </i>
 								</div>
@@ -423,7 +503,12 @@ function CategoryFilterComponent(): JSX.Element {
 					<div className='items-start justify-start flex-wrap flex px-0 py-2'>
 						<div className='block text-[rgba(0,0,0,0.8)]'>
 							<label className='items-start cursor-pointer flex select-none text-[0.875rem]'>
-								<input type='checkbox' className='hidden' name='' defaultValue='Quận 3' />
+								<input
+									type='checkbox'
+									className='hidden'
+									name=''
+									defaultValue='Quận 3'
+								/>
 								<div className='justify-center box-border bg-[#fff] text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]'>
 									<i> </i>
 								</div>
@@ -443,7 +528,12 @@ function CategoryFilterComponent(): JSX.Element {
 					<div className='items-start justify-start flex-wrap flex px-0 py-2'>
 						<div className='block text-[rgba(0,0,0,0.8)]'>
 							<label className='items-start cursor-pointer flex select-none text-[0.875rem]'>
-								<input type='checkbox' className='hidden' name='' defaultValue='Quận 6' />
+								<input
+									type='checkbox'
+									className='hidden'
+									name=''
+									defaultValue='Quận 6'
+								/>
 								<div className='justify-center box-border bg-[#fff] text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]'>
 									<i> </i>
 								</div>
@@ -463,7 +553,12 @@ function CategoryFilterComponent(): JSX.Element {
 					<div className='items-start justify-start flex-wrap flex px-0 py-2'>
 						<div className='block text-[rgba(0,0,0,0.8)]'>
 							<label className='items-start cursor-pointer flex select-none text-[0.875rem]'>
-								<input type='checkbox' className='hidden' name='' defaultValue='Quận 7' />
+								<input
+									type='checkbox'
+									className='hidden'
+									name=''
+									defaultValue='Quận 7'
+								/>
 								<div className='justify-center box-border bg-[#fff] text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]'>
 									<i> </i>
 								</div>
@@ -483,7 +578,12 @@ function CategoryFilterComponent(): JSX.Element {
 					<div className='items-start justify-start flex-wrap flex px-0 py-2'>
 						<div className='block text-[rgba(0,0,0,0.8)]'>
 							<label className='items-start cursor-pointer flex select-none text-[0.875rem]'>
-								<input type='checkbox' className='hidden' name='' defaultValue='Quận 8' />
+								<input
+									type='checkbox'
+									className='hidden'
+									name=''
+									defaultValue='Quận 8'
+								/>
 								<div className='justify-center box-border bg-[#fff] text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]'>
 									<i> </i>
 								</div>
@@ -503,7 +603,12 @@ function CategoryFilterComponent(): JSX.Element {
 					<div className='items-start justify-start flex-wrap flex px-0 py-2'>
 						<div className='block text-[rgba(0,0,0,0.8)]'>
 							<label className='items-start cursor-pointer flex select-none text-[0.875rem]'>
-								<input type='checkbox' className='hidden' name='' defaultValue='Quận 10' />
+								<input
+									type='checkbox'
+									className='hidden'
+									name=''
+									defaultValue='Quận 10'
+								/>
 								<div className='justify-center box-border bg-[#fff] text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]'>
 									<i> </i>
 								</div>
@@ -523,7 +628,12 @@ function CategoryFilterComponent(): JSX.Element {
 					<div className='items-start justify-start flex-wrap flex px-0 py-2'>
 						<div className='block text-[rgba(0,0,0,0.8)]'>
 							<label className='items-start cursor-pointer flex select-none text-[0.875rem]'>
-								<input type='checkbox' className='hidden' name='' defaultValue='Quận 11' />
+								<input
+									type='checkbox'
+									className='hidden'
+									name=''
+									defaultValue='Quận 11'
+								/>
 								<div className='justify-center box-border bg-[#fff] text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]'>
 									<i> </i>
 								</div>
@@ -543,7 +653,12 @@ function CategoryFilterComponent(): JSX.Element {
 					<div className='items-start justify-start flex-wrap flex px-0 py-2'>
 						<div className='block text-[rgba(0,0,0,0.8)]'>
 							<label className='items-start cursor-pointer flex select-none text-[0.875rem]'>
-								<input type='checkbox' className='hidden' name='' defaultValue='Quận 12' />
+								<input
+									type='checkbox'
+									className='hidden'
+									name=''
+									defaultValue='Quận 12'
+								/>
 								<div className='justify-center box-border bg-[#fff] text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]'>
 									<i> </i>
 								</div>
@@ -563,7 +678,12 @@ function CategoryFilterComponent(): JSX.Element {
 					<div className='items-start justify-start flex-wrap flex px-0 py-2'>
 						<div className='block text-[rgba(0,0,0,0.8)]'>
 							<label className='items-start cursor-pointer flex select-none text-[0.875rem]'>
-								<input type='checkbox' className='hidden' name='' defaultValue='Quận Gò Vấp' />
+								<input
+									type='checkbox'
+									className='hidden'
+									name=''
+									defaultValue='Quận Gò Vấp'
+								/>
 								<div className='justify-center box-border bg-[#fff] text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]'>
 									<i> </i>
 								</div>
@@ -583,7 +703,12 @@ function CategoryFilterComponent(): JSX.Element {
 					<div className='items-start justify-start flex-wrap flex px-0 py-2'>
 						<div className='block text-[rgba(0,0,0,0.8)]'>
 							<label className='items-start cursor-pointer flex select-none text-[0.875rem]'>
-								<input type='checkbox' className='hidden' name='' defaultValue='Quận Tân Phú' />
+								<input
+									type='checkbox'
+									className='hidden'
+									name=''
+									defaultValue='Quận Tân Phú'
+								/>
 								<div className='justify-center box-border bg-[#fff] text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]'>
 									<i> </i>
 								</div>
@@ -603,7 +728,12 @@ function CategoryFilterComponent(): JSX.Element {
 					<div className='items-start justify-start flex-wrap flex px-0 py-2'>
 						<div className='block text-[rgba(0,0,0,0.8)]'>
 							<label className='items-start cursor-pointer flex select-none text-[0.875rem]'>
-								<input type='checkbox' className='hidden' name='' defaultValue='Quận Bình Tân' />
+								<input
+									type='checkbox'
+									className='hidden'
+									name=''
+									defaultValue='Quận Bình Tân'
+								/>
 								<div className='justify-center box-border bg-[#fff] text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]'>
 									<i> </i>
 								</div>
@@ -623,7 +753,12 @@ function CategoryFilterComponent(): JSX.Element {
 					<div className='items-start justify-start flex-wrap flex px-0 py-2'>
 						<div className='block text-[rgba(0,0,0,0.8)]'>
 							<label className='items-start cursor-pointer flex select-none text-[0.875rem]'>
-								<input type='checkbox' className='hidden' name='' defaultValue='Quận Tân Bình' />
+								<input
+									type='checkbox'
+									className='hidden'
+									name=''
+									defaultValue='Quận Tân Bình'
+								/>
 								<div className='justify-center box-border bg-[#fff] text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]'>
 									<i> </i>
 								</div>
@@ -643,7 +778,12 @@ function CategoryFilterComponent(): JSX.Element {
 					<div className='items-start justify-start flex-wrap flex px-0 py-2'>
 						<div className='block text-[rgba(0,0,0,0.8)]'>
 							<label className='items-start cursor-pointer flex select-none text-[0.875rem]'>
-								<input type='checkbox' className='hidden' name='' defaultValue='Thành Phố Thủ Đức' />
+								<input
+									type='checkbox'
+									className='hidden'
+									name=''
+									defaultValue='Thành Phố Thủ Đức'
+								/>
 								<div className='justify-center box-border bg-[#fff] text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]'>
 									<i> </i>
 								</div>
@@ -663,7 +803,12 @@ function CategoryFilterComponent(): JSX.Element {
 					<div className='items-start justify-start flex-wrap flex px-0 py-2'>
 						<div className='block text-[rgba(0,0,0,0.8)]'>
 							<label className='items-start cursor-pointer flex select-none text-[0.875rem]'>
-								<input type='checkbox' className='hidden' name='' defaultValue='Quận Bình Thạnh' />
+								<input
+									type='checkbox'
+									className='hidden'
+									name=''
+									defaultValue='Quận Bình Thạnh'
+								/>
 								<div className='justify-center box-border bg-[#fff] text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]'>
 									<i> </i>
 								</div>
@@ -683,7 +828,12 @@ function CategoryFilterComponent(): JSX.Element {
 					<div className='items-start justify-start flex-wrap flex px-0 py-2'>
 						<div className='block text-[rgba(0,0,0,0.8)]'>
 							<label className='items-start cursor-pointer flex select-none text-[0.875rem]'>
-								<input type='checkbox' className='hidden' name='' defaultValue='Quận Phú Nhuận' />
+								<input
+									type='checkbox'
+									className='hidden'
+									name=''
+									defaultValue='Quận Phú Nhuận'
+								/>
 								<div className='justify-center box-border bg-[#fff] text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]'>
 									<i> </i>
 								</div>
@@ -703,7 +853,12 @@ function CategoryFilterComponent(): JSX.Element {
 					<div className='items-start justify-start flex-wrap flex px-0 py-2'>
 						<div className='block text-[rgba(0,0,0,0.8)]'>
 							<label className='items-start cursor-pointer flex select-none text-[0.875rem]'>
-								<input type='checkbox' className='hidden' name='' defaultValue='Huyện Bình Chánh' />
+								<input
+									type='checkbox'
+									className='hidden'
+									name=''
+									defaultValue='Huyện Bình Chánh'
+								/>
 								<div className='justify-center box-border bg-[#fff] text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]'>
 									<i> </i>
 								</div>
@@ -741,7 +896,12 @@ function CategoryFilterComponent(): JSX.Element {
 					<div className='items-start justify-start flex-wrap flex px-0 py-2'>
 						<div className='block text-[rgba(0,0,0,0.8)]'>
 							<label className='items-start cursor-pointer flex select-none text-[0.875rem]'>
-								<input type='checkbox' className='hidden' name='' defaultValue={1} />
+								<input
+									type='checkbox'
+									className='hidden'
+									name=''
+									defaultValue={1}
+								/>
 								<div className='justify-center box-border bg-[#fff] text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]'>
 									<i> </i>
 								</div>
@@ -761,7 +921,12 @@ function CategoryFilterComponent(): JSX.Element {
 					<div className='items-start justify-start flex-wrap flex px-0 py-2'>
 						<div className='block text-[rgba(0,0,0,0.8)]'>
 							<label className='items-start cursor-pointer flex select-none text-[0.875rem]'>
-								<input type='checkbox' className='hidden' name='' defaultValue={2} />
+								<input
+									type='checkbox'
+									className='hidden'
+									name=''
+									defaultValue={2}
+								/>
 								<div className='justify-center box-border bg-[#fff] text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]'>
 									<i> </i>
 								</div>
@@ -781,7 +946,12 @@ function CategoryFilterComponent(): JSX.Element {
 					<div className='items-start justify-start flex-wrap flex px-0 py-2'>
 						<div className='block text-[rgba(0,0,0,0.8)]'>
 							<label className='items-start cursor-pointer flex select-none text-[0.875rem]'>
-								<input type='checkbox' className='hidden' name='' defaultValue={3} />
+								<input
+									type='checkbox'
+									className='hidden'
+									name=''
+									defaultValue={3}
+								/>
 								<div className='justify-center box-border bg-[#fff] text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]'>
 									<i> </i>
 								</div>
@@ -806,7 +976,12 @@ function CategoryFilterComponent(): JSX.Element {
 					<div className='items-start justify-start flex-wrap flex px-0 py-2'>
 						<div className='block text-[rgba(0,0,0,0.8)]'>
 							<label className='items-start cursor-pointer flex select-none text-[0.875rem]'>
-								<input type='checkbox' className='hidden' name='' defaultValue={1277322} />
+								<input
+									type='checkbox'
+									className='hidden'
+									name=''
+									defaultValue={1277322}
+								/>
 								<div className='justify-center box-border bg-[#fff] text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]'>
 									<i> </i>
 								</div>
@@ -826,7 +1001,12 @@ function CategoryFilterComponent(): JSX.Element {
 					<div className='items-start justify-start flex-wrap flex px-0 py-2'>
 						<div className='block text-[rgba(0,0,0,0.8)]'>
 							<label className='items-start cursor-pointer flex select-none text-[0.875rem]'>
-								<input type='checkbox' className='hidden' name='' defaultValue={3383086} />
+								<input
+									type='checkbox'
+									className='hidden'
+									name=''
+									defaultValue={3383086}
+								/>
 								<div className='justify-center box-border bg-[#fff] text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]'>
 									<i> </i>
 								</div>
@@ -846,7 +1026,12 @@ function CategoryFilterComponent(): JSX.Element {
 					<div className='items-start justify-start flex-wrap flex px-0 py-2'>
 						<div className='block text-[rgba(0,0,0,0.8)]'>
 							<label className='items-start cursor-pointer flex select-none text-[0.875rem]'>
-								<input type='checkbox' className='hidden' name='' defaultValue={3213680} />
+								<input
+									type='checkbox'
+									className='hidden'
+									name=''
+									defaultValue={3213680}
+								/>
 								<div className='justify-center box-border bg-[#fff] text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]'>
 									<i> </i>
 								</div>
@@ -866,7 +1051,12 @@ function CategoryFilterComponent(): JSX.Element {
 					<div className='items-start justify-start flex-wrap flex px-0 py-2'>
 						<div className='block text-[rgba(0,0,0,0.8)]'>
 							<label className='items-start cursor-pointer flex select-none text-[0.875rem]'>
-								<input type='checkbox' className='hidden' name='' defaultValue={2241936} />
+								<input
+									type='checkbox'
+									className='hidden'
+									name=''
+									defaultValue={2241936}
+								/>
 								<div className='justify-center box-border bg-[#fff] text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]'>
 									<i> </i>
 								</div>
@@ -886,7 +1076,12 @@ function CategoryFilterComponent(): JSX.Element {
 					<div className='items-start justify-start flex-wrap flex px-0 py-2'>
 						<div className='block text-[rgba(0,0,0,0.8)]'>
 							<label className='items-start cursor-pointer flex select-none text-[0.875rem]'>
-								<input type='checkbox' className='hidden' name='' defaultValue={3020933} />
+								<input
+									type='checkbox'
+									className='hidden'
+									name=''
+									defaultValue={3020933}
+								/>
 								<div className='justify-center box-border bg-[#fff] text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]'>
 									<i> </i>
 								</div>
@@ -906,7 +1101,12 @@ function CategoryFilterComponent(): JSX.Element {
 					<div className='items-start justify-start flex-wrap flex px-0 py-2'>
 						<div className='block text-[rgba(0,0,0,0.8)]'>
 							<label className='items-start cursor-pointer flex select-none text-[0.875rem]'>
-								<input type='checkbox' className='hidden' name='' defaultValue={2352745} />
+								<input
+									type='checkbox'
+									className='hidden'
+									name=''
+									defaultValue={2352745}
+								/>
 								<div className='justify-center box-border bg-[#fff] text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]'>
 									<i> </i>
 								</div>
@@ -926,7 +1126,12 @@ function CategoryFilterComponent(): JSX.Element {
 					<div className='items-start justify-start flex-wrap flex px-0 py-2'>
 						<div className='block text-[rgba(0,0,0,0.8)]'>
 							<label className='items-start cursor-pointer flex select-none text-[0.875rem]'>
-								<input type='checkbox' className='hidden' name='' defaultValue={3487506} />
+								<input
+									type='checkbox'
+									className='hidden'
+									name=''
+									defaultValue={3487506}
+								/>
 								<div className='justify-center box-border bg-[#fff] text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]'>
 									<i> </i>
 								</div>
@@ -946,7 +1151,12 @@ function CategoryFilterComponent(): JSX.Element {
 					<div className='items-start justify-start flex-wrap flex px-0 py-2'>
 						<div className='block text-[rgba(0,0,0,0.8)]'>
 							<label className='items-start cursor-pointer flex select-none text-[0.875rem]'>
-								<input type='checkbox' className='hidden' name='' defaultValue={1664281} />
+								<input
+									type='checkbox'
+									className='hidden'
+									name=''
+									defaultValue={1664281}
+								/>
 								<div className='justify-center box-border bg-[#fff] text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]'>
 									<i> </i>
 								</div>
@@ -966,7 +1176,12 @@ function CategoryFilterComponent(): JSX.Element {
 					<div className='items-start justify-start flex-wrap flex px-0 py-2'>
 						<div className='block text-[rgba(0,0,0,0.8)]'>
 							<label className='items-start cursor-pointer flex select-none text-[0.875rem]'>
-								<input type='checkbox' className='hidden' name='' defaultValue={1063818} />
+								<input
+									type='checkbox'
+									className='hidden'
+									name=''
+									defaultValue={1063818}
+								/>
 								<div className='justify-center box-border bg-[#fff] text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]'>
 									<i> </i>
 								</div>
@@ -986,7 +1201,12 @@ function CategoryFilterComponent(): JSX.Element {
 					<div className='items-start justify-start flex-wrap flex px-0 py-2'>
 						<div className='block text-[rgba(0,0,0,0.8)]'>
 							<label className='items-start cursor-pointer flex select-none text-[0.875rem]'>
-								<input type='checkbox' className='hidden' name='' defaultValue={1253300} />
+								<input
+									type='checkbox'
+									className='hidden'
+									name=''
+									defaultValue={1253300}
+								/>
 								<div className='justify-center box-border bg-[#fff] text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]'>
 									<i> </i>
 								</div>
@@ -1006,7 +1226,12 @@ function CategoryFilterComponent(): JSX.Element {
 					<div className='items-start justify-start flex-wrap flex px-0 py-2'>
 						<div className='block text-[rgba(0,0,0,0.8)]'>
 							<label className='items-start cursor-pointer flex select-none text-[0.875rem]'>
-								<input type='checkbox' className='hidden' name='' defaultValue={1255588} />
+								<input
+									type='checkbox'
+									className='hidden'
+									name=''
+									defaultValue={1255588}
+								/>
 								<div className='justify-center box-border bg-[#fff] text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]'>
 									<i> </i>
 								</div>
@@ -1026,7 +1251,12 @@ function CategoryFilterComponent(): JSX.Element {
 					<div className='items-start justify-start flex-wrap flex px-0 py-2'>
 						<div className='block text-[rgba(0,0,0,0.8)]'>
 							<label className='items-start cursor-pointer flex select-none text-[0.875rem]'>
-								<input type='checkbox' className='hidden' name='' defaultValue={1258193} />
+								<input
+									type='checkbox'
+									className='hidden'
+									name=''
+									defaultValue={1258193}
+								/>
 								<div className='justify-center box-border bg-[#fff] text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]'>
 									<i> </i>
 								</div>
@@ -1046,7 +1276,12 @@ function CategoryFilterComponent(): JSX.Element {
 					<div className='items-start justify-start flex-wrap flex px-0 py-2'>
 						<div className='block text-[rgba(0,0,0,0.8)]'>
 							<label className='items-start cursor-pointer flex select-none text-[0.875rem]'>
-								<input type='checkbox' className='hidden' name='' defaultValue={3682733} />
+								<input
+									type='checkbox'
+									className='hidden'
+									name=''
+									defaultValue={3682733}
+								/>
 								<div className='justify-center box-border bg-[#fff] text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]'>
 									<i> </i>
 								</div>
@@ -1066,7 +1301,12 @@ function CategoryFilterComponent(): JSX.Element {
 					<div className='items-start justify-start flex-wrap flex px-0 py-2'>
 						<div className='block text-[rgba(0,0,0,0.8)]'>
 							<label className='items-start cursor-pointer flex select-none text-[0.875rem]'>
-								<input type='checkbox' className='hidden' name='' defaultValue={1077247} />
+								<input
+									type='checkbox'
+									className='hidden'
+									name=''
+									defaultValue={1077247}
+								/>
 								<div className='justify-center box-border bg-[#fff] text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]'>
 									<i> </i>
 								</div>
@@ -1086,7 +1326,12 @@ function CategoryFilterComponent(): JSX.Element {
 					<div className='items-start justify-start flex-wrap flex px-0 py-2'>
 						<div className='block text-[rgba(0,0,0,0.8)]'>
 							<label className='items-start cursor-pointer flex select-none text-[0.875rem]'>
-								<input type='checkbox' className='hidden' name='' defaultValue={1237600} />
+								<input
+									type='checkbox'
+									className='hidden'
+									name=''
+									defaultValue={1237600}
+								/>
 								<div className='justify-center box-border bg-[#fff] text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]'>
 									<i> </i>
 								</div>
@@ -1106,7 +1351,12 @@ function CategoryFilterComponent(): JSX.Element {
 					<div className='items-start justify-start flex-wrap flex px-0 py-2'>
 						<div className='block text-[rgba(0,0,0,0.8)]'>
 							<label className='items-start cursor-pointer flex select-none text-[0.875rem]'>
-								<input type='checkbox' className='hidden' name='' defaultValue={1250589} />
+								<input
+									type='checkbox'
+									className='hidden'
+									name=''
+									defaultValue={1250589}
+								/>
 								<div className='justify-center box-border bg-[#fff] text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]'>
 									<i> </i>
 								</div>
@@ -1126,7 +1376,12 @@ function CategoryFilterComponent(): JSX.Element {
 					<div className='items-start justify-start flex-wrap flex px-0 py-2'>
 						<div className='block text-[rgba(0,0,0,0.8)]'>
 							<label className='items-start cursor-pointer flex select-none text-[0.875rem]'>
-								<input type='checkbox' className='hidden' name='' defaultValue={1544544} />
+								<input
+									type='checkbox'
+									className='hidden'
+									name=''
+									defaultValue={1544544}
+								/>
 								<div className='justify-center box-border bg-[#fff] text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]'>
 									<i> </i>
 								</div>
@@ -1146,7 +1401,12 @@ function CategoryFilterComponent(): JSX.Element {
 					<div className='items-start justify-start flex-wrap flex px-0 py-2'>
 						<div className='block text-[rgba(0,0,0,0.8)]'>
 							<label className='items-start cursor-pointer flex select-none text-[0.875rem]'>
-								<input type='checkbox' className='hidden' name='' defaultValue={2006352} />
+								<input
+									type='checkbox'
+									className='hidden'
+									name=''
+									defaultValue={2006352}
+								/>
 								<div className='justify-center box-border bg-[#fff] text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]'>
 									<i> </i>
 								</div>
@@ -1166,7 +1426,12 @@ function CategoryFilterComponent(): JSX.Element {
 					<div className='items-start justify-start flex-wrap flex px-0 py-2'>
 						<div className='block text-[rgba(0,0,0,0.8)]'>
 							<label className='items-start cursor-pointer flex select-none text-[0.875rem]'>
-								<input type='checkbox' className='hidden' name='' defaultValue={2871730} />
+								<input
+									type='checkbox'
+									className='hidden'
+									name=''
+									defaultValue={2871730}
+								/>
 								<div className='justify-center box-border bg-[#fff] text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]'>
 									<i> </i>
 								</div>
@@ -1186,7 +1451,12 @@ function CategoryFilterComponent(): JSX.Element {
 					<div className='items-start justify-start flex-wrap flex px-0 py-2'>
 						<div className='block text-[rgba(0,0,0,0.8)]'>
 							<label className='items-start cursor-pointer flex select-none text-[0.875rem]'>
-								<input type='checkbox' className='hidden' name='' defaultValue={3364901} />
+								<input
+									type='checkbox'
+									className='hidden'
+									name=''
+									defaultValue={3364901}
+								/>
 								<div className='justify-center box-border bg-[#fff] text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]'>
 									<i> </i>
 								</div>
@@ -1250,7 +1520,12 @@ function CategoryFilterComponent(): JSX.Element {
 					<div className='items-start justify-start flex-wrap flex px-0 py-2'>
 						<div className='block text-[rgba(0,0,0,0.8)]'>
 							<label className='items-start cursor-pointer flex select-none text-[0.875rem]'>
-								<input type='checkbox' className='hidden' name='' defaultValue={5} />
+								<input
+									type='checkbox'
+									className='hidden'
+									name=''
+									defaultValue={5}
+								/>
 								<div className='justify-center box-border bg-[#fff] text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]'>
 									<i> </i>
 								</div>
@@ -1270,7 +1545,12 @@ function CategoryFilterComponent(): JSX.Element {
 					<div className='items-start justify-start flex-wrap flex px-0 py-2'>
 						<div className='block text-[rgba(0,0,0,0.8)]'>
 							<label className='items-start cursor-pointer flex select-none text-[0.875rem]'>
-								<input type='checkbox' className='hidden' name='' defaultValue={7} />
+								<input
+									type='checkbox'
+									className='hidden'
+									name=''
+									defaultValue={7}
+								/>
 								<div className='justify-center box-border bg-[#fff] text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]'>
 									<i> </i>
 								</div>
@@ -1290,7 +1570,12 @@ function CategoryFilterComponent(): JSX.Element {
 					<div className='items-start justify-start flex-wrap flex px-0 py-2'>
 						<div className='block text-[rgba(0,0,0,0.8)]'>
 							<label className='items-start cursor-pointer flex select-none text-[0.875rem]'>
-								<input type='checkbox' className='hidden' name='' defaultValue={6} />
+								<input
+									type='checkbox'
+									className='hidden'
+									name=''
+									defaultValue={6}
+								/>
 								<div className='justify-center box-border bg-[#fff] text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]'>
 									<i> </i>
 								</div>
@@ -1315,7 +1600,12 @@ function CategoryFilterComponent(): JSX.Element {
 					<div className='items-start justify-start flex-wrap flex px-0 py-2'>
 						<div className='block text-[rgba(0,0,0,0.8)]'>
 							<label className='items-start cursor-pointer flex select-none text-[0.875rem]'>
-								<input type='checkbox' className='hidden' name='' defaultValue={9} />
+								<input
+									type='checkbox'
+									className='hidden'
+									name=''
+									defaultValue={9}
+								/>
 								<div className='justify-center box-border bg-[#fff] text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]'>
 									<i> </i>
 								</div>
@@ -1335,7 +1625,12 @@ function CategoryFilterComponent(): JSX.Element {
 					<div className='items-start justify-start flex-wrap flex px-0 py-2'>
 						<div className='block text-[rgba(0,0,0,0.8)]'>
 							<label className='items-start cursor-pointer flex select-none text-[0.875rem]'>
-								<input type='checkbox' className='hidden' name='' defaultValue={8} />
+								<input
+									type='checkbox'
+									className='hidden'
+									name=''
+									defaultValue={8}
+								/>
 								<div className='justify-center box-border bg-[#fff] text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]'>
 									<i> </i>
 								</div>
@@ -1363,7 +1658,12 @@ function CategoryFilterComponent(): JSX.Element {
 								viewBox='0 0 9.5 8'
 								className='text-[#ffce3d] inline-block w-[1em] h-[1em] fill-current relative ml-0 mr-1 my-0'>
 								<defs>
-									<linearGradient id='ratingStarGradient' x1='50%' x2='50%' y1='0%' y2='100%'>
+									<linearGradient
+										id='ratingStarGradient'
+										x1='50%'
+										x2='50%'
+										y1='0%'
+										y2='100%'>
 										<stop offset={0} stopColor='#ffca11' />
 										<stop offset={1} stopColor='#ffad27' />
 									</linearGradient>
@@ -1372,7 +1672,11 @@ function CategoryFilterComponent(): JSX.Element {
 										points='14.910357 6.35294118 12.4209136 7.66171903 12.896355 4.88968305 10.8823529 2.92651626 13.6656353 2.52208166 14.910357 0 16.1550787 2.52208166 18.9383611 2.92651626 16.924359 4.88968305 17.3998004 7.66171903'
 									/>
 								</defs>
-								<g fill='url(#ratingStarGradient)' fillRule='evenodd' stroke='none' strokeWidth={1}>
+								<g
+									fill='url(#ratingStarGradient)'
+									fillRule='evenodd'
+									stroke='none'
+									strokeWidth={1}>
 									<g transform='translate(-876 -1270)'>
 										<g transform='translate(155 992)'>
 											<g transform='translate(600 29)'>
@@ -1394,7 +1698,12 @@ function CategoryFilterComponent(): JSX.Element {
 								viewBox='0 0 9.5 8'
 								className='text-[#ffce3d] inline-block w-[1em] h-[1em] fill-current relative ml-0 mr-1 my-0'>
 								<defs>
-									<linearGradient id='ratingStarGradient' x1='50%' x2='50%' y1='0%' y2='100%'>
+									<linearGradient
+										id='ratingStarGradient'
+										x1='50%'
+										x2='50%'
+										y1='0%'
+										y2='100%'>
 										<stop offset={0} stopColor='#ffca11' />
 										<stop offset={1} stopColor='#ffad27' />
 									</linearGradient>
@@ -1403,7 +1712,11 @@ function CategoryFilterComponent(): JSX.Element {
 										points='14.910357 6.35294118 12.4209136 7.66171903 12.896355 4.88968305 10.8823529 2.92651626 13.6656353 2.52208166 14.910357 0 16.1550787 2.52208166 18.9383611 2.92651626 16.924359 4.88968305 17.3998004 7.66171903'
 									/>
 								</defs>
-								<g fill='url(#ratingStarGradient)' fillRule='evenodd' stroke='none' strokeWidth={1}>
+								<g
+									fill='url(#ratingStarGradient)'
+									fillRule='evenodd'
+									stroke='none'
+									strokeWidth={1}>
 									<g transform='translate(-876 -1270)'>
 										<g transform='translate(155 992)'>
 											<g transform='translate(600 29)'>
@@ -1425,7 +1738,12 @@ function CategoryFilterComponent(): JSX.Element {
 								viewBox='0 0 9.5 8'
 								className='text-[#ffce3d] inline-block w-[1em] h-[1em] fill-current relative ml-0 mr-1 my-0'>
 								<defs>
-									<linearGradient id='ratingStarGradient' x1='50%' x2='50%' y1='0%' y2='100%'>
+									<linearGradient
+										id='ratingStarGradient'
+										x1='50%'
+										x2='50%'
+										y1='0%'
+										y2='100%'>
 										<stop offset={0} stopColor='#ffca11' />
 										<stop offset={1} stopColor='#ffad27' />
 									</linearGradient>
@@ -1434,7 +1752,11 @@ function CategoryFilterComponent(): JSX.Element {
 										points='14.910357 6.35294118 12.4209136 7.66171903 12.896355 4.88968305 10.8823529 2.92651626 13.6656353 2.52208166 14.910357 0 16.1550787 2.52208166 18.9383611 2.92651626 16.924359 4.88968305 17.3998004 7.66171903'
 									/>
 								</defs>
-								<g fill='url(#ratingStarGradient)' fillRule='evenodd' stroke='none' strokeWidth={1}>
+								<g
+									fill='url(#ratingStarGradient)'
+									fillRule='evenodd'
+									stroke='none'
+									strokeWidth={1}>
 									<g transform='translate(-876 -1270)'>
 										<g transform='translate(155 992)'>
 											<g transform='translate(600 29)'>
@@ -1456,7 +1778,12 @@ function CategoryFilterComponent(): JSX.Element {
 								viewBox='0 0 9.5 8'
 								className='text-[#ffce3d] inline-block w-[1em] h-[1em] fill-current relative ml-0 mr-1 my-0'>
 								<defs>
-									<linearGradient id='ratingStarGradient' x1='50%' x2='50%' y1='0%' y2='100%'>
+									<linearGradient
+										id='ratingStarGradient'
+										x1='50%'
+										x2='50%'
+										y1='0%'
+										y2='100%'>
 										<stop offset={0} stopColor='#ffca11' />
 										<stop offset={1} stopColor='#ffad27' />
 									</linearGradient>
@@ -1465,7 +1792,11 @@ function CategoryFilterComponent(): JSX.Element {
 										points='14.910357 6.35294118 12.4209136 7.66171903 12.896355 4.88968305 10.8823529 2.92651626 13.6656353 2.52208166 14.910357 0 16.1550787 2.52208166 18.9383611 2.92651626 16.924359 4.88968305 17.3998004 7.66171903'
 									/>
 								</defs>
-								<g fill='url(#ratingStarGradient)' fillRule='evenodd' stroke='none' strokeWidth={1}>
+								<g
+									fill='url(#ratingStarGradient)'
+									fillRule='evenodd'
+									stroke='none'
+									strokeWidth={1}>
 									<g transform='translate(-876 -1270)'>
 										<g transform='translate(155 992)'>
 											<g transform='translate(600 29)'>
@@ -1487,7 +1818,12 @@ function CategoryFilterComponent(): JSX.Element {
 								viewBox='0 0 9.5 8'
 								className='text-[#ffce3d] inline-block w-[1em] h-[1em] fill-current relative ml-0 mr-1 my-0'>
 								<defs>
-									<linearGradient id='ratingStarGradient' x1='50%' x2='50%' y1='0%' y2='100%'>
+									<linearGradient
+										id='ratingStarGradient'
+										x1='50%'
+										x2='50%'
+										y1='0%'
+										y2='100%'>
 										<stop offset={0} stopColor='#ffca11' />
 										<stop offset={1} stopColor='#ffad27' />
 									</linearGradient>
@@ -1496,7 +1832,11 @@ function CategoryFilterComponent(): JSX.Element {
 										points='14.910357 6.35294118 12.4209136 7.66171903 12.896355 4.88968305 10.8823529 2.92651626 13.6656353 2.52208166 14.910357 0 16.1550787 2.52208166 18.9383611 2.92651626 16.924359 4.88968305 17.3998004 7.66171903'
 									/>
 								</defs>
-								<g fill='url(#ratingStarGradient)' fillRule='evenodd' stroke='none' strokeWidth={1}>
+								<g
+									fill='url(#ratingStarGradient)'
+									fillRule='evenodd'
+									stroke='none'
+									strokeWidth={1}>
 									<g transform='translate(-876 -1270)'>
 										<g transform='translate(155 992)'>
 											<g transform='translate(600 29)'>
@@ -1522,7 +1862,12 @@ function CategoryFilterComponent(): JSX.Element {
 								viewBox='0 0 9.5 8'
 								className='text-[#ffce3d] inline-block w-[1em] h-[1em] fill-current relative ml-0 mr-1 my-0'>
 								<defs>
-									<linearGradient id='ratingStarGradient' x1='50%' x2='50%' y1='0%' y2='100%'>
+									<linearGradient
+										id='ratingStarGradient'
+										x1='50%'
+										x2='50%'
+										y1='0%'
+										y2='100%'>
 										<stop offset={0} stopColor='#ffca11' />
 										<stop offset={1} stopColor='#ffad27' />
 									</linearGradient>
@@ -1531,7 +1876,11 @@ function CategoryFilterComponent(): JSX.Element {
 										points='14.910357 6.35294118 12.4209136 7.66171903 12.896355 4.88968305 10.8823529 2.92651626 13.6656353 2.52208166 14.910357 0 16.1550787 2.52208166 18.9383611 2.92651626 16.924359 4.88968305 17.3998004 7.66171903'
 									/>
 								</defs>
-								<g fill='url(#ratingStarGradient)' fillRule='evenodd' stroke='none' strokeWidth={1}>
+								<g
+									fill='url(#ratingStarGradient)'
+									fillRule='evenodd'
+									stroke='none'
+									strokeWidth={1}>
 									<g transform='translate(-876 -1270)'>
 										<g transform='translate(155 992)'>
 											<g transform='translate(600 29)'>
@@ -1553,7 +1902,12 @@ function CategoryFilterComponent(): JSX.Element {
 								viewBox='0 0 9.5 8'
 								className='text-[#ffce3d] inline-block w-[1em] h-[1em] fill-current relative ml-0 mr-1 my-0'>
 								<defs>
-									<linearGradient id='ratingStarGradient' x1='50%' x2='50%' y1='0%' y2='100%'>
+									<linearGradient
+										id='ratingStarGradient'
+										x1='50%'
+										x2='50%'
+										y1='0%'
+										y2='100%'>
 										<stop offset={0} stopColor='#ffca11' />
 										<stop offset={1} stopColor='#ffad27' />
 									</linearGradient>
@@ -1562,7 +1916,11 @@ function CategoryFilterComponent(): JSX.Element {
 										points='14.910357 6.35294118 12.4209136 7.66171903 12.896355 4.88968305 10.8823529 2.92651626 13.6656353 2.52208166 14.910357 0 16.1550787 2.52208166 18.9383611 2.92651626 16.924359 4.88968305 17.3998004 7.66171903'
 									/>
 								</defs>
-								<g fill='url(#ratingStarGradient)' fillRule='evenodd' stroke='none' strokeWidth={1}>
+								<g
+									fill='url(#ratingStarGradient)'
+									fillRule='evenodd'
+									stroke='none'
+									strokeWidth={1}>
 									<g transform='translate(-876 -1270)'>
 										<g transform='translate(155 992)'>
 											<g transform='translate(600 29)'>
@@ -1584,7 +1942,12 @@ function CategoryFilterComponent(): JSX.Element {
 								viewBox='0 0 9.5 8'
 								className='text-[#ffce3d] inline-block w-[1em] h-[1em] fill-current relative ml-0 mr-1 my-0'>
 								<defs>
-									<linearGradient id='ratingStarGradient' x1='50%' x2='50%' y1='0%' y2='100%'>
+									<linearGradient
+										id='ratingStarGradient'
+										x1='50%'
+										x2='50%'
+										y1='0%'
+										y2='100%'>
 										<stop offset={0} stopColor='#ffca11' />
 										<stop offset={1} stopColor='#ffad27' />
 									</linearGradient>
@@ -1593,7 +1956,11 @@ function CategoryFilterComponent(): JSX.Element {
 										points='14.910357 6.35294118 12.4209136 7.66171903 12.896355 4.88968305 10.8823529 2.92651626 13.6656353 2.52208166 14.910357 0 16.1550787 2.52208166 18.9383611 2.92651626 16.924359 4.88968305 17.3998004 7.66171903'
 									/>
 								</defs>
-								<g fill='url(#ratingStarGradient)' fillRule='evenodd' stroke='none' strokeWidth={1}>
+								<g
+									fill='url(#ratingStarGradient)'
+									fillRule='evenodd'
+									stroke='none'
+									strokeWidth={1}>
 									<g transform='translate(-876 -1270)'>
 										<g transform='translate(155 992)'>
 											<g transform='translate(600 29)'>
@@ -1615,7 +1982,12 @@ function CategoryFilterComponent(): JSX.Element {
 								viewBox='0 0 9.5 8'
 								className='text-[#ffce3d] inline-block w-[1em] h-[1em] fill-current relative ml-0 mr-1 my-0'>
 								<defs>
-									<linearGradient id='ratingStarGradient' x1='50%' x2='50%' y1='0%' y2='100%'>
+									<linearGradient
+										id='ratingStarGradient'
+										x1='50%'
+										x2='50%'
+										y1='0%'
+										y2='100%'>
 										<stop offset={0} stopColor='#ffca11' />
 										<stop offset={1} stopColor='#ffad27' />
 									</linearGradient>
@@ -1624,7 +1996,11 @@ function CategoryFilterComponent(): JSX.Element {
 										points='14.910357 6.35294118 12.4209136 7.66171903 12.896355 4.88968305 10.8823529 2.92651626 13.6656353 2.52208166 14.910357 0 16.1550787 2.52208166 18.9383611 2.92651626 16.924359 4.88968305 17.3998004 7.66171903'
 									/>
 								</defs>
-								<g fill='url(#ratingStarGradient)' fillRule='evenodd' stroke='none' strokeWidth={1}>
+								<g
+									fill='url(#ratingStarGradient)'
+									fillRule='evenodd'
+									stroke='none'
+									strokeWidth={1}>
 									<g transform='translate(-876 -1270)'>
 										<g transform='translate(155 992)'>
 											<g transform='translate(600 29)'>
@@ -1642,12 +2018,27 @@ function CategoryFilterComponent(): JSX.Element {
 									</g>
 								</g>
 							</svg>
-							<div className='text-[#ffce3d] ml-0 mr-1 my-0 relative' style={{ width: 14, height: 14 }}>
-								<svg viewBox='0 0 30 30' className='w-full h-full absolute left-0 top-0'>
+							<div
+								className='text-[#ffce3d] ml-0 mr-1 my-0 relative'
+								style={{ width: 14, height: 14 }}>
+								<svg
+									viewBox='0 0 30 30'
+									className='w-full h-full absolute left-0 top-0'>
 									<defs>
-										<linearGradient id='star__hollow' x1='50%' x2='50%' y1='0%' y2='99.0177926%'>
-											<stop offset='0%' stopColor='#FFD211' />
-											<stop offset='100%' stopColor='#FFAD27' />
+										<linearGradient
+											id='star__hollow'
+											x1='50%'
+											x2='50%'
+											y1='0%'
+											y2='99.0177926%'>
+											<stop
+												offset='0%'
+												stopColor='#FFD211'
+											/>
+											<stop
+												offset='100%'
+												stopColor='#FFAD27'
+											/>
 										</linearGradient>
 									</defs>
 									<path
@@ -1663,9 +2054,20 @@ function CategoryFilterComponent(): JSX.Element {
 									className='w-full h-full absolute left-0 top-0'
 									style={{ width: '0%' }}>
 									<defs>
-										<linearGradient id='star__solid' x1='50%' x2='50%' y1='0%' y2='100%'>
-											<stop offset='0%' stopColor='#FFCA11' />
-											<stop offset='100%' stopColor='#FFAD27' />
+										<linearGradient
+											id='star__solid'
+											x1='50%'
+											x2='50%'
+											y1='0%'
+											y2='100%'>
+											<stop
+												offset='0%'
+												stopColor='#FFCA11'
+											/>
+											<stop
+												offset='100%'
+												stopColor='#FFAD27'
+											/>
 										</linearGradient>
 									</defs>
 									<path
@@ -1684,7 +2086,12 @@ function CategoryFilterComponent(): JSX.Element {
 								viewBox='0 0 9.5 8'
 								className='text-[#ffce3d] inline-block w-[1em] h-[1em] fill-current relative ml-0 mr-1 my-0'>
 								<defs>
-									<linearGradient id='ratingStarGradient' x1='50%' x2='50%' y1='0%' y2='100%'>
+									<linearGradient
+										id='ratingStarGradient'
+										x1='50%'
+										x2='50%'
+										y1='0%'
+										y2='100%'>
 										<stop offset={0} stopColor='#ffca11' />
 										<stop offset={1} stopColor='#ffad27' />
 									</linearGradient>
@@ -1693,7 +2100,11 @@ function CategoryFilterComponent(): JSX.Element {
 										points='14.910357 6.35294118 12.4209136 7.66171903 12.896355 4.88968305 10.8823529 2.92651626 13.6656353 2.52208166 14.910357 0 16.1550787 2.52208166 18.9383611 2.92651626 16.924359 4.88968305 17.3998004 7.66171903'
 									/>
 								</defs>
-								<g fill='url(#ratingStarGradient)' fillRule='evenodd' stroke='none' strokeWidth={1}>
+								<g
+									fill='url(#ratingStarGradient)'
+									fillRule='evenodd'
+									stroke='none'
+									strokeWidth={1}>
 									<g transform='translate(-876 -1270)'>
 										<g transform='translate(155 992)'>
 											<g transform='translate(600 29)'>
@@ -1715,7 +2126,12 @@ function CategoryFilterComponent(): JSX.Element {
 								viewBox='0 0 9.5 8'
 								className='text-[#ffce3d] inline-block w-[1em] h-[1em] fill-current relative ml-0 mr-1 my-0'>
 								<defs>
-									<linearGradient id='ratingStarGradient' x1='50%' x2='50%' y1='0%' y2='100%'>
+									<linearGradient
+										id='ratingStarGradient'
+										x1='50%'
+										x2='50%'
+										y1='0%'
+										y2='100%'>
 										<stop offset={0} stopColor='#ffca11' />
 										<stop offset={1} stopColor='#ffad27' />
 									</linearGradient>
@@ -1724,7 +2140,11 @@ function CategoryFilterComponent(): JSX.Element {
 										points='14.910357 6.35294118 12.4209136 7.66171903 12.896355 4.88968305 10.8823529 2.92651626 13.6656353 2.52208166 14.910357 0 16.1550787 2.52208166 18.9383611 2.92651626 16.924359 4.88968305 17.3998004 7.66171903'
 									/>
 								</defs>
-								<g fill='url(#ratingStarGradient)' fillRule='evenodd' stroke='none' strokeWidth={1}>
+								<g
+									fill='url(#ratingStarGradient)'
+									fillRule='evenodd'
+									stroke='none'
+									strokeWidth={1}>
 									<g transform='translate(-876 -1270)'>
 										<g transform='translate(155 992)'>
 											<g transform='translate(600 29)'>
@@ -1746,7 +2166,12 @@ function CategoryFilterComponent(): JSX.Element {
 								viewBox='0 0 9.5 8'
 								className='text-[#ffce3d] inline-block w-[1em] h-[1em] fill-current relative ml-0 mr-1 my-0'>
 								<defs>
-									<linearGradient id='ratingStarGradient' x1='50%' x2='50%' y1='0%' y2='100%'>
+									<linearGradient
+										id='ratingStarGradient'
+										x1='50%'
+										x2='50%'
+										y1='0%'
+										y2='100%'>
 										<stop offset={0} stopColor='#ffca11' />
 										<stop offset={1} stopColor='#ffad27' />
 									</linearGradient>
@@ -1755,7 +2180,11 @@ function CategoryFilterComponent(): JSX.Element {
 										points='14.910357 6.35294118 12.4209136 7.66171903 12.896355 4.88968305 10.8823529 2.92651626 13.6656353 2.52208166 14.910357 0 16.1550787 2.52208166 18.9383611 2.92651626 16.924359 4.88968305 17.3998004 7.66171903'
 									/>
 								</defs>
-								<g fill='url(#ratingStarGradient)' fillRule='evenodd' stroke='none' strokeWidth={1}>
+								<g
+									fill='url(#ratingStarGradient)'
+									fillRule='evenodd'
+									stroke='none'
+									strokeWidth={1}>
 									<g transform='translate(-876 -1270)'>
 										<g transform='translate(155 992)'>
 											<g transform='translate(600 29)'>
@@ -1773,12 +2202,27 @@ function CategoryFilterComponent(): JSX.Element {
 									</g>
 								</g>
 							</svg>
-							<div className='text-[#ffce3d] ml-0 mr-1 my-0 relative' style={{ width: 14, height: 14 }}>
-								<svg viewBox='0 0 30 30' className='w-full h-full absolute left-0 top-0'>
+							<div
+								className='text-[#ffce3d] ml-0 mr-1 my-0 relative'
+								style={{ width: 14, height: 14 }}>
+								<svg
+									viewBox='0 0 30 30'
+									className='w-full h-full absolute left-0 top-0'>
 									<defs>
-										<linearGradient id='star__hollow' x1='50%' x2='50%' y1='0%' y2='99.0177926%'>
-											<stop offset='0%' stopColor='#FFD211' />
-											<stop offset='100%' stopColor='#FFAD27' />
+										<linearGradient
+											id='star__hollow'
+											x1='50%'
+											x2='50%'
+											y1='0%'
+											y2='99.0177926%'>
+											<stop
+												offset='0%'
+												stopColor='#FFD211'
+											/>
+											<stop
+												offset='100%'
+												stopColor='#FFAD27'
+											/>
 										</linearGradient>
 									</defs>
 									<path
@@ -1794,9 +2238,20 @@ function CategoryFilterComponent(): JSX.Element {
 									className='w-full h-full absolute left-0 top-0'
 									style={{ width: '0%' }}>
 									<defs>
-										<linearGradient id='star__solid' x1='50%' x2='50%' y1='0%' y2='100%'>
-											<stop offset='0%' stopColor='#FFCA11' />
-											<stop offset='100%' stopColor='#FFAD27' />
+										<linearGradient
+											id='star__solid'
+											x1='50%'
+											x2='50%'
+											y1='0%'
+											y2='100%'>
+											<stop
+												offset='0%'
+												stopColor='#FFCA11'
+											/>
+											<stop
+												offset='100%'
+												stopColor='#FFAD27'
+											/>
 										</linearGradient>
 									</defs>
 									<path
@@ -1806,12 +2261,27 @@ function CategoryFilterComponent(): JSX.Element {
 									/>
 								</svg>
 							</div>
-							<div className='text-[#ffce3d] ml-0 mr-1 my-0 relative' style={{ width: 14, height: 14 }}>
-								<svg viewBox='0 0 30 30' className='w-full h-full absolute left-0 top-0'>
+							<div
+								className='text-[#ffce3d] ml-0 mr-1 my-0 relative'
+								style={{ width: 14, height: 14 }}>
+								<svg
+									viewBox='0 0 30 30'
+									className='w-full h-full absolute left-0 top-0'>
 									<defs>
-										<linearGradient id='star__hollow' x1='50%' x2='50%' y1='0%' y2='99.0177926%'>
-											<stop offset='0%' stopColor='#FFD211' />
-											<stop offset='100%' stopColor='#FFAD27' />
+										<linearGradient
+											id='star__hollow'
+											x1='50%'
+											x2='50%'
+											y1='0%'
+											y2='99.0177926%'>
+											<stop
+												offset='0%'
+												stopColor='#FFD211'
+											/>
+											<stop
+												offset='100%'
+												stopColor='#FFAD27'
+											/>
 										</linearGradient>
 									</defs>
 									<path
@@ -1827,9 +2297,20 @@ function CategoryFilterComponent(): JSX.Element {
 									className='w-full h-full absolute left-0 top-0'
 									style={{ width: '0%' }}>
 									<defs>
-										<linearGradient id='star__solid' x1='50%' x2='50%' y1='0%' y2='100%'>
-											<stop offset='0%' stopColor='#FFCA11' />
-											<stop offset='100%' stopColor='#FFAD27' />
+										<linearGradient
+											id='star__solid'
+											x1='50%'
+											x2='50%'
+											y1='0%'
+											y2='100%'>
+											<stop
+												offset='0%'
+												stopColor='#FFCA11'
+											/>
+											<stop
+												offset='100%'
+												stopColor='#FFAD27'
+											/>
 										</linearGradient>
 									</defs>
 									<path
@@ -1848,7 +2329,12 @@ function CategoryFilterComponent(): JSX.Element {
 								viewBox='0 0 9.5 8'
 								className='text-[#ffce3d] inline-block w-[1em] h-[1em] fill-current relative ml-0 mr-1 my-0'>
 								<defs>
-									<linearGradient id='ratingStarGradient' x1='50%' x2='50%' y1='0%' y2='100%'>
+									<linearGradient
+										id='ratingStarGradient'
+										x1='50%'
+										x2='50%'
+										y1='0%'
+										y2='100%'>
 										<stop offset={0} stopColor='#ffca11' />
 										<stop offset={1} stopColor='#ffad27' />
 									</linearGradient>
@@ -1857,7 +2343,11 @@ function CategoryFilterComponent(): JSX.Element {
 										points='14.910357 6.35294118 12.4209136 7.66171903 12.896355 4.88968305 10.8823529 2.92651626 13.6656353 2.52208166 14.910357 0 16.1550787 2.52208166 18.9383611 2.92651626 16.924359 4.88968305 17.3998004 7.66171903'
 									/>
 								</defs>
-								<g fill='url(#ratingStarGradient)' fillRule='evenodd' stroke='none' strokeWidth={1}>
+								<g
+									fill='url(#ratingStarGradient)'
+									fillRule='evenodd'
+									stroke='none'
+									strokeWidth={1}>
 									<g transform='translate(-876 -1270)'>
 										<g transform='translate(155 992)'>
 											<g transform='translate(600 29)'>
@@ -1879,7 +2369,12 @@ function CategoryFilterComponent(): JSX.Element {
 								viewBox='0 0 9.5 8'
 								className='text-[#ffce3d] inline-block w-[1em] h-[1em] fill-current relative ml-0 mr-1 my-0'>
 								<defs>
-									<linearGradient id='ratingStarGradient' x1='50%' x2='50%' y1='0%' y2='100%'>
+									<linearGradient
+										id='ratingStarGradient'
+										x1='50%'
+										x2='50%'
+										y1='0%'
+										y2='100%'>
 										<stop offset={0} stopColor='#ffca11' />
 										<stop offset={1} stopColor='#ffad27' />
 									</linearGradient>
@@ -1888,7 +2383,11 @@ function CategoryFilterComponent(): JSX.Element {
 										points='14.910357 6.35294118 12.4209136 7.66171903 12.896355 4.88968305 10.8823529 2.92651626 13.6656353 2.52208166 14.910357 0 16.1550787 2.52208166 18.9383611 2.92651626 16.924359 4.88968305 17.3998004 7.66171903'
 									/>
 								</defs>
-								<g fill='url(#ratingStarGradient)' fillRule='evenodd' stroke='none' strokeWidth={1}>
+								<g
+									fill='url(#ratingStarGradient)'
+									fillRule='evenodd'
+									stroke='none'
+									strokeWidth={1}>
 									<g transform='translate(-876 -1270)'>
 										<g transform='translate(155 992)'>
 											<g transform='translate(600 29)'>
@@ -1906,12 +2405,27 @@ function CategoryFilterComponent(): JSX.Element {
 									</g>
 								</g>
 							</svg>
-							<div className='text-[#ffce3d] ml-0 mr-1 my-0 relative' style={{ width: 14, height: 14 }}>
-								<svg viewBox='0 0 30 30' className='w-full h-full absolute left-0 top-0'>
+							<div
+								className='text-[#ffce3d] ml-0 mr-1 my-0 relative'
+								style={{ width: 14, height: 14 }}>
+								<svg
+									viewBox='0 0 30 30'
+									className='w-full h-full absolute left-0 top-0'>
 									<defs>
-										<linearGradient id='star__hollow' x1='50%' x2='50%' y1='0%' y2='99.0177926%'>
-											<stop offset='0%' stopColor='#FFD211' />
-											<stop offset='100%' stopColor='#FFAD27' />
+										<linearGradient
+											id='star__hollow'
+											x1='50%'
+											x2='50%'
+											y1='0%'
+											y2='99.0177926%'>
+											<stop
+												offset='0%'
+												stopColor='#FFD211'
+											/>
+											<stop
+												offset='100%'
+												stopColor='#FFAD27'
+											/>
 										</linearGradient>
 									</defs>
 									<path
@@ -1927,9 +2441,20 @@ function CategoryFilterComponent(): JSX.Element {
 									className='w-full h-full absolute left-0 top-0'
 									style={{ width: '0%' }}>
 									<defs>
-										<linearGradient id='star__solid' x1='50%' x2='50%' y1='0%' y2='100%'>
-											<stop offset='0%' stopColor='#FFCA11' />
-											<stop offset='100%' stopColor='#FFAD27' />
+										<linearGradient
+											id='star__solid'
+											x1='50%'
+											x2='50%'
+											y1='0%'
+											y2='100%'>
+											<stop
+												offset='0%'
+												stopColor='#FFCA11'
+											/>
+											<stop
+												offset='100%'
+												stopColor='#FFAD27'
+											/>
 										</linearGradient>
 									</defs>
 									<path
@@ -1939,12 +2464,27 @@ function CategoryFilterComponent(): JSX.Element {
 									/>
 								</svg>
 							</div>
-							<div className='text-[#ffce3d] ml-0 mr-1 my-0 relative' style={{ width: 14, height: 14 }}>
-								<svg viewBox='0 0 30 30' className='w-full h-full absolute left-0 top-0'>
+							<div
+								className='text-[#ffce3d] ml-0 mr-1 my-0 relative'
+								style={{ width: 14, height: 14 }}>
+								<svg
+									viewBox='0 0 30 30'
+									className='w-full h-full absolute left-0 top-0'>
 									<defs>
-										<linearGradient id='star__hollow' x1='50%' x2='50%' y1='0%' y2='99.0177926%'>
-											<stop offset='0%' stopColor='#FFD211' />
-											<stop offset='100%' stopColor='#FFAD27' />
+										<linearGradient
+											id='star__hollow'
+											x1='50%'
+											x2='50%'
+											y1='0%'
+											y2='99.0177926%'>
+											<stop
+												offset='0%'
+												stopColor='#FFD211'
+											/>
+											<stop
+												offset='100%'
+												stopColor='#FFAD27'
+											/>
 										</linearGradient>
 									</defs>
 									<path
@@ -1960,9 +2500,20 @@ function CategoryFilterComponent(): JSX.Element {
 									className='w-full h-full absolute left-0 top-0'
 									style={{ width: '0%' }}>
 									<defs>
-										<linearGradient id='star__solid' x1='50%' x2='50%' y1='0%' y2='100%'>
-											<stop offset='0%' stopColor='#FFCA11' />
-											<stop offset='100%' stopColor='#FFAD27' />
+										<linearGradient
+											id='star__solid'
+											x1='50%'
+											x2='50%'
+											y1='0%'
+											y2='100%'>
+											<stop
+												offset='0%'
+												stopColor='#FFCA11'
+											/>
+											<stop
+												offset='100%'
+												stopColor='#FFAD27'
+											/>
 										</linearGradient>
 									</defs>
 									<path
@@ -1972,12 +2523,27 @@ function CategoryFilterComponent(): JSX.Element {
 									/>
 								</svg>
 							</div>
-							<div className='text-[#ffce3d] ml-0 mr-1 my-0 relative' style={{ width: 14, height: 14 }}>
-								<svg viewBox='0 0 30 30' className='w-full h-full absolute left-0 top-0'>
+							<div
+								className='text-[#ffce3d] ml-0 mr-1 my-0 relative'
+								style={{ width: 14, height: 14 }}>
+								<svg
+									viewBox='0 0 30 30'
+									className='w-full h-full absolute left-0 top-0'>
 									<defs>
-										<linearGradient id='star__hollow' x1='50%' x2='50%' y1='0%' y2='99.0177926%'>
-											<stop offset='0%' stopColor='#FFD211' />
-											<stop offset='100%' stopColor='#FFAD27' />
+										<linearGradient
+											id='star__hollow'
+											x1='50%'
+											x2='50%'
+											y1='0%'
+											y2='99.0177926%'>
+											<stop
+												offset='0%'
+												stopColor='#FFD211'
+											/>
+											<stop
+												offset='100%'
+												stopColor='#FFAD27'
+											/>
 										</linearGradient>
 									</defs>
 									<path
@@ -1993,9 +2559,20 @@ function CategoryFilterComponent(): JSX.Element {
 									className='w-full h-full absolute left-0 top-0'
 									style={{ width: '0%' }}>
 									<defs>
-										<linearGradient id='star__solid' x1='50%' x2='50%' y1='0%' y2='100%'>
-											<stop offset='0%' stopColor='#FFCA11' />
-											<stop offset='100%' stopColor='#FFAD27' />
+										<linearGradient
+											id='star__solid'
+											x1='50%'
+											x2='50%'
+											y1='0%'
+											y2='100%'>
+											<stop
+												offset='0%'
+												stopColor='#FFCA11'
+											/>
+											<stop
+												offset='100%'
+												stopColor='#FFAD27'
+											/>
 										</linearGradient>
 									</defs>
 									<path
@@ -2014,7 +2591,12 @@ function CategoryFilterComponent(): JSX.Element {
 								viewBox='0 0 9.5 8'
 								className='text-[#ffce3d] inline-block w-[1em] h-[1em] fill-current relative ml-0 mr-1 my-0'>
 								<defs>
-									<linearGradient id='ratingStarGradient' x1='50%' x2='50%' y1='0%' y2='100%'>
+									<linearGradient
+										id='ratingStarGradient'
+										x1='50%'
+										x2='50%'
+										y1='0%'
+										y2='100%'>
 										<stop offset={0} stopColor='#ffca11' />
 										<stop offset={1} stopColor='#ffad27' />
 									</linearGradient>
@@ -2023,7 +2605,11 @@ function CategoryFilterComponent(): JSX.Element {
 										points='14.910357 6.35294118 12.4209136 7.66171903 12.896355 4.88968305 10.8823529 2.92651626 13.6656353 2.52208166 14.910357 0 16.1550787 2.52208166 18.9383611 2.92651626 16.924359 4.88968305 17.3998004 7.66171903'
 									/>
 								</defs>
-								<g fill='url(#ratingStarGradient)' fillRule='evenodd' stroke='none' strokeWidth={1}>
+								<g
+									fill='url(#ratingStarGradient)'
+									fillRule='evenodd'
+									stroke='none'
+									strokeWidth={1}>
 									<g transform='translate(-876 -1270)'>
 										<g transform='translate(155 992)'>
 											<g transform='translate(600 29)'>
@@ -2041,12 +2627,27 @@ function CategoryFilterComponent(): JSX.Element {
 									</g>
 								</g>
 							</svg>
-							<div className='text-[#ffce3d] ml-0 mr-1 my-0 relative' style={{ width: 14, height: 14 }}>
-								<svg viewBox='0 0 30 30' className='w-full h-full absolute left-0 top-0'>
+							<div
+								className='text-[#ffce3d] ml-0 mr-1 my-0 relative'
+								style={{ width: 14, height: 14 }}>
+								<svg
+									viewBox='0 0 30 30'
+									className='w-full h-full absolute left-0 top-0'>
 									<defs>
-										<linearGradient id='star__hollow' x1='50%' x2='50%' y1='0%' y2='99.0177926%'>
-											<stop offset='0%' stopColor='#FFD211' />
-											<stop offset='100%' stopColor='#FFAD27' />
+										<linearGradient
+											id='star__hollow'
+											x1='50%'
+											x2='50%'
+											y1='0%'
+											y2='99.0177926%'>
+											<stop
+												offset='0%'
+												stopColor='#FFD211'
+											/>
+											<stop
+												offset='100%'
+												stopColor='#FFAD27'
+											/>
 										</linearGradient>
 									</defs>
 									<path
@@ -2062,9 +2663,20 @@ function CategoryFilterComponent(): JSX.Element {
 									className='w-full h-full absolute left-0 top-0'
 									style={{ width: '0%' }}>
 									<defs>
-										<linearGradient id='star__solid' x1='50%' x2='50%' y1='0%' y2='100%'>
-											<stop offset='0%' stopColor='#FFCA11' />
-											<stop offset='100%' stopColor='#FFAD27' />
+										<linearGradient
+											id='star__solid'
+											x1='50%'
+											x2='50%'
+											y1='0%'
+											y2='100%'>
+											<stop
+												offset='0%'
+												stopColor='#FFCA11'
+											/>
+											<stop
+												offset='100%'
+												stopColor='#FFAD27'
+											/>
 										</linearGradient>
 									</defs>
 									<path
@@ -2074,12 +2686,27 @@ function CategoryFilterComponent(): JSX.Element {
 									/>
 								</svg>
 							</div>
-							<div className='text-[#ffce3d] ml-0 mr-1 my-0 relative' style={{ width: 14, height: 14 }}>
-								<svg viewBox='0 0 30 30' className='w-full h-full absolute left-0 top-0'>
+							<div
+								className='text-[#ffce3d] ml-0 mr-1 my-0 relative'
+								style={{ width: 14, height: 14 }}>
+								<svg
+									viewBox='0 0 30 30'
+									className='w-full h-full absolute left-0 top-0'>
 									<defs>
-										<linearGradient id='star__hollow' x1='50%' x2='50%' y1='0%' y2='99.0177926%'>
-											<stop offset='0%' stopColor='#FFD211' />
-											<stop offset='100%' stopColor='#FFAD27' />
+										<linearGradient
+											id='star__hollow'
+											x1='50%'
+											x2='50%'
+											y1='0%'
+											y2='99.0177926%'>
+											<stop
+												offset='0%'
+												stopColor='#FFD211'
+											/>
+											<stop
+												offset='100%'
+												stopColor='#FFAD27'
+											/>
 										</linearGradient>
 									</defs>
 									<path
@@ -2095,9 +2722,20 @@ function CategoryFilterComponent(): JSX.Element {
 									className='w-full h-full absolute left-0 top-0'
 									style={{ width: '0%' }}>
 									<defs>
-										<linearGradient id='star__solid' x1='50%' x2='50%' y1='0%' y2='100%'>
-											<stop offset='0%' stopColor='#FFCA11' />
-											<stop offset='100%' stopColor='#FFAD27' />
+										<linearGradient
+											id='star__solid'
+											x1='50%'
+											x2='50%'
+											y1='0%'
+											y2='100%'>
+											<stop
+												offset='0%'
+												stopColor='#FFCA11'
+											/>
+											<stop
+												offset='100%'
+												stopColor='#FFAD27'
+											/>
 										</linearGradient>
 									</defs>
 									<path
@@ -2107,12 +2745,27 @@ function CategoryFilterComponent(): JSX.Element {
 									/>
 								</svg>
 							</div>
-							<div className='text-[#ffce3d] ml-0 mr-1 my-0 relative' style={{ width: 14, height: 14 }}>
-								<svg viewBox='0 0 30 30' className='w-full h-full absolute left-0 top-0'>
+							<div
+								className='text-[#ffce3d] ml-0 mr-1 my-0 relative'
+								style={{ width: 14, height: 14 }}>
+								<svg
+									viewBox='0 0 30 30'
+									className='w-full h-full absolute left-0 top-0'>
 									<defs>
-										<linearGradient id='star__hollow' x1='50%' x2='50%' y1='0%' y2='99.0177926%'>
-											<stop offset='0%' stopColor='#FFD211' />
-											<stop offset='100%' stopColor='#FFAD27' />
+										<linearGradient
+											id='star__hollow'
+											x1='50%'
+											x2='50%'
+											y1='0%'
+											y2='99.0177926%'>
+											<stop
+												offset='0%'
+												stopColor='#FFD211'
+											/>
+											<stop
+												offset='100%'
+												stopColor='#FFAD27'
+											/>
 										</linearGradient>
 									</defs>
 									<path
@@ -2128,9 +2781,20 @@ function CategoryFilterComponent(): JSX.Element {
 									className='w-full h-full absolute left-0 top-0'
 									style={{ width: '0%' }}>
 									<defs>
-										<linearGradient id='star__solid' x1='50%' x2='50%' y1='0%' y2='100%'>
-											<stop offset='0%' stopColor='#FFCA11' />
-											<stop offset='100%' stopColor='#FFAD27' />
+										<linearGradient
+											id='star__solid'
+											x1='50%'
+											x2='50%'
+											y1='0%'
+											y2='100%'>
+											<stop
+												offset='0%'
+												stopColor='#FFCA11'
+											/>
+											<stop
+												offset='100%'
+												stopColor='#FFAD27'
+											/>
 										</linearGradient>
 									</defs>
 									<path
@@ -2140,12 +2804,27 @@ function CategoryFilterComponent(): JSX.Element {
 									/>
 								</svg>
 							</div>
-							<div className='text-[#ffce3d] ml-0 mr-1 my-0 relative' style={{ width: 14, height: 14 }}>
-								<svg viewBox='0 0 30 30' className='w-full h-full absolute left-0 top-0'>
+							<div
+								className='text-[#ffce3d] ml-0 mr-1 my-0 relative'
+								style={{ width: 14, height: 14 }}>
+								<svg
+									viewBox='0 0 30 30'
+									className='w-full h-full absolute left-0 top-0'>
 									<defs>
-										<linearGradient id='star__hollow' x1='50%' x2='50%' y1='0%' y2='99.0177926%'>
-											<stop offset='0%' stopColor='#FFD211' />
-											<stop offset='100%' stopColor='#FFAD27' />
+										<linearGradient
+											id='star__hollow'
+											x1='50%'
+											x2='50%'
+											y1='0%'
+											y2='99.0177926%'>
+											<stop
+												offset='0%'
+												stopColor='#FFD211'
+											/>
+											<stop
+												offset='100%'
+												stopColor='#FFAD27'
+											/>
 										</linearGradient>
 									</defs>
 									<path
@@ -2161,9 +2840,20 @@ function CategoryFilterComponent(): JSX.Element {
 									className='w-full h-full absolute left-0 top-0'
 									style={{ width: '0%' }}>
 									<defs>
-										<linearGradient id='star__solid' x1='50%' x2='50%' y1='0%' y2='100%'>
-											<stop offset='0%' stopColor='#FFCA11' />
-											<stop offset='100%' stopColor='#FFAD27' />
+										<linearGradient
+											id='star__solid'
+											x1='50%'
+											x2='50%'
+											y1='0%'
+											y2='100%'>
+											<stop
+												offset='0%'
+												stopColor='#FFCA11'
+											/>
+											<stop
+												offset='100%'
+												stopColor='#FFAD27'
+											/>
 										</linearGradient>
 									</defs>
 									<path
@@ -2179,7 +2869,9 @@ function CategoryFilterComponent(): JSX.Element {
 				</div>
 			</div>
 			<div className='px-0 py-[1.25rem] border-b-[rgba(0,0,0,0.09)] border-b border-solid'>
-				<div className=' font-medium mb-2.5'>Dịch Vụ &amp; Khuyến Mãi</div>
+				<div className=' font-medium mb-2.5'>
+					Dịch Vụ &amp; Khuyến Mãi
+				</div>
 				<div>
 					<div>
 						<div style={{ height: 1 }} />
@@ -2187,7 +2879,12 @@ function CategoryFilterComponent(): JSX.Element {
 					<div className='items-start justify-start flex-wrap flex px-0 py-2'>
 						<div className='block text-[rgba(0,0,0,0.8)]'>
 							<label className='items-start cursor-pointer flex select-none text-[0.875rem]'>
-								<input type='checkbox' className='hidden' name='' defaultValue={10} />
+								<input
+									type='checkbox'
+									className='hidden'
+									name=''
+									defaultValue={10}
+								/>
 								<div className='justify-center box-border bg-[#fff] text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]'>
 									<i> </i>
 								</div>
@@ -2210,7 +2907,12 @@ function CategoryFilterComponent(): JSX.Element {
 					<div className='items-start justify-start flex-wrap flex px-0 py-2'>
 						<div className='block text-[rgba(0,0,0,0.8)]'>
 							<label className='items-start cursor-pointer flex select-none text-[0.875rem]'>
-								<input type='checkbox' className='hidden' name='' defaultValue={15} />
+								<input
+									type='checkbox'
+									className='hidden'
+									name=''
+									defaultValue={15}
+								/>
 								<div className='justify-center box-border bg-[#fff] text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]'>
 									<i> </i>
 								</div>
@@ -2230,7 +2932,12 @@ function CategoryFilterComponent(): JSX.Element {
 					<div className='items-start justify-start flex-wrap flex px-0 py-2'>
 						<div className='block text-[rgba(0,0,0,0.8)]'>
 							<label className='items-start cursor-pointer flex select-none text-[0.875rem]'>
-								<input type='checkbox' className='hidden' name='' defaultValue={12} />
+								<input
+									type='checkbox'
+									className='hidden'
+									name=''
+									defaultValue={12}
+								/>
 								<div className='justify-center box-border bg-[#fff] text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]'>
 									<i> </i>
 								</div>
@@ -2250,7 +2957,12 @@ function CategoryFilterComponent(): JSX.Element {
 					<div className='items-start justify-start flex-wrap flex px-0 py-2'>
 						<div className='block text-[rgba(0,0,0,0.8)]'>
 							<label className='items-start cursor-pointer flex select-none text-[0.875rem]'>
-								<input type='checkbox' className='hidden' name='' defaultValue={14} />
+								<input
+									type='checkbox'
+									className='hidden'
+									name=''
+									defaultValue={14}
+								/>
 								<div className='justify-center box-border bg-[#fff] text-center w-[0.8125rem] h-[0.8125rem] leading-[0.6875rem] border shrink-0 shadow-[inset_0_1px_0_0_rgba(0,0,0,0.05)] flex items-center cursor-pointer select-none mr-2.5 mt-px rounded-sm border-solid border-[rgba(0,0,0,0.26)]'>
 									<i> </i>
 								</div>

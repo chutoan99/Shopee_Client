@@ -6,7 +6,9 @@ import { IItemsShopResponse, IShopIdResponse } from '../interfaces'
 
 export const ShopApi = createApi({
 	reducerPath: 'Shop',
-	baseQuery: fetchBaseQuery({ baseUrl: `${(import.meta as any).env.VITE_REACT_APP_API_HOST}/` }),
+	baseQuery: fetchBaseQuery({
+		baseUrl: `${(import.meta as any).env.VITE_REACT_APP_API_HOST}/`
+	}),
 	endpoints: (build) => ({
 		getShopId: build.query<IShopIdResponse, any>({
 			query: (params: any) => `/shop/${params.shopid}`

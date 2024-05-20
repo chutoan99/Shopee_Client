@@ -1,5 +1,8 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
-import { ICreateSearchHistoryResponse, ISearchHistoryResponse } from '../interfaces/search-history.interface'
+import {
+	ICreateSearchHistoryResponse,
+	ISearchHistoryResponse
+} from '../interfaces/search-history.interface'
 
 export const SearchHistoryApi = createApi({
 	reducerPath: 'SearchHistory',
@@ -7,7 +10,10 @@ export const SearchHistoryApi = createApi({
 		baseUrl: `${(import.meta as any).env.VITE_REACT_APP_API_HOST}/`,
 		prepareHeaders: (headers) => {
 			headers.set('Content-Type', 'application/json')
-			headers.set('Authorization', `Bearer ${localStorage.getItem('token-shopee')}`)
+			headers.set(
+				'Authorization',
+				`Bearer ${localStorage.getItem('token-shopee')}`
+			)
 			return headers
 		}
 	}),
@@ -26,4 +32,5 @@ export const SearchHistoryApi = createApi({
 		})
 	})
 })
-export const { useGetHistorySearchQuery, useCreateHistorySearchMutation } = SearchHistoryApi
+export const { useGetHistorySearchQuery, useCreateHistorySearchMutation } =
+	SearchHistoryApi

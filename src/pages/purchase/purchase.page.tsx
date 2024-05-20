@@ -4,7 +4,11 @@ import { memo, useEffect, useState } from 'react'
 //? APPS
 import { IOrder } from '../../modules/order/interfaces'
 import { formatPrice } from '../../utils/formatPrice'
-import { useGetOrdersQuery, useSearchOrdersQuery, useSearchTypeOrdersQuery } from '../../modules/order/hooks'
+import {
+	useGetOrdersQuery,
+	useSearchOrdersQuery,
+	useSearchTypeOrdersQuery
+} from '../../modules/order/hooks'
 import { LoadingComponent } from '../../components/loading'
 type Tabs = {
 	is_all: number
@@ -23,8 +27,10 @@ function PurchasePage(): JSX.Element {
 	const [shopName, setShopName] = useState('')
 	const [type, setType] = useState<number>()
 	const { data, isLoading } = useGetOrdersQuery()
-	const { data: dataResSearchOrders, refetch: onRefetchSearch } = useSearchOrdersQuery(shopName)
-	const { data: dataResSearchTypeOrders, refetch: onRefetchSearchType } = useSearchTypeOrdersQuery(type)
+	const { data: dataResSearchOrders, refetch: onRefetchSearch } =
+		useSearchOrdersQuery(shopName)
+	const { data: dataResSearchTypeOrders, refetch: onRefetchSearchType } =
+		useSearchTypeOrdersQuery(type)
 
 	useEffect(() => {
 		data?.response && setDataOrders(data?.response)
@@ -32,11 +38,13 @@ function PurchasePage(): JSX.Element {
 	}, [data])
 
 	useEffect(() => {
-		dataResSearchOrders?.response && setDataOrders(dataResSearchOrders.response || [])
+		dataResSearchOrders?.response &&
+			setDataOrders(dataResSearchOrders.response || [])
 	}, [dataResSearchOrders])
 
 	useEffect(() => {
-		dataResSearchTypeOrders?.response && setDataOrders(dataResSearchTypeOrders?.response || [])
+		dataResSearchTypeOrders?.response &&
+			setDataOrders(dataResSearchTypeOrders?.response || [])
 	}, [dataResSearchTypeOrders])
 
 	const onChangeStatus = (item: any, index: number, type: any) => {
@@ -105,14 +113,18 @@ function PurchasePage(): JSX.Element {
 								MozUserSelect: 'none'
 							}}
 							key={index}
-							onClick={() => onChangeStatus(tab.content, index, tab.type)}>
+							onClick={() =>
+								onChangeStatus(tab.content, index, tab.type)
+							}>
 							<span>
 								{tab.content}
 								<>
 									{tab.total === 0 ? (
 										<></>
 									) : (
-										<span className='text-sm text-[#ee4d2d] ml-1 mr-0 my-0'>({tab.total})</span>
+										<span className='text-sm text-[#ee4d2d] ml-1 mr-0 my-0'>
+											({tab.total})
+										</span>
 									)}
 								</>
 							</span>
@@ -126,13 +138,24 @@ function PurchasePage(): JSX.Element {
 							height='19px'
 							viewBox='0 0 19 19'
 							className='p-0 stroke-[#bbb] mx-[15px] my-0'>
-							<g id='Search-New' strokeWidth={1} fill='none' fillRule='evenodd'>
+							<g
+								id='Search-New'
+								strokeWidth={1}
+								fill='none'
+								fillRule='evenodd'>
 								<g
 									id='my-purchase-copy-27'
 									transform='translate(-399.000000, -221.000000)'
 									strokeWidth={2}>
-									<g id='Group-32' transform='translate(400.000000, 222.000000)'>
-										<circle id='Oval-27' cx={7} cy={7} r={7} />
+									<g
+										id='Group-32'
+										transform='translate(400.000000, 222.000000)'>
+										<circle
+											id='Oval-27'
+											cx={7}
+											cy={7}
+											r={7}
+										/>
 										<path
 											d='M12,12 L16.9799555,16.919354'
 											id='Path-184'
@@ -217,7 +240,9 @@ function PurchasePage(): JSX.Element {
 														<svg
 															viewBox='0 0 17 17'
 															className='mr-[5px] inline-block w-[1em] h-[1em] fill-current relative'
-															style={{ fill: 'white' }}>
+															style={{
+																fill: 'white'
+															}}>
 															<g fillRule='evenodd'>
 																<path
 																	d='M13.89 0C14.504 0 15 .512 15 1.144l-.003.088-.159 2.117.162.001c.79 0 1.46.558 1.618 1.346l.024.15.008.154v9.932a1.15 1.15 0 01-1.779.963l-.107-.08-1.882-1.567-7.962.002a1.653 1.653 0 01-1.587-1.21l-.036-.148-.021-.155-.071-.836h-.01L.91 13.868a.547.547 0 01-.26.124L.556 14a.56.56 0 01-.546-.47L0 13.429V1.144C0 .512.497 0 1.11 0h12.78zM15 4.65l-.259-.001-.461 6.197c-.045.596-.527 1.057-1.106 1.057L4.509 11.9l.058.69.01.08a.35.35 0 00.273.272l.07.007 8.434-.001 1.995 1.662.002-9.574-.003-.079a.35.35 0 00-.274-.3L15 4.65zM13.688 1.3H1.3v10.516l1.413-1.214h10.281l.694-9.302zM4.234 5.234a.8.8 0 011.042-.077l.187.164c.141.111.327.208.552.286.382.131.795.193 1.185.193s.803-.062 1.185-.193c.225-.078.41-.175.552-.286l.187-.164a.8.8 0 011.042 1.209c-.33.33-.753.579-1.26.753A5.211 5.211 0 017.2 7.4a5.211 5.211 0 01-1.706-.28c-.507-.175-.93-.424-1.26-.754a.8.8 0 010-1.132z'
@@ -225,10 +250,14 @@ function PurchasePage(): JSX.Element {
 																/>
 															</g>
 														</svg>
-														<span className='align-middle ml-1 mr-0 my-0'>chat</span>
+														<span className='align-middle ml-1 mr-0 my-0'>
+															chat
+														</span>
 													</button>
 												</div>
-												<NavLink className='ml-2 mr-0 my-0' to={`/shop/${cart.shopid}`}>
+												<NavLink
+													className='ml-2 mr-0 my-0'
+													to={`/shop/${cart.shopid}`}>
 													<button className='text-xs flex items-center capitalize text-[#555] border px-2 py-1 rounded-sm border-solid border-[rgba(0,0,0,0.09)] hover:bg-[rgba(0,0,0,0.02)] hover:border hover:border-solid hover:border-[rgba(0,0,0,0.09)]'>
 														<svg
 															enableBackground='new 0 0 15 15'
@@ -238,7 +267,9 @@ function PurchasePage(): JSX.Element {
 															className='mr-[5px] inline-block w-[1em] h-[1em] fill-current relative'>
 															<path d='m15 4.8c-.1-1-.8-2-1.6-2.9-.4-.3-.7-.5-1-.8-.1-.1-.7-.5-.7-.5h-8.5s-1.4 1.4-1.6 1.6c-.4.4-.8 1-1.1 1.4-.1.4-.4.8-.4 1.1-.3 1.4 0 2.3.6 3.3l.3.3v3.5c0 1.5 1.1 2.6 2.6 2.6h8c1.5 0 2.5-1.1 2.5-2.6v-3.7c.1-.1.1-.3.3-.3.4-.8.7-1.7.6-3zm-3 7c0 .4-.1.5-.4.5h-8c-.3 0-.5-.1-.5-.5v-3.1c.3 0 .5-.1.8-.4.1 0 .3-.1.3-.1.4.4 1 .7 1.5.7.7 0 1.2-.1 1.6-.5.5.3 1.1.4 1.6.4.7 0 1.2-.3 1.8-.7.1.1.3.3.5.4.3.1.5.3.8.3zm.5-5.2c0 .1-.4.7-.3.5l-.1.1c-.1 0-.3 0-.4-.1s-.3-.3-.5-.5l-.5-1.1-.5 1.1c-.4.4-.8.7-1.4.7-.5 0-.7 0-1-.5l-.6-1.1-.5 1.1c-.3.5-.6.6-1.1.6-.3 0-.6-.2-.9-.8l-.5-1-.7 1c-.1.3-.3.4-.4.6-.1 0-.3.1-.3.1s-.4-.4-.4-.5c-.4-.5-.5-.9-.4-1.5 0-.1.1-.4.3-.5.3-.5.4-.8.8-1.2.7-.8.8-1 1-1h7s .3.1.8.7c.5.5 1.1 1.2 1.1 1.8-.1.7-.2 1.2-.5 1.5z' />
 														</svg>
-														<span className='align-middle ml-1 mr-0 my-0'>Xem Shop</span>
+														<span className='align-middle ml-1 mr-0 my-0'>
+															Xem Shop
+														</span>
 													</button>
 												</NavLink>
 											</div>
@@ -258,7 +289,9 @@ function PurchasePage(): JSX.Element {
 																	<line
 																		fill='none'
 																		strokeLinejoin='round'
-																		strokeMiterlimit={10}
+																		strokeMiterlimit={
+																			10
+																		}
 																		x1='8.6'
 																		x2='4.2'
 																		y1='9.8'
@@ -269,18 +302,24 @@ function PurchasePage(): JSX.Element {
 																		cy='11.2'
 																		fill='none'
 																		r={2}
-																		strokeMiterlimit={10}
+																		strokeMiterlimit={
+																			10
+																		}
 																	/>
 																	<circle
 																		cx={10}
 																		cy='11.2'
 																		fill='none'
 																		r={2}
-																		strokeMiterlimit={10}
+																		strokeMiterlimit={
+																			10
+																		}
 																	/>
 																	<line
 																		fill='none'
-																		strokeMiterlimit={10}
+																		strokeMiterlimit={
+																			10
+																		}
 																		x1='10.5'
 																		x2='14.4'
 																		y1='7.3'
@@ -290,13 +329,17 @@ function PurchasePage(): JSX.Element {
 																		fill='none'
 																		points='1.5 9.8 .5 9.8 .5 1.8 10 1.8 10 9.1'
 																		strokeLinejoin='round'
-																		strokeMiterlimit={10}
+																		strokeMiterlimit={
+																			10
+																		}
 																	/>
 																	<polyline
 																		fill='none'
 																		points='9.9 3.8 14 3.8 14.5 10.2 11.9 10.2'
 																		strokeLinejoin='round'
-																		strokeMiterlimit={10}
+																		strokeMiterlimit={
+																			10
+																		}
 																	/>
 																</g>
 															</svg>
@@ -319,7 +362,9 @@ function PurchasePage(): JSX.Element {
 																	cy='7.5'
 																	fill='none'
 																	r='6.5'
-																	strokeMiterlimit={10}
+																	strokeMiterlimit={
+																		10
+																	}
 																/>
 																<path
 																	d='m5.3 5.3c.1-.3.3-.6.5-.8s.4-.4.7-.5.6-.2 1-.2c.3 0 .6 0 .9.1s.5.2.7.4.4.4.5.7.2.6.2.9c0 .2 0 .4-.1.6s-.1.3-.2.5c-.1.1-.2.2-.3.3-.1.2-.2.3-.4.4-.1.1-.2.2-.3.3s-.2.2-.3.4c-.1.1-.1.2-.2.4s-.1.3-.1.5v.4h-.9v-.5c0-.3.1-.6.2-.8s.2-.4.3-.5c.2-.2.3-.3.5-.5.1-.1.3-.3.4-.4.1-.2.2-.3.3-.5s.1-.4.1-.7c0-.4-.2-.7-.4-.9s-.5-.3-.9-.3c-.3 0-.5 0-.7.1-.1.1-.3.2-.4.4-.1.1-.2.3-.3.5 0 .2-.1.5-.1.7h-.9c0-.3.1-.7.2-1zm2.8 5.1v1.2h-1.2v-1.2z'
@@ -336,85 +381,120 @@ function PurchasePage(): JSX.Element {
 										</div>
 										<hr className='border-b-[rgba(0,0,0,0.06)] border-b border-solid' />
 
-										{cart.posts.map((post: any, index: number) => (
-											<Link to='#' key={post.itemid} className='mb-[10px]'>
-												<div className=''>
-													<div>
-														<span className='items-center flex-nowrap text-[rgba(0,0,0,0.87)] flex pt-3 pb-0 px-0'>
-															<div />
-															<div className='flex-1 items-start flex-nowrap flex pl-0 pr-3 py-0'>
-																<div className=' w-[81px] h-[81px]'>
-																	<NavLink
-																		to={`/user/purchase/order/${cart.orderid}`}
-																		className='relative'>
-																		<div className='w-20 h-20 mr-3'>
-																			<img
-																				className='w-full h-full'
-																				src={post?.image}
-																				alt={post?.name}
-																			/>
-																		</div>
-																		<div
-																			className='bg-[50%] bg-cover bg-no-repeat absolute w-full h-full left-0 top-0'
-																			style={{
-																				backgroundImage: `${post?.image}`
-																			}}>
-																			<div className='w-full h-full'></div>
-																		</div>
-																	</NavLink>
-																</div>
+										{cart.posts.map(
+											(post: any, index: number) => (
+												<Link
+													to='#'
+													key={post.itemid}
+													className='mb-[10px]'>
+													<div className=''>
+														<div>
+															<span className='items-center flex-nowrap text-[rgba(0,0,0,0.87)] flex pt-3 pb-0 px-0'>
+																<div />
+																<div className='flex-1 items-start flex-nowrap flex pl-0 pr-3 py-0'>
+																	<div className=' w-[81px] h-[81px]'>
+																		<NavLink
+																			to={`/user/purchase/order/${cart.orderid}`}
+																			className='relative'>
+																			<div className='w-20 h-20 mr-3'>
+																				<img
+																					className='w-full h-full'
+																					src={
+																						post?.image
+																					}
+																					alt={
+																						post?.name
+																					}
+																				/>
+																			</div>
+																			<div
+																				className='bg-[50%] bg-cover bg-no-repeat absolute w-full h-full left-0 top-0'
+																				style={{
+																					backgroundImage: `${post?.image}`
+																				}}>
+																				<div className='w-full h-full'></div>
+																			</div>
+																		</NavLink>
+																	</div>
 
-																<div className='min-w-0 flex flex-1 flex-col items-start pl-3 pr-0 py-0'>
-																	<NavLink
-																		to={`/user/purchase/order/${cart.orderid}`}>
-																		<div
-																			className='overflow-hidden text-ellipsis text-base leading-22 max-h-12 mt-0 mb-[5px] mx-0'
-																			style={{
-																				display: '-webkit-box',
-																				WebkitBoxOrient: 'vertical',
-																				WebkitLineClamp: 2
-																			}}>
-																			<span>{post?.name}</span>
+																	<div className='min-w-0 flex flex-1 flex-col items-start pl-3 pr-0 py-0'>
+																		<NavLink
+																			to={`/user/purchase/order/${cart.orderid}`}>
+																			<div
+																				className='overflow-hidden text-ellipsis text-base leading-22 max-h-12 mt-0 mb-[5px] mx-0'
+																				style={{
+																					display:
+																						'-webkit-box',
+																					WebkitBoxOrient:
+																						'vertical',
+																					WebkitLineClamp: 2
+																				}}>
+																				<span>
+																					{
+																						post?.name
+																					}
+																				</span>
+																			</div>
+																		</NavLink>
+																		<div className='mt-0 mx-0'>
+																			<div className='text-[rgba(0,0,0,0.54)] mb-[5px]'>
+																				Phân
+																				loại
+																				hàng:{' '}
+																				{
+																					cart
+																						?.option[
+																						index
+																					]
+																				}
+																			</div>
+																			<div className=''>
+																				x
+																				{
+																					cart
+																						?.amount[
+																						index
+																					]
+																				}
+																			</div>
 																		</div>
-																	</NavLink>
-																	<div className='mt-0 mx-0'>
-																		<div className='text-[rgba(0,0,0,0.54)] mb-[5px]'>
-																			Phân loại hàng: {cart?.option[index]}
-																		</div>
-																		<div className=''>x{cart?.amount[index]}</div>
 																	</div>
 																</div>
-															</div>
-															<div>
 																<div>
-																	<span className='align-middle text-sm leading-4 text-[rgba(0,0,0,0.87)]'>
-																		<div
-																			className='text-sm flex justify-center flex-col text-center text-[#ee4d2d] font-medium'
-																			style={{
-																				flexDirection: 'row',
-																				gap: '8px'
-																			}}>
-																			<h3 className='line-through text-[#ccc]'>
-																				đ
-																				{formatPrice(
-																					post?.price_before_discount,
-																					post?.amount
-																				)}
-																			</h3>
-																			<h3>
-																				đ{' '}
-																				{formatPrice(post?.price, post?.amount)}
-																			</h3>
-																		</div>
-																	</span>
+																	<div>
+																		<span className='align-middle text-sm leading-4 text-[rgba(0,0,0,0.87)]'>
+																			<div
+																				className='text-sm flex justify-center flex-col text-center text-[#ee4d2d] font-medium'
+																				style={{
+																					flexDirection:
+																						'row',
+																					gap: '8px'
+																				}}>
+																				<h3 className='line-through text-[#ccc]'>
+																					đ
+																					{formatPrice(
+																						post?.price_before_discount,
+																						post?.amount
+																					)}
+																				</h3>
+																				<h3>
+																					đ{' '}
+																					{formatPrice(
+																						post?.price,
+																						post?.amount
+																					)}
+																				</h3>
+																			</div>
+																		</span>
+																	</div>
 																</div>
-															</div>
-														</span>
+															</span>
+														</div>
+														<div className='h-2.5 border-b-[rgba(0,0,0,0.09)] border-b border-solid' />
 													</div>
-													<div className='h-2.5 border-b-[rgba(0,0,0,0.09)] border-b border-solid' />
-												</div>
-											</Link>
-										))}
+												</Link>
+											)
+										)}
 									</div>
 									<div></div>
 									<div className='w-full h-0 relative border-b-[rgba(0,0,0,0.09)] border-b border-dotted'></div>
@@ -447,15 +527,18 @@ function PurchasePage(): JSX.Element {
 												Thành tiền:
 											</div>
 											<div className='text-[#ee4d2d] text-2xl leading-[30px]'>
-												₫{formatPrice(cart?.final_total)}
+												₫
+												{formatPrice(cart?.final_total)}
 											</div>
 										</div>
 									</div>
 									<div className='flex flex-nowrap justify-between content-center pt-3 pb-6 px-6 bg-[#fffefb]'>
 										<div className='min-w-[300px] max-w-[400px] flex items-center gap-1 gap-1 grow text-left text-xs leading-4 text-[rgba(0,0,0,0.54)]'>
 											<span>
-												Vui lòng chỉ nhấn "Đã nhận được hàng" khi đơn hàng đã được giao đến bạn
-												và sản phẩm nhận được không có vấn đề nào.
+												Vui lòng chỉ nhấn "Đã nhận được
+												hàng" khi đơn hàng đã được giao
+												đến bạn và sản phẩm nhận được
+												không có vấn đề nào.
 											</span>
 										</div>
 										<div className='flex'>
@@ -467,14 +550,18 @@ function PurchasePage(): JSX.Element {
 											<div className='flex items-center text-ellipsis ml-2.5 mr-0 my-0 min-w-[210px] '>
 												<button
 													className='min-h-[40px] min-w-[150px] overflow-hidden text-ellipsis capitalize font-normal text-sm  py-2 rounded-sm px-3 border-solid border-[rgba(0,0,0,0.09)] hover:bg-[rgba(0,0,0,0.02)] hover:border hover:border-solid hover:border-[rgba(0,0,0,0.09)]'
-													style={{ border: '1px solid rgba(0, 0, 0, 0.09)' }}>
+													style={{
+														border: '1px solid rgba(0, 0, 0, 0.09)'
+													}}>
 													Yêu cầu Trả hàng/Hoàn tiền
 												</button>
 											</div>
 											<div className='flex items-center text-ellipsis ml-2.5 mr-0 my-0 min-w-[150px] '>
 												<button
 													className='min-h-[40px] min-w-[150px] overflow-hidden text-ellipsis capitalize font-normal text-sm   py-2 rounded-sm px-3 border-solid border-[rgba(0,0,0,0.09)] hover:bg-[rgba(0,0,0,0.02)] hover:border hover:border-solid hover:border-[rgba(0,0,0,0.09)]'
-													style={{ border: '1px solid rgba(0, 0, 0, 0.09)' }}>
+													style={{
+														border: '1px solid rgba(0, 0, 0, 0.09)'
+													}}>
 													Liên hệ Người bán
 												</button>
 											</div>
@@ -487,7 +574,9 @@ function PurchasePage(): JSX.Element {
 						<div className='w-full h-[600px] text-center'>
 							<div
 								className='flex rounded-[0.125rem] overflow-hidden flex-col justify-center w-full h-full bg-[#fff] items-center'
-								style={{ boxShadow: '0 1px 1px 0 rgb(0 0 0 / 5%)' }}>
+								style={{
+									boxShadow: '0 1px 1px 0 rgb(0 0 0 / 5%)'
+								}}>
 								<div className='A849D8'>
 									<img
 										src='https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg/5fafbb923393b712b96488590b8f781f.png'

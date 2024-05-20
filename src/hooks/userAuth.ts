@@ -19,7 +19,12 @@ const useAuth = () => {
 					const response = await GetCurrentUser()
 					if (response.err === 0) {
 						setDataUser(response.response)
-						dispatch(UserActions.updateUser({ data: response.response, isLogin: true }))
+						dispatch(
+							UserActions.updateUser({
+								data: response.response,
+								isLogin: true
+							})
+						)
 					} else {
 						toast.error(response.msg)
 					}

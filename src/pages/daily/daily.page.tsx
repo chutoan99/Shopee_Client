@@ -37,7 +37,10 @@ function DailyPage(): JSX.Element {
 						{isLoading ? (
 							<LoadingComponent />
 						) : (
-							<PaginationComponent setPayload={setPayload} totalPage={data?.totalPage} />
+							<PaginationComponent
+								setPayload={setPayload}
+								totalPage={data?.totalPage}
+							/>
 						)}
 					</div>
 				</div>

@@ -49,7 +49,10 @@ function SearchPage(): JSX.Element {
 											col={'col l-2-4 mo-4 c-6'}
 											loading={isLoading}
 										/>
-										<Pagination setPayload={setPayload} totalPage={totalPage} />
+										<Pagination
+											setPayload={setPayload}
+											totalPage={totalPage}
+										/>
 									</div>
 								</div>
 							)}

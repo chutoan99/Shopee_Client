@@ -5,7 +5,10 @@ import { NavLink, useNavigate, useParams } from 'react-router-dom'
 import { RootState } from '../../../app/store'
 import { useAppSelector } from '../../../hooks/hooks'
 import { useGetCartsQuery } from '../../cart/hooks'
-import { useCreateHistorySearchMutation, useGetHistorySearchQuery } from '../hooks'
+import {
+	useCreateHistorySearchMutation,
+	useGetHistorySearchQuery
+} from '../hooks'
 import { useGetSearchSuggestQuery } from '../../searchSuggest/hooks'
 import { ISearchHistory } from '../interfaces/search-history.interface'
 import { SuggestListComponent } from '../../searchSuggest/components'
@@ -22,7 +25,8 @@ function HeaderSearchHistoryComponent(): JSX.Element {
 		isLoading: isLoadingHistorySearch,
 		refetch: refetchHistorySearch
 	} = useGetHistorySearchQuery()
-	const { data: dataSearchSuggestion, isLoading: isLoadingSearchSuggestion } = useGetSearchSuggestQuery()
+	const { data: dataSearchSuggestion, isLoading: isLoadingSearchSuggestion } =
+		useGetSearchSuggestQuery()
 	const [createHistorySearch] = useCreateHistorySearchMutation()
 	const [payload, setPayload] = useState({
 		text: params.search
@@ -49,7 +53,9 @@ function HeaderSearchHistoryComponent(): JSX.Element {
 					<div className='w-full flex justify-center'>
 						<div className='w-[90%]'>
 							<div className='bg-[#fff] h-10 flex items-center mt-[15px] rounded-sm'>
-								<div className='flex-1 h-full relative group' id='header_search'>
+								<div
+									className='flex-1 h-full relative group'
+									id='header_search'>
 									<input
 										type='text'
 										placeholder='Nhập để tìm kiếm sản phẩm'
@@ -72,8 +78,13 @@ function HeaderSearchHistoryComponent(): JSX.Element {
 										{!isLoadingHistorySearch && (
 											<ul className='mt-1.5'>
 												{dataHistorySearch?.response?.map(
-													(item: ISearchHistory, index: number) => (
-														<li className='h-[38px] px-3 py-0' key={index}>
+													(
+														item: ISearchHistory,
+														index: number
+													) => (
+														<li
+															className='h-[38px] px-3 py-0'
+															key={index}>
 															<NavLink
 																to={`search/${item.text}`}
 																className='no-underline text-sm leading-[2.375rem] text-[#333] block'>
@@ -87,17 +98,23 @@ function HeaderSearchHistoryComponent(): JSX.Element {
 									</div>
 								</div>
 								<div className='group relative cursor-pointer pl-4 border-l-[#ccc] border-l border-solid'>
-									<span className='text-sm contents text-[#333]'>Trong shop</span>
+									<span className='text-sm contents text-[#333]'>
+										Trong shop
+									</span>
 									<span className='text-[rgb(131,131,131)] text-sm relative ml-2 mr-4 my-0 top-px'>
 										<i className='fa-solid fa-angle-down'></i>
 									</span>
 									<ul className='group-hover:block hidden absolute w-[120px] shadow-[0_1px_2px_#ccc] text-left animate-[fadeIn_ease-in_0.2s] z-[1] pl-0 rounded-[3px] right-0 top-[147%]'>
 										<li className='bg-[#fff] p-2 rounded-t-[3px]'>
-											<span className='text-[#333] text-sm ml-2'>Trong Shop</span>
+											<span className='text-[#333] text-sm ml-2'>
+												Trong Shop
+											</span>
 											<i className='fa-solid fa-check text-sm text-[#ee4d2d]  ml-3 inline-block'></i>
 										</li>
 										<li className='bg-[#fff] p-2 rounded-t-[3px]'>
-											<span className='text-[#333] text-sm ml-2'>Ngoài Shop</span>
+											<span className='text-[#333] text-sm ml-2'>
+												Ngoài Shop
+											</span>
 											<i className='fa-solid fa-check text-sm text-[#ee4d2d] hidden ml-3'></i>
 										</li>
 									</ul>
@@ -111,7 +128,9 @@ function HeaderSearchHistoryComponent(): JSX.Element {
 								</button>
 							</div>
 							{!isLoadingSearchSuggestion && (
-								<SuggestListComponent data={dataSearchSuggestion?.response || []} />
+								<SuggestListComponent
+									data={dataSearchSuggestion?.response || []}
+								/>
 							)}
 						</div>
 					</div>

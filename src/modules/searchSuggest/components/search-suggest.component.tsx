@@ -6,7 +6,9 @@ type SuggestListModel = {
 	data: ISearchSuggest[]
 }
 
-export default function SuggestListComponent({ data }: SuggestListModel): JSX.Element {
+export default function SuggestListComponent({
+	data
+}: SuggestListModel): JSX.Element {
 	return (
 		<div className='w-full overflow-hidden flex'>
 			<div className='h-[18px] text-[0.813rem] font-light overflow-y-visible flex-wrap relative mr-[55px] mt-[1.875px]'>

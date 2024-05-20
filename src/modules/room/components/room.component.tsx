@@ -11,7 +11,9 @@ import { ItemChatComponent } from '../../../components/itemChat'
 function ChatComponent(): JSX.Element {
 	const { listMess, socketio, isLoadingRoom } = useSocketIo()
 	const { data: dataRooms, isLoading, refetch } = useGetRoomsQuery()
-	const [listRoom, setListRoom] = useState<IRooms[] | null>(dataRooms?.response || [])
+	const [listRoom, setListRoom] = useState<IRooms[] | null>(
+		dataRooms?.response || []
+	)
 	const [room, setRoom] = useState<IRooms | null>()
 	const { is_popup_chat } = useAppSelector((state: RootState) => state.others)
 	const { data } = useAppSelector((state: RootState) => state.user)
@@ -38,7 +40,12 @@ function ChatComponent(): JSX.Element {
 	}, [room])
 
 	const onAddMess = () => {
-		socketio.emit('message', { user: data, shop: room?.shop_info, roomid: room?.id, message })
+		socketio.emit('message', {
+			user: data,
+			shop: room?.shop_info,
+			roomid: room?.id,
+			message
+		})
 		setMessage('')
 	}
 
@@ -51,7 +58,9 @@ function ChatComponent(): JSX.Element {
 	}, [])
 
 	return (
-		<div className='right-[10px] bottom-[10px] z-10' style={{ position: 'fixed' }}>
+		<div
+			className='right-[10px] bottom-[10px] z-10'
+			style={{ position: 'fixed' }}>
 			{isPopupChat && (
 				<div className='bg-[#fff] border shadow-[0_4px_20px_0_rgb(74_74_78_/_16%)] h-[502px] relative translate-x-0 transition-[width] duration-[0.25s] ease-[cubic-bezier(0.4,0.8,0.74,1)] border-solid border-[#dcdce0]'>
 					<div
@@ -82,7 +91,9 @@ function ChatComponent(): JSX.Element {
 							</div>
 						</div>
 						<div className='items-center flex justify-end mr-3'>
-							<div className='ml-[16px]' onClick={onToggleListChat}>
+							<div
+								className='ml-[16px]'
+								onClick={onToggleListChat}>
 								<div>
 									{isListChat ? (
 										<svg
@@ -101,7 +112,9 @@ function ChatComponent(): JSX.Element {
 									)}
 								</div>
 							</div>
-							<div className='ml-[16px]' onClick={() => setIsPopupChat(false)}>
+							<div
+								className='ml-[16px]'
+								onClick={() => setIsPopupChat(false)}>
 								<div>
 									<svg
 										viewBox='0 0 16 16'
@@ -117,7 +130,9 @@ function ChatComponent(): JSX.Element {
 					<div className='flex flex-col h-[504px]'>
 						<div className='  w-full flex'>
 							{isListChat && (
-								<div className='h-full w-[409px]' style={{ borderRight: '1px solid #ccc' }}>
+								<div
+									className='h-full w-[409px]'
+									style={{ borderRight: '1px solid #ccc' }}>
 									{isChat ? (
 										<div>
 											<div className='min-h-[340px] max-h-[340px] pt-[20px] flex flex-col h-full overflow-x-auto pb-[20px] overflow-y-scroll'>
@@ -142,38 +157,61 @@ function ChatComponent(): JSX.Element {
 												)}
 												{!isLoadingRoom && (
 													<div className='flex flex-col h-full'>
-														{listMess && listMess?.length > 0 ? (
+														{listMess &&
+														listMess?.length > 0 ? (
 															<div className='grid grid-cols-12 gap-y-2'>
-																{listMess?.map((item: any) => (
-																	<div key={item?.id}>
-																		{+item?.from_id === +data?.userid ? (
-																			<div className='col-start-6 col-end-13 p-2 rounded-lg'>
-																				<div className='flex items-center justify-start flex-row-reverse'>
-																					<div className='flex items-center justify-center h-8 w-8 rounded-full bg-indigo-500 flex-shrink-0'>
-																						<img
-																							src={data?.avatar}
-																							className='w-8 h-8 rounded-full'
-																						/>
-																					</div>
-																					<div className='relative mr-3 text-sm bg-indigo-100 py-2 px-3 shadow rounded-xl'>
-																						<div>{item?.content?.mess}</div>
+																{listMess?.map(
+																	(
+																		item: any
+																	) => (
+																		<div
+																			key={
+																				item?.id
+																			}>
+																			{+item?.from_id ===
+																			+data?.userid ? (
+																				<div className='col-start-6 col-end-13 p-2 rounded-lg'>
+																					<div className='flex items-center justify-start flex-row-reverse'>
+																						<div className='flex items-center justify-center h-8 w-8 rounded-full bg-indigo-500 flex-shrink-0'>
+																							<img
+																								src={
+																									data?.avatar
+																								}
+																								className='w-8 h-8 rounded-full'
+																							/>
+																						</div>
+																						<div className='relative mr-3 text-sm bg-indigo-100 py-2 px-3 shadow rounded-xl'>
+																							<div>
+																								{
+																									item
+																										?.content
+																										?.mess
+																								}
+																							</div>
+																						</div>
 																					</div>
 																				</div>
-																			</div>
-																		) : (
-																			<div className='p-2 rounded-lg col-start-1 col-end-8'>
-																				<div className='flex flex-row items-center'>
-																					<div className='flex items-center justify-center h-8 w-8 rounded-full bg-indigo-500 flex-shrink-0'>
-																						A
-																					</div>
-																					<div className='relative ml-3 text-sm bg-[#fff] py-2 px-3 shadow rounded-xl'>
-																						<div>{item?.content?.mess}</div>
+																			) : (
+																				<div className='p-2 rounded-lg col-start-1 col-end-8'>
+																					<div className='flex flex-row items-center'>
+																						<div className='flex items-center justify-center h-8 w-8 rounded-full bg-indigo-500 flex-shrink-0'>
+																							A
+																						</div>
+																						<div className='relative ml-3 text-sm bg-[#fff] py-2 px-3 shadow rounded-xl'>
+																							<div>
+																								{
+																									item
+																										?.content
+																										?.mess
+																								}
+																							</div>
+																						</div>
 																					</div>
 																				</div>
-																			</div>
-																		)}
-																	</div>
-																))}
+																			)}
+																		</div>
+																	)
+																)}
 															</div>
 														) : (
 															<div className='flex justify-center items-center h-full'>
@@ -190,14 +228,24 @@ function ChatComponent(): JSX.Element {
 											</div>
 											<div
 												className='flex flex-col mb-[10px]'
-												style={{ borderTop: '1px solid #ccc' }}>
+												style={{
+													borderTop: '1px solid #ccc'
+												}}>
 												<textarea
 													className='p-[10px]'
 													placeholder='Nhập nội dung tin nhắn'
 													spellCheck='false'
 													value={message}
-													style={{ overflow: 'auto', height: '80px', outline: 'none' }}
-													onChange={(e) => setMessage(e.target.value)}></textarea>
+													style={{
+														overflow: 'auto',
+														height: '80px',
+														outline: 'none'
+													}}
+													onChange={(e) =>
+														setMessage(
+															e.target.value
+														)
+													}></textarea>
 												<div className='w-full px-[10px]'>
 													<div className='flex justify-between  w-full'>
 														<div className='flex gap-[7px]'>
@@ -213,7 +261,10 @@ function ChatComponent(): JSX.Element {
 																<input
 																	accept='image/png,image/jpeg,image/jpg'
 																	type='file'
-																	style={{ display: 'none' }}
+																	style={{
+																		display:
+																			'none'
+																	}}
 																/>
 																<div>
 																	<svg
@@ -228,7 +279,10 @@ function ChatComponent(): JSX.Element {
 																<input
 																	accept='video/*,.flv,.3gp,.rm,.rmvb,.asf,.mp4,.webm'
 																	type='file'
-																	style={{ display: 'none' }}
+																	style={{
+																		display:
+																			'none'
+																	}}
 																/>
 																<div>
 																	<svg
@@ -263,15 +317,21 @@ function ChatComponent(): JSX.Element {
 														<i
 															className='fill-current inline-block leading-[0] h-[18px] w-[18px] transition-[color] duration-[0.2s] ease-[ease] text-[#ccc] cursor-pointer'
 															style={{
-																WebkitMaskRepeat: 'no-repeat',
-																WebkitMaskPosition: 'center',
-																WebkitMaskSize: 'contain'
+																WebkitMaskRepeat:
+																	'no-repeat',
+																WebkitMaskPosition:
+																	'center',
+																WebkitMaskSize:
+																	'contain'
 															}}
 															onClick={onAddMess}>
 															<svg
 																viewBox='0 0 24 24'
 																xmlns='http://www.w3.org/2000/svg'
-																fill={message && '#f7472e'}>
+																fill={
+																	message &&
+																	'#f7472e'
+																}>
 																<path d='M4 14.497v3.724L18.409 12 4 5.779v3.718l10 2.5-10 2.5zM2.698 3.038l18.63 8.044a1 1 0 010 1.836l-18.63 8.044a.5.5 0 01-.698-.46V3.498a.5.5 0 01.698-.459z'></path>
 															</svg>
 														</i>
@@ -283,7 +343,10 @@ function ChatComponent(): JSX.Element {
 										<div className='h-[451px]  pb-[20px]'>
 											<div className='flex justify-center items-center w-full h-full'>
 												<div className='h-full w-full flex justify-center items-center'>
-													<img src='/assets/Img/chat_emty.png' className=' h-[144px]' />
+													<img
+														src='/assets/Img/chat_emty.png'
+														className=' h-[144px]'
+													/>
 												</div>
 											</div>
 										</div>
@@ -328,13 +391,17 @@ function ChatComponent(): JSX.Element {
 								16
 							</div>
 							<i className='fill-current inline-block leading-[0] h-6 opacity-100 w-6 mr-2 text-[#fff]'>
-								<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'>
+								<svg
+									xmlns='http://www.w3.org/2000/svg'
+									viewBox='0 0 20 20'>
 									<path d='M18 6.07a1 1 0 01.993.883L19 7.07v10.365a1 1 0 01-1.64.768l-1.6-1.333H6.42a1 1 0 01-.98-.8l-.016-.117-.149-1.783h9.292a1.8 1.8 0 001.776-1.508l.018-.154.494-6.438H18zm-2.78-4.5a1 1 0 011 1l-.003.077-.746 9.7a1 1 0 01-.997.923H4.24l-1.6 1.333a1 1 0 01-.5.222l-.14.01a1 1 0 01-.993-.883L1 13.835V2.57a1 1 0 011-1h13.22zmo-4.638 5.082c-.223.222-.53.397-.903.526A4.61 4.61 0 018.2 7.42a4.61 4.61 0 01-1.48-.242c-.372-.129-.68-.304-.902-.526a.45.45 0 00-.636.636c.329.33.753.571 1.246.74A5.448 5.448 0 008.2 8.32c.51 0 1.126-.068 1.772-.291.493-.17.917-.412 1.246-.74a.45.45 0 00-.636-.637z'></path>
 								</svg>
 							</i>
 							<span className='text-[#fff]'>Chat</span>
 							<i className='fill-current inline-block leading-[0] text-[#fff]'>
-								<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 44 22'>
+								<svg
+									xmlns='http://www.w3.org/2000/svg'
+									viewBox='0 0 44 22'>
 									<path d='M9.286 6.001c1.161 0 2.276.365 3.164 1.033.092.064.137.107.252.194.09.085.158.064.203 0 .046-.043.182-.194.251-.26.182-.17.433-.43.752-.752a.445.445 0 00.159-.323c0-.172-.092-.3-.227-.365A7.517 7.517 0 009.286 4C5.278 4 2 7.077 2 10.885s3.256 6.885 7.286 6.885a7.49 7.49 0 004.508-1.484l.022-.043a.411.411 0 00.046-.71v-.022a25.083 25.083 0 00-.957-.946.156.156 0 00-.227 0c-.933.796-2.117 1.205-3.392 1.205-2.846 0-5.169-2.196-5.169-4.885C4.117 8.195 6.417 6 9.286 6zm32.27 9.998h-.736c-.69 0-1.247-.54-1.247-1.209v-3.715h1.96a.44.44 0 00.445-.433V9.347h-2.45V7.035c-.021-.043-.066-.065-.111-.043l-1.603.583a.423.423 0 00-.29.41v1.362h-1.781v1.295c0 .238.2.433.445.433h1.337v4.19c0 1.382 1.158 2.505 2.583 2.505H42v-1.339a.44.44 0 00-.445-.432zm-21.901-6.62c-.739 0-1.41.172-2.013.496V4.43a.44.44 0 00-.446-.43h-1.788v13.77h2.234v-4.303c0-1.076.895-1.936 2.013-1.936 1.117 0 2.01.86 2.01 1.936v4.239h2.234v-4.561l-.021-.043c-.202-2.088-2.012-3.723-4.223-3.723zm10.054 6.785c-1.475 0-2.681-1.12-2.681-2.525 0-1.383 1.206-2.524 2.681-2.524 1.476 0 2.682 1.12 2.682 2.524 0 1.405-1.206 2.525-2.682 2.525zm2.884-6.224v.603a4.786 4.786 0 00-2.985-1.035c-2.533 0-4.591 1.897-4.591 4.246 0 2.35 2.058 4.246 4.59 4.246 1.131 0 2.194-.388 2.986-1.035v.604c0 .237.203.431.453.431h1.356V9.508h-1.356c-.25 0-.453.173-.453.432z'></path>
 								</svg>
 							</i>

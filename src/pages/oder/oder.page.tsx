@@ -9,7 +9,10 @@ import { useAppSelector } from '../../hooks/hooks'
 import { formatPrice } from '../../utils/formatPrice'
 import { useDeleteCartMutation } from '../../modules/cart/hooks'
 import { useCreateOrderMutation } from '../../modules/order/hooks'
-import { ALERT_INVALID_ADDRESS_ORDER, ALERT_INVALID_PHONE_ORDER } from '../../constants/msg'
+import {
+	ALERT_INVALID_ADDRESS_ORDER,
+	ALERT_INVALID_PHONE_ORDER
+} from '../../constants/msg'
 import { Loading2Component } from '../../components/loading'
 
 type payload = {
@@ -42,7 +45,12 @@ function OderPage(): JSX.Element {
 			})
 		})
 		setTotalShip((data?.length ?? 1) * ship)
-		setTotal(dataTempt.reduce((acc, curr) => acc + curr.item.price * curr.amount, 0))
+		setTotal(
+			dataTempt.reduce(
+				(acc, curr) => acc + curr.item.price * curr.amount,
+				0
+			)
+		)
 
 		if (dataTempt.length === 0) {
 			navigate('/cart')
@@ -52,7 +60,11 @@ function OderPage(): JSX.Element {
 				item_groups_id: JSON.stringify(item.map((ele) => ele.itemid)),
 				amount: JSON.stringify(item.map((ele) => ele.amount)),
 				option: JSON.stringify(item.map((ele) => ele.item_option)),
-				final_total: item.reduce((acc, curr) => acc + curr.item.price * curr.amount, 0) + ship,
+				final_total:
+					item.reduce(
+						(acc, curr) => acc + curr.item.price * curr.amount,
+						0
+					) + ship,
 				shopid: item[0]?.shopid,
 				shop_name: item[0]?.item?.shop_name,
 				total_num_items: item.length,
@@ -109,21 +121,29 @@ function OderPage(): JSX.Element {
 		<>
 			{loading && <Loading2Component />}
 
-			<div className='p-[1.25rem] mt-[120px]' style={{ backgroundColor: '#f5f5f5' }}>
+			<div
+				className='p-[1.25rem] mt-[120px]'
+				style={{ backgroundColor: '#f5f5f5' }}>
 				<div className='grid wide'>
 					<div
 						className='h-[3px] w-full bg-[116px_3px] bg-[repeating-linear-gradient(45deg,#6fa6d6,#6fa6d6_33px,transparent_0,transparent_41px,#f18d9b_0,#f18d9b_74px,transparent_0,transparent_82px)]'
 						style={{ backgroundPositionX: '-30px' }}></div>
 					<div className='bg-[#fff] mb-2.5 pt-7 pb-6 px-[30px]'>
 						<h1 className=' flex items-center text-lg text-[#ee4d2d] uppercase mb-[20px]'>
-							<i className='fa-solid fa-location-dot pr-2.5'></i>Địa Chỉ Nhận Hàng
+							<i className='fa-solid fa-location-dot pr-2.5'></i>
+							Địa Chỉ Nhận Hàng
 						</h1>
 						<div>
 							<div className='font-bold text-[#222] inline pr-2.5'>
-								{dataUser.name} {dataUser.phone ? `SĐT: (+84) ${dataUser.phone}` : ''}
+								{dataUser.name}{' '}
+								{dataUser.phone
+									? `SĐT: (+84) ${dataUser.phone}`
+									: ''}
 							</div>
 							<div className='font-bold text-[#222] inline pr-2.5'>
-								{dataUser.phone ? `Mặc Định: ${dataUser.address} ` : ''}
+								{dataUser.phone
+									? `Mặc Định: ${dataUser.address} `
+									: ''}
 							</div>
 						</div>
 					</div>
@@ -186,7 +206,9 @@ function OderPage(): JSX.Element {
 														<svg
 															viewBox='0 0 17 17'
 															className='mr-[5px] inline-block w-[1em] h-[1em] fill-current relative'
-															style={{ fill: 'white' }}>
+															style={{
+																fill: 'white'
+															}}>
 															<g fillRule='evenodd'>
 																<path
 																	d='M13.89 0C14.504 0 15 .512 15 1.144l-.003.088-.159 2.117.162.001c.79 0 1.46.558 1.618 1.346l.024.15.008.154v9.932a1.15 1.15 0 01-1.779.963l-.107-.08-1.882-1.567-7.962.002a1.653 1.653 0 01-1.587-1.21l-.036-.148-.021-.155-.071-.836h-.01L.91 13.868a.547.547 0 01-.26.124L.556 14a.56.56 0 01-.546-.47L0 13.429V1.144C0 .512.497 0 1.11 0h12.78zM15 4.65l-.259-.001-.461 6.197c-.045.596-.527 1.057-1.106 1.057L4.509 11.9l.058.69.01.08a.35.35 0 00.273.272l.07.007 8.434-.001 1.995 1.662.002-9.574-.003-.079a.35.35 0 00-.274-.3L15 4.65zM13.688 1.3H1.3v10.516l1.413-1.214h10.281l.694-9.302zM4.234 5.234a.8.8 0 011.042-.077l.187.164c.141.111.327.208.552.286.382.131.795.193 1.185.193s.803-.062 1.185-.193c.225-.078.41-.175.552-.286l.187-.164a.8.8 0 011.042 1.209c-.33.33-.753.579-1.26.753A5.211 5.211 0 017.2 7.4a5.211 5.211 0 01-1.706-.28c-.507-.175-.93-.424-1.26-.754a.8.8 0 010-1.132z'
@@ -194,7 +216,9 @@ function OderPage(): JSX.Element {
 																/>
 															</g>
 														</svg>
-														<span className='align-middle ml-1 mr-0 my-0'>chat</span>
+														<span className='align-middle ml-1 mr-0 my-0'>
+															chat
+														</span>
 													</button>
 												</div>
 												<NavLink
@@ -209,7 +233,9 @@ function OderPage(): JSX.Element {
 															className='mr-[5px] inline-block w-[1em] h-[1em] fill-current relative'>
 															<path d='m15 4.8c-.1-1-.8-2-1.6-2.9-.4-.3-.7-.5-1-.8-.1-.1-.7-.5-.7-.5h-8.5s-1.4 1.4-1.6 1.6c-.4.4-.8 1-1.1 1.4-.1.4-.4.8-.4 1.1-.3 1.4 0 2.3.6 3.3l.3.3v3.5c0 1.5 1.1 2.6 2.6 2.6h8c1.5 0 2.5-1.1 2.5-2.6v-3.7c.1-.1.1-.3.3-.3.4-.8.7-1.7.6-3zm-3 7c0 .4-.1.5-.4.5h-8c-.3 0-.5-.1-.5-.5v-3.1c.3 0 .5-.1.8-.4.1 0 .3-.1.3-.1.4.4 1 .7 1.5.7.7 0 1.2-.1 1.6-.5.5.3 1.1.4 1.6.4.7 0 1.2-.3 1.8-.7.1.1.3.3.5.4.3.1.5.3.8.3zm.5-5.2c0 .1-.4.7-.3.5l-.1.1c-.1 0-.3 0-.4-.1s-.3-.3-.5-.5l-.5-1.1-.5 1.1c-.4.4-.8.7-1.4.7-.5 0-.7 0-1-.5l-.6-1.1-.5 1.1c-.3.5-.6.6-1.1.6-.3 0-.6-.2-.9-.8l-.5-1-.7 1c-.1.3-.3.4-.4.6-.1 0-.3.1-.3.1s-.4-.4-.4-.5c-.4-.5-.5-.9-.4-1.5 0-.1.1-.4.3-.5.3-.5.4-.8.8-1.2.7-.8.8-1 1-1h7s .3.1.8.7c.5.5 1.1 1.2 1.1 1.8-.1.7-.2 1.2-.5 1.5z' />
 														</svg>
-														<span className='align-middle ml-1 mr-0 my-0'>Xem Shop</span>
+														<span className='align-middle ml-1 mr-0 my-0'>
+															Xem Shop
+														</span>
 													</button>
 												</NavLink>
 											</div>
@@ -228,8 +254,16 @@ function OderPage(): JSX.Element {
 															<div className='w-20 h-20 mr-3'>
 																<img
 																	className='w-full h-full'
-																	src={item?.item?.image}
-																	alt={item?.item?.name}
+																	src={
+																		item
+																			?.item
+																			?.image
+																	}
+																	alt={
+																		item
+																			?.item
+																			?.name
+																	}
 																/>
 															</div>
 															<div
@@ -247,16 +281,30 @@ function OderPage(): JSX.Element {
 															<div
 																className='overflow-hidden text-ellipsis text-base leading-22 max-h-12 mt-0 mb-[5px] mx-0'
 																style={{
-																	display: '-webkit-box',
-																	WebkitBoxOrient: 'vertical',
+																	display:
+																		'-webkit-box',
+																	WebkitBoxOrient:
+																		'vertical',
 																	WebkitLineClamp: 2
 																}}>
-																<span>{item?.item?.name}</span>
+																<span>
+																	{
+																		item
+																			?.item
+																			?.name
+																	}
+																</span>
 															</div>
 														</a>
 														<div className='mt-0 mx-0'>
 															<div className='text-[rgba(0,0,0,0.54)] mb-[5px]'>
-																Phân loại hàng: {item?.item_option[index]}
+																Phân loại hàng:{' '}
+																{
+																	item
+																		?.item_option[
+																		index
+																	]
+																}
 															</div>
 														</div>
 													</div>
@@ -266,15 +314,33 @@ function OderPage(): JSX.Element {
 														<span className='align-middle text-sm leading-4 text-[rgba(0,0,0,0.87)]'>
 															<div
 																className='text-sm flex justify-center flex-col text-center  font-medium'
-																style={{ flexDirection: 'row', gap: '8px' }}>
+																style={{
+																	flexDirection:
+																		'row',
+																	gap: '8px'
+																}}>
 																<h3 className='line-through text-[#ccc]'>
-																	đ {formatPrice(item?.item?.price_max)}
+																	đ{' '}
+																	{formatPrice(
+																		item
+																			?.item
+																			?.price_max
+																	)}
 																</h3>
 																<h3 className='px-[5px] text-center text-[rgba(0,0,0,0.54)]'>
-																	x{item.amount}
+																	x
+																	{
+																		item.amount
+																	}
 																</h3>
 																<h3 className='text-[#ee4d2d]'>
-																	đ đ {formatPrice(item?.item?.price, item?.amount)}
+																	đ đ{' '}
+																	{formatPrice(
+																		item
+																			?.item
+																			?.price,
+																		item?.amount
+																	)}
 																</h3>
 															</div>
 														</span>
@@ -287,13 +353,20 @@ function OderPage(): JSX.Element {
 							</div>
 							<div className='flex bg-[#fafdff] min-w-0 min-h-0 border-b-[rgba(0,0,0,0.09)] border-b border-dashed'>
 								<div className='flex items-center min-w-0 min-h-0 text-sm flex-[4] pr-5'>
-									<span className='flex min-w-0 min-h-0 px-[30px] py-4 border-t-0'>Lời nhắn:</span>
+									<span className='flex min-w-0 min-h-0 px-[30px] py-4 border-t-0'>
+										Lời nhắn:
+									</span>
 									<div className='flex items-center shadow-[inset_0_2px_0_0_rgb(0_0_0_/_2%)] h-10 bg-[#fff] box-border border flex-1 text-xs font-light ml-[15px] mb-0 rounded-sm border-solid border-[rgba(0,0,0,0.14)]'>
 										<input
 											className='w-full h-10 box-border bg-transparent flex-1 text-sm min-w-0 text-[#222] p-2.5 border-0'
 											placeholder='Lưu Ý Cho Người Bán...'
 											type='text'
-											onChange={(e) => updateNote(e.target.value, index)}></input>
+											onChange={(e) =>
+												updateNote(
+													e.target.value,
+													index
+												)
+											}></input>
 									</div>
 								</div>
 								<div className='flex-[6] justify-items-center p-4 border-l-[rgba(0,0,0,0.09)] border-l border-dashed'>
@@ -307,23 +380,40 @@ function OderPage(): JSX.Element {
 										<label className='row-start-1 select-none col-start-3 row-end-2 text-center uppercase text-[#05a] cursor-pointer'>
 											Thay Đổi
 										</label>
-										<h2> đ {ship.toLocaleString('it-IT')}</h2>
+										<h2>
+											{' '}
+											đ {ship.toLocaleString('it-IT')}
+										</h2>
 									</div>
 									<div className='text-[#888] text-xs mt-[5px] pl-5'>
 										<p>Nhận hàng vào 27 Th08 - 30 Th08</p>
-										<p> (Nhanh tay vào ngay "Shopee Voucher" để săn mã Miễn phí vận chuyển nhé!)</p>
+										<p>
+											{' '}
+											(Nhanh tay vào ngay "Shopee Voucher"
+											để săn mã Miễn phí vận chuyển nhé!)
+										</p>
 									</div>
 								</div>
 							</div>
 							<div className='bg-[#fafdff] items-center text-right mb-2.5 pt-4 pb-5 px-[30px]'>
 								<span className='text-sm text-[#929292]'>
-									Tổng số tiền ({ele?.reduce((acc: any, curr: any) => acc + curr.amount, 0)} sản
-									phẩm):
+									Tổng số tiền (
+									{ele?.reduce(
+										(acc: any, curr: any) =>
+											acc + curr.amount,
+										0
+									)}{' '}
+									sản phẩm):
 								</span>
 								<label className='text-xl text-[#ee4d2d] ml-5'>
 									đ
 									{(
-										ele?.reduce((acc, curr) => acc + curr.item.price * curr.amount, 0) + ship
+										ele?.reduce(
+											(acc, curr) =>
+												acc +
+												curr.item.price * curr.amount,
+											0
+										) + ship
 									).toLocaleString('it-IT')}
 								</label>
 							</div>
@@ -336,9 +426,15 @@ function OderPage(): JSX.Element {
 								style={{ display: 'grid' }}>
 								<div></div>
 								<div>
-									<h3 className='text-sm text-[rgba(0,0,0,0.54)] leading-10'>Tổng tiền hàng</h3>
-									<h3 className='text-sm text-[rgba(0,0,0,0.54)] leading-10'>Phí vận chuyển</h3>
-									<h3 className='text-sm text-[rgba(0,0,0,0.54)] leading-10'>Tổng thanh toán:</h3>
+									<h3 className='text-sm text-[rgba(0,0,0,0.54)] leading-10'>
+										Tổng tiền hàng
+									</h3>
+									<h3 className='text-sm text-[rgba(0,0,0,0.54)] leading-10'>
+										Phí vận chuyển
+									</h3>
+									<h3 className='text-sm text-[rgba(0,0,0,0.54)] leading-10'>
+										Tổng thanh toán:
+									</h3>
 								</div>
 								<div>
 									<h3 className='text-sm text-[rgba(0,0,0,0.54)] leading-10'>
@@ -354,8 +450,11 @@ function OderPage(): JSX.Element {
 							</div>
 							<div className='min-h-[95px] flex justify-between items-center mt-2.5 mb-0 mx-0 pl-[30px] pr-[25px] py-0'>
 								<div className='text-sm bg-[#fffdf8] text-[rgba(0,0,0,0.54)] px-[15px] py-0'>
-									Nhấn "Đặt hàng" đồng nghĩa với việc bạn đồng ý tuân theo
-									<NavLink className='no-underline' to='https://shopee.vn/legaldoc/policies'>
+									Nhấn "Đặt hàng" đồng nghĩa với việc bạn đồng
+									ý tuân theo
+									<NavLink
+										className='no-underline'
+										to='https://shopee.vn/legaldoc/policies'>
 										Điều khoản Shopee
 									</NavLink>
 								</div>

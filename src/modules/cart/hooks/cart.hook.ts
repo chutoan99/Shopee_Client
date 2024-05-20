@@ -1,5 +1,10 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
-import { ICartResponse, ICreateCartResponse, IDeleteCartResponse, IUpdateCartResponse } from '../interfaces'
+import {
+	ICartResponse,
+	ICreateCartResponse,
+	IDeleteCartResponse,
+	IUpdateCartResponse
+} from '../interfaces'
 
 export const CartApi = createApi({
 	reducerPath: 'CartApi',
@@ -8,7 +13,10 @@ export const CartApi = createApi({
 		baseUrl: `${(import.meta as any).env.VITE_REACT_APP_API_HOST}/`,
 		prepareHeaders: (headers) => {
 			headers.set('Content-Type', 'application/json')
-			headers.set('Authorization', `Bearer ${localStorage.getItem('token-shopee')}`)
+			headers.set(
+				'Authorization',
+				`Bearer ${localStorage.getItem('token-shopee')}`
+			)
 			return headers
 		}
 	}),
@@ -49,4 +57,9 @@ export const CartApi = createApi({
 	})
 })
 
-export const { useGetCartsQuery, useCreateCartMutation, useDeleteCartMutation, useUpdateCartMutation } = CartApi
+export const {
+	useGetCartsQuery,
+	useCreateCartMutation,
+	useDeleteCartMutation,
+	useUpdateCartMutation
+} = CartApi

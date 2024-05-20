@@ -3,7 +3,9 @@ import { IFlashSaleResponse } from '../interfaces'
 
 export const FlashSaleApi = createApi({
 	reducerPath: 'FlashSale',
-	baseQuery: fetchBaseQuery({ baseUrl: `${(import.meta as any).env.VITE_REACT_APP_API_HOST}/` }),
+	baseQuery: fetchBaseQuery({
+		baseUrl: `${(import.meta as any).env.VITE_REACT_APP_API_HOST}/`
+	}),
 	endpoints: (build) => ({
 		getFlashSale: build.query<IFlashSaleResponse, void>({
 			query: () => 'flashSale'
