@@ -25,11 +25,13 @@ export const UpdateUser = async (payload: any) => {
 	try {
 		const token = localStorage.getItem('token-shopee')
 		let data = new FormData()
+		const birthday = new Date(payload.birthday)
+		birthday.setHours(birthday.getHours() + 7) // Thêm 7 giờ cho múi giờ việt nam
 		data.append('sex', +payload.sex)
 		data.append('email', payload.email)
 		data.append('name', payload.name)
 		data.append('address', payload.address)
-		data.append('birthday', payload.birthday)
+		data.append('birthday', birthday.toISOString())
 		data.append('phone', +payload.phone)
 		data.append('avatar', payload.avatar)
 		const response = await instance({
