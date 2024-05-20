@@ -1,19 +1,24 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { PayloadAction, createSlice } from '@reduxjs/toolkit'
+import { IUser } from '../modules/user/interfaces'
 
-const initialState = {
+const initialState: { isLogin: boolean; data: IUser } = {
 	isLogin: false,
 	data: {
-		sex: '',
-		role: '',
-		userid: '',
+		id: 0,
 		shopid: 0,
+		username: '',
 		email: '',
+		sex: 0,
+		role: '',
 		name: '',
-		address: null || '',
-		birthday: 0,
-		phone: '',
+		address: '',
+		birthday: '',
+		phone: 0,
 		avatar: '',
-		not_new_user: 0
+		filename: '',
+		not_new_user: 0,
+		createdAt: '',
+		updatedAt: ''
 	}
 }
 
@@ -21,12 +26,12 @@ const userSlice = createSlice({
 	name: 'user',
 	initialState: initialState,
 	reducers: {
-		updateUser: (state, action) => {
+		updateUser: (state, action: PayloadAction<any>) => {
 			const { id, shopid, sex, role, email, name, address, avatar, not_new_user, birthday, phone } =
 				action.payload.data
-			console.log(action.payload.data, 'action.payload.data')
+
 			const isLogin = action.payload.isLogin
-			state.data.userid = id
+			state.data.id = id
 			state.data.shopid = shopid
 			state.data.sex = sex
 			state.data.role = role
@@ -38,10 +43,6 @@ const userSlice = createSlice({
 			state.data.not_new_user = not_new_user
 			state.data.phone = phone
 			state.isLogin = isLogin
-		},
-		getUser: (state) => {
-			state.isLogin = true
-			state.data = state.data
 		}
 	}
 })

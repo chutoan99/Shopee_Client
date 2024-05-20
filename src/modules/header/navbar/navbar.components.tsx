@@ -18,7 +18,6 @@ function NavbarComponent(): JSX.Element {
 	const [totalNotify, setTotalNotify] = useState(0)
 	const { data: dataUser, isLogin } = useAppSelector((state: RootState) => state.user)
 	const { data: dataNotify, isLoading: isLoadingNotification } = useGetNotifyQuery()
-
 	const [loading, setLoading] = useState(false)
 	useEffect(() => {
 		setTotalNotify(dataNotify?.response?.length || 0)

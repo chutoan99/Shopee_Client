@@ -10,7 +10,7 @@ import {
 	ALERT_LOGIN_SUCCESS,
 	ALERT_RESET_PASSWORD_SUCCESS
 } from '../../../constants/msg'
-import { ILoginREsponse, IRegisterResponse } from '../interfaces'
+import { ILoginResponse, IRegisterResponse } from '../interfaces'
 
 export const useMutationLogin = (payload: any) => {
 	const navigate = useNavigate()
@@ -19,7 +19,7 @@ export const useMutationLogin = (payload: any) => {
 	const onRefetch = async () => {
 		try {
 			setLoading(true)
-			const response: ILoginREsponse = await ApiLogin(payload)
+			const response: ILoginResponse = await ApiLogin(payload)
 			if (response.err === 0) {
 				toast.success(ALERT_LOGIN_SUCCESS)
 				localStorage.setItem('token-shopee', response?.access_token ?? '')

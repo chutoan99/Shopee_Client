@@ -1,9 +1,9 @@
 export interface IUserResponse {
 	err: number
 	msg: string
+	access_token: string
 	response: IUser
 }
-
 export interface IUser {
 	id: number
 	shopid: number
@@ -11,20 +11,13 @@ export interface IUser {
 	email: string
 	sex: number
 	role: string
-	password: string
 	name: string
-	address: string
-	birthday: Date | string
-	phone: number
-	avatar: string | File
-	filename: null
+	address?: string
+	birthday?: string
+	phone?: number
+	avatar?: string
+	filename?: null | string
 	not_new_user: number
-	refreshToken: string
-	passwordResetToken: string
-	passwordResetExpires: string
-	passwordChangedAt: null
-	is_active: number
-	createdAt: null
-	updatedAt: null
-	deleteAt: null
+	createdAt: string
+	updatedAt: string
 }

@@ -7,11 +7,12 @@ import { useMutationForgotPassWord } from '../hooks'
 import { LoadingComponent } from '../../../components/loading'
 import { LoginFaceBookComponent } from './faceBook'
 import { LoginGoogleComponent } from './google'
+import { IForgotPasswordData } from '../interfaces'
 
 function ForgotFormComponent(): JSX.Element {
 	const [emailLogin, setEmailLogin] = useState('')
 	const [validationMsg, setValidationMsg] = useState<any>({})
-	const [payload, setPayload] = useState({
+	const [payload, setPayload] = useState<IForgotPasswordData>({
 		email: emailLogin
 	})
 	const { loading, refetch } = useMutationForgotPassWord(payload)

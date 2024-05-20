@@ -7,14 +7,15 @@ import { useMutationResetPassWord } from '../hooks'
 import { LoadingComponent } from '../../../components/loading'
 import { LoginFaceBookComponent } from './faceBook'
 import { LoginGoogleComponent } from './google'
+import { IResetPasswordData } from '../interfaces'
 
 const ResetFormComponent = memo((): JSX.Element => {
 	const params = useParams()
 	const [passWord, SetPassWord] = useState('')
 	const [validationMsg, setValidationMsg] = useState<any>({})
-	const [payload, setPayload] = useState({
-		token: params.token,
-		email: params.email,
+	const [payload, setPayload] = useState<IResetPasswordData>({
+		email: params.email || '',
+		token: params.token || '',
 		password: passWord
 	})
 
@@ -23,8 +24,8 @@ const ResetFormComponent = memo((): JSX.Element => {
 	useEffect(() => {
 		setPayload(() => {
 			return {
-				token: params.token,
-				email: params.email,
+				token: params.token || '',
+				email: params.email || '',
 				password: passWord
 			}
 		})

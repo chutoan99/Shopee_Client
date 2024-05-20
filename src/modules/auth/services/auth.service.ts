@@ -1,7 +1,8 @@
 import { toast } from 'react-hot-toast'
 import config from '../../../configs/configAxios'
+import { IForgotPasswordData, ILoginData, IRegisterData, IResetPasswordData } from '../interfaces'
 
-export const ApiRegister = async (payload: any) => {
+export const ApiRegister = async (payload: IRegisterData) => {
 	try {
 		const response = await config({
 			method: 'post',
@@ -12,8 +13,7 @@ export const ApiRegister = async (payload: any) => {
 			data: JSON.stringify({
 				name: payload.name,
 				password: payload.password,
-				email: payload.email,
-				phone: '090'
+				email: payload.email
 			})
 		})
 		if (response.status === 200) {
@@ -24,7 +24,7 @@ export const ApiRegister = async (payload: any) => {
 	}
 }
 
-export const ApiLogin = async (payload: any) => {
+export const ApiLogin = async (payload: ILoginData) => {
 	try {
 		const response = await config({
 			method: 'post',
@@ -45,7 +45,7 @@ export const ApiLogin = async (payload: any) => {
 	}
 }
 
-export const ApiForgotPassword = async (payload: any) => {
+export const ApiForgotPassword = async (payload: IForgotPasswordData) => {
 	try {
 		const token = localStorage.getItem('token-shopee')
 		const response = await config({
@@ -64,7 +64,7 @@ export const ApiForgotPassword = async (payload: any) => {
 	}
 }
 
-export const ApiResetPassword = async (payload: any) => {
+export const ApiResetPassword = async (payload: IResetPasswordData) => {
 	try {
 		const response = await config({
 			method: 'put',

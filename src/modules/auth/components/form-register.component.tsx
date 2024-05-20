@@ -8,13 +8,14 @@ import { useMutationRegister } from '../hooks'
 import { LoadingComponent } from '../../../components/loading'
 import { LoginFaceBookComponent } from './faceBook'
 import { LoginGoogleComponent } from './google'
+import { IRegisterData } from '../interfaces'
 
 const RegisterFormComponent = memo((): JSX.Element => {
 	const [validationMsg, setValidationMsg] = useState<any>({})
 	const [nameRegister, setNameRegister] = useState('')
 	const [emailRegister, setEmailRegister] = useState('')
 	const [passWordRegister, SetPassWordRegister] = useState('')
-	const [payload, setPayload] = useState({
+	const [payload, setPayload] = useState<IRegisterData>({
 		name: nameRegister,
 		password: passWordRegister,
 		email: emailRegister

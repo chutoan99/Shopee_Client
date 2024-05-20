@@ -7,12 +7,13 @@ import { useMutationLogin } from '../hooks'
 import { LoadingComponent } from '../../../components/loading'
 import { LoginFaceBookComponent } from './faceBook'
 import { LoginGoogleComponent } from './google'
+import { ILoginData } from '../interfaces'
 
 function LoginFormComponent(): JSX.Element {
 	const [emailLogin, setEmailLogin] = useState('')
 	const [passWordLogin, SetPassWordLogin] = useState('')
 	const [validationMsg, setValidationMsg] = useState<any>({})
-	const [payload, setPayload] = useState({
+	const [payload, setPayload] = useState<ILoginData>({
 		email: emailLogin,
 		password: passWordLogin
 	})
