@@ -58,7 +58,7 @@ function ProductDetailComponent({ data }: DetailProduct): JSX.Element {
 	}
 
 	useEffect(() => {
-		dataCart?.total_cart && dispatch(CartActions.updateTotalCart(dataCart?.total_cart))
+		dataCart?.total && dispatch(CartActions.updateTotalCart(dataCart?.total))
 	}, [dataCart])
 	return (
 		<>

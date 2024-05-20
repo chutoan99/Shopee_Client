@@ -5,8 +5,8 @@ import { memo, useState } from 'react'
 
 import { useGetProductsQuery } from '../../modules/post/hooks'
 import ProductListComponent from '../../modules/post/components/product-list.component'
-import { PaginationComponent } from '../../components/pagination'
 import { LoadingComponent } from '../../components/loading'
+import { PaginationComponent } from '../../modules/pagination'
 
 function DailyPage(): JSX.Element {
 	const [payload, setPayload] = useState({
@@ -37,7 +37,7 @@ function DailyPage(): JSX.Element {
 						{isLoading ? (
 							<LoadingComponent />
 						) : (
-							<PaginationComponent setPayload={setPayload} totalPage={data?.totalPage} />
+							<PaginationComponent setPayload={setPayload} totalPage={data?.totalPage || 0} />
 						)}
 					</div>
 				</div>

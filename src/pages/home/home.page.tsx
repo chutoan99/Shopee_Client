@@ -3,7 +3,6 @@ import { memo } from 'react'
 import { NavLink } from 'react-router-dom'
 //? APPS
 import { useGetProductsQuery } from '../../modules/post/hooks'
-import { HomeFilterComponent } from '../../components/homeFilter'
 import { PopupComponent } from '../../components/popup'
 import { SkeletonProductComponent } from '../../components/loading'
 import { BannerComponent } from '../../modules/banner/components'
@@ -13,6 +12,7 @@ import { FlashSaleComponent } from '../../modules/flashSale/components'
 import { ShopMallComponent } from '../../modules/shopMall/components'
 import { TopProductComponent } from '../../modules/topProduct/components'
 import { ProductListComponent } from '../../modules/post/components'
+import { HomeFilterComponent } from '../../modules/homeFilter'
 
 function HomePage(): JSX.Element {
 	const payload = {

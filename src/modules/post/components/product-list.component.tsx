@@ -89,7 +89,7 @@ function ProductListComponent({ items, col, loading }: Props): JSX.Element {
 									<i className={likes[index]}></i>
 								</span>
 								<div className='text-[0.625rem] origin-right text-[#ccc] ml-auto mr-0 -mt-px mb-0 scale-[0.8]'>
-									{generateStart(4)}
+									{generateStart(item.shop_rating)}
 								</div>
 								<span className='text-xs text-[#333] ml-1.5'>{item?.historical_sold}đã bán</span>
 							</div>

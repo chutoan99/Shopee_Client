@@ -7,7 +7,7 @@ import { useGetCartsQuery } from '../../modules/cart/hooks'
 import { useCreateHistorySearchMutation } from '../../modules/header/searchHistory/hooks'
 import { LoadingComponent } from '../../components/loading'
 import { NavbarComponent } from '../../modules/header/navbar'
-import { LogoShopeeComponent } from '../../modules/header/logo'
+import { LogoComponent } from '../../modules/header/logo'
 
 export default function CartLayout({ children }: any): JSX.Element {
 	const params = useParams()
@@ -31,7 +31,7 @@ export default function CartLayout({ children }: any): JSX.Element {
 				<div className='grid wide'>
 					<NavbarComponent />
 					<div className='h-[82px] flex gap-[5px] items-center px-2  sm-gutter'>
-						<LogoShopeeComponent />
+						<LogoComponent />
 						<div className='bg-[#fff] h-10 flex items-center mt-[15px] rounded-sm w-full'>
 							<div className='flex-1 h-full relative group' id='header_search'>
 								<input

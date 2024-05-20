@@ -1,1 +1,1 @@
-export { default as LogoShopeeComponent } from './logo.components'
+export { default as LogoComponent } from './logo.components'

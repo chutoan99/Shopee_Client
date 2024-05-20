@@ -42,7 +42,7 @@ function OderPage(): JSX.Element {
 			})
 		})
 		setTotalShip((data?.length ?? 1) * ship)
-		setTotal(dataTempt.reduce((acc, curr) => acc + curr.item.price * curr.amount, 0))
+		setTotal(dataTempt.reduce((acc, curr) => acc + curr.overview.price * curr.amount, 0))
 
 		if (dataTempt.length === 0) {
 			navigate('/cart')
@@ -52,9 +52,9 @@ function OderPage(): JSX.Element {
 				item_groups_id: JSON.stringify(item.map((ele) => ele.itemid)),
 				amount: JSON.stringify(item.map((ele) => ele.amount)),
 				option: JSON.stringify(item.map((ele) => ele.item_option)),
-				final_total: item.reduce((acc, curr) => acc + curr.item.price * curr.amount, 0) + ship,
+				final_total: item.reduce((acc, curr) => acc + curr.overview.price * curr.amount, 0) + ship,
 				shopid: item[0]?.shopid,
-				shop_name: item[0]?.item?.shop_name,
+				shop_name: item[0]?.overview?.shop_name,
 				total_num_items: item.length,
 				note: ''
 			}
@@ -180,7 +180,7 @@ function OderPage(): JSX.Element {
 													</svg>
 												</div>
 												<div className='max-w-[200px] text-sm font-semibold overflow-hidden text-ellipsis ml-2 mr-0 my-0'>
-													{ele[0]?.item?.shop_name}
+													{ele[0]?.overview?.shop_name}
 												</div>
 												<div className='ml-2 mr-0 my-0'>
 													<button className='text-xs capitalize border bg-[#ee4d2d] text-[#fff] px-2 py-1 rounded-sm border-solid border-transparent  flex items-center hover:bg-[#d73211] hover:border-[#ba2b0f]'>
@@ -202,7 +202,7 @@ function OderPage(): JSX.Element {
 												</div>
 												<NavLink
 													className='ml-2 mr-0 my-0'
-													to={`/shop/${ele[0]?.item?.shopid}`}>
+													to={`/shop/${ele[0]?.overview?.shopid}`}>
 													<button className='text-xs flex items-center capitalize text-[#555] border px-2 py-1 rounded-sm border-solid border-[rgba(0,0,0,0.09)] hover:bg-[rgba(0,0,0,0.02)] hover:border hover:border-solid hover:border-[rgba(0,0,0,0.09)]'>
 														<svg
 															enableBackground='new 0 0 15 15'
@@ -231,14 +231,14 @@ function OderPage(): JSX.Element {
 															<div className='w-20 h-20 mr-3'>
 																<img
 																	className='w-full h-full'
-																	src={item?.item?.image}
-																	alt={item?.item?.name}
+																	src={item?.overview?.image}
+																	alt={item?.overview?.name}
 																/>
 															</div>
 															<div
 																className='bg-[50%] bg-cover bg-no-repeat absolute w-full h-full left-0 top-0'
 																style={{
-																	backgroundImage: `${item?.item?.image}`
+																	backgroundImage: `${item?.overview?.image}`
 																}}>
 																<div className='w-full h-full'></div>
 															</div>
@@ -254,7 +254,7 @@ function OderPage(): JSX.Element {
 																	WebkitBoxOrient: 'vertical',
 																	WebkitLineClamp: 2
 																}}>
-																<span>{item?.item?.name}</span>
+																<span>{item?.overview?.name}</span>
 															</div>
 														</a>
 														<div className='mt-0 mx-0'>
@@ -274,13 +274,14 @@ function OderPage(): JSX.Element {
 																	gap: '8px'
 																}}>
 																<h3 className='line-through text-[#ccc]'>
-																	đ {formatPrice(item?.item?.price_max)}
+																	đ {formatPrice(item?.overview?.price_max)}
 																</h3>
 																<h3 className='px-[5px] text-center text-[rgba(0,0,0,0.54)]'>
 																	x{item.amount}
 																</h3>
 																<h3 className='text-[#ee4d2d]'>
-																	đ đ {formatPrice(item?.item?.price, item?.amount)}
+																	đ đ{' '}
+																	{formatPrice(item?.overview?.price, item?.amount)}
 																</h3>
 															</div>
 														</span>
@@ -329,7 +330,7 @@ function OderPage(): JSX.Element {
 								<label className='text-xl text-[#ee4d2d] ml-5'>
 									đ
 									{(
-										ele?.reduce((acc, curr) => acc + curr.item.price * curr.amount, 0) + ship
+										ele?.reduce((acc, curr) => acc + curr.overview.price * curr.amount, 0) + ship
 									).toLocaleString('it-IT')}
 								</label>
 							</div>

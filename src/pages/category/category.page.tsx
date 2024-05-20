@@ -5,10 +5,10 @@ import { useParams } from 'react-router-dom'
 import { useSearchCategoriesQuery } from '../../modules/post/hooks'
 import CategoryFilterComponent from '../../modules/category/components/category-filter.component'
 import ProductListComponent from '../../modules/post/components/product-list.component'
-import { SortBarsComponent } from '../../components/sortBars'
 import { Pagination } from 'react-rainbow-components'
 import { SearchEmptyComponent } from '../../components/searchEmpty'
 import { LoadingComponent } from '../../components/loading'
+import { SortBarsComponent } from '../../modules/sortBars'
 
 function CategoryPage(): JSX.Element {
 	const params = useParams()
@@ -45,7 +45,7 @@ function CategoryPage(): JSX.Element {
 									col={'col l-2-4 mo-4 c-6'}
 									loading={isLoading}
 								/>
-								<Pagination setPayload={setPayload} totalPage={totalPage} />
+								<Pagination setPayload={setPayload} totalPage={totalPage || 0} />
 							</div>
 						</div>
 					)}

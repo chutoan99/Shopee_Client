@@ -24,7 +24,7 @@ const userSlice = createSlice({
 		updateUser: (state, action) => {
 			const { id, shopid, sex, role, email, name, address, avatar, not_new_user, birthday, phone } =
 				action.payload.data
-			console.log(action.payload.data,"action.payload.data")
+			console.log(action.payload.data, 'action.payload.data')
 			const isLogin = action.payload.isLogin
 			state.data.userid = id
 			state.data.shopid = shopid

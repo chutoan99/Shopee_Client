@@ -1,7 +1,7 @@
 //? LIBRARY
 import { NavLink } from 'react-router-dom'
 
-export default function LogoShopeeComponent(): JSX.Element {
+export default function LogoComponent(): JSX.Element {
 	return (
 		<NavLink className='w-[180px] cursor-pointer' to='/'>
 			<div className='w-full'>

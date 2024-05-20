@@ -8,7 +8,7 @@ import { useGetCartsQuery } from '../../../cart/hooks'
 import { useCreateHistorySearchMutation, useGetHistorySearchQuery } from '../hooks'
 import { ISearchHistory } from '../interfaces/search-history.interface'
 import { useGetSearchSuggestQuery } from '../../searchSuggest/hooks'
-import LogoShopeeComponent from '../../logo/logo.components'
+import LogoComponent from '../../logo/logo.components'
 import { SuggestListComponent } from '../../searchSuggest/components'
 import HeaderCartComponent from '../../cart/cart.components'
 
@@ -45,7 +45,7 @@ function HeaderSearchHistoryComponent(): JSX.Element {
 		<>
 			<div className='grid wide sm-gutter'>
 				<div className='h-[82px] flex gap-[5px] items-center px-2 sm-gutter'>
-					<LogoShopeeComponent />
+					<LogoComponent />
 					<div className='w-full flex justify-center'>
 						<div className='w-[90%]'>
 							<div className='bg-[#fff] h-10 flex items-center mt-[15px] rounded-sm'>

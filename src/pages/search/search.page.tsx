@@ -8,7 +8,7 @@ import ProductListComponent from '../../modules/post/components/product-list.com
 import { LoadingComponent } from '../../components/loading'
 import { SearchEmptyComponent } from '../../components/searchEmpty'
 import { Pagination } from 'react-rainbow-components'
-import { SortBarsComponent } from '../../components/sortBars'
+import { SortBarsComponent } from '../../modules/sortBars'
 
 function SearchPage(): JSX.Element {
 	const params = useParams()

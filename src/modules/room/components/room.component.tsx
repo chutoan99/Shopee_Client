@@ -38,12 +38,6 @@ function ChatComponent(): JSX.Element {
 	}, [room])
 
 	const onAddMess = () => {
-		console.log({
-			user: data,
-			shop: room?.shop_info,
-			roomid: room?.id,
-			message
-		},"csscscsccs")
 		socketio.emit('message', {
 			user: data,
 			shop: room?.shop_info,

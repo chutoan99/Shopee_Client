@@ -515,9 +515,7 @@ function CartPage(): JSX.Element {
 																		</div>
 																		<div className='flex items-center justify-center w-[12.70417%] capitalize flex-col'>
 																			<button
-																				onClick={() =>
-																					onDeleteCart(ele?.cartid)
-																				}>
+																				onClick={() => onDeleteCart(ele?.id)}>
 																				Xóa
 																			</button>
 																			<div className='z-[2] max-w-full'>
@@ -636,9 +634,7 @@ function CartPage(): JSX.Element {
 													<span className='checkmark'></span>
 												</label>
 											</div>
-											<button className=' cursor-pointer'>
-												Chọn Tất Cả ({dataCart?.total})
-											</button>
+											<button className=' cursor-pointer'>Chọn Tất Cả ({dataCart?.total})</button>
 											<button className=' mx-2 my-0'>Xóa</button>
 											<div />
 											<button className=' text-[#ee4d2d] max-w-[168px] whitespace-nowrap overflow-hidden text-ellipsis mx-2 my-0'>

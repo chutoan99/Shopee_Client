@@ -6,8 +6,8 @@ import { Toaster } from 'react-hot-toast'
 import { validateRegister } from '../../../utils/validate'
 import { useMutationRegister } from '../hooks'
 import { LoadingComponent } from '../../../components/loading'
-import { LoginFaceBookComponent } from '../../../components/loginFaceBook'
-import { LoginGoogleComponent } from '../../../components/loginGoogle'
+import { LoginFaceBookComponent } from './faceBook'
+import { LoginGoogleComponent } from './google'
 
 const RegisterFormComponent = memo((): JSX.Element => {
 	const [validationMsg, setValidationMsg] = useState<any>({})

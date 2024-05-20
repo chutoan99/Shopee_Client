@@ -5,8 +5,8 @@ import { NavLink } from 'react-router-dom'
 import { validateLogin } from '../../../utils/validate'
 import { useMutationLogin } from '../hooks'
 import { LoadingComponent } from '../../../components/loading'
-import { LoginFaceBookComponent } from '../../../components/loginFaceBook'
-import { LoginGoogleComponent } from '../../../components/loginGoogle'
+import { LoginFaceBookComponent } from './faceBook'
+import { LoginGoogleComponent } from './google'
 
 function LoginFormComponent(): JSX.Element {
 	const [emailLogin, setEmailLogin] = useState('')

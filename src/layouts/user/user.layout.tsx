@@ -5,8 +5,8 @@ import { NavLink } from 'react-router-dom'
 import { RootState } from '../../app/store'
 import { useAppSelector } from '../../hooks/hooks'
 import useAuth from '../../hooks/userAuth'
-import { FooterComponent } from '../../components/footer'
 import { HeaderComponent } from '../../modules/header'
+import { FooterComponent } from '../../modules/footer'
 
 export default function UserLayout({ children }: any): JSX.Element {
 	useAuth()

@@ -5,8 +5,8 @@ import { NavLink } from 'react-router-dom'
 import { validateForgotPassword } from '../../../utils/validate'
 import { useMutationForgotPassWord } from '../hooks'
 import { LoadingComponent } from '../../../components/loading'
-import { LoginFaceBookComponent } from '../../../components/loginFaceBook'
-import { LoginGoogleComponent } from '../../../components/loginGoogle'
+import { LoginFaceBookComponent } from './faceBook'
+import { LoginGoogleComponent } from './google'
 
 function ForgotFormComponent(): JSX.Element {
 	const [emailLogin, setEmailLogin] = useState('')

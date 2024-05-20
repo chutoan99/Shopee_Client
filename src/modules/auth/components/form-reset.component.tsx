@@ -5,8 +5,8 @@ import { NavLink, useParams } from 'react-router-dom'
 import { validateResetPassword } from '../../../utils/validate'
 import { useMutationResetPassWord } from '../hooks'
 import { LoadingComponent } from '../../../components/loading'
-import { LoginFaceBookComponent } from '../../../components/loginFaceBook'
-import { LoginGoogleComponent } from '../../../components/loginGoogle'
+import { LoginFaceBookComponent } from './faceBook'
+import { LoginGoogleComponent } from './google'
 
 const ResetFormComponent = memo((): JSX.Element => {
 	const params = useParams()

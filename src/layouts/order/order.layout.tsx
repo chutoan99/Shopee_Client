@@ -2,8 +2,8 @@
 import { Toaster } from 'react-hot-toast'
 //? APPS
 import useAuth from '../../hooks/userAuth'
-import { FooterComponent } from '../../components/footer'
 import { NavbarComponent } from '../../modules/header/navbar'
+import { FooterComponent } from '../../modules/footer'
 
 export default function OrderLayout({ children }: any): JSX.Element {
 	useAuth()

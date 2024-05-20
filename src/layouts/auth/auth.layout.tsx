@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 import { NavLink, useLocation } from 'react-router-dom'
 //? APPS
 import { Toaster } from 'react-hot-toast'
-import { FooterComponent } from '../../components/footer'
+import { FooterComponent } from '../../modules/footer'
 
 export default function AuthLayout({ children }: any): JSX.Element {
 	const { pathname } = useLocation()
