@@ -1,9 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
-import {
-	IPostIdResponse,
-	IPostSimpleResponse,
-	IProductDetail
-} from '../interfaces'
+import { IPostIdResponse, IPostSimpleResponse, IProductDetail } from '../interfaces'
 
 export const ProductApi = createApi({
 	reducerPath: 'Products',
@@ -11,10 +7,7 @@ export const ProductApi = createApi({
 		baseUrl: `${(import.meta as any).env.VITE_REACT_APP_API_HOST}/`
 	}),
 	endpoints: (build) => ({
-		getProducts: build.query<
-			IPostSimpleResponse,
-			{ limit: number; page: number }
-		>({
+		getProducts: build.query<IPostSimpleResponse, { limit: number; page: number }>({
 			query: ({ limit, page }) => `post?limit=${limit}&page=${page}`
 		}),
 
@@ -29,18 +22,11 @@ export const ProductApi = createApi({
 
 		searchCategories: build.query<IPostSimpleResponse, any>({
 			query: (payload: any) => {
-				let encodedString = encodeURIComponent(
-					payload.params.display_name
-				)
+				let encodedString = encodeURIComponent(payload.params.display_name)
 				return `/industry/category?page=${payload.page}&limit=${payload.limit}&category_name=${encodedString}`
 			}
 		})
 	})
 })
 
-export const {
-	useGetProductsQuery,
-	useGetProductQuery,
-	useSearchProductQuery,
-	useSearchCategoriesQuery
-} = ProductApi
+export const { useGetProductsQuery, useGetProductQuery, useSearchProductQuery, useSearchCategoriesQuery } = ProductApi

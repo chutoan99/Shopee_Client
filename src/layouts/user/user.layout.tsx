@@ -5,8 +5,8 @@ import { NavLink } from 'react-router-dom'
 import { RootState } from '../../app/store'
 import { useAppSelector } from '../../hooks/hooks'
 import useAuth from '../../hooks/userAuth'
-import { HeaderComponent } from '../../components/header'
 import { FooterComponent } from '../../components/footer'
+import { HeaderComponent } from '../../modules/header'
 
 export default function UserLayout({ children }: any): JSX.Element {
 	useAuth()
@@ -22,11 +22,7 @@ export default function UserLayout({ children }: any): JSX.Element {
 							<div>
 								<div className=' max-w-sm mx-auto flex items-center space-x-4'>
 									<div className='shrink-0'>
-										<img
-											className='h-12 w-12 rounded-full'
-											src={dataUser.avatar}
-											alt='userImg'
-										/>
+										<img className='h-12 w-12 rounded-full' src={dataUser.avatar} alt='userImg' />
 									</div>
 									<div>
 										<div className='overflow-hidden text-ellipsis whitespace-nowrap min-h-[1rem] font-semibold text-[#333] mb-[5px]'>
@@ -51,9 +47,7 @@ export default function UserLayout({ children }: any): JSX.Element {
 								</div>
 							</div>
 							<div className='flex gap-[15px]  flex-col mt-[30px]'>
-								<NavLink
-									to='/user/profile'
-									className='relative'>
+								<NavLink to='/user/profile' className='relative'>
 									<div className='text-right'>
 										<div className='flex gap-[10px]'>
 											<div className='flex items-center justify-center w-5 h-5 leading-5 text-center text-[#fff] shrink-0 mr-2.5 rounded-[50%]'>
@@ -69,9 +63,7 @@ export default function UserLayout({ children }: any): JSX.Element {
 										</div>
 									</div>
 								</NavLink>
-								<NavLink
-									to='/user/purchase'
-									className='relative'>
+								<NavLink to='/user/purchase' className='relative'>
 									<div className='text-right'>
 										<div className=' flex gap-[10px]'>
 											<div className='flex items-center justify-center w-5 h-5 leading-5 text-center text-[#fff] shrink-0 mr-2.5 rounded-[50%]'>
@@ -90,9 +82,7 @@ export default function UserLayout({ children }: any): JSX.Element {
 										<div className='Yu7gVR' />
 									</div>
 								</NavLink>
-								<NavLink
-									to='/user/notification'
-									className='relative'>
+								<NavLink to='/user/notification' className='relative'>
 									<div className='text-right'>
 										<div className=' flex gap-[10px]'>
 											<div className='flex items-center justify-center w-5 h-5 leading-5 text-center text-[#fff] shrink-0 mr-2.5 rounded-[50%]'>
@@ -108,9 +98,7 @@ export default function UserLayout({ children }: any): JSX.Element {
 										</div>
 									</div>
 								</NavLink>
-								<NavLink
-									to='/user/voucher'
-									className='relative'>
+								<NavLink to='/user/voucher' className='relative'>
 									<div className='text-right'>
 										<div className=' flex gap-[10px]'>
 											<div className='flex items-center justify-center w-5 h-5 leading-5 text-center text-[#fff] shrink-0 mr-2.5 rounded-[50%]'>

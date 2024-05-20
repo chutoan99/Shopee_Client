@@ -4,8 +4,8 @@ import { RootState } from '../../app/store'
 import useAuth from '../../hooks/userAuth'
 import { useAppSelector } from '../../hooks/hooks'
 import { ChatComponent } from '../../modules/room/components'
-import { HeaderComponent } from '../../components/header'
 import { FooterComponent } from '../../components/footer'
+import { HeaderComponent } from '../../modules/header'
 
 export default function SearchLayout({ children }: any): JSX.Element {
 	useAuth()

@@ -2,12 +2,7 @@
 import { useState } from 'react'
 import { toast } from 'react-hot-toast'
 import { useNavigate } from 'react-router-dom'
-import {
-	ApiForgotPassword,
-	ApiLogin,
-	ApiRegister,
-	ApiResetPassword
-} from '../services'
+import { ApiForgotPassword, ApiLogin, ApiRegister, ApiResetPassword } from '../services'
 
 //? TYPE & SERVICES
 import {
@@ -27,10 +22,7 @@ export const useMutationLogin = (payload: any) => {
 			const response: ILoginREsponse = await ApiLogin(payload)
 			if (response.err === 0) {
 				toast.success(ALERT_LOGIN_SUCCESS)
-				localStorage.setItem(
-					'token-shopee',
-					response?.access_token ?? ''
-				)
+				localStorage.setItem('token-shopee', response?.access_token ?? '')
 				setTimeout(() => {
 					navigate('/')
 				}, 2000)

@@ -20,7 +20,7 @@ module.exports = {
 				endOfLine: 'auto',
 				useTabs: true,
 				singleQuote: true,
-				printWidth: 80,
+				printWidth: 120,
 				jsxSingleQuote: true,
 				bracketSpacing: true,
 				bracketSameLine: true
@@ -35,9 +35,6 @@ module.exports = {
 	settings: { react: { version: '18.2' } },
 	plugins: ['react-refresh'],
 	rules: {
-		'react-refresh/only-export-components': [
-			'warn',
-			{ allowConstantExport: true }
-		]
+		'react-refresh/only-export-components': ['warn', { allowConstantExport: true }]
 	}
 }

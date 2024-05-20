@@ -15,18 +15,10 @@ instance.interceptors.response.use(
 				window.location.href = '/login'
 			}, 3000)
 		}
-		if (
-			error.response &&
-			error.response.status === 500 &&
-			error.err === -1
-		) {
+		if (error.response && error.response.status === 500 && error.err === -1) {
 			toast.error(error.mes.toString())
 		}
-		if (
-			error.response &&
-			error.response.status === 404 &&
-			error.err === -1
-		) {
+		if (error.response && error.response.status === 404 && error.err === -1) {
 			toast.error(error.mes.toString())
 		}
 		return Promise.reject(error)

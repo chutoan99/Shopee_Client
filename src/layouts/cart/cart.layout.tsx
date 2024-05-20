@@ -4,10 +4,10 @@ import { useNavigate, useParams } from 'react-router-dom'
 import { Toaster } from 'react-hot-toast'
 //? APPS
 import { useGetCartsQuery } from '../../modules/cart/hooks'
-import { useCreateHistorySearchMutation } from '../../modules/searchHistory/hooks'
+import { useCreateHistorySearchMutation } from '../../modules/header/searchHistory/hooks'
 import { LoadingComponent } from '../../components/loading'
-import { HeaderNavbarComponent } from '../../components/header'
-import { LogoShopeeComponent } from '../../components/logo'
+import { NavbarComponent } from '../../modules/header/navbar'
+import { LogoShopeeComponent } from '../../modules/header/logo'
 
 export default function CartLayout({ children }: any): JSX.Element {
 	const params = useParams()
@@ -29,13 +29,11 @@ export default function CartLayout({ children }: any): JSX.Element {
 			<Toaster position='top-right' reverseOrder={false} />
 			<header className='h-[120px] bg-[linear-gradient(0,#fe6433,#f53e2d)] fixed z-10 top-0 inset-x-0'>
 				<div className='grid wide'>
-					<HeaderNavbarComponent />
+					<NavbarComponent />
 					<div className='h-[82px] flex gap-[5px] items-center px-2  sm-gutter'>
 						<LogoShopeeComponent />
 						<div className='bg-[#fff] h-10 flex items-center mt-[15px] rounded-sm w-full'>
-							<div
-								className='flex-1 h-full relative group'
-								id='header_search'>
+							<div className='flex-1 h-full relative group' id='header_search'>
 								<input
 									type='text'
 									placeholder='Nhập để tìm kiếm sản phẩm'

@@ -8,8 +8,7 @@ export const CommentApi = createApi({
 	}),
 	endpoints: (build) => ({
 		getComments: build.query<ICommentsResponse, any>({
-			query: (params: any) =>
-				`comment?shopid=${params.shopid}&itemid=${params.itemid}`
+			query: (params: any) => `comment?shopid=${params.shopid}&itemid=${params.itemid}`
 		})
 	})
 })

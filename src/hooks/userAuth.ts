@@ -4,13 +4,13 @@ import { useDispatch } from 'react-redux'
 import { UserActions } from '../redux/userSlice'
 import { useNavigate } from 'react-router-dom'
 import { GetCurrentUser } from '../modules/user/services'
-import { User } from '../modules/user/interfaces'
+import { IUser } from '../modules/user/interfaces'
 
 const useAuth = () => {
 	const navigate = useNavigate()
 	const dispatch = useDispatch()
 	const token = localStorage.getItem('token-shopee')
-	const [dataUser, setDataUser] = useState<User>()
+	const [dataUser, setDataUser] = useState<IUser>()
 
 	useEffect(() => {
 		const fetchDataCurrentUser = async () => {

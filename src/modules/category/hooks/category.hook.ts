@@ -1,8 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
-import {
-	ICategoryTreeResponse,
-	ICategoryTreeResponseParent
-} from '../interfaces'
+import { ICategoryTreeResponse, ICategoryTreeResponseParent } from '../interfaces'
 
 export const CategoryTreeApi = createApi({
 	reducerPath: 'CategoryTree',
@@ -18,5 +15,4 @@ export const CategoryTreeApi = createApi({
 		})
 	})
 })
-export const { useGetCategoryTreeQuery, useGetCategoryTreeParentQuery } =
-	CategoryTreeApi
+export const { useGetCategoryTreeQuery, useGetCategoryTreeParentQuery } = CategoryTreeApi

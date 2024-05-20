@@ -1,20 +1,17 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 type initial = {
-	total_cart: number
+	total: number
 }
 const initialState: initial = {
-	total_cart: 0
+	total: 0
 }
 const cartSlice = createSlice({
 	name: 'cart',
 	initialState: initialState,
 	reducers: {
-		getTotalCart: (state) => {
-			state.total_cart = state.total_cart
-		},
 		updateTotalCart: (state, action) => {
-			state.total_cart = action.payload
+			state.total = action.payload
 		}
 	}
 })

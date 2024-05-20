@@ -33,10 +33,7 @@ function ProductOverviewComponent({ data }: Props): JSX.Element {
 												<span className='mr-[5px]'>
 													<NavLink
 														to={`/categories/${data?.category?.category_name}/${data?.category?.id}`}>
-														{
-															data?.category
-																?.category_name
-														}
+														{data?.category?.category_name}
 													</NavLink>
 												</span>
 											</div>
@@ -62,8 +59,7 @@ function ProductOverviewComponent({ data }: Props): JSX.Element {
 										<div
 											className='text-[rgba(0,0,0,0.87)] text-lg capitalize p-3.5'
 											style={{
-												background:
-													'rgba(0, 0, 0, 0.02)'
+												background: 'rgba(0, 0, 0, 0.02)'
 											}}>
 											MÔ TẢ SẢN PHẨM
 										</div>

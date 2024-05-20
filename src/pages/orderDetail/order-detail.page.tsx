@@ -41,9 +41,7 @@ function OrderDetailPage(): JSX.Element {
 						<div className='flex text-right'>
 							<span>MÃ ĐƠN HÀNG. {dataOrder?.orderid}</span>
 							<span className='mx-2 my-0'>|</span>
-							<span className='text-[#ee4d2d] uppercase'>
-								{dataOrder?.state}
-							</span>
+							<span className='text-[#ee4d2d] uppercase'>{dataOrder?.state}</span>
 						</div>
 					</div>
 
@@ -353,9 +351,7 @@ function OrderDetailPage(): JSX.Element {
 								style={{ wordWrap: 'break-word' }}>
 								Đánh giá sản phẩm để nhận 200 Shopee xu!
 							</div>
-							<div
-								className='text-right shrink-0'
-								onClick={onShowModel}>
+							<div className='text-right shrink-0' onClick={onShowModel}>
 								<button className='font-normal text-sm border bg-[#ee4d2d] text-[#fff] hover:bg-[#d73211] hover:border-[#ba2b0f] min-w-[150px] min-h-[40px] capitalize px-5 py-2 rounded-[5px] w-[220px] overflow-hidden text-ellipsis'>
 									Đánh giá
 								</button>
@@ -381,9 +377,7 @@ function OrderDetailPage(): JSX.Element {
 							/>
 							<div className='text-right shrink-0'>
 								<button className='font-normal text-sm  border bg-[#fff] text-[rgba(0,0,0,0.87)] border-solid border-[rgba(0,0,0,0.26)] stardust-button--secondary min-w-[150px] min-h-[40px] capitalize px-5 py-2 rounded-[5px] w-[220px] overflow-hidden text-ellipsis hover:!bg-[rgba(0,0,0,0.02)] hover:!border hover:!border-solid hover:!border-[rgba(0,0,0,0.09)]'>
-									<NavLink to={`/shop/${dataOrder?.shopid}`}>
-										Mua lại
-									</NavLink>
+									<NavLink to={`/shop/${dataOrder?.shopid}`}>Mua lại</NavLink>
 								</button>
 							</div>
 						</div>
@@ -411,9 +405,7 @@ function OrderDetailPage(): JSX.Element {
 										{dataOrder?.user?.name}
 									</div>
 									<div className='text-[rgba(0,0,0,0.54)] text-xs whitespace-pre-line'>
-										<span>
-											(+84) {dataOrder?.user?.phone}
-										</span>
+										<span>(+84) {dataOrder?.user?.phone}</span>
 										<br />
 										{dataOrder?.user?.address}
 									</div>
@@ -441,19 +433,12 @@ function OrderDetailPage(): JSX.Element {
 														Đã giao
 													</p>
 													<p className='text-[#26aa99]'>
-														Đơn hàng đã được giao
-														thành công
-														<span>
-															. Người nhận hàng:
-															Truong Van Chu
-															Toan--
-														</span>
-														.{' '}
+														Đơn hàng đã được giao thành công
+														<span>. Người nhận hàng: Truong Van Chu Toan--</span>.{' '}
 														<span
 															className='whitespace-nowrap text-[#05a] cursor-pointer'
 															tabIndex={0}>
-															Xem hình ảnh giao
-															hàng
+															Xem hình ảnh giao hàng
 														</span>
 													</p>
 												</div>
@@ -473,12 +458,9 @@ function OrderDetailPage(): JSX.Element {
 													09:42 16-07-2023
 												</div>
 												<div className='min-w-0'>
-													<p className='font-bold leading-5 -mb-0.5'>
-														Đang vận chuyển
-													</p>
+													<p className='font-bold leading-5 -mb-0.5'>Đang vận chuyển</p>
 													<p className='className="leading-5 mt-px mb-2 mx-0"'>
-														Đơn hàng đang trên đường
-														giao đến bạn
+														Đơn hàng đang trên đường giao đến bạn
 													</p>
 												</div>
 											</div>
@@ -495,9 +477,7 @@ function OrderDetailPage(): JSX.Element {
 												<div className='m-w-0'>
 													<p className='font-bold leading-5 -mb-0.5' />
 													<p className='className="leading-5 mt-px mb-2 mx-0"'>
-														Đơn hàng đã đến bưu cục
-														50-HCM Binh Chanh/Phong
-														Phu LM Hub
+														Đơn hàng đã đến bưu cục 50-HCM Binh Chanh/Phong Phu LM Hub
 													</p>
 												</div>
 											</div>
@@ -514,9 +494,8 @@ function OrderDetailPage(): JSX.Element {
 												<div className='m-w-0'>
 													<p className='font-bold leading-5 -mb-0.5' />
 													<p className='className="leading-5 mt-px mb-2 mx-0"'>
-														Đơn hàng đang được trung
-														chuyển tới 50-HCM Binh
-														Chanh/Phong Phu LM Hub
+														Đơn hàng đang được trung chuyển tới 50-HCM Binh Chanh/Phong Phu
+														LM Hub
 													</p>
 												</div>
 											</div>
@@ -533,8 +512,7 @@ function OrderDetailPage(): JSX.Element {
 												<div className='m-w-0'>
 													<p className='font-bold leading-5 -mb-0.5' />
 													<p className='leading-5 mt-px mb-2 mx-0'>
-														Đơn hàng đã đến kho phân
-														loại BW SOC
+														Đơn hàng đã đến kho phân loại BW SOC
 													</p>
 												</div>
 											</div>
@@ -551,8 +529,7 @@ function OrderDetailPage(): JSX.Element {
 												<div className='m-w-0'>
 													<p className='font-bold leading-5 -mb-0.5' />
 													<p className='leading-5 mt-px mb-2 mx-0'>
-														Đơn hàng đang được trung
-														chuyển tới BW SOC
+														Đơn hàng đang được trung chuyển tới BW SOC
 													</p>
 												</div>
 											</div>
@@ -575,8 +552,7 @@ function OrderDetailPage(): JSX.Element {
 														Đang chuẩn bị
 													</p>
 													<p className='leading-5 mt-px mb-2 mx-0 text-[#26aa99]'>
-														Người bán đang chuẩn bị
-														hàng
+														Người bán đang chuẩn bị hàng
 													</p>
 												</div>
 											</div>
@@ -595,18 +571,12 @@ function OrderDetailPage(): JSX.Element {
 												</div>
 												{dataOrder?.createdAt && (
 													<div className='w-[155px] shrink-0 text-[rgba(0,0,0,0.8)] mt-[3px] px-3 py-0'>
-														{formatDate(
-															dataOrder?.createdAt
-														)}
+														{formatDate(dataOrder?.createdAt)}
 													</div>
 												)}
 												<div className='m-w-0'>
-													<p className='font-bold leading-5 -mb-0.5'>
-														Đơn đã đặt
-													</p>
-													<p className='leading-5 mt-px mb-2 mx-0'>
-														Đơn hàng đã được đặt
-													</p>
+													<p className='font-bold leading-5 -mb-0.5'>Đơn đã đặt</p>
+													<p className='leading-5 mt-px mb-2 mx-0'>Đơn hàng đã được đặt</p>
 												</div>
 											</div>
 										</div>
@@ -647,18 +617,10 @@ function OrderDetailPage(): JSX.Element {
 												</g>
 												<defs>
 													<clipPath id='clip0'>
-														<path
-															fill='#fff'
-															d='M0 0h55v16H0z'
-															transform='translate(4)'
-														/>
+														<path fill='#fff' d='M0 0h55v16H0z' transform='translate(4)' />
 													</clipPath>
 													<clipPath id='clip1'>
-														<path
-															fill='#fff'
-															d='M0 0h7v16H0z'
-															transform='translate(59)'
-														/>
+														<path fill='#fff' d='M0 0h7v16H0z' transform='translate(59)' />
 													</clipPath>
 												</defs>
 											</svg>
@@ -679,14 +641,10 @@ function OrderDetailPage(): JSX.Element {
 														/>
 													</g>
 												</svg>
-												<span className='align-middle ml-1 mr-0 my-0'>
-													chat
-												</span>
+												<span className='align-middle ml-1 mr-0 my-0'>chat</span>
 											</button>
 										</div>
-										<NavLink
-											className='ml-2 mr-0 my-0'
-											to={`/shop/${dataOrder?.shopid}`}>
+										<NavLink className='ml-2 mr-0 my-0' to={`/shop/${dataOrder?.shopid}`}>
 											<button className='text-xs flex items-center capitalize text-[#555] border px-2 py-1 rounded-sm border-solid border-[rgba(0,0,0,0.09)] hover:bg-[rgba(0,0,0,0.02)] hover:border hover:border-solid hover:border-[rgba(0,0,0,0.09)]'>
 												<svg
 													enableBackground='new 0 0 15 15'
@@ -696,18 +654,12 @@ function OrderDetailPage(): JSX.Element {
 													className='mr-[5px] inline-block w-[1em] h-[1em] fill-current relative'>
 													<path d='m15 4.8c-.1-1-.8-2-1.6-2.9-.4-.3-.7-.5-1-.8-.1-.1-.7-.5-.7-.5h-8.5s-1.4 1.4-1.6 1.6c-.4.4-.8 1-1.1 1.4-.1.4-.4.8-.4 1.1-.3 1.4 0 2.3.6 3.3l.3.3v3.5c0 1.5 1.1 2.6 2.6 2.6h8c1.5 0 2.5-1.1 2.5-2.6v-3.7c.1-.1.1-.3.3-.3.4-.8.7-1.7.6-3zm-3 7c0 .4-.1.5-.4.5h-8c-.3 0-.5-.1-.5-.5v-3.1c.3 0 .5-.1.8-.4.1 0 .3-.1.3-.1.4.4 1 .7 1.5.7.7 0 1.2-.1 1.6-.5.5.3 1.1.4 1.6.4.7 0 1.2-.3 1.8-.7.1.1.3.3.5.4.3.1.5.3.8.3zm.5-5.2c0 .1-.4.7-.3.5l-.1.1c-.1 0-.3 0-.4-.1s-.3-.3-.5-.5l-.5-1.1-.5 1.1c-.4.4-.8.7-1.4.7-.5 0-.7 0-1-.5l-.6-1.1-.5 1.1c-.3.5-.6.6-1.1.6-.3 0-.6-.2-.9-.8l-.5-1-.7 1c-.1.3-.3.4-.4.6-.1 0-.3.1-.3.1s-.4-.4-.4-.5c-.4-.5-.5-.9-.4-1.5 0-.1.1-.4.3-.5.3-.5.4-.8.8-1.2.7-.8.8-1 1-1h7s .3.1.8.7c.5.5 1.1 1.2 1.1 1.8-.1.7-.2 1.2-.5 1.5z' />
 												</svg>
-												<span className='align-middle ml-1 mr-0 my-0'>
-													Xem Shop
-												</span>
+												<span className='align-middle ml-1 mr-0 my-0'>Xem Shop</span>
 											</button>
 										</NavLink>
 									</div>
 									<div className='flex items-center pl-2.5 pr-0 py-0'>
-										<svg
-											width={16}
-											height={16}
-											fill='none'
-											xmlns='http://www.w3.org/2000/svg'>
+										<svg width={16} height={16} fill='none' xmlns='http://www.w3.org/2000/svg'>
 											<path
 												clipRule='evenodd'
 												d='M8 15A7 7 0 108 1a7 7 0 000 14z'
@@ -725,110 +677,75 @@ function OrderDetailPage(): JSX.Element {
 									</div>
 								</div>
 								<hr className='border-b-[rgba(0,0,0,0.06)] border-b border-solid' />
-								{dataOrder?.posts.map(
-									(post: any, index: number) => (
-										<NavLink
-											key={post.itemid}
-											className='mb-[10px]'
-											to={`/product/${post?.itemid}/${post?.shopid}`}>
-											<div className=''>
-												<div>
-													<span className='items-center flex-nowrap text-[rgba(0,0,0,0.87)] flex pt-3 pb-0 px-0'>
-														<div />
-														<div className='flex-1 items-start flex-nowrap flex pl-0 pr-3 py-0'>
-															<div className=' w-[81px] h-[81px]'>
-																<div className='relative'>
-																	<div className='w-20 h-20 mr-3'>
-																		<img
-																			className='w-full h-full'
-																			src={
-																				post?.image
-																			}
-																			alt={
-																				post?.name
-																			}
-																		/>
-																	</div>
-																	<div
-																		className='bg-[50%] bg-cover bg-no-repeat absolute w-full h-full left-0 top-0'
-																		style={{
-																			backgroundImage: `${post?.image}`
-																		}}>
-																		<div className='w-full h-full'></div>
-																	</div>
+								{dataOrder?.posts.map((post: any, index: number) => (
+									<NavLink
+										key={post.itemid}
+										className='mb-[10px]'
+										to={`/product/${post?.itemid}/${post?.shopid}`}>
+										<div className=''>
+											<div>
+												<span className='items-center flex-nowrap text-[rgba(0,0,0,0.87)] flex pt-3 pb-0 px-0'>
+													<div />
+													<div className='flex-1 items-start flex-nowrap flex pl-0 pr-3 py-0'>
+														<div className=' w-[81px] h-[81px]'>
+															<div className='relative'>
+																<div className='w-20 h-20 mr-3'>
+																	<img
+																		className='w-full h-full'
+																		src={post?.image}
+																		alt={post?.name}
+																	/>
+																</div>
+																<div
+																	className='bg-[50%] bg-cover bg-no-repeat absolute w-full h-full left-0 top-0'
+																	style={{
+																		backgroundImage: `${post?.image}`
+																	}}>
+																	<div className='w-full h-full'></div>
 																</div>
 															</div>
+														</div>
 
-															<div className='min-w-0 flex flex-1 flex-col items-start pl-3 pr-0 py-0'>
-																<div>
-																	<div
-																		className='overflow-hidden text-ellipsis text-base leading-22 max-h-12 mt-0 mb-[5px] mx-0'
-																		style={{
-																			display:
-																				'-webkit-box',
-																			WebkitBoxOrient:
-																				'vertical',
-																			WebkitLineClamp: 2
-																		}}>
-																		<span>
-																			{
-																				post?.name
-																			}
-																		</span>
-																	</div>
-																</div>
-																<div className='mt-0 mx-0'>
-																	<div className='text-[rgba(0,0,0,0.54)] mb-[5px]'>
-																		Phân
-																		loại
-																		hàng:{' '}
-																		{
-																			dataOrder
-																				?.option[
-																				index
-																			]
-																		}
-																	</div>
-																	<div className=''>
-																		x
-																		{
-																			dataOrder
-																				?.amount[
-																				index
-																			]
-																		}
-																	</div>
-																</div>
-															</div>
-														</div>
-														<div>
+														<div className='min-w-0 flex flex-1 flex-col items-start pl-3 pr-0 py-0'>
 															<div>
-																<span className='align-middle text-sm leading-4 text-[rgba(0,0,0,0.87)]'>
-																	<div
-																		className='text-sm flex justify-center flex-col text-center text-[rgba(0, 0, 0, 0.87)] font-medium'
-																		style={{
-																			flexDirection:
-																				'row',
-																			gap: '8px'
-																		}}>
-																		<h3>
-																			₫{' '}
-																			{formatPrice(
-																				post?.price,
-																				post?.amount
-																			)}
-																		</h3>
-																	</div>
-																</span>
+																<div
+																	className='overflow-hidden text-ellipsis text-base leading-22 max-h-12 mt-0 mb-[5px] mx-0'
+																	style={{
+																		display: '-webkit-box',
+																		WebkitBoxOrient: 'vertical',
+																		WebkitLineClamp: 2
+																	}}>
+																	<span>{post?.name}</span>
+																</div>
+															</div>
+															<div className='mt-0 mx-0'>
+																<div className='text-[rgba(0,0,0,0.54)] mb-[5px]'>
+																	Phân loại hàng: {dataOrder?.option[index]}
+																</div>
+																<div className=''>x{dataOrder?.amount[index]}</div>
 															</div>
 														</div>
-													</span>
-												</div>
-												<div className='h-2.5 border-b-[rgba(0,0,0,0.09)] border-b border-solid' />
+													</div>
+													<div>
+														<div>
+															<span className='align-middle text-sm leading-4 text-[rgba(0,0,0,0.87)]'>
+																<div
+																	className='text-sm flex justify-center flex-col text-center text-[rgba(0, 0, 0, 0.87)] font-medium'
+																	style={{
+																		flexDirection: 'row',
+																		gap: '8px'
+																	}}>
+																	<h3>₫ {formatPrice(post?.price, post?.amount)}</h3>
+																</div>
+															</span>
+														</div>
+													</div>
+												</span>
 											</div>
-										</NavLink>
-									)
-								)}
+											<div className='h-2.5 border-b-[rgba(0,0,0,0.09)] border-b border-solid' />
+										</div>
+									</NavLink>
+								))}
 							</div>
 							<div className='bg-neutral-50 border-t-[rgba(0,0,0,0.09)] border-t border-solid'>
 								<div className='flex justify-end items-center text-right px-6 py-0 border-b-[rgba(0,0,0,0.09)] border-b border-dotted'>
@@ -837,15 +754,7 @@ function OrderDetailPage(): JSX.Element {
 									</div>
 									<div className='w-60 text-[rgba(0,0,0,0.8)] pl-2.5 pr-0 py-[13px] border-l-[rgba(0,0,0,0.09)] border-l border-dotted'>
 										{dataOrder?.final_total && (
-											<div>
-												{' '}
-												đ
-												{formatPrice(
-													dataOrder?.final_total -
-														30000,
-													1
-												)}
-											</div>
+											<div> đ{formatPrice(dataOrder?.final_total - 30000, 1)}</div>
 										)}
 									</div>
 								</div>
@@ -864,10 +773,7 @@ function OrderDetailPage(): JSX.Element {
 									<div className='w-60 text-[rgba(0,0,0,0.8)] pl-2.5 pr-0 py-[13px] border-l-[rgba(0,0,0,0.09)] border-l border-dotted'>
 										{dataOrder?.final_total && (
 											<div className='text-[#ee4d2d] text-2xl'>
-												₫
-												{formatPrice(
-													dataOrder.final_total
-												)}
+												₫{formatPrice(dataOrder.final_total)}
 											</div>
 										)}
 									</div>
@@ -898,11 +804,7 @@ function OrderDetailPage(): JSX.Element {
 										<span>
 											Vui lòng thanh toán{' '}
 											<span className='font-medium text-[#ee4d2d]'>
-												₫
-												{formatPrice(
-													dataOrder?.final_total +
-														30000
-												)}
+												₫{formatPrice(dataOrder?.final_total + 30000)}
 											</span>{' '}
 											khi nhận hàng.
 										</span>
@@ -942,9 +844,7 @@ function OrderDetailPage(): JSX.Element {
 											</svg>
 										</span>
 									</span>
-									<span className='align-middle'>
-										Phương thức Thanh toán
-									</span>
+									<span className='align-middle'>Phương thức Thanh toán</span>
 								</span>
 							</div>
 							<div className='w-60 text-[rgba(0,0,0,0.8)] pl-2.5 pr-0 py-[13px] border-l-[rgba(0,0,0,0.09)] border-l border-dotted'>
@@ -954,13 +854,7 @@ function OrderDetailPage(): JSX.Element {
 					</div>
 				</div>
 			</div>
-			{dataOrder && (
-				<ModelRattingComponent
-					isShow={isShowModel}
-					onCloseModel={onCloseModel}
-					data={dataOrder}
-				/>
-			)}
+			{dataOrder && <ModelRattingComponent isShow={isShowModel} onCloseModel={onCloseModel} data={dataOrder} />}
 		</>
 	)
 }

@@ -60,9 +60,7 @@ export default function ShopMallComponent(): JSX.Element {
 									Miễn phí vận chuyển
 								</div>
 							</div>
-							<NavLink
-								to='/mall'
-								className='w-[115px] capitalize text-[#ee4d2d]'>
+							<NavLink to='/mall' className='w-[115px] capitalize text-[#ee4d2d]'>
 								Xem tất cả&nbsp;
 								<i className='fa-solid fa-angle-right'></i>
 							</NavLink>
@@ -70,75 +68,54 @@ export default function ShopMallComponent(): JSX.Element {
 						<div className='mb-[10px] flex'>
 							<div className='l-4 mo-8 c-8' id='shopmall'>
 								<Slider {...settings}>
-									{shopMallData?.map(
-										(listItem: any, index: number) => {
-											return (
-												<img
-													src={listItem?.src}
-													alt='Slider'
-													className='w-full h-full'
-													key={index}
-												/>
-											)
-										}
-									)}
+									{shopMallData?.map((listItem: any, index: number) => {
+										return (
+											<img
+												src={listItem?.src}
+												alt='Slider'
+												className='w-full h-full'
+												key={index}
+											/>
+										)
+									})}
 								</Slider>
 							</div>
 							<div className='l-8'>
 								<div className='l-12'>
 									<Slider {...settings2}>
-										{data?.response?.map(
-											(ele: any, index: number) => (
-												<div
-													key={index}
-													className='col col-3'>
-													{ele?.map(
-														(
-															item: IShopMall,
-															index: number
-														) => (
+										{data?.response?.map((ele: any, index: number) => (
+											<div key={index} className='col col-3'>
+												{ele?.map((item: IShopMall, index: number) => (
+													<div className='w-full px-[10px]' key={index}>
+														<div
+															className='relative'
+															style={{
+																boxShadow: 'unset'
+															}}>
+															<LazyLoadImage
+																effect='blur'
+																src={item.image}
+																alt='itemProduct'
+																className='w-full cursor-pointer bg-[top_center] bg-contain bg-no-repeat rounded-br-[2px] rounded-bl-[2px]'
+															/>
+														</div>
+														<div className='absolute z-[1] w-8 h-10 bg-[2rem_2.5rem] bg-no-repeat left-0 top-0'></div>
+														<div>
 															<div
-																className='w-full px-[10px]'
-																key={index}>
-																<div
-																	className='relative'
-																	style={{
-																		boxShadow:
-																			'unset'
-																	}}>
-																	<LazyLoadImage
-																		effect='blur'
-																		src={
-																			item.image
-																		}
-																		alt='itemProduct'
-																		className='w-full cursor-pointer bg-[top_center] bg-contain bg-no-repeat rounded-br-[2px] rounded-bl-[2px]'
-																	/>
-																</div>
-																<div className='absolute z-[1] w-8 h-10 bg-[2rem_2.5rem] bg-no-repeat left-0 top-0'></div>
-																<div>
-																	<div
-																		className=' w-[172px] h-[27px] leading-[27px] text-center text-lg text-ellipsis overflow-hidden text-[#d0011b] left-3.5 bottom-[18px]'
-																		style={{
-																			display:
-																				'-webkit-box',
-																			WebkitBoxOrient:
-																				'vertical',
-																			WebkitLineClamp: 1,
-																			wordWrap:
-																				'break-word'
-																		}}>
-																		{
-																			item.promo_text
-																		}
-																	</div>
-																</div>
+																className=' w-[172px] h-[27px] leading-[27px] text-center text-lg text-ellipsis overflow-hidden text-[#d0011b] left-3.5 bottom-[18px]'
+																style={{
+																	display: '-webkit-box',
+																	WebkitBoxOrient: 'vertical',
+																	WebkitLineClamp: 1,
+																	wordWrap: 'break-word'
+																}}>
+																{item.promo_text}
 															</div>
-														)
-													)}
-												</div>
-											)
-										)}
+														</div>
+													</div>
+												))}
+											</div>
+										))}
 									</Slider>
 								</div>
 							</div>

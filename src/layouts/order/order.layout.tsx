@@ -2,8 +2,8 @@
 import { Toaster } from 'react-hot-toast'
 //? APPS
 import useAuth from '../../hooks/userAuth'
-import { HeaderNavbarComponent } from '../../components/header'
 import { FooterComponent } from '../../components/footer'
+import { NavbarComponent } from '../../modules/header/navbar'
 
 export default function OrderLayout({ children }: any): JSX.Element {
 	useAuth()
@@ -12,15 +12,13 @@ export default function OrderLayout({ children }: any): JSX.Element {
 			<Toaster position='top-right' reverseOrder={false} />
 			<header className='h-[132px] bg-[linear-gradient(0,#fe6433,#f53e2d)] fixed z-10 top-0 inset-x-0'>
 				<div className='grid wide'>
-					<HeaderNavbarComponent />
+					<NavbarComponent />
 				</div>
 				<div className='flex items-center h-[6.25rem] border-b-[rgba(0,0,0,0.09)] border-b border-solid bg-[#fff]'>
 					<div className='grid wide'>
 						<div className='flex items-center'>
 							<div className='flex flex-1 pl-[1.125rem]'>
-								<a
-									className='no-underline text-[rgba(0,0,0,0.87)] flex items-end'
-									href='/'>
+								<a className='no-underline text-[rgba(0,0,0,0.87)] flex items-end' href='/'>
 									<svg
 										viewBox='0 0 192 65'
 										className='relative bg-[50%] bg-cover bg-no-repeat w-[8.125rem] h-[2.875rem] cursor-pointer fill-[#ee4d2d] inline-block'>

@@ -34,18 +34,14 @@ function DetailProductPage(): JSX.Element {
 					<div className='bg-[#f5f5f5] overflow-hidden py-[20px]'>
 						{dataPostDetail && (
 							<>
-								<ProductBreadcrumbComponent
-									data={dataPostDetail}
-								/>
+								<ProductBreadcrumbComponent data={dataPostDetail} />
 								<ProductDetailComponent data={dataPostDetail} />
 							</>
 						)}
 					</div>
 					{dataShop && <ProductShopComponent data={dataShop} />}
 
-					{dataPostDetail && (
-						<ProductOverviewComponent data={dataPostDetail} />
-					)}
+					{dataPostDetail && <ProductOverviewComponent data={dataPostDetail} />}
 
 					{/* <ProductCommentComponent /> */}
 				</>

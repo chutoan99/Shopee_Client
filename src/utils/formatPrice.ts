@@ -1,8 +1,4 @@
-export const formatPrice = (
-	value: number,
-	amount?: number,
-	priceShip?: number
-) => {
+export const formatPrice = (value: number, amount?: number, priceShip?: number) => {
 	if (!amount) {
 		amount = 1
 	}

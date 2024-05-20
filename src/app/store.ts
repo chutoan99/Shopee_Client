@@ -13,15 +13,15 @@ import { UserApi } from '../modules/user/hooks'
 import { OrderApi } from '../modules/order/hooks'
 import { ProductApi } from '../modules/post/hooks'
 import { BannerApi } from '../modules/banner/hooks'
-import { NotifyApi } from '../modules/notify/hooks'
+import { NotifyApi } from '../modules/header/notify/hooks'
 import { CommentApi } from '../modules/comment/hooks'
 import { ShopMallApi } from '../modules/shopMall/hooks'
 import { FlashSaleApi } from '../modules/flashSale/hooks'
 import { BatchListApi } from '../modules/batchList/hooks'
 import { CategoryTreeApi } from '../modules/category/hooks'
 import { TopProductApi } from '../modules/topProduct/hooks'
-import { SearchHistoryApi } from '../modules/searchHistory/hooks'
-import { SearchSuggestApi } from '../modules/searchSuggest/hooks'
+import { SearchHistoryApi } from '../modules/header/searchHistory/hooks'
+import { SearchSuggestApi } from '../modules/header/searchSuggest/hooks'
 const RootReducer = {
 	others: otherReducer,
 	cart: cartReducer,
@@ -71,9 +71,4 @@ export const store = configureStore({
 
 export type AppDispatch = typeof store.dispatch
 export type RootState = ReturnType<typeof store.getState>
-export type AppThunk<ReturnType = void> = ThunkAction<
-	ReturnType,
-	RootState,
-	unknown,
-	Action<string>
->
+export type AppThunk<ReturnType = void> = ThunkAction<ReturnType, RootState, unknown, Action<string>>

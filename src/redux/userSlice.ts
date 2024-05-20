@@ -22,21 +22,11 @@ const userSlice = createSlice({
 	initialState: initialState,
 	reducers: {
 		updateUser: (state, action) => {
-			const {
-				userid,
-				shopid,
-				sex,
-				role,
-				email,
-				name,
-				address,
-				avatar,
-				not_new_user,
-				birthday,
-				phone
-			} = action.payload.data
+			const { id, shopid, sex, role, email, name, address, avatar, not_new_user, birthday, phone } =
+				action.payload.data
+			console.log(action.payload.data,"action.payload.data")
 			const isLogin = action.payload.isLogin
-			state.data.userid = userid
+			state.data.userid = id
 			state.data.shopid = shopid
 			state.data.sex = sex
 			state.data.role = role

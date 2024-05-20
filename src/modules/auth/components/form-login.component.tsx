@@ -28,11 +28,7 @@ function LoginFormComponent(): JSX.Element {
 	}, [emailLogin, passWordLogin])
 
 	const onLogin = async () => {
-		const isValid = await validateLogin(
-			emailLogin,
-			passWordLogin,
-			setValidationMsg
-		)
+		const isValid = await validateLogin(emailLogin, passWordLogin, setValidationMsg)
 		if (!isValid) return
 		refetch()
 	}
@@ -48,9 +44,7 @@ function LoginFormComponent(): JSX.Element {
 			<div className='w-[500px] py-[1.25rem] bg-[#fff] box-border shadow-[0_3px_10px_0_rgba(0,0,0,0.14)] rounded overflow-hidden'>
 				<div className='px-[2rem] py-0'>
 					<div className='flex items-center justify-between mt-2.5 px-3 py-0'>
-						<h3 className='text-[1.37rem] font-normal text-[#333]'>
-							Đăng Nhập
-						</h3>
+						<h3 className='text-[1.37rem] font-normal text-[#333]'>Đăng Nhập</h3>
 						<NavLink
 							to='/register'
 							className='cursor-pointer text-base leading-6 font-normal text-[#ee4d2d]'>
@@ -67,36 +61,26 @@ function LoginFormComponent(): JSX.Element {
 								className='w-full text-sm leading-10 mt-4 px-3 py-0 rounded-sm border-[#dbdbdb] border-[1px]  border-[solid] focus-visible:border-[0.5px] focus-visible:border-[rgb(136_136_136_/_0.5)] focus:border-[#dbdbdb]'
 								onKeyDown={handelKeyDown}
 							/>
-							<span className='text-[#ee4d2d] text-xs ml-[15px]'>
-								{validationMsg.emailLogin}
-							</span>
+							<span className='text-[#ee4d2d] text-xs ml-[15px]'>{validationMsg.emailLogin}</span>
 						</div>
 						<div>
 							<input
 								value={passWordLogin}
-								onChange={(e) =>
-									SetPassWordLogin(e.target.value)
-								}
+								onChange={(e) => SetPassWordLogin(e.target.value)}
 								type='password'
 								placeholder='Mật khẩu của bạn'
 								className='w-full text-sm leading-10 mt-4 px-3 py-0 rounded-sm border-[#dbdbdb] border-[1px]  border-[solid] focus-visible:border-[0.5px] focus-visible:border-[rgb(136_136_136_/_0.5)] focus:border-[#dbdbdb]'
 								onKeyDown={handelKeyDown}
 							/>
-							<span className='text-[#ee4d2d] text-xs ml-[15px]'>
-								{validationMsg.passWordLogin}
-							</span>
+							<span className='text-[#ee4d2d] text-xs ml-[15px]'>{validationMsg.passWordLogin}</span>
 						</div>
 					</div>
 					<div className='flex justify-end mt-5'>
-						<NavLink
-							to='/forgot-password'
-							className='no-underline text-sm leading-5 text-[#ee4d2d]'>
+						<NavLink to='/forgot-password' className='no-underline text-sm leading-5 text-[#ee4d2d]'>
 							Quên mật khẩu
 						</NavLink>
 						<span className='mt-[-0.125rem] block h-[22px] mb-0 mx-4 border-l-[rgb(234_234_234_/_1)] border-l border-solid'></span>
-						<NavLink
-							to='# '
-							className='text-sm leading-5 text-[rgb(147_147_147_/_1)] no-underline'>
+						<NavLink to='# ' className='text-sm leading-5 text-[rgb(147_147_147_/_1)] no-underline'>
 							Cần trợ giúp?
 						</NavLink>
 					</div>

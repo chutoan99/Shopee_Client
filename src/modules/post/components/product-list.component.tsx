@@ -19,9 +19,7 @@ type Props = {
 }
 function ProductListComponent({ items, col, loading }: Props): JSX.Element {
 	const dispatch: AppDispatch = useAppDispatch()
-	const [likes, setLikes] = useState<string[]>(
-		items.map(() => 'fa-regular fa-heart')
-	)
+	const [likes, setLikes] = useState<string[]>(items.map(() => 'fa-regular fa-heart'))
 	const changeLike = (index: number) => {
 		setLikes((prevLikes) => {
 			const newLikes = [...prevLikes]
@@ -76,18 +74,13 @@ function ProductListComponent({ items, col, loading }: Props): JSX.Element {
 							<div className='flex items-baseline justify-between'>
 								{item?.price_before_discount !== 0 ? (
 									<span className='text-[0.875rem] text-[#666] line-through ml-2.5'>
-										{formatPrice(
-											item.price_before_discount
-										)}
-										đ
+										{formatPrice(item.price_before_discount)}đ
 									</span>
 								) : (
 									<span className='text-[0.875rem] text-[#666] line-through ml-2.5'></span>
 								)}
 
-								<span className='text-[16px] text-[#ee4d2d] mx-2.5'>
-									{formatPrice(item?.price)}đ
-								</span>
+								<span className='text-[16px] text-[#ee4d2d] mx-2.5'>{formatPrice(item?.price)}đ</span>
 							</div>
 							<div className='flex items-center justify-between mt-1.5 mb-0 mx-2.5'>
 								<span
@@ -98,9 +91,7 @@ function ProductListComponent({ items, col, loading }: Props): JSX.Element {
 								<div className='text-[0.625rem] origin-right text-[#ccc] ml-auto mr-0 -mt-px mb-0 scale-[0.8]'>
 									{generateStart(4)}
 								</div>
-								<span className='text-xs text-[#333] ml-1.5'>
-									{item?.historical_sold}đã bán
-								</span>
+								<span className='text-xs text-[#333] ml-1.5'>{item?.historical_sold}đã bán</span>
 							</div>
 							{item?.is_official_shop ? (
 								<div

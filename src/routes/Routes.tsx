@@ -14,7 +14,7 @@ const App = () => {
 
 	useEffect(() => {
 		if (!isLoading) {
-			dispatch(CartActions.updateTotalCart(data?.total_cart || 0))
+			dispatch(CartActions.updateTotalCart(data?.total || 0))
 		}
 	}, [isLoading])
 	return (
