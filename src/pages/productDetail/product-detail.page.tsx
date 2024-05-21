@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom'
 import { memo, useEffect, useState } from 'react'
 //? APPS
 import { useGetProductQuery } from '../../modules/post/hooks'
-import { Loading2Component } from '../../components/loading'
+import { LoadingCustomComponent } from '../../components/loading'
 import { IShop } from '../../modules/shop/interfaces'
 import { IProductDetail } from '../../modules/post/interfaces'
 import {
@@ -16,18 +16,19 @@ import {
 
 function DetailProductPage(): JSX.Element {
 	const params = useParams()
-	const { data, isLoading } = useGetProductQuery(params)
+	const { data, isLoading } = useGetProductQuery(Number(params.itemid))
 	const [dataShop, setDataShop] = useState<IShop>()
 	const [dataPostDetail, setDataPostDetail] = useState<IProductDetail>()
 
 	useEffect(() => {
+		console.log(params,"params")
 		data?.response && setDataPostDetail(data?.response)
 		data?.response?.shop_info && setDataShop(data.response.shop_info)
 	}, [data])
 	return (
 		<>
 			{isLoading ? (
-				<Loading2Component />
+				<LoadingCustomComponent />
 			) : (
 				<>
 					<div className='mt-[120px]'></div>

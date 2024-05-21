@@ -6,14 +6,14 @@ import 'react-lazy-load-image-component/src/effects/blur.css'
 
 //? APPS
 import { AppDispatch } from '../../../app/store'
-import { IPostSimple } from '../interfaces'
+import { IPostBase } from '../interfaces'
 import { formatPrice } from '../../../utils/formatPrice'
 import { generateStart } from '../../../utils/generateStart'
 import { useAppDispatch } from '../../../hooks/hooks'
 import { OtherActions } from '../../../redux/otherSlice'
 
 type Props = {
-	items: IPostSimple[]
+	items: IPostBase[]
 	col: string
 	loading: boolean
 }
@@ -41,7 +41,7 @@ function ProductListComponent({ items, col, loading }: Props): JSX.Element {
 	return (
 		<div className='mb-[20px]'>
 			<div className='row sm-gutter'>
-				{items?.map((item: IPostSimple, index: number) => (
+				{items?.map((item: IPostBase, index: number) => (
 					<div className={col} key={index}>
 						<div
 							className='box-border bg-[#fff] relative shadow-[0_1px_2px_rgba(0,0,0,0.1)] transition-transform duration-[linear] delay-[0.1s] no-underline block cursor-pointer mt-[5px] pb-[5px] rounded-sm group hover:shadow-[0_1px_20px_rgba(0,0,0,0.05)] hover:-translate-y-px hover:border hover:z-[2] hover:border-solid hover:border-[#ee4d2d]'

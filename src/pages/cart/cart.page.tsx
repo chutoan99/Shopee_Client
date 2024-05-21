@@ -9,7 +9,7 @@ import { useAppDispatch } from '../../hooks/hooks'
 import { formatPrice } from '../../utils/formatPrice'
 import { buyCartActions } from '../../redux/buyCart.slice'
 import { useDeleteCartMutation, useGetCartsQuery, useUpdateCartMutation } from '../../modules/cart/hooks'
-import { LoadingComponent } from '../../components/loading'
+import { LoadingDefaultComponent } from '../../components/loading'
 
 function CartPage(): JSX.Element {
 	const navigate = useNavigate()
@@ -140,7 +140,7 @@ function CartPage(): JSX.Element {
 	return (
 		<>
 			{isLoading ? (
-				<LoadingComponent />
+				<LoadingDefaultComponent />
 			) : (
 				<>
 					{dataCart?.total === 0 ? (

@@ -11,16 +11,14 @@ import { IShop } from '../../shop/interfaces'
 type ProductShopModel = {
 	data: IShop
 }
-type PayloadRoom = {
-	shopid: number
-}
+
 function ProductShopComponent({ data }: ProductShopModel): JSX.Element {
 	const navigate = useNavigate()
 	const dispatch: AppDispatch = useAppDispatch()
 	const [createRoom] = useCreateRoomMutation()
 
 	const onChatWithShop = async () => {
-		const payload: PayloadRoom = {
+		const payload = {
 			shopid: data?.id
 		}
 		dispatch(OtherActions.ToggleIsChat())

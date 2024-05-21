@@ -10,7 +10,7 @@ import { formatPrice } from '../../utils/formatPrice'
 import { useDeleteCartMutation } from '../../modules/cart/hooks'
 import { useCreateOrderMutation } from '../../modules/order/hooks'
 import { ALERT_INVALID_ADDRESS_ORDER, ALERT_INVALID_PHONE_ORDER } from '../../constants/msg'
-import { Loading2Component } from '../../components/loading'
+import { LoadingCustomComponent } from '../../components/loading'
 
 type payload = {
 	item_groups_id: string
@@ -107,7 +107,7 @@ function OderPage(): JSX.Element {
 
 	return (
 		<>
-			{loading && <Loading2Component />}
+			{loading && <LoadingCustomComponent />}
 
 			<div className='p-[1.25rem] mt-[120px]' style={{ backgroundColor: '#f5f5f5' }}>
 				<div className='grid wide'>

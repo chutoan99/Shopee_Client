@@ -5,7 +5,7 @@ import { Toaster } from 'react-hot-toast'
 //? APPS
 import { useGetCartsQuery } from '../../modules/cart/hooks'
 import { useCreateHistorySearchMutation } from '../../modules/header/searchHistory/hooks'
-import { LoadingComponent } from '../../components/loading'
+import { LoadingDefaultComponent } from '../../components/loading'
 import { NavbarComponent } from '../../modules/header/navbar'
 import { LogoComponent } from '../../modules/header/logo'
 
@@ -25,7 +25,7 @@ export default function CartLayout({ children }: any): JSX.Element {
 
 	return (
 		<>
-			{isLoading && <LoadingComponent />}
+			{isLoading && <LoadingDefaultComponent />}
 			<Toaster position='top-right' reverseOrder={false} />
 			<header className='h-[120px] bg-[linear-gradient(0,#fe6433,#f53e2d)] fixed z-10 top-0 inset-x-0'>
 				<div className='grid wide'>

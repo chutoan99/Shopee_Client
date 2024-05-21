@@ -4,13 +4,14 @@ import { memo, useState } from 'react'
 //? APPS
 import { useGetProductsQuery } from '../../modules/post/hooks'
 import ProductListComponent from '../../modules/post/components/product-list.component'
-import { LoadingComponent } from '../../components/loading'
+import { LoadingDefaultComponent } from '../../components/loading'
 import { PaginationComponent } from '../../modules/pagination'
+import { CONSTANT } from '../../modules/post/resources'
 
 function TopProductPage(): JSX.Element {
 	const [payload, setPayload] = useState({
-		limit: 96,
-		page: 1
+		limit: CONSTANT.LIMIT,
+		page: CONSTANT.PAGE
 	})
 	const { data, isLoading } = useGetProductsQuery(payload)
 
@@ -59,9 +60,9 @@ function TopProductPage(): JSX.Element {
 							loading={isLoading}
 						/>
 						{isLoading ? (
-							<LoadingComponent />
+							<LoadingDefaultComponent />
 						) : (
-							<PaginationComponent setPayload={setPayload} totalPage={data?.totalPage} />
+							<PaginationComponent setPayload={setPayload} totalPage={data?.totalPage || 0} />
 						)}
 					</div>
 				</div>

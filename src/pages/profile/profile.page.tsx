@@ -13,7 +13,7 @@ import {
 	ALERT_UPDATE_USER_SUCCESS
 } from '../../constants/msg'
 import { useGetUserCurrentQuery } from '../../modules/user/hooks'
-import { Loading2Component, LoadingComponent } from '../../components/loading'
+import { LoadingCustomComponent, LoadingDefaultComponent } from '../../components/loading'
 import { District, Province, Ward } from '../../modules/province/interfaces/province.interface'
 import { useAppSelector } from '../../hooks/hooks'
 import { RootState } from '../../app/store'
@@ -139,7 +139,7 @@ function ProfilePage(): JSX.Element {
 
 	return (
 		<>
-			{isLoading && <LoadingComponent />}
+			{isLoading && <LoadingDefaultComponent />}
 			<div className='col-lg-10 bg-[#fff]'>
 				<div className='p-[30px]'>
 					<section
@@ -156,7 +156,7 @@ function ProfilePage(): JSX.Element {
 					</section>
 					<>
 						{isLoadingUser ? (
-							<Loading2Component />
+							<LoadingCustomComponent />
 						) : (
 							<div className='flex mt-[30px] gap-[30px] w-full'>
 								<div className='flex-1 w-full h-full'>
@@ -176,11 +176,8 @@ function ProfilePage(): JSX.Element {
 															})
 														}}
 														disabled
-														className='w-full h-[2.5rem]  pl-[10px] rounded-[5px] outline-none'
+														className='w-full h-[2.5rem]  pl-[10px] rounded-[5px] outline-none  border-[1px] border-solid border-[#ccc]'
 														type='text'
-														style={{
-															border: '1px solid #ccc'
-														}}
 													/>
 												</div>
 											</div>
@@ -201,11 +198,8 @@ function ProfilePage(): JSX.Element {
 															})
 														}}
 														disabled
-														className='w-full h-[2.5rem] pl-[10px] rounded-[5px] outline-none'
+														className='w-full h-[2.5rem] pl-[10px] rounded-[5px] outline-none border-[1px] border-solid border-[#ccc]'
 														type='text'
-														style={{
-															border: '1px solid #ccc'
-														}}
 													/>
 												</div>
 											</div>
@@ -229,11 +223,8 @@ function ProfilePage(): JSX.Element {
 																}
 															})
 														}}
-														className='w-full h-[2.5rem] pl-[10px] rounded-[5px] outline-none'
+														className='w-full h-[2.5rem] pl-[10px] rounded-[5px] outline-none border-[1px] border-solid border-[#ccc]'
 														type='number'
-														style={{
-															border: '1px solid #ccc'
-														}}
 													/>
 												</div>
 											</div>
@@ -251,9 +242,6 @@ function ProfilePage(): JSX.Element {
 																		? 'border-[#1ba8ff]'
 																		: 'border-[rgba(0, 0, 0, 0.26)]'
 																}`}
-																style={{
-																	border: '2px solid rgba(0, 0, 0, 0.26)'
-																}}
 																type='radio'
 																id={`gender-${index}`}
 																name='gender'
@@ -266,9 +254,11 @@ function ProfilePage(): JSX.Element {
 																	}))
 																}}
 															/>
-															<div>
+															<label
+																htmlFor={`gender-${index}`}
+																className='flex items-center'>
 																<div>{item}</div>
-															</div>
+															</label>
 														</div>
 													))}
 												</div>
@@ -287,11 +277,12 @@ function ProfilePage(): JSX.Element {
 												)}
 												{isUpdateAddress && (
 													<div className='w-full flex gap-[5px]'>
+														<label htmlFor='province-select' className='mb-2 hidden'>
+															Chọn Tỉnh/Thành Phố
+														</label>
 														<select
-															className='w-full h-[2rem] outline-none rounded-[5px]'
-															style={{
-																border: '1px solid #ccc'
-															}}
+															id='province-select'
+															className='w-full h-[2rem] outline-none rounded-[5px] border-[1px] border-solid border-[#ccc]'
 															value={provinceCode}
 															onChange={(e: any) => setProvinceCode(e.target.value)}>
 															<option className='text-center'>-- Chọn TP --</option>
@@ -304,11 +295,12 @@ function ProfilePage(): JSX.Element {
 																</option>
 															))}
 														</select>
+														<label htmlFor='district-select' className='mb-2 hidden'>
+															Chọn Quận
+														</label>
 														<select
-															className='w-full h-[2rem] outline-none  rounded-[5px]'
-															style={{
-																border: '1px solid #ccc'
-															}}
+															id='district-select'
+															className='w-full h-[2rem] outline-none  rounded-[5px] border-[1px] border-solid border-[#ccc]'
 															value={districtCode}
 															onChange={(e: any) => setDistrictCode(e.target.value)}>
 															<option className='text-center'>-- Chọn Quận --</option>
@@ -321,11 +313,12 @@ function ProfilePage(): JSX.Element {
 																</option>
 															))}
 														</select>
+														<label htmlFor='ward-select' className='mb-2 hidden'>
+															Chọn Huyện
+														</label>
 														<select
-															className='w-full h-[2rem] outline-none rounded-[5px]'
-															style={{
-																border: '1px solid #ccc'
-															}}
+															id='ward-select'
+															className='w-full h-[2rem] outline-none rounded-[5px] border-[1px] border-solid border-[#ccc]'
 															value={wardCode}
 															onChange={(e: any) => setWardCode(e.target.value)}>
 															<option className='text-center'>-- Chọn Huyện --</option>
@@ -341,12 +334,9 @@ function ProfilePage(): JSX.Element {
 														<input
 															placeholder='Nhập Địa Chỉ'
 															value={numberHouse}
-															className='w-full h-[2rem] pl-[10px] rounded-[5px] outline-none'
+															className='w-full h-[2rem] pl-[10px] rounded-[5px] outline-none border-[1px] border-solid border-[#ccc]'
 															onChange={(e: any) => setNumberHouse(e.target.value)}
 															type='text'
-															style={{
-																border: '1px solid #ccc'
-															}}
 														/>
 													</div>
 												)}
@@ -354,11 +344,8 @@ function ProfilePage(): JSX.Element {
 												<input
 													placeholder={payload?.address}
 													disabled={!isUpdateAddress}
-													className='w-full h-[2.5rem] pl-[10px] rounded-[5px] outline-none'
+													className='w-full h-[2.5rem] pl-[10px] rounded-[5px] outline-none border-[1px] border-solid border-[#ccc]'
 													type='text'
-													style={{
-														border: '1px solid #ccc'
-													}}
 												/>
 											</div>
 										</div>

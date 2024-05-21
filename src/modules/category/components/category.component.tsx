@@ -3,16 +3,11 @@ import Slider from 'react-slick'
 import { memo } from 'react'
 import { NavLink } from 'react-router-dom'
 import { useGetCategoryTreeQuery } from '../hooks'
+import { categoryConfig } from '../configs'
+import { ICategoryTree } from '../interfaces'
 
 function CategoryComponent(): JSX.Element {
 	const { data, isLoading } = useGetCategoryTreeQuery()
-	const settings = {
-		infinite: true,
-		arrows: true,
-		speed: 500,
-		slidesToShow: 10,
-		slidesToScroll: 1
-	}
 	return (
 		<div className='col l-12 mo-12 c-12'>
 			{!isLoading && (
@@ -21,12 +16,12 @@ function CategoryComponent(): JSX.Element {
 						<div className='p-[20px] text-left text-[1rem] text-[rgba(0, 0, 0, 0.54] font-medium'>
 							DANH MỤC
 						</div>
-						<Slider {...settings}>
-							{data?.response?.map((category: any, index: number) => (
+						<Slider {...categoryConfig.settings}>
+							{data?.response?.map((category: ICategoryTree[], index: number) => (
 								<div key={index}>
-									{category?.map((ele: any, index: number) => (
+									{category?.map((ele: ICategoryTree, index: number) => (
 										<NavLink
-											to={`/categories/${ele.display_name}/${ele.catid}`}
+											to={`/categories/${ele.display_name}/${ele.id}`}
 											className='flex flex-col justify-around items-center h-[150px] cursor-pointer transition-all duration-[0.5s] ease-[ease] delay-[0s] border-[0.5px] border-solid border-[rgba(0,0,0,.05)] px-[5px] hover:shadow-[rgba(60,64,67,0.3)_0px_1px_2px_0px,rgba(60,64,67,0.15)_0px_2px_6px_2px]'
 											key={index}>
 											<img

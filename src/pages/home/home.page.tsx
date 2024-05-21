@@ -13,13 +13,14 @@ import { ShopMallComponent } from '../../modules/shopMall/components'
 import { TopProductComponent } from '../../modules/topProduct/components'
 import { ProductListComponent } from '../../modules/post/components'
 import { HomeFilterComponent } from '../../modules/homeFilter'
+import { IPostQuery } from '../../modules/post/interfaces'
+import { CONSTANT } from '../../modules/post/resources'
 
 function HomePage(): JSX.Element {
-	const payload = {
-		limit: 96,
-		page: 1
-	}
-	const { data: dataProduct, isLoading: isLoadingDataProduct } = useGetProductsQuery(payload)
+	const { data: dataProduct, isLoading: isLoadingDataProduct } = useGetProductsQuery({
+		limit: CONSTANT.LIMIT,
+		page: CONSTANT.PAGE
+	} as IPostQuery)
 
 	return (
 		<>

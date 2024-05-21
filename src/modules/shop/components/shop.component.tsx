@@ -3,6 +3,8 @@ import { memo } from 'react'
 import { NavLink } from 'react-router-dom'
 //? APPS
 import { IShop } from '../interfaces'
+import { formatDate } from '../../../utils/formatTimestamp'
+
 type Props = {
 	data: IShop
 }
@@ -287,7 +289,7 @@ function ShopPageInfoComponent({ data }: Props): JSX.Element {
 							</div>
 							<div className='inline-block capitalize'>
 								<div className='inline-block'>Tham gia:&nbsp;</div>
-								<div className='text-[#ee4d2d] inline-block'>6 năm trước</div>
+								<div className='text-[#ee4d2d] inline-block'>{formatDate(data?.createdAt)}</div>
 							</div>
 						</div>
 						<div className='flex-[0_0_50%] overflow-hidden items-center flex px-0 py-[0.625rem]'>

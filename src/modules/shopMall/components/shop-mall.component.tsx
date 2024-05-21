@@ -3,35 +3,20 @@ import Slider from 'react-slick'
 import { NavLink } from 'react-router-dom'
 import { LazyLoadImage } from 'react-lazy-load-image-component'
 //? APPS
-import shopMallData from '../../../utils/shopMall'
 import { useGetShopMallQuery } from '../hooks'
 import { IShopMall } from '../interfaces'
+import { shopMallData } from '../resources/shop-mall.resource'
+import { shopMallConfig } from '../configs'
 
 export default function ShopMallComponent(): JSX.Element {
 	const { data, isLoading } = useGetShopMallQuery()
-	const settings = {
-		dots: true,
-		autoplay: true,
-		autoplaySpeed: 5000,
-		infinite: true,
-		arrows: true,
-		speed: 500,
-		slidesToShow: 1,
-		slidesToScroll: 1
-	}
-	const settings2 = {
-		slidesToShow: 4,
-		slidesToScroll: 1,
-		speed: 1000,
-		autoplaySpeed: 1000
-	}
 	return (
 		<div className='col l-12 mo-12 c-12'>
 			{!isLoading && (
 				<div className='pt-[20px]'>
 					<div className='bg-[#fff]'>
 						<div className='px-[20px] flex justify-between pb-[10px] pt-[20px] border-b-[rgba(0,0,0,0.05)] border-b border-solid'>
-							<div className='block no-underline text-[#d0011b] uppercase font-medium text-[1.0625rem] leading-[1.0625rem] self-center'>
+							<div className='block no-underline text-[#726466] uppercase font-medium text-[1.0625rem] leading-[1.0625rem] self-center'>
 								SHOPEE MALL
 							</div>
 							<div className='flex-1 font-normal capitalize flex ml-[15px] pl-[15px] border-l-[#d8d8d8] border-l border-solid'>
@@ -39,7 +24,7 @@ export default function ShopMallComponent(): JSX.Element {
 									<img
 										className='h-[1.0625rem] w-[1.0625rem] block align-middle max-w-full mr-1.5 border-none'
 										src='https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg/homepage/6c502a2641457578b0d5f5153b53dd5d.png'
-										alt=' '
+										alt='Shop logo'
 									/>
 									7 ngày miễn phí trả hàng
 								</div>
@@ -47,7 +32,7 @@ export default function ShopMallComponent(): JSX.Element {
 									<img
 										className='h-[1.0625rem] w-[1.0625rem] block align-middle max-w-full mr-1.5 border-none'
 										src='https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg/homepage/511aca04cc3ba9234ab0e4fcf20768a2.png'
-										alt=' '
+										alt='Shop logo'
 									/>
 									Hàng chính hãng 100%
 								</div>
@@ -55,7 +40,7 @@ export default function ShopMallComponent(): JSX.Element {
 									<img
 										className='h-[1.0625rem] w-[1.0625rem] block align-middle max-w-full mr-1.5 border-none'
 										src='https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg/homepage/16ead7e0a68c3cff9f32910e4be08122.png'
-										alt=' '
+										alt='Shop logo'
 									/>
 									Miễn phí vận chuyển
 								</div>
@@ -67,7 +52,7 @@ export default function ShopMallComponent(): JSX.Element {
 						</div>
 						<div className='mb-[10px] flex'>
 							<div className='l-4 mo-8 c-8' id='shopmall'>
-								<Slider {...settings}>
+								<Slider {...shopMallConfig.settings}>
 									{shopMallData?.map((listItem: any, index: number) => {
 										return (
 											<img
@@ -82,7 +67,7 @@ export default function ShopMallComponent(): JSX.Element {
 							</div>
 							<div className='l-8'>
 								<div className='l-12'>
-									<Slider {...settings2}>
+									<Slider {...shopMallConfig.settings2}>
 										{data?.response?.map((ele: any, index: number) => (
 											<div key={index} className='col col-3'>
 												{ele?.map((item: IShopMall, index: number) => (

@@ -1,6 +1,12 @@
 import { IShop } from '../../shop/interfaces'
 
-export interface IPostSimpleResponse {
+export type IPostQuery = {
+	page: number
+	limit: number
+	name?: string
+}
+
+export interface IPostResponse {
 	err: number
 	msg: string
 	offset: number
@@ -8,7 +14,7 @@ export interface IPostSimpleResponse {
 	total: number
 	totalPage: number
 	currentPage: number
-	response: IPostSimple[]
+	response: IPostBase[]
 }
 
 export interface IPostIdResponse {
@@ -17,7 +23,7 @@ export interface IPostIdResponse {
 	response: IProductDetail
 }
 
-export interface IPostSimple {
+export interface IPostBase {
 	id: number
 	shopid: number
 	catid: number
@@ -41,37 +47,18 @@ export interface IPostSimple {
 	price_max_before_discount: number
 	total: number
 }
-export interface IProductDetail {
-	id: number
-	shopid: number
-	catid: number
+export interface IProductDetail extends IPostBase {
 	discountid: number
 	currency: string
-	stock: number
 	status: number
 	sold: number
 	liked_count: number
 	cmt_count: number
-	discount: string
 	raw_discount: number
-	shop_name: string
 	description?: null
 	view_count: number
-	name: string
-	image: string
-	price: number
-	price_min: number
-	price_max: number
-	historical_sold: number
-	price_before_discount: number
-	price_min_before_discount: number
-	price_max_before_discount: number
-	shop_rating: number
-	liked: number
 	size_chart: string
-	is_official_shop: number
 	is_service_by_shop: number
-	show_free_shipping: number
 	name_attributes?: null[] | null
 	value_attributes?: string[] | null
 	name_tierVariations: string
@@ -81,23 +68,19 @@ export interface IProductDetail {
 	is_active: number
 	createdAt?: null
 	updatedAt?: null
-	shop_info: IShop | null
-	voucher: Voucher | null
 	deep_discount_skin?: null
 	video?: null
-	category?: Category | null
-}
-
-interface Category {
-	id: number
-	level: number
-	images: string
-	parent_catid?: null
-	category_name: string
-}
-
-interface Voucher {
-	id: number
-	label: string
-	voucher_code: string
+	shop_info: IShop | null
+	voucher: {
+		id: number
+		label: string
+		voucher_code: string
+	} | null
+	category?: {
+		id: number
+		level: number
+		images: string
+		parent_catid?: null
+		category_name: string
+	} | null
 }

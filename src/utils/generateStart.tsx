@@ -1,5 +1,5 @@
-export const generateStart = (start: number) => {
-	let starts = []
+export const generateStart = (start: number): JSX.Element[] => {
+	let starts: JSX.Element[] = []
 	for (let i = 1; i <= +start; i++) {
 		starts.push(
 			<span className='text-[#ee4d2d]'>
@@ -16,8 +16,9 @@ export const generateStart = (start: number) => {
 	}
 	return starts
 }
-export const generateStartFilter = (start: number) => {
-	let starts = []
+
+export const generateStartFilter = (start: number): JSX.Element[] => {
+	let starts: JSX.Element[] = []
 	for (let i = 1; i <= +start; i++) {
 		starts.push(
 			<i

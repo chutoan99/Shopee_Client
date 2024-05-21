@@ -4,17 +4,12 @@ import { NavLink } from 'react-router-dom'
 import { LazyLoadImage } from 'react-lazy-load-image-component'
 import { useGetTopProductQuery } from '../hooks'
 import { ITopProDucts } from '../interfaces'
+import { topProductConfig } from '../configs'
 //? APP
 
 export default function TopProductComponent(): JSX.Element {
 	const { data, isLoading } = useGetTopProductQuery()
-	const settings = {
-		dots: false,
-		infinite: true,
-		speed: 500,
-		slidesToShow: 6,
-		slidesToScroll: 1
-	}
+
 	return (
 		<div className='col l-12 mo-12 c-12'>
 			{!isLoading && (
@@ -29,7 +24,7 @@ export default function TopProductComponent(): JSX.Element {
 						</div>
 						<div className='mb-[10px]' id='topProduct'>
 							<div className='row sm- px-[15px] py-[12px]'>
-								<Slider {...settings}>
+								<Slider {...topProductConfig.settings}>
 									{data?.response?.map((item: ITopProDucts, index: number) => (
 										<NavLink key={index} to='/top-products'>
 											<div

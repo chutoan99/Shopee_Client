@@ -82,7 +82,7 @@ export default function UserLayout({ children }: any): JSX.Element {
 										<div className='Yu7gVR' />
 									</div>
 								</NavLink>
-								<NavLink to='/user/notification' className='relative'>
+								<NavLink to='/user/notify' className='relative'>
 									<div className='text-right'>
 										<div className=' flex gap-[10px]'>
 											<div className='flex items-center justify-center w-5 h-5 leading-5 text-center text-[#fff] shrink-0 mr-2.5 rounded-[50%]'>

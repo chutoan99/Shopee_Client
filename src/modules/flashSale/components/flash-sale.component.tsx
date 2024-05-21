@@ -5,17 +5,10 @@ import { LazyLoadImage } from 'react-lazy-load-image-component'
 //? APPS
 import { useGetFlashSaleQuery } from '../hooks'
 import { IFlashSale } from '../interfaces'
+import { flashSaleConfig } from '../configs'
 
 export default function FlashSaleComponent(): JSX.Element {
 	const { data, isLoading } = useGetFlashSaleQuery()
-	const settings = {
-		dots: false,
-		infinite: true,
-		speed: 500,
-		slidesToShow: 6,
-		slidesToScroll: 1
-	}
-
 	return (
 		<>
 			{!isLoading && (
@@ -35,7 +28,7 @@ export default function FlashSaleComponent(): JSX.Element {
 							</div>
 
 							<div className='row gap-[10px]' id='flashSale'>
-								<Slider {...settings}>
+								<Slider {...flashSaleConfig.settings}>
 									{data?.response?.map((item: IFlashSale, index: number) => (
 										<NavLink to='/flash-sale' className='shadow-[unset]' key={index}>
 											<LazyLoadImage

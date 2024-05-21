@@ -8,7 +8,7 @@ type interfaceItemChat = {
 }
 
 export default function ItemChatComponent({ data, des, setIsChat, setRoom }: interfaceItemChat): JSX.Element {
-	const OnChangeShop = (room: IRooms) => {
+	const onChangeShop = (room: IRooms) => {
 		setIsChat(true)
 		setRoom(room)
 	}
@@ -16,7 +16,7 @@ export default function ItemChatComponent({ data, des, setIsChat, setRoom }: int
 		<>
 			{data.map((room: IRooms) => (
 				<div
-					onClick={() => OnChangeShop(room)}
+					onClick={() => onChangeShop(room)}
 					className='items-center box-border flex justify-center overflow-hidden relative p-3 h-[56px] w-full cursor-pointer '
 					key={room.id}>
 					<div className='h-8 min-w-[32px] w-8'>

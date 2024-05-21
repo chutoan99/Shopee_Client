@@ -14,7 +14,7 @@ export const UserApi = createApi({
 		}
 	}),
 	endpoints: (build) => ({
-		getUserCurrent: build.query<IUserResponse, void>({
+		getUserCurrent: build.query<IUserResponse, any>({
 			query: () => 'user/current'
 		})
 	})

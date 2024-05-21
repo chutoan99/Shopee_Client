@@ -9,7 +9,7 @@ import { ALERT_LOGOUT_SUCCESS } from '../../../constants/msg'
 import { ApiLogout } from '../../../modules/auth/services'
 import { useAppDispatch, useAppSelector } from '../../../hooks/hooks'
 import { useGetNotifyQuery } from '../notify/hooks'
-import { LoadingComponent } from '../../../components/loading'
+import { LoadingDefaultComponent } from '../../../components/loading'
 import { HeaderNotifyComponent } from '../notify/components'
 
 function NavbarComponent(): JSX.Element {
@@ -50,7 +50,7 @@ function NavbarComponent(): JSX.Element {
 	let line = `before:content-[""] before:h-[0.9375rem] before:w-0 before:absolute before:top-[calc(50%_-_7px)] before:border-x-[hsla(0,0%,100%,0.22)] before:border-l before:border-solid before:border-r before:-left-1.5`
 	return (
 		<>
-			{loading && <LoadingComponent />}
+			{loading && <LoadingDefaultComponent />}
 			<nav className='flex justify-between'>
 				<ul className='flex justify-items-center mt-1 mb-0 mx-0 pl-0'>
 					<li className='group relative min-h-[26px] no-underline text-sm text-[#fff] font-light items-center flex cursor-pointer mx-2 my-0'>

@@ -3,26 +3,18 @@ import Slider from 'react-slick'
 import { memo } from 'react'
 import { IBanner } from '../interfaces'
 import { useGetBannerQuery } from '../hooks'
+import { bannerConfig } from '../configs'
 //? APP
 
 function BannerComponent(): JSX.Element {
 	const { data, isLoading } = useGetBannerQuery()
-	const settings = {
-		dots: true,
-		autoplay: true,
-		autoplaySpeed: 5000,
-		infinite: true,
-		arrows: true,
-		speed: 500,
-		slidesToShow: 1,
-		slidesToScroll: 1
-	}
+
 	return (
 		<>
 			{!isLoading && (
 				<>
 					<div className='col l-8 mo-8 c-8' id='carousel'>
-						<Slider {...settings}>
+						<Slider {...bannerConfig.settings}>
 							{data?.response?.map((listItem: IBanner, index: number) => {
 								return (
 									<div className='w-full h-full' key={index}>

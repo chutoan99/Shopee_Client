@@ -10,12 +10,12 @@ export const ShopApi = createApi({
 		baseUrl: `${(import.meta as any).env.VITE_REACT_APP_API_HOST}/`
 	}),
 	endpoints: (build) => ({
-		getShopId: build.query<IShopIdResponse, any>({
-			query: (params: any) => `/shop/${params.shopid}`
+		getShopId: build.query<IShopIdResponse, number>({
+			query: (shopId: number) => `/shop/${shopId}`
 		}),
 
-		getItemsShop: build.query<IItemsShopResponse, any>({
-			query: (params: any) => `/shop/items/${params.shopid}`
+		getItemsShop: build.query<IItemsShopResponse, number>({
+			query: (shopId: number) => `/shop/items/${shopId}`
 		})
 	})
 })

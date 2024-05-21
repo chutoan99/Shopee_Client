@@ -5,7 +5,7 @@ import { memo, useEffect, useState } from 'react'
 import { IOrder } from '../../modules/order/interfaces'
 import { formatPrice } from '../../utils/formatPrice'
 import { useGetOrdersQuery, useSearchOrdersQuery, useSearchTypeOrdersQuery } from '../../modules/order/hooks'
-import { LoadingComponent } from '../../components/loading'
+import { LoadingDefaultComponent } from '../../components/loading'
 type Tabs = {
 	is_all: number
 	is_cancelled: number
@@ -54,7 +54,7 @@ function PurchasePage(): JSX.Element {
 
 	return (
 		<>
-			{isLoading && <LoadingComponent />}
+			{isLoading && <LoadingDefaultComponent />}
 			<div className='col-lg-10'>
 				<div className='w-full mb-[12px] flex overflow-hidden bg-[#fff]'>
 					{[

@@ -7,7 +7,7 @@ import { formatPrice } from '../../utils/formatPrice'
 import { formatDate } from '../../utils/formatTimestamp'
 import { useGetOrderQuery } from '../../modules/order/hooks'
 import { ModelRattingComponent } from '../../modules/comment/components'
-import { LoadingComponent } from '../../components/loading'
+import { LoadingDefaultComponent } from '../../components/loading'
 
 function OrderDetailPage(): JSX.Element {
 	const params = useParams()
@@ -21,7 +21,7 @@ function OrderDetailPage(): JSX.Element {
 	const onCloseModel = () => setIsShowModel(false)
 	return (
 		<>
-			{isLoading && <LoadingComponent />}
+			{isLoading && <LoadingDefaultComponent />}
 			<div className='col-lg-10 bg-[#fff] pl-0 pr-0'>
 				<div className='bg-[#fff] shadow-[0_1px_1px_0_rgba(0,0,0,0.05)] rounded-sm'>
 					<div className='text-sm leading-4 flex justify-between items-center px-6 py-3'>
@@ -102,12 +102,9 @@ function OrderDetailPage(): JSX.Element {
 								<div className='capitalize text-sm text-[rgba(0,0,0,0.8)] leading-5 mt-[1.25rem] mb-[0.25rem] mx-0'>
 									Đơn hàng đã đặt
 								</div>
-								{dataOrder?.createdAt && (
-									<div className='text-[0.75rem] text-[rgba(0,0,0,0.26)] h-[0.875rem]'>
-										{' '}
+								<div className='text-[0.75rem] text-[rgba(0,0,0,0.26)] h-[0.875rem]'>
 										{formatDate(dataOrder?.createdAt)}
 									</div>
-								)}
 							</div>
 							<div
 								className='w-[140px] text-center select-none cursor-default z-[1]'

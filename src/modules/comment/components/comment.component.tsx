@@ -6,7 +6,7 @@ import { Rating } from 'react-rainbow-components'
 //? APPS
 import { IOrder } from '../../order/interfaces'
 import { CreateComment } from '../services'
-import { LoadingComponent } from '../../../components/loading'
+import { LoadingDefaultComponent } from '../../../components/loading'
 
 type RatingModel = {
 	isShow: boolean
@@ -85,7 +85,7 @@ function ModelRattingComponent({ isShow, onCloseModel, data }: RatingModel): JSX
 	}
 	return (
 		<>
-			{loading && <LoadingComponent />}
+			{loading && <LoadingDefaultComponent />}
 			{isShow && (
 				<div id='modal'>
 					<div>

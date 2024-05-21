@@ -3,7 +3,6 @@ import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit'
 import otherReducer from '../redux/otherSlice'
 import cartReducer from '../redux/cart.slice'
 import userReducer from '../redux/userSlice'
-import postReducer from '../redux/post.slice'
 import buyCartReducer from '../redux/buyCart.slice'
 //? REDUX TOOLKIT RTK
 import { CartApi } from '../modules/cart/hooks'
@@ -26,7 +25,6 @@ const RootReducer = {
 	others: otherReducer,
 	cart: cartReducer,
 	user: userReducer,
-	posts: postReducer,
 	buyCart: buyCartReducer,
 	[CartApi.reducerPath]: CartApi.reducer,
 	[ShopApi.reducerPath]: ShopApi.reducer,
