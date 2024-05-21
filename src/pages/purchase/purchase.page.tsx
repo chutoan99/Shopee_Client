@@ -2,22 +2,14 @@
 import { Link, NavLink } from 'react-router-dom'
 import { memo, useEffect, useState } from 'react'
 //? APPS
-import { IOrder } from '../../modules/order/interfaces'
+import { IOrder, ITabs } from '../../modules/order/interfaces'
 import { formatPrice } from '../../utils/formatPrice'
 import { useGetOrdersQuery, useSearchOrdersQuery, useSearchTypeOrdersQuery } from '../../modules/order/hooks'
 import { LoadingDefaultComponent } from '../../components/loading'
-type Tabs = {
-	is_all: number
-	is_cancelled: number
-	is_delivering: number
-	is_returns: number
-	is_success: number
-	is_transport: number
-	is_wait_for_pay: number
-}
+
 function PurchasePage(): JSX.Element {
 	const [dataOrders, setDataOrders] = useState<IOrder[]>([])
-	const [tabs, setTabs] = useState<Tabs>()
+	const [tabs, setTabs] = useState<ITabs>()
 	const [modal, setModal] = useState(0)
 	const [borderBottom, setBorderBottom] = useState('Tất cả')
 	const [shopName, setShopName] = useState('')
@@ -162,7 +154,7 @@ function PurchasePage(): JSX.Element {
 							{dataOrders?.map((cart: IOrder) => (
 								<div
 									className='shadow-[0_1px_1px_0_rgba(0,0,0,0.05)] mx-0 my-3 rounded-sm'
-									key={cart.orderid}>
+									key={cart.id}>
 									<div className='px-6 py-3 bg-[#fff]'>
 										<div className='flex items-center justify-between pt-0 pb-3 px-0'>
 											<div className='flex items-center whitespace-nowrap'>
@@ -347,7 +339,7 @@ function PurchasePage(): JSX.Element {
 															<div className='flex-1 items-start flex-nowrap flex pl-0 pr-3 py-0'>
 																<div className=' w-[81px] h-[81px]'>
 																	<NavLink
-																		to={`/user/purchase/order/${cart.orderid}`}
+																		to={`/user/purchase/order/${cart.id}`}
 																		className='relative'>
 																		<div className='w-20 h-20 mr-3'>
 																			<img
@@ -367,8 +359,7 @@ function PurchasePage(): JSX.Element {
 																</div>
 
 																<div className='min-w-0 flex flex-1 flex-col items-start pl-3 pr-0 py-0'>
-																	<NavLink
-																		to={`/user/purchase/order/${cart.orderid}`}>
+																	<NavLink to={`/user/purchase/order/${cart.id}`}>
 																		<div
 																			className='overflow-hidden text-ellipsis text-base leading-22 max-h-12 mt-0 mb-[5px] mx-0'
 																			style={{
@@ -381,7 +372,7 @@ function PurchasePage(): JSX.Element {
 																	</NavLink>
 																	<div className='mt-0 mx-0'>
 																		<div className='text-[rgba(0,0,0,0.54)] mb-[5px]'>
-																			Phân loại hàng: {cart?.option[index]}
+																			Phân loại hàng: {cart?.item_option[index]}
 																		</div>
 																		<div className=''>x{cart?.amount[index]}</div>
 																	</div>

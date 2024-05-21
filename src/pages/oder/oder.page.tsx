@@ -11,17 +11,7 @@ import { useDeleteCartMutation } from '../../modules/cart/hooks'
 import { useCreateOrderMutation } from '../../modules/order/hooks'
 import { ALERT_INVALID_ADDRESS_ORDER, ALERT_INVALID_PHONE_ORDER } from '../../constants/msg'
 import { LoadingCustomComponent } from '../../components/loading'
-
-type payload = {
-	item_groups_id: string
-	amount: string
-	option: string
-	final_total: number
-	total_num_items: number
-	note: string
-	shopid: number
-	shop_name: string
-}
+import { IOrderData } from '../../modules/order/interfaces'
 
 function OderPage(): JSX.Element {
 	const ship = 30000
@@ -31,7 +21,7 @@ function OderPage(): JSX.Element {
 	const [loading, setLoading] = useState(false)
 	const [total, setTotal] = useState(0)
 	const [totalShip, setTotalShip] = useState(0)
-	const [dataPayload, setDataPayload] = useState<payload[]>([])
+	const [dataPayload, setDataPayload] = useState<IOrderData[]>([])
 	const [deleteCart] = useDeleteCartMutation()
 	const [createOrder] = useCreateOrderMutation()
 	useEffect(() => {
@@ -47,11 +37,11 @@ function OderPage(): JSX.Element {
 		if (dataTempt.length === 0) {
 			navigate('/cart')
 		}
-		const newData = data.map((item: ICart[]) => {
+		const newData: IOrderData[] = data.map((item: ICart[]) => {
 			return {
 				item_groups_id: JSON.stringify(item.map((ele) => ele.itemid)),
 				amount: JSON.stringify(item.map((ele) => ele.amount)),
-				option: JSON.stringify(item.map((ele) => ele.item_option)),
+				item_option: JSON.stringify(item.map((ele) => ele.item_option)),
 				final_total: item.reduce((acc, curr) => acc + curr.overview.price * curr.amount, 0) + ship,
 				shopid: item[0]?.shopid,
 				shop_name: item[0]?.overview?.shop_name,

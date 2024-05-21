@@ -21,7 +21,6 @@ function DetailProductPage(): JSX.Element {
 	const [dataPostDetail, setDataPostDetail] = useState<IProductDetail>()
 
 	useEffect(() => {
-		console.log(params,"params")
 		data?.response && setDataPostDetail(data?.response)
 		data?.response?.shop_info && setDataShop(data.response.shop_info)
 	}, [data])

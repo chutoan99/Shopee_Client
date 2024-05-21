@@ -12,11 +12,9 @@ function ShopPage(): JSX.Element {
 	const { data: dataInfoShop } = useGetShopIdQuery(Number(params.shopid))
 	const { data: dataItemsShop, isLoading: loadingQueyItemsShop } = useGetItemsShopQuery(Number(params.shopid))
 
-	if (loadingQueyItemsShop) {
-		return <LoadingCustomComponent />
-	}
 	return (
 		<>
+			{loadingQueyItemsShop && <LoadingCustomComponent />}
 			{dataInfoShop?.response && <ShopPageInfoComponent data={dataInfoShop?.response} />}
 			<div className='bg-[#f5f5f5] overflow-hidden pb-[50px]'>
 				<div className='grid wide'>

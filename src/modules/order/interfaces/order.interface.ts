@@ -1,16 +1,33 @@
+import { IPostBase } from "../../post/interfaces"
+import { IUser } from "../../user/interfaces"
+
+export type ITabs = {
+	is_all: number
+	is_returns: number
+	is_success: number
+	is_cancelled: number
+	is_transport: number
+	is_delivering: number
+	is_wait_for_pay: number
+	is_wait_for_confirm: number
+}
+
+export type IOrderData = {
+	item_groups_id: string
+	amount: string
+	item_option: string
+	final_total: number
+	total_num_items: number
+	note: string
+	shopid: number
+	shop_name: string
+}
+
 export interface IOrdersResponse {
 	err: number
 	msg: string
 	response: IOrder[]
-	tabs: {
-		is_all: number
-		is_wait_for_pay: number
-		is_transport: number
-		is_delivering: number
-		is_cancelled: number
-		is_success: number
-		is_returns: number
-	}
+	tabs: ITabs
 }
 
 export interface IOrderResponse {
@@ -26,57 +43,19 @@ export interface ICreateOrdersResponse {
 }
 
 export interface IOrder {
-	id: null
-	orderid: string
-	userid: string
-	shopid: number
+	id: number
 	shop_name: string
-	item_groups_id: number[]
-	amount: number[]
-	option: any[]
-	state: string
-	final_total: number
-	total_num_items: number
 	type: number
+	state: string
+	total_num_items: number
 	note: string
+	amount: number
+	item_option: string
+	item_groups_id: string
+	final_total: number
+	userid: number
+	shopid: number
 	createdAt: string
-	updatedAt: string
-	user: {
-		sex: string
-		role: string
-		userid: string
-		email: string
-		name: string
-		address: string
-		birthday: Date | string
-		not_new_user: boolean
-		phone: number
-		avatar: string
-	}
-	posts: [
-		{
-			itemid: number
-			shopid: number
-			catid: number
-			name: string
-			image: string
-			historical_sold: number
-			price: number
-			price_min: number
-			stock: number
-			price_max: number
-			price_before_discount: number
-			price_min_before_discount: number
-			price_max_before_discount: number
-			discount: string
-			shop_rating: number
-			filename: null
-			shop_name: any | null
-			liked: boolean
-			ctime: string
-			show_free_shipping: boolean
-			is_official_shop: boolean
-			is_service_by_shopee: boolean
-		}[]
-	]
+	user: IUser,
+	posts: IPostBase[]
 }

@@ -3,7 +3,7 @@ import { toast } from 'react-hot-toast'
 import { useState, memo, useEffect } from 'react'
 import { NavLink, useNavigate } from 'react-router-dom'
 //? APPS
-import { ICart } from '../../modules/cart/interfaces'
+import { ICart, ICartUpdateData } from '../../modules/cart/interfaces'
 import { AppDispatch } from '../../app/store'
 import { useAppDispatch } from '../../hooks/hooks'
 import { formatPrice } from '../../utils/formatPrice'
@@ -31,7 +31,7 @@ function CartPage(): JSX.Element {
 		cartid: 0,
 		payload: {
 			amount: 0,
-			option: ''
+			item_option: ''
 		}
 	})
 
@@ -60,33 +60,33 @@ function CartPage(): JSX.Element {
 		}
 	}
 
-	const onIncrease = async (item: any) => {
-		const payload = {
+	const onIncrease = async (item: ICart) => {
+		const payload: ICartUpdateData = {
 			amount: +item.amount + 1,
-			option: item.option
+			item_option: item.item_option
 		}
-		const agrs = { cartid: item.cartid, body: payload }
+		const agrs = { cartid: item.id, body: payload }
 		await updateCart(agrs).unwrap()
 		fetchCarts()
 	}
 
-	const onReduced = async (item: any) => {
-		const payload = {
+	const onReduced = async (item: ICart) => {
+		const payload: ICartUpdateData = {
 			amount: +item.amount - 1,
-			option: item.option
+			item_option: item.item_option
 		}
 		if (payload.amount === 0) return
-		const agrs = { cartid: item.cartid, body: payload }
+		const agrs = { cartid: item.id, body: payload }
 		await updateCart(agrs).unwrap()
 		fetchCarts()
 	}
 
-	const onChangeOption = async (item: any, option: any) => {
+	const onChangeOption = async (item: ICart, option: string) => {
 		setAgrsUpdate({
-			cartid: item.cartid,
+			cartid: item.id,
 			payload: {
 				amount: item?.amount,
-				option: option
+				item_option: option
 			}
 		})
 	}
@@ -212,7 +212,10 @@ function CartPage(): JSX.Element {
 																	{item[0]?.overview?.shop_name}
 																</span>
 															</NavLink>
-															<button className='flex ml-[5px] p-0 border-0'>
+															<button
+																type='button'
+																aria-label='chat'
+																className='flex ml-[5px] p-0 border-0'>
 																<svg
 																	viewBox='0 0 16 16'
 																	className='text-[#ee4d2d] w-[1.375rem] h-4 cursor-pointer select-none inline-block fill-current relative'>
@@ -277,7 +280,7 @@ function CartPage(): JSX.Element {
 																		</div>
 
 																		<div className='flex items-center justify-center w-[17.24138%]'>
-																			{ele?.option !== '' && (
+																			{ele?.item_option !== '' && (
 																				<div
 																					className='flex items-center justify-between cursor-pointer relative flex-1'
 																					style={{
@@ -318,7 +321,7 @@ function CartPage(): JSX.Element {
 																									'vertical',
 																								WebkitLineClamp: 2
 																							}}>
-																							{ele?.option}
+																							{ele?.item_option}
 																						</div>
 																					</button>
 																					{selectedOption &&
@@ -347,72 +350,72 @@ function CartPage(): JSX.Element {
 																														id='variation_label-Size'>
 																														{
 																															ele
-																																.cart_tier_variations
-																																.name
+																																.overview
+																																.name_tierVariations
 																														}
 
 																														:
 																													</label>
 																													<div>
-																														{JSON.parse(
-																															ele
-																																.cart_tier_variations
-																																.option
-																														)?.map(
-																															(
-																																option: any,
-																																index_variations: number
-																															) => (
-																																<button
-																																	key={
-																																		index_variations
-																																	}
-																																	style={{
-																																		outline: 0,
-																																		wordBreak:
-																																			'break-word'
-																																	}}
-																																	className={`overflow-visible bg-[#fff] cursor-pointer min-w-[5rem] min-h-[2.125rem] box-border text-[rgba(0,0,0,0.8)] text-left border relative inline-flex items-center justify-center ml-0 mr-2 mt-0 mb-2 px-3 py-1 rounded-sm border-solid border-[rgba(0,0,0,0.09)] ${
-																																		option ===
-																																		agrsUpdate
-																																			?.payload
-																																			?.option
-																																			? '!text-[#ee4d2d] !border-[#ee4d2d]'
-																																			: ''
-																																	}`}
-																																	onClick={() =>
-																																		onChangeOption(
-																																			ele,
-																																			option
-																																		)
-																																	}>
-																																	{
-																																		option
-																																	}
-																																	{option ===
-																																		agrsUpdate
-																																			?.payload
-																																			?.option && (
-																																		<div className="w-[0.9375rem] h-[0.9375rem] absolute overflow-hidden right-0 bottom-0 before:content-[''] before:absolute before:right-[-0.9375rem] before:border-b-[#ee4d2d] before:border-[0.9375rem] before:border-solid before:border-transparent before:bottom-0">
-																																			<svg
-																																				enableBackground='new 0 0 12 12'
-																																				viewBox='0 0 12 12'
-																																				x={
-																																					0
-																																				}
-																																				y={
-																																					0
-																																				}
-																																				className='absolute text-[#fff] text-[8px] inline-block w-[1em] h-[1em] fill-current right-0 bottom-0'>
-																																				<g>
-																																					<path d='m5.2 10.9c-.2 0-.5-.1-.7-.2l-4.2-3.7c-.4-.4-.5-1-.1-1.4s1-.5 1.4-.1l3.4 3 5.1-7c .3-.4 1-.5 1.4-.2s.5 1 .2 1.4l-5.7 7.9c-.2.2-.4.4-.7.4 0-.1 0-.1-.1-.1z' />
-																																				</g>
-																																			</svg>
-																																		</div>
-																																	)}
-																																</button>
+																														{ele?.overview?.option_tierVariations[0]
+																															?.split(
+																																','
 																															)
-																														)}
+																															?.map(
+																																(
+																																	option: any,
+																																	index_variations: number
+																																) => (
+																																	<button
+																																		key={
+																																			index_variations
+																																		}
+																																		style={{
+																																			outline: 0,
+																																			wordBreak:
+																																				'break-word'
+																																		}}
+																																		className={`overflow-visible bg-[#fff] cursor-pointer min-w-[5rem] min-h-[2.125rem] box-border text-[rgba(0,0,0,0.8)] text-left border relative inline-flex items-center justify-center ml-0 mr-2 mt-0 mb-2 px-3 py-1 rounded-sm border-solid border-[rgba(0,0,0,0.09)] ${
+																																			option ===
+																																			agrsUpdate
+																																				?.payload
+																																				?.option
+																																				? '!text-[#ee4d2d] !border-[#ee4d2d]'
+																																				: ''
+																																		}`}
+																																		onClick={() =>
+																																			onChangeOption(
+																																				ele,
+																																				option
+																																			)
+																																		}>
+																																		{
+																																			option
+																																		}
+																																		{option ===
+																																			agrsUpdate
+																																				?.payload
+																																				?.option && (
+																																			<div className="w-[0.9375rem] h-[0.9375rem] absolute overflow-hidden right-0 bottom-0 before:content-[''] before:absolute before:right-[-0.9375rem] before:border-b-[#ee4d2d] before:border-[0.9375rem] before:border-solid before:border-transparent before:bottom-0">
+																																				<svg
+																																					enableBackground='new 0 0 12 12'
+																																					viewBox='0 0 12 12'
+																																					x={
+																																						0
+																																					}
+																																					y={
+																																						0
+																																					}
+																																					className='absolute text-[#fff] text-[8px] inline-block w-[1em] h-[1em] fill-current right-0 bottom-0'>
+																																					<g>
+																																						<path d='m5.2 10.9c-.2 0-.5-.1-.7-.2l-4.2-3.7c-.4-.4-.5-1-.1-1.4s1-.5 1.4-.1l3.4 3 5.1-7c .3-.4 1-.5 1.4-.2s.5 1 .2 1.4l-5.7 7.9c-.2.2-.4.4-.7.4 0-.1 0-.1-.1-.1z' />
+																																					</g>
+																																				</svg>
+																																			</div>
+																																		)}
+																																	</button>
+																																)
+																															)}
 																													</div>
 																												</div>
 																												<div className='flex gap-[10px] items-center justify-end'>
@@ -515,7 +518,7 @@ function CartPage(): JSX.Element {
 																		</div>
 																		<div className='flex items-center justify-center w-[12.70417%] capitalize flex-col'>
 																			<button
-																				onClick={() => onDeleteCart(ele?.id)}>
+																				onClick={() => onDeleteCart(ele?.itemid)}>
 																				Xóa
 																			</button>
 																			<div className='z-[2] max-w-full'>
@@ -612,7 +615,10 @@ function CartPage(): JSX.Element {
 										<h3></h3>
 										<div className='flex !justify-end min-w-[58px] box-border col-start-1 col-end-2 flex-[0_0_auto] pl-5 pr-3 py-3'>
 											<label className='shopping_cart-checkBox'>
-												<input type='checkbox' disabled />
+												<label htmlFor='check-All' className='hiden'>
+													check
+												</label>
+												<input type='checkbox' id='check-All' disabled />
 												<span className='checkmark'></span>
 											</label>
 											<div className='flex items-center justify-start col-start-2 col-end-3 text-sm box-border'>
@@ -634,10 +640,10 @@ function CartPage(): JSX.Element {
 													<span className='checkmark'></span>
 												</label>
 											</div>
-											<button className=' cursor-pointer'>Chọn Tất Cả ({dataCart?.total})</button>
-											<button className=' mx-2 my-0'>Xóa</button>
+											<button className='cursor-pointer'>Chọn Tất Cả ({dataCart?.total})</button>
+											<button className='mx-2 my-0'>Xóa</button>
 											<div />
-											<button className=' text-[#ee4d2d] max-w-[168px] whitespace-nowrap overflow-hidden text-ellipsis mx-2 my-0'>
+											<button className='text-[#ee4d2d] max-w-[168px] whitespace-nowrap overflow-hidden text-ellipsis mx-2 my-0'>
 												Lưu vào mục Đã thích
 											</button>
 											<div className='flex-1' />

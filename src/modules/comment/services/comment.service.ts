@@ -5,7 +5,6 @@ import instance from '../../../configs/configAxios'
 export const CreateComment = async (payload: any) => {
 	try {
 		const token = localStorage.getItem('token-shopee')
-		console.log(payload, 'payload')
 		let data = new FormData()
 		data.append('orderid', payload?.orderid)
 		data.append('itemid', payload?.itemid)

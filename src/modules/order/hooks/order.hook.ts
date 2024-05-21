@@ -1,6 +1,6 @@
 //? LIBRARY
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
-import { ICreateOrdersResponse, IOrderResponse, IOrdersResponse } from '../interfaces'
+import { ICreateOrdersResponse, IOrderData, IOrderResponse, IOrdersResponse } from '../interfaces'
 //? TYPE & SERVICES
 
 export const OrderApi = createApi({
@@ -18,8 +18,8 @@ export const OrderApi = createApi({
 			query: () => 'order'
 		}),
 
-		createOrder: build.mutation<ICreateOrdersResponse, any>({
-			query: (body) => {
+		createOrder: build.mutation<ICreateOrdersResponse, IOrderData[]>({
+			query: (body: IOrderData[]) => {
 				return {
 					url: 'order',
 					method: 'POST',

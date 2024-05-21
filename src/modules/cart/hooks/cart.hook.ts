@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
-import { ICartResponse, ICreateCartResponse, IDeleteCartResponse, IUpdateCartResponse } from '../interfaces'
+import { ICartData, ICartResponse, ICreateCartResponse, IDeleteCartResponse, IUpdateCartResponse } from '../interfaces'
 
 export const CartApi = createApi({
 	reducerPath: 'CartApi',
@@ -17,8 +17,8 @@ export const CartApi = createApi({
 			query: () => 'cart'
 		}),
 
-		createCart: build.mutation<ICreateCartResponse, any>({
-			query: (body) => {
+		createCart: build.mutation<ICreateCartResponse, ICartData>({
+			query: (body: ICartData) => {
 				return {
 					url: 'cart',
 					method: 'POST',

@@ -1,3 +1,14 @@
+export type ICartData = {
+	itemid: number
+	shopid: number
+	amount: number
+	item_option: string
+}
+
+export type ICartUpdateData = {
+	amount: number
+	item_option: string
+}
 export interface ICartResponse {
 	err: number
 	total: number
@@ -30,10 +41,8 @@ export interface ICart {
 	shopid: number
 	amount: number
 	item_option: string
-	is_active: number
 	createdAt: string
 	updatedAt: string
-	deleteAt?: null
 	overview: {
 		name: string
 		catid: number

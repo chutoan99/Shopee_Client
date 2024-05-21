@@ -10,6 +10,7 @@ import { CartActions } from '../../../redux/cart.slice'
 import { generateStart } from '../../../utils/generateStart'
 import { formatPrice } from '../../../utils/formatPrice'
 import { isEmptyObject } from '../../../utils/emptyObj'
+import { ICartData } from '../../cart/interfaces'
 //? APPS
 
 type DetailProduct = {
@@ -44,11 +45,11 @@ function ProductDetailComponent({ data }: DetailProduct): JSX.Element {
 		if (NewOption === '' && data?.name_tierVariations) {
 			return toast.error('Vui lòng chọn sản phẩm')
 		}
-		const payload = {
-			itemid: params.itemid,
-			shopid: params.shopid,
+		const payload: ICartData = {
+			itemid: Number(params.itemid),
+			shopid: Number(params.shopid),
 			amount: amount,
-			option: NewOption || ''
+			item_option: NewOption || ''
 		}
 		const response = await createCart(payload).unwrap()
 		if (response.err === 0) {
@@ -257,6 +258,8 @@ function ProductDetailComponent({ data }: DetailProduct): JSX.Element {
 									<div className='items-center text-[#757575] text-sm leading-[1.05rem] capitalize flex mt-4'>
 										<div>
 											<button
+												type='button'
+												aria-label='Reduce'
 												onClick={onReduced}
 												className='w-10 h-[30px] border cursor-pointer border-solid border-[#ccc]'>
 												<i className='fa-solid fa-minus'></i>
@@ -265,6 +268,8 @@ function ProductDetailComponent({ data }: DetailProduct): JSX.Element {
 												{amount}
 											</button>
 											<button
+												type='button'
+												aria-label='Increase'
 												onClick={onIncrease}
 												className='w-10 h-[30px] border cursor-pointer border-solid border-[#ccc]'>
 												<i className='fa-solid fa-plus'></i>
