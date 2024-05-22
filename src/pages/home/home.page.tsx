@@ -18,6 +18,7 @@ import {
 
 import { SkeletonProductComponent } from '../../modules/shared'
 import ProductListComponent from '../../modules/post/components/product-list.component'
+import { useTranslation } from 'react-i18next'
 //? APPS
 
 function HomePage(): JSX.Element {
@@ -25,7 +26,6 @@ function HomePage(): JSX.Element {
 		limit: CONSTANT.LIMIT,
 		page: CONSTANT.PAGE
 	} as IPostQuery)
-
 	return (
 		<>
 			<PopupComponent />

@@ -13,13 +13,13 @@ import {
 } from '../../../constants/msg'
 import { LoadingCustomComponent, LoadingDefaultComponent } from '../../../modules/shared/loading'
 import { useAppSelector } from '../../../hooks/hooks'
-import { RootState } from '../../redux'
 import { District, Province, Ward } from '../../../modules/user/components/province/interfaces/province.interface'
 import { FetchDistrict, FetchProvince, FetchWard } from '../../../modules/user/components/province/services'
+import { RootState } from '../../../redux'
 import { useGetUserCurrentQuery } from '../../../modules/user/hooks'
 
 function ProfilePage(): JSX.Element {
-	const { refetch, isLoading: isLoadingUser } = useGetUserCurrentQuery()
+	const { refetch, isLoading: isLoadingUser } = useGetUserCurrentQuery();
 	//? HANDLE ADDRESS
 	const [payload, setPayload] = useState<IUser>(useAppSelector((state: RootState) => state.user).data)
 	const [province, setProvince] = useState<Province[]>([])

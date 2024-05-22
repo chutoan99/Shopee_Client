@@ -1,12 +1,12 @@
 export type ICategoryQuery = {
-	page: number;
-	limit: number;
-	category_name?: string;
+	page: number
+	limit: number
+	category_name?: string
 }
 export interface ICategoryTreeResponse {
 	err: number
 	msg: string
-	response: [ICategoryTree[]]
+	response: ICategoryTree[][]
 }
 
 export interface ICategoryTreeResponseParent {
@@ -25,8 +25,8 @@ export interface ICategoryTree {
 	unselected_image: string
 	selected_image: string
 	level: number
-	is_active?: number | null;
-	createdAt?: string | null;
-	updatedAt?: string | null;
-	deleteAt?: null;
+	is_active?: number | null
+	createdAt?: string | null
+	updatedAt?: string | null
+	deleteAt?: null
 }

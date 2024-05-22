@@ -2,14 +2,14 @@
 import { memo } from 'react'
 import { NavLink } from 'react-router-dom'
 //? APPS
-import { IShop } from '../interfaces'
-import { formatDate } from '../../../utils/formatTimestamp'
+import { IShop } from './interfaces'
+import { formatDate } from '../../utils/formatTimestamp'
 
-type Props = {
+type ShopInfoModel = {
 	data: IShop
 }
 
-function ShopPageInfoComponent({ data }: Props): JSX.Element {
+function ShopInfoComponent({ data }: ShopInfoModel): JSX.Element {
 	return (
 		<div className='shadow-[rgba(0,0,0,0.05)_0px_1px_1px] mt-[120px] bg-[#fff] sm-gutter  pb-[30px]  p-[25px] flex justify-between response_shop-content'>
 			<div className='grid wide'>
@@ -313,4 +313,4 @@ function ShopPageInfoComponent({ data }: Props): JSX.Element {
 		</div>
 	)
 }
-export default memo(ShopPageInfoComponent)
+export default memo(ShopInfoComponent)

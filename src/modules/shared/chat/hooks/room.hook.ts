@@ -16,12 +16,12 @@ export const RoomApi = createApi({
 			query: () => 'room'
 		}),
 
-		getRoom: build.query<any, any>({
-			query: (room: any) => `room/${room.roomid}`
+		getRoom: build.query<any, number>({
+			query: (roomid: number) => `room/${roomid}`
 		}),
+
 		createRoom: build.mutation<any, any>({
 			query: (body) => {
-				console.log(body, 'body')
 				return {
 					url: 'room',
 					method: 'POST',

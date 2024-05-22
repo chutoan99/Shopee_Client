@@ -52,7 +52,7 @@ export default function ShopMallComponent(): JSX.Element {
 						</div>
 						<div className='mb-[10px] flex'>
 							<div className='l-4 mo-8 c-8' id='shopmall'>
-								<Slider {...shopMallConfig.settings}>
+								<Slider {...shopMallConfig.settingsBanner}>
 									{shopMallData?.map((listItem: any, index: number) => {
 										return (
 											<img
@@ -67,7 +67,7 @@ export default function ShopMallComponent(): JSX.Element {
 							</div>
 							<div className='l-8'>
 								<div className='l-12'>
-									<Slider {...shopMallConfig.settings2}>
+									<Slider {...shopMallConfig.settingsSlider}>
 										{data?.response?.map((ele: any, index: number) => (
 											<div key={index} className='col col-3'>
 												{ele?.map((item: IShopMall, index: number) => (

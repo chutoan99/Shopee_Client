@@ -1,4 +1,11 @@
-const OverPlayComponent = (props: any): JSX.Element => {
+import { MouseEventHandler } from 'react'
+
+type OverPlayModel = {
+	handleClose: MouseEventHandler<HTMLDivElement>
+	children: JSX.Element
+}
+
+const OverPlayComponent = ({ handleClose, children }: OverPlayModel): JSX.Element => {
 	return (
 		<div
 			className='w-full h-full fixed bg-[rgba(0,0,0,0.4)] flex items-center justify-center z-[9000] left-0 top-0'
@@ -7,8 +14,8 @@ const OverPlayComponent = (props: any): JSX.Element => {
 				WebkitBoxPack: 'center',
 				backgroundColor: 'rgba(0, 0, 0, 0.4)'
 			}}
-			onClick={props.handleClose}>
-			<div className='flex-initial relative max-w-[438px] max-h-full'>{props.children}</div>
+			onClick={handleClose}>
+			<div className='flex-initial relative max-w-[438px] max-h-full'>{children}</div>
 		</div>
 	)
 }

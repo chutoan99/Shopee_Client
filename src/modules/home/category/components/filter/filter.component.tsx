@@ -6,7 +6,7 @@ import { useGetCategoryTreeParentQuery } from '../../hooks'
 
 function FilterComponent(): JSX.Element {
 	const params = useParams()
-	const { data, isLoading } = useGetCategoryTreeParentQuery(params)
+	const { data, isLoading } = useGetCategoryTreeParentQuery(Number(params.catid))
 
 	return (
 		<div className='min-w-0 ml-0 mr-5 mt-0 mb-5'>

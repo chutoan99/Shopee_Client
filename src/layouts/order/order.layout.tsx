@@ -3,6 +3,7 @@ import { Toaster } from 'react-hot-toast'
 //? APPS
 import useAuth from '../../hooks/userAuth'
 import { FooterComponent, NavbarComponent } from '../../modules/shared'
+import { NavLink } from 'react-router-dom'
 
 export default function OrderLayout({ children }: any): JSX.Element {
 	useAuth()
@@ -17,7 +18,7 @@ export default function OrderLayout({ children }: any): JSX.Element {
 					<div className='grid wide'>
 						<div className='flex items-center'>
 							<div className='flex flex-1 pl-[1.125rem]'>
-								<a className='no-underline text-[rgba(0,0,0,0.87)] flex items-end' href='/'>
+								<NavLink className='no-underline text-[rgba(0,0,0,0.87)] flex items-end' to='/'>
 									<svg
 										viewBox='0 0 192 65'
 										className='relative bg-[50%] bg-cover bg-no-repeat w-[8.125rem] h-[2.875rem] cursor-pointer fill-[#ee4d2d] inline-block'>
@@ -28,7 +29,7 @@ export default function OrderLayout({ children }: any): JSX.Element {
 									<div className='text-[#ee4d2d] text-xl leading-[1.875rem] h-[1.875rem] capitalize ml-[0.9375rem] mb-px pl-[0.9375rem] border-l-[#ee4d2d] border-l border-solid'>
 										Thanh Toán
 									</div>
-								</a>
+								</NavLink>
 							</div>
 						</div>
 					</div>

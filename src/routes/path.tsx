@@ -1,9 +1,15 @@
-import { lazy } from 'react'
+import { LazyExoticComponent, MemoExoticComponent, lazy } from 'react'
 
 import { DefaultLayout, UserLayout, CartLayout, AuthLayout, OrderLayout, SearchLayout } from '../layouts'
 //? lAYOUTS
 
-const routes = [
+export type RouteConFig = {
+	path: string
+	component: any
+	layout?: any
+}
+
+const routes: RouteConFig[] = [
 	{
 		// OK
 		path: '/',
@@ -111,7 +117,6 @@ const routes = [
 		component: lazy(() => import('../pages/user/voucher/voucher.page')),
 		layout: UserLayout
 	},
-
 	{
 		// OK
 		path: '/*',

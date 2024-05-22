@@ -1,13 +1,13 @@
 import { IRooms } from '../interfaces'
 
-type interfaceItemChat = {
+type ItemChatModel = {
 	data: IRooms[] | []
 	des: string
 	setIsChat: any
 	setRoom: any
 }
 
-export default function ItemChatComponent({ data, des, setIsChat, setRoom }: interfaceItemChat): JSX.Element {
+export default function ItemChatComponent({ data, des, setIsChat, setRoom }: ItemChatModel): JSX.Element {
 	const onChangeShop = (room: IRooms) => {
 		setIsChat(true)
 		setRoom(room)

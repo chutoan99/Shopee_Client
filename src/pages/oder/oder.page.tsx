@@ -217,7 +217,7 @@ function OderPage(): JSX.Element {
 											<div className='flex items-center'>
 												<div className='flex-1 items-start flex-nowrap flex pl-0 pr-3 py-0'>
 													<div className=' w-[81px] h-[81px]'>
-														<a className='relative'>
+														<NavLink className='relative' to=''>
 															<div className='w-20 h-20 mr-3'>
 																<img
 																	className='w-full h-full'
@@ -232,11 +232,11 @@ function OderPage(): JSX.Element {
 																}}>
 																<div className='w-full h-full'></div>
 															</div>
-														</a>
+														</NavLink>
 													</div>
 
 													<div className='min-w-0 flex flex-1 flex-col items-start pl-3 pr-0 py-0'>
-														<a>
+														<NavLink to='/'>
 															<div
 																className='overflow-hidden text-ellipsis text-base leading-22 max-h-12 mt-0 mb-[5px] mx-0'
 																style={{
@@ -246,7 +246,7 @@ function OderPage(): JSX.Element {
 																}}>
 																<span>{item?.overview?.name}</span>
 															</div>
-														</a>
+														</NavLink>
 														<div className='mt-0 mx-0'>
 															<div className='text-[rgba(0,0,0,0.54)] mb-[5px]'>
 																Phân loại hàng: {item?.item_option[index]}

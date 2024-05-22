@@ -1,5 +1,5 @@
 export const shopMallConfig = {
-	settings: {
+	settingsBanner: {
 		dots: true,
 		autoplay: true,
 		autoplaySpeed: 5000,
@@ -9,7 +9,7 @@ export const shopMallConfig = {
 		slidesToShow: 1,
 		slidesToScroll: 1
 	},
-	settings2: {
+	settingsSlider: {
 		slidesToShow: 4,
 		slidesToScroll: 1,
 		speed: 1000,

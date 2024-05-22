@@ -29,13 +29,19 @@ function HomeFilterComponent(): JSX.Element {
 		<div className='mt-[20px] mb-[10px] flex items-center gap-[10px]'>
 			<div className='flex items-center gap-[10px]'>
 				<span className='text-[0.875rem] text-[#555] font-normal mr-[12px]'>Sắp xếp theo</span>
-				<button className='h-[34px] min-w-[124px] text-[0.9rem] leading-[1.6rem] no-underline cursor-pointer overflow-hidden text-ellipsis flex-col text-sm box-border shadow-[0_1px_1px_0_rgba(0,0,0,0.09)] flex items-center justify-center capitalize bg-[#ee4d2d] text-[#fff] px-3 py-0 rounded-sm border-[none] border-0'>
+				<button
+					type='button'
+					className='h-[34px] min-w-[124px] text-[0.9rem] leading-[1.6rem] no-underline cursor-pointer overflow-hidden text-ellipsis flex-col text-sm box-border shadow-[0_1px_1px_0_rgba(0,0,0,0.09)] flex items-center justify-center capitalize bg-[#ee4d2d] text-[#fff] px-3 py-0 rounded-sm border-[none] border-0'>
 					Phổ biến
 				</button>
-				<button className='h-[34px] min-w-[124px] text-[0.9rem] leading-[1.6rem] no-underline cursor-pointer overflow-hidden text-ellipsis flex-col text-sm box-border shadow-[0_1px_1px_0_rgba(0,0,0,0.09)] flex items-center justify-center capitalize px-3 py-0 rounded-sm border-[none] border-0 bg-[#fff]'>
+				<button
+					type='button'
+					className='h-[34px] min-w-[124px] text-[0.9rem] leading-[1.6rem] no-underline cursor-pointer overflow-hidden text-ellipsis flex-col text-sm box-border shadow-[0_1px_1px_0_rgba(0,0,0,0.09)] flex items-center justify-center capitalize px-3 py-0 rounded-sm border-[none] border-0 bg-[#fff]'>
 					Mới nhất
 				</button>
-				<button className='h-[34px] min-w-[124px] text-[0.9rem] leading-[1.6rem] no-underline cursor-pointer overflow-hidden text-ellipsis flex-col text-sm box-border shadow-[0_1px_1px_0_rgba(0,0,0,0.09)] flex items-center justify-center capitalize px-3 py-0 rounded-sm border-[none] border-0 bg-[#fff]'>
+				<button
+					type='button'
+					className='h-[34px] min-w-[124px] text-[0.9rem] leading-[1.6rem] no-underline cursor-pointer overflow-hidden text-ellipsis flex-col text-sm box-border shadow-[0_1px_1px_0_rgba(0,0,0,0.09)] flex items-center justify-center capitalize px-3 py-0 rounded-sm border-[none] border-0 bg-[#fff]'>
 					Bán chạy
 				</button>
 			</div>

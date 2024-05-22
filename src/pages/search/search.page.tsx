@@ -21,7 +21,7 @@ function SearchPage(): JSX.Element {
 	const { data, isLoading } = useSearchProductQuery(payload)
 
 	useEffect(() => {
-		data?.totalPage && setTotalPage(data?.totalPage)
+		data?.totalPage && setTotalPage(data.totalPage)
 	}, [data, payload])
 
 	return (
@@ -38,9 +38,9 @@ function SearchPage(): JSX.Element {
 						<div className='padding-search mob:pt-[50px] mob:hidden block'></div>
 						<SortBarsComponent />
 						<ProductListComponent
-							items={data?.response || []}
 							col={'col l-2-4 mo-4 c-6'}
 							loading={isLoading}
+							items={data?.response || []}
 						/>
 						<PaginationComponent setPayload={setPayload} totalPage={totalPage || 0} />
 					</div>

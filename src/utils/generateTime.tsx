@@ -1,4 +1,4 @@
-export const generateTime = (time: any) => {
+export const generateTime = (time: string) => {
 	let d = new Date(time)
 	let year = d.getFullYear()
 	let month = d.getMonth() + 1
@@ -9,7 +9,7 @@ export const generateTime = (time: any) => {
 	return <span>{newTime}</span>
 }
 
-export const formatTime = (dateString: any) => {
+export const formatTime = (dateString: string) => {
 	const date = new Date(dateString)
 	const day = date.getDate().toString().padStart(2, '0')
 	const month = (date.getMonth() + 1).toString().padStart(2, '0')

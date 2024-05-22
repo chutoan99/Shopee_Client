@@ -1,5 +1,5 @@
 import { toast } from 'react-hot-toast'
-import config from '../../../configs/configAxios'
+import config from '../../../../configs/configAxios'
 
 export const GetLikes = async () => {
 	const token = localStorage.getItem('token-shopee')

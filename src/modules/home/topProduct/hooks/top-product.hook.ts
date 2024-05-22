@@ -1,8 +1,6 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 import { ITopProDuctsResponse } from '../interfaces'
 
-//? fetch data RTK QUERY
-
 export const TopProductApi = createApi({
 	reducerPath: 'TopProduct',
 	baseQuery: fetchBaseQuery({

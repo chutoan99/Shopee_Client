@@ -7,7 +7,6 @@ import { useCreateCartMutation, useGetCartsQuery } from '../../cart/hooks'
 import { IProductDetail } from '../interfaces'
 import { generateStart } from '../../../utils/generateStart'
 import { formatPrice } from '../../../utils/formatPrice'
-import { isEmptyObject } from '../../../utils/emptyObj'
 import { ICartData } from '../../cart/interfaces'
 import { AppDispatch, CartActions } from '../../../redux'
 //? APPS
@@ -184,49 +183,41 @@ function ProductDetailComponent({ data }: DetailProduct): JSX.Element {
 										Mua Kèm Deal Sốc
 									</label>
 								</div>
-								{!isEmptyObject(data?.name_tierVariations) && (
-									<>
-										<div className='mt-[5px]'>
-											<h3 className='text-[#757575] w-[110px] capitalize shrink-0'>
-												{data?.name_tierVariations}
-											</h3>
-										</div>
-										<div className='flex-wrap flex max-w-[32.1875rem]'>
-											{data?.option_tierVariations[0]
-												?.split(',')
-												?.map((option: any, index: number) => (
-													<button
-														key={index}
-														style={{
-															outline: 0,
-															wordBreak: 'break-word'
-														}}
-														className={`overflow-visible bg-[#fff] cursor-pointer min-w-[5rem] min-h-[2.125rem] box-border text-[rgba(0,0,0,0.8)] text-left border relative inline-flex items-center justify-center ml-0 mr-2 mt-0 mb-2 px-3 py-1 rounded-sm border-solid border-[rgba(0,0,0,0.09)] ${
-															NewOption === option
-																? '!text-[#ee4d2d] !border-[#ee4d2d]'
-																: ''
-														}`}
-														onClick={() => setNewOption(option)}>
-														{option}
-														{NewOption === option && (
-															<div className="w-[0.9375rem] h-[0.9375rem] absolute overflow-hidden right-0 bottom-0 before:content-[''] before:absolute before:right-[-0.9375rem] before:border-b-[#ee4d2d] before:border-[0.9375rem] before:border-solid before:border-transparent before:bottom-0">
-																<svg
-																	enableBackground='new 0 0 12 12'
-																	viewBox='0 0 12 12'
-																	x={0}
-																	y={0}
-																	className='absolute text-[#fff] text-[8px] inline-block w-[1em] h-[1em] fill-current right-0 bottom-0'>
-																	<g>
-																		<path d='m5.2 10.9c-.2 0-.5-.1-.7-.2l-4.2-3.7c-.4-.4-.5-1-.1-1.4s1-.5 1.4-.1l3.4 3 5.1-7c .3-.4 1-.5 1.4-.2s.5 1 .2 1.4l-5.7 7.9c-.2.2-.4.4-.7.4 0-.1 0-.1-.1-.1z' />
-																	</g>
-																</svg>
-															</div>
-														)}
-													</button>
-												))}
-										</div>
-									</>
-								)}
+								<div className='mt-[5px]'>
+									<h3 className='text-[#757575] w-[110px] capitalize shrink-0'>
+										{data?.name_tierVariations}
+									</h3>
+								</div>
+								<div className='flex-wrap flex max-w-[32.1875rem]'>
+									{data?.option_tierVariations[0]?.split(',')?.map((option: any, index: number) => (
+										<button
+											key={index}
+											style={{
+												outline: 0,
+												wordBreak: 'break-word'
+											}}
+											className={`overflow-visible bg-[#fff] cursor-pointer min-w-[5rem] min-h-[2.125rem] box-border text-[rgba(0,0,0,0.8)] text-left border relative inline-flex items-center justify-center ml-0 mr-2 mt-0 mb-2 px-3 py-1 rounded-sm border-solid border-[rgba(0,0,0,0.09)] ${
+												NewOption === option ? '!text-[#ee4d2d] !border-[#ee4d2d]' : ''
+											}`}
+											onClick={() => setNewOption(option)}>
+											{option}
+											{NewOption === option && (
+												<div className="w-[0.9375rem] h-[0.9375rem] absolute overflow-hidden right-0 bottom-0 before:content-[''] before:absolute before:right-[-0.9375rem] before:border-b-[#ee4d2d] before:border-[0.9375rem] before:border-solid before:border-transparent before:bottom-0">
+													<svg
+														enableBackground='new 0 0 12 12'
+														viewBox='0 0 12 12'
+														x={0}
+														y={0}
+														className='absolute text-[#fff] text-[8px] inline-block w-[1em] h-[1em] fill-current right-0 bottom-0'>
+														<g>
+															<path d='m5.2 10.9c-.2 0-.5-.1-.7-.2l-4.2-3.7c-.4-.4-.5-1-.1-1.4s1-.5 1.4-.1l3.4 3 5.1-7c .3-.4 1-.5 1.4-.2s.5 1 .2 1.4l-5.7 7.9c-.2.2-.4.4-.7.4 0-.1 0-.1-.1-.1z' />
+														</g>
+													</svg>
+												</div>
+											)}
+										</button>
+									))}
+								</div>
 
 								{data?.size_chart && (
 									<h3
