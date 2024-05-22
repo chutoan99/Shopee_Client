@@ -12,7 +12,7 @@ instance.interceptors.response.use(
 	function (error) {
 		if (error.response.status === 401) {
 			setTimeout(() => {
-				window.location.href = '/login'
+				window.location.href = '/auth/login'
 			}, 3000)
 		}
 		if (error.response && error.response.status === 500 && error.err === -1) {

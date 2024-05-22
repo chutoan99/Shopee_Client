@@ -2,11 +2,10 @@
 import { memo } from 'react'
 import { useNavigate } from 'react-router-dom'
 //? APPS
-import { AppDispatch } from '../../../app/store'
 import { useAppDispatch } from '../../../hooks/hooks'
-import { OtherActions } from '../../../redux/otherSlice'
-import { useCreateRoomMutation } from '../../room/hooks'
+import { useCreateRoomMutation } from '../../shared/chat/hooks'
 import { IShop } from '../../shop/interfaces'
+import { AppDispatch, OtherActions } from '../../../redux'
 
 type ProductShopModel = {
 	data: IShop

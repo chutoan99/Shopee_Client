@@ -1,18 +1,15 @@
 //? LIBRARY
 import { useParams } from 'react-router-dom'
 import { memo, useEffect, useState } from 'react'
-//? APPS
+import ProductBreadcrumbComponent from '../../modules/post/components/product-breadcrumb.component'
+import { LoadingCustomComponent } from '../../modules/shared'
+import ProductDetailComponent from '../../modules/post/components/product-detail.component'
+import ProductShopComponent from '../../modules/post/components/product-shop.component'
+import ProductOverviewComponent from '../../modules/post/components/product-overview.component'
 import { useGetProductQuery } from '../../modules/post/hooks'
-import { LoadingCustomComponent } from '../../components/loading'
 import { IShop } from '../../modules/shop/interfaces'
 import { IProductDetail } from '../../modules/post/interfaces'
-import {
-	ProductDetailComponent,
-	ProductBreadcrumbComponent,
-	ProductShopComponent,
-	ProductCommentComponent,
-	ProductOverviewComponent
-} from '../../modules/post/components'
+//? APPS
 
 function DetailProductPage(): JSX.Element {
 	const params = useParams()

@@ -5,12 +5,11 @@ import { LazyLoadImage } from 'react-lazy-load-image-component'
 import 'react-lazy-load-image-component/src/effects/blur.css'
 
 //? APPS
-import { AppDispatch } from '../../../app/store'
 import { IPostBase } from '../interfaces'
 import { formatPrice } from '../../../utils/formatPrice'
 import { generateStart } from '../../../utils/generateStart'
 import { useAppDispatch } from '../../../hooks/hooks'
-import { OtherActions } from '../../../redux/otherSlice'
+import { AppDispatch, OtherActions } from '../../../redux'
 
 type Props = {
 	items: IPostBase[]

@@ -1,15 +1,14 @@
 //? LIBRARY
 import { memo, useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
-//? APPS
-import { useSearchProductQuery } from '../../modules/post/hooks'
-import CategoryFilterComponent from '../../modules/category/components/category-filter.component'
-import ProductListComponent from '../../modules/post/components/product-list.component'
-import { LoadingDefaultComponent } from '../../components/loading'
-import { SearchEmptyComponent } from '../../components/searchEmpty'
-import { SortBarsComponent } from '../../modules/sortBars'
-import { PaginationComponent } from '../../modules/pagination'
 import { IPostQuery } from '../../modules/post/interfaces'
+import { useSearchProductQuery } from '../../modules/post/hooks'
+import { LoadingDefaultComponent } from '../../modules/shared/loading'
+import { PaginationComponent, SearchEmptyComponent } from '../../modules/shared'
+import { SortBarsComponent, FilterComponent } from '../../modules/home/category/components'
+import ProductListComponent from '../../modules/post/components/product-list.component'
+
+//? APPS
 
 function SearchPage(): JSX.Element {
 	const { search } = useParams()
@@ -33,7 +32,7 @@ function SearchPage(): JSX.Element {
 			) : (
 				<div className='row sm-gutter py-[30px]'>
 					<div className='col l-2 col-sm-3 c-3'>
-						<CategoryFilterComponent />
+						<FilterComponent />
 					</div>
 					<div className='col l-10'>
 						<div className='padding-search mob:pt-[50px] mob:hidden block'></div>

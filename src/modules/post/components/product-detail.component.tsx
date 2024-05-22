@@ -3,14 +3,13 @@ import { toast } from 'react-hot-toast'
 import { memo, useEffect, useState } from 'react'
 import { NavLink, useParams } from 'react-router-dom'
 import { useAppDispatch } from '../../../hooks/hooks'
-import { AppDispatch } from '../../../app/store'
 import { useCreateCartMutation, useGetCartsQuery } from '../../cart/hooks'
 import { IProductDetail } from '../interfaces'
-import { CartActions } from '../../../redux/cart.slice'
 import { generateStart } from '../../../utils/generateStart'
 import { formatPrice } from '../../../utils/formatPrice'
 import { isEmptyObject } from '../../../utils/emptyObj'
 import { ICartData } from '../../cart/interfaces'
+import { AppDispatch, CartActions } from '../../../redux'
 //? APPS
 
 type DetailProduct = {

@@ -6,7 +6,7 @@ import { Rating } from 'react-rainbow-components'
 //? APPS
 import { IOrder } from '../../order/interfaces'
 import { CreateComment } from '../services'
-import { LoadingDefaultComponent } from '../../../components/loading'
+import { LoadingDefaultComponent } from '../../shared/loading'
 
 type RatingModel = {
 	isShow: boolean

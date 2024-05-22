@@ -54,7 +54,7 @@ export const useMutationRegister = (payload: any) => {
 			if (reponse.err === 0) {
 				toast.success('Đăng ký thành công')
 				setTimeout(() => {
-					navigate('/login')
+					navigate('/auth/login')
 				}, 2000)
 			} else {
 				toast.error(reponse.msg)
@@ -109,7 +109,7 @@ export const useMutationResetPassWord = (payload: any) => {
 			if (data.err === 0) {
 				toast.success(ALERT_RESET_PASSWORD_SUCCESS)
 				setTimeout(() => {
-					navigate('/login')
+					navigate('/auth/login')
 				}, 2000)
 			} else {
 				toast.error(data.msg)

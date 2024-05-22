@@ -1,11 +1,9 @@
 //? APPS
 import { Toaster } from 'react-hot-toast'
-import { RootState } from '../../app/store'
+import { RootState } from '../../redux'
 import useAuth from '../../hooks/userAuth'
 import { useAppSelector } from '../../hooks/hooks'
-import { ChatComponent } from '../../modules/room/components'
-import { HeaderComponent } from '../../modules/header'
-import { FooterComponent } from '../../modules/footer'
+import { FooterComponent, ChatComponent, HeaderComponent } from '../../modules/shared'
 
 export default function SearchLayout({ children }: any): JSX.Element {
 	useAuth()

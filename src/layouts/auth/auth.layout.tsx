@@ -4,20 +4,20 @@ import { useState, useEffect } from 'react'
 import { NavLink, useLocation } from 'react-router-dom'
 //? APPS
 import { Toaster } from 'react-hot-toast'
-import { FooterComponent } from '../../modules/footer'
+import { FooterComponent } from '../../modules/shared'
 
 export default function AuthLayout({ children }: any): JSX.Element {
 	const { pathname } = useLocation()
 	const [heading, setHeading] = useState('')
 	useEffect(() => {
 		switch (pathname) {
-			case '/register':
+			case '/auth/register':
 				setHeading('Đăng Ký')
 				break
-			case '/forgot-password':
+			case '/auth/forgot-password':
 				setHeading('Xác minh tài khoản')
 				break
-			case '/login':
+			case '/auth/login':
 				setHeading('Đăng Nhập')
 				break
 			default:

@@ -2,11 +2,10 @@
 import { Toaster } from 'react-hot-toast'
 import { NavLink } from 'react-router-dom'
 //? APPS
-import { RootState } from '../../app/store'
+import { RootState } from '../../redux'
 import { useAppSelector } from '../../hooks/hooks'
 import useAuth from '../../hooks/userAuth'
-import { HeaderComponent } from '../../modules/header'
-import { FooterComponent } from '../../modules/footer'
+import { FooterComponent, HeaderComponent } from '../../modules/shared'
 
 export default function UserLayout({ children }: any): JSX.Element {
 	useAuth()

@@ -1,12 +1,10 @@
 //? LIBRARY
 import { Toaster } from 'react-hot-toast'
 //? APPS
-import { RootState } from '../../app/store'
+import { RootState } from '../../redux'
 import { useAppSelector } from '../../hooks/hooks'
 import useAuth from '../../hooks/userAuth'
-import { ChatComponent } from '../../modules/room/components'
-import { HeaderComponent } from '../../modules/header'
-import { FooterComponent } from '../../modules/footer'
+import { FooterComponent, ChatComponent, HeaderComponent } from '../../modules/shared'
 
 export default function DefaultLayout({ children }: any): JSX.Element {
 	useAuth()

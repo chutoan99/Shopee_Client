@@ -4,13 +4,13 @@ import { useState, memo, useEffect } from 'react'
 import { NavLink, useNavigate } from 'react-router-dom'
 //? APPS
 import { ICart } from '../../modules/cart/interfaces'
-import { RootState } from '../../app/store'
+import { RootState } from '../../redux'
 import { useAppSelector } from '../../hooks/hooks'
 import { formatPrice } from '../../utils/formatPrice'
 import { useDeleteCartMutation } from '../../modules/cart/hooks'
 import { useCreateOrderMutation } from '../../modules/order/hooks'
 import { ALERT_INVALID_ADDRESS_ORDER, ALERT_INVALID_PHONE_ORDER } from '../../constants/msg'
-import { LoadingCustomComponent } from '../../components/loading'
+import { LoadingCustomComponent } from '../../modules/shared/loading'
 import { IOrderData } from '../../modules/order/interfaces'
 
 function OderPage(): JSX.Element {

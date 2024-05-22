@@ -1,11 +1,11 @@
 //? LIBRARY
 import { memo } from 'react'
 import { useParams } from 'react-router-dom'
-//? APPS
 import { useGetItemsShopQuery, useGetShopIdQuery } from '../../modules/shop/hooks'
+import { LoadingCustomComponent } from '../../modules/shared/loading'
 import { ShopPageInfoComponent } from '../../modules/shop/components'
-import { ProductListComponent } from '../../modules/post/components'
-import { LoadingCustomComponent } from '../../components/loading'
+import ProductListComponent from '../../modules/post/components/product-list.component'
+//? APPS
 
 function ShopPage(): JSX.Element {
 	const params = useParams()

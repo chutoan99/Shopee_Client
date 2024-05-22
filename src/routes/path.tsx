@@ -1,11 +1,6 @@
 import { lazy } from 'react'
 
-import { UserLayout } from '../layouts/user'
-import { CartLayout } from '../layouts/cart'
-import { AuthLayout } from '../layouts/auth'
-import { OrderLayout } from '../layouts/order'
-import { SearchLayout } from '../layouts/search'
-import { DefaultLayout } from '../layouts/default'
+import { DefaultLayout, UserLayout, CartLayout, AuthLayout, OrderLayout, SearchLayout } from '../layouts'
 //? lAYOUTS
 
 const routes = [
@@ -30,13 +25,13 @@ const routes = [
 	{
 		// OK
 		path: '/mall',
-		component: lazy(() => import('../pages/mall/mall.page')),
+		component: lazy(() => import('../pages/shopeMall/shop-mall.page')),
 		layout: DefaultLayout
 	},
 	{
 		// OK
 		path: '/top-products',
-		component: lazy(() => import('../pages/topProducts/top-product.page')),
+		component: lazy(() => import('../pages/topProduct/top-product.page')),
 		layout: DefaultLayout
 	},
 	{
@@ -56,24 +51,24 @@ const routes = [
 	},
 	{
 		// OK
-		path: '/login',
-		component: lazy(() => import('../pages/login/login.page')),
+		path: '/auth/login',
+		component: lazy(() => import('../pages/auth/login/login.page')),
 		layout: AuthLayout
 	},
 	{
 		// OK
-		path: '/register',
-		component: lazy(() => import('../pages/register/register.page')),
+		path: '/auth/register',
+		component: lazy(() => import('../pages/auth/register/register.page')),
 		layout: AuthLayout
 	},
 	{
-		path: '/forgotPassword',
-		component: lazy(() => import('../pages/forgotPassword/forgot-password.page')),
+		path: '/auth/forgot-password',
+		component: lazy(() => import('../pages/auth/forgotPassword/forgot-password.page')),
 		layout: AuthLayout
 	},
 	{
-		path: '/reset-password/:email/:token',
-		component: lazy(() => import('../pages/resetPassword/reset-password.page')),
+		path: '/auth/reset-password/:email/:token',
+		component: lazy(() => import('../pages/auth/resetPassword/reset-password.page')),
 		layout: AuthLayout
 	},
 	{
@@ -90,7 +85,7 @@ const routes = [
 	},
 	{
 		path: 'user/purchase/',
-		component: lazy(() => import('../pages/purchase/purchase.page')),
+		component: lazy(() => import('../pages/user/purchase/purchase.page')),
 		layout: UserLayout
 	},
 	{
@@ -101,19 +96,19 @@ const routes = [
 	{
 		// OK
 		path: 'user/profile',
-		component: lazy(() => import('../pages/profile/profile.page')),
+		component: lazy(() => import('../pages/user/profile/profile.page')),
 		layout: UserLayout
 	},
 	{
 		// OK
 		path: 'user/notify',
-		component: lazy(() => import('../pages/notify/notify.page')),
+		component: lazy(() => import('../pages/user/notify/notify.page')),
 		layout: UserLayout
 	},
 	{
 		// OK
 		path: 'user/voucher',
-		component: lazy(() => import('../pages/voucher/voucher.page')),
+		component: lazy(() => import('../pages/user/voucher/voucher.page')),
 		layout: UserLayout
 	},
 

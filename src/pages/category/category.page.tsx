@@ -1,16 +1,16 @@
 //? LIBRARY
 import { useEffect, memo, useState } from 'react'
 import { useParams } from 'react-router-dom'
-//? APPS
-import { SearchEmptyComponent } from '../../components/searchEmpty'
-import { LoadingDefaultComponent } from '../../components/loading'
-import { SortBarsComponent } from '../../modules/sortBars'
-import { PaginationComponent } from '../../modules/pagination'
-import { CONSTANT } from '../../modules/category/resources'
-import { ICategoryQuery } from '../../modules/category/interfaces'
-import { useSearchCategoriesQuery } from '../../modules/category/hooks'
+import { LoadingDefaultComponent } from '../../modules/shared/loading'
+import { SearchEmptyComponent } from '../../modules/shared/searchEmpty'
 import ProductListComponent from '../../modules/post/components/product-list.component'
-import CategoryFilterComponent from '../../modules/category/components/category-filter.component'
+import { PaginationComponent } from '../../modules/shared'
+import { ICategoryQuery } from '../../modules/home/category/interfaces'
+import { useSearchCategoriesQuery } from '../../modules/home/category/hooks'
+import { CONSTANT } from '../../modules/home/category/resources'
+import FilterComponent from '../../modules/home/category/components/filter/filter.component'
+import { SortBarsComponent } from '../../modules/home/category/components'
+//? APPS
 
 function CategoryPage(): JSX.Element {
 	const { display_name } = useParams()
@@ -34,7 +34,7 @@ function CategoryPage(): JSX.Element {
 			) : (
 				<div className='row sm-gutter pt-[30px]'>
 					<div className='col l-2 col-smo-3 c-3'>
-						<CategoryFilterComponent />
+						<FilterComponent />
 					</div>
 					<div className='col l-10'>
 						<div className='padding-search mob:pt-[50px] mob:hidden block'></div>

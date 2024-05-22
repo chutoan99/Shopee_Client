@@ -1,15 +1,12 @@
-//? LIBRARY
-import { toast } from 'react-hot-toast'
 import { useState, memo, useEffect } from 'react'
 import { NavLink, useNavigate } from 'react-router-dom'
-//? APPS
-import { ICart, ICartUpdateData } from '../../modules/cart/interfaces'
-import { AppDispatch } from '../../app/store'
 import { useAppDispatch } from '../../hooks/hooks'
-import { formatPrice } from '../../utils/formatPrice'
-import { buyCartActions } from '../../redux/buyCart.slice'
+import { ICart, ICartUpdateData } from '../../modules/cart/interfaces'
 import { useDeleteCartMutation, useGetCartsQuery, useUpdateCartMutation } from '../../modules/cart/hooks'
-import { LoadingDefaultComponent } from '../../components/loading'
+import { LoadingDefaultComponent } from '../../modules/shared'
+import { formatPrice } from '../../utils/formatPrice'
+import toast from 'react-hot-toast'
+import { AppDispatch, buyCartActions } from '../../redux'
 
 function CartPage(): JSX.Element {
 	const navigate = useNavigate()
@@ -518,7 +515,9 @@ function CartPage(): JSX.Element {
 																		</div>
 																		<div className='flex items-center justify-center w-[12.70417%] capitalize flex-col'>
 																			<button
-																				onClick={() => onDeleteCart(ele?.itemid)}>
+																				onClick={() =>
+																					onDeleteCart(ele?.itemid)
+																				}>
 																				Xóa
 																			</button>
 																			<div className='z-[2] max-w-full'>

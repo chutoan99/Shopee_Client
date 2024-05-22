@@ -1,20 +1,24 @@
 //? LIBRARY
 import { memo } from 'react'
 import { NavLink } from 'react-router-dom'
-//? APPS
 import { useGetProductsQuery } from '../../modules/post/hooks'
-import { PopupComponent } from '../../components/popup'
-import { SkeletonProductComponent } from '../../components/loading'
-import { BannerComponent } from '../../modules/banner/components'
-import { BatchListComponent } from '../../modules/batchList/components'
-import { CategoryComponent } from '../../modules/category/components'
-import { FlashSaleComponent } from '../../modules/flashSale/components'
-import { ShopMallComponent } from '../../modules/shopMall/components'
-import { TopProductComponent } from '../../modules/topProduct/components'
-import { ProductListComponent } from '../../modules/post/components'
-import { HomeFilterComponent } from '../../modules/homeFilter'
-import { IPostQuery } from '../../modules/post/interfaces'
 import { CONSTANT } from '../../modules/post/resources'
+import { IPostQuery } from '../../modules/post/interfaces'
+
+import {
+	FlashSaleComponent,
+	ShopMallComponent,
+	TopProductComponent,
+	HomeFilterComponent,
+	BannerComponent,
+	BatchListComponent,
+	CategoryComponent,
+	PopupComponent
+} from '../../modules/home'
+
+import { SkeletonProductComponent } from '../../modules/shared'
+import ProductListComponent from '../../modules/post/components/product-list.component'
+//? APPS
 
 function HomePage(): JSX.Element {
 	const { data: dataProduct, isLoading: isLoadingDataProduct } = useGetProductsQuery({

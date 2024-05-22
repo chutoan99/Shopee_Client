@@ -2,9 +2,8 @@ import { Fragment, Suspense, useEffect } from 'react'
 import routes from './path'
 import { Route, Routes } from 'react-router-dom'
 import { useGetCartsQuery } from '../modules/cart/hooks'
-import { CartActions } from '../redux/cart.slice'
 import { useAppDispatch } from '../hooks/hooks'
-import { AppDispatch } from '../app/store'
+import { AppDispatch, CartActions } from '../redux'
 
 //? pages
 

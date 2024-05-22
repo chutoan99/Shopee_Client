@@ -1,7 +1,7 @@
 import { toast } from 'react-hot-toast'
 import { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { UserActions } from '../redux/userSlice'
+import { UserActions } from '../redux'
 import { useNavigate } from 'react-router-dom'
 import { GetCurrentUser } from '../modules/user/services'
 import { IUser } from '../modules/user/interfaces'
@@ -31,7 +31,7 @@ const useAuth = () => {
 				} catch (error: any) {}
 			} else {
 				setTimeout(() => {
-					navigate('/login')
+					navigate('/auth/login')
 				}, 3000)
 			}
 		}
