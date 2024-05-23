@@ -1,5 +1,5 @@
 //? LIBRARY
-import { useState, memo } from 'react'
+import { useState, memo, useEffect } from 'react'
 import { NavLink, useNavigate, useParams } from 'react-router-dom'
 //? APPS
 import { useCreateHistorySearchMutation, useGetHistorySearchQuery } from './hooks'
@@ -8,24 +8,22 @@ import { useGetSearchSuggestQuery } from '../searchSuggest/hooks'
 import LogoComponent from '../logo/logo.components'
 import { SuggestListComponent } from '../searchSuggest'
 import HeaderCartComponent from '../cart/cart.components'
-import { RootState } from '../../../../redux'
-import { useAppSelector } from '../../../../hooks/hooks'
 import { useGetCartsQuery } from '../../../cart/hooks'
 
 function HeaderSearchHistoryComponent(): JSX.Element {
-	const params = useParams()
+	const { search } = useParams()
 	const navigate = useNavigate()
-	const { total } = useAppSelector((state: RootState) => state.cart)
-	const { data: dataCart, isLoading: isLoadingDataCart } = useGetCartsQuery()
 	const {
 		data: dataHistorySearch,
 		isLoading: isLoadingHistorySearch,
 		refetch: refetchHistorySearch
 	} = useGetHistorySearchQuery()
+	const { data: dataCart, isLoading: isLoadingDataCart } = useGetCartsQuery()
 	const { data: dataSearchSuggestion, isLoading: isLoadingSearchSuggestion } = useGetSearchSuggestQuery()
 	const [createHistorySearch] = useCreateHistorySearchMutation()
+	const [showHistory, setShowHistory] = useState<boolean>(false)
 	const [payload, setPayload] = useState({
-		text: params.search
+		text: search
 	})
 
 	const onSearch = async () => {
@@ -41,6 +39,15 @@ function HeaderSearchHistoryComponent(): JSX.Element {
 			onSearch()
 		}
 	}
+
+	useEffect(() => {
+		setPayload(() => {
+			return {
+				text: search
+			}
+		})
+	}, [search])
+
 	return (
 		<>
 			<div className='grid wide sm-gutter'>
@@ -53,8 +60,18 @@ function HeaderSearchHistoryComponent(): JSX.Element {
 									<input
 										type='text'
 										placeholder='Nhập để tìm kiếm sản phẩm'
-										className='header_input w-full h-full text-sm text-[#333] px-3 py-0 rounded-[3px] border-[none] focus:border-none focus:outline-none'
+										className='w-full h-full text-sm text-[#333] px-3 py-0 rounded-[3px] border-[none] focus:border-none focus:outline-none'
 										onKeyDown={handleKeyDown}
+										onFocus={() => {
+											setTimeout(() => {
+												setShowHistory(true)
+											}, 500)
+										}}
+										onBlur={() => {
+											setTimeout(() => {
+												setShowHistory(false)
+											}, 500)
+										}}
 										value={payload.text}
 										onChange={(e) =>
 											setPayload(() => {
@@ -64,27 +81,36 @@ function HeaderSearchHistoryComponent(): JSX.Element {
 											})
 										}
 									/>
-									<div className='header_list_search  absolute top-[calc(100%_-_-2px)] w-full bg-[#fff] shadow-[0_1px_5px_rgba(189,189,189)] overflow-hidden z-[3] rounded-[3px] left-0'>
-										<h3 className='text-sm text-[#999] font-normal mx-3 my-1.5'>
-											{' '}
-											Lịch sử tìm kiếm{' '}
-										</h3>
-										{!isLoadingHistorySearch && (
-											<ul className='mt-1.5'>
-												{dataHistorySearch?.response?.map(
-													(item: ISearchHistory, index: number) => (
-														<li className='h-[38px] px-3 py-0' key={index}>
-															<NavLink
-																to={`search/${item.text}`}
-																className='no-underline text-sm leading-[2.375rem] text-[#333] block'>
-																{item.text}
-															</NavLink>
-														</li>
-													)
+									{showHistory && (
+										<>
+											<div className='absolute top-[calc(100%_-_-2px)] w-full bg-[#fff] shadow-[0_1px_5px_rgba(189,189,189)] overflow-hidden z-[3] rounded-[3px] left-0'>
+												<h3 className='text-sm text-[#999] font-normal mx-3 my-1.5'>
+													{' '}
+													Lịch sử tìm kiếm{' '}
+												</h3>
+												{!isLoadingHistorySearch && (
+													<div className='mt-1.5'>
+														{dataHistorySearch?.response?.map((item: ISearchHistory) => (
+															<div
+																key={item.id}
+																className='h-[38px] px-3 py-0 hover:bg-[#fafafa]'>
+																<NavLink
+																	onClick={() => {
+																		setTimeout(() => {
+																			setShowHistory(false)
+																		}, 500)
+																	}}
+																	to={`/search/${item.text}`}
+																	className='no-underline text-sm leading-[2.375rem] text-[#333] block hover:text-[unset]'>
+																	{item.text}
+																</NavLink>
+															</div>
+														))}
+													</div>
 												)}
-											</ul>
-										)}
-									</div>
+											</div>
+										</>
+									)}
 								</div>
 								<div className='group relative cursor-pointer pl-4 border-l-[#ccc] border-l border-solid'>
 									<span className='text-sm contents text-[#333]'>Trong shop</span>
@@ -103,8 +129,10 @@ function HeaderSearchHistoryComponent(): JSX.Element {
 									</ul>
 								</div>
 								<button
-									className='h-[34px] w-[60px] bg-[#ee4d2d] mr-[3px] rounded-[3px] border-[none]'
-									onClick={onSearch}>
+									type='button'
+									aria-label='Search'
+									onClick={onSearch}
+									className='h-[34px] w-[60px] bg-[#ee4d2d] mr-[3px] rounded-[3px] border-[none]'>
 									<span className='text-[0.875rem] text-[#fff]'>
 										<i className='fa-solid fa-magnifying-glass'></i>
 									</span>
@@ -116,9 +144,9 @@ function HeaderSearchHistoryComponent(): JSX.Element {
 						</div>
 					</div>
 					<HeaderCartComponent
-						data={dataCart?.response || [[]]}
 						loading={isLoadingDataCart}
-						totalCart={total || 0}
+						totalCart={dataCart?.total || 0}
+						data={dataCart?.response || [[]]}
 					/>
 				</div>
 			</div>

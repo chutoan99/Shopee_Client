@@ -3,13 +3,11 @@ export interface ISearchHistoryResponse {
 	msg: string
 	response: ISearchHistory[]
 }
-export interface ICreateSearchHistoryResponse {
-	err: number
-	msg: string
-	response: any
-}
 
 export interface ISearchHistory {
+	id: number
 	userid: number
 	text: string
+	createdAt: string
+	updatedAt: string
 }

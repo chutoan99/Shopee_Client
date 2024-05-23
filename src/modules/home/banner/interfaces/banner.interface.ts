@@ -4,11 +4,9 @@ export interface IBannerResponse {
 	response: IBanner[]
 	msg: string
 }
-
 export interface IBanner {
 	id: number
 	image_url: string
-	is_active: number
-	createdAt: Date
-	updatedAt: Date
+	createdAt: String
+	updatedAt: String
 }

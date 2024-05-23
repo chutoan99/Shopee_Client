@@ -18,7 +18,7 @@ export default function OrderLayout({ children }: any): JSX.Element {
 					<div className='grid wide'>
 						<div className='flex items-center'>
 							<div className='flex flex-1 pl-[1.125rem]'>
-								<NavLink className='no-underline text-[rgba(0,0,0,0.87)] flex items-end' to='/'>
+								<NavLink className='no-underline text-[rgba(0,0,0,0.87)] flex items-end hover:text-[unset]' to='/'>
 									<svg
 										viewBox='0 0 192 65'
 										className='relative bg-[50%] bg-cover bg-no-repeat w-[8.125rem] h-[2.875rem] cursor-pointer fill-[#ee4d2d] inline-block'>

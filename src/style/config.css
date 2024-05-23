@@ -148,12 +148,3 @@
 .hjzHMx {
 	color: #ee4d2d !important;
 }
-
-#header_search .header_input:focus ~ .header_list_search {
-	display: block;
-	cursor: pointer;
-}
-
-#header_search .header_list_search {
-	display: none;
-}

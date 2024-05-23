@@ -10,12 +10,12 @@ function BatchListComponent(): JSX.Element {
 			{!isLoading && (
 				<div className='bg-[#fff] px-[0.625rem] py-[1.25rem] min-h-[100px] h-[130px]'>
 					<div className='flex justify-around gap-[10px]'>
-						{data?.response?.map((item: IBatchList, index: number) => {
+						{data?.response?.map((item: IBatchList) => {
 							return (
 								<div
-									key={index}
+									key={item.id}
 									className='flex flex-col gap-y-[5px] items-center h-20 cursor-pointer transition-all duration-500 w-[10%]'>
-									<img src={item.banner_image} className='w-[40%]' alt='{discount.title}' />
+									<img src={item.banner_image} className='w-[40%]' alt={item.title} />
 									<div
 										className='text-[.8125rem] text-center text-[rgba(0, 0, 0, 0.8)] no-underline leading-[0.781rem] overflow-hidden'
 										style={{

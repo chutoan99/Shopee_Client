@@ -6,8 +6,11 @@ export interface IBatchListResponse {
 }
 
 export interface IBatchList {
+	id: number
 	banner_image: string
 	title: string
-	end: Date
-	start: Date
+	end: String
+	start: String
+	createdAt: String
+	updatedAt: String
 }

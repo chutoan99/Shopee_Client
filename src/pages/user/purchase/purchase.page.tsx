@@ -76,7 +76,7 @@ function PurchasePage(): JSX.Element {
 					</div>
 
 					{currentTab === stateOrder.is_all && (
-						<div className='bg-[#eaeaea] flex items-center shadow-[0_1px_1px_0_rgba(0,0,0,0.05)] text-[#212121] mx-0 my-3 px-0 py-[10px] rounded-sm'>
+						<div className='bg-[#eaeaea] flex items-center shadow-[0_1px_1px_0_rgba(0,0,0,0.05)] text-[#212121] mx-0 my-3 px-0 py-[10px] rounded-sm h-[45px]'>
 							<svg
 								width='19px'
 								height='19px'

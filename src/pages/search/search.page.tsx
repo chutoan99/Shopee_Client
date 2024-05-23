@@ -24,6 +24,15 @@ function SearchPage(): JSX.Element {
 		data?.totalPage && setTotalPage(data.totalPage)
 	}, [data, payload])
 
+	useEffect(() => {
+		setPayload((prev: IPostQuery) => {
+			return {
+				...prev,
+				name: search
+			}
+		})
+	}, [search])
+
 	return (
 		<>
 			{isLoading && <LoadingDefaultComponent />}

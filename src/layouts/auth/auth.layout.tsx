@@ -32,7 +32,7 @@ export default function AuthLayout({ children }: any): JSX.Element {
 				<div className='grid wide'>
 					<div className='flex item-center'>
 						<div className='flex flex-1 pl-[1.125rem]'>
-							<NavLink className='no-underline text-[rgba(0,0,0,0.87)] a flex items-end' to='/'>
+							<NavLink className='no-underline text-[rgba(0,0,0,0.87)] a flex items-end hover:text-[unset]' to='/'>
 								<div />
 								<svg
 									viewBox='0 0 192 65'

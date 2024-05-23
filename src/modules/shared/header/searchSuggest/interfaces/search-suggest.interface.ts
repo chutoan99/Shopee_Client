@@ -8,8 +8,6 @@ export interface ISearchSuggest {
 	id: number
 	text: string
 	count: number
-	is_active: number
-	createdAt: Date
-	updatedAt: Date
-	deleteAt: null
+	createdAt: String
+	updatedAt: String
 }

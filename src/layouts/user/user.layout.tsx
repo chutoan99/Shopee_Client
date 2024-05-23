@@ -46,7 +46,7 @@ export default function UserLayout({ children }: any): JSX.Element {
 								</div>
 							</div>
 							<div className='flex gap-[15px]  flex-col mt-[30px]'>
-								<NavLink to='/user/profile' className='relative'>
+								<NavLink to='/user/profile' className='relative hover:text-[#ee4d2d]'>
 									<div className='text-right'>
 										<div className='flex gap-[10px]'>
 											<div className='flex items-center justify-center w-5 h-5 leading-5 text-center text-[#fff] shrink-0 mr-2.5 rounded-[50%]'>
@@ -62,7 +62,7 @@ export default function UserLayout({ children }: any): JSX.Element {
 										</div>
 									</div>
 								</NavLink>
-								<NavLink to='/user/purchase' className='relative'>
+								<NavLink to='/user/purchase' className='relative hover:text-[#ee4d2d]'>
 									<div className='text-right'>
 										<div className=' flex gap-[10px]'>
 											<div className='flex items-center justify-center w-5 h-5 leading-5 text-center text-[#fff] shrink-0 mr-2.5 rounded-[50%]'>
@@ -81,7 +81,7 @@ export default function UserLayout({ children }: any): JSX.Element {
 										<div className='Yu7gVR' />
 									</div>
 								</NavLink>
-								<NavLink to='/user/notify' className='relative'>
+								<NavLink to='/user/notify' className='relative hover:text-[#ee4d2d]'>
 									<div className='text-right'>
 										<div className=' flex gap-[10px]'>
 											<div className='flex items-center justify-center w-5 h-5 leading-5 text-center text-[#fff] shrink-0 mr-2.5 rounded-[50%]'>
@@ -97,7 +97,7 @@ export default function UserLayout({ children }: any): JSX.Element {
 										</div>
 									</div>
 								</NavLink>
-								<NavLink to='/user/voucher' className='relative'>
+								<NavLink to='/user/voucher' className='relative hover:text-[#ee4d2d]'>
 									<div className='text-right'>
 										<div className=' flex gap-[10px]'>
 											<div className='flex items-center justify-center w-5 h-5 leading-5 text-center text-[#fff] shrink-0 mr-2.5 rounded-[50%]'>

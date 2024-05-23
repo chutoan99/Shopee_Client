@@ -15,16 +15,14 @@ export interface IFlashSale {
 	stock: number
 	historical_sold: null
 	discount: string
-	shop_rating: null
+	shop_rating?: number
 	filename: null
 	liked: number
-	is_official_shop: null
-	is_service_by_shopee: null
+	is_official_shop?: number
+	is_service_by_shopee?: number
 	show_free_shipping: null
-	start_time: null
-	end_time: null
-	is_active: number
-	createdAt: Date
-	updatedAt: Date
-	deleteAt: null
+	start_time: String
+	end_time: String
+	createdAt: String
+	updatedAt: String
 }
