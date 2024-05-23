@@ -1,6 +1,6 @@
 import toast from 'react-hot-toast'
 import FormData from 'form-data'
-import instance from '../../../configs/configAxios'
+import instance from '../../../../configs/configAxios'
 
 export const GetCurrentUser = async () => {
 	try {

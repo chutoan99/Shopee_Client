@@ -1,4 +1,4 @@
-import { LazyExoticComponent, MemoExoticComponent, lazy } from 'react'
+import { lazy } from 'react'
 
 import { DefaultLayout, UserLayout, CartLayout, AuthLayout, OrderLayout, SearchLayout } from '../layouts'
 //? lAYOUTS

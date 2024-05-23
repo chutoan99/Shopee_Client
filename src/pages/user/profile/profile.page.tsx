@@ -2,9 +2,7 @@
 import { useState, memo, useEffect } from 'react'
 import { DatePicker } from 'react-rainbow-components'
 //? APPS
-import { IUser } from '../../../modules/user/interfaces'
 import { toast } from 'react-hot-toast'
-import { UpdateUser } from '../../../modules/user/services'
 import {
 	ALERT_INVALID_ADDRESS,
 	ALERT_INVALID_AVATAR,
@@ -13,10 +11,12 @@ import {
 } from '../../../constants/msg'
 import { LoadingCustomComponent, LoadingDefaultComponent } from '../../../modules/shared/loading'
 import { useAppSelector } from '../../../hooks/hooks'
-import { District, Province, Ward } from '../../../modules/user/components/province/interfaces/province.interface'
-import { FetchDistrict, FetchProvince, FetchWard } from '../../../modules/user/components/province/services'
 import { RootState } from '../../../redux'
-import { useGetUserCurrentQuery } from '../../../modules/user/hooks'
+import { IUser } from '../../../modules/user-system/account/interfaces'
+import { District, Province, Ward } from '../../../modules/user-system/account/components/province/interfaces/province.interface'
+import { useGetUserCurrentQuery } from '../../../modules/user-system/account/hooks'
+import { FetchDistrict, FetchProvince, FetchWard } from '../../../modules/user-system/account/components/province/services'
+import { UpdateUser } from '../../../modules/user-system/account/services'
 
 function ProfilePage(): JSX.Element {
 	const { refetch, isLoading: isLoadingUser } = useGetUserCurrentQuery();

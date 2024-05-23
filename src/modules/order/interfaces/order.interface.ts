@@ -1,5 +1,5 @@
-import { IPostBase } from "../../post/interfaces"
-import { IUser } from "../../user/interfaces"
+import { IPostBase } from '../../post/interfaces'
+import { IUser } from '../../user-system/account/interfaces'
 
 export type ITabs = {
 	is_all: number
@@ -27,7 +27,7 @@ export interface IOrdersResponse {
 	err: number
 	msg: string
 	response: IOrder[]
-	tabs: ITabs
+	tab: ITabs
 }
 
 export interface IOrderResponse {
@@ -56,6 +56,6 @@ export interface IOrder {
 	userid: number
 	shopid: number
 	createdAt: string
-	user: IUser,
+	user: IUser
 	posts: IPostBase[]
 }

@@ -3,8 +3,8 @@ import { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { UserActions } from '../redux'
 import { useNavigate } from 'react-router-dom'
-import { GetCurrentUser } from '../modules/user/services'
-import { IUser } from '../modules/user/interfaces'
+import { IUser } from '../modules/user-system/account/interfaces'
+import { GetCurrentUser } from '../modules/user-system/account/services'
 
 const useAuth = () => {
 	const navigate = useNavigate()
@@ -32,7 +32,7 @@ const useAuth = () => {
 			} else {
 				setTimeout(() => {
 					navigate('/auth/login')
-				}, 3000)
+				}, 1000)
 			}
 		}
 

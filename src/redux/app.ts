@@ -1,4 +1,4 @@
-import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit'
+import { configureStore, ThunkAction, Action, Store, Reducer } from '@reduxjs/toolkit'
 //? REDUX TOOLKIT
 import otherReducer from './otherSlice'
 import cartReducer from './cart.slice'
@@ -7,7 +7,6 @@ import buyCartReducer from './buyCart.slice'
 //? REDUX TOOLKIT RTK
 import { CartApi } from '../modules/cart/hooks'
 import { ShopApi } from '../modules/shop/hooks'
-import { UserApi } from '../modules/user/hooks'
 import { OrderApi } from '../modules/order/hooks'
 import { ProductApi } from '../modules/post/hooks'
 import { CommentApi } from '../modules/comment/hooks'
@@ -21,8 +20,9 @@ import { FlashSaleApi } from '../modules/home/flashSale/hooks'
 import { BatchListApi } from '../modules/home/batchList/hooks'
 import { TopProductApi } from '../modules/home/topProduct/hooks'
 import { CategoryTreeApi } from '../modules/home/category/hooks'
+import { UserApi } from '../modules/user-system/account/hooks'
 
-const RootReducer = {
+const RootReducer: any = {
 	others: otherReducer,
 	cart: cartReducer,
 	user: userReducer,
@@ -44,7 +44,7 @@ const RootReducer = {
 	[SearchSuggestApi.reducerPath]: SearchSuggestApi.reducer,
 	[SearchHistoryApi.reducerPath]: SearchHistoryApi.reducer
 }
-export const store = configureStore({
+export const store: Store = configureStore({
 	reducer: RootReducer,
 	middleware: (getDefaultMiddleware) =>
 		getDefaultMiddleware().concat(

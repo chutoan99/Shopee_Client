@@ -28,11 +28,11 @@ function PaginationComponent({ setPayload, totalPage }: { setPayload: any; total
 			pageCount={totalPage}
 			breakLabel={'...'}
 			marginPagesDisplayed={3}
-			pageRangeDisplayed={6}
+			pageRangeDisplayed={4}
 			onPageChange={(e) => {
 				handleClickPage(e)
 			}}
-			containerClassName={'flex justify-between justify-items-center gap-5 mt-12 mb-8 pl-0 items-center'}
+			containerClassName={'flex justify-center justify-items-center gap-5 mt-12 mb-8 pl-0 items-center'}
 			pageClassName={' my-0 list-none'}
 			pageLinkClassName={
 				'no-underline text-xl font-light text-[#939393] flex items-center justify-center bg-transparent min-w-[40px] h-[30px] text-center leading-[30px] cursor-pointer rounded-sm border-[none]'

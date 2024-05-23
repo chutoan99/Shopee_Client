@@ -5,38 +5,21 @@ import { LoadingDefaultComponent } from '../../../modules/shared/loading'
 import { IOrder, ITabs } from '../../../modules/order/interfaces'
 import { useGetOrdersQuery, useSearchOrdersQuery, useSearchTypeOrdersQuery } from '../../../modules/order/hooks'
 import { formatPrice } from '../../../utils/formatPrice'
+import { LIST_TAB } from '../../../modules/user-system/purchase/resources'
+import { stateOrder } from '../../../modules/order/resources'
 //? APPS
 
 function PurchasePage(): JSX.Element {
 	const [dataOrders, setDataOrders] = useState<IOrder[]>([])
-	const [tabs, setTabs] = useState<ITabs>()
-	const [modal, setModal] = useState(0)
-	const [borderBottom, setBorderBottom] = useState('Tất cả')
+	const [currentTab, setCurrentTab] = useState<stateOrder>(stateOrder.is_all)
 	const [shopName, setShopName] = useState('')
-	const [type, setType] = useState<number>()
 	const { data, isLoading } = useGetOrdersQuery()
 	const { data: dataResSearchOrders, refetch: onRefetchSearch } = useSearchOrdersQuery(shopName)
-	const { data: dataResSearchTypeOrders, refetch: onRefetchSearchType } = useSearchTypeOrdersQuery(type)
-
-	useEffect(() => {
-		data?.response && setDataOrders(data?.response)
-		data?.tabs && setTabs(data?.tabs)
-	}, [data])
+	const { data: dataResSearchTypeOrders, refetch: onRefetchSearchType } = useSearchTypeOrdersQuery(currentTab)
 
 	useEffect(() => {
 		dataResSearchOrders?.response && setDataOrders(dataResSearchOrders.response || [])
 	}, [dataResSearchOrders])
-
-	useEffect(() => {
-		dataResSearchTypeOrders?.response && setDataOrders(dataResSearchTypeOrders?.response || [])
-	}, [dataResSearchTypeOrders])
-
-	const onChangeStatus = (item: any, index: number, type: any) => {
-		setBorderBottom(item)
-		setModal(index)
-		setType(type)
-		onRefetchSearchType()
-	}
 
 	const onKeyDown = (e: any) => {
 		if (e.code === 'Enter' && shopName !== '') {
@@ -44,112 +27,116 @@ function PurchasePage(): JSX.Element {
 		}
 	}
 
+	useEffect(() => {
+		switch (currentTab) {
+			case stateOrder.is_all:
+				data?.response && setDataOrders(data?.response)
+				break
+			case stateOrder.is_cancelled:
+			case stateOrder.is_delivering:
+			case stateOrder.is_returns:
+			case stateOrder.is_success:
+			case stateOrder.is_transport:
+			case stateOrder.is_wait_for_pay:
+			case stateOrder.is_wait_for_confirm:
+				onRefetchSearchType()
+				dataResSearchTypeOrders?.response && setDataOrders(dataResSearchTypeOrders?.response || [])
+				break
+		}
+	}, [currentTab])
+
 	return (
 		<>
-			{isLoading && <LoadingDefaultComponent />}
-			<div className='col-lg-10'>
-				<div className='w-full mb-[12px] flex overflow-hidden bg-[#fff]'>
-					{[
-						{
-							content: 'Tất cả',
-							total: tabs?.is_all,
-							type: ''
-						},
-						{
-							content: 'Chờ lấy hàng',
-							total: tabs?.is_wait_for_pay,
-							type: 1
-						},
-						{
-							content: 'Vận chuyển',
-							total: tabs?.is_transport,
-							type: 2
-						},
-						{
-							content: 'Đang giao',
-							total: tabs?.is_delivering,
-							type: 3
-						},
-						{
-							content: 'Hoàn thành',
-							total: tabs?.is_success,
-							type: 4
-						},
-						{
-							content: 'Đã hủy',
-							total: tabs?.is_cancelled,
-							type: 5
-						},
-						{
-							content: 'Trả hàng',
-							total: tabs?.is_returns,
-							type: 6
-						}
-					].map((tab: any, index: number) => (
-						<span
-							className={`bg-[#fff] cursor-pointer select-none text-base leading-[1.188rem] text-center text-[rgba(0,0,0,0.8)] flex flex-1 overflow-hidden items-center justify-center transition-[color] duration-[0.2s] px-0 py-3 hover:text-[#ee4d2d] ${
-								borderBottom === tab.content
-									? 'text-[#ee4d2d] border-[#ee4d2d]  border-b-2  border-solid'
-									: ''
-							}`}
-							style={{
-								WebkitUserSelect: 'none',
-								MozUserSelect: 'none'
-							}}
-							key={index}
-							onClick={() => onChangeStatus(tab.content, index, tab.type)}>
-							<span>
-								{tab.content}
-								<>
-									{tab.total === 0 ? (
-										<></>
-									) : (
-										<span className='text-sm text-[#ee4d2d] ml-1 mr-0 my-0'>({tab.total})</span>
-									)}
-								</>
+			{isLoading ? (
+				<LoadingDefaultComponent />
+			) : (
+				<div className='col-lg-10'>
+					<div className='w-full mb-[12px] flex overflow-hidden bg-[#fff]'>
+						{LIST_TAB(data?.tab as ITabs)?.map((tab: any, index: number) => (
+							<span
+								key={index}
+								onClick={() => setCurrentTab(index)}
+								className={`bg-[#fff] cursor-pointer select-none text-base leading-[1.188rem] text-center text-[rgba(0,0,0,0.8)] flex flex-1 overflow-hidden items-center justify-center transition-[color] duration-[0.2s] px-0 py-3 hover:text-[#ee4d2d] ${
+									currentTab === index && 'text-[#ee4d2d] border-[#ee4d2d]  border-b-2  border-solid'
+								}`}
+								style={{
+									WebkitUserSelect: 'none',
+									MozUserSelect: 'none'
+								}}>
+								<span>
+									{tab.content}
+									<>
+										{tab.total !== 0 && (
+											<span className='text-sm text-[#ee4d2d] ml-1 mr-0 my-0'>({tab.total})</span>
+										)}
+									</>
+								</span>
 							</span>
-						</span>
-					))}
-				</div>
-				{modal === 0 && (
-					<div className='bg-[#eaeaea] flex items-center shadow-[0_1px_1px_0_rgba(0,0,0,0.05)] text-[#212121] mx-0 my-3 px-0 py-[10px] rounded-sm'>
-						<svg
-							width='19px'
-							height='19px'
-							viewBox='0 0 19 19'
-							className='p-0 stroke-[#bbb] mx-[15px] my-0'>
-							<g id='Search-New' strokeWidth={1} fill='none' fillRule='evenodd'>
-								<g
-									id='my-purchase-copy-27'
-									transform='translate(-399.000000, -221.000000)'
-									strokeWidth={2}>
-									<g id='Group-32' transform='translate(400.000000, 222.000000)'>
-										<circle id='Oval-27' cx={7} cy={7} r={7} />
-										<path
-											d='M12,12 L16.9799555,16.919354'
-											id='Path-184'
-											strokeLinecap='round'
-											strokeLinejoin='round'
-										/>
+						))}
+					</div>
+
+					{currentTab === stateOrder.is_all && (
+						<div className='bg-[#eaeaea] flex items-center shadow-[0_1px_1px_0_rgba(0,0,0,0.05)] text-[#212121] mx-0 my-3 px-0 py-[10px] rounded-sm'>
+							<svg
+								width='19px'
+								height='19px'
+								viewBox='0 0 19 19'
+								className='p-0 stroke-[#bbb] mx-[15px] my-0'>
+								<g id='Search-New' strokeWidth={1} fill='none' fillRule='evenodd'>
+									<g
+										id='my-purchase-copy-27'
+										transform='translate(-399.000000, -221.000000)'
+										strokeWidth={2}>
+										<g id='Group-32' transform='translate(400.000000, 222.000000)'>
+											<circle id='Oval-27' cx={7} cy={7} r={7} />
+											<path
+												d='M12,12 L16.9799555,16.919354'
+												id='Path-184'
+												strokeLinecap='round'
+												strokeLinejoin='round'
+											/>
+										</g>
 									</g>
 								</g>
-							</g>
-						</svg>
-						<input
-							value={shopName}
-							onChange={(e) => setShopName(e.target.value)}
-							autoComplete='off'
-							type='text'
-							placeholder='Bạn có thể tìm kiếm theo tên Shop để tìm kiếm sản phẩm'
-							defaultValue=''
-							className='flex-1 text-sm leading-4 bg-inherit border-0 outline-none'
-							onKeyDown={onKeyDown}
-						/>
-					</div>
-				)}
+							</svg>
+							<input
+								value={shopName}
+								onChange={(e) => setShopName(e.target.value)}
+								autoComplete='off'
+								type='text'
+								placeholder='Bạn có thể tìm kiếm theo tên Shop để tìm kiếm sản phẩm'
+								defaultValue=''
+								className='flex-1 text-sm leading-4 bg-inherit border-0 outline-none'
+								onKeyDown={onKeyDown}
+							/>
+						</div>
+					)}
 
-				<>
-					{dataOrders?.length > 0 ? (
+					{dataOrders?.length === 0 && (
+						<>
+							<div className='w-full h-[600px] text-center'>
+								<div
+									className='flex rounded-[0.125rem] overflow-hidden flex-col justify-center w-full h-full bg-[#fff] items-center'
+									style={{
+										boxShadow: '0 1px 1px 0 rgb(0 0 0 / 5%)'
+									}}>
+									<div className='A849D8'>
+										<img
+											src='https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg/5fafbb923393b712b96488590b8f781f.png'
+											alt='emptyOrder'
+										/>
+									</div>
+									<div
+										className='text-[1.125rem] leading-[1.4rem] mt-[20px]'
+										style={{ color: 'rgba(0, 0, 0, 0.8)' }}>
+										Chưa có đơn hàng
+									</div>
+								</div>
+							</div>
+						</>
+					)}
+
+					{dataOrders?.length > 0 && (
 						<>
 							{dataOrders?.map((cart: IOrder) => (
 								<div
@@ -480,29 +467,9 @@ function PurchasePage(): JSX.Element {
 								</div>
 							))}
 						</>
-					) : (
-						<div className='w-full h-[600px] text-center'>
-							<div
-								className='flex rounded-[0.125rem] overflow-hidden flex-col justify-center w-full h-full bg-[#fff] items-center'
-								style={{
-									boxShadow: '0 1px 1px 0 rgb(0 0 0 / 5%)'
-								}}>
-								<div className='A849D8'>
-									<img
-										src='https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg/5fafbb923393b712b96488590b8f781f.png'
-										alt='emptyOrder'
-									/>
-								</div>
-								<div
-									className='text-[1.125rem] leading-[1.4rem] mt-[20px]'
-									style={{ color: 'rgba(0, 0, 0, 0.8)' }}>
-									Chưa có đơn hàng
-								</div>
-							</div>
-						</div>
 					)}
-				</>
-			</div>
+				</div>
+			)}
 		</>
 	)
 }
