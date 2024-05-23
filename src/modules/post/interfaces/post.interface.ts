@@ -33,7 +33,7 @@ export interface IPostBase {
 	discount: null | string
 	show_free_shipping: number
 	is_official_shop: number
-	is_service_by_shopee: number
+	is_service_by_shop: number
 	shop_rating: number
 	filename: null
 	shop_name: string
