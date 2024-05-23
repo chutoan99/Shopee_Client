@@ -21,7 +21,7 @@ export default function FlashSaleComponent(): JSX.Element {
 										<img src='/assets/Img/icon_flash_sale.png' className='w-full h-full' alt='' />
 									</div>
 								</div>
-								<NavLink to='/flash-sale' className='w-[115px] capitalize text-[#ee4d2d]'>
+								<NavLink to='/flash-sale' className='w-[115px] capitalize text-[#ee4d2d] hover:text-[#ee4d2d]'>
 									Xem tất cả&nbsp;
 									<i className='fa-solid fa-angle-right'></i>
 								</NavLink>

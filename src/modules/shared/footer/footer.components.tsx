@@ -173,7 +173,7 @@ function FooterComponent(): JSX.Element {
 								<li key={index}>
 									<NavLink
 										to={item?.link}
-										className='text-left no-underline text-xs text-neutral-500 flex items-center px-0 py-0.5'>
+										className='text-left no-underline text-xs text-neutral-500 flex items-center px-0 py-0.5 hover:text-[#ee4d2d]'>
 										{item?.value}
 									</NavLink>
 								</li>
@@ -224,7 +224,7 @@ function FooterComponent(): JSX.Element {
 								<li key={index}>
 									<NavLink
 										to={item?.link}
-										className='text-left no-underline text-xs text-neutral-500 flex items-center px-0 py-0.5'>
+										className='text-left no-underline text-xs text-neutral-500 flex items-center px-0 py-0.5 hover:text-[#ee4d2d]'>
 										{item?.value}
 									</NavLink>
 								</li>
@@ -263,7 +263,7 @@ function FooterComponent(): JSX.Element {
 							<li>
 								<NavLink
 									to='https://www.facebook.com/ShopeeVN'
-									className=' no-underline text-xs text-neutral-500 flex items-center px-0 '>
+									className=' no-underline text-xs text-neutral-500 flex items-center px-0 hover:text-[#ee4d2d]'>
 									<span className='text-base ml-0 mr-2  mb-0'>
 										<i className='fa-brands fa-facebook-square'></i>
 									</span>
@@ -273,7 +273,7 @@ function FooterComponent(): JSX.Element {
 							<li>
 								<NavLink
 									to='https://www.instagram.com/Shopee_VN/'
-									className=' no-underline text-xs text-neutral-500 flex items-center px-0'>
+									className=' no-underline text-xs text-neutral-500 flex items-center px-0 hover:text-[#ee4d2d]' >
 									<span className='text-base ml-0 mr-2 mb-0'>
 										<i className='fa-brands fa-instagram-square'></i>
 									</span>
@@ -283,7 +283,7 @@ function FooterComponent(): JSX.Element {
 							<li>
 								<NavLink
 									to='https://www.linkedin.com/company/shopee'
-									className=' no-underline text-xs text-neutral-500 flex items-center px-0'>
+									className=' no-underline text-xs text-neutral-500 flex items-center px-0 hover:text-[#ee4d2d]' >
 									<span className='text-base ml-0 mr-2 mb-0'>
 										<i className='fa-brands fa-linkedin'></i>
 									</span>
@@ -303,15 +303,15 @@ function FooterComponent(): JSX.Element {
 								/>
 							</NavLink>
 							<div className='flex ml-[16px] flex-col justify-around'>
-								<NavLink to='# ' className='no-underline text-transparent'>
+								<div className='no-underline text-transparent'>
 									<img src='/assets/Img/gg-play.png' className='h-[16px]' alt='' />
-								</NavLink>
-								<NavLink to='# ' className='no-underline text-transparent'>
+								</div>
+								<div  className='no-underline text-transparent'>
 									<img src='/assets/Img/app-store.png' className='h-[16px]' alt='' />
-								</NavLink>
-								<NavLink to='# ' className='no-underline text-transparent'>
+								</div>
+								<div className='no-underline text-transparent'>
 									<img src='/assets/Img/app-gallery.png' className='h-[16px]' alt='' />
-								</NavLink>
+								</div>
 							</div>
 						</div>
 					</div>

@@ -18,7 +18,7 @@ export default function HeaderNotifyComponent({ data }: HeaderNotifyModel): JSX.
 				{data?.map((item: INotify) => {
 					return (
 						<li className={item.seen ? `flex bg-[#fff]` : `flex bg-[#f7f7f7]`} key={item.id}>
-							<NavLink to='# ' className='flex no-underline w-full p-2'>
+							<NavLink to='# ' className='flex no-underline w-full p-2 hover:bg-[#fafafa]'>
 								<div>
 									<img src={item.image} alt='logoSale' className='w-12 object-contain' />
 								</div>
@@ -34,7 +34,7 @@ export default function HeaderNotifyComponent({ data }: HeaderNotifyModel): JSX.
 				})}
 			</ul>
 			<footer className='text-[black] text-[0.938rem] text-center w-full px-12 py-2'>
-				<NavLink to='# ' className='no-underline font-normal'>
+				<NavLink to='# ' className='no-underline font-normal hover:text-[unset]'>
 					Xem tất cả
 				</NavLink>
 			</footer>

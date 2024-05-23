@@ -292,7 +292,7 @@ function ProductDetailComponent({ data }: DetailProduct): JSX.Element {
 								</button>
 								<NavLink
 									to='/cart'
-									className='flex justify-center items-center min-h-[48px]  h-[30px] min-w-[115px] overflow-hidden text-ellipsis border capitalize  font-normal text-[1rem]  py-2 rounded-sm border-solid border-transparent bg-[#ee4d2d] text-[#fff] hover:bg-[#d73211] hover:border-[#ba2b0f]'>
+									className='flex justify-center items-center min-h-[48px]  h-[30px] min-w-[115px] overflow-hidden text-ellipsis border capitalize  font-normal text-[1rem]  py-2 rounded-sm border-solid border-transparent bg-[#ee4d2d] text-[#fff] hover:bg-[#d73211] hover:border-[#ba2b0f] hover:text-[#fff]'>
 									Mua Ngay
 								</NavLink>
 							</div>

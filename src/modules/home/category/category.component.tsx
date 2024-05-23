@@ -22,7 +22,7 @@ function CategoryComponent(): JSX.Element {
 									{category?.map((ele: ICategoryTree, index: number) => (
 										<NavLink
 											to={`/categories/${ele.display_name}/${ele.id}`}
-											className='flex flex-col justify-around items-center h-[150px] cursor-pointer transition-all duration-[0.5s] ease-[ease] delay-[0s] border-[0.5px] border-solid border-[rgba(0,0,0,.05)] px-[5px] hover:shadow-[rgba(60,64,67,0.3)_0px_1px_2px_0px,rgba(60,64,67,0.15)_0px_2px_6px_2px]'
+											className='flex flex-col justify-around items-center h-[150px] cursor-pointer transition-all duration-[0.5s] ease-[ease] delay-[0s] border-[0.5px] border-solid border-[rgba(0,0,0,.05)] px-[5px] hover:shadow-[rgba(60,64,67,0.3)_0px_1px_2px_0px,rgba(60,64,67,0.15)_0px_2px_6px_2px] hover:text-[unset]'
 											key={index}>
 											<img
 												src={`https://cf.shopee.vn/file/${ele.image}`}

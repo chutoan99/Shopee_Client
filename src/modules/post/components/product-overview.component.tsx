@@ -32,6 +32,7 @@ function ProductOverviewComponent({ data }: Props): JSX.Element {
 											<div>
 												<span className='mr-[5px]'>
 													<NavLink
+														className='hover:text-[unset]'
 														to={`/categories/${data?.category?.category_name}/${data?.category?.id}`}>
 														{data?.category?.category_name}
 													</NavLink>

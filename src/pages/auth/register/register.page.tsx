@@ -9,7 +9,6 @@ import { LoadingDefaultComponent } from '../../../modules/shared/loading'
 import { IRegisterData } from '../../../modules/auth/interfaces'
 import { LoginFaceBookComponent, LoginGoogleComponent } from '../../../modules/auth/components'
 
-
 function RegisterPage(): JSX.Element {
 	const [validationMsg, setValidationMsg] = useState<any>({})
 	const [nameRegister, setNameRegister] = useState('')
@@ -52,7 +51,9 @@ function RegisterPage(): JSX.Element {
 				<div className='px-[2rem] py-0'>
 					<div className='flex items-center justify-between mt-2.5 px-3 py-0'>
 						<h3 className='text-[1.37rem] font-normal text-[#333]'>Đăng Ký</h3>
-						<NavLink to='/auth/login' className='cursor-pointer text-base leading-6 font-normal text-[#ee4d2d]'>
+						<NavLink
+							to='/auth/login'
+							className='cursor-pointer text-base leading-6 font-normal text-[#ee4d2d] hover:text-[#ee4d2d]'>
 							Đăng Nhập
 						</NavLink>
 					</div>
@@ -92,23 +93,28 @@ function RegisterPage(): JSX.Element {
 							<span className='text-[#ee4d2d] text-xs ml-[15px]'>{validationMsg.passWordRegister}</span>
 						</div>
 					</div>
-					<div className='flex justify-end mt-5'>
-						<NavLink to='/auth/forgot-password' className='no-underline text-sm leading-5 text-[#ee4d2d]'>
+					<div className='flex justify-end mt-[15px]'>
+						<NavLink
+							to='/auth/forgot-password'
+							className='no-underline text-sm leading-5 text-[#ee4d2d] hover:text-[#ee4d2d]'>
 							Quên mật khẩu
 						</NavLink>
 						<span className='mt-[-0.125rem] block h-[22px] mb-0 mx-4 border-l-[rgb(234_234_234_/_1)] border-l border-solid'></span>
-						<NavLink to='# ' className='text-sm leading-5 text-[rgb(147_147_147_/_1)] no-underline'>
+						<NavLink
+							to='# '
+							className='text-sm leading-5 text-[rgb(147_147_147_/_1)] no-underline hover:text-[rgb(147_147_147_/_1)]'>
 							Cần trợ giúp?
 						</NavLink>
 					</div>
-					<div className='flex justify-end mt-20 gap-[10px]'>
+					<div className='flex justify-end mt-[20px] gap-[10px]'>
 						<NavLink
 							to='/'
-							className='overflow-hidden text-ellipsis flex-col text-sm box-border shadow-[0_1px_1px_0_rgba(0,0,0,0.09)] border flex items-center justify-center capitalize h-[34px] min-w-[124px] text-[0.9rem] leading-[1.6rem] no-underline px-3 py-0 rounded-sm border-solid border-[#ccc]'>
+							className='overflow-hidden text-ellipsis flex-col text-sm box-border shadow-[0_1px_1px_0_rgba(0,0,0,0.09)] border flex items-center justify-center capitalize h-[34px] min-w-[124px] text-[0.9rem] leading-[1.6rem] no-underline px-3 py-0 rounded-sm border-solid border-[#ccc] hover:text-[unset]'>
 							TRỞ LẠI
 						</NavLink>
+
 						<button
-							className='overflow-hidden text-ellipsis flex-col text-sm box-border text-[#fff]  h-[34px] min-w-[124px] text-[0.9rem] leading-[1.6rem] no-underline flex items-center justify-center shadow-[0_1px_1px_rgba(0,0,0,0.09)] px-2.5 py-0 rounded-sm border-0 bg-[#ee4d2d]'
+							className='overflow-hidden text-ellipsis flex-col text-sm box-border text-[#fff]  h-[34px] min-w-[124px] text-[0.9rem] leading-[1.6rem] no-underline flex items-center justify-center shadow-[0_1px_1px_rgba(0,0,0,0.09)] px-2.5 py-0 rounded-sm border-0 bg-[#ee4d2d] hover:[text-[#fff]]'
 							onClick={onRegister}>
 							ĐĂNG KÝ
 						</button>

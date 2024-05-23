@@ -45,7 +45,7 @@ export default function ShopMallComponent(): JSX.Element {
 									Miễn phí vận chuyển
 								</div>
 							</div>
-							<NavLink to='/mall' className='w-[115px] capitalize text-[#ee4d2d]'>
+							<NavLink to='/mall' className='w-[115px] capitalize text-[#ee4d2d] hover:text-[#ee4d2d]'>
 								Xem tất cả&nbsp;
 								<i className='fa-solid fa-angle-right'></i>
 							</NavLink>

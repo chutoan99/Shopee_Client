@@ -49,7 +49,7 @@ function FlashSalePage(): JSX.Element {
 										<div>
 											<NavLink
 												to='/'
-												className='gap-[5px] no-underline text-[rgba(0,0,0,0.87)]  flex flex-col h-16 justify-center relative text-center  text-[#fff] bg-[#ee4d2d]'>
+												className='gap-[5px] no-underline text-[rgba(0,0,0,0.87)]  flex flex-col h-16 justify-center relative text-center  text-[#fff] bg-[#ee4d2d] hover:text-[rgba(0,0,0,0.87)]'>
 												<div className='text-[1.5rem]'>21:00</div>
 												<div className='capitalize'>Đang diễn ra</div>
 											</NavLink>
@@ -64,7 +64,7 @@ function FlashSalePage(): JSX.Element {
 										<div>
 											<NavLink
 												to='/'
-												className='gap-[5px] no-underline text-[rgba(0,0,0,0.87)] block text-[#c3c3c3] flex flex-col h-16 justify-center relative text-center bg-[#414142]'>
+												className='gap-[5px] no-underline text-[rgba(0,0,0,0.87)] block text-[#c3c3c3] flex flex-col h-16 justify-center relative text-center bg-[#414142] hover:text-[rgba(0,0,0,0.87)]'>
 												<div className='text-[1.5rem]'>00:00</div>
 												<div className='capitalize'>Ngày mai</div>
 											</NavLink>
@@ -79,7 +79,7 @@ function FlashSalePage(): JSX.Element {
 										<div>
 											<NavLink
 												to='/'
-												className='gap-[5px] no-underline text-[rgba(0,0,0,0.87)] block text-[#c3c3c3] flex flex-col h-16 justify-center relative text-center bg-[#414142]'>
+												className='gap-[5px] no-underline text-[rgba(0,0,0,0.87)] block text-[#c3c3c3] flex flex-col h-16 justify-center relative text-center bg-[#414142] hover:text-[rgba(0,0,0,0.87)]'>
 												<div className='text-[1.5rem]'>02:00</div>
 												<div className='capitalize'>Ngày mai</div>
 											</NavLink>
@@ -94,7 +94,7 @@ function FlashSalePage(): JSX.Element {
 										<div>
 											<NavLink
 												to='/'
-												className='gap-[5px] no-underline text-[rgba(0,0,0,0.87)] block text-[#c3c3c3] flex flex-col h-16 justify-center relative text-center bg-[#414142]'>
+												className='gap-[5px] no-underline text-[rgba(0,0,0,0.87)] block text-[#c3c3c3] flex flex-col h-16 justify-center relative text-center bg-[#414142] hover:text-[rgba(0,0,0,0.87)]'>
 												<div className='text-[1.5rem]'>09:00</div>
 												<div className='capitalize'>Ngày mai</div>
 											</NavLink>
@@ -109,7 +109,7 @@ function FlashSalePage(): JSX.Element {
 										<div>
 											<NavLink
 												to='/'
-												className='gap-[5px] no-underline text-[rgba(0,0,0,0.87)] block text-[#c3c3c3] flex flex-col h-16 justify-center relative text-center bg-[#414142]'>
+												className='gap-[5px] no-underline text-[rgba(0,0,0,0.87)] block text-[#c3c3c3] flex flex-col h-16 justify-center relative text-center bg-[#414142] hover:text-[rgba(0,0,0,0.87)]'>
 												<div className='text-[1.5rem]'>12:00</div>
 												<div className='capitalize'>Ngày mai</div>
 											</NavLink>
@@ -125,22 +125,22 @@ function FlashSalePage(): JSX.Element {
 									backgroundColor: 'rgb(255, 255, 255)'
 								}}>
 								<div className='flex justify-around w-full'>
-									<NavLink to='/flash-sale?categoryId=0&amp;promotionId=137335624892417'>
+									<NavLink to='/' className='hover:text-[#ee4d2d]'>
 										<span>Top Picks</span>
 									</NavLink>
-									<NavLink to='/flash-sale?categoryId=34&amp;promotionId=137335624892417'>
+									<NavLink to='/' className='hover:text-[#ee4d2d]'>
 										<span>HÀNG HIỆU GIÁ TỐT</span>
 									</NavLink>
-									<NavLink to='/flash-sale?categoryId=11&amp;promotionId=137335624892417'>
+									<NavLink to='/' className='hover:text-[#ee4d2d]'>
 										<span>SHOP NỔI BẬT</span>
 									</NavLink>
-									<NavLink to='/flash-sale?categoryId=63&amp;promotionId=137335624892417'>
+									<NavLink to='/' className='hover:text-[#ee4d2d]'>
 										<span>SHOP YÊU THÍCH</span>
 									</NavLink>
-									<NavLink to='/flash-sale?categoryId=13&amp;promotionId=137335624892417'>
+									<NavLink to='/' className='hover:text-[#ee4d2d]'>
 										<span>E-VOUCHER VÀ NẠP THẺ</span>
 									</NavLink>
-									<NavLink to='/'>
+									<NavLink to='/' className='hover:text-[#ee4d2d]'>
 										<span>BẮT TREND GIÁ SỐC</span>
 									</NavLink>
 									<div>

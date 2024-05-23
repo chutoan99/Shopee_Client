@@ -29,22 +29,22 @@ function TopProductPage(): JSX.Element {
 									backgroundColor: 'rgb(255, 255, 255)'
 								}}>
 								<div className='flex justify-around w-full'>
-									<NavLink to='/flash-sale?categoryId=0&amp;promotionId=137335624892417'>
+									<NavLink to='/' className='hover:text-[#ee4d2d]'>
 										<span>Top Picks</span>
 									</NavLink>
-									<NavLink to='/flash-sale?categoryId=34&amp;promotionId=137335624892417'>
+									<NavLink to='/' className='hover:text-[#ee4d2d]'>
 										<span>HÀNG HIỆU GIÁ TỐT</span>
 									</NavLink>
-									<NavLink to='/flash-sale?categoryId=11&amp;promotionId=137335624892417'>
+									<NavLink to='/' className='hover:text-[#ee4d2d]'>
 										<span>SHOP NỔI BẬT</span>
 									</NavLink>
-									<NavLink to='/flash-sale?categoryId=63&amp;promotionId=137335624892417'>
+									<NavLink to='/' className='hover:text-[#ee4d2d]'>
 										<span>SHOP YÊU THÍCH</span>
 									</NavLink>
-									<NavLink to='/flash-sale?categoryId=13&amp;promotionId=137335624892417'>
+									<NavLink to='/' className='hover:text-[#ee4d2d]'>
 										<span>E-VOUCHER VÀ NẠP THẺ</span>
 									</NavLink>
-									<NavLink to='/'>
+									<NavLink to='/' className='hover:text-[#ee4d2d]'>
 										<span>BẮT TREND GIÁ SỐC</span>
 									</NavLink>
 									<div>

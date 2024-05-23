@@ -50,7 +50,7 @@ function ProductListComponent({ items, col, loading }: Props): JSX.Element {
 									src='/assets/Img/sale_sticker.png'
 									className='absolute'
 									style={{ zIndex: '9' }}
-									alt=' '
+									alt='sale'
 								/>
 							) : null}
 							<LazyLoadImage
@@ -61,7 +61,7 @@ function ProductListComponent({ items, col, loading }: Props): JSX.Element {
 							/>
 							<NavLink
 								to={`/product/${item?.id}/${item?.shopid}`}
-								className='text-[0.875rem] font-normal text-[#333] leading-[1.125rem] h-9 overflow-hidden ml-1.5 mr-2.5 my-2.5'
+								className='text-[0.875rem] font-normal text-[#333] leading-[1.125rem] h-9 overflow-hidden ml-1.5 mr-2.5 my-2.5 hover:text-[#333]'
 								style={{
 									display: '-webkit-box',
 									WebkitBoxOrient: 'vertical',

@@ -17,7 +17,9 @@ export default function TopProductComponent(): JSX.Element {
 					<div className='bg-[#fff]'>
 						<div className="px-[20px] flex justify-between pb-[10px] pt-[20px] border-b-['1px] border-b-[rgba(0,0,0,0.05)'] border-solid">
 							<div className=' text-[#ee4d2d]'>TÌM KIẾM HÀNG ĐẦU</div>
-							<NavLink className='w-[115px] capitalize text-[#ee4d2d]' to='/top-products'>
+							<NavLink
+								className='w-[115px] capitalize  text-[#ee4d2d] hover:text-[#ee4d2d]'
+								to='/top-products'>
 								Xem tất cả&nbsp;
 								<i className='fa-solid fa-angle-right'></i>
 							</NavLink>
