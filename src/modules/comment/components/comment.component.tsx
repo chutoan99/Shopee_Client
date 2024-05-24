@@ -55,7 +55,7 @@ function ModelRattingComponent({ isShow, onCloseModel, data }: RatingModel): JSX
 			return {
 				itemid: payload.itemid,
 				shopid: data.shopid,
-				orderid: data.orderid,
+				orderid: data.id,
 				images: fileImages,
 				options: data?.option[index],
 				model_name: '',

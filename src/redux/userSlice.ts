@@ -1,5 +1,5 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit'
-import { IUser } from '../modules/user/interfaces'
+import { IUser } from '../modules/user-system/account/interfaces';
 
 const initialState: { isLogin: boolean; data: IUser } = {
 	isLogin: false,

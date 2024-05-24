@@ -2,7 +2,6 @@ import i18n from 'i18next'
 import Backend from 'i18next-http-backend'
 import { initReactI18next } from 'react-i18next'
 
-// import translationEN from '../modules/home/banner/i18n/en.json';
 import authTranslationVI from '../modules/auth/i18n/vn.json'
 import accountTranslationVI from '../modules/user-system/account/i18n/vn.json'
 import cartTranslationVI from '../modules/cart/i18n/vn.json'
@@ -21,40 +20,20 @@ const resources = {
 	},
 	vi: {
 		translation: {
-			AUTH: {
-				...authTranslationVI
-			},
+			AUTH: authTranslationVI,
 			HEADER: {
-				CART: {
-					...headerCartTranslationVI
-				},
-				NAVBAR: {
-					...headerNavbarTranslationVI
-				},
-				NOTIFY: {
-					...headerNotiFyTranslationVI
-				},
-				HISTORY: {
-					...headerHistoryTranslationVI
-				}
+				CART: headerCartTranslationVI,
+				NAVBAR: headerNavbarTranslationVI,
+				NOTIFY: headerNotiFyTranslationVI,
+				HISTORY: headerHistoryTranslationVI
 			},
 			USER_SYSTEM: {
-				ACCOUNT: {
-					...accountTranslationVI
-				}
+				ACCOUNT: accountTranslationVI
 			},
-			CART: {
-				...cartTranslationVI
-			},
-			ORDER: {
-				...orderTranslationVI
-			},
-			CATEGORY: {
-				...categoryTranslationVI
-			},
-			SHOP: {
-				...shopTranslationVI
-			}
+			CART: cartTranslationVI,
+			ORDER: orderTranslationVI,
+			CATEGORY: categoryTranslationVI,
+			SHOP: shopTranslationVI
 		}
 	}
 }
