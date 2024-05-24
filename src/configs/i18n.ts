@@ -5,6 +5,8 @@ import { initReactI18next } from 'react-i18next'
 // import translationEN from '../modules/home/banner/i18n/en.json';
 import authTranslationVI from '../modules/auth/i18n/vn.json'
 import accountTranslationVI from '../modules/user-system/account/i18n/vn.json'
+import cartTranslationVI from '../modules/cart/i18n/vn.json'
+import orderTranslationVI from '../modules/order/i18n/vn.json'
 
 // the translations
 const resources = {
@@ -20,11 +22,16 @@ const resources = {
 				ACCOUNT: {
 					...accountTranslationVI
 				}
+			},
+			CART: {
+				...cartTranslationVI
+			},
+			ORDER:{
+				...orderTranslationVI
 			}
 		}
 	}
 }
-console.log(resources, 'resources')
 i18n.use(Backend)
 	.use(initReactI18next)
 	.init({

@@ -9,12 +9,13 @@ import { useAppSelector } from '../../hooks/hooks'
 import { formatPrice } from '../../utils/formatPrice'
 import { useDeleteCartMutation } from '../../modules/cart/hooks'
 import { useCreateOrderMutation } from '../../modules/order/hooks'
-import { ALERT_INVALID_ADDRESS_ORDER, ALERT_INVALID_PHONE_ORDER } from '../../constants/msg'
 import { LoadingCustomComponent } from '../../modules/shared/loading'
 import { IOrderData } from '../../modules/order/interfaces'
+import { useTranslation } from 'react-i18next'
 
 function OderPage(): JSX.Element {
 	const ship = 30000
+	const {t} = useTranslation()
 	const navigate = useNavigate()
 	const { data } = useAppSelector((state: RootState) => state.buyCart)
 	const { data: dataUser } = useAppSelector((state: RootState) => state.user)
@@ -61,7 +62,7 @@ function OderPage(): JSX.Element {
 		try {
 			if (!dataUser.phone) {
 				return (
-					toast.error(ALERT_INVALID_PHONE_ORDER),
+					toast.error(t(`ORDER.VALIDATOR.INVALID_PHONE`)),
 					setTimeout(() => {
 						navigate('/user/profile')
 					}, 3000)
@@ -69,7 +70,7 @@ function OderPage(): JSX.Element {
 			}
 			if (!dataUser.address) {
 				return (
-					toast.error(ALERT_INVALID_ADDRESS_ORDER),
+					toast.error(t(`ORDER.VALIDATOR.INVALID_ADDRESS`)),
 					setTimeout(() => {
 						navigate('/user/profile')
 					}, 3000)

@@ -9,13 +9,15 @@ import { generateStart } from '../../../utils/generateStart'
 import { formatPrice } from '../../../utils/formatPrice'
 import { ICartData } from '../../cart/interfaces'
 import { AppDispatch, CartActions } from '../../../redux'
+import { useTranslation } from 'react-i18next'
 //? APPS
 
-type DetailProduct = {
+type ProductDetailModel = {
 	data: IProductDetail
 }
-function ProductDetailComponent({ data }: DetailProduct): JSX.Element {
+function ProductDetailComponent({ data }: ProductDetailModel): JSX.Element {
 	const params = useParams()
+	const { t } = useTranslation()
 	const dispatch: AppDispatch = useAppDispatch()
 	const [createCart] = useCreateCartMutation()
 	const { data: dataCart, refetch: FetchCarts } = useGetCartsQuery()
@@ -41,7 +43,7 @@ function ProductDetailComponent({ data }: DetailProduct): JSX.Element {
 
 	const onAddToCart = async () => {
 		if (NewOption === '' && data?.name_tierVariations) {
-			return toast.error('Vui lòng chọn sản phẩm')
+			return toast.error(t('CART.MESSAGE.CHOOSE_PRODUCT'))
 		}
 		const payload: ICartData = {
 			itemid: Number(params.itemid),
@@ -51,7 +53,7 @@ function ProductDetailComponent({ data }: DetailProduct): JSX.Element {
 		}
 		const response = await createCart(payload).unwrap()
 		if (response.err === 0) {
-			toast.success('Bạn vừa thêm 1 sản phẩm vào giỏ hàng')
+			toast.success(t('CART.MESSAGE.ADD_CART'))
 			FetchCarts()
 		}
 	}
@@ -66,10 +68,10 @@ function ProductDetailComponent({ data }: DetailProduct): JSX.Element {
 					<div className='col c-12 mo-5 l-5'>
 						<div className='relative w-full cursor-pointer pt-[20px] pb-10 p-[3px]'>
 							<img
-								className='w-full relative'
-								src={data?.image}
 								alt=''
 								onClick={() => setShowImg(true)}
+								src={data?.image}
+								className='w-full relative'
 							/>
 						</div>
 						<div className='row sm-gutter'>
