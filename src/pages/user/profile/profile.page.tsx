@@ -1,17 +1,12 @@
-//? LIBRARY
 import { useState, memo, useEffect } from 'react'
 import { DatePicker } from 'react-rainbow-components'
-//? APPS
+import { useTranslation } from 'react-i18next'
 import { toast } from 'react-hot-toast'
+
 import { LoadingCustomComponent, LoadingDefaultComponent } from '../../../modules/shared/loading'
 import { useAppSelector } from '../../../hooks/hooks'
 import { RootState } from '../../../redux'
-import { IUser } from '../../../modules/user-system/account/interfaces'
-import {
-	District,
-	Province,
-	Ward
-} from '../../../modules/user-system/account/components/province/interfaces/province.interface'
+
 import { useGetUserCurrentQuery } from '../../../modules/user-system/account/hooks'
 import {
 	FetchDistrict,
@@ -19,8 +14,12 @@ import {
 	FetchWard
 } from '../../../modules/user-system/account/components/province/services'
 import { UpdateUser } from '../../../modules/user-system/account/services'
-import { useTranslation } from 'react-i18next'
-
+import { IUser } from '../../../modules/user-system/account/interfaces'
+import {
+	District,
+	Province,
+	Ward
+} from '../../../modules/user-system/account/components/province/interfaces/province.interface'
 function ProfilePage(): JSX.Element {
 	const { t } = useTranslation()
 	const { refetch, isLoading: isLoadingUser } = useGetUserCurrentQuery()

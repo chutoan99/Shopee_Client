@@ -7,7 +7,8 @@ import authTranslationVI from '../modules/auth/i18n/vn.json'
 import accountTranslationVI from '../modules/user-system/account/i18n/vn.json'
 import cartTranslationVI from '../modules/cart/i18n/vn.json'
 import orderTranslationVI from '../modules/order/i18n/vn.json'
-
+import categoryTranslationVI from '../modules/home/category/i18n/vn.json'
+import shopTranslationVI from '../modules/shop/i18n/vn.json'
 // the translations
 const resources = {
 	en: {
@@ -28,6 +29,12 @@ const resources = {
 			},
 			ORDER:{
 				...orderTranslationVI
+			},
+			CATEGORY:{
+				...categoryTranslationVI
+			},
+			SHOP: {
+				...shopTranslationVI
 			}
 		}
 	}

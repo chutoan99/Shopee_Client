@@ -4,12 +4,14 @@ import { NavLink } from 'react-router-dom'
 //? APPS
 import { IShop } from './interfaces'
 import { formatDate } from '../../utils/formatTimestamp'
+import { useTranslation } from 'react-i18next'
 
 type ShopInfoModel = {
 	data: IShop
 }
 
 function ShopInfoComponent({ data }: ShopInfoModel): JSX.Element {
+	const { t } = useTranslation()
 	return (
 		<div className='shadow-[rgba(0,0,0,0.05)_0px_1px_1px] mt-[120px] bg-[#fff] sm-gutter  pb-[30px]  p-[25px] flex justify-between response_shop-content'>
 			<div className='grid wide'>
@@ -71,7 +73,7 @@ function ShopInfoComponent({ data }: ShopInfoModel): JSX.Element {
 									</h1>
 									<div className='text-[0.75rem]'>
 										<div className='align-middle text-xs text-[rgba(255,255,255,0.698)] mt-[0.3125rem] mb-1.5 mx-0'>
-											Online 6 phút trước
+											{t(`SHOP.LABEL.ONLINE`)}
 										</div>
 									</div>
 								</div>
@@ -89,7 +91,7 @@ function ShopInfoComponent({ data }: ShopInfoModel): JSX.Element {
 												<polygon points='10 4.5 5.5 4.5 5.5 0 4.5 0 4.5 4.5 0 4.5 0 5.5 4.5 5.5 4.5 10 5.5 10 5.5 5.5 10 5.5' />
 											</svg>
 										</span>
-										theo dõi
+										{t(`SHOP.LABEL.FOLLOWS`)}
 									</button>
 								</NavLink>
 								<NavLink to='/' className='flex-1 pr-2.5'>
@@ -103,7 +105,7 @@ function ShopInfoComponent({ data }: ShopInfoModel): JSX.Element {
 												</g>
 											</svg>
 										</span>
-										chat
+										{t(`SHOP.LABEL.CHAT`)}
 									</button>
 								</NavLink>
 							</div>
@@ -123,7 +125,7 @@ function ShopInfoComponent({ data }: ShopInfoModel): JSX.Element {
 								</svg>
 							</div>
 							<div className='inline-block capitalize'>
-								<div className='inline-block'>Sản phẩm:</div>
+								<div className='inline-block'>{t(`SHOP.LABEL.PRODUCTS`)} </div>
 								<div className='text-[#ee4d2d] inline-block'>{data?.item_count}</div>
 							</div>
 						</div>
@@ -161,50 +163,7 @@ function ShopInfoComponent({ data }: ShopInfoModel): JSX.Element {
 								</svg>
 							</div>
 							<div className='inline-block capitalize'>
-								<div className='inline-block'>Người theo dõi:&nbsp;</div>
-								<div className='text-[#ee4d2d] inline-block'>{data?.follower_count}</div>
-							</div>
-						</div>
-						<div className='flex-[0_0_50%] overflow-hidden items-center flex px-0 py-[0.625rem]'>
-							<div className='inline-block box-border text-[0.9375rem] mx-2.5'>
-								<svg
-									stroke='black'
-									enableBackground='new 0 0 15 15'
-									viewBox='0 0 15 15'
-									x={0}
-									y={0}
-									className='inline-block w-[1em] h-[1em] fill-current relative'>
-									<g>
-										<circle cx={7} cy='4.5' fill='none' r='3.8' strokeMiterlimit={10} />
-										<line
-											fill='none'
-											strokeLinecap='round'
-											strokeMiterlimit={10}
-											x1={12}
-											x2={12}
-											y1='11.2'
-											y2='14.2'
-										/>
-										<line
-											fill='none'
-											strokeLinecap='round'
-											strokeMiterlimit={10}
-											x1='10.5'
-											x2='13.5'
-											y1='12.8'
-											y2='12.8'
-										/>
-										<path
-											d='m1.5 13.8c0-3 2.5-5.5 5.5-5.5 1.5 0 2.9.6 3.9 1.6'
-											fill='none'
-											strokeLinecap='round'
-											strokeMiterlimit={10}
-										/>
-									</g>
-								</svg>
-							</div>
-							<div className='inline-block capitalize'>
-								<div className='inline-block'>Đang Theo:</div>
+								<div className='inline-block'>{t(`SHOP.LABEL.FOLLOWERS`)} </div>
 								<div className='text-[#ee4d2d] inline-block'>{data?.follower_count}</div>
 							</div>
 						</div>
@@ -227,7 +186,7 @@ function ShopInfoComponent({ data }: ShopInfoModel): JSX.Element {
 								</svg>
 							</div>
 							<div className='inline-block capitalize'>
-								<div className='inline-block'>Đánh giá:&nbsp;</div>
+								<div className='inline-block'>{t(`SHOP.LABEL.EVALUATE`)} </div>
 								<div className='text-[#ee4d2d] inline-block'>
 									{data?.rating_bad + data?.rating_good + data?.rating_normal}
 								</div>
@@ -256,7 +215,7 @@ function ShopInfoComponent({ data }: ShopInfoModel): JSX.Element {
 								</svg>
 							</div>
 							<div className='inline-block capitalize'>
-								<div className='inline-block'>Tỉ lệ phản hồi Chat:&nbsp;</div>
+								<div className='inline-block'>{t(`SHOP.LABEL.CHAT_RESPONSE_RATE`)} </div>
 								<div className='text-[#ee4d2d] inline-block'>{data?.response_rate}%</div>
 							</div>
 						</div>
@@ -288,23 +247,8 @@ function ShopInfoComponent({ data }: ShopInfoModel): JSX.Element {
 								</svg>
 							</div>
 							<div className='inline-block capitalize'>
-								<div className='inline-block'>Tham gia:&nbsp;</div>
+								<div className='inline-block'>{t(`SHOP.LABEL.JOIN`)} </div>
 								<div className='text-[#ee4d2d] inline-block'>{formatDate(data?.createdAt)}</div>
-							</div>
-						</div>
-						<div className='flex-[0_0_50%] overflow-hidden items-center flex px-0 py-[0.625rem]'>
-							<div className='inline-block box-border text-[0.9375rem] mx-2.5'>
-								<svg width={13} height={14}>
-									<g fill='currentColor' fillRule='nonzero' strokeWidth='0.4'>
-										<path d='M9.49.903h.453c.498 0 .903.404.903.903v4.993a.452.452 0 1 0 .904 0V1.806C11.75.808 10.94 0 9.944 0H9.49a.452.452 0 1 0 0 .903zM5.879 12.645H1.813a.903.903 0 0 1-.903-.902V1.806c0-.499.405-.903.903-.903h.452a.451.451 0 0 0 0-.903h-.452C.816 0 .007.808.007 1.806v9.936c0 .998.809 1.806 1.806 1.806h4.065a.452.452 0 0 0 0-.903z' />
-										<path d='M2.265 0H9.49a.451.451 0 1 1 0 .903H2.265a.452.452 0 0 1 0-.903zm.904 3.613H9.04a.452.452 0 1 1 0 .903H3.169a.452.452 0 1 1 0-.903zm0 2.71h3.613a.452.452 0 1 1 0 .904H3.169a.452.452 0 0 1 0-.904zm0 2.709h1.806a.452.452 0 1 1 0 .905H3.169a.452.452 0 0 1 0-.905zm6.322 4.065a2.258 2.258 0 1 0 0-4.515 2.258 2.258 0 0 0 0 4.515zm0 .903a3.161 3.161 0 1 1 0-6.323 3.161 3.161 0 0 1 0 6.323z' />
-										<path d='M7.575 12.117l3.193-3.194a.451.451 0 1 1 .638.639l-3.192 3.192a.451.451 0 0 1-.639-.637z' />
-									</g>
-								</svg>
-							</div>
-							<div className='inline-block capitalize'>
-								<div className='inline-block'>Tỉ lệ Shop hủy đơn:&nbsp;</div>
-								<div className='text-[#ee4d2d] inline-block'>12%</div>
 							</div>
 						</div>
 					</div>

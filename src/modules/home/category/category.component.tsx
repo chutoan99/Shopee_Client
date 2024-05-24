@@ -5,8 +5,10 @@ import { NavLink } from 'react-router-dom'
 import { useGetCategoryTreeQuery } from './hooks'
 import { categoryConfig } from './configs'
 import { ICategoryTree } from './interfaces'
+import { useTranslation } from 'react-i18next'
 
 function CategoryComponent(): JSX.Element {
+	const { t } = useTranslation()
 	const { data, isLoading } = useGetCategoryTreeQuery()
 	return (
 		<div className='col l-12 mo-12 c-12'>
@@ -14,7 +16,7 @@ function CategoryComponent(): JSX.Element {
 				<div className='pt-[20px]'>
 					<div className='bg-[#fff]'>
 						<div className='p-[20px] text-left text-[1rem] text-[rgba(0, 0, 0, 0.54] font-medium'>
-							DANH MỤC
+							{t`CATEGORY.LABEL.CATEGORY`}
 						</div>
 						<Slider {...categoryConfig.settings}>
 							{data?.response?.map((category: ICategoryTree[], index: number) => (
