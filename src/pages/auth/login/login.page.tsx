@@ -2,10 +2,10 @@ import { useState, memo, useEffect } from 'react'
 import { NavLink } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { useMutationLogin } from '../../../modules/auth/hooks'
-import { LoadingDefaultComponent } from '../../../modules/shared/loading'
 import { ILoginData } from '../../../modules/auth/interfaces'
-import { LoginFaceBookComponent, LoginGoogleComponent } from '../../../modules/auth/components'
 import { validateLogin } from '../../../modules/auth/helpers'
+import { LoadingDefaultComponent } from '../../../modules/shared/loading'
+import { LoginFaceBookComponent, LoginGoogleComponent } from '../../../modules/auth/components'
 
 function LoginPage(): JSX.Element {
 	const { t } = useTranslation()

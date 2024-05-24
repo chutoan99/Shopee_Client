@@ -4,8 +4,8 @@ import { useTranslation } from 'react-i18next'
 import { useMutationResetPassWord } from '../../../modules/auth/hooks'
 import { LoadingDefaultComponent } from '../../../modules/shared/loading'
 import { IResetPasswordData } from '../../../modules/auth/interfaces'
-import { LoginFaceBookComponent, LoginGoogleComponent } from '../../../modules/auth/components'
 import { validateResetPassword } from '../../../modules/auth/helpers'
+import { LoginFaceBookComponent, LoginGoogleComponent } from '../../../modules/auth/components'
 
 function ResetPassWordPage(): JSX.Element {
 	const params = useParams()

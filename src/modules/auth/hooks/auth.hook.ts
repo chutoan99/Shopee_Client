@@ -2,8 +2,8 @@
 import { useState } from 'react'
 import { toast } from 'react-hot-toast'
 import { useNavigate } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 import { ApiForgotPassword, ApiLogin, ApiRegister, ApiResetPassword } from '../services'
-
 import {
 	IForgotPasswordData,
 	ILoginData,
@@ -12,7 +12,6 @@ import {
 	IRegisterResponse,
 	IResetPasswordData
 } from '../interfaces'
-import { useTranslation } from 'react-i18next'
 
 export const useMutationLogin = (payload: ILoginData) => {
 	const navigate = useNavigate()

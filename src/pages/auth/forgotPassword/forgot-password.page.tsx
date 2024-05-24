@@ -4,8 +4,8 @@ import { useTranslation } from 'react-i18next'
 import { useMutationForgotPassWord } from '../../../modules/auth/hooks'
 import { LoadingDefaultComponent } from '../../../modules/shared/loading'
 import { IForgotPasswordData } from '../../../modules/auth/interfaces'
-import { LoginFaceBookComponent, LoginGoogleComponent } from '../../../modules/auth/components'
 import { validateForgotPassword } from '../../../modules/auth/helpers'
+import { LoginFaceBookComponent, LoginGoogleComponent } from '../../../modules/auth/components'
 
 function ForgotPasswordPage(): JSX.Element {
 	const { t } = useTranslation()
