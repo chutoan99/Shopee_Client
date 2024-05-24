@@ -5,23 +5,26 @@ import { NavLink, useLocation } from 'react-router-dom'
 //? APPS
 import { Toaster } from 'react-hot-toast'
 import { FooterComponent } from '../../modules/shared'
+import { useTranslation } from 'react-i18next'
 
 export default function AuthLayout({ children }: any): JSX.Element {
 	const { pathname } = useLocation()
-	const [heading, setHeading] = useState('')
+	const {t} = useTranslation()
+	const [heading, setHeading] = useState<string>('')
 	useEffect(() => {
 		switch (pathname) {
 			case '/auth/register':
-				setHeading('Đăng Ký')
+				setHeading('AUTH.LABEL.HEADING_REGISTER')
 				break
 			case '/auth/forgot-password':
-				setHeading('Xác minh tài khoản')
+				setHeading('AUTH.LABEL.HEADING_DEFAULT')
 				break
 			case '/auth/login':
 				setHeading('Đăng Nhập')
+				setHeading('AUTH.LABEL.HEADING_LOGIN')
 				break
 			default:
-				setHeading('Cập nhật mật khẩu')
+				setHeading('AUTH.LABEL.HEADING_FORGOT_PASSWORD')
 				break
 		}
 	}, [pathname])
@@ -42,7 +45,7 @@ export default function AuthLayout({ children }: any): JSX.Element {
 									</g>
 								</svg>
 								<div className='text-[#222] text-[30px] leading-[1.875rem] h-[1.875rem] capitalize ml-[0.9375rem] pl-[0.9375rem] mb-[3px] border-l-[#ee4d2d] border-l border-solid'>
-									{heading}
+									{t(heading)}
 								</div>
 							</NavLink>
 						</div>

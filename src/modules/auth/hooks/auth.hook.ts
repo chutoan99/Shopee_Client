@@ -4,16 +4,19 @@ import { toast } from 'react-hot-toast'
 import { useNavigate } from 'react-router-dom'
 import { ApiForgotPassword, ApiLogin, ApiRegister, ApiResetPassword } from '../services'
 
-//? TYPE & SERVICES
 import {
-	ALERT_FORGOT_PASSWORD_SUCCESS,
-	ALERT_LOGIN_SUCCESS,
-	ALERT_RESET_PASSWORD_SUCCESS
-} from '../../../constants/msg'
-import { ILoginResponse, IRegisterResponse } from '../interfaces'
+	IForgotPasswordData,
+	ILoginData,
+	ILoginResponse,
+	IRegisterData,
+	IRegisterResponse,
+	IResetPasswordData
+} from '../interfaces'
+import { useTranslation } from 'react-i18next'
 
-export const useMutationLogin = (payload: any) => {
+export const useMutationLogin = (payload: ILoginData) => {
 	const navigate = useNavigate()
+	const { t } = useTranslation()
 	const [loading, setLoading] = useState(false)
 
 	const onRefetch = async () => {
@@ -21,7 +24,7 @@ export const useMutationLogin = (payload: any) => {
 			setLoading(true)
 			const response: ILoginResponse = await ApiLogin(payload)
 			if (response.err === 0) {
-				toast.success(ALERT_LOGIN_SUCCESS)
+				toast.success(t(`AUTH.MESSAGE.LOGIN_SUCCESS`))
 				localStorage.setItem('token-shopee', response?.access_token ?? '')
 				setTimeout(() => {
 					navigate('/')
@@ -43,8 +46,9 @@ export const useMutationLogin = (payload: any) => {
 	return { loading, refetch }
 }
 
-export const useMutationRegister = (payload: any) => {
+export const useMutationRegister = (payload: IRegisterData) => {
 	const navigate = useNavigate()
+	const { t } = useTranslation()
 	const [loading, setLoading] = useState(false)
 
 	const onRefetch = async () => {
@@ -52,7 +56,7 @@ export const useMutationRegister = (payload: any) => {
 			setLoading(true)
 			const reponse: IRegisterResponse = await ApiRegister(payload)
 			if (reponse.err === 0) {
-				toast.success('Đăng ký thành công')
+				toast.success(t(`AUTH.MESSAGE.REGISTER_SUCCESS`))
 				setTimeout(() => {
 					navigate('/auth/login')
 				}, 2000)
@@ -73,15 +77,15 @@ export const useMutationRegister = (payload: any) => {
 	return { loading, refetch }
 }
 
-export const useMutationForgotPassWord = (payload: any) => {
+export const useMutationForgotPassWord = (payload: IForgotPasswordData) => {
 	const [loading, setLoading] = useState(false)
-
+	const { t } = useTranslation()
 	const onRefetch = async () => {
 		try {
 			setLoading(true)
 			const response = await ApiForgotPassword(payload)
 			if (response.err === 0) {
-				toast.success(ALERT_FORGOT_PASSWORD_SUCCESS)
+				toast.success(t(`AUTH.MESSAGE.FORGOT_PASSWORD_SUCCESS`))
 			} else {
 				toast.error(response.msg)
 			}
@@ -99,15 +103,16 @@ export const useMutationForgotPassWord = (payload: any) => {
 	return { loading, refetch }
 }
 
-export const useMutationResetPassWord = (payload: any) => {
+export const useMutationResetPassWord = (payload: IResetPasswordData) => {
 	const navigate = useNavigate()
+	const { t } = useTranslation()
 	const [loading, setLoading] = useState(false)
 	const onRefetch = async () => {
 		try {
 			setLoading(true)
 			const data = await ApiResetPassword(payload)
 			if (data.err === 0) {
-				toast.success(ALERT_RESET_PASSWORD_SUCCESS)
+				toast.success(t(`AUTH.MESSAGE.RESET_PASSWORD_SUCCESS`))
 				setTimeout(() => {
 					navigate('/auth/login')
 				}, 2000)

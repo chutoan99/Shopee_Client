@@ -1,20 +1,21 @@
 //? LIBRARY
 import toast from 'react-hot-toast'
 import { memo, useEffect, useState } from 'react'
-import { Link, useNavigate, NavLink } from 'react-router-dom'
+import { useNavigate, NavLink } from 'react-router-dom'
 import { HeaderNotifyComponent } from '../notify'
 import { useGetNotifyQuery } from '../notify/hooks'
 import { useAppDispatch, useAppSelector } from '../../../../hooks/hooks'
 import { AppDispatch, RootState } from '../../../../redux'
 import { ApiLogout } from '../../../auth/services'
-import { ALERT_LOGOUT_SUCCESS } from '../../../../constants/msg'
 import { UserActions } from '../../../../redux'
 import { LoadingDefaultComponent } from '../../loading'
+import { useTranslation } from 'react-i18next'
 //? APPS
 
 function NavbarComponent(): JSX.Element {
 	const dispatch: AppDispatch = useAppDispatch()
 	const navigate = useNavigate()
+	const { t } = useTranslation()
 	const [totalNotify, setTotalNotify] = useState(0)
 	const { data: dataUser, isLogin } = useAppSelector((state: RootState) => state.user)
 	const { data: dataNotify, isLoading: isLoadingNotification } = useGetNotifyQuery()
@@ -32,7 +33,7 @@ function NavbarComponent(): JSX.Element {
 		try {
 			const response = await ApiLogout()
 			if (response.err === 0) {
-				toast.success(ALERT_LOGOUT_SUCCESS)
+				toast.success(t(`AUTH.MESSAGE.LOGOUT_SUCCESS`))
 				localStorage.remove('token-shopee')
 			} else {
 				toast.error(response.msg)
