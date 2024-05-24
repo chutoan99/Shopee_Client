@@ -58,12 +58,12 @@ function ResetPassWordPage(): JSX.Element {
 					<div>
 						<div>
 							<input
-								value={passWord}
-								onChange={(e) => SetPassWord(e.target.value)}
 								type='password'
-								placeholder='Mật khẩu mới của bạn'
-								className='w-full  text-sm leading-10 mt-4 px-3 py-0 rounded-sm border-[#dbdbdb] border-[1px]  border-[solid] focus-visible:border-[0.5px] focus-visible:border-[rgb(136_136_136_/_0.5)] focus:border-[#dbdbdb]'
+								value={passWord}
 								onKeyDown={handelKeyDown}
+								onChange={(e) => SetPassWord(e.target.value)}
+								placeholder={t(`AUTH.PLACEHOLDER.NEW_PASSWORD`)}
+								className='w-full  text-sm leading-10 mt-4 px-3 py-0 rounded-sm border-[#dbdbdb] border-[1px]  border-[solid] focus-visible:border-[0.5px] focus-visible:border-[rgb(136_136_136_/_0.5)] focus:border-[#dbdbdb]'
 							/>
 							<span className='text-[#ee4d2d] text-xs ml-[15px]'>{t(validationMsg.passWord)}</span>
 						</div>

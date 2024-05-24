@@ -57,23 +57,23 @@ function LoginPage(): JSX.Element {
 					<div>
 						<div>
 							<input
-								value={emailLogin}
-								onChange={(e) => setEmailLogin(e.target.value)}
 								type='text'
-								placeholder='Email của bạn'
-								className='w-full text-sm leading-10 mt-4 px-3 py-0 rounded-sm border-[#dbdbdb] border-[1px]  border-[solid] focus-visible:border-[0.5px] focus-visible:border-[rgb(136_136_136_/_0.5)] focus:border-[#dbdbdb]'
+								value={emailLogin}
 								onKeyDown={handelKeyDown}
+								onChange={(e) => setEmailLogin(e.target.value)}
+								placeholder={t(`AUTH.PLACEHOLDER.EMAIL`)}
+								className='w-full text-sm leading-10 mt-4 px-3 py-0 rounded-sm border-[#dbdbdb] border-[1px]  border-[solid] focus-visible:border-[0.5px] focus-visible:border-[rgb(136_136_136_/_0.5)] focus:border-[#dbdbdb]'
 							/>
 							<span className='text-[#ee4d2d] text-xs ml-[15px]'>{t(validationMsg.emailLogin)}</span>
 						</div>
 						<div>
 							<input
-								value={passWordLogin}
-								onChange={(e) => SetPassWordLogin(e.target.value)}
 								type='password'
-								placeholder='Mật khẩu của bạn'
-								className='w-full text-sm leading-10 mt-4 px-3 py-0 rounded-sm border-[#dbdbdb] border-[1px]  border-[solid] focus-visible:border-[0.5px] focus-visible:border-[rgb(136_136_136_/_0.5)] focus:border-[#dbdbdb]'
+								value={passWordLogin}
 								onKeyDown={handelKeyDown}
+								onChange={(e) => SetPassWordLogin(e.target.value)}
+								placeholder={t(`AUTH.PLACEHOLDER.PASSWORD`)}
+								className='w-full text-sm leading-10 mt-4 px-3 py-0 rounded-sm border-[#dbdbdb] border-[1px]  border-[solid] focus-visible:border-[0.5px] focus-visible:border-[rgb(136_136_136_/_0.5)] focus:border-[#dbdbdb]'
 							/>
 							<span className='text-[#ee4d2d] text-xs ml-[15px]'>{t(validationMsg.passWordLogin)}</span>
 						</div>

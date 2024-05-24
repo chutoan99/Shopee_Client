@@ -3,23 +3,27 @@ import { useState, memo, useEffect } from 'react'
 import { DatePicker } from 'react-rainbow-components'
 //? APPS
 import { toast } from 'react-hot-toast'
-import {
-	ALERT_INVALID_ADDRESS,
-	ALERT_INVALID_AVATAR,
-	ALERT_INVALID_PHONE,
-	ALERT_UPDATE_USER_SUCCESS
-} from '../../../constants/msg'
 import { LoadingCustomComponent, LoadingDefaultComponent } from '../../../modules/shared/loading'
 import { useAppSelector } from '../../../hooks/hooks'
 import { RootState } from '../../../redux'
 import { IUser } from '../../../modules/user-system/account/interfaces'
-import { District, Province, Ward } from '../../../modules/user-system/account/components/province/interfaces/province.interface'
+import {
+	District,
+	Province,
+	Ward
+} from '../../../modules/user-system/account/components/province/interfaces/province.interface'
 import { useGetUserCurrentQuery } from '../../../modules/user-system/account/hooks'
-import { FetchDistrict, FetchProvince, FetchWard } from '../../../modules/user-system/account/components/province/services'
+import {
+	FetchDistrict,
+	FetchProvince,
+	FetchWard
+} from '../../../modules/user-system/account/components/province/services'
 import { UpdateUser } from '../../../modules/user-system/account/services'
+import { useTranslation } from 'react-i18next'
 
 function ProfilePage(): JSX.Element {
-	const { refetch, isLoading: isLoadingUser } = useGetUserCurrentQuery();
+	const { t } = useTranslation()
+	const { refetch, isLoading: isLoadingUser } = useGetUserCurrentQuery()
 	//? HANDLE ADDRESS
 	const [payload, setPayload] = useState<IUser>(useAppSelector((state: RootState) => state.user).data)
 	const [province, setProvince] = useState<Province[]>([])
@@ -57,9 +61,10 @@ function ProfilePage(): JSX.Element {
 	}, [provinceCode])
 
 	useEffect(() => {
-		const fetchAllWardWithDistrictCode = () => {
+		const fetchAllWardWithDistrictCode = async () => {
 			if (districtCode) {
-				FetchWard(districtCode).then((item) => setWard(item))
+				const response = await FetchWard(districtCode)
+				setWard(response)
 			}
 		}
 		fetchAllWardWithDistrictCode()
@@ -113,9 +118,9 @@ function ProfilePage(): JSX.Element {
 	}
 
 	const onSubmit = () => {
-		if (!payload?.address) return toast.error(ALERT_INVALID_ADDRESS)
-		if (!payload?.phone) return toast.error(ALERT_INVALID_PHONE)
-		if (!imagePreview) return toast.error(ALERT_INVALID_AVATAR)
+		if (!payload?.address) return toast.error(t(`USER_SYSTEM.ACCOUNT.VALIDATOR.INVALID_ADDRESS`))
+		if (!payload?.phone) return toast.error(t(`USER_SYSTEM.ACCOUNT.VALIDATOR.INVALID_PHONE`))
+		if (!imagePreview) return toast.error(t(`USER_SYSTEM.ACCOUNT.VALIDATOR.INVALID_AVATAR`))
 		onUpdateUser(payload)
 	}
 
@@ -124,7 +129,7 @@ function ProfilePage(): JSX.Element {
 			setIsLoading(true)
 			const response = await UpdateUser(payload)
 			if (response.err === 0) {
-				toast.success(ALERT_UPDATE_USER_SUCCESS)
+				toast.success(t(`USER_SYSTEM.ACCOUNT.MESSAGE.UPDATE_ACCOUNT_SUCCESS`))
 				refetch()
 			} else {
 				toast.error(response.msg)
@@ -150,9 +155,9 @@ function ProfilePage(): JSX.Element {
 								textTransform: 'capitalize',
 								fontSize: '25px'
 							}}>
-							Hồ sơ của tôi
+							{t(`USER_SYSTEM.ACCOUNT.LABEL.ACCOUNT`)}
 						</span>
-						<span>Quản lý thông tin hồ sơ để bảo mật tài khoản</span>
+						<span>{t(`USER_SYSTEM.ACCOUNT.LABEL.DESCRIPTION`)} </span>
 					</section>
 					<>
 						{isLoadingUser ? (
@@ -162,10 +167,14 @@ function ProfilePage(): JSX.Element {
 								<div className='flex-1 w-full h-full'>
 									<section className=''>
 										<div className='flex w-full justify-center items-center gap-[20px] pb-[30px]'>
-											<span className='w-[130px] text-[1.2rem] text-end'>Tên:</span>
+											<span className='w-[130px] text-[1.2rem] text-end'>
+												{t(`USER_SYSTEM.ACCOUNT.LABEL.NAME`)}
+											</span>
 											<div className='flex items-center gap-[20px] w-full'>
 												<div className='flex items-center gap-[20px] h-full w-full'>
 													<input
+														disabled
+														type='text'
 														placeholder={payload?.name}
 														onChange={(e) => {
 															setPayload((prev: any) => {
@@ -175,16 +184,16 @@ function ProfilePage(): JSX.Element {
 																}
 															})
 														}}
-														disabled
 														className='w-full h-[2.5rem]  pl-[10px] rounded-[5px] outline-none  border-[1px] border-solid border-[#ccc]'
-														type='text'
 													/>
 												</div>
 											</div>
 										</div>
 
 										<div className='flex w-full justify-center items-center gap-[20px] pb-[30px]'>
-											<span className='w-[130px] text-[1.2rem] text-end'>Email:</span>
+											<span className='w-[130px] text-[1.2rem] text-end'>
+												{t(`USER_SYSTEM.ACCOUNT.LABEL.EMAIL`)}
+											</span>
 											<div className='flex items-center gap-[20px] w-full'>
 												<div className='flex items-center gap-[20px] h-full w-full'>
 													<input
@@ -206,10 +215,14 @@ function ProfilePage(): JSX.Element {
 										</div>
 
 										<div className='flex w-full justify-center items-center gap-[20px] pb-[30px]'>
-											<span className='w-[130px] text-[1.2rem] text-end'>Điện Thoại:</span>
+											<span className='w-[130px] text-[1.2rem] text-end'>
+												{' '}
+												{t(`USER_SYSTEM.ACCOUNT.LABEL.PHONE`)}
+											</span>
 											<div className='flex items-center gap-[20px] w-full'>
 												<div className='flex items-center gap-[20px] h-full w-full'>
 													<input
+														type='number'
 														placeholder={
 															payload?.phone !== undefined
 																? payload?.phone?.toString()
@@ -224,14 +237,15 @@ function ProfilePage(): JSX.Element {
 															})
 														}}
 														className='w-full h-[2.5rem] pl-[10px] rounded-[5px] outline-none border-[1px] border-solid border-[#ccc]'
-														type='number'
 													/>
 												</div>
 											</div>
 										</div>
 
 										<div className='flex w-full justify-center items-center gap-[20px] pb-[30px]'>
-											<span className='w-[130px] text-[1.2rem] text-end'>Giới Tính:</span>
+											<span className='w-[130px] text-[1.2rem] text-end'>
+												{t(`USER_SYSTEM.ACCOUNT.LABEL.GENDER`)}
+											</span>
 											<div className='flex items-center gap-[20px] w-full'>
 												<div className='flex items-center gap-[20px] h-full'>
 													{['Nam', 'Nữ', 'khác'].map((item: string, index: number) => (
@@ -266,26 +280,30 @@ function ProfilePage(): JSX.Element {
 										</div>
 
 										<div className='flex w-full justify-center items-center gap-[20px] pb-[30px]'>
-											<span className='w-[130px] text-[1.2rem] text-end'>Địa chỉ:</span>
+											<span className='w-[130px] text-[1.2rem] text-end'>
+												{t(`USER_SYSTEM.ACCOUNT.LABEL.ADDRESS`)}
+											</span>
 											<div className='flex flex-col gap-[15px] w-full'>
 												{!isUpdateAddress && (
 													<span
 														onClick={() => setIsUpdateAddress(true)}
 														className='underline text-[20px] text-[#1ba8ff] cursor-pointer'>
-														Cập nhật địa chỉ
+														{t(`USER_SYSTEM.ACCOUNT.LABEL.UPDATE_ADDRESS`)}
 													</span>
 												)}
 												{isUpdateAddress && (
 													<div className='w-full flex gap-[5px]'>
 														<label htmlFor='province-select' className='mb-2 hidden'>
-															Chọn Tỉnh/Thành Phố
+															{t(`USER_SYSTEM.ACCOUNT.LABEL.SELECT_PROVINCE`)}
 														</label>
 														<select
 															id='province-select'
 															className='w-full h-[2rem] outline-none rounded-[5px] border-[1px] border-solid border-[#ccc]'
 															value={provinceCode}
 															onChange={(e: any) => setProvinceCode(e.target.value)}>
-															<option className='text-center'>-- Chọn TP --</option>
+															<option className='text-center'>
+																{t(`USER_SYSTEM.ACCOUNT.LABEL.SELECT_PROVINCE`)}
+															</option>
 															{province?.map((item: Province) => (
 																<option
 																	key={item.code}
@@ -296,14 +314,16 @@ function ProfilePage(): JSX.Element {
 															))}
 														</select>
 														<label htmlFor='district-select' className='mb-2 hidden'>
-															Chọn Quận
+															{t(`USER_SYSTEM.ACCOUNT.LABEL.SELECT_DISTRICT`)}
 														</label>
 														<select
 															id='district-select'
 															className='w-full h-[2rem] outline-none  rounded-[5px] border-[1px] border-solid border-[#ccc]'
 															value={districtCode}
 															onChange={(e: any) => setDistrictCode(e.target.value)}>
-															<option className='text-center'>-- Chọn Quận --</option>
+															<option className='text-center'>
+																{t(`USER_SYSTEM.ACCOUNT.LABEL.SELECT_DISTRICT`)}
+															</option>
 															{district?.map((item: District) => (
 																<option
 																	key={item.code}
@@ -314,14 +334,16 @@ function ProfilePage(): JSX.Element {
 															))}
 														</select>
 														<label htmlFor='ward-select' className='mb-2 hidden'>
-															Chọn Huyện
+															{t(`USER_SYSTEM.ACCOUNT.LABEL.SELECT_WARD`)}
 														</label>
 														<select
 															id='ward-select'
 															className='w-full h-[2rem] outline-none rounded-[5px] border-[1px] border-solid border-[#ccc]'
 															value={wardCode}
 															onChange={(e: any) => setWardCode(e.target.value)}>
-															<option className='text-center'>-- Chọn Huyện --</option>
+															<option className='text-center'>
+																{t(`USER_SYSTEM.ACCOUNT.LABEL.SELECT_WARD`)}
+															</option>
 															{ward?.map((item: Ward) => (
 																<option
 																	key={item.code}
@@ -332,11 +354,11 @@ function ProfilePage(): JSX.Element {
 															))}
 														</select>
 														<input
-															placeholder='Nhập Địa Chỉ'
-															value={numberHouse}
-															className='w-full h-[2rem] pl-[10px] rounded-[5px] outline-none border-[1px] border-solid border-[#ccc]'
-															onChange={(e: any) => setNumberHouse(e.target.value)}
 															type='text'
+															value={numberHouse}
+															onChange={(e: any) => setNumberHouse(e.target.value)}
+															placeholder={t(`USER_SYSTEM.ACCOUNT.PLACEHOLDER.ADDRESS`)}
+															className='w-full h-[2rem] pl-[10px] rounded-[5px] outline-none border-[1px] border-solid border-[#ccc]'
 														/>
 													</div>
 												)}
@@ -351,7 +373,9 @@ function ProfilePage(): JSX.Element {
 										</div>
 
 										<div className='flex w-full justify-center items-center gap-[20px] pb-[30px]'>
-											<span className='w-[130px] text-[1.2rem] text-end'>Ngày Sinh:</span>
+											<span className='w-[130px] text-[1.2rem] text-end'>
+												{t(`USER_SYSTEM.ACCOUNT.LABEL.BIRTHDAY`)}
+											</span>
 											<DatePicker
 												borderRadius='semi-square'
 												value={payload?.birthday}
@@ -374,7 +398,7 @@ function ProfilePage(): JSX.Element {
 											<button
 												onClick={onSubmit}
 												className='min-h-[40px]  h-[30px] min-w-[120px] overflow-hidden text-ellipsis border capitalize  font-normal text-sm  py-2 rounded-sm border-solid border-transparent bg-[#ee4d2d] text-[#fff] hover:bg-[#d73211] hover:border-[#ba2b0f]'>
-												Lưu
+												{t(`USER_SYSTEM.ACCOUNT.LABEL.SAVE`)}
 											</button>
 										</div>
 									</section>
@@ -388,37 +412,36 @@ function ProfilePage(): JSX.Element {
 										<div className='rounded-[50%] bg-[#ccc] mb-[20px]  opacity-0.5 w-[150px] h-[150px] overflow-hidden inline-block'>
 											{imagePreview ? (
 												<img
+													alt='user'
 													className='w-full f-full'
 													src={typeof imagePreview === 'string' ? imagePreview : undefined}
-													alt='user'
 												/>
 											) : (
 												<img
+													alt='user'
 													className='w-full f-full'
 													src={
 														typeof payload?.avatar === 'string' ? payload.avatar : undefined
 													}
-													alt='user'
 												/>
 											)}
 										</div>
 										<button
+											onClick={changeUploadImg}
 											className='bg-[#fff] rounded-[2px] text-[14px]'
 											style={{
 												border: '1px solid rgba(0,0,0,.09)',
 												boxShadow: '0 1px 1px 0 rgb(0 0 0 / 3%)'
-											}}
-											onClick={changeUploadImg}>
+											}}>
 											<label
 												className='items-center justify-center flex h-[40px]  capitalize cursor-pointer'
 												htmlFor='file'>
-												Chọn hình ảnh
+												{t(`USER_SYSTEM.ACCOUNT.LABEL.SELECT_AVATAR`)}
 											</label>
 											<input id='file' type='file' hidden multiple onChange={changeUploadImg} />
 										</button>
 									</div>
 								</section>
-								<div></div>
 							</div>
 						)}
 					</>

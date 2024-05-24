@@ -3,7 +3,8 @@ import Backend from 'i18next-http-backend'
 import { initReactI18next } from 'react-i18next'
 
 // import translationEN from '../modules/home/banner/i18n/en.json';
-import translationVI from '../modules/auth/i18n/vn.json'
+import authTranslationVI from '../modules/auth/i18n/vn.json'
+import accountTranslationVI from '../modules/user-system/account/i18n/vn.json'
 
 // the translations
 const resources = {
@@ -13,7 +14,12 @@ const resources = {
 	vi: {
 		translation: {
 			AUTH: {
-				...translationVI
+				...authTranslationVI
+			},
+			USER_SYSTEM: {
+				ACCOUNT: {
+					...accountTranslationVI
+				}
 			}
 		}
 	}

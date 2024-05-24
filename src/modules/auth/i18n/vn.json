@@ -22,7 +22,12 @@
     "LOGOUT_SUCCESS": "Đăng xuất thành công",
     "UPDATE_USER_SUCCESS": "Cập nhật thông tin thành công"
   },
-  "PLACEHOLDER": {},
+  "PLACEHOLDER": {
+    "EMAIL": "Email của bạn",
+    "PASSWORD": "Mật khẩu của bạn",
+    "NAME": "Tên của bạn",
+    "NEW_PASSWORD": "Mật khẩu mới của bạn"
+  },
   "VALIDATOR": {
     "INVALID_EMAIL": "Email your is incorrect",
     "MISS_PASSWORD": "Pleas input your PassWord",
