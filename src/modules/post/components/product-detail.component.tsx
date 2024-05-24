@@ -5,11 +5,11 @@ import { NavLink, useParams } from 'react-router-dom'
 import { useAppDispatch } from '../../../hooks/hooks'
 import { useCreateCartMutation, useGetCartsQuery } from '../../cart/hooks'
 import { IProductDetail } from '../interfaces'
-import { generateStart } from '../../../utils/generateStart'
 import { formatPrice } from '../../../utils/formatPrice'
 import { ICartData } from '../../cart/interfaces'
 import { AppDispatch, CartActions } from '../../../redux'
 import { useTranslation } from 'react-i18next'
+import { generateStart } from '../helpers'
 //? APPS
 
 type ProductDetailModel = {

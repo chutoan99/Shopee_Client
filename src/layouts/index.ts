@@ -1,6 +1,6 @@
-export { default as AuthLayout } from './auth/auth.layout'
-export { default as CartLayout } from './cart/cart.layout'
-export { default as DefaultLayout } from './default/default.layout'
-export { default as OrderLayout } from './order/order.layout'
-export { default as SearchLayout } from './search/search.layout'
-export { default as UserLayout } from './user/user.layout'
+export * from "./auth"
+export * from "./cart"
+export * from "./default"
+export * from "./order/"
+export * from "./search/"
+export * from "./user/"

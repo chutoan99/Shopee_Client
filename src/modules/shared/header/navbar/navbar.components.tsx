@@ -1,25 +1,23 @@
-//? LIBRARY
 import toast from 'react-hot-toast'
+import { useTranslation } from 'react-i18next'
 import { memo, useEffect, useState } from 'react'
 import { useNavigate, NavLink } from 'react-router-dom'
 import { HeaderNotifyComponent } from '../notify'
 import { useGetNotifyQuery } from '../notify/hooks'
+import { AppDispatch, RootState, UserActions } from '../../../../redux'
 import { useAppDispatch, useAppSelector } from '../../../../hooks/hooks'
-import { AppDispatch, RootState } from '../../../../redux'
 import { ApiLogout } from '../../../auth/services'
-import { UserActions } from '../../../../redux'
 import { LoadingDefaultComponent } from '../../loading'
-import { useTranslation } from 'react-i18next'
-//? APPS
 
 function NavbarComponent(): JSX.Element {
-	const dispatch: AppDispatch = useAppDispatch()
-	const navigate = useNavigate()
 	const { t } = useTranslation()
-	const [totalNotify, setTotalNotify] = useState(0)
+	const navigate = useNavigate()
+	const dispatch: AppDispatch = useAppDispatch()
+	const [totalNotify, setTotalNotify] = useState<number>(0)
 	const { data: dataUser, isLogin } = useAppSelector((state: RootState) => state.user)
 	const { data: dataNotify, isLoading: isLoadingNotification } = useGetNotifyQuery()
-	const [loading, setLoading] = useState(false)
+	const [loading, setLoading] = useState<Boolean>(false)
+
 	useEffect(() => {
 		setTotalNotify(dataNotify?.response?.length || 0)
 	}, [dataNotify])
@@ -35,6 +33,7 @@ function NavbarComponent(): JSX.Element {
 			if (response.err === 0) {
 				toast.success(t(`AUTH.MESSAGE.LOGOUT_SUCCESS`))
 				localStorage.remove('token-shopee')
+				window.location.reload()
 			} else {
 				toast.error(response.msg)
 			}
@@ -48,7 +47,6 @@ function NavbarComponent(): JSX.Element {
 			dispatch(UserActions.updateUser({ data: null, isLogin: false }))
 		}
 	}
-	let line = `before:content-[""] before:h-[0.9375rem] before:w-0 before:absolute before:top-[calc(50%_-_7px)] before:border-x-[hsla(0,0%,100%,0.22)] before:border-l before:border-solid before:border-r before:-left-1.5`
 	return (
 		<>
 			{loading && <LoadingDefaultComponent />}
@@ -56,22 +54,22 @@ function NavbarComponent(): JSX.Element {
 				<ul className='flex justify-items-center mt-1 mb-0 mx-0 pl-0'>
 					<li className='group relative min-h-[26px] no-underline text-sm text-[#fff] font-light items-center flex cursor-pointer mx-2 my-0'>
 						<span className='hover:text-[rgba(255,255,255,0.7)]' onClick={handleOpenNewTab}>
-							Kênh người bán
+							{t`HEADER.NAVBAR.LABEL.SELLER`}
 						</span>
 						<div className="group-hover:block hidden w-[186px] bg-[#fff] absolute animate-[fadeIn_ease-in_0.3s] z-[2] shadow-[0_1px_2px_rgb(0,0,0,0.1)] p-2 rounded-sm left-0 top-[120%] before:content-[''] before:absolute before:w-full before:h-5 before:block before:z-[2] before:left-0 before:-top-4">
-							<img className='w-full h-full' src='assets/Img/qr-code.png' alt='qR' />
+							<img className='w-full h-full' src='assets/Img/qr-code.png' alt='' />
 							<div className='flex justify-between'>
 								<div className='ml-[15px]'>
-									<img className='h-[15px]' src='/assets/Img/gg-play.png' alt='Google' />
+									<img className='h-[15px]' src='/assets/Img/gg-play.png' alt='' />
 								</div>
 								<div className='mr-[11px]'>
-									<img className='h-[15px]' src='/assets/Img/app-store.png' alt='App store' />
+									<img className='h-[15px]' src='/assets/Img/app-store.png' alt='' />
 								</div>
 							</div>
 						</div>
 					</li>
 					<li className='relative min-h-[26px] no-underline text-sm font-light text-[#fff] items-center flex mx-2 my-0'>
-						<span className='hover:text-[rgba(255,255,255,0.7)]'> Kết nối</span>
+						<span className='hover:text-[rgba(255,255,255,0.7)]'>{t`HEADER.NAVBAR.LABEL.CONNECT`}</span>
 						<NavLink to='#' className='items-center flex text-[#fff] no-underline hover:text-[unset]'>
 							<span className='text-lg mx-1 my-0'>
 								<i className='fa-brands fa-facebook-square'></i>
@@ -97,11 +95,10 @@ function NavbarComponent(): JSX.Element {
 							<span className='text-[0.625rem] absolute leading-[0.875rem] text-[#ee4d2d] bg-[#fff] px-[7px] py-px rounded-[10px] border-2 border-solid border-[#ee4d2d] right-[58px] -top-px'>
 								{totalNotify}
 							</span>
-							Thông báo
+							{t`HEADER.NAVBAR.LABEL.NOTIFY`}
 						</NavLink>
 						{!isLoadingNotification && <HeaderNotifyComponent data={dataNotify?.response || []} />}
 					</li>
-
 					<li className='relative min-h-[26px] no-underline text-sm font-light text-[#fff] items-center flex mx-2 my-0'>
 						<NavLink
 							to='#'
@@ -111,15 +108,15 @@ function NavbarComponent(): JSX.Element {
 									<i className='fa-solid fa-circle-question'></i>
 								</span>
 							</div>
-							Trợ giúp
+							{t`HEADER.NAVBAR.LABEL.HELP`}
 						</NavLink>
 					</li>
 					{isLogin ? (
 						<li className='group no-underline text-sm font-light text-[#fff] min-h-[26px] justify-items-center relative items-center flex mx-2 my-0'>
 							<img
-								className='text-sm font-light text-[#fff] w-[22px] h-[22px] border rounded-[50%] border-solid border-[rgb(0,0,0,0.2)]'
 								src={dataUser?.avatar}
-								alt='UserImg'
+								alt={dataUser?.name}
+								className='text-sm font-light text-[#fff] w-[22px] h-[22px] border rounded-[50%] border-solid border-[rgb(0,0,0,0.2)]'
 							/>
 							<span className='text-sm font-normal text-[#fff] ml-1 group-hover:text-[rgba(255,255,255,0.7)]'>
 								{dataUser?.name}
@@ -128,7 +125,7 @@ function NavbarComponent(): JSX.Element {
 								<li className='hover:bg-[#fafafa]'>
 									<NavLink to='/user/profile'>
 										<span className='no-underline text-[#333] text-[0.875rem] block !pl-4 py-2 hover:text-[#26aa99]'>
-											Tài khoản của tôi
+											{t`HEADER.NAVBAR.LABEL.ACCOUNT`}
 										</span>
 									</NavLink>
 								</li>
@@ -139,7 +136,7 @@ function NavbarComponent(): JSX.Element {
 									}}>
 									<NavLink to='/user/purchase'>
 										<span className='no-underline text-[#333] text-[0.875rem] block !pl-4 py-2 hover:text-[#26aa99]'>
-											Đơn mua
+											{t`HEADER.NAVBAR.LABEL.PURCHASE`}
 										</span>
 									</NavLink>
 								</li>
@@ -151,7 +148,7 @@ function NavbarComponent(): JSX.Element {
 									<span
 										onClick={onLogout}
 										className='no-underline text-[#333] text-[0.875rem] block !pl-4 py-2 hover:text-[#26aa99]'>
-										Đăng xuất
+										{t`HEADER.NAVBAR.LABEL.LOGOUT`}
 									</span>
 								</li>
 							</ul>
@@ -163,7 +160,7 @@ function NavbarComponent(): JSX.Element {
 									<NavLink
 										to='/auth/register'
 										className='no-underline text-sm text-[#fff] items-center flex font-normal leading-[2.125rem] hover:text-[rgba(255,255,255,0.7)]'>
-										Đăng ký
+										{t`HEADER.NAVBAR.LABEL.REGISTER`}
 									</NavLink>
 								</li>
 							</div>
@@ -172,7 +169,7 @@ function NavbarComponent(): JSX.Element {
 									<NavLink
 										to='/auth/login'
 										className=' no-underline text-sm text-[#fff] items-center flex font-normal leading-[2.125rem] hover:text-[rgba(255,255,255,0.7)]'>
-										Đăng nhập
+										{t`HEADER.NAVBAR.LABEL.LOGIN`}
 									</NavLink>
 								</li>
 							</div>

@@ -1,13 +1,11 @@
-//? LIBRARY
 import { useState, memo, useEffect } from 'react'
 import { NavLink, useParams } from 'react-router-dom'
-//? APPS
+import { useTranslation } from 'react-i18next'
 import { useMutationResetPassWord } from '../../../modules/auth/hooks'
 import { LoadingDefaultComponent } from '../../../modules/shared/loading'
 import { IResetPasswordData } from '../../../modules/auth/interfaces'
 import { LoginFaceBookComponent, LoginGoogleComponent } from '../../../modules/auth/components'
 import { validateResetPassword } from '../../../modules/auth/helpers'
-import { useTranslation } from 'react-i18next'
 
 function ResetPassWordPage(): JSX.Element {
 	const params = useParams()

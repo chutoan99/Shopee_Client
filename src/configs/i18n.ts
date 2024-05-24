@@ -9,15 +9,34 @@ import cartTranslationVI from '../modules/cart/i18n/vn.json'
 import orderTranslationVI from '../modules/order/i18n/vn.json'
 import categoryTranslationVI from '../modules/home/category/i18n/vn.json'
 import shopTranslationVI from '../modules/shop/i18n/vn.json'
+import headerCartTranslationVI from '../modules/shared/header/cart/i18n/vn.json'
+import headerNavbarTranslationVI from '../modules/shared/header/navbar/i18n/vn.json'
+import headerNotiFyTranslationVI from '../modules/shared/header/notify/i18n/vn.json'
+import headerHistoryTranslationVI from '../modules/shared/header/searchHistory/i18n/vn.json'
+
 // the translations
 const resources = {
 	en: {
-		// translation: translationEN
+		translation: {}
 	},
 	vi: {
 		translation: {
 			AUTH: {
 				...authTranslationVI
+			},
+			HEADER: {
+				CART: {
+					...headerCartTranslationVI
+				},
+				NAVBAR: {
+					...headerNavbarTranslationVI
+				},
+				NOTIFY: {
+					...headerNotiFyTranslationVI
+				},
+				HISTORY: {
+					...headerHistoryTranslationVI
+				}
 			},
 			USER_SYSTEM: {
 				ACCOUNT: {
@@ -27,10 +46,10 @@ const resources = {
 			CART: {
 				...cartTranslationVI
 			},
-			ORDER:{
+			ORDER: {
 				...orderTranslationVI
 			},
-			CATEGORY:{
+			CATEGORY: {
 				...categoryTranslationVI
 			},
 			SHOP: {

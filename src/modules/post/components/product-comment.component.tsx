@@ -3,10 +3,10 @@ import { useEffect, useState } from 'react'
 import { Rating } from 'react-rainbow-components'
 //? APPS
 import { formatTime } from '../../../utils/generateTime'
-import { generateStart } from '../../../utils/generateStart'
 import { useParams } from 'react-router-dom'
 import { useGetCommentsQuery } from '../../comment/hooks'
 import { IComment } from '../../comment/interfaces'
+import { generateStart } from '../helpers'
 
 function ProductCommentComponent() {
 	const params = useParams()
