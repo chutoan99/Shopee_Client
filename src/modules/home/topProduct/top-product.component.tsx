@@ -11,8 +11,9 @@ export default function TopProductComponent(): JSX.Element {
 	const { data, isLoading } = useGetTopProductQuery()
 
 	return (
+		<>
+					{!isLoading && (
 		<div className='col l-12 mo-12 c-12'>
-			{!isLoading && (
 				<div className='pt-[20px]'>
 					<div className='bg-[#fff]'>
 						<div className="px-[20px] flex justify-between pb-[10px] pt-[20px] border-b-['1px] border-b-[rgba(0,0,0,0.05)'] border-solid">
@@ -27,8 +28,8 @@ export default function TopProductComponent(): JSX.Element {
 						<div className='mb-[10px]' id='topProduct'>
 							<div className='row sm- px-[15px] py-[12px]'>
 								<Slider {...topProductConfig.settings}>
-									{data?.response?.map((item: ITopProDucts, index: number) => (
-										<NavLink key={index} to='/top-products'>
+									{data?.response?.map((item: ITopProDucts) => (
+										<NavLink key={item.id} to='/top-products'>
 											<div
 												className='relative'
 												style={{
@@ -65,7 +66,9 @@ export default function TopProductComponent(): JSX.Element {
 						</div>
 					</div>
 				</div>
+				</div>
 			)}
-		</div>
+		</>
+
 	)
 }
