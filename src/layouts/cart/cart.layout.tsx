@@ -39,7 +39,7 @@ export default function CartLayout({ children }: any): JSX.Element {
 									className='header_input w-full h-full text-sm text-[#333] px-3 py-0 rounded-[3px] border-[none] focus:border-none focus:outline-none'
 									value={payload.text}
 									onChange={(e) =>
-										setPayload((prev: any) => {
+										setPayload(() => {
 											return {
 												text: e.target.value
 											}
@@ -48,6 +48,8 @@ export default function CartLayout({ children }: any): JSX.Element {
 								/>
 							</div>
 							<button
+								type='button'
+								aria-label='cart'
 								className='h-[34px] w-[60px] bg-[#ee4d2d] mr-[3px] rounded-[3px] border-[none]'
 								onClick={onSearch}>
 								<span className='text-[0.875rem] text-[#fff]'>
