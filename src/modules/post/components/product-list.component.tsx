@@ -7,9 +7,9 @@ import 'react-lazy-load-image-component/src/effects/blur.css'
 //? APPS
 import { IPostBase } from '../interfaces'
 import { formatPrice } from '../../../utils/formatPrice'
-import { generateStart } from '../../../utils/generateStart'
 import { useAppDispatch } from '../../../hooks/hooks'
 import { AppDispatch, OtherActions } from '../../../redux'
+import { generateStart } from '../helpers'
 
 type Props = {
 	items: IPostBase[]

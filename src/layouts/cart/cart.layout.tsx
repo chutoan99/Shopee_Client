@@ -2,10 +2,10 @@
 import { useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { Toaster } from 'react-hot-toast'
-import { useCreateHistorySearchMutation } from '../../modules/shared/header/searchHistory/hooks'
 import { useGetCartsQuery } from '../../modules/cart/hooks'
 import { LogoComponent, NavbarComponent } from '../../modules/shared/header'
 import { LoadingDefaultComponent } from '../../modules/shared'
+import { useCreateHistorySearchMutation } from '../../modules/shared/header/searchHistory/hooks'
 //? APPS
 
 export default function CartLayout({ children }: any): JSX.Element {

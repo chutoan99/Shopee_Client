@@ -1,16 +1,14 @@
-//? LIBRARY
-
 import { useState, useEffect } from 'react'
-import { NavLink, useLocation } from 'react-router-dom'
-//? APPS
 import { Toaster } from 'react-hot-toast'
-import { FooterComponent } from '../../modules/shared'
 import { useTranslation } from 'react-i18next'
+import { NavLink, useLocation } from 'react-router-dom'
+import { FooterComponent } from '../../modules/shared'
 
 export default function AuthLayout({ children }: any): JSX.Element {
 	const { pathname } = useLocation()
-	const {t} = useTranslation()
+	const { t } = useTranslation()
 	const [heading, setHeading] = useState<string>('')
+
 	useEffect(() => {
 		switch (pathname) {
 			case '/auth/register':
@@ -35,7 +33,9 @@ export default function AuthLayout({ children }: any): JSX.Element {
 				<div className='grid wide'>
 					<div className='flex item-center'>
 						<div className='flex flex-1 pl-[1.125rem]'>
-							<NavLink className='no-underline text-[rgba(0,0,0,0.87)] a flex items-end hover:text-[unset]' to='/'>
+							<NavLink
+								className='no-underline text-[rgba(0,0,0,0.87)] a flex items-end hover:text-[unset]'
+								to='/'>
 								<div />
 								<svg
 									viewBox='0 0 192 65'

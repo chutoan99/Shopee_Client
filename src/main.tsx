@@ -10,7 +10,7 @@ import { I18nextProvider } from 'react-i18next'
 import i18n from './configs/i18n'
 import App from './routes/Routes'
 import { Provider } from 'react-redux'
-import { BrowserRouter as Router } from 'react-router-dom'
+import { BrowserRouter } from 'react-router-dom'
 import { store } from './redux'
 
 const rootElement = document.getElementById('root')
@@ -18,9 +18,9 @@ const rootElement = document.getElementById('root')
 ReactDOM.render(
 	<Provider store={store}>
 		<I18nextProvider i18n={i18n}>
-			<Router>
+			<BrowserRouter>
 				<App />
-			</Router>
+			</BrowserRouter>
 		</I18nextProvider>
 	</Provider>,
 	rootElement

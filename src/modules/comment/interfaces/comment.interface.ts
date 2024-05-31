@@ -33,8 +33,8 @@ export interface IComment {
 	is_replied: boolean
 	ctime: number
 	mtime: number
-	createdAt: Date
-	updatedAt: Date
+	createdAt: string
+	updatedAt: string
 	comment_rep: null | {
 		cmtid: number
 		orderid: number
