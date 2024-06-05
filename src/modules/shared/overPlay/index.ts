@@ -1,1 +1,1 @@
-export { default as OverPlayComponent } from './over-play.components'
+export { default as OverPlayComponent } from './over-play.component'

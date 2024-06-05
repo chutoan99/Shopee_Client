@@ -17,10 +17,10 @@ import { FlashSaleApi } from '../modules/home/flashSale/hooks'
 import { BatchListApi } from '../modules/home/batchList/hooks'
 import { TopProductApi } from '../modules/home/topProduct/hooks'
 import { CategoryTreeApi } from '../modules/home/category/hooks'
-import { UserApi } from '../modules/user-system/account/hooks'
 import { NotifyApi } from '../modules/shared/header/notify/hooks'
 import { SearchSuggestApi } from '../modules/shared/header/searchSuggest/hooks'
 import { SearchHistoryApi } from '../modules/shared/header/searchHistory/hooks'
+import { UserApi } from '../modules/user-system/modules/account/hooks'
 
 const RootReducer: any = {
 	others: otherReducer,

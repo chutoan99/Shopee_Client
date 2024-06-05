@@ -1,1 +1,1 @@
-export { default as ShopInfoComponent } from './shop.component'
+export { default as ShopPage } from './shop.page'

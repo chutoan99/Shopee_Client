@@ -1,10 +1,14 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, ReactNode } from 'react'
 import { Toaster } from 'react-hot-toast'
 import { useTranslation } from 'react-i18next'
 import { NavLink, useLocation } from 'react-router-dom'
 import { FooterComponent } from '../../modules/shared'
 
-export default function AuthLayout({ children }: any): JSX.Element {
+type AuthLayoutModels = {
+	children: ReactNode
+}
+
+export default function AuthLayout({ children }: AuthLayoutModels): JSX.Element {
 	const { pathname } = useLocation()
 	const { t } = useTranslation()
 	const [heading, setHeading] = useState<string>('')

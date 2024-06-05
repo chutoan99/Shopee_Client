@@ -1,7 +1,5 @@
 import { lazy } from 'react'
-
 import { DefaultLayout, UserLayout, CartLayout, AuthLayout, OrderLayout, SearchLayout } from '../layouts'
-//? lAYOUTS
 
 export type RouteConFig = {
 	path: string
@@ -13,119 +11,119 @@ const routes: RouteConFig[] = [
 	{
 		// OK
 		path: '/',
-		component: lazy(() => import('../pages/home/home.page')),
+		component: lazy(() => import('../modules/home/home.page')),
 		layout: DefaultLayout
 	},
 	{
 		// OK
 		path: '/daily-discover',
-		component: lazy(() => import('../pages/daily/daily.page')),
+		component: lazy(() => import('../modules/post/daily.page')),
 		layout: DefaultLayout
 	},
 	{
 		// OK
 		path: '/flash-sale',
-		component: lazy(() => import('../pages/flashSale/flash-sale.page')),
+		component: lazy(() => import('../modules/flashSale/flash-sale.page')),
 		layout: DefaultLayout
 	},
 	{
 		// OK
 		path: '/mall',
-		component: lazy(() => import('../pages/shopeMall/shop-mall.page')),
+		component: lazy(() => import('../modules/shopeMall/shop-mall.page')),
 		layout: DefaultLayout
 	},
 	{
 		// OK
 		path: '/top-products',
-		component: lazy(() => import('../pages/topProduct/top-product.page')),
+		component: lazy(() => import('../modules/topProduct/top-product.page')),
 		layout: DefaultLayout
 	},
 	{
 		path: '/order',
-		component: lazy(() => import('../pages/oder/oder.page')),
+		component: lazy(() => import('../modules/order/oder.page')),
 		layout: OrderLayout
 	},
 	{
 		path: '/shop/:shopid',
-		component: lazy(() => import('../pages/shop/shop.page')),
+		component: lazy(() => import('../modules/shop/shop.page')),
 		layout: DefaultLayout
 	},
 	{
 		path: '/cart',
-		component: lazy(() => import('../pages/cart/cart.page')),
+		component: lazy(() => import('../modules/cart/cart.page')),
 		layout: CartLayout
 	},
 	{
 		// OK
 		path: '/auth/login',
-		component: lazy(() => import('../pages/auth/login/login.page')),
+		component: lazy(() => import('../modules/auth/modules/login/login.page')),
 		layout: AuthLayout
 	},
 	{
 		// OK
 		path: '/auth/register',
-		component: lazy(() => import('../pages/auth/register/register.page')),
+		component: lazy(() => import('../modules/auth/modules/register/register.page')),
 		layout: AuthLayout
 	},
 	{
 		path: '/auth/forgot-password',
-		component: lazy(() => import('../pages/auth/forgotPassword/forgot-password.page')),
+		component: lazy(() => import('../modules/auth/modules/forgotPassword/forgot-password.page')),
 		layout: AuthLayout
 	},
 	{
 		path: '/auth/reset-password/:email/:token',
-		component: lazy(() => import('../pages/auth/resetPassword/reset-password.page')),
+		component: lazy(() => import('../modules/auth/modules/resetPassword/reset-password.page')),
 		layout: AuthLayout
 	},
 	{
 		// OK
 		path: '/search/:search',
-		component: lazy(() => import('../pages/search/search.page')),
+		component: lazy(() => import('../modules/search/search.page')),
 		layout: SearchLayout
 	},
 	{
 		// OK
 		path: '/categories/:display_name/:catid',
-		component: lazy(() => import('../pages/category/category.page')),
+		component: lazy(() => import('../modules/category/category.page')),
 		layout: SearchLayout
 	},
 	{
 		path: 'user/purchase/',
-		component: lazy(() => import('../pages/user/purchase/purchase.page')),
+		component: lazy(() => import('../modules/user-system/modules/purchase/purchase.page')),
 		layout: UserLayout
 	},
 	{
 		path: 'user/purchase/order/:orderid',
-		component: lazy(() => import('../pages/orderDetail/order-detail.page')),
+		component: lazy(() => import('../modules/order/order-detail.page')),
 		layout: UserLayout
 	},
 	{
 		// OK
 		path: 'user/profile',
-		component: lazy(() => import('../pages/user/profile/profile.page')),
+		component: lazy(() => import('../modules/user-system/modules/account/account.page')),
 		layout: UserLayout
 	},
 	{
 		// OK
 		path: 'user/notify',
-		component: lazy(() => import('../pages/user/notify/notify.page')),
+		component: lazy(() => import('../modules/user-system/modules/notify/notify.page')),
 		layout: UserLayout
 	},
 	{
 		// OK
 		path: 'user/voucher',
-		component: lazy(() => import('../pages/user/voucher/voucher.page')),
+		component: lazy(() => import('../modules/user-system/modules/notify/notify.page')),
 		layout: UserLayout
 	},
 	{
 		// OK
 		path: '/*',
-		component: lazy(() => import('../pages/pageNotFound/page-not-found.page')),
+		component: lazy(() => import('../modules/pageNotFound/page-not-found.page')),
 		layout: DefaultLayout
 	},
 	{
 		path: '/product/:itemid/:shopid',
-		component: lazy(() => import('../pages/productDetail/product-detail.page')),
+		component: lazy(() => import('../modules/post/product-detail.page')),
 		layout: DefaultLayout
 	}
 ]

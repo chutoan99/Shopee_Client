@@ -1,8 +1,1 @@
-export * from "./banner"
-export * from "./batchList"
-export * from "./category"
-export * from "./flashSale"
-export * from "./homeFilter"
-export * from "./shopMall"
-export * from "./topProduct"
-export * from "./popup"
+export { default as HomePage } from './home.page'

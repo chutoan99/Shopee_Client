@@ -1,1 +1,1 @@
-export { default as SearchEmptyComponent } from './search-empty.components'
+export { default as SearchEmptyComponent } from './search-empty.component'

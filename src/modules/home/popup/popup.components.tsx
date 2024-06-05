@@ -19,7 +19,7 @@ export default function PopupComponent(): JSX.Element {
 	return (
 		<>
 			{popup ? (
-				<OverPlayComponent handelClose={handelClose}>
+				<OverPlayComponent handleClose={handelClose}>
 					<img
 						src='/assets/Img/banner.png'
 						alt='popup'
