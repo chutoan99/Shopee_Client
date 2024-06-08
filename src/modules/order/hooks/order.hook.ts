@@ -1,7 +1,5 @@
-//? LIBRARY
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
-import { ICreateOrdersResponse, IOrderData, IOrderResponse, IOrdersResponse } from '../interfaces'
-//? TYPE & SERVICES
+import { ICreateOrdersResponse, IOrderData, IOrderParams, IOrderResponse, IOrdersResponse } from '../interfaces'
 
 export const OrderApi = createApi({
 	reducerPath: 'Order',
@@ -14,8 +12,21 @@ export const OrderApi = createApi({
 		}
 	}),
 	endpoints: (build) => ({
-		getOrders: build.query<IOrdersResponse, void>({
-			query: () => 'order'
+		searchOrders: build.query<IOrdersResponse, IOrderParams>({
+			query: (args: IOrderParams) => {
+				return {
+					url: `/order/search`,
+					method: 'get',
+					params: {
+						shop_name: args.shop_name,
+						type: args.type
+					}
+				}
+			}
+		}),
+
+		getOrder: build.query<IOrderResponse, number>({
+			query: (orderid: number) => `order/${orderid}`
 		}),
 
 		createOrder: build.mutation<ICreateOrdersResponse, IOrderData[]>({
@@ -26,35 +37,7 @@ export const OrderApi = createApi({
 					body
 				}
 			}
-		}),
-
-		getOrder: build.query<IOrderResponse, any>({
-			query: (payload: any) => `order/${payload.orderid}`
-		}),
-
-		searchOrders: build.query<IOrdersResponse, any>({
-			query: (args: any) => {
-				return {
-					url: `/order/search?shop_name=${args}`,
-					method: 'get'
-				}
-			}
-		}),
-
-		searchTypeOrders: build.query<IOrdersResponse, any>({
-			query: (args: any) => {
-				return {
-					url: `/order/search?type=${args}`,
-					method: 'get'
-				}
-			}
 		})
 	})
 })
-export const {
-	useCreateOrderMutation,
-	useGetOrderQuery,
-	useGetOrdersQuery,
-	useSearchOrdersQuery,
-	useSearchTypeOrdersQuery
-} = OrderApi
+export const { useCreateOrderMutation, useGetOrderQuery, useSearchOrdersQuery } = OrderApi

@@ -6,11 +6,12 @@ import { IOrder } from '../interfaces'
 import { IPostBase } from '../../post/interfaces'
 import { formatPrice } from '../../../utils/formatPrice'
 
-type StatusOrderModel = {
+type ListsOrderModel = {
 	data: IOrder
 }
 
-function ListsOrderComponent({ data }: StatusOrderModel): JSX.Element {
+function ListsOrderComponent({ data }: ListsOrderModel): JSX.Element {
+	console.log(data,"csscscsc")
 	return (
 		<div className='bg-neutral-50 px-6 py-3'>
 			<div className='flex items-center justify-between pt-0 pb-3 px-0'>
@@ -130,9 +131,9 @@ function ListsOrderComponent({ data }: StatusOrderModel): JSX.Element {
 										</div>
 										<div className='mt-0 mx-0'>
 											<div className='text-[rgba(0,0,0,0.54)] mb-[5px]'>
-												Phân loại hàng: {data?.item_option[index]}
+												Phân loại hàng: {data?.tierVariation?.split(',')[index]}, {data?.item_option?.split(',')[index]}
 											</div>
-											{/* <div className=''>x{dataOrder?.amount[index]}</div> */}
+											<div className=''>x{data?.amount?.split(',')[index]}</div>
 										</div>
 									</div>
 								</div>

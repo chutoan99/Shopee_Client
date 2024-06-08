@@ -1,49 +1,29 @@
-//? LIBRARY
 import { Link, NavLink } from 'react-router-dom'
 import { memo, useEffect, useState } from 'react'
 import { LoadingDefaultComponent } from '../../../shared/loading'
-import { IOrder, ITabs } from '../../../order/interfaces'
-import { useGetOrdersQuery, useSearchOrdersQuery, useSearchTypeOrdersQuery } from '../../../order/hooks'
+import { IOrder, IOrderParams, ITabs } from '../../../order/interfaces'
+import { useSearchOrdersQuery } from '../../../order/hooks'
 import { formatPrice } from '../../../../utils/formatPrice'
 import { stateOrder } from '../../../order/resources'
 import { LIST_TAB } from './resources'
-//? APPS
 
 function PurchasePage(): JSX.Element {
 	const [dataOrders, setDataOrders] = useState<IOrder[]>([])
-	const [currentTab, setCurrentTab] = useState<stateOrder>(stateOrder.is_all)
-	const [shopName, setShopName] = useState('')
-	const { data, isLoading } = useGetOrdersQuery()
-	const { data: dataResSearchOrders, refetch: onRefetchSearch } = useSearchOrdersQuery(shopName)
-	const { data: dataResSearchTypeOrders, refetch: onRefetchSearchType } = useSearchTypeOrdersQuery(currentTab)
+	const [orderParams, setOrderParams] = useState<IOrderParams>({
+		type: stateOrder.is_all,
+		shop_name: ''
+	})
 
-	useEffect(() => {
-		dataResSearchOrders?.response && setDataOrders(dataResSearchOrders.response || [])
-	}, [dataResSearchOrders])
+	const { data, refetch, isLoading } = useSearchOrdersQuery(orderParams)
 
 	const onKeyDown = (e: any) => {
-		if (e.code === 'Enter' && shopName !== '') {
-			onRefetchSearch()
+		if (e.code === 'Enter' && orderParams.shop_name !== '') {
+			refetch()
 		}
 	}
-
 	useEffect(() => {
-		switch (currentTab) {
-			case stateOrder.is_all:
-				data?.response && setDataOrders(data?.response)
-				break
-			case stateOrder.is_cancelled:
-			case stateOrder.is_delivering:
-			case stateOrder.is_returns:
-			case stateOrder.is_success:
-			case stateOrder.is_transport:
-			case stateOrder.is_wait_for_pay:
-			case stateOrder.is_wait_for_confirm:
-				onRefetchSearchType()
-				dataResSearchTypeOrders?.response && setDataOrders(dataResSearchTypeOrders?.response || [])
-				break
-		}
-	}, [currentTab])
+		data?.response && setDataOrders(data.response || [])
+	}, [data])
 
 	return (
 		<>
@@ -55,9 +35,17 @@ function PurchasePage(): JSX.Element {
 						{LIST_TAB(data?.tab as ITabs)?.map((tab: any, index: number) => (
 							<span
 								key={index}
-								onClick={() => setCurrentTab(index)}
+								onClick={() => {
+									setOrderParams((prev: IOrderParams) => {
+										return {
+											...prev,
+											type: index
+										}
+									})
+								}}
 								className={`bg-[#fff] cursor-pointer select-none text-base leading-[1.188rem] text-center text-[rgba(0,0,0,0.8)] flex flex-1 overflow-hidden items-center justify-center transition-[color] duration-[0.2s] px-0 py-3 hover:text-[#ee4d2d] ${
-									currentTab === index && 'text-[#ee4d2d] border-[#ee4d2d]  border-b-2  border-solid'
+									orderParams.type === index &&
+									'text-[#ee4d2d] border-[#ee4d2d]  border-b-2  border-solid'
 								}`}
 								style={{
 									WebkitUserSelect: 'none',
@@ -75,7 +63,7 @@ function PurchasePage(): JSX.Element {
 						))}
 					</div>
 
-					{currentTab === stateOrder.is_all && (
+					{orderParams.type === stateOrder.is_all && (
 						<div className='bg-[#eaeaea] flex items-center shadow-[0_1px_1px_0_rgba(0,0,0,0.05)] text-[#212121] mx-0 my-3 px-0 py-[10px] rounded-sm h-[45px]'>
 							<svg
 								width='19px'
@@ -100,8 +88,15 @@ function PurchasePage(): JSX.Element {
 								</g>
 							</svg>
 							<input
-								value={shopName}
-								onChange={(e) => setShopName(e.target.value)}
+								value={orderParams.shop_name}
+								onChange={(e) => {
+									setOrderParams((prev: IOrderParams) => {
+										return {
+											...prev,
+											shop_name: e.target.value
+										}
+									})
+								}}
 								autoComplete='off'
 								type='text'
 								placeholder='Bạn có thể tìm kiếm theo tên Shop để tìm kiếm sản phẩm'
@@ -317,7 +312,7 @@ function PurchasePage(): JSX.Element {
 										</div>
 										<hr className='border-b-[rgba(0,0,0,0.06)] border-b border-solid' />
 
-										{cart.posts.map((post: any, index: number) => (
+										{cart.posts.map((post: any, i: number) => (
 											<Link to='#' key={post.itemid} className='mb-[10px]'>
 												<div className=''>
 													<div>
@@ -357,11 +352,16 @@ function PurchasePage(): JSX.Element {
 																			<span>{post?.name}</span>
 																		</div>
 																	</NavLink>
+
 																	<div className='mt-0 mx-0'>
 																		<div className='text-[rgba(0,0,0,0.54)] mb-[5px]'>
-																			Phân loại hàng: {cart?.item_option[index]}
+																			Phân loại hàng:{' '}
+																			{cart?.tierVariation?.split(',')[i]},{' '}
+																			{cart?.item_option?.split(',')[i]}
 																		</div>
-																		{/* <div className=''>x{cart?.amount[index]}</div> */}
+																		<div className=''>
+																			x{cart?.amount?.split(',')[i]}
+																		</div>
 																	</div>
 																</div>
 															</div>

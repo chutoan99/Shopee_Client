@@ -615,7 +615,7 @@ function CartPage(): JSX.Element {
 										<h3></h3>
 										<div className='flex !justify-end min-w-[58px] box-border col-start-1 col-end-2 flex-[0_0_auto] pl-5 pr-3 py-3'>
 											<label className='shopping_cart-checkBox'>
-												<label htmlFor='check-All' className='hiden'>
+												<label htmlFor='check-All' className='hidden'>
 													check
 												</label>
 												<input type='checkbox' id='check-All' disabled />

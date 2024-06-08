@@ -1,4 +1,3 @@
-//? LIBRARY
 import { toast } from 'react-hot-toast'
 import { memo, useEffect, useState } from 'react'
 import { NavLink, useParams } from 'react-router-dom'
@@ -10,7 +9,6 @@ import { ICartData } from '../../cart/interfaces'
 import { AppDispatch, CartActions } from '../../../redux'
 import { useTranslation } from 'react-i18next'
 import { generateStart } from '../helpers'
-//? APPS
 
 type ProductDetailModel = {
 	data: IProductDetail
@@ -21,38 +19,71 @@ function ProductDetailComponent({ data }: ProductDetailModel): JSX.Element {
 	const dispatch: AppDispatch = useAppDispatch()
 	const [createCart] = useCreateCartMutation()
 	const { data: dataCart, refetch: FetchCarts } = useGetCartsQuery()
-
 	const [showImg, setShowImg] = useState(false)
 	const [indexImg, setIndexImg] = useState(0)
-	const [amount, setAmount] = useState(1)
-	const [NewOption, setNewOption] = useState(undefined || '')
 	const [showTableSize, setShowTableSize] = useState(false)
+	const [payload, setPayload] = useState<ICartData>({
+		itemid: 0,
+		shopid: 0,
+		amount: 1,
+		item_option: '',
+		tierVariation: ''
+	})
+
+	useEffect(() => {
+		setPayload((prev: ICartData) => {
+			return {
+				...prev,
+				itemid: Number(params.itemid),
+				shopid: Number(params.shopid)
+			}
+		})
+	}, [params])
 
 	const onIncrease = () => {
-		setAmount(amount + 1)
+		setPayload((prev: ICartData) => {
+			return {
+				...prev,
+				amount: payload.amount + 1
+			}
+		})
 	}
 
 	const onReduced = () => {
-		if (amount > 1) {
-			setAmount(amount - 1)
+		if (payload.amount > 1) {
+			setPayload((prev: ICartData) => {
+				return {
+					...prev,
+					amount: payload.amount - 1
+				}
+			})
 		}
-		if (amount < 1) {
-			setAmount(1)
+		if (payload.amount < 1) {
+			setPayload((prev: ICartData) => {
+				return {
+					...prev,
+					amount: 1
+				}
+			})
 		}
 	}
 
 	const onAddToCart = async () => {
-		if (NewOption === '' && data?.name_tierVariations) {
+		if (payload.item_option === '' && data?.name_tierVariations) {
 			return toast.error(t('CART.MESSAGE.CHOOSE_PRODUCT'))
-		}
-		const payload: ICartData = {
-			itemid: Number(params.itemid),
-			shopid: Number(params.shopid),
-			amount: amount,
-			item_option: NewOption || ''
 		}
 		const response = await createCart(payload).unwrap()
 		if (response.err === 0) {
+			setPayload((prev: ICartData) => {
+				return {
+					...prev,
+					itemid: 0,
+					shopid: 0,
+					amount: 1,
+					item_option: '',
+					tierVariation: ''
+				}
+			})
 			toast.success(t('CART.MESSAGE.ADD_CART'))
 			FetchCarts()
 		}
@@ -185,41 +216,57 @@ function ProductDetailComponent({ data }: ProductDetailModel): JSX.Element {
 										Mua Kèm Deal Sốc
 									</label>
 								</div>
-								<div className='mt-[5px]'>
-									<h3 className='text-[#757575] w-[110px] capitalize shrink-0'>
-										{data?.name_tierVariations}
-									</h3>
-								</div>
-								<div className='flex-wrap flex max-w-[32.1875rem]'>
-									{data?.option_tierVariations[0]?.split(',')?.map((option: any, index: number) => (
-										<button
-											key={index}
-											style={{
-												outline: 0,
-												wordBreak: 'break-word'
-											}}
-											className={`overflow-visible bg-[#fff] cursor-pointer min-w-[5rem] min-h-[2.125rem] box-border text-[rgba(0,0,0,0.8)] text-left border relative inline-flex items-center justify-center ml-0 mr-2 mt-0 mb-2 px-3 py-1 rounded-sm border-solid border-[rgba(0,0,0,0.09)] ${
-												NewOption === option ? '!text-[#ee4d2d] !border-[#ee4d2d]' : ''
-											}`}
-											onClick={() => setNewOption(option)}>
-											{option}
-											{NewOption === option && (
-												<div className="w-[0.9375rem] h-[0.9375rem] absolute overflow-hidden right-0 bottom-0 before:content-[''] before:absolute before:right-[-0.9375rem] before:border-b-[#ee4d2d] before:border-[0.9375rem] before:border-solid before:border-transparent before:bottom-0">
-													<svg
-														enableBackground='new 0 0 12 12'
-														viewBox='0 0 12 12'
-														x={0}
-														y={0}
-														className='absolute text-[#fff] text-[8px] inline-block w-[1em] h-[1em] fill-current right-0 bottom-0'>
-														<g>
-															<path d='m5.2 10.9c-.2 0-.5-.1-.7-.2l-4.2-3.7c-.4-.4-.5-1-.1-1.4s1-.5 1.4-.1l3.4 3 5.1-7c .3-.4 1-.5 1.4-.2s.5 1 .2 1.4l-5.7 7.9c-.2.2-.4.4-.7.4 0-.1 0-.1-.1-.1z' />
-														</g>
-													</svg>
-												</div>
-											)}
-										</button>
-									))}
-								</div>
+								{data?.name_tierVariations && (
+									<>
+										<div className='mt-[5px]'>
+											<h3 className='text-[#757575] w-[110px] capitalize shrink-0'>
+												{data?.name_tierVariations}
+											</h3>
+										</div>
+										<div className='flex-wrap flex max-w-[32.1875rem]'>
+											{data?.option_tierVariations[0]
+												?.split(',')
+												?.map((option: string, index: number) => (
+													<button
+														key={index}
+														style={{
+															outline: 0,
+															wordBreak: 'break-word'
+														}}
+														className={`overflow-visible bg-[#fff] cursor-pointer min-w-[5rem] min-h-[2.125rem] box-border text-[rgba(0,0,0,0.8)] text-left border relative inline-flex items-center justify-center ml-0 mr-2 mt-0 mb-2 px-3 py-1 rounded-sm border-solid border-[rgba(0,0,0,0.09)] ${
+															payload.item_option === option
+																? '!text-[#ee4d2d] !border-[#ee4d2d]'
+																: ''
+														}`}
+														onClick={() =>
+															setPayload((prev: ICartData) => {
+																return {
+																	...prev,
+																	tierVariation: data?.name_tierVariations,
+																	item_option: option
+																}
+															})
+														}>
+														{option}
+														{payload.item_option === option && (
+															<div className="w-[0.9375rem] h-[0.9375rem] absolute overflow-hidden right-0 bottom-0 before:content-[''] before:absolute before:right-[-0.9375rem] before:border-b-[#ee4d2d] before:border-[0.9375rem] before:border-solid before:border-transparent before:bottom-0">
+																<svg
+																	enableBackground='new 0 0 12 12'
+																	viewBox='0 0 12 12'
+																	x={0}
+																	y={0}
+																	className='absolute text-[#fff] text-[8px] inline-block w-[1em] h-[1em] fill-current right-0 bottom-0'>
+																	<g>
+																		<path d='m5.2 10.9c-.2 0-.5-.1-.7-.2l-4.2-3.7c-.4-.4-.5-1-.1-1.4s1-.5 1.4-.1l3.4 3 5.1-7c .3-.4 1-.5 1.4-.2s.5 1 .2 1.4l-5.7 7.9c-.2.2-.4.4-.7.4 0-.1 0-.1-.1-.1z' />
+																	</g>
+																</svg>
+															</div>
+														)}
+													</button>
+												))}
+										</div>
+									</>
+								)}
 
 								{data?.size_chart && (
 									<h3
@@ -257,7 +304,7 @@ function ProductDetailComponent({ data }: ProductDetailModel): JSX.Element {
 												<i className='fa-solid fa-minus'></i>
 											</button>
 											<button className='w-10 h-[30px] border cursor-pointer border-solid border-[#ccc]'>
-												{amount}
+												{payload.amount}
 											</button>
 											<button
 												type='button'
@@ -313,7 +360,7 @@ function ProductDetailComponent({ data }: ProductDetailModel): JSX.Element {
 					<div className="flex-initial  max-w-full max-h-full bg-[#fff] w-[836px] h-[540px] content-[''] flex absolute m-auto inset-y-0">
 						<div className=' ml-3 mr-0 my-3'>
 							<div className='w-[516px] h-[516px]'>
-								<img src={data?.images[indexImg]} alt='img' />
+								<img src={data?.images[0]?.split(',')[indexImg]} alt='img' />
 							</div>
 						</div>
 						<div className='w-[285px] h-[540px] ml-3 mr-0 my-3'>

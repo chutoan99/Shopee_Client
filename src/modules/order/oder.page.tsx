@@ -15,7 +15,7 @@ import { useTranslation } from 'react-i18next'
 
 function OderPage(): JSX.Element {
 	const ship = 30000
-	const {t} = useTranslation()
+	const { t } = useTranslation()
 	const navigate = useNavigate()
 	const { data } = useAppSelector((state: RootState) => state.buyCart)
 	const { data: dataUser } = useAppSelector((state: RootState) => state.user)
@@ -25,6 +25,7 @@ function OderPage(): JSX.Element {
 	const [dataPayload, setDataPayload] = useState<IOrderData[]>([])
 	const [deleteCart] = useDeleteCartMutation()
 	const [createOrder] = useCreateOrderMutation()
+
 	useEffect(() => {
 		const dataTempt: ICart[] = []
 		data?.forEach((item: any) => {
@@ -40,11 +41,12 @@ function OderPage(): JSX.Element {
 		}
 		const newData: IOrderData[] = data.map((item: ICart[]) => {
 			return {
-				item_groups_id: JSON.stringify(item.map((ele) => ele.itemid)),
-				amount: JSON.stringify(item.map((ele) => ele.amount)),
-				item_option: JSON.stringify(item.map((ele) => ele.item_option)),
+				item_groups_id: item.map((ele) => ele.itemid)?.join(','),
+				amount: item.map((ele) => ele.amount)?.join(', '),
+				item_option: item.map((ele) => ele.item_option)?.join(','),
 				final_total: item.reduce((acc, curr) => acc + curr.overview.price * curr.amount, 0) + ship,
 				shopid: item[0]?.shopid,
+				tierVariation: item.map((ele) => ele.tierVariation)?.join(','),
 				shop_name: item[0]?.overview?.shop_name,
 				total_num_items: item.length,
 				note: ''
@@ -250,7 +252,8 @@ function OderPage(): JSX.Element {
 														</NavLink>
 														<div className='mt-0 mx-0'>
 															<div className='text-[rgba(0,0,0,0.54)] mb-[5px]'>
-																Phân loại hàng: {item?.item_option[index]}
+																Phân loại hàng: {item.tierVariation}:{' '}
+																{item?.item_option[index]}
 															</div>
 														</div>
 													</div>

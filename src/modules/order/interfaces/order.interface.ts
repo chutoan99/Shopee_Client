@@ -1,5 +1,10 @@
 import { IPostBase } from '../../post/interfaces'
-import { IUser } from '../../user-system/account/interfaces'
+import { IUser } from '../../user-system/modules/account/interfaces'
+
+export type IOrderParams =  {
+	type: number | null
+	shop_name: string
+}
 
 export type ITabs = {
 	is_all: number
@@ -21,6 +26,7 @@ export type IOrderData = {
 	note: string
 	shopid: number
 	shop_name: string
+	tierVariation: string
 }
 
 export interface IOrdersResponse {
@@ -39,7 +45,6 @@ export interface IOrderResponse {
 export interface ICreateOrdersResponse {
 	err: number
 	msg: string
-	response: any
 }
 
 export interface IOrder {
@@ -49,7 +54,8 @@ export interface IOrder {
 	state: string
 	total_num_items: number
 	note: string
-	amount: number
+	amount: string
+	tierVariation: string
 	item_option: string
 	item_groups_id: string
 	final_total: number

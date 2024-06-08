@@ -110,7 +110,7 @@ function HeaderSearchHistoryComponent(): JSX.Element {
 									</>
 								)}
 							</div>
-							<div className='group relative cursor-pointer pl-4 border-l-[#ccc] border-l border-solid'>
+							{/* <div className='group relative cursor-pointer pl-4 border-l-[#ccc] border-l border-solid'>
 								<span className='text-sm contents text-[#333]'>{t`HEADER.HISTORY.LABEL.IN_SHOP`}</span>
 								<span className='text-[rgb(131,131,131)] text-sm relative ml-2 mr-4 my-0 top-px'>
 									<i className='fa-solid fa-angle-down'></i>
@@ -127,7 +127,7 @@ function HeaderSearchHistoryComponent(): JSX.Element {
 										<i className='fa-solid fa-check text-sm text-[#ee4d2d] hidden ml-3'></i>
 									</li>
 								</ul>
-							</div>
+							</div> */}
 							<button
 								type='button'
 								aria-label='Search'

@@ -3,6 +3,7 @@ export type ICartData = {
 	shopid: number
 	amount: number
 	item_option: string
+	tierVariation: string
 }
 
 export type ICartUpdateData = {
@@ -25,13 +26,11 @@ export interface ICreateCartResponse {
 export interface IUpdateCartResponse {
 	err: number
 	msg: string
-	response: any
 }
 
 export interface IDeleteCartResponse {
 	err: number
 	msg: string
-	response: any
 }
 
 export interface ICart {
@@ -40,6 +39,7 @@ export interface ICart {
 	itemid: number
 	shopid: number
 	amount: number
+	tierVariation: string
 	item_option: string
 	createdAt: string
 	updatedAt: string

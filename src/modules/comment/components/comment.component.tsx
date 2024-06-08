@@ -1,20 +1,18 @@
-//? LIBRARY
 import { toast } from 'react-hot-toast'
 import { NavLink } from 'react-router-dom'
-import { memo, useState } from 'react'
+import { MouseEventHandler, memo, useState } from 'react'
 import { Rating } from 'react-rainbow-components'
-//? APPS
 import { IOrder } from '../../order/interfaces'
 import { CreateComment } from '../services'
 import { LoadingDefaultComponent } from '../../shared/loading'
 
 type RatingModel = {
 	isShow: boolean
-	onCloseModel: any
+	onClose: any
 	data: IOrder
 }
 
-function ModelRattingComponent({ isShow, onCloseModel, data }: RatingModel): JSX.Element {
+function ModelRattingComponent({ isShow, onClose, data }: RatingModel): JSX.Element {
 	const [imageUrls, setImageUrls] = useState<string[]>([])
 	const [fileImages, setFileImages] = useState<any[]>([])
 	const [loading, setLoading] = useState(false)
@@ -53,33 +51,35 @@ function ModelRattingComponent({ isShow, onCloseModel, data }: RatingModel): JSX
 		if (imageUrls?.length === 0) return toast.error('Vui lòng cập nhật hình ảnh')
 		const payloadCreateComment = data?.posts?.map((payload: any, index: number) => {
 			return {
-				itemid: payload.itemid,
+				itemid: payload.item_groups_id?.split(',')[index],
 				shopid: data.shopid,
 				orderid: data.id,
 				images: fileImages,
-				options: data?.option[index],
+				options: data?.item_option?.split(',')[index],
 				model_name: '',
 				comment: payLoad?.comment,
 				rating_star: payLoad?.rating_star
 			}
 		})
+		console.log(payloadCreateComment, 'payloadCreateComment')
 		onCreateComment(payloadCreateComment)
 	}
 
 	const onCreateComment = async (payload: any) => {
 		try {
 			setLoading(true)
+			console.log(payload, 'payload')
 			for (const item of payload) {
 				const response = await CreateComment(item)
 				if (response.err === 0) {
-					onCloseModel()
+					// onClose()
 					toast.success('Bạn vừa thêm bình luận')
 				}
 			}
 		} catch (err: any) {
 			console.log(err)
 		} finally {
-			onCloseModel()
+			// onClose()
 			setLoading(false)
 		}
 	}
@@ -90,7 +90,7 @@ function ModelRattingComponent({ isShow, onCloseModel, data }: RatingModel): JSX
 				<div id='modal'>
 					<div>
 						<div className='fixed z-[600] inset-0'>
-							<div className='w-full h-full bg-[rgba(0,0,0,0.4)]' onClick={onCloseModel} />
+							<div className='w-full h-full bg-[rgba(0,0,0,0.4)]' onClick={onClose} />
 							<div className='absolute -translate-x-2/4 -translate-y-2/4 overflow-visible max-h-full max-w-full left-2/4 top-2/4'>
 								<div style={{ display: 'contents' }}>
 									<div>
@@ -146,7 +146,17 @@ function ModelRattingComponent({ isShow, onCloseModel, data }: RatingModel): JSX
 																				<div className='mt-0 mx-0'>
 																					<div className='text-[rgba(0,0,0,0.54)] mb-[5px]'>
 																						Phân loại hàng:{' '}
-																						{data?.option[index]}
+																						{
+																							data?.tierVariation?.split(
+																								','
+																							)[index]
+																						}
+																						,{' '}
+																						{
+																							data?.item_option?.split(
+																								','
+																							)[index]
+																						}
 																					</div>
 																				</div>
 																			</div>
@@ -219,10 +229,12 @@ function ModelRattingComponent({ isShow, onCloseModel, data }: RatingModel): JSX
 																		}}>
 																		Đúng với mô tả:
 																	</div>
+																	<div id='textarea-label' className='hidden'>feedback</div>
 																	<textarea
+																		aria-labelledby='textarea-label'
 																		className='overflow-hidden resize-none leading-5 text-base w-full h-5 text-[rgba(0,0,0,0.87)] m-0 p-0 border-0 focus:border-0 focus:outline-0'
 																		rows={1}
-																		placeholder=''
+																		placeholder='Type here...'
 																		defaultValue={''}
 																	/>
 																</div>
@@ -288,7 +300,7 @@ function ModelRattingComponent({ isShow, onCloseModel, data }: RatingModel): JSX
 																			backgroundImage: `url('${url}')`,
 																			border: 'none'
 																		}}>
-																		<button>
+																		<button type='button' title='Submit'>
 																			<svg
 																				width={10}
 																				height={10}
@@ -344,15 +356,25 @@ function ModelRattingComponent({ isShow, onCloseModel, data }: RatingModel): JSX
 																								/>
 																							</svg>
 																						</svg>
-																						<input
-																							style={{
-																								display: 'none'
-																							}}
-																							type='file'
-																							accept='image/*'
-																							multiple
-																							onChange={onFileChange}
-																						/>
+
+																						<div>
+																							<label
+																								htmlFor='file-upload'
+																								className='hidden'>
+																								Upload your images
+																							</label>
+																							<input
+																								className='hidden'
+																								id='file-upload'
+																								style={{
+																									display: 'none'
+																								}}
+																								type='file'
+																								accept='image/*'
+																								multiple
+																								onChange={onFileChange}
+																							/>
+																						</div>
 																					</label>
 																				)}
 																			</>
@@ -372,7 +394,7 @@ function ModelRattingComponent({ isShow, onCloseModel, data }: RatingModel): JSX
 												<div className='flex justify-end  gap-[10px]'>
 													<button
 														className='overflow-hidden text-ellipsis flex-col text-sm box-border shadow-[0_1px_1px_0_rgba(0,0,0,0.09)] border flex items-center justify-center capitalize h-[34px] min-w-[124px] text-[0.9rem] leading-[1.6rem] no-underline px-3 py-0 rounded-sm border-solid border-[#ccc]'
-														onClick={onCloseModel}>
+														onClick={onClose}>
 														TRỞ LẠI
 													</button>
 													<button

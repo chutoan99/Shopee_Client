@@ -1,5 +1,5 @@
 //? LIBRARY
-import { memo, useState } from 'react'
+import { memo, useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 //? APPS
 import { formatPrice } from '../../utils/formatPrice'
@@ -10,19 +10,15 @@ import { StatusOrderComponent, ListsOrderComponent } from '../../modules/order/c
 
 function OrderDetailPage(): JSX.Element {
 	const params = useParams()
-	const { data: dataOrder, isLoading } = useGetOrderQuery(params)
+	const { data: dataOrder, isLoading } = useGetOrderQuery(Number(params.orderid))
 	const [isShowModel, setIsShowModel] = useState(false)
-
-	const onShowModel = () => setIsShowModel(true)
-	const onCloseModel = () => setIsShowModel(false)
-
 	return (
 		<>
 			{isLoading && <LoadingDefaultComponent />}
 			{dataOrder?.response && (
 				<div className='col-lg-10 bg-[#fff] pl-0 pr-0'>
 					<div className='bg-[#fff] shadow-[0_1px_1px_0_rgba(0,0,0,0.05)] rounded-sm'>
-						<StatusOrderComponent data={dataOrder.response} />
+						<StatusOrderComponent data={dataOrder.response} onShow={() => setIsShowModel(true)} />
 						<ListsOrderComponent data={dataOrder.response} />
 
 						<div className='bg-neutral-50 border-t-[rgba(0,0,0,0.09)] border-t border-solid'>
@@ -132,7 +128,11 @@ function OrderDetailPage(): JSX.Element {
 				</div>
 			)}
 			{dataOrder && (
-				<ModelRattingComponent isShow={isShowModel} onCloseModel={onCloseModel} data={dataOrder?.response} />
+				<ModelRattingComponent
+					isShow={isShowModel}
+					onClose={() => setIsShowModel(false)}
+					data={dataOrder?.response}
+				/>
 			)}
 		</>
 	)

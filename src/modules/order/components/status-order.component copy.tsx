@@ -1,5 +1,5 @@
 //? LIBRARY
-import { memo } from 'react'
+import { MouseEventHandler, memo } from 'react'
 import { NavLink, useParams } from 'react-router-dom'
 //? APPS
 import { IOrder } from '../interfaces'
@@ -7,11 +7,10 @@ import { formatDate } from '../../../utils/formatTimestamp'
 
 type StatusOrderModel = {
 	data: IOrder
-	onShowModel?: any
+	onShow: MouseEventHandler<HTMLButtonElement>
 }
 
-function StatusOrderComponent({ data, onShowModel }: StatusOrderModel): JSX.Element {
-	console.log(onShowModel, 'onShowModel')
+function StatusOrderComponent({ data, onShow }: StatusOrderModel): JSX.Element {
 	return (
 		<>
 			<div className='text-sm leading-4 flex justify-between items-center px-6 py-3'>
@@ -337,9 +336,11 @@ function StatusOrderComponent({ data, onShowModel }: StatusOrderModel): JSX.Elem
 						style={{ wordWrap: 'break-word' }}>
 						Đánh giá sản phẩm để nhận 200 Shopee xu!
 					</div>
-					{/* onClick={onShowModel} */}
+
 					<div className='text-right shrink-0'>
-						<button className='font-normal text-sm border bg-[#ee4d2d] text-[#fff] hover:bg-[#d73211] hover:border-[#ba2b0f] min-w-[150px] min-h-[40px] capitalize px-5 py-2 rounded-[5px] w-[220px] overflow-hidden text-ellipsis'>
+						<button
+							onClick={onShow}
+							className='font-normal text-sm border bg-[#ee4d2d] text-[#fff] hover:bg-[#d73211] hover:border-[#ba2b0f] min-w-[150px] min-h-[40px] capitalize px-5 py-2 rounded-[5px] w-[220px] overflow-hidden text-ellipsis'>
 							Đánh giá
 						</button>
 					</div>
