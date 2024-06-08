@@ -61,14 +61,12 @@ function ModelRattingComponent({ isShow, onClose, data }: RatingModel): JSX.Elem
 				rating_star: payLoad?.rating_star
 			}
 		})
-		console.log(payloadCreateComment, 'payloadCreateComment')
 		onCreateComment(payloadCreateComment)
 	}
 
 	const onCreateComment = async (payload: any) => {
 		try {
 			setLoading(true)
-			console.log(payload, 'payload')
 			for (const item of payload) {
 				const response = await CreateComment(item)
 				if (response.err === 0) {

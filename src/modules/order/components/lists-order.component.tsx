@@ -11,7 +11,6 @@ type ListsOrderModel = {
 }
 
 function ListsOrderComponent({ data }: ListsOrderModel): JSX.Element {
-	console.log(data,"csscscsc")
 	return (
 		<div className='bg-neutral-50 px-6 py-3'>
 			<div className='flex items-center justify-between pt-0 pb-3 px-0'>
