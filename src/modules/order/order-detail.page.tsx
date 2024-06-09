@@ -7,18 +7,19 @@ import { useGetOrderQuery } from '../../modules/order/hooks'
 import { ModelRattingComponent } from '../../modules/comment/components'
 import { LoadingDefaultComponent } from '../../modules/shared/loading'
 import { StatusOrderComponent, ListsOrderComponent } from '../../modules/order/components'
+import { useToggle } from '../../hooks'
 
 function OrderDetailPage(): JSX.Element {
 	const params = useParams()
 	const { data: dataOrder, isLoading } = useGetOrderQuery(Number(params.orderid))
-	const [isShowModel, setIsShowModel] = useState(false)
+	const [value, toggle] = useToggle(false)
 	return (
 		<>
 			{isLoading && <LoadingDefaultComponent />}
 			{dataOrder?.response && (
 				<div className='col-lg-10 bg-[#fff] pl-0 pr-0'>
 					<div className='bg-[#fff] shadow-[0_1px_1px_0_rgba(0,0,0,0.05)] rounded-sm'>
-						<StatusOrderComponent data={dataOrder.response} onShow={() => setIsShowModel(true)} />
+						<StatusOrderComponent data={dataOrder.response} onShow={toggle} />
 						<ListsOrderComponent data={dataOrder.response} />
 
 						<div className='bg-neutral-50 border-t-[rgba(0,0,0,0.09)] border-t border-solid'>
@@ -127,13 +128,7 @@ function OrderDetailPage(): JSX.Element {
 					</div>
 				</div>
 			)}
-			{dataOrder && (
-				<ModelRattingComponent
-					isShow={isShowModel}
-					onClose={() => setIsShowModel(false)}
-					data={dataOrder?.response}
-				/>
-			)}
+			{dataOrder && <ModelRattingComponent isShow={value} onClose={toggle} data={dataOrder?.response} />}
 		</>
 	)
 }

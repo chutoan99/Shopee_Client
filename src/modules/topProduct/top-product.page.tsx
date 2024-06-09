@@ -2,7 +2,7 @@
 import { NavLink } from 'react-router-dom'
 import { memo, useState } from 'react'
 import { CONSTANT } from '../post/resources'
-import { useGetProductsQuery } from '../post/hooks'
+import { useSearchProductQuery } from '../post/hooks'
 import ProductListComponent from '../post/components/product-list.component'
 import { LoadingDefaultComponent, PaginationComponent } from '../shared'
 //? APPS
@@ -12,7 +12,7 @@ function TopProductPage(): JSX.Element {
 		limit: CONSTANT.LIMIT,
 		page: CONSTANT.PAGE
 	})
-	const { data, isLoading } = useGetProductsQuery(payload)
+	const { data, isLoading } = useSearchProductQuery(payload)
 
 	return (
 		<div className='bg-[#f5f5f5] overflow-hidden mt-[120px]'>

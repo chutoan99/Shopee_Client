@@ -1,6 +1,6 @@
 import { memo } from 'react'
 import { NavLink } from 'react-router-dom'
-import { useGetProductsQuery } from '../../modules/post/hooks'
+import { useSearchProductQuery } from '../../modules/post/hooks'
 import { CONSTANT } from '../../modules/post/resources'
 import { IPostQuery } from '../../modules/post/interfaces'
 import { SkeletonProductComponent } from '../../modules/shared'
@@ -15,7 +15,7 @@ import { HomeFilterComponent } from './homeFilter'
 import { BannerComponent } from './banner'
 
 function HomePage(): JSX.Element {
-	const { data: dataProduct, isLoading: isLoadingDataProduct } = useGetProductsQuery({
+	const { data: dataProduct, isLoading: isLoadingDataProduct } = useSearchProductQuery({
 		limit: CONSTANT.LIMIT,
 		page: CONSTANT.PAGE
 	} as IPostQuery)

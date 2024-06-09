@@ -2,7 +2,7 @@
 
 import { memo, useState } from 'react'
 import { CONSTANT } from '../../modules/post/resources'
-import { useGetProductsQuery } from '../../modules/post/hooks'
+import { useSearchProductQuery } from '../../modules/post/hooks'
 import ProductListComponent from '../../modules/post/components/product-list.component'
 import { LoadingDefaultComponent } from '../../modules/shared/loading'
 import { PaginationComponent } from '../../modules/shared'
@@ -14,7 +14,7 @@ function DailyPage(): JSX.Element {
 		page: CONSTANT.PAGE
 	})
 
-	const { data, isLoading } = useGetProductsQuery(payload)
+	const { data, isLoading } = useSearchProductQuery(payload)
 
 	return (
 		<div className='bg-[#f5f5f5] overflow-hidden mt-[120px]'>

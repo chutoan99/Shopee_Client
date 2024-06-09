@@ -12,19 +12,24 @@ export const ProductApi = createApi({
 		}
 	}),
 	endpoints: (build) => ({
-		getProducts: build.query<IPostResponse, IPostQuery>({
-			query: (payload: IPostQuery) => `post?limit=${payload.limit}&page=${payload.page}`
-		}),
-
 		getProduct: build.query<IPostIdResponse, number>({
 			query: (postId: number) => `/post/${postId}`
 		}),
 
 		searchProduct: build.query<IPostResponse, IPostQuery>({
-			query: (payload: IPostQuery) =>
-				`post/search?limit=${payload.limit}&page=${payload.page}&name=${payload.name}`
+			query: (args: IPostQuery) => {
+				return {
+					url: `post/search`,
+					method: 'get',
+					params: {
+						limit: args.limit,
+						payload: args.page,
+						name: args.name
+					}
+				}
+			}
 		})
 	})
 })
 
-export const { useGetProductsQuery, useGetProductQuery, useSearchProductQuery } = ProductApi
+export const { useGetProductQuery, useSearchProductQuery } = ProductApi
