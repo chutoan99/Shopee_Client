@@ -1,22 +1,15 @@
-import { useState } from 'react'
+import { Dispatch, SetStateAction, useCallback, useState } from 'react'
 
-const useToggle = (initialValue: boolean = false) => {
-	const [isOpen, setIsOpen] = useState(initialValue)
-	function toggle() {
-		setIsOpen(!isOpen)
-	}
-	function onOpen() {
-		setIsOpen(true)
-	}
-	function onClose() {
-		setIsOpen(false)
-	}
+export function useToggle(
+	defaultValue?: boolean,
+  ): [boolean, () => void, Dispatch<SetStateAction<boolean>>] {
+	const [value, setValue] = useState(!!defaultValue)
+  
+	const toggle = useCallback(() => {
+	  setValue(x => !x)
+	}, [])
+  
+	return [value, toggle, setValue]
+  }
 
-	return {
-		isOpen,
-		toggle,
-		onClose,
-		onOpen
-	}
-}
-export default useToggle
+  

@@ -1,35 +1,44 @@
 import { useCallback, useState } from 'react'
-
 import type { Dispatch, SetStateAction } from 'react'
 
-type UseCounterReturn = {
-  count: number
-  increment: () => void
-  decrement: () => void
-  reset: () => void
-  setCount: Dispatch<SetStateAction<number>>
-}
+export function useCounter(
+	min: number,
+	max: number,
+	initialValue: number
+): {
+	count: number
+	increment: () => void
+	decrement: () => void
+	reset: () => void
+	setCount: Dispatch<SetStateAction<number>>
+} {
+	const [count, setCount] = useState<number>(initialValue)
 
-export function useCounter(initialValue?: number): UseCounterReturn {
-  const [count, setCount] = useState(initialValue ?? 0)
+	const increment = () => {
+		if (count < max) {
+			setCount((x) => x + 1)
+		}
+	}
 
-  const increment = useCallback(() => {
-    setCount(x => x + 1)
-  }, [])
+	const decrement = () => {
+		if (count < min) {
+			setCount(0)
+		}
 
-  const decrement = useCallback(() => {
-    setCount(x => x - 1)
-  }, [])
+		if (count >= min) {
+			setCount((x) => x - 1)
+		}
+	}
 
-  const reset = useCallback(() => {
-    setCount(initialValue ?? 0)
-  }, [initialValue])
+	const reset = useCallback(() => {
+		setCount(initialValue)
+	}, [initialValue])
 
-  return {
-    count,
-    increment,
-    decrement,
-    reset,
-    setCount,
-  }
+	return {
+		count,
+		increment,
+		decrement,
+		reset,
+		setCount
+	}
 }

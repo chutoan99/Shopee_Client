@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom'
 import { IUser } from '../modules/user-system/modules/account/interfaces'
 import { GetCurrentUser } from '../modules/user-system/modules/account/services'
 
-const useAuth = () => {
+export default function useAuth  ()  {
 	const navigate = useNavigate()
 	const dispatch = useDispatch()
 	const token = localStorage.getItem('token-shopee')
@@ -42,4 +42,3 @@ const useAuth = () => {
 	return { dataUser }
 }
 
-export default useAuth

@@ -1,9 +1,9 @@
 import { useEffect, useMemo, useState } from 'react'
 import socketIOClient from 'socket.io-client'
 
-const useSocketIo = () => {
+export default function useSocketIo() {
 	const host = `${(import.meta as any).env.VITE_REACT_APP_API_HOST_CHAT}` as string
-	const socketio = useMemo(() => socketIOClient(host), [host])
+	const socketIo = useMemo(() => socketIOClient(host), [host])
 	const [listMess, setListMess] = useState<any[]>([])
 	const [isLoadingRoom, setIsLoadingRoom] = useState(false)
 	useEffect(() => {
@@ -17,15 +17,13 @@ const useSocketIo = () => {
 				setIsLoadingRoom(false)
 			}
 		}
-		socketio.on('message', handleSocketMessage)
-		socketio.on('room', handleSocketMessage)
+		socketIo.on('message', handleSocketMessage)
+		socketIo.on('room', handleSocketMessage)
 		return () => {
-			socketio.off('message', handleSocketMessage)
-			socketio.off('room', handleSocketMessage)
+			socketIo.off('message', handleSocketMessage)
+			socketIo.off('room', handleSocketMessage)
 		}
-	}, [socketio])
+	}, [socketIo])
 
-	return { listMess, socketio, isLoadingRoom }
+	return { listMess, socketIo, isLoadingRoom }
 }
-
-export default useSocketIo

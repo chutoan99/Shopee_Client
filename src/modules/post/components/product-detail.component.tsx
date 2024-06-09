@@ -9,23 +9,25 @@ import { ICartData } from '../../cart/interfaces'
 import { AppDispatch, CartActions } from '../../../redux'
 import { useTranslation } from 'react-i18next'
 import { generateStart } from '../helpers'
+import { useCounter, useToggle } from '../../../hooks'
 
 type ProductDetailModel = {
 	data: IProductDetail
 }
 function ProductDetailComponent({ data }: ProductDetailModel): JSX.Element {
-	const params = useParams()
 	const { t } = useTranslation()
+	const params = useParams()
 	const dispatch: AppDispatch = useAppDispatch()
 	const [createCart] = useCreateCartMutation()
 	const { data: dataCart, refetch: FetchCarts } = useGetCartsQuery()
-	const [showImg, setShowImg] = useState(false)
+	const [value, toggle] = useToggle(false)
 	const [indexImg, setIndexImg] = useState(0)
 	const [showTableSize, setShowTableSize] = useState(false)
+	const { count, increment, decrement } = useCounter(1, data.stock, 1)
 	const [payload, setPayload] = useState<ICartData>({
 		itemid: 0,
 		shopid: 0,
-		amount: 1,
+		amount: count,
 		item_option: '',
 		tierVariation: ''
 	})
@@ -40,33 +42,18 @@ function ProductDetailComponent({ data }: ProductDetailModel): JSX.Element {
 		})
 	}, [params])
 
-	const onIncrease = () => {
+	useEffect(() => {
 		setPayload((prev: ICartData) => {
 			return {
 				...prev,
-				amount: payload.amount + 1
+				amount: count
 			}
 		})
-	}
+	}, [count])
 
-	const onReduced = () => {
-		if (payload.amount > 1) {
-			setPayload((prev: ICartData) => {
-				return {
-					...prev,
-					amount: payload.amount - 1
-				}
-			})
-		}
-		if (payload.amount < 1) {
-			setPayload((prev: ICartData) => {
-				return {
-					...prev,
-					amount: 1
-				}
-			})
-		}
-	}
+	useEffect(() => {
+		dataCart?.total && dispatch(CartActions.updateTotalCart(dataCart?.total))
+	}, [dataCart])
 
 	const onAddToCart = async () => {
 		if (payload.item_option === '' && data?.name_tierVariations) {
@@ -89,21 +76,13 @@ function ProductDetailComponent({ data }: ProductDetailModel): JSX.Element {
 		}
 	}
 
-	useEffect(() => {
-		dataCart?.total && dispatch(CartActions.updateTotalCart(dataCart?.total))
-	}, [dataCart])
 	return (
 		<>
 			<div className='grid wide'>
 				<div className='row sm-gutter pb-[30px] bg-[#fff]'>
 					<div className='col c-12 mo-5 l-5'>
 						<div className='relative w-full cursor-pointer pt-[20px] pb-10 p-[3px]'>
-							<img
-								alt=''
-								onClick={() => setShowImg(true)}
-								src={data?.image}
-								className='w-full relative'
-							/>
+							<img alt='' onClick={toggle} src={data?.image} className='w-full relative' />
 						</div>
 						<div className='row sm-gutter'>
 							<div
@@ -116,7 +95,7 @@ function ProductDetailComponent({ data }: ProductDetailModel): JSX.Element {
 										<div
 											className='cursor-pointer flex h-[82px] shrink-0 w-[82px] mr-[19px]'
 											key={index}>
-											<img src={image} alt='MobileImgProduct' onClick={() => setShowImg(true)} />
+											<img src={image} alt='MobileImgProduct' onClick={toggle} />
 										</div>
 									)
 								})}
@@ -298,8 +277,8 @@ function ProductDetailComponent({ data }: ProductDetailModel): JSX.Element {
 										<div>
 											<button
 												type='button'
-												aria-label='Reduce'
-												onClick={onReduced}
+												aria-label='decrement'
+												onClick={decrement}
 												className='w-10 h-[30px] border cursor-pointer border-solid border-[#ccc]'>
 												<i className='fa-solid fa-minus'></i>
 											</button>
@@ -309,7 +288,7 @@ function ProductDetailComponent({ data }: ProductDetailModel): JSX.Element {
 											<button
 												type='button'
 												aria-label='Increase'
-												onClick={onIncrease}
+												onClick={increment}
 												className='w-10 h-[30px] border cursor-pointer border-solid border-[#ccc]'>
 												<i className='fa-solid fa-plus'></i>
 											</button>
@@ -349,7 +328,7 @@ function ProductDetailComponent({ data }: ProductDetailModel): JSX.Element {
 					</div>
 				</div>
 			</div>
-			{showImg && (
+			{value && (
 				<div
 					className='w-full h-full fixed bg-[rgba(0,0,0,0.4)] flex items-center justify-center z-[9000] left-0 top-0'
 					style={{
@@ -367,7 +346,7 @@ function ProductDetailComponent({ data }: ProductDetailModel): JSX.Element {
 							<div className='l-12 mo-12 c-12'>
 								<div
 									className='flex text-lg mb-1.5 cursor-pointer '
-									onClick={() => setShowImg(false)}
+									onClick={toggle}
 									style={{
 										justifyContent: 'end'
 									}}>

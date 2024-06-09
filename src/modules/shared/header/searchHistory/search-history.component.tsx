@@ -8,6 +8,7 @@ import LogoComponent from '../logo/logo.components'
 import { SuggestListComponent } from '../searchSuggest'
 import HeaderCartComponent from '../cart/cart.components'
 import { useGetCartsQuery } from '../../../cart/hooks'
+import useKeyPress from '../../../../hooks/useKeyPress'
 
 function HeaderSearchHistoryComponent(): JSX.Element {
 	const { search } = useParams()
