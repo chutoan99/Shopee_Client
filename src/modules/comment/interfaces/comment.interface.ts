@@ -1,3 +1,14 @@
+export type IRatingData = {
+	itemid: number
+	shopid: number
+	orderid: number
+	comment: string
+	images: File[] | []
+	rating_star: number
+	options: string
+	model_name: string
+}
+
 export interface ICommentsResponse {
 	err: number
 	msg: string

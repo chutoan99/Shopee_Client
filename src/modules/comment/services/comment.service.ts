@@ -1,21 +1,25 @@
 import toast from 'react-hot-toast'
 import FormData from 'form-data'
 import instance from '../../../configs/configAxios'
+import { IRatingData } from '../interfaces'
 
-export const CreateComment = async (payload: any) => {
+export const CreateComment = async (payload: IRatingData) => {
 	try {
 		const token = localStorage.getItem('token-shopee')
-		let data = new FormData()
-		data.append('orderid', payload?.orderid)
-		data.append('itemid', payload?.itemid)
-		data.append('shopid', payload?.shopid)
-		data.append('comment', payload?.comment)
-		data.append('rating_star', payload?.rating_star)
+		let data:FormData = new FormData()
+		data.append('orderid', payload.orderid)
+		data.append('itemid', payload.itemid)
+		data.append('shopid', payload.shopid)
+		data.append('comment', payload.comment)
+		data.append('model_name', payload.model_name)
+		data.append('options', payload.options)
+		data.append('rating_star', payload.rating_star)
 		for (const img of payload?.images) {
-			data.append('images', img)
+			if (img instanceof File) {
+				data.append('images', img)
+			}
 		}
-		data.append('model_name', payload?.model_name)
-		data.append('options', payload?.options)
+
 		const response = await instance({
 			method: 'post',
 			url: 'comment',
@@ -25,7 +29,7 @@ export const CreateComment = async (payload: any) => {
 			},
 			data: data
 		})
-
+		console.log(response, 'response')
 		if (response?.status === 200) {
 			return response.data
 		}
