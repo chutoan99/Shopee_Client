@@ -1,5 +1,5 @@
 import { Fragment, Suspense, useEffect } from 'react'
-import routes, { RouteConfig } from './path'
+import routes, { RouteConFig } from './path'
 import { Route, Routes } from 'react-router-dom'
 import { useGetCartsQuery } from '../modules/cart/hooks'
 import { useAppDispatch } from '../hooks/hooks'
@@ -18,7 +18,7 @@ const App = () => {
 	}, [isLoading])
 	return (
 		<Routes>
-			{routes?.map((route: RouteConfig, index: number) => {
+			{routes?.map((route: RouteConFig, index: number) => {
 				const Layout = route.layout === null ? Fragment : route.layout
 				const Page = route.component
 				return (

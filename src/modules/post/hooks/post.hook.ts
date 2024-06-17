@@ -23,7 +23,7 @@ export const ProductApi = createApi({
 					method: 'get',
 					params: {
 						limit: args.limit,
-						payload: args.page,
+						page: args.page,
 						name: args.name
 					}
 				}
