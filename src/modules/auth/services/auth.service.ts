@@ -107,3 +107,42 @@ export const ApiLogout = async () => {
 		throw new Error(error.msg)
 	}
 }
+
+
+export const ApiLoginGoogle = async () => {
+	try {
+		const response = await config({
+			method: 'get',
+			url: `/auth/google`,
+			headers: {
+				'Content-Type': 'application/json',
+			}
+		})
+		console.log(response,"response")
+
+		if (response.status === 200) {
+			return response.data
+		}
+	} catch (error: any) {
+		throw new Error(error.msg)
+	}
+}
+
+export const ApiLoginFacebook = async () => {
+	try {
+		const response = await config({
+			method: 'get',
+			url: `/auth/facebook`,
+			headers: {
+				'Content-Type': 'application/json',
+			}
+		})
+		console.log(response,"response")
+
+		if (response.status === 200) {
+			return response.data
+		}
+	} catch (error: any) {
+		throw new Error(error.msg)
+	}
+}
