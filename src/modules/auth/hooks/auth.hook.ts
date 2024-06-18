@@ -53,14 +53,14 @@ export const useMutationRegister = (payload: IRegisterData) => {
 	const onRefetch = async () => {
 		try {
 			setLoading(true)
-			const reponse: IRegisterResponse = await ApiRegister(payload)
-			if (reponse.err === 0) {
+			const response: IRegisterResponse = await ApiRegister(payload)
+			if (response.err === 0) {
 				toast.success(t(`AUTH.MESSAGE.REGISTER_SUCCESS`))
 				setTimeout(() => {
 					navigate('/auth/login')
 				}, 2000)
 			} else {
-				toast.error(reponse.msg)
+				toast.error(response.msg)
 			}
 		} catch (error: any) {
 			toast.error(error.msg)
