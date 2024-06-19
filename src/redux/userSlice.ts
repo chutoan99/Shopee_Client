@@ -1,7 +1,7 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit'
-import { IUser } from '../modules/user-system/modules/account/interfaces';
+import { UserModel } from '../modules/user-system/modules/account/interfaces'
 
-const initialState: { isLogin: boolean; data: IUser } = {
+const initialState: { isLogin: boolean; data: UserModel } = {
 	isLogin: false,
 	data: {
 		id: 0,

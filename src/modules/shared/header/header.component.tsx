@@ -1,8 +1,6 @@
-//? LIBRARY
 import { memo } from 'react'
 import { NavbarComponent } from './navbar'
 import SearchHistoryComponent from './searchHistory/search-history.component'
-//? APPS
 
 function HeaderComponent(): JSX.Element {
 	return (

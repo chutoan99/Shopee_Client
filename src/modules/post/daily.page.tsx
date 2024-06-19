@@ -1,12 +1,9 @@
-//? LIBRARY
-
 import { memo, useState } from 'react'
 import { CONSTANT } from '../../modules/post/resources'
 import { useSearchProductQuery } from '../../modules/post/hooks'
 import ProductListComponent from '../../modules/post/components/product-list.component'
 import { LoadingDefaultComponent } from '../../modules/shared/loading'
 import { PaginationComponent } from '../../modules/shared'
-//? APPS
 
 function DailyPage(): JSX.Element {
 	const [payload, setPayload] = useState({

@@ -1,1 +1,1 @@
-export * from "./category.config"
+export * from './category.config'

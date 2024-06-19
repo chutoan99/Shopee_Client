@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
-import { ISearchSuggestResponse } from '../interfaces/search-suggest.interface'
+import { SearchSuggestResponse } from '../interfaces/search-suggest.response'
 
 export const SearchSuggestApi = createApi({
 	reducerPath: 'SearchSuggest',
@@ -12,7 +12,7 @@ export const SearchSuggestApi = createApi({
 		}
 	}),
 	endpoints: (build) => ({
-		getSearchSuggest: build.query<ISearchSuggestResponse, void>({
+		getSearchSuggest: build.query<SearchSuggestResponse, void>({
 			query: () => 'SearchSuggest'
 		})
 	})

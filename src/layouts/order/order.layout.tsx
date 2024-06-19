@@ -4,11 +4,11 @@ import { NavLink } from 'react-router-dom'
 import useAuth from '../../hooks/userAuth'
 import { FooterComponent, NavbarComponent } from '../../modules/shared'
 
-type OrderLayoutModels = {
+type OrderLayoutProps = {
 	children: ReactNode
 }
 
-export default function OrderLayout({ children }: OrderLayoutModels): JSX.Element {
+export default function OrderLayout({ children }: OrderLayoutProps): JSX.Element {
 	useAuth()
 	return (
 		<>

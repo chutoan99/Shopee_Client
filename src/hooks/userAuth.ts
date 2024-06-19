@@ -3,14 +3,14 @@ import { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { UserActions } from '../redux'
 import { useNavigate } from 'react-router-dom'
-import { IUser } from '../modules/user-system/modules/account/interfaces'
 import { GetCurrentUser } from '../modules/user-system/modules/account/services'
+import { UserModel } from '../modules/user-system/modules/account/interfaces'
 
-export default function useAuth  ()  {
+export default function useAuth() {
 	const navigate = useNavigate()
 	const dispatch = useDispatch()
 	const token = localStorage.getItem('token-shopee')
-	const [dataUser, setDataUser] = useState<IUser>()
+	const [dataUser, setDataUser] = useState<UserModel>()
 
 	useEffect(() => {
 		const fetchDataCurrentUser = async () => {
@@ -41,4 +41,3 @@ export default function useAuth  ()  {
 
 	return { dataUser }
 }
-

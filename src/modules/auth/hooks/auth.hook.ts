@@ -1,19 +1,18 @@
-//? LIBRARY
 import { useState } from 'react'
 import { toast } from 'react-hot-toast'
 import { useNavigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { ApiForgotPassword, ApiLogin, ApiRegister, ApiResetPassword } from '../services'
 import {
-	IForgotPasswordData,
-	ILoginData,
-	ILoginResponse,
-	IRegisterData,
-	IRegisterResponse,
-	IResetPasswordData
+	ForgotPasswordDto,
+	LoginResponse,
+	RegisterResponse,
+	LoginDto,
+	RegisterDto,
+	ResetPasswordDto
 } from '../interfaces'
 
-export const useMutationLogin = (payload: ILoginData) => {
+export const useMutationLogin = (payload: LoginDto) => {
 	const navigate = useNavigate()
 	const { t } = useTranslation()
 	const [loading, setLoading] = useState(false)
@@ -21,7 +20,7 @@ export const useMutationLogin = (payload: ILoginData) => {
 	const onRefetch = async () => {
 		try {
 			setLoading(true)
-			const response: ILoginResponse = await ApiLogin(payload)
+			const response: LoginResponse = await ApiLogin(payload)
 			if (response.err === 0) {
 				toast.success(t(`AUTH.MESSAGE.LOGIN_SUCCESS`))
 				localStorage.setItem('token-shopee', response?.access_token ?? '')
@@ -45,7 +44,7 @@ export const useMutationLogin = (payload: ILoginData) => {
 	return { loading, refetch }
 }
 
-export const useMutationRegister = (payload: IRegisterData) => {
+export const useMutationRegister = (payload: RegisterDto) => {
 	const navigate = useNavigate()
 	const { t } = useTranslation()
 	const [loading, setLoading] = useState(false)
@@ -53,7 +52,7 @@ export const useMutationRegister = (payload: IRegisterData) => {
 	const onRefetch = async () => {
 		try {
 			setLoading(true)
-			const response: IRegisterResponse = await ApiRegister(payload)
+			const response: RegisterResponse = await ApiRegister(payload)
 			if (response.err === 0) {
 				toast.success(t(`AUTH.MESSAGE.REGISTER_SUCCESS`))
 				setTimeout(() => {
@@ -76,7 +75,7 @@ export const useMutationRegister = (payload: IRegisterData) => {
 	return { loading, refetch }
 }
 
-export const useMutationForgotPassWord = (payload: IForgotPasswordData) => {
+export const useMutationForgotPassWord = (payload: ForgotPasswordDto) => {
 	const [loading, setLoading] = useState(false)
 	const { t } = useTranslation()
 	const onRefetch = async () => {
@@ -102,7 +101,7 @@ export const useMutationForgotPassWord = (payload: IForgotPasswordData) => {
 	return { loading, refetch }
 }
 
-export const useMutationResetPassWord = (payload: IResetPasswordData) => {
+export const useMutationResetPassWord = (payload: ResetPasswordDto) => {
 	const navigate = useNavigate()
 	const { t } = useTranslation()
 	const [loading, setLoading] = useState(false)

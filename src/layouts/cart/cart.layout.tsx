@@ -6,11 +6,11 @@ import { LogoComponent, NavbarComponent } from '../../modules/shared/header'
 import { LoadingDefaultComponent } from '../../modules/shared'
 import { useCreateHistorySearchMutation } from '../../modules/shared/header/searchHistory/hooks'
 
-type CartLayoutModels = {
+type CartLayoutProps = {
 	children: ReactNode
 }
 
-export default function CartLayout({ children }: CartLayoutModels): JSX.Element {
+export default function CartLayout({ children }: CartLayoutProps): JSX.Element {
 	const params = useParams()
 	const navigate = useNavigate()
 	const [payload, setPayload] = useState({

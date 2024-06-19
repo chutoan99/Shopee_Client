@@ -1,4 +1,3 @@
-//? LIBRARY
 function PageNotFoundPage(): JSX.Element {
 	return (
 		<div className='flex justify-center items-center'>

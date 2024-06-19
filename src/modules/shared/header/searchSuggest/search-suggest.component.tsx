@@ -1,15 +1,15 @@
 import { NavLink } from 'react-router-dom'
-import { ISearchSuggest } from './interfaces'
+import { SearchSuggestModel } from './interfaces'
 
-type SuggestListModel = {
-	data: ISearchSuggest[]
+type SuggestListProps = {
+	data: SearchSuggestModel[]
 }
 
-export default function SuggestListComponent({ data }: SuggestListModel): JSX.Element {
+export default function SuggestListComponent({ data }: SuggestListProps): JSX.Element {
 	return (
 		<div className='w-full overflow-hidden flex'>
 			<div className='h-[18px] text-[0.813rem] font-light overflow-y-visible flex-wrap relative mr-[55px] mt-[1.875px]'>
-				{data?.map((item: ISearchSuggest) => {
+				{data?.map((item: SearchSuggestModel) => {
 					return (
 						<NavLink
 							key={item.id}

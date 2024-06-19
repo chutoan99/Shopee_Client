@@ -1,18 +1,17 @@
-//? LIBRARY
 import { memo, useCallback, useEffect, useState } from 'react'
-//? APPS
+
 import { useAppSelector } from '../../../hooks/hooks'
-import { RootState } from '../../redux'
 import useSocketIo from '../../../hooks/useSocket'
 import { useGetRoomsQuery } from './hooks'
-import { IRooms } from './interfaces'
 import ItemChatComponent from './components/item-chat.components'
+import { RootState } from '../../../redux'
+import { RoomModel } from './interfaces'
 
 function ChatComponent(): JSX.Element {
-	const { listMess, socketio, isLoadingRoom } = useSocketIo()
+	const { listMess, socketIo, isLoadingRoom } = useSocketIo()
 	const { data: dataRooms, isLoading, refetch } = useGetRoomsQuery()
-	const [listRoom, setListRoom] = useState<IRooms[] | null>(dataRooms?.response || [])
-	const [room, setRoom] = useState<IRooms | null>()
+	const [listRoom, setListRoom] = useState<RoomModel[] | null>(dataRooms?.response || [])
+	const [room, setRoom] = useState<RoomModel | null>()
 	const { is_popup_chat } = useAppSelector((state: RootState) => state.others)
 	const { data } = useAppSelector((state: RootState) => state.user)
 	const [isPopupChat, setIsPopupChat] = useState(is_popup_chat)
@@ -38,7 +37,7 @@ function ChatComponent(): JSX.Element {
 	}, [room])
 
 	const onAddMess = () => {
-		socketio.emit('message', {
+		socketIo.emit('message', {
 			user: data,
 			shop: room?.shop_info,
 			roomid: room?.id,
@@ -48,7 +47,7 @@ function ChatComponent(): JSX.Element {
 	}
 
 	const onRoom = (roomid: number) => {
-		socketio.emit('room', roomid)
+		socketIo.emit('room', roomid)
 	}
 
 	const onToggleListChat = useCallback(() => {

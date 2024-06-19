@@ -1,13 +1,12 @@
-//? LIBRARY
 import { memo } from 'react'
 import { NavLink } from 'react-router-dom'
-import { IProductDetail } from '../interfaces'
+import { ProductDetailModel } from '../interfaces'
 
-type ProductBreadcrumbModel = {
-	data: IProductDetail
+type ProductBreadcrumbProps = {
+	data: ProductDetailModel
 }
 
-function ProductBreadcrumbComponent({ data }: ProductBreadcrumbModel): JSX.Element {
+function ProductBreadcrumbComponent({ data }: ProductBreadcrumbProps): JSX.Element {
 	return (
 		<div className=' grid wide'>
 			<div className='h-[1rem] mb-[1.5rem]'>

@@ -1,1 +1,1 @@
-export * from "./flash-sale.config"
+export * from './flash-sale.config'

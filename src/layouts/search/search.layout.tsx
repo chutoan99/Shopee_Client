@@ -3,11 +3,11 @@ import { Toaster } from 'react-hot-toast'
 import useAuth from '../../hooks/userAuth'
 import { FooterComponent, ChatComponent, HeaderComponent, HeartComponent } from '../../modules/shared'
 
-type SearchLayoutModels = {
+type SearchLayoutProps = {
 	children: ReactNode
 }
 
-export default function SearchLayout({ children }: SearchLayoutModels): JSX.Element {
+export default function SearchLayout({ children }: SearchLayoutProps): JSX.Element {
 	useAuth()
 	return (
 		<>

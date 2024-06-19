@@ -1,16 +1,15 @@
-//? LIBRARY
 import { MouseEventHandler, memo } from 'react'
-import { NavLink, useParams } from 'react-router-dom'
-//? APPS
-import { IOrder } from '../interfaces'
-import { formatDate } from '../../../utils/formatTimestamp'
+import { NavLink } from 'react-router-dom'
 
-type StatusOrderModel = {
-	data: IOrder
+import { formatDate } from '../../../utils/formatTimestamp'
+import { OrderModel } from '../interfaces'
+
+type StatusOrderProps = {
+	data: OrderModel
 	onShow: MouseEventHandler<HTMLButtonElement>
 }
 
-function StatusOrderComponent({ data, onShow }: StatusOrderModel): JSX.Element {
+function StatusOrderComponent({ data, onShow }: StatusOrderProps): JSX.Element {
 	return (
 		<>
 			<div className='text-sm leading-4 flex justify-between items-center px-6 py-3'>

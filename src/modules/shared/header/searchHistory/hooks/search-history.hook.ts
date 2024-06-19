@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
-import { ISearchHistoryResponse } from '../interfaces/search-history.interface'
+import { SearchHistoryResponse } from '../interfaces/search-history.response'
 
 export const SearchHistoryApi = createApi({
 	reducerPath: 'SearchHistory',
@@ -12,10 +12,10 @@ export const SearchHistoryApi = createApi({
 		}
 	}),
 	endpoints: (build) => ({
-		getHistorySearch: build.query<ISearchHistoryResponse, void>({
+		getHistorySearch: build.query<SearchHistoryResponse, void>({
 			query: () => 'searchHistory'
 		}),
-		createHistorySearch: build.mutation<ISearchHistoryResponse, any>({
+		createHistorySearch: build.mutation<SearchHistoryResponse, any>({
 			query: (body) => {
 				return {
 					url: 'searchHistory',

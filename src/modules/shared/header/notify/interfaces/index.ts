@@ -1,1 +1,2 @@
-export * from './notify.interface'
+export * from './notify.response'
+export * from './notify.model'

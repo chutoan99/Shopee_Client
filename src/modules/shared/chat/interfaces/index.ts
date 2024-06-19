@@ -1,1 +1,2 @@
-export * from './room.interface'
+export * from './room.response'
+export * from './room.model'

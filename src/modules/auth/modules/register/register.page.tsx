@@ -2,10 +2,10 @@ import { memo, useEffect, useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { useMutationRegister } from '../../hooks'
-import { IRegisterData } from '../../interfaces'
 import { validateRegister } from '../../helpers'
 import { LoadingDefaultComponent } from '../../../shared/loading'
 import { LoginFaceBookComponent, LoginGoogleComponent } from '../../components'
+import { RegisterDto } from '../../interfaces'
 
 function RegisterPage(): JSX.Element {
 	const { t } = useTranslation()
@@ -13,7 +13,7 @@ function RegisterPage(): JSX.Element {
 	const [nameRegister, setNameRegister] = useState('')
 	const [emailRegister, setEmailRegister] = useState('')
 	const [passWordRegister, SetPassWordRegister] = useState('')
-	const [payload, setPayload] = useState<IRegisterData>({
+	const [payload, setPayload] = useState<RegisterDto>({
 		name: nameRegister,
 		password: passWordRegister,
 		email: emailRegister

@@ -1,11 +1,9 @@
-//? LIBRARY
 import { NavLink } from 'react-router-dom'
 import { memo, useState } from 'react'
 import { CONSTANT } from '../post/resources'
 import { useSearchProductQuery } from '../post/hooks'
 import ProductListComponent from '../post/components/product-list.component'
 import { LoadingDefaultComponent, PaginationComponent } from '../shared'
-//? APPS
 
 function TopProductPage(): JSX.Element {
 	const [payload, setPayload] = useState({

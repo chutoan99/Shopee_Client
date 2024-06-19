@@ -1,21 +1,19 @@
-//? LIBRARY
 import { useEffect, memo, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { LoadingDefaultComponent } from '../shared/loading'
 import { SearchEmptyComponent } from '../shared/searchEmpty'
 import ProductListComponent from '../post/components/product-list.component'
 import { PaginationComponent } from '../shared'
-import { ICategoryQuery } from '../home/category/interfaces'
+import { QueryCategoryDto } from '../home/category/interfaces'
 import { useSearchCategoriesQuery } from '../home/category/hooks'
 import { CONSTANT } from '../home/category/resources'
 import FilterComponent from '../home/category/components/filter/filter.component'
 import { SortBarsComponent } from '../home/category/components'
-//? APPS
 
 function CategoryPage(): JSX.Element {
 	const { display_name } = useParams()
 	const [totalPage, setTotalPage] = useState<number>(0)
-	const [payload, setPayload] = useState<ICategoryQuery>({
+	const [payload, setPayload] = useState<QueryCategoryDto>({
 		category_name: encodeURIComponent(display_name as string),
 		limit: CONSTANT.LIMIT,
 		page: CONSTANT.PAGE

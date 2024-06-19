@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
-import { IBatchListResponse } from '../interfaces'
+import { BatchListResponse } from '../interfaces'
 
 export const BatchListApi = createApi({
 	reducerPath: 'BatchList',
@@ -12,7 +12,7 @@ export const BatchListApi = createApi({
 		}
 	}),
 	endpoints: (build) => ({
-		getBatchList: build.query<IBatchListResponse, void>({
+		getBatchList: build.query<BatchListResponse, void>({
 			query: () => 'batchList'
 		})
 	})

@@ -1,1 +1,1 @@
-export * from  "./category.resource"
+export * from './category.resource'

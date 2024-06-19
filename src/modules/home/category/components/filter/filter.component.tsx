@@ -1,8 +1,6 @@
-//? LIBRARY
 import { memo } from 'react'
 import { NavLink, useParams } from 'react-router-dom'
 import { useGetCategoryTreeParentQuery } from '../../hooks'
-//? APPS
 
 function FilterComponent(): JSX.Element {
 	const params = useParams()

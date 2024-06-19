@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
-import { IShopMallResponse } from '../interfaces'
+import { ShopMallResponse } from '../interfaces'
 
 export const ShopMallApi = createApi({
 	reducerPath: 'ShopMall',
@@ -12,7 +12,7 @@ export const ShopMallApi = createApi({
 		}
 	}),
 	endpoints: (build) => ({
-		getShopMall: build.query<IShopMallResponse, void>({
+		getShopMall: build.query<ShopMallResponse, void>({
 			query: () => 'shopMall'
 		})
 	})

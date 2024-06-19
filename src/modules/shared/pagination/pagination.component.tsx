@@ -1,7 +1,5 @@
-//? LIBRARY
 import { memo } from 'react'
 import ReactPaginate from 'react-paginate'
-//? APPS
 
 function PaginationComponent({ setPayload, totalPage }: { setPayload: any; totalPage: number }): JSX.Element {
 	const handleClickPage = (e: any) => {

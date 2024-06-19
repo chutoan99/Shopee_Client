@@ -1,8 +1,7 @@
-
 import { useState, memo, useEffect } from 'react'
 import { NavLink, useNavigate } from 'react-router-dom'
 import { useAppDispatch } from '../../hooks/hooks'
-import { ICart, ICartUpdateData } from '../../modules/cart/interfaces'
+import { CartModel, UpdateCartDto } from '../../modules/cart/interfaces'
 import { useDeleteCartMutation, useGetCartsQuery, useUpdateCartMutation } from '../../modules/cart/hooks'
 import { LoadingDefaultComponent } from '../../modules/shared'
 import { formatPrice } from '../../utils/formatPrice'
@@ -15,10 +14,10 @@ function CartPage(): JSX.Element {
 	const [total, setTotal] = useState(0)
 	const [checked, setChecked] = useState<any>([])
 	const [allChecked, setAllChecked] = useState(false)
-	const [buyCart, setBuyCart] = useState<ICart[]>([])
+	const [buyCart, setBuyCart] = useState<CartModel[]>([])
 	const [deleteCart] = useDeleteCartMutation()
 	const [updateCart] = useUpdateCartMutation()
-	const [data, setData] = useState<[ICart[]]>([[]])
+	const [data, setData] = useState<[CartModel[]]>([[]])
 	const { data: dataCart, isLoading, refetch: fetchCarts } = useGetCartsQuery()
 
 	const [selectedOption, setSelectedOption] = useState<{
@@ -51,15 +50,15 @@ function CartPage(): JSX.Element {
 	const onAllCheck = () => {
 		setAllChecked(!allChecked)
 		if (!allChecked) {
-			const itemIds = data?.flatMap((item: any) => item.map((e: ICart) => e.itemid))
+			const itemIds = data?.flatMap((item: any) => item.map((e: CartModel) => e.itemid))
 			setChecked(itemIds)
 		} else {
 			setChecked([])
 		}
 	}
 
-	const onIncrease = async (item: ICart) => {
-		const payload: ICartUpdateData = {
+	const onIncrease = async (item: CartModel) => {
+		const payload: UpdateCartDto = {
 			amount: +item.amount + 1,
 			item_option: item.item_option
 		}
@@ -68,8 +67,8 @@ function CartPage(): JSX.Element {
 		fetchCarts()
 	}
 
-	const onReduced = async (item: ICart) => {
-		const payload: ICartUpdateData = {
+	const onReduced = async (item: CartModel) => {
+		const payload: UpdateCartDto = {
 			amount: +item.amount - 1,
 			item_option: item.item_option
 		}
@@ -79,7 +78,7 @@ function CartPage(): JSX.Element {
 		fetchCarts()
 	}
 
-	const onChangeOption = async (item: ICart, option: string) => {
+	const onChangeOption = async (item: CartModel, option: string) => {
 		setAgrsUpdate({
 			cartid: item.id,
 			payload: {
@@ -120,9 +119,9 @@ function CartPage(): JSX.Element {
 	}
 
 	useEffect(() => {
-		const dataTempt: ICart[] = []
+		const dataTempt: CartModel[] = []
 		data?.forEach((item: any) =>
-			item.forEach((element: ICart) => {
+			item.forEach((element: CartModel) => {
 				dataTempt.push(element)
 			})
 		)
@@ -168,7 +167,7 @@ function CartPage(): JSX.Element {
 												<div className='w-[10.43557%] text-center'>Số Tiền</div>
 												<div className='w-[12.70417%] text-center'>Thao Tác</div>
 											</div>
-											{data?.map((item: ICart[], indexItem: any) => (
+											{data?.map((item: CartModel[], indexItem: any) => (
 												<section
 													className='shadow-[0_1px_1px_0_rgba(0,0,0,0.05)] overflow-visible mb-[0.9375rem] rounded-sm bg-[#fff]'
 													key={indexItem}>
@@ -225,7 +224,7 @@ function CartPage(): JSX.Element {
 															<div className='flex-1' />
 														</div>
 													</div>
-													{item.map((ele: ICart, index: number) => (
+													{item.map((ele: CartModel, index: number) => (
 														<>
 															<section className='relative pb-px' role='list'>
 																<div
@@ -299,7 +298,7 @@ function CartPage(): JSX.Element {
 																								: onShowOption(
 																										indexItem,
 																										index
-																								  )
+																									)
 																						}>
 																						<div className='flex items-center capitalize text-left'>
 																							Phân loại hàng:
@@ -377,7 +376,7 @@ function CartPage(): JSX.Element {
 																																			option ===
 																																			agrsUpdate
 																																				?.payload
-																																				?.option
+																																				?.item_option
 																																				? '!text-[#ee4d2d] !border-[#ee4d2d]'
 																																				: ''
 																																		}`}
@@ -393,7 +392,7 @@ function CartPage(): JSX.Element {
 																																		{option ===
 																																			agrsUpdate
 																																				?.payload
-																																				?.option && (
+																																				?.item_option && (
 																																			<div className="w-[0.9375rem] h-[0.9375rem] absolute overflow-hidden right-0 bottom-0 before:content-[''] before:absolute before:right-[-0.9375rem] before:border-b-[#ee4d2d] before:border-[0.9375rem] before:border-solid before:border-transparent before:bottom-0">
 																																				<svg
 																																					enableBackground='new 0 0 12 12'

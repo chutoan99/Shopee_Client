@@ -2,13 +2,12 @@ import { useState, memo, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
 import { NavLink, useNavigate, useParams } from 'react-router-dom'
 import { useCreateHistorySearchMutation, useGetHistorySearchQuery } from './hooks'
-import { ISearchHistory } from './interfaces/search-history.interface'
 import { useGetSearchSuggestQuery } from '../searchSuggest/hooks'
 import LogoComponent from '../logo/logo.components'
 import { SuggestListComponent } from '../searchSuggest'
 import HeaderCartComponent from '../cart/cart.components'
 import { useGetCartsQuery } from '../../../cart/hooks'
-import useKeyPress from '../../../../hooks/useKeyPress'
+import { SearchHistoryModel } from './interfaces/search-history.model'
 
 function HeaderSearchHistoryComponent(): JSX.Element {
 	const { search } = useParams()
@@ -89,7 +88,7 @@ function HeaderSearchHistoryComponent(): JSX.Element {
 											</h3>
 											{!isLoadingHistorySearch && (
 												<div className='mt-1.5'>
-													{dataHistorySearch?.response?.map((item: ISearchHistory) => (
+													{dataHistorySearch?.response?.map((item: SearchHistoryModel) => (
 														<div
 															key={item.id}
 															className='h-[38px] px-3 py-0 hover:bg-[#fafafa]'>

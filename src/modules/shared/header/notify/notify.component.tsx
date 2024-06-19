@@ -1,12 +1,12 @@
 import { NavLink } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
-import { INotify } from './interfaces'
+import { NotifyModel } from './interfaces'
 
-type HeaderNotifyModel = {
-	data: INotify[]
+type HeaderNotifyProps = {
+	data: NotifyModel[]
 }
 
-export default function HeaderNotifyComponent({ data }: HeaderNotifyModel): JSX.Element {
+export default function HeaderNotifyComponent({ data }: HeaderNotifyProps): JSX.Element {
 	const { t } = useTranslation()
 	return (
 		<div
@@ -18,7 +18,7 @@ export default function HeaderNotifyComponent({ data }: HeaderNotifyModel): JSX.
 				</h3>
 			</header>
 			<ul className='pl-0'>
-				{data?.map((item: INotify) => {
+				{data?.map((item: NotifyModel) => {
 					return (
 						<li className={item.seen ? `flex bg-[#fff]` : `flex bg-[#f7f7f7]`} key={item.id}>
 							<NavLink to='# ' className='flex no-underline w-full p-2 hover:bg-[#fafafa]'>

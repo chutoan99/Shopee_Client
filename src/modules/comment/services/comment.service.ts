@@ -1,12 +1,11 @@
 import toast from 'react-hot-toast'
 import FormData from 'form-data'
 import instance from '../../../configs/configAxios'
-import { IRatingData } from '../interfaces'
-
-export const CreateComment = async (payload: IRatingData) => {
+import { CreateCommentDto } from '../interfaces'
+export const CreateComment = async (payload: CreateCommentDto) => {
 	try {
 		const token = localStorage.getItem('token-shopee')
-		let data:FormData = new FormData()
+		let data: FormData = new FormData()
 		data.append('orderid', payload.orderid)
 		data.append('itemid', payload.itemid)
 		data.append('shopid', payload.shopid)

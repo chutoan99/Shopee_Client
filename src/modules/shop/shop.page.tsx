@@ -1,12 +1,10 @@
-//? LIBRARY
 import { memo } from 'react'
 import { useParams } from 'react-router-dom'
 import { useGetItemsShopQuery, useGetShopIdQuery } from './hooks'
 import { LoadingCustomComponent } from '../shared/loading'
 import { ShopInfoComponent } from './components'
-import { IShop } from './interfaces'
 import ProductListComponent from '../post/components/product-list.component'
-//? APPS
+import { ShopModel } from './interfaces'
 
 function ShopPage(): JSX.Element {
 	const params = useParams()
@@ -19,7 +17,7 @@ function ShopPage(): JSX.Element {
 				<LoadingCustomComponent />
 			) : (
 				<>
-					<ShopInfoComponent data={dataInfoShop?.response as IShop} />
+					<ShopInfoComponent data={dataInfoShop?.response as ShopModel} />
 					<div className='bg-[#f5f5f5] overflow-hidden pb-[50px]'>
 						<div className='grid wide'>
 							<div className='row sm-gutter pt-[16px]'>

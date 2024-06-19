@@ -1,14 +1,14 @@
 import { Link, NavLink } from 'react-router-dom'
-import { memo, useEffect, useState } from 'react'
+import { memo, useState } from 'react'
 import { LoadingDefaultComponent } from '../../../shared/loading'
-import { IOrder, IOrderParams, ITabs } from '../../../order/interfaces'
+import { OrderModel, QueryOrderDto, TabsModel } from '../../../order/interfaces'
 import { useSearchOrdersQuery } from '../../../order/hooks'
 import { formatPrice } from '../../../../utils/formatPrice'
 import { stateOrder } from '../../../order/resources'
 import { LIST_TAB } from './resources'
 
 function PurchasePage(): JSX.Element {
-	const [orderParams, setOrderParams] = useState<IOrderParams>({
+	const [orderParams, setOrderParams] = useState<QueryOrderDto>({
 		type: stateOrder.is_all,
 		shop_name: ''
 	})
@@ -27,11 +27,11 @@ function PurchasePage(): JSX.Element {
 			) : (
 				<div className='col-lg-10'>
 					<div className='w-full mb-[12px] flex overflow-hidden bg-[#fff]'>
-						{LIST_TAB(data?.tab as ITabs)?.map((tab: any, index: number) => (
+						{LIST_TAB(data?.tab as TabsModel)?.map((tab: any, index: number) => (
 							<span
 								key={index}
 								onClick={() => {
-									setOrderParams((prev: IOrderParams) => {
+									setOrderParams((prev: QueryOrderDto) => {
 										return {
 											...prev,
 											type: index
@@ -85,7 +85,7 @@ function PurchasePage(): JSX.Element {
 							<input
 								value={orderParams.shop_name}
 								onChange={(e) => {
-									setOrderParams((prev: IOrderParams) => {
+									setOrderParams((prev: QueryOrderDto) => {
 										return {
 											...prev,
 											shop_name: e.target.value
@@ -126,7 +126,7 @@ function PurchasePage(): JSX.Element {
 						</>
 					)}
 
-					{data?.response?.map((cart: IOrder) => (
+					{data?.response?.map((cart: OrderModel) => (
 						<div className='shadow-[0_1px_1px_0_rgba(0,0,0,0.05)] mx-0 my-3 rounded-sm' key={cart.id}>
 							<div className='px-6 py-3 bg-[#fff]'>
 								<div className='flex items-center justify-between pt-0 pb-3 px-0'>

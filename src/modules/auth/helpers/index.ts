@@ -1,1 +1,1 @@
-export * from "./validate.helper"
+export * from './validate.helper'

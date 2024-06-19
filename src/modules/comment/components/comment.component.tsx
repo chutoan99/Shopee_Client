@@ -2,46 +2,55 @@ import { toast } from 'react-hot-toast'
 import { NavLink } from 'react-router-dom'
 import { memo, useState } from 'react'
 import { Rating } from 'react-rainbow-components'
-import { IOrder } from '../../order/interfaces'
 import { CreateComment } from '../services'
 import { LoadingDefaultComponent } from '../../shared/loading'
-import { IPostBase } from '../../post/interfaces'
-import { IRatingData } from '../interfaces'
+import { CreateCommentDto } from '../interfaces'
+import { PostBaseModel } from '../../post/interfaces'
+import { OrderModel } from '../../order/interfaces'
 
-type RatingModel = {
+type ModelRattingProps = {
 	isShow: boolean
 	onClose: any
-	data: IOrder
+	data: OrderModel
 }
 
-function ModelRattingComponent({ isShow, onClose, data }: RatingModel): JSX.Element {
+function ModelRattingComponent({ isShow, onClose, data }: ModelRattingProps): JSX.Element {
 	const [imageUrls, setImageUrls] = useState<Record<number, string[]>>(
-		data.posts.reduce((acc, _item, index) => {
-			acc[index] = []
-			return acc
-		}, {} as Record<number, string[]>)
+		data.posts.reduce(
+			(acc, _item, index) => {
+				acc[index] = []
+				return acc
+			},
+			{} as Record<number, string[]>
+		)
 	)
 	const [fileImages, setFileImages] = useState<Record<number, File[]>>(
-		data.posts.reduce((acc, _item, index) => {
-			acc[index] = []
-			return acc
-		}, {} as Record<number, File[]>)
+		data.posts.reduce(
+			(acc, _item, index) => {
+				acc[index] = []
+				return acc
+			},
+			{} as Record<number, File[]>
+		)
 	)
 	const [loading, setLoading] = useState(false)
-	const [payLoad, setPayload] = useState<Record<number, IRatingData>>(
-		data.posts.reduce((acc, item: IPostBase, index: number) => {
-			acc[index] = {
-				itemid: item.id,
-				shopid: item.shopid,
-				orderid: item.id,
-				options: data.item_option?.split(',')[index],
-				model_name: data.tierVariation?.split(',')[index],
-				rating_star: 5,
-				comment: '',
-				images: []
-			}
-			return acc
-		}, {} as Record<number, IRatingData>)
+	const [payLoad, setPayload] = useState<Record<number, CreateCommentDto>>(
+		data.posts.reduce(
+			(acc, item: PostBaseModel, index: number) => {
+				acc[index] = {
+					itemid: item.id,
+					shopid: item.shopid,
+					orderid: item.id,
+					options: data.item_option?.split(',')[index],
+					model_name: data.tierVariation?.split(',')[index],
+					rating_star: 5,
+					comment: '',
+					images: []
+				}
+				return acc
+			},
+			{} as Record<number, CreateCommentDto>
+		)
 	)
 
 	const onFileChange = (event: any, index: number) => {

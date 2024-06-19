@@ -1,8 +1,6 @@
-//? LIBRARY
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 
-//? TYPE & SERVICES
-import { IItemsShopResponse, IShopIdResponse } from '../interfaces'
+import { ItemsShopResponse, ShopIdResponse } from '../interfaces'
 
 export const ShopApi = createApi({
 	reducerPath: 'Shop',
@@ -15,11 +13,11 @@ export const ShopApi = createApi({
 		}
 	}),
 	endpoints: (build) => ({
-		getShopId: build.query<IShopIdResponse, number>({
+		getShopId: build.query<ShopIdResponse, number>({
 			query: (shopId: number) => `/shop/${shopId}`
 		}),
 
-		getItemsShop: build.query<IItemsShopResponse, number>({
+		getItemsShop: build.query<ItemsShopResponse, number>({
 			query: (shopId: number) => `/shop/items/${shopId}`
 		})
 	})

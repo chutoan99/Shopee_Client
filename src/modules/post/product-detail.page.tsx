@@ -1,4 +1,3 @@
-//? LIBRARY
 import { useParams } from 'react-router-dom'
 import { memo, useEffect, useState } from 'react'
 import ProductBreadcrumbComponent from './components/product-breadcrumb.component'
@@ -7,9 +6,6 @@ import ProductDetailComponent from './components/product-detail.component'
 import ProductShopComponent from './components/product-shop.component'
 import ProductOverviewComponent from './components/product-overview.component'
 import { useGetProductQuery } from './hooks'
-import { IShop } from '../shop/interfaces'
-import { IProductDetail } from './interfaces'
-//? APPS
 
 function DetailProductPage(): JSX.Element {
 	const params = useParams()

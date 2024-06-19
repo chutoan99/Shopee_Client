@@ -1,16 +1,15 @@
-//? LIBRARY
 import { memo } from 'react'
 import { NavLink } from 'react-router-dom'
-//? APPS
-import { IShop } from '../interfaces'
+
 import { formatDate } from '../../../utils/formatTimestamp'
 import { useTranslation } from 'react-i18next'
+import { ShopModel } from '../interfaces'
 
-type ShopInfoModel = {
-	data: IShop
+type ShopInfoProps = {
+	data: ShopModel
 }
 
-function ShopInfoComponent({ data }: ShopInfoModel): JSX.Element {
+function ShopInfoComponent({ data }: ShopInfoProps): JSX.Element {
 	const { t } = useTranslation()
 	return (
 		<div className='shadow-[rgba(0,0,0,0.05)_0px_1px_1px] mt-[120px] bg-[#fff] sm-gutter  pb-[30px]  p-[25px] flex justify-between response_shop-content'>

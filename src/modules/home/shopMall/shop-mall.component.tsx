@@ -1,12 +1,11 @@
-//? LIBRARY
 import Slider from 'react-slick'
 import { NavLink } from 'react-router-dom'
 import { LazyLoadImage } from 'react-lazy-load-image-component'
-//? APPS
+
 import { useGetShopMallQuery } from './hooks'
-import { IShopMall } from './interfaces'
 import { shopMallData } from './resources/shop-mall.resource'
 import { shopMallConfig } from './configs'
+import { ShopMallModel } from './interfaces'
 
 export default function ShopMallComponent(): JSX.Element {
 	const { data, isLoading } = useGetShopMallQuery()
@@ -70,7 +69,7 @@ export default function ShopMallComponent(): JSX.Element {
 									<Slider {...shopMallConfig.settingsSlider}>
 										{data?.response?.map((ele: any, index: number) => (
 											<div key={index} className='col col-3'>
-												{ele?.map((item: IShopMall, index: number) => (
+												{ele?.map((item: ShopMallModel, index: number) => (
 													<div className='w-full px-[10px]' key={index}>
 														<div
 															className='relative'

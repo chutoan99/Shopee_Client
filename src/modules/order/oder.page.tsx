@@ -1,17 +1,15 @@
-//? LIBRARY
 import { toast } from 'react-hot-toast'
 import { useState, memo, useEffect } from 'react'
 import { NavLink, useNavigate } from 'react-router-dom'
-//? APPS
-import { ICart } from '../../modules/cart/interfaces'
 import { RootState } from '../../redux'
 import { useAppSelector } from '../../hooks/hooks'
 import { formatPrice } from '../../utils/formatPrice'
 import { useDeleteCartMutation } from '../../modules/cart/hooks'
 import { useCreateOrderMutation } from '../../modules/order/hooks'
 import { LoadingCustomComponent } from '../../modules/shared/loading'
-import { IOrderData } from '../../modules/order/interfaces'
 import { useTranslation } from 'react-i18next'
+import { CreateOrderDto } from './interfaces'
+import { CartModel } from '../cart/interfaces'
 
 function OderPage(): JSX.Element {
 	const ship = 30000
@@ -22,14 +20,14 @@ function OderPage(): JSX.Element {
 	const [loading, setLoading] = useState(false)
 	const [total, setTotal] = useState(0)
 	const [totalShip, setTotalShip] = useState(0)
-	const [dataPayload, setDataPayload] = useState<IOrderData[]>([])
+	const [dataPayload, setDataPayload] = useState<CreateOrderDto[]>([])
 	const [deleteCart] = useDeleteCartMutation()
 	const [createOrder] = useCreateOrderMutation()
 
 	useEffect(() => {
-		const dataTempt: ICart[] = []
+		const dataTempt: CartModel[] = []
 		data?.forEach((item: any) => {
-			item.forEach((element: ICart) => {
+			item.forEach((element: CartModel) => {
 				dataTempt.push(element)
 			})
 		})
@@ -39,7 +37,7 @@ function OderPage(): JSX.Element {
 		if (dataTempt.length === 0) {
 			navigate('/cart')
 		}
-		const newData: IOrderData[] = data.map((item: ICart[]) => {
+		const newData: CreateOrderDto[] = data.map((item: CartModel[]) => {
 			return {
 				item_groups_id: item.map((ele) => ele.itemid)?.join(','),
 				amount: item.map((ele) => ele.amount)?.join(', '),
@@ -122,7 +120,7 @@ function OderPage(): JSX.Element {
 						</div>
 					</div>
 
-					{data?.map((ele: ICart[], index: number) => (
+					{data?.map((ele: CartModel[], index: number) => (
 						<div key={index}>
 							<div className=' overflow-x-hidden overflow-y-auto'>
 								<div>
@@ -212,7 +210,7 @@ function OderPage(): JSX.Element {
 										</div>
 									</div>
 									<hr className='border-b-[rgba(0,0,0,0.06)] border-b border-solid' />
-									{ele?.map((item: ICart) => (
+									{ele?.map((item: CartModel) => (
 										<div
 											style={{ padding: '10px 30px' }}
 											className='bg-[#fff] grid items-center  border-b-[rgba(0,0,0,0.09)] border-b border-dashed'

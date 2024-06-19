@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
-import { ICreateOrdersResponse, IOrderData, IOrderParams, IOrderResponse, IOrdersResponse } from '../interfaces'
+import { CreateOrderDto, CreateOrdersResponse, OrderResponse, OrdersResponse, QueryOrderDto } from '../interfaces'
 
 export const OrderApi = createApi({
 	reducerPath: 'Order',
@@ -12,8 +12,8 @@ export const OrderApi = createApi({
 		}
 	}),
 	endpoints: (build) => ({
-		searchOrders: build.query<IOrdersResponse, IOrderParams>({
-			query: (args: IOrderParams) => {
+		searchOrders: build.query<OrdersResponse, QueryOrderDto>({
+			query: (args: QueryOrderDto) => {
 				return {
 					url: `/order/search`,
 					method: 'get',
@@ -25,12 +25,12 @@ export const OrderApi = createApi({
 			}
 		}),
 
-		getOrder: build.query<IOrderResponse, number>({
+		getOrder: build.query<OrderResponse, number>({
 			query: (orderid: number) => `order/${orderid}`
 		}),
 
-		createOrder: build.mutation<ICreateOrdersResponse, IOrderData[]>({
-			query: (body: IOrderData[]) => {
+		createOrder: build.mutation<CreateOrdersResponse, CreateOrderDto[]>({
+			query: (body: CreateOrderDto[]) => {
 				return {
 					url: 'order',
 					method: 'POST',

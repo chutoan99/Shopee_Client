@@ -1,4 +1,3 @@
-//? LIBRARY
 import { useTranslation } from 'react-i18next'
 import { NavLink } from 'react-router-dom'
 

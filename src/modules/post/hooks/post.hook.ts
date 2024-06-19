@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
-import { IPostIdResponse, IPostQuery, IPostResponse } from '../interfaces'
+import { PostIdResponse, QueryPostDto, PostResponse } from '../interfaces'
 
 export const ProductApi = createApi({
 	reducerPath: 'Products',
@@ -12,12 +12,12 @@ export const ProductApi = createApi({
 		}
 	}),
 	endpoints: (build) => ({
-		getProduct: build.query<IPostIdResponse, number>({
+		getProduct: build.query<PostIdResponse, number>({
 			query: (postId: number) => `/post/${postId}`
 		}),
 
-		searchProduct: build.query<IPostResponse, IPostQuery>({
-			query: (args: IPostQuery) => {
+		searchProduct: build.query<PostResponse, QueryPostDto>({
+			query: (args: QueryPostDto) => {
 				return {
 					url: `post/search`,
 					method: 'get',

@@ -1,8 +1,7 @@
-//? LIBRARY
 import { memo } from 'react'
 import { useGetBatchListQuery } from './hooks'
-import { IBatchList } from './interfaces'
-//? APPS
+import { BatchListModel } from './interfaces'
+
 function BatchListComponent(): JSX.Element {
 	const { data, isLoading } = useGetBatchListQuery()
 	return (
@@ -10,7 +9,7 @@ function BatchListComponent(): JSX.Element {
 			{!isLoading && (
 				<div className='bg-[#fff] px-[0.625rem] py-[1.25rem] min-h-[100px] h-[130px]'>
 					<div className='flex justify-around gap-[10px]'>
-						{data?.response?.map((item: IBatchList) => {
+						{data?.response?.map((item: BatchListModel) => {
 							return (
 								<div
 									key={item.id}

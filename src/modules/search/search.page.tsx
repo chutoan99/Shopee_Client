@@ -1,19 +1,16 @@
-//? LIBRARY
 import { memo, useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
-import { IPostQuery } from '../post/interfaces'
 import { useSearchProductQuery } from '../post/hooks'
 import { LoadingDefaultComponent } from '../shared/loading'
 import { PaginationComponent, SearchEmptyComponent } from '../shared'
 import { SortBarsComponent, FilterComponent } from '../home/category/components'
 import ProductListComponent from '../post/components/product-list.component'
-
-//? APPS
+import { QueryPostDto } from '../post/interfaces'
 
 function SearchPage(): JSX.Element {
 	const { search } = useParams()
 	const [totalPage, setTotalPage] = useState<number>(0)
-	const [payload, setPayload] = useState<IPostQuery>({
+	const [payload, setPayload] = useState<QueryPostDto>({
 		name: search,
 		limit: 50,
 		page: 1
@@ -25,7 +22,7 @@ function SearchPage(): JSX.Element {
 	}, [data, payload])
 
 	useEffect(() => {
-		setPayload((prev: IPostQuery) => {
+		setPayload((prev: QueryPostDto) => {
 			return {
 				...prev,
 				name: search

@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
-import { IFlashSaleResponse } from '../interfaces'
+import { FlashSaleResponse } from '../interfaces'
 
 export const FlashSaleApi = createApi({
 	reducerPath: 'FlashSale',
@@ -12,7 +12,7 @@ export const FlashSaleApi = createApi({
 		}
 	}),
 	endpoints: (build) => ({
-		getFlashSale: build.query<IFlashSaleResponse, void>({
+		getFlashSale: build.query<FlashSaleResponse, void>({
 			query: () => 'flashSale'
 		})
 	})

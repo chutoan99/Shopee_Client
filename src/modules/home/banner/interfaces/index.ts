@@ -1,1 +1,2 @@
-export * from './banner.interface'
+export * from './banner.response'
+export * from './banner.model'

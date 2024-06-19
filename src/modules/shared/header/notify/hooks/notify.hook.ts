@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
-import { INotifyResponse } from '../interfaces'
+import { NotifyResponse } from '../interfaces'
 
 export const NotifyApi = createApi({
 	reducerPath: 'Notify',
@@ -12,7 +12,7 @@ export const NotifyApi = createApi({
 		}
 	}),
 	endpoints: (build) => ({
-		getNotify: build.query<INotifyResponse, void>({
+		getNotify: build.query<NotifyResponse, void>({
 			query: () => 'notify'
 		})
 	})

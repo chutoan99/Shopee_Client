@@ -1,22 +1,20 @@
-//? LIBRARY
 import { memo, useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import { LazyLoadImage } from 'react-lazy-load-image-component'
 import 'react-lazy-load-image-component/src/effects/blur.css'
 
-//? APPS
-import { IPostBase } from '../interfaces'
 import { formatPrice } from '../../../utils/formatPrice'
 import { useAppDispatch } from '../../../hooks/hooks'
 import { AppDispatch, OtherActions } from '../../../redux'
 import { generateStart } from '../helpers'
+import { PostBaseModel } from '../interfaces'
 
-type Props = {
-	items: IPostBase[]
+type ProductListProps = {
+	items: PostBaseModel[]
 	col: string
 	loading: boolean
 }
-function ProductListComponent({ items, col, loading }: Props): JSX.Element {
+function ProductListComponent({ items, col, loading }: ProductListProps): JSX.Element {
 	const dispatch: AppDispatch = useAppDispatch()
 	const [likes, setLikes] = useState<string[]>(items.map(() => 'fa-regular fa-heart'))
 	const changeLike = (index: number) => {
@@ -40,7 +38,7 @@ function ProductListComponent({ items, col, loading }: Props): JSX.Element {
 	return (
 		<div className='mb-[20px]'>
 			<div className='row sm-gutter'>
-				{items?.map((item: IPostBase, index: number) => (
+				{items?.map((item: PostBaseModel, index: number) => (
 					<div className={col} key={index}>
 						<div
 							className='box-border bg-[#fff] relative shadow-[0_1px_2px_rgba(0,0,0,0.1)] transition-transform duration-[linear] delay-[0.1s] no-underline block cursor-pointer mt-[5px] pb-[5px] rounded-sm group hover:shadow-[0_1px_20px_rgba(0,0,0,0.05)] hover:-translate-y-px hover:border hover:z-[2] hover:border-solid hover:border-[#ee4d2d]'

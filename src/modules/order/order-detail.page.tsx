@@ -1,7 +1,6 @@
-//? LIBRARY
 import { memo, useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-//? APPS
+
 import { formatPrice } from '../../utils/formatPrice'
 import { useGetOrderQuery } from '../../modules/order/hooks'
 import { ModelRattingComponent } from '../../modules/comment/components'

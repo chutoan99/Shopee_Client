@@ -36,15 +36,21 @@
 @keyframes flash {
 	0% {
 		background-color: #fff2;
-		box-shadow: 32px 0 #fff2, -32px 0 #fff;
+		box-shadow:
+			32px 0 #fff2,
+			-32px 0 #fff;
 	}
 	50% {
 		background-color: #fff;
-		box-shadow: 32px 0 #fff2, -32px 0 #fff2;
+		box-shadow:
+			32px 0 #fff2,
+			-32px 0 #fff2;
 	}
 	100% {
 		background-color: #fff2;
-		box-shadow: 32px 0 #fff, -32px 0 #fff2;
+		box-shadow:
+			32px 0 #fff,
+			-32px 0 #fff2;
 	}
 }
 @keyframes addCart {
@@ -129,15 +135,21 @@
 @keyframes shadowPulse {
 	33% {
 		background: #fff;
-		box-shadow: -24px 0 #ff3d00, 24px 0 #fff;
+		box-shadow:
+			-24px 0 #ff3d00,
+			24px 0 #fff;
 	}
 	66% {
 		background: #ff3d00;
-		box-shadow: -24px 0 #fff, 24px 0 #fff;
+		box-shadow:
+			-24px 0 #fff,
+			24px 0 #fff;
 	}
 	100% {
 		background: #fff;
-		box-shadow: -24px 0 #fff, 24px 0 #ff3d00;
+		box-shadow:
+			-24px 0 #fff,
+			24px 0 #ff3d00;
 	}
 }
 @keyframes spinner {

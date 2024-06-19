@@ -1,6 +1,6 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
-import { ICategoryQuery, ICategoryTreeResponse, ICategoryTreeResponseParent } from '../interfaces'
-import { IPostResponse } from '../../../post/interfaces'
+import { CategoryTreeResponse, CategoryTreeParentResponse, QueryCategoryDto } from '../interfaces'
+import { PostResponse } from '../../../post/interfaces'
 
 export const CategoryTreeApi = createApi({
 	reducerPath: 'CategoryTree',
@@ -13,14 +13,14 @@ export const CategoryTreeApi = createApi({
 		}
 	}),
 	endpoints: (build) => ({
-		getCategoryTree: build.query<ICategoryTreeResponse, void>({
+		getCategoryTree: build.query<CategoryTreeResponse, void>({
 			query: () => 'categoryTree/1'
 		}),
-		getCategoryTreeParent: build.query<ICategoryTreeResponseParent, number>({
+		getCategoryTreeParent: build.query<CategoryTreeParentResponse, number>({
 			query: (catid: number) => `/categoryTree/parent/${catid}`
 		}),
-		searchCategories: build.query<IPostResponse, ICategoryQuery>({
-			query: (payload: ICategoryQuery) => {
+		searchCategories: build.query<PostResponse, QueryCategoryDto>({
+			query: (payload: QueryCategoryDto) => {
 				return `/industry/category?page=${payload.page}&limit=${payload.limit}&category_name=${payload.category_name}`
 			}
 		})

@@ -1,16 +1,14 @@
-//? LIBRARY
 import { memo } from 'react'
 import { NavLink } from 'react-router-dom'
-//? APPS
-import { IOrder } from '../interfaces'
-import { IPostBase } from '../../post/interfaces'
 import { formatPrice } from '../../../utils/formatPrice'
+import { OrderModel } from '../interfaces'
+import { PostBaseModel } from '../../post/interfaces'
 
-type ListsOrderModel = {
-	data: IOrder
+type ListsOrderProps = {
+	data: OrderModel
 }
 
-function ListsOrderComponent({ data }: ListsOrderModel): JSX.Element {
+function ListsOrderComponent({ data }: ListsOrderProps): JSX.Element {
 	return (
 		<div className='bg-neutral-50 px-6 py-3'>
 			<div className='flex items-center justify-between pt-0 pb-3 px-0'>
@@ -94,7 +92,7 @@ function ListsOrderComponent({ data }: ListsOrderModel): JSX.Element {
 				</div>
 			</div>
 			<hr className='border-b-[rgba(0,0,0,0.06)] border-b border-solid' />
-			{data?.posts?.map((post: IPostBase, index: number) => (
+			{data?.posts?.map((post: PostBaseModel, index: number) => (
 				<NavLink key={post.id} className='mb-[10px]' to={`/product/${post?.id}/${post?.shopid}`}>
 					<div className=''>
 						<div>
@@ -130,7 +128,8 @@ function ListsOrderComponent({ data }: ListsOrderModel): JSX.Element {
 										</div>
 										<div className='mt-0 mx-0'>
 											<div className='text-[rgba(0,0,0,0.54)] mb-[5px]'>
-												Phân loại hàng: {data?.tierVariation?.split(',')[index]}, {data?.item_option?.split(',')[index]}
+												Phân loại hàng: {data?.tierVariation?.split(',')[index]},{' '}
+												{data?.item_option?.split(',')[index]}
 											</div>
 											<div className=''>x{data?.amount?.split(',')[index]}</div>
 										</div>

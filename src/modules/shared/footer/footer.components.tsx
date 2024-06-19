@@ -1,7 +1,5 @@
-//? LIBRARY
 import { useState, memo } from 'react'
 import { NavLink } from 'react-router-dom'
-//? APPS
 
 function FooterComponent(): JSX.Element {
 	const [show, setShow] = useState(false)
@@ -273,7 +271,7 @@ function FooterComponent(): JSX.Element {
 							<li>
 								<NavLink
 									to='https://www.instagram.com/Shopee_VN/'
-									className=' no-underline text-xs text-neutral-500 flex items-center px-0 hover:text-[#ee4d2d]' >
+									className=' no-underline text-xs text-neutral-500 flex items-center px-0 hover:text-[#ee4d2d]'>
 									<span className='text-base ml-0 mr-2 mb-0'>
 										<i className='fa-brands fa-instagram-square'></i>
 									</span>
@@ -283,7 +281,7 @@ function FooterComponent(): JSX.Element {
 							<li>
 								<NavLink
 									to='https://www.linkedin.com/company/shopee'
-									className=' no-underline text-xs text-neutral-500 flex items-center px-0 hover:text-[#ee4d2d]' >
+									className=' no-underline text-xs text-neutral-500 flex items-center px-0 hover:text-[#ee4d2d]'>
 									<span className='text-base ml-0 mr-2 mb-0'>
 										<i className='fa-brands fa-linkedin'></i>
 									</span>
@@ -306,7 +304,7 @@ function FooterComponent(): JSX.Element {
 								<div className='no-underline text-transparent'>
 									<img src='/assets/Img/gg-play.png' className='h-[16px]' alt='' />
 								</div>
-								<div  className='no-underline text-transparent'>
+								<div className='no-underline text-transparent'>
 									<img src='/assets/Img/app-store.png' className='h-[16px]' alt='' />
 								</div>
 								<div className='no-underline text-transparent'>

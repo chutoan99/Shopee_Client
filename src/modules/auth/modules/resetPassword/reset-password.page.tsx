@@ -3,16 +3,16 @@ import { NavLink, useParams } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { useMutationResetPassWord } from '../../hooks'
 import { LoadingDefaultComponent } from '../../../shared/loading'
-import { IResetPasswordData } from '../../interfaces'
 import { validateResetPassword } from '../../helpers'
 import { LoginFaceBookComponent, LoginGoogleComponent } from '../../components'
+import { ResetPasswordDto } from '../../interfaces'
 
 function ResetPassWordPage(): JSX.Element {
 	const params = useParams()
 	const { t } = useTranslation()
 	const [passWord, SetPassWord] = useState('')
 	const [validationMsg, setValidationMsg] = useState<any>({})
-	const [payload, setPayload] = useState<IResetPasswordData>({
+	const [payload, setPayload] = useState<ResetPasswordDto>({
 		email: params.email || '',
 		token: params.token || '',
 		password: passWord

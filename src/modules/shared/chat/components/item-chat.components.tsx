@@ -1,20 +1,20 @@
-import { IRooms } from '../interfaces'
+import { RoomModel } from '../interfaces'
 
-type ItemChatModel = {
-	data: IRooms[] | []
+type ItemChatProps = {
+	data: RoomModel[] | []
 	des: string
 	setIsChat: any
 	setRoom: any
 }
 
-export default function ItemChatComponent({ data, des, setIsChat, setRoom }: ItemChatModel): JSX.Element {
-	const onChangeShop = (room: IRooms) => {
+export default function ItemChatComponent({ data, des, setIsChat, setRoom }: ItemChatProps): JSX.Element {
+	const onChangeShop = (room: RoomModel) => {
 		setIsChat(true)
 		setRoom(room)
 	}
 	return (
 		<>
-			{data.map((room: IRooms) => (
+			{data.map((room: RoomModel) => (
 				<div
 					onClick={() => onChangeShop(room)}
 					className='items-center box-border flex justify-center overflow-hidden relative p-3 h-[56px] w-full cursor-pointer '

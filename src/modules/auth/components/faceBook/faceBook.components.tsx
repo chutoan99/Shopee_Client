@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next'
 import { NavLink } from 'react-router-dom'
-//? LIBRARY
+
 export default function loginFacebookComponent(): JSX.Element {
 	const { t } = useTranslation()
 	return (

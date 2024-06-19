@@ -1,11 +1,10 @@
-//? LIBRARY
 import Slider from 'react-slick'
 import { NavLink } from 'react-router-dom'
 import { LazyLoadImage } from 'react-lazy-load-image-component'
-//? APPS
+
 import { useGetFlashSaleQuery } from './hooks'
-import { IFlashSale } from './interfaces'
 import { flashSaleConfig } from './configs'
+import { FlashSaleModel } from './interfaces'
 
 export default function FlashSaleComponent(): JSX.Element {
 	const { data, isLoading } = useGetFlashSaleQuery()
@@ -21,7 +20,9 @@ export default function FlashSaleComponent(): JSX.Element {
 										<img src='/assets/Img/icon_flash_sale.png' className='w-full h-full' alt='' />
 									</div>
 								</div>
-								<NavLink to='/flash-sale' className='w-[115px] capitalize text-[#ee4d2d] hover:text-[#ee4d2d]'>
+								<NavLink
+									to='/flash-sale'
+									className='w-[115px] capitalize text-[#ee4d2d] hover:text-[#ee4d2d]'>
 									Xem tất cả&nbsp;
 									<i className='fa-solid fa-angle-right'></i>
 								</NavLink>
@@ -29,7 +30,7 @@ export default function FlashSaleComponent(): JSX.Element {
 
 							<div className='row gap-[10px]' id='flashSale'>
 								<Slider {...flashSaleConfig.settings}>
-									{data?.response?.map((item: IFlashSale, index: number) => (
+									{data?.response?.map((item: FlashSaleModel, index: number) => (
 										<NavLink to='/flash-sale' className='shadow-[unset]' key={index}>
 											<LazyLoadImage
 												effect='blur'

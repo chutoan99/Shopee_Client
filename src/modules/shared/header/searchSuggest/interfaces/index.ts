@@ -1,1 +1,2 @@
-export * from './search-suggest.interface'
+export * from './search-suggest.response'
+export * from './search-suggest.model'

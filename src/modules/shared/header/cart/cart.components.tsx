@@ -1,15 +1,15 @@
 import { NavLink } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
-import { ICart } from '../../../cart/interfaces'
 import { formatPrice } from '../../../../utils/formatPrice'
+import { CartModel } from '../../../cart/interfaces'
 
-type HeaderCartModel = {
+type HeaderCartProps = {
 	totalCart: number
-	data: ICart[][]
+	data: CartModel[][]
 	loading: boolean
 }
 
-export default function HeaderCartComponent({ data, totalCart, loading }: HeaderCartModel): JSX.Element {
+export default function HeaderCartComponent({ data, totalCart, loading }: HeaderCartProps): JSX.Element {
 	const { t } = useTranslation()
 	return (
 		<NavLink to='/cart' className='justify-center flex cursor-pointer items-center flex-1 group'>
@@ -18,10 +18,10 @@ export default function HeaderCartComponent({ data, totalCart, loading }: Header
 					<i className='fa-solid fa-cart-shopping'></i>
 				</span>
 				{totalCart !== 0 && (
-						<span className='text-sm absolute leading-[0.875rem] text-[#ee4d2d] bg-[#fff] px-[7px] py-px rounded-[10px] border-2 border-solid border-[#ee4d2d] -right-1 -top-1'>
+					<span className='text-sm absolute leading-[0.875rem] text-[#ee4d2d] bg-[#fff] px-[7px] py-px rounded-[10px] border-2 border-solid border-[#ee4d2d] -right-1 -top-1'>
 						{totalCart}
 					</span>
-				) }
+				)}
 				<div
 					style={{ border: 'solid 1px rgb(0, 0, 0, 0.1)' }}
 					className="group-hover:block w-[380px] absolute bg-[#fff] hidden cursor-default will-change-[opacity_transform] origin-[(100%-32px)_top] animate-[HeaderNOtifyGrowth_ease-in_0.25s] z-10 rounded-sm  right-[-15px] top-[150%] before:content-[''] before:z-10 before:absolute before:top-[-30px] before:border-solid before:!border-x-[25px] before:!border-y-[15px] before:border-[transparent_transparent_#fff_transparent] before:right-[8px] after:content-[''] after:z-10 after:block after:absolute after:w-[118px] after:h-[31px] after:right-0 after:-top-4">
@@ -34,10 +34,10 @@ export default function HeaderCartComponent({ data, totalCart, loading }: Header
 							</header>
 							{!loading && (
 								<ul className='pl-0'>
-									{data?.map((item: ICart[], index: number) => {
+									{data?.map((item: CartModel[], index: number) => {
 										return (
 											<div key={index}>
-												{item.map((ele: ICart, index: number) => (
+												{item.map((ele: CartModel, index: number) => (
 													<li className='flex' key={index}>
 														<img
 															className='w-[42px] h-[42px] border m-3 border-solid border-[#e8e8e8]'
@@ -77,8 +77,7 @@ export default function HeaderCartComponent({ data, totalCart, loading }: Header
 										WebkitLineClamp: 1,
 										WebkitBoxOrient: 'vertical'
 									}}>
-							{t('HEADER.CART.LABEL.SEE_MORE', { totalCart })}
-								
+									{t('HEADER.CART.LABEL.SEE_MORE', { totalCart })}
 								</h5>
 								<NavLink
 									to='/cart'

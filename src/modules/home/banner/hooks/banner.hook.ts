@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
-import { IBannerResponse } from '../interfaces'
+import { BannerResponse } from '../interfaces'
 
 export const BannerApi = createApi({
 	reducerPath: 'Banner',
@@ -12,7 +12,7 @@ export const BannerApi = createApi({
 		}
 	}),
 	endpoints: (build) => ({
-		getBanner: build.query<IBannerResponse, void>({
+		getBanner: build.query<BannerResponse, void>({
 			query: () => 'banner'
 		})
 	})

@@ -1,14 +1,12 @@
-//? LIBRARY
 import { memo } from 'react'
 import { NavLink } from 'react-router-dom'
-//? APPS
-import { IProductDetail } from '../interfaces'
+import { ProductDetailModel } from '../interfaces'
 
-type Props = {
-	data: IProductDetail
+type ProductOverviewProps = {
+	data: ProductDetailModel
 }
 
-function ProductOverviewComponent({ data }: Props): JSX.Element {
+function ProductOverviewComponent({ data }: ProductOverviewProps): JSX.Element {
 	return (
 		<div className='bg-[#f5f5f5] overflow-hidden py-[12px]'>
 			<div className='grid wide'>

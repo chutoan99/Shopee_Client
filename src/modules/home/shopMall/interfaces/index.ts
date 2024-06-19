@@ -1,1 +1,2 @@
-export * from './shop-mall.interface'
+export * from './shop-mall.model'
+export * from './shop-mall.response'

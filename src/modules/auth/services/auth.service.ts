@@ -1,8 +1,8 @@
 import { toast } from 'react-hot-toast'
 import config from '../../../configs/configAxios'
-import { IForgotPasswordData, ILoginData, IRegisterData, IResetPasswordData } from '../interfaces'
+import { ForgotPasswordDto, LoginDto, RegisterDto, ResetPasswordDto } from '../interfaces'
 
-export const ApiRegister = async (payload: IRegisterData) => {
+export const ApiRegister = async (payload: RegisterDto) => {
 	try {
 		const response = await config({
 			method: 'post',
@@ -24,7 +24,7 @@ export const ApiRegister = async (payload: IRegisterData) => {
 	}
 }
 
-export const ApiLogin = async (payload: ILoginData) => {
+export const ApiLogin = async (payload: LoginDto) => {
 	try {
 		const response = await config({
 			method: 'post',
@@ -45,7 +45,7 @@ export const ApiLogin = async (payload: ILoginData) => {
 	}
 }
 
-export const ApiForgotPassword = async (payload: IForgotPasswordData) => {
+export const ApiForgotPassword = async (payload: ForgotPasswordDto) => {
 	try {
 		const token = localStorage.getItem('token-shopee')
 		const response = await config({
@@ -64,7 +64,7 @@ export const ApiForgotPassword = async (payload: IForgotPasswordData) => {
 	}
 }
 
-export const ApiResetPassword = async (payload: IResetPasswordData) => {
+export const ApiResetPassword = async (payload: ResetPasswordDto) => {
 	try {
 		const response = await config({
 			method: 'put',
@@ -108,17 +108,16 @@ export const ApiLogout = async () => {
 	}
 }
 
-
 export const ApiLoginGoogle = async () => {
 	try {
 		const response = await config({
 			method: 'get',
 			url: `/auth/google`,
 			headers: {
-				'Content-Type': 'application/json',
+				'Content-Type': 'application/json'
 			}
 		})
-		console.log(response,"response")
+		console.log(response, 'response')
 
 		if (response.status === 200) {
 			return response.data
@@ -134,10 +133,10 @@ export const ApiLoginFacebook = async () => {
 			method: 'get',
 			url: `/auth/facebook`,
 			headers: {
-				'Content-Type': 'application/json',
+				'Content-Type': 'application/json'
 			}
 		})
-		console.log(response,"response")
+		console.log(response, 'response')
 
 		if (response.status === 200) {
 			return response.data

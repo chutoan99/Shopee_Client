@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
-import { IUserResponse } from '../interfaces'
+import { UserResponse } from '../interfaces'
 
 //? fetch data RTK QUERY
 
@@ -14,7 +14,7 @@ export const UserApi = createApi({
 		}
 	}),
 	endpoints: (build) => ({
-		getUserCurrent: build.query<IUserResponse, void>({
+		getUserCurrent: build.query<UserResponse, void>({
 			query: () => 'user/current'
 		})
 	})

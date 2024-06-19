@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
-import { ITopProDuctsResponse } from '../interfaces'
+import { TopProDuctsResponse } from '../interfaces'
 
 export const TopProductApi = createApi({
 	reducerPath: 'TopProduct',
@@ -12,7 +12,7 @@ export const TopProductApi = createApi({
 		}
 	}),
 	endpoints: (build) => ({
-		getTopProduct: build.query<ITopProDuctsResponse, void>({
+		getTopProduct: build.query<TopProDuctsResponse, void>({
 			query: () => 'topProduct?page=1&limit=100'
 		})
 	})

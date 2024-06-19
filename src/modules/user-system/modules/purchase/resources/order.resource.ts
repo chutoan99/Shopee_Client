@@ -1,4 +1,4 @@
-import { ITabs } from '../../../order/interfaces'
+import { TabsModel } from '../../../../order/interfaces'
 
 export const CONSTANT = {
 	ALL: 'Tất cả',
@@ -22,7 +22,7 @@ export enum stateOrder {
 	is_returns
 }
 
-export const LIST_TAB = (tab: ITabs) => {
+export const LIST_TAB = (tab: TabsModel) => {
 	return [
 		{
 			content: CONSTANT.ALL,

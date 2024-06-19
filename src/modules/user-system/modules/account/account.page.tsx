@@ -1,4 +1,4 @@
-import { useState, memo, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import { DatePicker } from 'react-rainbow-components'
 import { useTranslation } from 'react-i18next'
 import { toast } from 'react-hot-toast'
@@ -7,26 +7,26 @@ import { LoadingCustomComponent, LoadingDefaultComponent } from '../../../shared
 import { useAppSelector } from '../../../../hooks/hooks'
 import { RootState } from '../../../../redux'
 import { useGetUserCurrentQuery } from './hooks'
-import { IUser } from './interfaces'
 import { UpdateUser } from './services'
-import { District, Province, Ward } from './components/province/interfaces/province.interface'
 import { FetchDistrict, FetchProvince, FetchWard } from './components/province/services'
+import { UserModel } from './interfaces'
+import { DistrictModel, ProvinceModel, WardModel } from './components/province/interfaces'
 
 export default function AccountPage(): JSX.Element {
 	const { t } = useTranslation()
 	const { refetch, isLoading: isLoadingUser } = useGetUserCurrentQuery()
 	//? HANDLE ADDRESS
-	const [payload, setPayload] = useState<IUser>(useAppSelector((state: RootState) => state.user).data)
-	const [province, setProvince] = useState<Province[]>([])
-	const [district, setDistrict] = useState<District[]>([])
+	const [payload, setPayload] = useState<UserModel>(useAppSelector((state: RootState) => state.user).data)
+	const [province, setProvince] = useState<ProvinceModel[]>([])
+	const [district, setDistrict] = useState<DistrictModel[]>([])
 	const [provinceCode, setProvinceCode] = useState()
 	const [districtCode, setDistrictCode] = useState()
-	const [ward, setWard] = useState<Ward[]>([])
+	const [ward, setWard] = useState<WardModel[]>([])
 	const [wardCode, setWardCode] = useState()
 	const [numberHouse, setNumberHouse] = useState('')
-	const [provinceItem, setProvinceItem] = useState<Province>()
-	const [districtItem, setDistrictItem] = useState<District>()
-	const [wardItem, setWardItem] = useState<Ward>()
+	const [provinceItem, setProvinceItem] = useState<ProvinceModel>()
+	const [districtItem, setDistrictItem] = useState<DistrictModel>()
+	const [wardItem, setWardItem] = useState<WardModel>()
 	const [addressDetail, setAddressDetail] = useState<string>(' ')
 	const [isUpdateAddress, setIsUpdateAddress] = useState(false)
 	const [imagePreview, setImagePreview] = useState<string | undefined | File>(payload?.avatar)
@@ -71,19 +71,19 @@ export default function AccountPage(): JSX.Element {
 	useEffect(() => {
 		if (!isUpdateAddress) return
 		if (provinceCode) {
-			const data: Province | undefined = province.find((item: Province) => item.code === provinceCode)
+			const data: ProvinceModel | undefined = province.find((item: ProvinceModel) => item.code === provinceCode)
 			if (data) setProvinceItem(data)
 		}
 		if (districtCode) {
-			const data: District | undefined = district.find((item: District) => item.code === districtCode)
+			const data: DistrictModel | undefined = district.find((item: DistrictModel) => item.code === districtCode)
 			if (data) setDistrictItem(data)
 		}
 		if (wardCode) {
-			const data: Ward | undefined = ward.find((item: Ward) => item.code === wardCode)
+			const data: WardModel | undefined = ward.find((item: WardModel) => item.code === wardCode)
 			if (data) setWardItem(data)
 		}
 
-		setPayload((prev: IUser) => {
+		setPayload((prev: UserModel) => {
 			return {
 				...prev,
 				address: addressDetail
@@ -96,7 +96,7 @@ export default function AccountPage(): JSX.Element {
 		const files = event.target.files
 		for (let i = 0; i < files?.length; i++) {
 			const file = files[i]
-			setPayload((prev: IUser) => {
+			setPayload((prev: UserModel) => {
 				return {
 					...prev,
 					avatar: file
@@ -114,7 +114,7 @@ export default function AccountPage(): JSX.Element {
 		onUpdateUser(payload)
 	}
 
-	const onUpdateUser = async (payload: IUser) => {
+	const onUpdateUser = async (payload: UserModel) => {
 		try {
 			setIsLoading(true)
 			const response = await UpdateUser(payload)
@@ -294,7 +294,7 @@ export default function AccountPage(): JSX.Element {
 															<option className='text-center'>
 																{t(`USER_SYSTEM.ACCOUNT.LABEL.SELECT_PROVINCE`)}
 															</option>
-															{province?.map((item: Province) => (
+															{province?.map((item: ProvinceModel) => (
 																<option
 																	key={item.code}
 																	value={item?.code}
@@ -314,7 +314,7 @@ export default function AccountPage(): JSX.Element {
 															<option className='text-center'>
 																{t(`USER_SYSTEM.ACCOUNT.LABEL.SELECT_DISTRICT`)}
 															</option>
-															{district?.map((item: District) => (
+															{district?.map((item: DistrictModel) => (
 																<option
 																	key={item.code}
 																	value={item?.code}
@@ -334,7 +334,7 @@ export default function AccountPage(): JSX.Element {
 															<option className='text-center'>
 																{t(`USER_SYSTEM.ACCOUNT.LABEL.SELECT_WARD`)}
 															</option>
-															{ward?.map((item: Ward) => (
+															{ward?.map((item: WardModel) => (
 																<option
 																	key={item.code}
 																	value={item?.code}

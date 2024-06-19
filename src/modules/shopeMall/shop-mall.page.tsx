@@ -1,6 +1,4 @@
-//? LIBRARY
 import { memo } from 'react'
-//? APPS
 
 function ShopeMallPage(): JSX.Element {
 	return (

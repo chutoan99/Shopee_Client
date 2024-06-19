@@ -4,11 +4,11 @@ import useAuth from '../../hooks/userAuth'
 import { FooterComponent, HeaderComponent } from '../../modules/shared'
 import { UserSystemComponent } from '../../modules/user-system'
 
-type UserLayoutModels = {
+type UserLayoutProps = {
 	children: ReactNode
 }
 
-export default function UserLayout({ children }: UserLayoutModels): JSX.Element {
+export default function UserLayout({ children }: UserLayoutProps): JSX.Element {
 	useAuth()
 	return (
 		<>

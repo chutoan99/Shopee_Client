@@ -3,11 +3,11 @@ import { FooterComponent, ChatComponent, HeaderComponent, HeartComponent } from 
 import { ReactNode } from 'react'
 import useAuth from '../../hooks/userAuth'
 
-type DefaultLayoutModels = {
+type DefaultLayoutProps = {
 	children: ReactNode
 }
 
-export default function DefaultLayout({ children }: DefaultLayoutModels): JSX.Element {
+export default function DefaultLayout({ children }: DefaultLayoutProps): JSX.Element {
 	useAuth()
 	return (
 		<div className='overflow-hidden'>

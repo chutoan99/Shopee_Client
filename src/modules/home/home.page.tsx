@@ -2,7 +2,6 @@ import { memo } from 'react'
 import { NavLink } from 'react-router-dom'
 import { useSearchProductQuery } from '../../modules/post/hooks'
 import { CONSTANT } from '../../modules/post/resources'
-import { IPostQuery } from '../../modules/post/interfaces'
 import { SkeletonProductComponent } from '../../modules/shared'
 import ProductListComponent from '../../modules/post/components/product-list.component'
 import { PopupComponent } from './popup'
@@ -13,12 +12,13 @@ import { ShopMallComponent } from './shopMall'
 import { TopProductComponent } from './topProduct'
 import { HomeFilterComponent } from './homeFilter'
 import { BannerComponent } from './banner'
+import { QueryPostDto } from '../post/interfaces'
 
 function HomePage(): JSX.Element {
 	const { data: dataProduct, isLoading: isLoadingDataProduct } = useSearchProductQuery({
 		limit: CONSTANT.LIMIT,
 		page: CONSTANT.PAGE
-	} as IPostQuery)
+	} as QueryPostDto)
 	return (
 		<>
 			<PopupComponent />

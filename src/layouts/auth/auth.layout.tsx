@@ -4,11 +4,11 @@ import { useTranslation } from 'react-i18next'
 import { NavLink, useLocation } from 'react-router-dom'
 import { FooterComponent } from '../../modules/shared'
 
-type AuthLayoutModels = {
+type AuthLayoutProps = {
 	children: ReactNode
 }
 
-export default function AuthLayout({ children }: AuthLayoutModels): JSX.Element {
+export default function AuthLayout({ children }: AuthLayoutProps): JSX.Element {
 	const { pathname } = useLocation()
 	const { t } = useTranslation()
 	const [heading, setHeading] = useState<string>('')

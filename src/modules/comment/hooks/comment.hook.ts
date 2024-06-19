@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
-import { ICommentsResponse } from '../interfaces'
+import { CommentsResponse } from '../interfaces'
 
 export const CommentApi = createApi({
 	reducerPath: 'Comment',
@@ -10,10 +10,9 @@ export const CommentApi = createApi({
 			headers.set('Authorization', `Bearer ${localStorage.getItem('token-shopee')}`)
 			return headers
 		}
-		
 	}),
 	endpoints: (build) => ({
-		getComments: build.query<ICommentsResponse, any>({
+		getComments: build.query<CommentsResponse, any>({
 			query: (params: any) => `comment?shopid=${params.shopid}&itemid=${params.itemid}`
 		})
 	})

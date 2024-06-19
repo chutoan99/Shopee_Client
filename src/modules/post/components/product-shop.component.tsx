@@ -1,17 +1,16 @@
-//? LIBRARY
 import { memo } from 'react'
 import { useNavigate } from 'react-router-dom'
-//? APPS
+
 import { useAppDispatch } from '../../../hooks/hooks'
 import { useCreateRoomMutation } from '../../shared/chat/hooks'
-import { IShop } from '../../shop/interfaces'
 import { AppDispatch, OtherActions } from '../../../redux'
+import { ShopModel } from '../../shop/interfaces'
 
-type ProductShopModel = {
-	data: IShop
+type ProductShopProps = {
+	data: ShopModel
 }
 
-function ProductShopComponent({ data }: ProductShopModel): JSX.Element {
+function ProductShopComponent({ data }: ProductShopProps): JSX.Element {
 	const navigate = useNavigate()
 	const dispatch: AppDispatch = useAppDispatch()
 	const [createRoom] = useCreateRoomMutation()

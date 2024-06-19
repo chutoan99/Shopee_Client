@@ -1,16 +1,15 @@
-//? LIBRARY
 import { useEffect, useState } from 'react'
 import { Rating } from 'react-rainbow-components'
-//? APPS
+
 import { formatTime } from '../../../utils/generateTime'
 import { useParams } from 'react-router-dom'
 import { useGetCommentsQuery } from '../../comment/hooks'
-import { IComment } from '../../comment/interfaces'
 import { generateStart } from '../helpers'
+import { CommentModel } from '../../comment/interfaces'
 
 function ProductCommentComponent() {
 	const params = useParams()
-	const [data, setData] = useState<IComment[]>([])
+	const [data, setData] = useState<CommentModel[]>([])
 	const [active, setActive] = useState('fa-solid fa-thumbs-up')
 	const { data: dataComments } = useGetCommentsQuery(params)
 	const [number, setNumber] = useState(0)
@@ -67,7 +66,7 @@ function ProductCommentComponent() {
 									</div>
 								</div>
 								{data?.length > 0 ? (
-									data?.map((item: IComment, index: number) => {
+									data?.map((item: CommentModel, index: number) => {
 										return (
 											<div
 												className='!grid grid-cols-[0.06fr_1fr] pl-[1.25rem] pr-0 py-[1rem] border-b-[rgba(0,0,0,0.09)] border-b border-solid'

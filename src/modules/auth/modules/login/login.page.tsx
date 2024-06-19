@@ -2,17 +2,17 @@ import { useState, memo, useEffect } from 'react'
 import { NavLink } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { useMutationLogin } from '../../hooks'
-import { ILoginData } from '../../interfaces'
 import { validateLogin } from '../../helpers'
 import { LoadingDefaultComponent } from '../../../shared/loading'
 import { LoginFaceBookComponent, LoginGoogleComponent } from '../../components'
+import { LoginDto } from '../../interfaces'
 
 function LoginPage(): JSX.Element {
 	const { t } = useTranslation()
 	const [emailLogin, setEmailLogin] = useState('')
 	const [passWordLogin, SetPassWordLogin] = useState('')
 	const [validationMsg, setValidationMsg] = useState<any>({})
-	const [payload, setPayload] = useState<ILoginData>({
+	const [payload, setPayload] = useState<LoginDto>({
 		email: emailLogin,
 		password: passWordLogin
 	})

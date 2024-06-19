@@ -3,15 +3,15 @@ import { NavLink } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { useMutationForgotPassWord } from '../../hooks'
 import { LoadingDefaultComponent } from '../../../shared/loading'
-import { IForgotPasswordData } from '../../interfaces'
 import { validateForgotPassword } from '../../helpers'
 import { LoginFaceBookComponent, LoginGoogleComponent } from '../../components'
+import { ForgotPasswordDto } from '../../interfaces'
 
 function ForgotPasswordPage(): JSX.Element {
 	const { t } = useTranslation()
 	const [emailLogin, setEmailLogin] = useState('')
 	const [validationMsg, setValidationMsg] = useState<any>({})
-	const [payload, setPayload] = useState<IForgotPasswordData>({
+	const [payload, setPayload] = useState<ForgotPasswordDto>({
 		email: emailLogin
 	})
 	const { loading, refetch } = useMutationForgotPassWord(payload)

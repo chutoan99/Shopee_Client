@@ -1,9 +1,9 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
-import { ICart } from '../modules/cart/interfaces'
+import { CartModel } from '../modules/cart/interfaces'
 
 type BuyCartState = {
 	success: boolean
-	data: [ICart[]]
+	data: [CartModel[]]
 	error: boolean
 }
 const initialState: BuyCartState = {
@@ -15,7 +15,7 @@ const buyCartStateSlice = createSlice({
 	name: 'buyCartState',
 	initialState: initialState,
 	reducers: {
-		addBuyCart: (state, action: PayloadAction<ICart[]>) => {
+		addBuyCart: (state, action: PayloadAction<CartModel[]>) => {
 			let shopIdArrays = action.payload.reduce((acc: any, curr: any) => {
 				const shopId = curr.shopid
 				if (acc[shopId]) {

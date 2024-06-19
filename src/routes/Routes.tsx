@@ -5,8 +5,6 @@ import { useGetCartsQuery } from '../modules/cart/hooks'
 import { useAppDispatch } from '../hooks/hooks'
 import { AppDispatch, CartActions } from '../redux'
 
-//? pages
-
 const App = () => {
 	const dispatch: AppDispatch = useAppDispatch()
 	const { data, isLoading } = useGetCartsQuery()

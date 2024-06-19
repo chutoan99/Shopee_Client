@@ -3,18 +3,18 @@ import { memo, useEffect, useState } from 'react'
 import { NavLink, useParams } from 'react-router-dom'
 import { useAppDispatch } from '../../../hooks/hooks'
 import { useCreateCartMutation, useGetCartsQuery } from '../../cart/hooks'
-import { IProductDetail } from '../interfaces'
 import { formatPrice } from '../../../utils/formatPrice'
-import { ICartData } from '../../cart/interfaces'
 import { AppDispatch, CartActions } from '../../../redux'
 import { useTranslation } from 'react-i18next'
 import { generateStart } from '../helpers'
 import { useCounter, useToggle } from '../../../hooks'
+import { ProductDetailModel } from '../interfaces'
+import { CreateCartDto } from '../../cart/interfaces'
 
-type ProductDetailModel = {
-	data: IProductDetail
+type ProductDetailProps = {
+	data: ProductDetailModel
 }
-function ProductDetailComponent({ data }: ProductDetailModel): JSX.Element {
+function ProductDetailComponent({ data }: ProductDetailProps): JSX.Element {
 	const { t } = useTranslation()
 	const params = useParams()
 	const dispatch: AppDispatch = useAppDispatch()
@@ -24,7 +24,7 @@ function ProductDetailComponent({ data }: ProductDetailModel): JSX.Element {
 	const [indexImg, setIndexImg] = useState(0)
 	const [showTableSize, setShowTableSize] = useState(false)
 	const { count, increment, decrement } = useCounter(1, data.stock, 1)
-	const [payload, setPayload] = useState<ICartData>({
+	const [payload, setPayload] = useState<CreateCartDto>({
 		itemid: 0,
 		shopid: 0,
 		amount: count,
@@ -33,7 +33,7 @@ function ProductDetailComponent({ data }: ProductDetailModel): JSX.Element {
 	})
 
 	useEffect(() => {
-		setPayload((prev: ICartData) => {
+		setPayload((prev: CreateCartDto) => {
 			return {
 				...prev,
 				itemid: Number(params.itemid),
@@ -43,7 +43,7 @@ function ProductDetailComponent({ data }: ProductDetailModel): JSX.Element {
 	}, [params])
 
 	useEffect(() => {
-		setPayload((prev: ICartData) => {
+		setPayload((prev: CreateCartDto) => {
 			return {
 				...prev,
 				amount: count
@@ -61,7 +61,7 @@ function ProductDetailComponent({ data }: ProductDetailModel): JSX.Element {
 		}
 		const response = await createCart(payload).unwrap()
 		if (response.err === 0) {
-			setPayload((prev: ICartData) => {
+			setPayload((prev: CreateCartDto) => {
 				return {
 					...prev,
 					itemid: 0,
