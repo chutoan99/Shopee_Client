@@ -34,6 +34,7 @@ export const UpdateUser = async (payload: any) => {
 		data.append('birthday', birthday.toISOString())
 		data.append('phone', +payload.phone)
 		data.append('avatar', payload.avatar)
+		data.append('filename', payload.filename)
 		const response = await instance({
 			method: 'put',
 			url: 'user',

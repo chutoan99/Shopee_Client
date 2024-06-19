@@ -29,7 +29,6 @@ export default function AccountPage(): JSX.Element {
 	const [wardItem, setWardItem] = useState<Ward>()
 	const [addressDetail, setAddressDetail] = useState<string>(' ')
 	const [isUpdateAddress, setIsUpdateAddress] = useState(false)
-
 	const [imagePreview, setImagePreview] = useState<string | undefined | File>(payload?.avatar)
 	const [isLoading, setIsLoading] = useState(false)
 

@@ -1,5 +1,5 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit'
-import { IUser } from '../modules/user-system/account/interfaces';
+import { IUser } from '../modules/user-system/modules/account/interfaces';
 
 const initialState: { isLogin: boolean; data: IUser } = {
 	isLogin: false,
@@ -27,7 +27,7 @@ const userSlice = createSlice({
 	initialState: initialState,
 	reducers: {
 		updateUser: (state, action: PayloadAction<any>) => {
-			const { id, shopid, sex, role, email, name, address, avatar, not_new_user, birthday, phone } =
+			const { id, shopid, sex, role, email, name, address, avatar, not_new_user, birthday, phone, filename } =
 				action.payload.data
 
 			const isLogin = action.payload.isLogin
@@ -39,6 +39,7 @@ const userSlice = createSlice({
 			state.data.name = name
 			state.data.address = address
 			state.data.avatar = avatar
+			state.data.filename = filename
 			state.data.birthday = birthday
 			state.data.not_new_user = not_new_user
 			state.data.phone = phone
